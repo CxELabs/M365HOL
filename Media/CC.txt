@@ -1,0 +1,61 @@
+Card Type: Amex
+
+Card Number: 345226375515637
+
+Expiration Date: 09/2028
+
+CVV: 6057
+
+Card Number: 345316311649796
+
+Expiration Date: 11/2022
+
+CVV: 9339
+
+Card Number: 344759779603113
+
+Expiration Date: 02/2026
+
+CVV: 6330
+
+Card Number: 379453339728127
+
+Expiration Date: 12/2021
+
+CVV: 0522
+
+Card Number: 375685451446871
+
+Expiration Date: 09/2022
+
+CVV: 3458
+
+Card Number: 373942940225941
+
+Expiration Date: 02/2024
+
+CVV: 4010
+
+Card Number: 346705678699114
+
+Expiration Date: 12/2024
+
+CVV: 9833
+
+Card Number: 373607715533387
+
+Expiration Date: 02/2027
+
+CVV: 1309
+
+Card Number: 349209542248387
+
+Expiration Date: 05/2025
+
+CVV: 7581
+
+Card Number: 378557456340069
+
+Expiration Date: 01/2019
+
+CVV: 6524
