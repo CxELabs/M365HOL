@@ -33,20 +33,20 @@ There are a few extras throughout this lab that are designed to make your lab ex
 
 - Each task contains a series of steps required for successful completion of the lab.  To track your progress throughout the lab, check the box to the left of the numbered series.  
 
-	![6mfi1ekm.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6mfi1ekm.jpg)
+	![6mfi1ekm.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6mfi1ekm.jpg)
 - After you check each box, you will see your lab progress at the bottom of the instruction pane.
 
-	![0ggu265u.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/0ggu265u.jpg)
+	![0ggu265u.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/0ggu265u.jpg)
 - When you see an instruction for switching computers, click on the **blue link** in the text to have that VM loaded automatically.
 
-	![12i85vgl.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/12i85vgl.jpg)
+	![12i85vgl.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/12i85vgl.jpg)
 - Throughout the lab, you will see text with a letter **T** in a square to the left.  This indicates that you can **click on the text** and it will **type it for you** in the VM.  **This will save you lots of time**.
 
-	![cnyu1tdi.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/cnyu1tdi.jpg)
+	![cnyu1tdi.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/cnyu1tdi.jpg)
 
 - The last interactive element you will see throughout the lab is the **Open Screenshot** text below many steps.  To reduce clutter, most screenshots have been configured to launch in a popup window.  The only ones left visible are ones that could cause issues if they are missed or if there are multiple elements that are easier to understand with visual representation.
 
-	![n4cqn070.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/n4cqn070.jpg)
+	![n4cqn070.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/n4cqn070.jpg)
 
 ## Additional Information
 
@@ -54,13 +54,13 @@ There are also Knowledge Items, Notes, and Hints throughout the lab.
 
 - Knowledge Items are used to provide additional information about a topic related to the task or step.  These are often collapsed to reduce the amount of space they use, but it is recommended that you review these items if you want more information on the subject.
 
-	![8g9nif1j.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/8g9nif1j.jpg)
+	![8g9nif1j.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/8g9nif1j.jpg)
 - Notes are steps that do not require action or modification of any elements.  This includes general observations and reviewing the results of previous steps.
 
-	![kxrbzsr2.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/kxrbzsr2.jpg)
+	![kxrbzsr2.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/kxrbzsr2.jpg)
 - Hints are recommendations or observations that help with the completion of a step.
 
-	![w11x99oo.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/w11x99oo.jpg)
+	![w11x99oo.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/w11x99oo.jpg)
 
 ---
 # Lab Environment Configuration
@@ -136,37 +136,37 @@ For several of the exercises in this lab series, you will require an active subs
 
 1. Click the **Start** button to get started.
 
-	![wdir7lb3.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/wdir7lb3.jpg)
+	![wdir7lb3.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/wdir7lb3.jpg)
 1. Enter the credentials below and select **Sign In**.
 
 	**Global Admin Username**
 
 	**Global Admin Password** 
 
-	![gtg8pvp1.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/gtg8pvp1.jpg)
+	![gtg8pvp1.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/gtg8pvp1.jpg)
 1. Click **Confirm** if the correct email address is listed.
 
-	![teyx280d.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/teyx280d.jpg)
+	![teyx280d.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/teyx280d.jpg)
 1. Enter your promo code in the Promo code box using the Type Text functionality of the lab environment and click **Claim Promo Code**.
 
-	![w7cijc7e.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/w7cijc7e.jpg)
-	![e1l35ko2.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/e1l35ko2.jpg)
+	![w7cijc7e.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/w7cijc7e.jpg)
+	![e1l35ko2.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/e1l35ko2.jpg)
 	> NOTE: It may take up to 5 minutes to process the redemption.
 
 1. Click on **Activate** to start setting up your Azure subscription.
 
-	![hsa6yyy7.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/hsa6yyy7.jpg)
+	![hsa6yyy7.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/hsa6yyy7.jpg)
 
 ## Step 2: Activate your subscription:
 
 1. Enter your account information and click **Next**.
 
-	![ihrjazqi.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ihrjazqi.jpg)
+	![ihrjazqi.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ihrjazqi.jpg)
 	> NOTE: You can keep the pre-populated information.
 
 1. Check the box to agree to the terms and click **Sign up**.
 
-	![k2a97g8e.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/k2a97g8e.jpg)
+	![k2a97g8e.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/k2a97g8e.jpg)
 	> NOTE: It may take a few minutes to process the request.
 
 1. When you are redirected to the Azure Portal, the process is complete.
@@ -187,13 +187,13 @@ In this task, we will assign licenses to users that have been synced to the Offi
 1. In the middle of the homepage, click onn **Active users >**.
 1. Check the box to select all users and click **Edit product licenses**.
 
-	![tpq0eb7f.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/tpq0eb7f.jpg)
+	![tpq0eb7f.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/tpq0eb7f.jpg)
 1. On the Assign products page, click **Next**.
 
-	![nzzweacz.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/nzzweacz.jpg)
+	![nzzweacz.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/nzzweacz.jpg)
 1. On the Replace existing products page, turn on licenses for **Enterprise Mobility + Security E5** and **Office 365 Enterprise E5** and click **Replace**.
 
-	IMAGE[Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/9xomkr35.jpg)
+	IMAGE[Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/9xomkr35.jpg)
 	> NOTE: If there are any failures, repeat the process for users that did not get licenses.
 
 ---
@@ -215,7 +215,7 @@ As this operation can take up to 24h, your instructor will provide you access to
 
 ![Security & Compliance Center](urzgmx9v.jpg)
 
-![Enable Auditing](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/uku8txme.jpg)
+![Enable Auditing](https://github.com/CxELabs/M365HOL/blob/master/Media/uku8txme.jpg)
 
 The main sections covered in this Lab are:
 
@@ -231,17 +231,17 @@ The main sections covered in this Lab are:
 1. On Client01, open a new tab and go to **https://portal.cloudappsecurity.com**
 1. Go to the gear icon and select **App connectors** 
 
-	![GetImage.png](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/GetImage.png)
+	![GetImage.png](https://github.com/CxELabs/M365HOL/blob/master/Media/GetImage.png)
  
 1. Click on the **+** button and select Office 365 
  
-	![45gka6qw.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/45gka6qw.jpg)
+	![45gka6qw.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/45gka6qw.jpg)
 1. Click on **Connect Office 365**
  
-	![x58w8p6v.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/x58w8p6v.jpg)
+	![x58w8p6v.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/x58w8p6v.jpg)
 1. Click on **Test now** to validate the configuration 
  
-	![a4c31yrk.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/a4c31yrk.jpg)
+	![a4c31yrk.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/a4c31yrk.jpg)
  
 ---
 # Cloud Discovery
@@ -275,10 +275,10 @@ and troubleshooting of the Cloud Discovery feature.
 
 1. In the Cloud App Security dashboard, click on the **Settings** icon and click **Log collectors**.
 
-	![t9beih5z.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/t9beih5z.jpg)
+	![t9beih5z.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/t9beih5z.jpg)
 1. On the **Data sources tab**, click the **Add data source...** button.
 
-	![f1k3bw4e.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/f1k3bw4e.jpg)
+	![f1k3bw4e.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/f1k3bw4e.jpg)
 1. In the Add data source window, use the settings below:
 
 	>|||
@@ -288,21 +288,21 @@ and troubleshooting of the Cloud Discovery feature.
 	>|Receiver type| **FTP**|
 	>|Anonymize private information |**Check the box**|
 	>
-	>![zby8rfbk.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/zby8rfbk.jpg)
+	>![zby8rfbk.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/zby8rfbk.jpg)
 
 1. While still in the Add data source dialog, click **View sample of expected log file**.
 
-	![2ksenw0c.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/2ksenw0c.jpg)
+	![2ksenw0c.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/2ksenw0c.jpg)
 1. In the Verify your log format dialog, click **Download sample log** and save to your desktop.
 
-	![qdkjwbbr.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/qdkjwbbr.jpg)
+	![qdkjwbbr.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/qdkjwbbr.jpg)
 1. Minimize the browser and extract the sample log to your desktop.
 1. Return to the browser and close the Verify your log format window, then click **Add** in the Add data source dialog.
 
-	![380ig1wx.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/380ig1wx.jpg)
+	![380ig1wx.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/380ig1wx.jpg)
 1. Next, click on the **Log collectors tab** and click the **Add log collector...** button.
 
-	![vq2ll67m.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/vq2ll67m.jpg)
+	![vq2ll67m.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/vq2ll67m.jpg)
 1. In the Create log collector dialog, provide the settings below and click the **Update** button.
 
 	|||
@@ -311,15 +311,15 @@ and troubleshooting of the Cloud Discovery feature.
 	|Host IP address|**192.168.141.125**
 	|Data source(s)|**Logs**
 
-	![aw3yista.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/aw3yista.jpg)
-	![v829uq5m.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/v829uq5m.jpg)
+	![aw3yista.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/aw3yista.jpg)
+	![v829uq5m.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/v829uq5m.jpg)
 	
 	> WARNING: Do not dismiss this window!
 1. **Minimize** the browser and double-click **Putty (64-bit)** on the desktop.
 
 1. In the PuTTY Configuration window, enter **192.168.141.125** and click **Open**.
 
-	![b0gca8dw.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/b0gca8dw.jpg)
+	![b0gca8dw.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/b0gca8dw.jpg)
 1. Log in using the credentials below.
 
 	**user01**
@@ -333,10 +333,10 @@ and troubleshooting of the Cloud Discovery feature.
 	```
 1. Next, return to the Create log collector dialog and copy the **collector configuration** comannd from step 2 and run it in the PuTTY window.
 
-	![1j76v7e0.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/1j76v7e0.jpg)
+	![1j76v7e0.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/1j76v7e0.jpg)
 1. Next, launch **WinSCP** from the start-menu.
 
-	![i5bmeqmb.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/i5bmeqmb.jpg)
+	![i5bmeqmb.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/i5bmeqmb.jpg)
 1. Enter the details below in the WinSCP window:
 	|||
 	|-----|-----|
@@ -347,21 +347,21 @@ and troubleshooting of the Cloud Discovery feature.
 
 1. Switch to the **Desktop** folder on the left side and double-click on the folder named for your data source (**Logs**).
 
-	![31q5d1ul.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/31q5d1ul.jpg)
+	![31q5d1ul.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/31q5d1ul.jpg)
 1. Select the squid-common demo log and click **Upload**.
 
-	![4hpamv4b.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/4hpamv4b.jpg)
+	![4hpamv4b.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/4hpamv4b.jpg)
 1. In the Upload dialog, click **OK**.
 
-	![xeaix0r8.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/xeaix0r8.jpg)
+	![xeaix0r8.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/xeaix0r8.jpg)
 
 1. After uploading your logs, return to the MCAS protal and click on **Settings** > **Governance log**. 
 
-	![fruhkk70.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/fruhkk70.jpg)
+	![fruhkk70.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/fruhkk70.jpg)
 	
 1. You may also verify the **last data received** status on the Data sources tab under **Automatic log upload**.
 
-	![l347jas1.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/l347jas1.jpg)
+	![l347jas1.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/l347jas1.jpg)
 
 	> NOTE:  After validating that your logs have been successfully uploaded and
     processed by MCAS, you will not see directly the analysis of your
@@ -453,7 +453,7 @@ collector, in MCAS, at the network level.
 	**/var/adallom** directory. This directory is where you will investigate
 	issues with the syslog or ftp logs being sent to the collector
 
-	![ovjlyn26.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ovjlyn26.jpg)
+	![ovjlyn26.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ovjlyn26.jpg)
 
 -   **/adallom/ftp/discovery**: this folder contains the data source
     folders where you send the log files for automated upload. This is
@@ -472,11 +472,11 @@ collector, in MCAS, at the network level.
 you can also verify the **/var/log/pure-ftpd** directory and check the
 transfer log:
 
-	![erx39v7i.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/erx39v7i.jpg)
+	![erx39v7i.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/erx39v7i.jpg)
 
 1. Now, move to the **/var/log/adallom** directory.
 
-	![0h029uih.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/0h029uih.jpg)
+	![0h029uih.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/0h029uih.jpg)
 
 -   **/var/log/adallom/columbus**: this folder is where you will find
     log files useful for troubleshooting issues with the collector
@@ -489,7 +489,7 @@ transfer log:
     collector. For example, trace.log will show you the bootstrapping
     process:
 
-    ![ks4ttuuq.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ks4ttuuq.jpg)
+    ![ks4ttuuq.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ks4ttuuq.jpg)
 
  
 
@@ -504,17 +504,17 @@ log and see if it gets uploaded to MCAS.
 
 1. Upload the logs in the folder named by your source:
 
-![bqhxmpns.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/bqhxmpns.jpg)
+![bqhxmpns.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/bqhxmpns.jpg)
 
  
 
 1. Then, check in MCAS the status:
 
-	![21pseval.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/21pseval.jpg)
+	![21pseval.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/21pseval.jpg)
 
  
 
-	![mt0o095m.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/mt0o095m.jpg)
+	![mt0o095m.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/mt0o095m.jpg)
 
  
 
@@ -530,7 +530,7 @@ connections to MCAS:
 	```
 	netstat -a
 	```
-	![rxvauw6e.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/rxvauw6e.jpg)
+	![rxvauw6e.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/rxvauw6e.jpg)
 ---
 # Threat Detection
 [🔙](#microsoft-365-cloud-app-security)
@@ -572,7 +572,7 @@ As creating this kind of rules is part of the daily operations in a
 company, we could recommend scoping the monitoring to **sensitive
 groups** of users to monitor but this is not required for this lab.
 
-![deg5ncg3.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/deg5ncg3.jpg)
+![deg5ncg3.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/deg5ncg3.jpg)
 
 ### Exchange Online - add user to Exchange administrator role
 
@@ -590,7 +590,7 @@ usually required by security teams.
 Optionally, you could add as a condition "if IP address category is not
 in Corporate".
 
-![ao3du4ms.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ao3du4ms.jpg)
+![ao3du4ms.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ao3du4ms.jpg)
 
 ### Exchange Online - Add management role assignment
 
@@ -608,7 +608,7 @@ address](https://docs.microsoft.com/en-us/exchange/permissions-exo/permissions-e
   |----------------- |----------------------------------- |---------------------
   |Exchange Online   |Add impersonation role assignment   |New-ManagementRoleAssignment
 
-![rilw99v2.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/rilw99v2.jpg)
+![rilw99v2.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/rilw99v2.jpg)
 
 ### Exchange Online - New delegated access to sensitive mailbox
 
@@ -632,7 +632,7 @@ many alerts, but this is not required for this lab.
   |Exchange Online   |Add mailbox folder permission   	  |Add-MailboxFolderPermission
   |Exchange Online   |Add permission to mailbox       	  |Add-MailboxPermission
 
-![6kcy2xki.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6kcy2xki.jpg)
+![6kcy2xki.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6kcy2xki.jpg)
 
 ### OneDrive -- Ownership granted to another user
 
@@ -645,7 +645,7 @@ somebody OneDrive for Business site.
   |----------------- |----------------------------------- |---------------------
   |OneDrive   		 |Add site collection administrator   |SiteCollectionAdminAdded
 
-![rb4fqb83.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/rb4fqb83.jpg)
+![rb4fqb83.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/rb4fqb83.jpg)
 
 ### 3rd party apps delegations
 
@@ -660,7 +660,7 @@ or possible data exfiltration.
 We will monitor when an uncommon app is granted medium or high
 permission level:
 
-![mszki5q9.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/mszki5q9.jpg)
+![mszki5q9.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/mszki5q9.jpg)
 
 ### Investigation in MCAS
 
@@ -705,7 +705,7 @@ complications.
     1.  In Salesforce, go to **Setup**, search for **My Domain** and
         register a new domain, e.g., ems123456-dev-ed.salesforce.com
 
-        ![f7idpipy.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/f7idpipy.jpg)
+        ![f7idpipy.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/f7idpipy.jpg)
 
     1.  Save **full Salesforce domain name**, including **https://** for the
         next step, e.g., <https://ems123456-dev-ed.salesforce.com>
@@ -755,7 +755,7 @@ complications.
 
     1.   Go back to Salesforce, under **Setup** go to **Single Sign-On
         Settings**
-        ![ao0yrpx8.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ao0yrpx8.jpg)
+        ![ao0yrpx8.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ao0yrpx8.jpg)
 
     1.   Click on **Edit**, Select **SAML Enabled**, and click on
         **Save**
@@ -799,7 +799,7 @@ complications.
     1.  Go back to the Azure AD portal, within the **SalesforceCAS**
         app, choose **Users and groups**
         
-		![kscnoob4.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/kscnoob4.jpg)
+		![kscnoob4.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/kscnoob4.jpg)
 
     1.  Click on **+ Add user**, choose the admin as the user (e.g.,
         <admin@ems123456.onmicrosoft.com>), choose **System
@@ -820,7 +820,7 @@ complications.
 
     1. In Azure Active Directory, under **Security**, click
         on **Conditional access**.
-        ![b62lha77.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/b62lha77.jpg)
+        ![b62lha77.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/b62lha77.jpg)
 
     1.   Click on **New policy** and create a new policy:
 
@@ -839,7 +839,7 @@ complications.
         1. Click on **Create**
 
         1. It should look like this:
-            ![qti7w9u6.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/qti7w9u6.jpg)
+            ![qti7w9u6.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/qti7w9u6.jpg)
 
     1.   After the policy was created successfully, open a new browser,
         ***make sure you are logged out***, and log in to
@@ -852,11 +852,11 @@ complications.
 
     1.   Go to the Cloud App Security portal, and under the settings cog
         choose **Conditional Access App Control
-        ![dfmwyegm.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/dfmwyegm.jpg)
+        ![dfmwyegm.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/dfmwyegm.jpg)
 
     1.   You should see a message letting you know that new Azure AD apps
         were discovered. Click on the **View new apps** link.
-        ![qz9mx11x.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/qz9mx11x.jpg)
+        ![qz9mx11x.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/qz9mx11x.jpg)
 
         1. If the message does not appear, go back to step c. (After
             the policy was created...) this time, close the browser and
@@ -864,7 +864,7 @@ complications.
 
     1.   In the dialog that opens, you should see Salesforce. Click on
         the + sign, and then click **Add**.
-        ![iy3f8gro.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/iy3f8gro.jpg)
+        ![iy3f8gro.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/iy3f8gro.jpg)
 
 ### Configure device authentication
 
@@ -874,7 +874,7 @@ complications.
      folder within the **E:\Demofiles.zip** file you've received as the
      certificate authority root certificate
 
-	![rlkp1xvp.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/rlkp1xvp.jpg)
+	![rlkp1xvp.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/rlkp1xvp.jpg)
 ### Create a session policy
 
 1.  In the Cloud App Security portal, select **Control** followed
@@ -883,16 +883,16 @@ complications.
 2.   In the **Policies** page, click **Create policy** and
      select **Session policy**.
 
-     ![6lh61nkl.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6lh61nkl.jpg)
+     ![6lh61nkl.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6lh61nkl.jpg)
 
 3.   In the **Session policy** window, assign a name for your policy,
      such as *Block download of sensitive documents to unmanaged
      devices.*
-     ![a6i9js1x.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/a6i9js1x.jpg)
+     ![a6i9js1x.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/a6i9js1x.jpg)
 
 4.   In the **Session control type** field Select **Control file download
      (with DLP)** 
-	 ![j9pxy1lm.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/j9pxy1lm.jpg)
+	 ![j9pxy1lm.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/j9pxy1lm.jpg)
 
 5.   Under **Activity source** in the **Activities matching all of the
      following** section, select the following activity filters to
@@ -901,7 +901,7 @@ complications.
     1. **Device tags** does not equal **Valid client certificate**
 
     2. **App** equals **Salesforce**
-    ![6wwuqlcz.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6wwuqlcz.jpg)
+    ![6wwuqlcz.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6wwuqlcz.jpg)
 
 6.   Check the **Enabled** checkbox near **Content inspection**
 
@@ -914,14 +914,14 @@ complications.
 9.   Check the **Don't require relevant context** checkbox, just below
      the dropdown
      menu
-	 ![10uz9qp1.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/10uz9qp1.jpg)
+	 ![10uz9qp1.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/10uz9qp1.jpg)
 
 10.  Under **Actions**, select **Block**
 
 11. Check the **Customize block message** checkbox, and add a custom
      message in the textbox that has opened, e.g.: "This file is
      sensitive"
-    ![dzdsku3w.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/dzdsku3w.jpg)
+    ![dzdsku3w.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/dzdsku3w.jpg)
 
 12.  Click on **Create**
 
@@ -931,7 +931,7 @@ complications.
 14.  In the **Session control type** field Select **Control file download
      (with DLP)** 
 
-	 ![xsznq6n8.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/xsznq6n8.jpg)
+	 ![xsznq6n8.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/xsznq6n8.jpg)
 
 15.  Under **Activity source** in the **Activities matching all of the
      following** section, select the following activity filters to
@@ -941,13 +941,13 @@ complications.
 
  	**App** equals **Salesforce**
 
- 	![8s4bu84k.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/8s4bu84k.jpg)
+ 	![8s4bu84k.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/8s4bu84k.jpg)
 
 16.  Clear the **Enabled** checkbox near **Content inspection**
 
 17.  Under **Actions**, select **Protect**
 
-    ![c5xhnr87.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/c5xhnr87.jpg)
+    ![c5xhnr87.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/c5xhnr87.jpg)
 
 18.  Click on **Create**
 
@@ -974,16 +974,16 @@ complications.
      unmanaged device by clicking on **OK** in one browser and
      **Cancel** in the other.
 
-   ![2mj216sm.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/2mj216sm.jpg)
+   ![2mj216sm.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/2mj216sm.jpg)
 
 7.   You should then see a Monitored access message, click on **Continue
      to Salesforce** to continue.
 
-    ![h2oyt9fw.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/h2oyt9fw.jpg)
+    ![h2oyt9fw.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/h2oyt9fw.jpg)
 
 8.   Now you are logged in to Salesforce. Click on + and go to Files
 
-    ![d0ik67yl.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/d0ik67yl.jpg)
+    ![d0ik67yl.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/d0ik67yl.jpg)
 
 9.  Upload the files **Personal employees information.docx** and
      **Protect with Microsoft Cloud App Security proxy.pdf** from the
@@ -996,7 +996,7 @@ complications.
      that you get a blocking message and instead of the file, you get a
      Blocked...txt file.
 
-   ![wvk16zl2.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/wvk16zl2.jpg)
+   ![wvk16zl2.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/wvk16zl2.jpg)
 
 ### Test the admin experience
 
@@ -1007,7 +1007,7 @@ complications.
     the file download that was not blocked, and the file download that
     was blocked because it matched the policy.
 
-    ![j0vuo06k.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/j0vuo06k.jpg)
+    ![j0vuo06k.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/j0vuo06k.jpg)
 ---
 # Management
 [🔙](#microsoft-365-cloud-app-security)
@@ -1059,12 +1059,12 @@ the available cmdlets.
 Note: the module relies on the Cloud App Security API. You can find its
 documentation in the MCAS portal.
 
-![f847xhzx.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/f847xhzx.jpg)
+![f847xhzx.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/f847xhzx.jpg)
 
 The module is available in the PowerShell gallery and can be installed
 using the *Install-Module mcas* command.
 
-![6j16dgs2.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6j16dgs2.jpg)
+![6j16dgs2.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6j16dgs2.jpg)
 
 More information on the module is available on GitHub:
 [https://github.com/powershellshock/MCAS-Powershell](https://github.com/powershellshock/MCAS-Powershell)
@@ -1074,7 +1074,7 @@ PowerShell help and start exploring the cmdlets.
 
 Hint: you'll have to create an API token in Cloud App Security.
 
-![0x2tzeqd.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/0x2tzeqd.jpg)
+![0x2tzeqd.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/0x2tzeqd.jpg)
 
 Using PowerShell:
 
@@ -1110,17 +1110,17 @@ As explained in the [documentation](https://docs.microsoft.com/en-us/cloud-app-s
 
 1. Go to Cloud App Security settings and check the **Automatically scan new files** checkbox.
 
-	![imku224m.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/imku224m.jpg)
+	![imku224m.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/imku224m.jpg)
 2.  Click on the **Save** button.
 
 ## Apply AIP classification to SSN documents
 
 3.  Go to **Policies**.
 
-	![i2nnuzsg.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/i2nnuzsg.jpg)
+	![i2nnuzsg.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/i2nnuzsg.jpg)
 4.  Create a new **File policy**.
 
-	![aoodi6ml.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/aoodi6ml.jpg)
+	![aoodi6ml.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/aoodi6ml.jpg)
 5.  Provide the following settings to that policy:
 	1. Policy name: **Protect SSN documents in sensitive site**.
 	1. Files matching all of the following: **remove the filters**.
@@ -1128,26 +1128,26 @@ As explained in the [documentation](https://docs.microsoft.com/en-us/cloud-app-s
 
 	> NOTE: Here, select the **Shared Documents** folder from the default SharePoint site.
 	
-		![mt3guvwp.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/mt3guvwp.jpg)
+		![mt3guvwp.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/mt3guvwp.jpg)
 
-		![piparayd.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/piparayd.jpg)
+		![piparayd.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/piparayd.jpg)
 	1. Verify that you have one selected folder and click on **Done**.
 	
-		![ovruaovh.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ovruaovh.jpg)
+		![ovruaovh.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ovruaovh.jpg)
 
-		![q67v9yh6.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/q67v9yh6.jpg)
+		![q67v9yh6.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/q67v9yh6.jpg)
 	1. In inspection method, select **Data Classification Service**.
 	
-		![7fw3fh7n.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/7fw3fh7n.jpg)
+		![7fw3fh7n.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/7fw3fh7n.jpg)
 	1. Click on sensitive information type, select the **SSN related** ones and click on **Done**.
 	
-		![2plklsza.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/2plklsza.jpg)
+		![2plklsza.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/2plklsza.jpg)
 	1. Click on the **Unmask** checkbox.
 	
-		![a89zd1k2.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/a89zd1k2.jpg)
+		![a89zd1k2.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/a89zd1k2.jpg)
 	1. In the Governance actions, select **Apply classification label**.
 	
-		![6wfpj4to.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6wfpj4to.jpg)
+		![6wfpj4to.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6wfpj4to.jpg)
 	1. Click **Create** to finish the policy creation.
 
 ---
@@ -1159,10 +1159,10 @@ This is what we are going to configure in this lab.
 
 1. In Cloud App Security, go to the **Settings**.
 
-	![oqfkh5cw.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/oqfkh5cw.jpg)
+	![oqfkh5cw.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/oqfkh5cw.jpg)
 2.  In the Information Protection section, go to **Admin quarantine**.
 
-	![pvjk90y0.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/pvjk90y0.jpg)
+	![pvjk90y0.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/pvjk90y0.jpg)
 3.  In the dropdown menu, select your root SharePoint site.
 
 	1. In user notification, type **Your content has been quarantined. Please contact your admin.**
@@ -1170,18 +1170,18 @@ This is what we are going to configure in this lab.
 
     >NOTE: As best practice, you should define a dedicated site with restricted access as the admin quarantine location.
 
-	![hl55gqvd.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/hl55gqvd.jpg)
+	![hl55gqvd.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/hl55gqvd.jpg)
 4.  Next, go to the policies menu and create a new **file policy**.
 
-	![3xpu3nw7.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/3xpu3nw7.jpg)
+	![3xpu3nw7.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/3xpu3nw7.jpg)
 5.  Provide the following settings to that policy:
 	1. Policy name: **Quarantine sensitive pdf**
 	1. Files matching all of the following: **Extension equals pdf**
 	
-	![2cmlwt55.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/2cmlwt55.jpg)
+	![2cmlwt55.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/2cmlwt55.jpg)
 	1. In Governance actions, select **Put in admin quarantine** and click on the Create button.
 	
-	![1wlrz08d.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/1wlrz08d.jpg)
+	![1wlrz08d.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/1wlrz08d.jpg)
  
 ## Test our policies
 
@@ -1192,30 +1192,30 @@ To test our files policies, perform the following tasks:
 8.  Upload the unzipped files to the site.
 
 
-	![xf5ozmrf.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/xf5ozmrf.jpg)
+	![xf5ozmrf.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/xf5ozmrf.jpg)
 9.  Cloud App Security will now scan those documents and search for matches to our created policies. The scan can take some minutes before completion.
 10.  To monitor the evolution, go back to Cloud App Security and open the **Files** page of the investigations.
 
-	![wb3gbn9w.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/wb3gbn9w.jpg)
+	![wb3gbn9w.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/wb3gbn9w.jpg)
 11. When a match is discovered, you will see it in this page.
 
-	![6g2kg3vq.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6g2kg3vq.jpg)
+	![6g2kg3vq.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6g2kg3vq.jpg)
 12.  Open the details of the file. You can see there the matched policies and the scan status of the files.
 
-	![rqbu6yyq.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/rqbu6yyq.jpg)
+	![rqbu6yyq.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/rqbu6yyq.jpg)
 13.  You can also view the related governance actions in the Governance log.
 
-	![bg5romej.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/bg5romej.jpg)
+	![bg5romej.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/bg5romej.jpg)
 	
-	![fbsrlfsk.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/fbsrlfsk.jpg)
+	![fbsrlfsk.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/fbsrlfsk.jpg)
 
 14.  You will also notice that the quarantined files will be replaced by placeholders containing your custom message and be moved to the "Quarantine" location we defined.
 
-	![as3niznc.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/as3niznc.jpg)
+	![as3niznc.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/as3niznc.jpg)
 
-	![juas1s58.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/juas1s58.jpg)
+	![juas1s58.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/juas1s58.jpg)
 
-	![drm0yj0c.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/drm0yj0c.jpg)
+	![drm0yj0c.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/drm0yj0c.jpg)
 
 ---
 # Azure Information Protection
@@ -1242,7 +1242,7 @@ After completing this lab, you will be able to:
 
 Even before configuring an AIP classification taxonomy, customers can scan and identify files containing sensitive information based on the built-in sensitive information types included in the Microsoft Classification Engine.  
 
-![ahwj80dw.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ahwj80dw.jpg)
+![ahwj80dw.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ahwj80dw.jpg)
 
 Often, this can help drive an appropriate level of urgency and attention to the risk customers face if they delay rolling out AIP classification and protection.  
 
@@ -1257,7 +1257,7 @@ In order to collect log data from Azure Information Protection clients and servi
 1. Switch to Client01.
 1. In the InPrivate window, navigate to **https://portal.azure.com/**
 	>
-	>![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/cznh7i2b.jpg)
+	>![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/cznh7i2b.jpg)
 
 	>INFO: If necessary, log in using the username and password below:
 	>
@@ -1267,17 +1267,17 @@ In order to collect log data from Azure Information Protection clients and servi
 	
 1. After logging into the portal, type the word **info** into the **search bar** and press **Enter**, then click on **Azure Information Protection**. 
 
-	![2598c48n.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/2598c48n.jpg)
+	![2598c48n.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/2598c48n.jpg)
 	
 	> NOTE: If you do not see the search bar at the top of the portal, click on the **Magnifying Glass** icon to expand it.
 	>
-	> ![ny3fd3da.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ny3fd3da.jpg)
+	> ![ny3fd3da.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ny3fd3da.jpg)
 
 1. In the Azure Information Protection blade, under **Manage**, click **Configure analytics (preview)**.
 
 1. Next, click on **+ Create new workspace**.
 
-	![qu68gqfd.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/qu68gqfd.jpg)
+	![qu68gqfd.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/qu68gqfd.jpg)
 1. In the Log analytics workspace using the values in the table below and click **OK**.
 
 	|||
@@ -1286,13 +1286,13 @@ In order to collect log data from Azure Information Protection clients and servi
 	|Resource Group|**AIP-RG**|
 	|Location|**East US**|
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/5butui15.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/5butui15.jpg)
 1. Next, back in the Configure analytics (preview) blade, **check the box** next to the workspace and click **OK**.
 
-	![gste52sy.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/gste52sy.jpg)
+	![gste52sy.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/gste52sy.jpg)
 1. Click **Yes**, in the confirmation dialog.
 
-	![zgvmm4el.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/zgvmm4el.jpg)
+	![zgvmm4el.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/zgvmm4el.jpg)
 ---
 
 
@@ -1310,7 +1310,7 @@ The first step in configuring the AIP Scanner is to install the service and conn
 
 1. Right-click on the **PowerShell** icon in the taskbar and click on **Run as Administrator**.
 
-	![7to6p334.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/7to6p334.jpg)
+	![7to6p334.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/7to6p334.jpg)
 
 1. At the PowerShell prompt, type **$SQL = "Scanner01"** and press **Enter**.
 1. Next, type **Install-AIPScanner -SQLServerInstance $SQL** and press **Enter**.
@@ -1320,21 +1320,21 @@ The first step in configuring the AIP Scanner is to install the service and conn
 
 	**Somepass1**
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/pc9myg9x.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/pc9myg9x.jpg)
 
 	>INFO: You should see a success message like the one below. 
 	>
-	>![w7goqgop.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/w7goqgop.jpg)
+	>![w7goqgop.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/w7goqgop.jpg)
 	>
 
 1. Right-click on the **Windows** button in the lower left-hand corner and click on **Run**.
 1. In the Run dialog, type **Services.msc** and click **OK**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/h0ys0h4u.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/h0ys0h4u.jpg)
 1. In the Services console, double-click on the **Azure Information Protection Scanner** service.
 1. On the **Log On** tab of the Azure Information Protection Scanner Service Properties, verify that **Log on as:** is set to the **Contoso\AIPScanner** service account.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ek9jsd0a.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/ek9jsd0a.jpg)
 
 ---
 
@@ -1385,7 +1385,7 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 1. Copy the command to the clipboard.
 1. Click on the Start menu and type **PowerShell**, right-click on the PowerShell program, and click **Run as a different user**.
 
-	![zgt5ikxl.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/zgt5ikxl.jpg)
+	![zgt5ikxl.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/zgt5ikxl.jpg)
 
 1. When prompted, enter the username and password below and click **OK**.
 
@@ -1400,15 +1400,15 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 
 	**Somepass1**
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/qfxn64vb.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/qfxn64vb.jpg)
 
 1. In the Permissions requested window, click **Accept**.
 
-   ![nucv27wb.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/nucv27wb.jpg)
+   ![nucv27wb.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/nucv27wb.jpg)
    
 	>[!knowledge] You will a message like the one below in the PowerShell window once complete.
 	>
-	>![y2bgsabe.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/y2bgsabe.jpg)
+	>![y2bgsabe.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/y2bgsabe.jpg)
 1. **Return to the admin PowerShell window** and type the command below and press **Enter**.
 
 	**Restart-Service AIPScanner**
@@ -1434,13 +1434,13 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
     ```
 	>[!Knowledge] Notice that we added the **-SetDefaultLabel Off** switch to each of these repositories.  This is necessary because our Global policy has a Default label of **General**.  If we did not add this switch, any file that did not match a condition would be labeled as General when we do the enforced scan.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/00niixfd.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/00niixfd.jpg)
 1. To verify the repositories configured, run the command below.
 	
     ```
     Get-AIPScannerRepository
     ```
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/n5hj5e7j.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/n5hj5e7j.jpg)
 
 ---
 
@@ -1460,14 +1460,14 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
  	
 1. Right-click on the **Windows** button in the lower left-hand corner and click on **Event Viewer**.
  
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/cjvmhaf0.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/cjvmhaf0.jpg)
 1. Expand **Application and Services Logs** and click on **Azure Information Protection**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/dy6mnnpv.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/dy6mnnpv.jpg)
  
 	>NOTE: You will see an event like the one below when the scanner completes the cycle.
 	>
-	>![agnx2gws.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/agnx2gws.jpg)
+	>![agnx2gws.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/agnx2gws.jpg)
  
 1. Next, switch to Client01, open a **File Explorer** window, and browse to **\\\Scanner01\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports** and log on using the credentials below:
 
@@ -1479,11 +1479,11 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 
 	>NOTE: Since there are no Automatic conditions configured yet, the scanner found no matches for the 141 files scanned despite 136 of them having sensitive data.
 	>
-	>![aukjn7zr.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/aukjn7zr.jpg)
+	>![aukjn7zr.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/aukjn7zr.jpg)
 	>
 	>The details contained in the DetailedReport.csv can be used to identify the types of sensitive data you need to create AIP rules for in the Azure Portal.
 	>
-	>![9y52ab7u.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/9y52ab7u.jpg)
+	>![9y52ab7u.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/9y52ab7u.jpg)
 
 	>NOTE: We will revisit this information later in the lab to review discovered data and create Sensitive Data Type to Classification mappings.
 
@@ -1505,31 +1505,31 @@ However, there are times when external collaboration is required, so we will con
 
 1. In the Azure Information Protection blade, under **classifications** in the left pane, click on **Labels** to load the Azure Information Protection – Labels blade.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/mhocvtih.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/mhocvtih.jpg)
 
 1. In the Azure Information Protection – Labels blade, right-click on **Confidential** and click **Add a sub-label**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/uktfuwuk.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/uktfuwuk.jpg)
 
 1. In the Sub-label blade, type **Contoso Internal** for the **Label display name** and for **Description** enter text similar to **Confidential data that requires protection, which allows Contoso Internal employees full permissions. Data owners can track and revoke content.**
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/4luorc0u.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/4luorc0u.jpg)
 
 1. Then, under **Set permissions for documents and emails containing this label**, click **Protect**, and under **Protection**, click on **Azure (cloud key)**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/tp97a19d.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/tp97a19d.jpg)
 
 1. In the Protection blade, click **+ Add Permissions**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/layb2pvo.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/layb2pvo.jpg)
 
 1. In the Add permissions blade, click on **+ Add contoso – All members** and click **OK**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/zc0iuoyz.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/zc0iuoyz.jpg)
 
 1. In the Protection blade, click **OK**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/u8jv46zo.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/u8jv46zo.jpg)
 
 1. In the Sub-label blade, scroll down to the **Set visual marking (such as header or footer)** section and under **Documents with this label have a header**, click **On**.
 
@@ -1544,37 +1544,37 @@ However, there are times when external collaboration is required, so we will con
 
 	> NOTE: These are sample values to demonstrate marking possibilities and **NOT** a best practice.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/0vdoc6qb.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/0vdoc6qb.jpg)
 
 1. To complete creation of the new sub-label, click the **Save** button and then click **OK** in the Save settings dialog.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/89nk9deu.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/89nk9deu.jpg)
 
 1. In the Azure Information Protection - Labels blade, expand **Confidential** (if necessary) and then click on **Recipients Only**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/eiiw5zbg.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/eiiw5zbg.jpg)
 
 1. In the Label: Recipients Only blade, change the **Label display name** from **Recipients Only** to **Do Not Forward**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/v54vd4fq.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/v54vd4fq.jpg)
 
 1. Next, in the **Set permissions for documents and emails containing this label** section, under **Protection**, click **Azure (cloud key): User defined**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/qwyranz0.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/qwyranz0.jpg)
 
 1. In the Protection blade, under **Set user-defined permissions (Preview)**, verify that only the box next to **In Outlook apply Do Not Forward** is checked, then click **OK**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/16.png)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/16.png)
 
 	>INFO: Although there is no action added during this step, it is included to show that this label will only display in Outlook and not in Word, Excel, PowerPoint or File Explorer.
 
 1. Click **Save** in the Label: Recipients Only blade and **OK** to the Save settings prompt. 
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/9spkl24i.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/9spkl24i.jpg)
 
 1.  Click the **X** in the upper right corner of the blade to close.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/98pvhwdv.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/98pvhwdv.jpg)
 
 ---
 
@@ -1585,7 +1585,7 @@ In this task, we will assign the new sub-label to the Global policy and configur
 
 1. In the Azure Information Protection blade, under **classifications** on the left, click **Policies** then click the **Global** policy.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/24qjajs5.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/24qjajs5.jpg)
 
 1. In the Policy: Global blade, **wait for the labels to load**.
 
@@ -1603,15 +1603,15 @@ In this task, we will assign the new sub-label to the Global policy and configur
 	For email messages with attachments, apply a label…|Automatic
 	Add the Do Not Forward button to the Outlook ribbon|Off
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/mtqhe3sj.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/mtqhe3sj.jpg)
 
 1. Click **Save**, then **OK** to complete configuration of the Global policy.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/1p1q4pxe.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/1p1q4pxe.jpg)
 
 1. Click the **X** in the upper right corner to close the Policy: Global blade.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/m6e4r2u2.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/m6e4r2u2.jpg)
 
 ---
 
@@ -1622,55 +1622,55 @@ Now that you have learned how to work with global labels and policies, we will c
 
 1. Under **classifications** on the left, click **Labels**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/50joijwb.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/50joijwb.jpg)
 
 1. In the Azure Information Protection – Labels blade, right-click on **Highly-Confidential** and click **Add a sub-label**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/tasz9t0i.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/tasz9t0i.jpg)
 
 1. In the Sub-label blade, enter **Legal Only** for the **Label display name** and for **Description** enter **Data is classified and protected. Legal department staff can edit, forward and unprotect.**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/lpvruk49.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/lpvruk49.jpg)
 
 1. Then, under **Set permissions for documents and emails containing this label**, click **Protect** and under **Protection**, click **Azure (cloud key)**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6ood4jqu.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/6ood4jqu.jpg)
 
 1. In the Protection blade, under **Protection settings**, click the **+ Add permissions** link.
 
-	![ozzumi7l.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ozzumi7l.jpg)
+	![ozzumi7l.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ozzumi7l.jpg)
 
 1. In the Add permissions blade, click **+ Browse directory**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/2lvwim24.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/2lvwim24.jpg)
 
 1. In the AAD Users and Groups blade, **wait for the names to load**, then check the boxes next to **Alan Steiner** and **Amy Albers**, and click the **Select** button.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/uishk9yh.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/uishk9yh.jpg)
 
 	> NOTE: In a production environment, you will typically use a synced or Azure AD Group rather than choosing individuals.
 
 1. In the Add permissions blade, click **OK**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/stvnaf4f.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/stvnaf4f.jpg)
 
 1. In the Protection blade, under **Allow offline access**, reduce the **Number of days the content is available without an Internet connection** value to **3** and press **OK** .
 
 	>INFO: This value determines how many days a user will have offline access from the time a document is opened, and an initial Use License is acquired.  While this provides convenience for users, it is recommended that this value be set appropriately based on the sensitivity of the content.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/j8masv1q.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/j8masv1q.jpg)
 
 1. Click **Save** in the Sub-label blade and **OK** to the Save settings prompt to complete the creation of the Legal Only sub-label.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/dfhoii1x.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/dfhoii1x.jpg)
 
 1. In the Azure Information Protection blade, under **Classifications** on the left, click **Policies** then click the **+Add a new policy** link.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ospsddz6.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/ospsddz6.jpg)
 
 1. In the Policy blade, for Policy name, type **No Default Label Scoped Policy** and click on **Select which users or groups get this policy. Groups must be email-enabled.**
 
-	![1sjw3mc7.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/1sjw3mc7.jpg)
+	![1sjw3mc7.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/1sjw3mc7.jpg)
 
 1. In the AAD Users and Groups blade, click on **Users/Groups**.  
 1. Then in the second AAD Users and Groups blade, **wait for the names to load** and check the boxes next to **Alan Steiner**, **Amy Albers**, and **AIPScanner**.
@@ -1679,23 +1679,23 @@ Now that you have learned how to work with global labels and policies, we will c
 1. Click the **Select** button.
 1. Finally, click **OK**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/onne7won.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/onne7won.jpg)
 
 1. In the Policy blade, under the labels, click on **Add or remove labels** to add the scoped label.
 
-	![b6e9nbui.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/b6e9nbui.jpg)
+	![b6e9nbui.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/b6e9nbui.jpg)
 
 1. In the Policy: Add or remove labels blade, check the box next to **Legal Only** and click **OK**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/c2429kv9.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/c2429kv9.jpg)
 
 1. In the Policy blade, under **Configure settings to display and apply on Information Protection end users** section, under **Select the default label**, select **None** as the default label for this scoped policy.
 
-	![4mxceage.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/4mxceage.jpg)
+	![4mxceage.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/4mxceage.jpg)
 
 1. Click **Save**, then **OK** to complete creation of the No Default Label Scoped Policy.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/41jembjf.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/41jembjf.jpg)
 
 1. Click on the **X** in the upper right-hand corner to close the policy.
 
@@ -1708,21 +1708,21 @@ There are many advanced policy settings that are useful to tailor your Azure Inf
 
 1. In the Azure Information Protection blade, under **classifications** on the left, click on **Labels** and then click on the **General** label.
 
-    ![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/rvn4xorx.jpg)
+    ![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/rvn4xorx.jpg)
 
 1. In the Label: General blade, scroll to the bottom and copy the **Label ID** and close the blade using the **X** in the upper right-hand corner.
 
-    ![8fi1wr4d.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/8fi1wr4d.jpg)
+    ![8fi1wr4d.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/8fi1wr4d.jpg)
 
 1. In the AIP Portal, under **classifications** on the left, click on **Policies**. Right-click on the **No Default Label Scoped Policy** and click on **Advanced settings**.
 
-    ![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/2jo71ugb.jpg)
+    ![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/2jo71ugb.jpg)
 
 1. In the Advanced settings blade, in the textbox under **NAME**, type **OutlookDefaultLabel**.  In the textbox under **VALUE**, paste the **Label ID** for the **General** label you copied previously, then click **Save and close**.
 
     > WARNING: CAUTION: Please check to ensure that there are **no spaces** before or after the **Label ID** when pasting as this will cause the setting to not apply.
 
-    ![ezt8sfs3.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ezt8sfs3.jpg)
+    ![ezt8sfs3.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ezt8sfs3.jpg)
 
 	> NOTE: This and additional Advanced Policy Settings can be found at [https://docs.microsoft.com/en-us/azure/information-protection/rms-client/client-admin-guide-customizations ](https://docs.microsoft.com/en-us/azure/information-protection/rms-client/client-admin-guide-customizations)
 
@@ -1737,49 +1737,49 @@ However, helping your users to properly classify and protect sensitive data at t
 
 1. Under **classifications** on the left, click **Labels** then expand **Confidential**, and click on **Contoso Internal**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/jyw5vrit.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/jyw5vrit.jpg)
 1. In the Label: Contoso Internal blade, scroll down to the **Configure conditions for automatically applying this label** section, and click on **+ Add a new condition**.
 
-	![cws1ptfd.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/cws1ptfd.jpg)
+	![cws1ptfd.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/cws1ptfd.jpg)
 1. In the Condition blade, in the **Select information types** search box, type **credit** and check the box next to **Credit Card Number**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/9rozp61b.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/9rozp61b.jpg)
 1. Click **Save** in the Condition blade and **OK** to the Save settings prompt.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/41o5ql2y.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/41o5ql2y.jpg)
 
 	>INFO: By default the condition is set to Recommended and a policy tip is created with standardized text.
 	>
-	>  ![qdqjnhki.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/qdqjnhki.jpg)
+	>  ![qdqjnhki.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/qdqjnhki.jpg)
 
 1. Click **Save** in the Label: Contoso Internal blade and **OK** to the Save settings prompt.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/rimezmh1.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/rimezmh1.jpg)
 1. Press the **X** in the upper right-hand corner to close the Label: Contoso Internal blade.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/em124f66.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/em124f66.jpg)
 1. Next, expand **Highly Confidential** and click on the **All Employees** sub-label.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/2eh6ifj5.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/2eh6ifj5.jpg)
 1. In the Label: All Employees blade, scroll down to the **Configure conditions for automatically applying this label** section, and click on **+ Add a new condition**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/8cdmltcj.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/8cdmltcj.jpg)
 1. In the Condition blade, click on **Custom** and enter **Password** for the **Name** and in the textbox below **Match exact phrase or pattern**, type **pass@word1**.
 
-	![ra7dnyg6.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ra7dnyg6.jpg)
+	![ra7dnyg6.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ra7dnyg6.jpg)
 1. Click **Save** in the Condition blade and **OK** to the Save settings prompt.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ie6g5kta.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/ie6g5kta.jpg)
 1. In the Labels: All Employees blade, in the **Configure conditions for automatically applying this label** section, click **Automatic**.
 
-	![245lpjvk.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/245lpjvk.jpg)
+	![245lpjvk.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/245lpjvk.jpg)
 	> NOTE: The policy tip is automatically updated when you switch the condition to Automatic.
 1. Click **Save** in the Label: All Employees blade and **OK** to the Save settings prompt.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/gek63ks8.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/gek63ks8.jpg)
 1. Press the **X** in the upper right-hand corner to close the Label: All Employees blade.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/wzwfc1l4.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/wzwfc1l4.jpg)
 
 ---
 
@@ -1801,35 +1801,35 @@ This will allow us to demonstrate the differences between the global and scoped 
 
 1. On Client01, minimize the Edge window and launch **Microsoft Word**.
 
-	![pxyal6hb.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/pxyal6hb.jpg)
+	![pxyal6hb.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/pxyal6hb.jpg)
 	
 	>INFO: When Word opens, you may see a prompt to log into **Microsoft Azure Information Protection**.  You may **close this** and continue.  Azure Information Protection will automatically inherit the settings from Word after reloading.
 	>
-	> ![3gm9oeee.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/3gm9oeee.jpg)
+	> ![3gm9oeee.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/3gm9oeee.jpg)
 
 1. In the upper right, click on **Sign in to get the most out of Office**.
 	
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/elavdbu1.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/elavdbu1.jpg)
 1. In the Sign in dialog, enter **Alan@yourtenant.com** and press **Next**. 
 
 1. In the Enter password dialog, enter **pass@word1** and click **Sign in**.
 
 1. In the Use this account everywhere on your device dialog, click **Yes**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/m1e7l6ei.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/m1e7l6ei.jpg)
 
 1. Finally, click **Done** to complete the setup.
 1. **Close Microsoft Word**
 1. Next, start **Microsoft Outlook** by clicking on the icon in the taskbar.
 
-	![vlu3sb64.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/vlu3sb64.jpg)
+	![vlu3sb64.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/vlu3sb64.jpg)
 1. Click **Connect** and let Outlook configure.  
 
 	>INFO: Login details for **Alan@yourtenant.com** should be automatically populated. If you still see **LabUser@Contoso.com**, close Microsoft Outlook and reopen.
 	>
 	> If you receive a prompt to choose an account type, click Office 365.
 	>
-	> ![13mp3hbw.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/13mp3hbw.jpg)
+	> ![13mp3hbw.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/13mp3hbw.jpg)
 
 1. Continue to the next step while Outlook configures.
 1. Switch to **Client02**, press @lab.CtrlAltDelete, and log in using the username and password below:
@@ -1840,35 +1840,35 @@ This will allow us to demonstrate the differences between the global and scoped 
 
 1. Launch **Microsoft Word**.
 
-	![pxyal6hb.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/pxyal6hb.jpg)
+	![pxyal6hb.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/pxyal6hb.jpg)
 	
 	>INFO: When Word opens, you may see a prompt to log into **Microsoft Azure Information Protection**.  You may **close this** and continue.  Azure Information Protection will automatically inherit the settings from Word after reloading.
 	>
-	> ![3gm9oeee.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/3gm9oeee.jpg)
+	> ![3gm9oeee.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/3gm9oeee.jpg)
 
 1. In the upper right, click on **Sign in to get the most out of Office**.
 	
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/elavdbu1.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/elavdbu1.jpg)
 1. In the Sign in dialog, enter **Amy@yourtenant.com** and press **Next**. 
 
 1. In the Enter password dialog, enter **pass@word1** and click **Sign in**.
 
 1. In the Use this account everywhere on your device dialog, click **Yes**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/m1e7l6ei.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/m1e7l6ei.jpg)
 
 1. Finally, click **Done** to complete the setup.
 1. **Close Microsoft Word**
 1. Next, start **Microsoft Outlook** by clicking on the icon in the taskbar.
 
-	![vlu3sb64.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/vlu3sb64.jpg)
+	![vlu3sb64.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/vlu3sb64.jpg)
 1. Click **Connect** and let Outlook configure.  
 
 	>INFO: Login details for **Amy@yourtenant.com** should be automatically populated. If you still see **Install@Contoso.com**, close Microsoft Outlook and reopen.
 	>
 	> If you receive a prompt to choose an account type, click Office 365.
 	>
-	> ![13mp3hbw.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/13mp3hbw.jpg)
+	> ![13mp3hbw.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/13mp3hbw.jpg)
 
 1. Continue to the next step while Outlook configures.
 1. Switch to **Client03**, press @lab.CtrlAltDelete, and log in using the username and password below:
@@ -1879,35 +1879,35 @@ This will allow us to demonstrate the differences between the global and scoped 
 
 1. Launch **Microsoft Word**.
 
-	![pxyal6hb.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/pxyal6hb.jpg)
+	![pxyal6hb.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/pxyal6hb.jpg)
 	
 	>INFO: When Word opens, you may see a prompt to log into **Microsoft Azure Information Protection**.  You may **close this** and continue.  Azure Information Protection will automatically inherit the settings from Word after reloading.
 	>
-	> ![3gm9oeee.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/3gm9oeee.jpg)
+	> ![3gm9oeee.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/3gm9oeee.jpg)
 
 1. In the upper right, click on **Sign in to get the most out of Office**.
 	
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/elavdbu1.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/elavdbu1.jpg)
 1. In the Sign in dialog, enter **Eric@yourtenant.com** and press **Next**. 
 
 1. In the Enter password dialog, enter **pass@word1** and click **Sign in**.
 
 1. In the Use this account everywhere on your device dialog, click **Yes**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/m1e7l6ei.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/m1e7l6ei.jpg)
 
 1. Finally, click **Done** to complete the setup.
 1. Wait for the Getting Office ready for you dialog to close and then **Close Microsoft Word**
 1. Next, start **Microsoft Outlook** by clicking on the icon in the taskbar.
 
-	![vlu3sb64.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/vlu3sb64.jpg)
+	![vlu3sb64.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/vlu3sb64.jpg)
 1. Click **Connect** and let Outlook configure.  
 
 	>INFO: Login details for **Eric@yourtenant.com** should be automatically populated. If you still see **Install@Contoso.com**, close Microsoft Outlook and reopen.
 	>
 	> If you receive a prompt to choose an account type, click Office 365.
 	>
-	> ![13mp3hbw.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/13mp3hbw.jpg)
+	> ![13mp3hbw.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/13mp3hbw.jpg)
 
 
 ---
@@ -1925,33 +1925,33 @@ One of the most common use cases for AIP is the ability to send emails using Use
 
 1. On Client03, in Microsoft Outlook, click on the **New email** button.
 
-	![6wan9me1.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6wan9me1.jpg)
+	![6wan9me1.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6wan9me1.jpg)
 
 	>INFO: Note that the **Sensitivity** is set to **General** by default.
 	>
-	> ![5esnhwkw.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/5esnhwkw.jpg)
+	> ![5esnhwkw.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/5esnhwkw.jpg)
 
 1. Send an email to **Alan** and **Amy** (**Alan;Amy**). You may **optionally add an external email address** (preferably from a major social provider like gmail, yahoo, or outlook.com) to test the external recipient experience. For the **Subject** and **Body** type **Test Do Not Forward Email**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/h0eh40nk.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/h0eh40nk.jpg)
 
 1. In the Sensitivity Toolbar, click on the **pencil** icon to change the Sensitivity label.
 
-	![901v6vpa.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/901v6vpa.jpg)
+	![901v6vpa.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/901v6vpa.jpg)
 
 	> NOTE: If the AIP toolbar is not signed in, click **Sign In** and wait for it to use SSO and download policies (about 30 seconds).
 
 1. Click on **Confidential** and then the **Do Not Forward** sub-label and click **Send**.
 
-	![w8j1w1lm.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/w8j1w1lm.jpg)
+	![w8j1w1lm.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/w8j1w1lm.jpg)
 
 	>INFO: If you receive the error message below, click on the Confidential \ Contoso Internal sub-label to force the download of your AIP identity certificates, then follow the steps above to change the label to Confidential \ Do Not Forward.
 	>
-	> ![6v6duzbd.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6v6duzbd.jpg)
+	> ![6v6duzbd.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6v6duzbd.jpg)
 
 1. Switch over to Client01 or Client02 and review the email in Alan or Amy’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
 
-	![0xby56qt.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/0xby56qt.jpg)
+	![0xby56qt.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/0xby56qt.jpg)
 
 	> NOTE: The **Do Not Forward** protection template will normally prevent the sharing of the screen and taking screenshots when protected documents or emails are loaded.  However, since this screenshot was taken within a VM, the operating system was unaware of the protected content and could not prevent the capture.  
 	>
@@ -1959,11 +1959,11 @@ One of the most common use cases for AIP is the ability to send emails using Use
 
 	>INFO: If you elected to send a Do Not Forward message to an external email, you will have an experience similar to the images below.  These captures are included to demonstrate the functionality for those that chose not to send an external message.
 	>
-	> ![tzj04wi9.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/tzj04wi9.jpg)
+	> ![tzj04wi9.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/tzj04wi9.jpg)
 	> 
 	> Here the user has received an email from Eric Grimes and they can click on the **Read the message** button.
 	>
-	>![wiefwcho.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/wiefwcho.jpg)
+	>![wiefwcho.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/wiefwcho.jpg)
 	>
 	>Next, the user is given the option to either log in using the social identity provider (**Sign in with Google**, Yahoo, Microsoft Account), or to **sign in with a one-time passcode**.
 	>
@@ -1971,15 +1971,15 @@ One of the most common use cases for AIP is the ability to send emails using Use
 	>
 	>If they choose one-time passcode, they will receive an email like the one below with the one-time passcode.
 	>
-	>![m6voa9xi.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/m6voa9xi.jpg)
+	>![m6voa9xi.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/m6voa9xi.jpg)
 	>
 	>They can then use this code to authenticate to the Office 365 Message Encryption portal.
 	>
-	>![8pllxint.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/8pllxint.jpg)
+	>![8pllxint.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/8pllxint.jpg)
 	>
 	>After using either of these authentication methods, the user will see a portal experience like the one shown below.
 	>
-	>![3zi4dlk9.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/3zi4dlk9.jpg)
+	>![3zi4dlk9.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/3zi4dlk9.jpg)
 ---
 
 # Testing Global Policy
@@ -1990,26 +1990,26 @@ In this task, we will create a document and send an email to demonstrate the fun
 1. Switch to Client03.
 1. In Microsoft Outlook, click on the **New email** button.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6wan9me1.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/6wan9me1.jpg)
 
 1. Send an email to Alan, Amy, and yourself (**Alan;Amy;@lab.User.Email**).  For the **Subject** and **Body** type **Test Contoso Internal Email**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/9gkqc9uy.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/9gkqc9uy.jpg)
 
 1. In the Sensitivity Toolbar, click on the **pencil** icon to change the Sensitivity label.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/901v6vpa.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/901v6vpa.jpg)
 
 1. Click on **Confidential** and then **Contoso Internal** and click **Send**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/yhokhtkv.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/yhokhtkv.jpg)
 1. On Client01 or Client02, observe that you are able to open the email natively in the Outlook client. Also observe the **header text** that was defined in the label settings.
 
-	![bxz190x2.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/bxz190x2.jpg)
+	![bxz190x2.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/bxz190x2.jpg)
 	
 1. In your email, note that you will be unable to open this message.  This experience will vary depending on the client you use (the image below is from Outlook 2016 for Mac) but they should have similar messages after presenting credentials. Since this is not the best experience for the recipient, later in the lab we will configure Exchange Online Mail Flow Rules to prevent content classified with internal only labels from being sent to external users.
 	
-	![52hpmj51.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/52hpmj51.jpg)
+	![52hpmj51.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/52hpmj51.jpg)
 
 ---
 
@@ -2021,26 +2021,26 @@ In this task, we will create a document and send an email from one of the users 
 1. Switch to Client01.
 1. In Microsoft Outlook, click on the **New email** button.
 	
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ldjugk24.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/ldjugk24.jpg)
 	
 1. Send an email to Amy and Eric (**Amy Albers;Eric Gruber**).  For the **Subject** and **Body** type **Test Highly Confidential Legal Email**.
 1. In the Sensitivity Toolbar, click on **Highly Confidential** and the **Legal Only** sub-label, then click **Send**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ny1lwv0h.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/ny1lwv0h.jpg)
 1. Switch to Client02 and click on the email.  You should be able to open the message natively in the client as Amy.
 
-	![qeqtd2yr.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/qeqtd2yr.jpg)
+	![qeqtd2yr.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/qeqtd2yr.jpg)
 1. Switch to Client03 and click on the email. You should be unable to open the message as Eric.
 
-	![6y99u8cl.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6y99u8cl.jpg)
+	![6y99u8cl.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6y99u8cl.jpg)
 
 	>INFO: You may notice that the Office 365 Message Encryption wrapper message is displayed in the preview pane.  It is important to note that the content of the email is not displayed here.  The content of the message is contained within the encrypted message.rpmsg attachment and only authorized users will be able to decrypt this attachment.
 	>
-	>![w4npbt49.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/w4npbt49.jpg)
+	>![w4npbt49.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/w4npbt49.jpg)
 	>
 	>If an unauthorized recipient clicks on **Read the message** to go to the OME portal, they will be presented with the same wrapper message.  Like the external recipient from the previous task, this is not an ideal experience. So, you may want to use a mail flow rule to manage scoped labels as well.
 	>
-	>![htjesqwe.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/htjesqwe.jpg)
+	>![htjesqwe.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/htjesqwe.jpg)
 
 1. On Client01, open **Microsoft Word**.
 1. Create a new **Blank document** and type **This is a test document** and **save the document**.
@@ -2062,29 +2062,29 @@ In this task, we will test the configured recommended and automatic conditions w
 
 1. Notice that you are prompted with a recommendation to change the classification to Confidential \ Contoso Internal. Click on **Change now** to set the classification and protect the document.
 
-	![url9875r.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/url9875r.jpg)
+	![url9875r.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/url9875r.jpg)
 	>INFO: Notice that, like the email in Task 2 of this exercise, the header value configured in the label is added to the document.
 	>
-	>![dcq31lz1.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/dcq31lz1.jpg)
+	>![dcq31lz1.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/dcq31lz1.jpg)
 1. In Microsoft Word, create a new **Blank document** and type **my password is pass@word1** and **save** the document.
 
 	>NOTE: Notice that the document is automatically classified and protected wioth the Highly Confidential \ All Employees label.
 	>
-	>![6vezzlnj.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6vezzlnj.jpg)
+	>![6vezzlnj.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6vezzlnj.jpg)
 1. Next, in Microsoft Outlook, click on the **New email** button.
 	
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ldjugk24.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/ldjugk24.jpg)
 	
 1. Draft an email to Amy and Alan (**Amy;Alan**).  For the **Subject** and **Body** type **Test Highly Confidential All Employees Automation**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/4v3wrrop.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/4v3wrrop.jpg)
 1. Attach the **second document you created** to the email.
 
-	![823tzyfd.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/823tzyfd.jpg)
+	![823tzyfd.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/823tzyfd.jpg)
 
 	> NOTE: Notice that the email was automatically classified as Highly Confidential \ All Employees.  This functionality is highly recommended because matching the email classification to attachments provides a much more cohesive user experience and helps to prevent inadvertent information disclosure in the body of sensitive emails.
 	>
-	>![yv0afeow.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/yv0afeow.jpg)
+	>![yv0afeow.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/yv0afeow.jpg)
 
 1. In the email, click **Send**.
 ---
@@ -2131,13 +2131,13 @@ In this task, we will configure a mail flow rule to detect sensitive information
 
 1. Switch to the Azure Portal and under **classifications** click on Labels, then expand **Confidential** and click on **Contoso Internal**.
 
-	![w2w5c7xc.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/w2w5c7xc.jpg)
+	![w2w5c7xc.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/w2w5c7xc.jpg)
 
 	> NOTE: If you closed the azure portal, open an Edge InPrivate window and navigate to **https://portal.azure.com**.
 
 1. In the Label: Contoso Internal blade, scroll down to the Label ID and **copy** the value.
 
-	![lypurcn5.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/lypurcn5.jpg)
+	![lypurcn5.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/lypurcn5.jpg)
 
 	> WARNING: Make sure that there are no spaces before or after the Label ID as this will cause the mail flow rule to be ineffective.
 
@@ -2161,7 +2161,7 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 1. Switch to Client03.
 1. In Microsoft Outlook, click on the **New email** button.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6wan9me1.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/6wan9me1.jpg)
 
 1. Send an email to Alan, Amy, and yourself (**Alan;Amy;@lab.User.Email**).  For the **Subject**, type **Test Credit Card Email** and for the **Body**, type **My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368**, then click **Send**.
 
@@ -2169,32 +2169,32 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 
 1. Switch to Client01 and review the received email.
 
-	![pidqfaa1.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/pidqfaa1.jpg)
+	![pidqfaa1.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/pidqfaa1.jpg)
 
 	>INFO: Note that there is no encryption applied to the message.  That is because we set up the rule to only apply to external recipients.  If you were to leave that condition out of the mail flow rule, internal recipients would also receive an encrypted copy of the message.  The image below shows the encrypted message that was received externally.
 	>
-	>![c5foyeji.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/c5foyeji.jpg)
+	>![c5foyeji.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/c5foyeji.jpg)
 	>
 	>Below is another view of the same message received in Outlook Mobile on an iOS device.
 	>
-	>![599ljwfy.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/599ljwfy.jpg)
+	>![599ljwfy.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/599ljwfy.jpg)
 
 	>NOTE: Note that you have received a message from your DLP policy stating that the email was not sent to the external recipient because it contained a credit card number.
 
 1. On Client 1, @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://protection.office.com`) to open an Edge InPrivate window to **https://protection.office.com**.
 1. In the Security and Compliance Center, expand **Data loss prevention** and click on **Policy**.  Then, in the Policy blade, click on the **Default Office 365 DLP Policy**.
 	
-	![a2m7ryn4.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/a2m7ryn4.jpg)
+	![a2m7ryn4.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/a2m7ryn4.jpg)
 1. In the Default Office 365 DLP Policy blade, next to Policy settings, click **Edit**.
 
-	![jsdej5i4.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/jsdej5i4.jpg)
+	![jsdej5i4.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/jsdej5i4.jpg)
 1. In the Editing policy settings blade, disable the switch next to **Items containing 1-9 credit card numbers shared externally** and click **Save**.
 
-![5y5gg696.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/5y5gg696.jpg)
+![5y5gg696.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/5y5gg696.jpg)
 1. Return to Client03.
 1. In Microsoft Outlook, click on the **New email** button.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6wan9me1.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/6wan9me1.jpg)
 
 1. Send an new email to Alan, Amy, and yourself (**Alan;Amy;@lab.User.Email**).  For the **Subject**, type **Test Credit Card Email 2** and for the **Body**, type **My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368**, then click **Send**.
 	>NOTE: If you still receive a rejection, please wait a few minutes and try again.
@@ -2202,21 +2202,21 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 	>[!Knowledge] Notice that you do not receive the error messag this time.  Log into your personal email and you will see that the email has been encrypted in transit by the Exchange Online Mail Flow Rule defined in the previous exercise.
 1. Next, in Microsoft Outlook, click on the **New email** button.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6wan9me1.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/6wan9me1.jpg)
 1. Send an email to Alan, Amy, and yourself (**Alan;Amy;@lab.User.Email**).  For the **Subject** and **Body** type **Another Test Contoso Internal Email**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/d476fmpg.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/d476fmpg.jpg)
 
 1. In the Sensitivity Toolbar, click on the **pencil** icon to change the Sensitivity label.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/901v6vpa.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/901v6vpa.jpg)
 
 1. Click on **Confidential** and then **Contoso Internal** and click **Send**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/yhokhtkv.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/yhokhtkv.jpg)
 1. In about a minute, you should receive an **Undeliverable** message from Exchange with the users that the message did not reach and the message you defined in the previous task.
 
-	![kgjvy7ul.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/kgjvy7ul.jpg)
+	![kgjvy7ul.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/kgjvy7ul.jpg)
 
 > NOTE: There are many other use cases for Exchange Online mail flow rules but this should give you a quick view into what is possible and how easy it is to improve the security of your sensitive data through the use of Exchange Online mail flow rules and Azure Information Protection.
 
@@ -2245,30 +2245,30 @@ Now that we know what types of sensitive data we need to protect, we will config
 
 1. In the Information Types panel, you will see the types of sensitive data that was found during the initial discovery run. We will use a few of these to create Automatic Conditions.
 
-	![x4w16p5g.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/x4w16p5g.jpg)
+	![x4w16p5g.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/x4w16p5g.jpg)
 
 1. Under **Classifications** on the left, click **Labels** then expand **Confidential**, and click on **Contoso Internal**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/jyw5vrit.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/jyw5vrit.jpg)
 1. In the Label: Contoso Internal blade, scroll down to the **Configure conditions for automatically applying this label** section, and click on **+ Add a new condition**.
 
-	![cws1ptfd.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/cws1ptfd.jpg)
+	![cws1ptfd.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/cws1ptfd.jpg)
 1. In the Condition blade, in the **Select information types** search box, type **International** and check the box next to the **International Classification of Diseases (ICD-10-CM)** entry.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/j163rbh7.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/j163rbh7.jpg)
 1. Next, before saving, replace International in the search bar with **EU** and check the boxes next to the **items shown below**.
 
-	![xaj5hupc.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/xaj5hupc.jpg)
+	![xaj5hupc.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/xaj5hupc.jpg)
 1. Click **Save** in the Condition blade and **OK** to the Save settings prompt.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/41o5ql2y.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/41o5ql2y.jpg)
 1. In the Label : Contoso Internal blade, under **Select how this label is applied: automatically or recommended to user**, click **Automatic**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/1ifaer4l.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/1ifaer4l.jpg)
 
 1. Click **Save** in the Label: Contoso Internal blade and **OK** to the Save settings prompt.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/rimezmh1.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/rimezmh1.jpg)
 
 1. Press the **X** in the upper right-hand corner to close the Label: Contoso Internal blade.
 
@@ -2291,16 +2291,16 @@ In this task, we will set the AIP scanner to enforce the conditions we set up in
 
 	> NOTE: Note that this time we used the DiscoverInformationTypes -PolicyOnly switch before starting the scan. This will have the scanner only evaluate the conditions we have explicitly defined in conditions.  This increases the effeciency of the scanner and thus is much faster.  After reviewing the event log we will see the result of the enforced scan.
 	>
-	>![k3rox8ew.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/k3rox8ew.jpg)
+	>![k3rox8ew.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/k3rox8ew.jpg)
 	>
 	>If we switch back to Client03 and look in the reports directory we opened previously at **\\\Scanner01\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports**, you will notice that the old scan reports are zipped in the directory and only the most recent results aare showing.  
 	>
-	>![s8mn092f.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/s8mn092f.jpg)
+	>![s8mn092f.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/s8mn092f.jpg)
 	>
 	>Also, the DetailedReport.csv now shows the files that were protected.
 	>
 	>
-	>![6waou5x3.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6waou5x3.jpg)
+	>![6waou5x3.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6waou5x3.jpg)
 	>
 	>![Open Fullscreen](6waou5x3.jpg)
 
@@ -2315,14 +2315,14 @@ Now that we have Classified and Protected documents using the scanner, we can re
  
 2.  Navigate to **\\\Scanner01\documents**. Provide the credentials **Contoso\LabUser** and **Pa$$w0rd** if prompted.
  
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/hipavcx6.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/hipavcx6.jpg)
 3.  Open one of the Contoso Purchasing Permissions documents or Run For The Cure spreadsheets.
  
  	
 	
 	> NOTE: Observe that the same document is now classified as Confidential \ Contoso Internal. 
 	>
-	>![s1okfpwu.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/s1okfpwu.jpg)
+	>![s1okfpwu.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/s1okfpwu.jpg)
 
 
 ---
@@ -2345,7 +2345,7 @@ In this task, we will activate the labels from the Azure Portal for use in the S
 
 1. Click **Activate** and **Yes**.
 
-	![o0ahpimw.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/o0ahpimw.jpg)
+	![o0ahpimw.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/o0ahpimw.jpg)
 	>NOTE: If Activation fails it is likely because of network latency in the lab environment. Browse to **https://protection.office.com/#/tagslibrary** to check if the migration succeeded. In a full demo tenant this should complete successfully.  More detail is available at [https://aka.ms/aipmigration](https://aka.ms/aipmigration).
 ---
 # Exercise 8: SharePoint IRM Configuration
@@ -2375,7 +2375,7 @@ In this task, we will enable Information Rights Management in SharePoint Online.
  
 1. Hover over the **Admin centers** section of the bar on the left and choose **SharePoint**.
 
-	![r5a21prc.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/r5a21prc.jpg)
+	![r5a21prc.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/r5a21prc.jpg)
  
 1. In the SharePoint admin center click on **settings**.
 
@@ -2383,19 +2383,19 @@ In this task, we will enable Information Rights Management in SharePoint Online.
  
 1. Click the **Refresh IRM Settings** button.
 
-	![1qv8p13n.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/1qv8p13n.jpg)
+	![1qv8p13n.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/1qv8p13n.jpg)
 
 	>NOTE: After the browser refreshes, you can scroll down to the same section and you will see a message stating **We successfully refreshed your setings.**
 	>
-	>![daeglgk9.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/daeglgk9.jpg)
+	>![daeglgk9.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/daeglgk9.jpg)
 1. Scroll down and click **OK**.
 1. Next, navigate to **https://admin.microsoft.com/AdminPortal/Home#/users**.
 1. Click on **Nuck Chorris** and on the profile page, next to Roles, click **Edit**.
 
-	![df6t9nk1.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/df6t9nk1.jpg)
+	![df6t9nk1.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/df6t9nk1.jpg)
 1. On the Edit user roles page, select **Customized administrator**, check the box next to **SharePoint administrator**, and click **Save**.
 
-	![3rj47ym9.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/3rj47ym9.jpg)
+	![3rj47ym9.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/3rj47ym9.jpg)
 1. **Close the Edge InPrivate browser** window to **clear the credentials**.
 
  
@@ -2414,48 +2414,48 @@ In this task, we will create a new SharePoint site and enable Information Rights
 	**NinjaCat123**
 1. Click on **SharePoint** in the list.
 
-	![twsp6mvj.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/twsp6mvj.jpg)
+	![twsp6mvj.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/twsp6mvj.jpg)
 
 1. Dismiss any introductory screens and, at the top of the page, click **+Create site**.
 
-	![7v8wctu2.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/7v8wctu2.jpg)
+	![7v8wctu2.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/7v8wctu2.jpg)
  
 1. On the Create a site page, click **Team site**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/406ah98f.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/406ah98f.jpg)
  
 1. On the next page, type **IRM Demo** for **Site name** and for the **Site description**, type **This is a team site for demonstrating SharePoint IRM capabilities** and set the **Privacy settings** to **Public - anyone in the organization can access the site** and click **Next**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ug4tg8cl.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/ug4tg8cl.jpg)
 
 1. On the Add group members page, click **Finish**.
 1. In the newly created site, on the left navigation bar, click **Documents**.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/yh071obk.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/yh071obk.jpg)
  
 1. In the upper right-hand corner, click the **Settings icon** and click **Library settings**.
 
-	![1qo31rp6.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/1qo31rp6.jpg)
+	![1qo31rp6.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/1qo31rp6.jpg)
  
 1. On the Documents > Settings page, under **Permissions and Management**, click **Information Rights Management**.
 
-	![ie2rmsk2.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/ie2rmsk2.jpg)
+	![ie2rmsk2.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/ie2rmsk2.jpg)
  
 1. On the Settings > Information Rights Management Settings page, check the box next to Restrict permissions on this library on download and under **Create a permission policy title** type **Contoso IRM Policy**, and under **Add a permission policy description** type **This content contained within this file is for use by Contoso Corporation employees only.**
  
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/m9v7v7ln.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/m9v7v7ln.jpg)
 1. Next, click on **SHOW OPTIONS** below the policy description and in the **Set additional IRM library settings** section, check the boxes next to **Do not allow users to upload documents that do not support IRM** and **Prevent opening documents in the browser for this Document Library**.
 
-	![0m2qqtqn.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/0m2qqtqn.jpg)
+	![0m2qqtqn.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/0m2qqtqn.jpg)
 	>[!KNOWLEDGE] These setting prevent the upload of documents that cannot be protected using Information Rights Managment (Azure RMS) and forces protected documents to be opened in the appropriate application rather than rendering in the SharePoint Online Viewer.
  
 1. Next, under the **Configure document access rights** section, check the box next to **Allow viewers to run script and screen reader to function on downloaded documents**.
 
-	![72fkz2ds.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/72fkz2ds.jpg)
+	![72fkz2ds.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/72fkz2ds.jpg)
 	>NOTE: Although this setting may reduce the security of the document, this is typically provided for accessibility purposes.
 1. Finally, in the **Configure document access rights** section, check the box next to  **Users must verify their credentials using this interval (days)** and type **7** in the text box.
 
-	![tt1quq3f.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/tt1quq3f.jpg)
+	![tt1quq3f.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/tt1quq3f.jpg)
 1. At the bottom of the page, click **OK** to complete the configuration of the protected document library.
 1. On the Documents > Settings page, in the left-hand navigation pane, click on **Documents** to return to the document library. section.
  
@@ -2478,32 +2478,32 @@ Create an unprotected Word document, label it as Internal, and upload it to the 
 1. **Save** the document and **close Microsoft Word**.
 1. Return to the IRM Demo protected document library and click on **Upload > Files**.
 
-	![m95ixvv1.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/m95ixvv1.jpg)
+	![m95ixvv1.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/m95ixvv1.jpg)
 1. Navigate to the location where you saved the document, select it and click **Open** to upload the file.
  
 	>NOTE: Note that despite this document being labeled, the Sensitivity is not listed.
  
 1. To resolve this, on the right-hand side of the document library, click on the **+ Add column** header and click on **More...**.
 
-	![y8h1vf7o.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/y8h1vf7o.jpg)
+	![y8h1vf7o.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/y8h1vf7o.jpg)
 1. In the Settings > Create Column page, under **Column name:**, type **Sensitivity**.  Verify that **The type of information in this column is:** is set to **Single line of text**, and click **OK**. 
 
-	![66hzke2b.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/66hzke2b.jpg)
+	![66hzke2b.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/66hzke2b.jpg)
 1. In the document library, click on the **Show actions** button to the right of the uploaded document and click **Delete**.
 
-	![gt7sjulo.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/gt7sjulo.jpg)
+	![gt7sjulo.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/gt7sjulo.jpg)
 	>NOTE: This is only necessary to expedite the appearance of the Sensitivity metadata.  In production, this would be unnecessary.
 1. Re-upload the document and you will see that the Sensitivity column is populated.
 
-	![0yr96t56.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/0yr96t56.jpg)
+	![0yr96t56.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/0yr96t56.jpg)
 1. Next, minimize the browser window and right-click on the desktop. Hover over **New >** and click on **Microsoft Access Database**. Name the database **BadFile**.
 
-	![e3nxt4a2.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/e3nxt4a2.jpg)
+	![e3nxt4a2.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/e3nxt4a2.jpg)
 1. Return to the document library and attempt to upload the file.
 
 	>[!KNOWLEDGE] Notice that you are unable to upload the file because it cannot be protected.
 	>	
-	>![432hu3pi.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/432hu3pi.jpg)
+	>![432hu3pi.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/432hu3pi.jpg)
 ---
 
 # SharePoint IRM Functionality
@@ -2513,20 +2513,20 @@ Files that are uploaded to a SharePoint IRM protected document library are prote
 
 1. Select the uploaded document and click **Share** in the action bar.
 
-	![1u2jsod7.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/1u2jsod7.jpg)
+	![1u2jsod7.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/1u2jsod7.jpg)
 1. In the Send Link dialog, type **Amy** and click on **Amy Alberts** then **Send**.
 
-	![j6w1v4z9.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/j6w1v4z9.jpg)
+	![j6w1v4z9.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/j6w1v4z9.jpg)
 1. Switch to Client02.
 1. Open Outlook and click on the email from CIE Administrator, then click on the **Open** link.
 
-	![Open Screenshot](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/v39ez284.jpg)
+	![Open Screenshot](https://github.com/CxELabs/M365HOL/blob/master/Media/v39ez284.jpg)
 1. This will launch the IRM Demo document library.  Click on the document to open it in Microsoft Word.
 
-	![xmv9dmvk.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/xmv9dmvk.jpg)
+	![xmv9dmvk.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/xmv9dmvk.jpg)
 1. After the document opens, you will be able to observe that it is protected.  Click on the View Permissions button to review the restrictions set on the document.
 
-	![4uya6mro.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/4uya6mro.jpg)
+	![4uya6mro.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/4uya6mro.jpg)
 	>NOTE: These permissions are based on the level of access that they user has to the document library.  In a production environment most users would likely have less rights than shown in this example.
 
 ---
@@ -2554,10 +2554,10 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 
 	>INFO: If you were already signed into your tenant with Global Admin credentials, you will see an image like the one below.  Click **Yes, add it to my account**.
 	>
-	> ![upx8fn9o.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/upx8fn9o.jpg)
+	> ![upx8fn9o.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/upx8fn9o.jpg)
 1. On the Check out page, click **Try now**.
 
-	![wlgzkp40.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/wlgzkp40.jpg)
+	![wlgzkp40.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/wlgzkp40.jpg)
 1. On the Order Receipt page, click **Continue**.
 
 1. Next, navigate to **https://admin.microsoft.com/AdminPortal/Home#/users**.
@@ -2569,10 +2569,10 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 	**Global Admin Password**
 1. Click on MOD Administrator, and in the details page, click **Edit** next to Product licenses.
 
-	![fe5k7wwn.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/fe5k7wwn.jpg)
+	![fe5k7wwn.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/fe5k7wwn.jpg)
 1. Toggle the **WD ATP** license to On and click **Save**.
 
-	![6crecugz.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/6crecugz.jpg)
+	![6crecugz.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/6crecugz.jpg)
 	> NOTE: This license allows up to 100 systems to connect to the WD ATP service.
 ---
 # Windows Defender ATP Onboarding
@@ -2631,7 +2631,7 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 1. Sign out of VictimPC
 1. Switch to AdminPC and click **Start using Windows Defender ATP**.
 1. In the Windows Defender Security Center, click on **Settings > Advanced Features** and toggle the switches on for **Azure ATP integration** and **Microsoft Cloud App Security**.
-	![g47p8c30.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/g47p8c30.jpg)
+	![g47p8c30.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/g47p8c30.jpg)
 
 ---
 # Azure Advanced Threat Protection
@@ -2891,13 +2891,13 @@ There are four steps to accessing Identity Protection data through Microsoft Gra
 
 1.	On the Active Directory page, in the Manage section, click App registrations.
 
-	![h5fd84va.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/h5fd84va.jpg)
+	![h5fd84va.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/h5fd84va.jpg)
 2. 	In the menu on the top, click New application registration.
  
-	![vptami21.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/vptami21.jpg)
+	![vptami21.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/vptami21.jpg)
 3. 	On the Create page, perform the following steps:
  
-	![uh5cjkmi.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/uh5cjkmi.jpg)
+	![uh5cjkmi.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/uh5cjkmi.jpg)
 	1. In the Name textbox, type a name for your application (e.g.: AADIP Risk Event API Application).
 	1. As Type, select Web Application And / Or Web API.
 	1. In the Sign-on URL textbox, type **http://localhost**.
@@ -2911,36 +2911,36 @@ There are four steps to accessing Identity Protection data through Microsoft Gra
 
 1.	On the Settings page, click Required permissions.
  
-	![87aolleh.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/87aolleh.jpg)
+	![87aolleh.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/87aolleh.jpg)
 2. 	On the Required permissions page, in the toolbar on the top, click Add.
   
-	![3yfprrsu.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/3yfprrsu.jpg)
+	![3yfprrsu.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/3yfprrsu.jpg)
 3. 	On the Add API access page, click Select an API.
  
-	![dwvs40oh.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/dwvs40oh.jpg)
+	![dwvs40oh.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/dwvs40oh.jpg)
 4. 	On the Select an API page, select Microsoft Graph, and then click Select.
  
-	![c2wo5n3e.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/c2wo5n3e.jpg)
+	![c2wo5n3e.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/c2wo5n3e.jpg)
 5. 	On the Add API access page, click Select permissions.
  
-	![k275899m.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/k275899m.jpg)
+	![k275899m.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/k275899m.jpg)
 6. 	On the Enable Access page, click Read all identity risk information, and then click Select.
  
-	![wlcqechy.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/wlcqechy.jpg)
+	![wlcqechy.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/wlcqechy.jpg)
 7. 	On the Add API access page, click Done.
 8. 	On the Required Permissions page, click Grant Permissions, and then click Yes.
 
-	![3i07c4dz.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/3i07c4dz.jpg)
+	![3i07c4dz.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/3i07c4dz.jpg)
 ---
 ## Get an access key
 [🔙](#azure-active-directory)
 
 1.	On the Settings page, click Keys.
  
-	![to0mwhls.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/to0mwhls.jpg)
+	![to0mwhls.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/to0mwhls.jpg)
 2. 	On the Keys page, perform the following steps:
  
-	![3xrwo38o.jpg](https://github.com/kemckinnmsft/M365HOL3001/blob/master/Media/3xrwo38o.jpg)
+	![3xrwo38o.jpg](https://github.com/CxELabs/M365HOL/blob/master/Media/3xrwo38o.jpg)
 	1. In the Key description textbox, type a description (for example, AADIP Risk Event).
 	1. As Duration, select In 1 year.
 	1. Click Save.
