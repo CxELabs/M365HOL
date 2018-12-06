@@ -1,0 +1,81 @@
+This section will be for individual instructors to make changes to their sections to help reduce the burden on any one individual.  This will provide a primer for the advanced features that are available via the LOD environment. The instructions are now in Github at https://github.com/CxELabs to make updating simple for various technology owners.
+
+Markdown is a very simple documentation language that allows for consistent rendering of content anywhere it exists.  You can edit MD on almost any platform and even take notes in Github from your phone (I do this often). The LOD environment uses an advanced version of MD called IDLx MD that only renders within their environment.  There is a full primer on all of the features available at https://docs.learnondemandsystems.com/lod/learn-more.md but I will give a rundown on the ones I use in the current lab below.
+
+To type text, use +++ before and after text
+	
+	+++username+++
+	+++password+++
+
+This can be used with Replacement tokens (detailed below) to allow typing of lab variables that are set on demand.
+
+To make text bold you use ** before and after the text
+	
+	**bold text**
+
+For Italics, use *
+	
+	*italic text*
+
+For numbered lists, use 1. for every number, letter and roman numeral and the system will render it correctly.
+
+You put
+1. text
+	1. text
+		1. text
+	1. text
+1. text
+
+And the system will render
+	1. text
+		a. text
+			i. text
+		b. text
+	2. Text
+
+To create checkboxes before the numbers in a list, use the 1. [] syntax.  This may seem backwards, but that is how you add them.
+
+	1. [] text
+
+To create a table, you must have a header column (even if it is empty) and use the syntax below
+
+	|header|header|header|
+	|-----|-----|-----|
+	|value|value|value|
+	|value|value|value|                                
+
+If you don't have headers you can use the syntax below
+
+	||||
+	|-----|-----|-----|
+	|value|value|value|
+	|value|value|value|
+
+Replacement tokens are unique to the LOD environment and are very useful.  A full list of these is at https://docs.learnondemandsystems.com/lod/feature-focus/cloud-resource-templates/replacement-tokens.md but I will detail the ones I use frequently below
+
+@lab.CloudCredential(###).Username (this is the GA username e.g. admin@lods.onmicrosoft.com)
+@lab.CloudCredential(###).Password (this is the password for the GA account)
+@lab.CloudCredential(###).Tenant (this is the tenant name e.g. lods.onmicrosoft.com. Keep in mind that to use this with UPNs you will need a double @ after the username like Alan@@lab.CloudCredential(###).Tenant)
+
+@lab.VirtualMachine(VM Name).SelectLink (creates a clickable link to allow the user to switch to the VM)
+@lab.VirtualMachine(VM Name).Username (adds the VM username as specified in the VM profile)
+@lab.VirtualMachine(VM Name).Password (adds the password for the above account)
+
+@lab.CtrlAltDelete (creates a button that will press Ctrl-Alt-Delete in the active VM)
+
+@lab.User.Email (adds the logged in user's email to the text. This is an easy way to get them to email themselves or add themselves as a guest user).
+
+> [!ALERT] can create a warning section
+	
+
+> [!NOTE] can create a note section
+	
+> [!HINT] can create a hint section (marked with a light bulb)
+	
+
+> [!KNOWLEDGE] can create an extra content section (This section will auto collapse if a large amount of content or images is added.  This is very useful for showing alternate scenarios or steps.)
+	
+
+You can add normal inline images or collapsed images behind an Open Screenshot button. This is defined when you paste them in the portal directly, so please let me know if you want an image always visible or only for when people get stuck.
+
+I believe that is all the fancy tricks I use in the lab.  Let me know if you see anything else I missed.  Feel free to look through the AIP section to see how I have used these items.
