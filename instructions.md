@@ -316,8 +316,6 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 
 	+++@lab.CloudCredential(134).Password+++
 
-	>[!NOTE] If you get a message regarding 
-
 1. [] On Step 1, click **Next**.
 1. [] On Step 2, choose a data storage location and click **Next**.
 1. [] On Step 3, click **Next** several times until the Create your cloud instance dialog pops up, then click **Continue**.
@@ -333,9 +331,8 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 	+++Pa$$w0rd+++
 
 1. [] Press **(Y)** to confirm onboarding.
-1. [] Browse to +++\\\Contosodc\sysvol\Contoso.Azure\scripts+++ and copy the onboarding package there.
 2. [] Return to the browser and click **Start using Windows Defender ATP** (ignore any warnings about onboarding).
-4. [] In the Windows Defender Security Center, click on **Settings > Advanced Features** and toggle the switches on for **Azure ATP integration** and **Microsoft Cloud App Security** and press the **Save preferences** button at the bottom of the page.
+3. [] In the Windows Defender Security Center, click on **Settings > Advanced Features** and toggle the switches on for **Azure ATP integration**, **Office 365 Threat Intelligence Connection**, **Microsoft Cloud App Security**, and **Azure Information Protection** and press the **Save preferences** button at the bottom of the page.
 	
 	!IMAGE[g47p8c30.jpg](\Media\g47p8c30.jpg)
 
@@ -345,11 +342,17 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 
 	+++Password$fun+++
 
-1. [] Browse to +++\\\Contosodc\sysvol\Contoso.Azure\scripts+++
-1. [] Copy **WindowsDefenderATPLocalOnboardingScript** to the desktop.
-1. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
-1. [] Press **(Y)** to confirm onboarding.
-1. [] Run **Attack Simulation #1 "Automated investigation (fileless attack)"** by following the instructions below:
+1. [] Open an Edge InPrivate window and navigate to +++https://securitycenter.windows.com/preferneces2/onboarding+++.
+1. [] Log in using the credentials below:
+
+	+++@lab.CloudCredential(134).Username+++
+
+	+++@lab.CloudCredential(134).Password+++
+1. [] Click **Download package** and **Open** when the download dialog pops up.
+2. [] Copy the **WindowsDefenderATPLocalOnboardingScript** to the desktop.
+3. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
+4. [] Press **(Y)** to confirm onboarding.
+5. [] Run **Attack Simulation #1 "Automated investigation (fileless attack)"** by following the instructions below:
 	1. [] Open a PowerShell window and click on the code below to type it in the window (please wait until you see **($decryptedBytes))** before pressing **Enter**):
 	
 	+++[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;$xor = [System.Text.Encoding]::UTF8.GetBytes('WinATP-Intro-Injection');$base64String = (Invoke-WebRequest -URI https://winatpmanagement.windows.com/client/management/static/WinATP-Intro-Fileless.txt -UseBasicParsing).Content;Try{ $contentBytes = [System.Convert]::FromBase64String($base64String) } Catch { $contentBytes = [System.Convert]::FromBase64String($base64String.Substring(3)) };$i = 0; $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i]; $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))+++
@@ -372,16 +375,18 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 1. [] In the Access Work or School settings menu, click on **+ Connect** and enter the credentials below to workplace join the client.
 
 	+++adams@@lab.CloudCredential(134).TenantName+++
-
+	> [!NOTE] Press **backspace** and **m** after the autotype to enable the Next button
+	
 	+++pass@word1+++
 1. [] Click **Done**.
-1. [] Browse to +++\\\Contosodc.contoso.azure\sysvol+++ and use the credentials below:
+1. [] Open an Edge InPrivate window and navigate to +++https://securitycenter.windows.com/preferneces2/onboarding+++.
+1. [] Log in using the credentials below:
 
-	+++Contoso\LabUser+++
+	+++@lab.CloudCredential(134).Username+++
 
-	+++Pa$$w0rd+++
-
-1. [] Navigate to the **Contoso.Azure\scripts** directory and copy **WindowsDefenderATPLocalOnboardingScript** to the desktop.
+	+++@lab.CloudCredential(134).Password+++
+1. [] Click **Download package** and **Open** when the download dialog pops up.
+2. [] Copy the **WindowsDefenderATPLocalOnboardingScript** to the desktop.
 1. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
 1. [] Press **(Y)** to confirm onboarding.
 1. [] Log into @lab.VirtualMachine(Client02).SelectLink by pressing @lab.CtrlAltDelete and using the credentials below:
@@ -397,16 +402,18 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 1. [] In the Access Work or School settings menu, click on **+ Connect** and enter the credentials below to workplace join the client.
 
 	+++alicea@@lab.CloudCredential(134).TenantName+++
-
+	> [!NOTE] Press **backspace** and **m** after the autotype to enable the Next button
+	
 	+++pass@word1+++
 1. [] Click **Done**.
-1. [] Browse to +++\\\Contosodc.contoso.azure\sysvol+++ and use the credentials below:
+1. [] Open an Edge InPrivate window and navigate to +++https://securitycenter.windows.com/preferneces2/onboarding+++.
+1. [] Log in using the credentials below:
 
-	+++Contoso\LabUser+++
+	+++@lab.CloudCredential(134).Username+++
 
-	+++Pa$$w0rd+++
-
-1. [] Navigate to the **Contoso.Azure\scripts** directory and copy **WindowsDefenderATPLocalOnboardingScript** to the desktop.
+	+++@lab.CloudCredential(134).Password+++
+1. [] Click **Download package** and **Open** when the download dialog pops up.
+2. [] Copy the **WindowsDefenderATPLocalOnboardingScript** to the desktop.
 1. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
 1. [] Press **(Y)** to confirm onboarding.
 1. [] Log into @lab.VirtualMachine(Client03).SelectLink by pressing @lab.CtrlAltDelete and using the credentials below:
@@ -422,16 +429,18 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 1. [] In the Access Work or School settings menu, click on **+ Connect** and enter the credentials below to workplace join the client.
 
 	+++evang@@lab.CloudCredential(134).TenantName+++
-
+	> [!NOTE] Press **backspace** and **m** after the autotype to enable the Next button
+	
 	+++pass@word1+++
 1. [] Click **Done**.
-1. [] Browse to +++\\\Contosodc.contoso.azure\sysvol+++ and use the credentials below:
+1. [] Open an Edge InPrivate window and navigate to +++https://securitycenter.windows.com/preferneces2/onboarding+++.
+1. [] Log in using the credentials below:
 
-	+++Contoso\LabUser+++
+	+++@lab.CloudCredential(134).Username+++
 
-	+++Pa$$w0rd+++
-
-1. [] Navigate to the **Contoso.Azure\scripts** directory and copy **WindowsDefenderATPLocalOnboardingScript** to the desktop.
+	+++@lab.CloudCredential(134).Password+++
+1. [] Click **Download package** and **Open** when the download dialog pops up.
+2. [] Copy the **WindowsDefenderATPLocalOnboardingScript** to the desktop.
 1. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
 1. [] Press **(Y)** to confirm onboarding.
 ===
