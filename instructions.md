@@ -2873,8 +2873,8 @@ Those commands download a script installing the Docker engine on your host compu
 
     |||
     |-----|-----|
-    |Name|**LogCollector**
-    |Host IP address|**192.168.141.125**
+    |Name|```LogCollector```
+    |Host IP address|```192.168.141.125```
     |Data source(s)|**SquidLogs**
 
     ![Create log collector](\Media\dis-createlogcollector.png "Create log collector")
@@ -2908,7 +2908,7 @@ Those commands download a script installing the Docker engine on your host compu
 15. Log in using the credentials below.
     >|Username|Password|
     >|---|---|
-    >|user01|Passw0rd1|
+    >|```user01```|```Passw0rd1```|
     >
     >:warning:The password doesn't appear in the command prompt, you can safely press enter to validate the credentials.
 
@@ -2935,7 +2935,7 @@ Those commands download a script installing the Docker engine on your host compu
 
     |File Protocol|Host name|User name|Password|
     |-----|-----|-----|-----|
-    |FTP|192.168.141.125|discovery|BP98Jw4Ns*zpTFrH|
+    |**FTP**|```192.168.141.125```|```discovery```|```BP98Jw4Ns*zpTFrH```|
 
     ![WinSCP connection](\Media\dis-winscpconnection.png "WinSCP connection")
 
