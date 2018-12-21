@@ -2584,33 +2584,50 @@ Files that are uploaded to a SharePoint IRM protected document library are prote
 Congratulations! You have completed the Azure Information Protection Hands on Lab. 
 
 ===
-# Microsoft 365 Cloud App Security
-[🔙](#introduction)
+# Microsoft Cloud App Security
 
-This lab will guide you through some of the Microsoft Cloud App Security
-(MCAS) capabilities.
+This lab will guide you through the different Microsoft Cloud App Security (MCAS) capabilities.
+Although some labs are pretty straight forward ,we expect you to already have some basic experience with Cloud App Security or Office 365 management.
 
-We expect you to already have experience with MCAS deployment and
-configuration. In the different sections, you will be asked to fulfill
-some tasks for which you will receive the requirements but not a step by
-step guide to accomplish this task. A lab answer key document can be
-provided to those needing it.
+## Lab environment
 
-Most treat detections capabilities rely on auditing being enabled in your environment.By default, auditing is not enabled in Office 365 and must be turned on using the **Security & Compliance** admin console. In addition, some applications like Exchange Online require extra configuration, like enabling auditing per mailbox ([https://docs.microsoft.com/en-us/office365/securitycompliance/enable-mailbox-auditing?redirectSourcePath=%252fen-us%252farticle%252fenable-mailbox-auditing-in-office-365-aaca8987-5b62-458b-9882-c28476a66918](https://docs.microsoft.com/en-us/office365/securitycompliance/enable-mailbox-auditing?redirectSourcePath=%252fen-us%252farticle%252fenable-mailbox-auditing-in-office-365-aaca8987-5b62-458b-9882-c28476a66918)).
+![Lab environment](media/mcaslabenvironment.png "Lab environment")
 
-As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts.
+* **Client01** is a Windows 10 VM that will be used to access Office 365 and Cloud app Security management consoles and configure the log collector running on LinuxVM, using Putty.
+* **LinuxVM** is an Ubuntu 18.04 computer on which we install Docker to run the Cloud App Security Discovery log collector.
+* Office 365 and Cloud App Security are test tenants for the labs.
 
-^IMAGE[Security & Compliance Center](\Media\urzgmx9v.jpg)
+>:memo: We recommend using the [Cloud App Security documentation](https://docs.microsoft.com/en-us/cloud-app-security/what-is-cloud-app-security "Cloud App Security documentation") to have details on the different use cases, capabilities and configuration steps.
 
-^IMAGE[Enable Auditing](\Media\uku8txme.jpg)
+### Portals URLs
 
-The main sections covered in this Lab are:
+* Office 365: https://portal.office.com
+* Cloud App Security: https://portal.cloudappsecurity.com
+* Security & Compliance Center: https://protection.office.com
+* Windows Defender ATP: https://securitycenter.windows.com
 
-- [Cloud Discovery](#cloud-discovery)
-- [Threat Detection](#threat-detection)
-- [Conditional Access App Control](#conditional-access-app-control)
-- [Management](#management)
-- [Information Protection](#information-protection)
+---
+
+## Labs
+
+>:warning::warning::warning: Before going to the different labs section, please complete the **[environment preparation](module00/mcas_lab_preparation.md)**. :warning::warning::warning:
+
+The different Cloud App Security capabilities covered in the labs are:
+
+* [Module 01 - Management](module01/module01.md)
+* [Module 02 - Cloud Discovery continuous report](module02/module02.md)
+* [Module 03 - Information protection](module03/module03.md)
+* [Module 04 - Threat detection](module04/module04.md)
+
+### Optional/follow on labs
+
+* [Module 05a - Management with PowerShell](module05/module05a.md)
+* [Module 05b - Cloud Discovery snapshot report](module05/module05b.md)
+* [Module 05c - Log collector troubleshooting](module05/module05c.md)
+* [Module 05d - Conditional Access App Control](module05/module05d.md)
+
+>:question: If you have questions or want to go further in your Cloud App Security journey, join our **[Tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity)** !
+
 
 ===
 # Cloud Discovery
