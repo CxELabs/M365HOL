@@ -72,7 +72,7 @@ There are a few prerequisites that need to be set up to complete all the section
 
 - [Redeem Azure Pass](#redeem-azure-pass)
 
-- [Azure AD User Creation](#Azure-ad-user-creation)
+- [Azure AD User Configuration](#Azure-ad-user-configuration)
 
 - [Azure Security Center Setup](#azure-security-center-setup)
   
@@ -176,9 +176,9 @@ For several of the exercises in this lab series, you will require an active subs
 
 1. [] When you are redirected to the Azure Portal, the process is complete.
 ===
-# Azure AD User Creation
+# Azure AD User Configuration
 
-In this task, we will create new Azure AD users and assign licenses via PowerShell.  Ina procduction evironment this would be done using Azure AD Connect or a similar tool to maintain a single source of authority, but for lab purposes we are doing it via script to reduce setup time.
+In this task, we will create new Azure AD users and assign licenses via PowerShell.  In a procduction evironment this would be done using Azure AD Connect or a similar tool to maintain a single source of authority, but for lab purposes we are doing it via script to reduce setup time.
 
 
 ```
