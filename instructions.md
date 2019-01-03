@@ -531,7 +531,7 @@ To prepare the **Information Protection** lab, we have to enable the integration
     ![Enable AIP](\Media\conf-aip.png "Enable AIP")
 
 >:memo: It takes up to **1h** for Cloud App Security to sync the Azure Information classifications.
- 
+
 ===
 # Complete Azure Security Center Deployment
 
@@ -2699,16 +2699,17 @@ Although some labs are pretty straight forward ,we expect you to already have so
 The different Cloud App Security capabilities covered in the labs are:
 
 * [Module 01 - Management](#Manage-admin-access)
-* [Module 02 - Cloud Discovery continuous report](module02/module02.md)
-* [Module 03 - Information protection](module03/module03.md)
-* [Module 04 - Threat detection](module04/module04.md)
+* [Module 02 - Cloud Discovery continuous report](#Cloud-App-Security-Discovery-lab)
+* [Module 03 - Information protection](#Information-protection)
+* [Module 04 - Threat detection](#Cloud-App-Security-threat-detection-lab)
+* [Module 05 - Conditional Access App Control with Office 365](#Conditional-Access-App-Control-with-Office-365)
 
 ### Optional/follow on labs
 
-* [Module 05a - Management with PowerShell](module05/module05a.md)
-* [Module 05b - Cloud Discovery snapshot report](module05/module05b.md)
-* [Module 05c - Log collector troubleshooting](module05/module05c.md)
-* [Module 05d - Conditional Access App Control](module05/module05d.md)
+* [Module 06a - Management with PowerShell](#Management-with-PowerShell)
+* [Module 06b - Cloud Discovery snapshot report](#Cloud-Discovery-snapshot-report)
+* [Module 06c - Log collector troubleshooting](#Log-collector-troubleshooting)
+* [Module 06d - Conditional Access App Control with 3rd party apps](#Conditional-Access-App-Control-with-3rd-party-apps)
 
 >:question: If you have questions or want to go further in your Cloud App Security journey, join our **[Tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity)** !
 ===
@@ -3573,15 +3574,37 @@ Cloud App Security provides by default many [policies templates](https://docs.mi
  **To go further in your Cloud App Security journey, join our [tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity) !**
 
 ===
-# Management
 
-[:arrow_left: Home](#labs)
+# Conditional Access App Control with Office 365
 
-[Cloud App Security PowerShell module:](#Cloud-App-Security-PowerShell-module) :clock10: 20 min
+[:arrow_left: Home](#labs) :clock10: 15 min
 
-## Cloud App Security PowerShell module
+## Introduction
 
-[:arrow_up: Top](#Management)
+Conditional Access App Control utilizes a reverse proxy architecture and is uniquely integrated with Azure AD conditional access. Azure AD conditional access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define who (for example a user, or group of users) and what (which cloud apps) and where (which locations and networks) a conditional access policy is applied to. After you’ve determined the conditions, you can route users to the Microsoft Cloud App Security where you can protect data with Conditional Access App Control by applying access and session controls.
+
+Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are utilized within the Cloud App Security portal to further refine filters and set actions to be taken on a user.
+
+With the access and session policies, you can:
+
+* **Block on download**: You can block the download of sensitive documents. For example, on unmanaged devices.
+* **Protect on download**: Instead of blocking the download of sensitive documents, you can require documents to be protected via encryption on download. This ensures that the document is protected, and user access is authenticated, if the data is downloaded to an untrusted device.
+* **Monitor low-trust user sessions**: Risky users are monitored when they sign into apps and their actions are logged from within the session. You can investigate and analyze user behavior to understand where, and under what conditions, session policies should be applied in the future.
+* **Block access**: You can completely block access to specific apps for users coming from unmanaged devices or from non-corporate networks.
+* **Create read-only mode**: By monitoring and blocking custom in-app activities you can create a read-only mode to specific apps for specific users.
+* **Restrict user sessions from non-corporate networks**: Users accessing a protected app from a location that is not part of your corporate network, are allowed restricted access and the download of sensitive materials is blocked or protected.
+
+>:memo: In this lab, we will cover only some scenarios.
+
+---
+
+## To DO
+
+===
+
+# Management with PowerShell
+
+[:arrow_left: Home](#labs) :clock10: 20 min
 
 To help administrators interact with MCAS in a programmatic way, two
 Microsoft employees created a non-official PowerShell module for Cloud
@@ -3624,20 +3647,12 @@ Using PowerShell:
 
 5.   You are asked to define corporate IP's in MCAS. Subnets go from
     10.50.50.0/24 to 10.50.80.0/24
+
 ===
-# Cloud App Security Discovery lab
 
-[:arrow_left: Home](#labs)
+# Cloud Discovery snapshot report
 
-## Labs
-
-* [Create and review a snapshot reports:](#Configure-and-test-continuous-reports) :clock10: 10 min
-
----
-
-## Create and review a snapshot reports
-
-[:arrow_up: Top](#Cloud-App-Security-Discovery-lab)
+[:arrow_left: Home](#labs) :clock10: 10 min
 
 Snapshot Reports are the manual method of uploading files into Cloud App Security. You can upload batches of 20 logs of 1 GB max at a time and they will parse into their own separate report. Any discovery policies you create **will not** apply to these types of reports. Creating Snapshot reports is a great and easy way to validate your logs format of have a quick look at the Cloud App Security Discovery capability.
 
@@ -3684,24 +3699,15 @@ To create snapshot reports:
 
     ![Report dashboard -risk](\Media\dis-risk.png "Report dashboard - risk")
 ===
-# Cloud App Security Discovery lab
 
-[:arrow_left: Home](#labs)
+# Log collector troubleshooting
 
-## Labs
-
-* [How to troubleshoot the Docker log collector:](#How-to-troubleshoot-the-Docker-log-collector) :clock10: 15 min
-
----
-
-## How to troubleshoot the Docker log collector
-
-[:arrow_up: Top](#Cloud-App-Security-Discovery-lab)
+[:arrow_left: Home](#labs) :clock10: 15 min
 
 In this task, you will review possible troubleshooting steps to identify issues in automatic logs upload from the log collector.
 There are several things to test at different locations: in the log collector, in MCAS, at the network level.
 
-### Useful commands
+## Useful commands
 
 * `cd` : *Used to navigate in the directories*
     >**Examples:**
@@ -3725,7 +3731,7 @@ There are several things to test at different locations: in the log collector, i
 
 * `tab key` : Used to perform autocompletion
 
-### Verify the log collector (container) status
+## Verify the log collector (container) status
 
 1. On **Client01**, open a session on PuTTY to **192.168.141.125** and use the credentials below.
     In the PuTTY Configuration window, enter **192.168.141.125** and click **Open**.
@@ -3801,17 +3807,19 @@ There are several things to test at different locations: in the log collector, i
 
     ![Bootstrapping log](\Media\dis-bootstrapping.png "bootstrapping log")
 
-### Verify the connectivity between the log collector and Cloud App Security
+## Verify the connectivity between the log collector and Cloud App Security
 
 An easy way to test the connectivity after configuring the log collector is to download a sample of your appliance logs from and use WinSCP to connect to the log collector to upload it and see if it gets uploaded to Cloud App Security, as you did in the previous exercise
 
 ![Pending log](\Media\dis-pending.png "Log pending")
 
 >:memo: **NOTE:**  If the log stays in the source folder for too long, then you know you probably have a connection issue between the log collector and Cloud App Security and should go investigate the logs reviewed previously.
-===
-# Conditional Access App Control
 
-[:arrow_left: Home](#labs)
+===
+
+# Conditional Access App Control with 3rd party apps
+
+[:arrow_left: Home](#labs) :clock10: 45 min
 
 ## Introduction
 
