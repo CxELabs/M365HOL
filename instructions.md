@@ -3581,7 +3581,8 @@ Cloud App Security provides by default many [policies templates](https://docs.mi
 
 ## Introduction
 
-Conditional Access App Control utilizes a reverse proxy architecture and is uniquely integrated with Azure AD conditional access. Azure AD conditional access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define who (for example a user, or group of users) and what (which cloud apps) and where (which locations and networks) a conditional access policy is applied to. After you’ve determined the conditions, you can route users to the Microsoft Cloud App Security where you can protect data with Conditional Access App Control by applying access and session controls.
+Conditional Access App Control utilizes a reverse proxy architecture and is uniquely integrated with Azure AD conditional access.
+Azure AD conditional access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define who (for example a user, or group of users) and what (which cloud apps) and where (which locations and networks) a conditional access policy is applied to. After you’ve determined the conditions, you can route users to the Microsoft Cloud App Security where you can protect data with Conditional Access App Control by applying access and session controls.
 
 Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are utilized within the Cloud App Security portal to further refine filters and set actions to be taken on a user.
 
@@ -3598,7 +3599,92 @@ With the access and session policies, you can:
 
 ---
 
-## To DO
+## Configuration
+
+1. Go to the [Azure portal](https://portal.azure.com) and open the **Azure Active Directory** blade.
+
+   ![AAD portal](\Media\aad-1.png "AAD portal")
+
+2. Go to the **Conditional Access** section.
+
+   ![AAD portal](\Media\aad-2.png "AAD portal")
+
+3. Create a new conditional access policy with the following settings:
+
+   |Name|Assignments|Apps|
+   |-|-|-|
+   |Office365 AppControl|All users|Exchange, SharePoint|
+
+   ![New policy](\Media\cond-policy-1.png "New policy")
+
+   ![New policy](\Media\cond-policy-2.png "New policy")
+
+   ![New policy](\Media\cond-policy-3.png "New policy")
+
+   ![New policy](\Media\cond-policy-4.png "New policy")
+
+   >:warning: Do not forget to enable the policy !
+
+   ![New policy](\Media\cond-policy-5.png "New policy")
+
+4. Sign out, close you browser and open the [Exchange Web App](https://outlook.office.com).
+   >:memo: We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
+
+5. Go back to [Cloud App Security](https://portal.cloudappsecurity.com), click on the gear icon and go to the **Conditional Access App Control** section.
+   You will see that Exchange Online appeared and can now be configured.
+
+   ![Menu](\Media\appc-office-1.png "Menu")
+
+   ![Menu](\Media\appc-office-2.png "Menu")
+
+6. Click on **Continue setup** to enable session control and click on **Add**.
+
+   ![Setup](\Media\appc-office-3.png "Setup")
+
+   ![Setup](\Media\appc-office-4.png "Setup")
+
+   ![Setup](\Media\appc-office-5.png "Setup")
+
+7. Go to the **Policies** menu.
+
+   ![Policies](\Media\appc-office-6.png "Policies")
+
+8. Create a new session policy with the following settings:
+
+   ![Session policy](\Media\appc-office-7.png "Session policy")
+
+   ![Session policy](\Media\appc-office-8.png "Session policy")
+
+   ![Session policy](\Media\appc-office-9.png "Session policy")
+
+   ![Session policy](\Media\appc-office-10.png "Session policy")
+
+   ![Session policy](\Media\appc-office-11.png "Session policy")
+
+---
+
+## Testing the policy
+
+Let's now test our configuration.
+
+1. Sign out, close you browser and open the [Exchange Web App](https://outlook.office.com).
+   You should receive the followin message, as you are redirected through Cloud App Security before accessing the application. **Click** to continue to Exchange Online.
+
+   ![Warning](\Media\appc-office-12.png "Warning")
+
+2. You are now in Exchange Online but if you look at **the Url** you can verify that your session is actually being redirected to Cloud App Security:
+
+   ![Session](\Media\appc-office-13.png "Session")
+
+3. To test our policy, create a new mail containing the demo documents stored on **Client01** desktop as attachements and send it to your account.
+
+   ![Test](\Media\appc-office-14.png "Test")
+
+4. Try to download the txt file containing social security numbers.
+
+   ![Test](\Media\appc-office-15.png "Test")
+
+****to finish******
 
 ===
 
