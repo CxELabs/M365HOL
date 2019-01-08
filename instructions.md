@@ -98,17 +98,13 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 
 	!IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
 
-1. [] Click **Yes, add it to my account**.
+1. [] Click **Sign in** in the upper right corner of the page and use the credentials below.
+   
+    ```@lab.CloudCredential(134).Username```
 
-	!IMAGE[upx8fn9o.jpg](\Media\upx8fn9o.jpg)
-
-	> [!KNOWLEDGE] If you were not already signed into your tenant with Global Admin credentials, use the credentials below
-	>
-	>```@lab.CloudCredential(134).Username```
-	>
-	>```@lab.CloudCredential(134).Password```  
+	```@lab.CloudCredential(134).Password```  
 	
-1. [] On the Check out page, click **Try now**.
+2. [] On the Check out page, click **Try now**.
 
 	!IMAGE[wlgzkp40.jpg](\Media\wlgzkp40.jpg)
 1. [] On the Order Receipt page, click **Continue**.
