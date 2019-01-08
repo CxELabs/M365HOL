@@ -495,13 +495,15 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
 2. [] Enter the following commands to connect to Exchange Online using PowerShell. When prompted for credentials, enter your Office 365 administrative credentials.
     
-	``` 
+	```
+
 	$UserCredential = Get-Credential
 
     $Session = New-PSSession –ConfigurationName Microsoft.Exchange –ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential –Authentication Basic -AllowRedirection
 
     Import-PSSession $Session
-    ```
+    
+	```
 
     !IMAGE[Exchange PowerShell](\Media\conf-psonline.png "Exchange PowerShell")
 
