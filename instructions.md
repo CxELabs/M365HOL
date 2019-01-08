@@ -139,9 +139,9 @@ For several of the exercises in this lab series, you will require an active subs
 	!IMAGE[wdir7lb3.jpg](\Media\wdir7lb3.jpg)
 1. [] Enter the credentials below and select **Sign In**.
 
-	```@lab.CloudCredential(17).Username```
+	```@lab.CloudCredential(134).Username```
 
-	```@lab.CloudCredential(17).Password``` 
+	```@lab.CloudCredential(134).Password``` 
 
 	!IMAGE[gtg8pvp1.jpg](\Media\gtg8pvp1.jpg)
 1. [] Click **Confirm** if the correct email address is listed.
@@ -170,53 +170,78 @@ For several of the exercises in this lab series, you will require an active subs
 
 In this task, we will create new Azure AD users and assign licenses via PowerShell.  In a procduction evironment this would be done using Azure AD Connect or a similar tool to maintain a single source of authority, but for lab purposes we are doing it via script to reduce setup time.
 
+1. [] Log into @lab.VirtualMachine(Scanner01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++
+2. [] Open a new Administrative PowerShell window and click below to type the code. 
+    
+    ```
+    $cred = Get-Credential
+    ```
 
-```
-# Store Tenant FQDN and Short name
-$tenantfqdn = "@lab.CloudCredential(134).TenantName"
-$tenant = $tenantfqdn.Split('.')[0]
+1. [] When prompted, provide the credentials below:
 
-# Build Licensing SKUs
-$office = $tenant+":ENTERPRISEPREMIUM"
-$ems = $tenant+":EMSPREMIUM"
-$wdatp = $tenant+":WIN_DEF_ATP"
+	```@lab.CloudCredential(134).Username```
 
-# Get Global Admin Credentials
-$cred = Get-Credential
+	```@lab.CloudCredential(134).Password``` 
+    
+1. [] In the PowerShell window, click on the code below to create users.
 
-# Connect to MSOLService for licensing Operations
-Connect-MSOLService -Credential $cred
+    ```
+    # Store Tenant FQDN and Short name
+    $tenantfqdn = "@lab.CloudCredential(134).TenantName"
+    $tenant = $tenantfqdn.Split('.')[0]
 
-# Remove existing licenses to ensure enough licenses exist for our users
-$LicensedUsers = Get-MsolUser -All  | where {$_.isLicensed -eq $true}
-$LicensedUsers | foreach {Set-MsolUserLicense -UserPrincipalName $_.UserPrincipalName -RemoveLicenses $office, $ems}
+    # Build Licensing SKUs
+    $office = $tenant+":ENTERPRISEPREMIUM"
+    $ems = $tenant+":EMSPREMIUM"
 
-# Connect to Azure AD using stored credentials to create users
-Connect-AzureAD -Credential $cred
+    # Connect to MSOLService for licensing Operations
+    Connect-MSOLService -Credential $cred
 
-# Import Users from local csv file
-$users = Import-csv C:\users.csv
-foreach ($user in $users){
-# Create password profile preventing automatic password change and storing password from csv
-$PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile 
-$PasswordProfile.ForceChangePasswordNextLogin = $false 
-$PasswordProfile.Password = $user.password
+    # Remove existing licenses to ensure enough licenses exist for our users
+    $LicensedUsers = Get-MsolUser -All  | where {$_.isLicensed -eq $true}
+    $LicensedUsers | foreach {Set-MsolUserLicense -UserPrincipalName $_.UserPrincipalName -RemoveLicenses $office, $ems}
 
-# Store UPN created from csv and tenant
-$upn = $user.username+"@"+$tenantfqdn
+    # Connect to Azure AD using stored credentials to create users
+    Connect-AzureAD -Credential $cred
 
-# Create new Azure AD user
-New-AzureADUser -AccountEnabled $True -DisplayName $user.displayname -PasswordProfile $PasswordProfile -MailNickName $user.username -UserPrincipalName $upn
+    # Import Users from local csv file
+    $users = Import-csv C:\users.csv
 
-# Assign Office and EMS licenses to users
-Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
-}
+    foreach ($user in $users){
+    	
+    # Store UPN created from csv and tenant
+    $upn = $user.username+"@"+$tenantfqdn
 
-# Assign Office, EMS, and WDATP licenses to Admin user
-$upn = "admin@"+$tenantfqdn
-Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems, wdatp
-```
+    # Create password profile preventing automatic password change and storing password from csv
+    $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile 
+    $PasswordProfile.ForceChangePasswordNextLogin = $false 
+    $PasswordProfile.Password = $user.password
 
+    # Create new Azure AD user
+    New-AzureADUser -AccountEnabled $True -DisplayName $user.displayname -PasswordProfile $PasswordProfile -MailNickName $user.username -UserPrincipalName $upn
+    }
+
+    ```
+
+1. [] In the PowerShell window, click the code below to assign Office and EMS licenses.
+	
+	```
+	foreach ($user in $users){
+
+    # Store UPN created from csv and tenant
+    $upn = $user.username+"@"+$tenantfqdn
+
+    # Assign Office and EMS licenses to users
+    Set-MsolUser -UserPrincipalName $upn -UsageLocation US
+    Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
+    }
+
+    # Assign Office and EMS licenses to Admin user
+    $upn = "admin@"+$tenantfqdn
+    Set-MsolUser -UserPrincipalName $upn -UsageLocation US
+    Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
+
+	```
 
 ===
 # Azure Security Center Setup
