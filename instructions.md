@@ -91,7 +91,13 @@ There are a few prerequisites that need to be set up to complete all the section
 
 In this task, we will link Windows Defender ATP licenses to your demo tenant.
 
-1. [] In a new tab, use the provided Windows Defender Advanced Threat Protection Trial Sign up link.
+1. [] Log into @lab.VirtualMachine(Client01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++
+2. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
+
+3. [] In the InPrivate window, navigate to the provided Windows Defender Advanced Threat Protection Trial Sign up link usi the Type Text functionality of the lab environment.
+
+	!IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
+	!IMAGE[e1l35ko2.jpg](\Media\e1l35ko2.jpg).
 
 1. [] Click **Yes, add it to my account**.
 
