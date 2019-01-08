@@ -627,6 +627,7 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 |Username|```aatpservice```| 
 |Password|```Password123!@#```| 
 |Domain|```contoso.azure```| 
+
 ---
 ## Deploy the Azure ATP Sensor  
  
