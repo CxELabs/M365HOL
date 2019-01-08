@@ -127,42 +127,32 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 
 For several of the exercises in this lab series, you will require an active subscription.  We are providing an Azure Pass for this purpose.  You will be provided with an Azure Pass code to use with the instructions below.
 
-### Creating an Azure Pass subscription is a two step process
+## Redeeming a Microsoft Azure Pass Promo Code:
 
-- Redeem your Azure Pass Promo Code
-- Activate your subscription
+1. [] Log into @lab.VirtualMachine(Client01).SelectLink using the password +++Pa$$w0rd+++
+2. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
 
-##Step 1: Redeeming a Microsoft Azure Pass Promo Code:
+3. [] In the InPrivate window, navigate to ```https://www.microsoftazurepass.com```
 
-1. [] Log into @lab.VirtualMachine(Client01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
-
-1. [] In the InPrivate window, navigate to ```https://www.microsoftazurepass.com```
-
-1. [] Click the **Start** button to get started.
+4. [] Click the **Start** button to get started.
 
 	!IMAGE[wdir7lb3.jpg](\Media\wdir7lb3.jpg)
 1. [] Enter the credentials below and select **Sign In**.
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(17).Username```
 
-	```@lab.CloudCredential(134).Password``` 
+	```@lab.CloudCredential(17).Password``` 
 
 	!IMAGE[gtg8pvp1.jpg](\Media\gtg8pvp1.jpg)
 1. [] Click **Confirm** if the correct email address is listed.
 
 	!IMAGE[teyx280d.jpg](\Media\teyx280d.jpg)
+
 1. [] Enter your promo code in the Promo code box using the Type Text functionality of the lab environment and click **Claim Promo Code**.
 
 	!IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
 	!IMAGE[e1l35ko2.jpg](\Media\e1l35ko2.jpg)
 	> [!NOTE] It may take up to 5 minutes to process the redemption.
-
-1. [] Click on **Activate** to start setting up your Azure subscription.
-
-	!IMAGE[hsa6yyy7.jpg](\Media\hsa6yyy7.jpg)
-
-## Step 2: Activate your subscription:
 
 1. [] Scroll to the bottom of the page and click **Next**.
 
