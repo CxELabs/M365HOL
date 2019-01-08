@@ -476,7 +476,7 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 	>
 	>```@lab.CloudCredential(134).Password```
 
-4. [] In the **Security & Compliance Center**, Expand **Search $ investigation** and click on **Audit log search**.
+4. [] In the **Security & Compliance Center**, Expand **Search & investigation** and click on **Audit log search**.
     
 	^IMAGE[Audit log](\Media\conf-auditlog.png "Audit log")
 
@@ -526,7 +526,7 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
 To connect Cloud App Security to Office 365, you will have to use the Office 365 app connector. App connectors use the APIs of app providers to enable greater visibility and control by Microsoft Cloud App Security over the apps you connect to.
 
-1. [] On Client01, open a new tab and go to the [Cloud App Security portal](https://portal.cloudappsecurity.com "Cloud App Security portal")
+1. [] Open a new InPrivate tab and navigate to ```https://portal.cloudappsecurity.com```
 
 2. [] Go to the gear icon and select **App connectors**.
 
