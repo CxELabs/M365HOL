@@ -455,9 +455,9 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 To be able to complete the different parts of the Cloud App Security labs, the following configuration steps are required.
 
-* [Enabling Office 365 auditing](#Enabling-office-365-auditing)
-* [Connect Office 365 to Cloud App Security](#Connect-office-365-to-cloud-app-security)
-* [Enabling Azure Information Protection integration](#Enabling-azure-information-protection-integration)
+* [Enabling Office 365 auditing](#enabling-office-365-auditing)
+* [Connect Office 365 to Cloud App Security](#connect-office-365-to-cloud-app-security)
+* [Enabling Azure Information Protection integration](#enabling-azure-information-protection-integration)
 
 ---
 
@@ -467,16 +467,24 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 
 Most Cloud App Security treat detections capabilities rely on auditing being enabled in your environment. By default, auditing is not enabled in Office 365 and must then be turned on using the **Security & Compliance** admin console or PowerShell.
 
-1. On Client01, go to the [Office 365 admin portal](https://admin.office.com "Office 365 admin portal")
+1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+1. Open a new InPrivate tab and navigate to ```https://admin.office.com```.	
+	
+	> [!KNOWLEDGE] If needed, log in using the credentials below:
+	>
+	>```@lab.CloudCredential(134).Username```
+	>
+	>```@lab.CloudCredential(134).Password```
+
     ![Admin portal](\Media\conf-adminportal.png "Admin portal")
 
-2. Go down on this page and open the **Security & Compliance Center**
+3. Go down on this page and open the **Security & Compliance Center**
     ![Admin portals](\Media\conf-scc.png "Admin portals")
 
-3. In the **Security & Compliance Center**, go to the **Audit log search** menu.
+4. In the **Security & Compliance Center**, go to the **Audit log search** menu.
     [Audit log](\Media\conf-auditlog.png "Audit log")
 
-4. You can see here that auditing is not enabled. Click on the **Turn on auditing** button to enable it and click **yes** at the prompt.
+5. You can see here that auditing is not enabled. Click on the **Turn on auditing** button to enable it and click **yes** at the prompt.
     [Turn on auditing](\Media\conf-auditlog.png "Turn on on auditing")
     [Auditing enabled](\Media\conf-auditenabled.png "Auditing enabled")
 
