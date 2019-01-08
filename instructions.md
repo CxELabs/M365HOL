@@ -651,13 +651,13 @@ There are 2 options for this Lab.  These options contain similar content except 
 
 - The **New to AIP** option will walk through the label and policy creation including scoped policies and demonstrating recommended and automatic labeling in Office applications. This option takes significantly longer and so there is a chance that all sections may not be completed.
 
-- The **Experienced with AIP** option assumes that you are familiar with label and policy creation and that you have seen the operation of conditions in Office applications as these will not be demonstrated.  This option will use the predefined labels and global policy populated in the demo tenants.
+- The **Familiar with AIP** option assumes that you are familiar with label and policy creation and that you have seen the operation of conditions in Office applications as these will not be demonstrated.  This option will use the predefined labels and global policy populated in the demo tenants.
 
 Click on one of the options below to begin.
 
 ## [New to AIP](#exercise-1-configuring-aip-scanner-for-discovery)
 
-## [Experienced with AIP](#exercise-1a-configuring-aip-scanner-for-discovery)
+## [Familiar with AIP](#exercise-1a-configuring-aip-scanner-for-discovery)
 
 After completing this lab, you will be able to:
 
@@ -668,7 +668,6 @@ After completing this lab, you will be able to:
 - [Classify and protect content with Azure Information Protection in Office applications](#exercise-4-testing-aip-policies)
 - [Classify and protect sensitive data discovered by the AIP Scanner](#configuring-automatic-conditions)
 - [Configure Exchange Online Mail Flow Rules for AIP](#configuring-exchange-online-mail-flow-rules)
-- [Configure SharePoint IRM Libraries (Optional)](#exercise-7-sharepoint-irm-configuration)
 
 ===
 
@@ -722,7 +721,7 @@ In order to collect log data from Azure Information Protection clients and servi
 	|Location|**East US**|
 
 	^IMAGE[Open Screenshot](\Media\5butui15.jpg)
-1. [] Next, back in the Configure analytics (preview) blade, **check the box** next to the workspace and click **OK**.
+1. [] Next, back in the Configure analytics (preview) blade, **check the boxes** next to the workspace and to **Enable Content Matches** and click **OK**.
 
 	!IMAGE[gste52sy.jpg](\Media\gste52sy.jpg)
 1. [] Click **Yes**, in the confirmation dialog.
@@ -737,15 +736,20 @@ In this task we will install the AIP scanner binaries and create the Azure AD Ap
 
 The first step in configuring the AIP Scanner is to install the service and connect the database.  This is done with the Install-AIPScanner cmdlet that is provided by the AIP Client software.  The AIPScanner service account has been pre-staged in Active Directory for convenience.
 
-1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and use the password +++@lab.VirtualMachine(Client01).Password+++.
 
 1. [] Right-click on the **PowerShell** icon in the taskbar and click on **Run as Administrator**.
 
 	!IMAGE[7to6p334.jpg](\Media\7to6p334.jpg)
 
-1. [] At the PowerShell prompt, type ```$SQL = "Scanner01"``` and press **Enter**.
-1. [] Next, type ```Install-AIPScanner -SQLServerInstance $SQL``` and press **Enter**.
-1. [] When prompted, provide the credentials for the AIP scanner service account.
+1. [] At the PowerShell prompt, click to type the code below 
+   
+   ```
+   $SQL = "Scanner01"
+   Install-AIPScanner -SQLServerInstance $SQL
+   
+   ```
+3. [] When prompted, provide the credentials for the AIP scanner service account.
 	
 	```Contoso\AIPScanner```
 
@@ -767,11 +771,9 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 	```@lab.CloudCredential(134).Username```
 	
 	```@lab.CloudCredential(134).Password```
-1. [] Next, click the **T** to **type the commands below** in the PowerShell window. 
+1. [] Next, click the **T** to **type the commands below** in the PowerShell window and press **Enter**. 
 
-	> [!ALERT] Press Enter only after you see **-CustomKeyIdentifier "AIPClient"**.
-
-	> [!NOTE] This will create a new Web App Registration and Service Principal in Azure AD.
+	> [!NOTE] This will create a new Web App Registration, Native App Registration, and associated Service Principals in Azure AD.
 
    ```
    New-AzureADApplication -DisplayName AIPOnBehalfOf -ReplyUrls http://localhost
@@ -780,36 +782,26 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
    $WebAppKey = New-Guid
    $Date = Get-Date
    New-AzureADApplicationPasswordCredential -ObjectId $WebApp.ObjectID -startDate $Date -endDate $Date.AddYears(1) -Value $WebAppKey.Guid -CustomKeyIdentifier "AIPClient"
-	```
-
-1. [] Next, we must build the permissions object for the Native App Registration.  This is done using the commands below.
-   
-	> [!ALERT] Press Enter only after you see **$Access.ResourceAccess = $Scope**.
-
-   ```
+	
    $AIPServicePrincipal = Get-AzureADServicePrincipal -All $true | ? {$_.DisplayName -eq 'AIPOnBehalfOf'}
    $AIPPermissions = $AIPServicePrincipal | select -expand Oauth2Permissions
    $Scope = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $AIPPermissions.Id,"Scope"
    $Access = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
    $Access.ResourceAppId = $WebApp.AppId
    $Access.ResourceAccess = $Scope
-	```
-1. [] Next, we will use the object created above to create the Native App Registration.
-   
-	> [!ALERT] Press Enter only after you see **-AppId $NativeApp.AppId**.
 
-   ```
+
    New-AzureADApplication -DisplayName AIPClient -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
    $NativeApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPClient'"
    New-AzureADServicePrincipal -AppId $NativeApp.AppId
-	```
+   ```
    
 1. [] Finally, we will output the Set-AIPAuthentication command by running the commands below and pressing **Enter**.
    
-	> [!ALERT] Press Enter only after you see **Start ~\Desktop\Set-AIPAuthentication.txt**.
-   
+	 
    ```
    "Set-AIPAuthentication -WebAppID " + $WebApp.AppId + " -WebAppKey " + $WebAppKey.Guid + " -NativeAppID " + $NativeApp.AppId | Out-File ~\Desktop\Set-AIPAuthentication.txt
+
 	Start ~\Desktop\Set-AIPAuthentication.txt
 	```
 1. [] In the new notepad window, copy the command to the clipboard.
@@ -840,7 +832,7 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 	>
 	>!IMAGE[y2bgsabe.jpg](\Media\y2bgsabe.jpg)
 1. [] **Close the current PowerShell window**.
-1. [] **In the admin PowerShell window** and type the command below and press **Enter**.
+1. [] **In the admin PowerShell window** and type the command below.
 
 	```Restart-Service AIPScanner```
    
@@ -900,8 +892,8 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 	>
 	>!IMAGE[agnx2gws.jpg](\Media\agnx2gws.jpg)
  
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Open a **File Explorer** window, and browse to ```\\\Scanner01.contoso.azure\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports```.
+1. [] Next, switch to @lab.VirtualMachine(Client01).SelectLink and log in using the password +++@lab.VirtualMachine(Client01).Password+++.
+1. [] Open a **File Explorer** window, and browse to ```\\Scanner01.contoso.azure\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports```.
 
 	> If needed, use the credentials below:
 	>
@@ -921,6 +913,7 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 
 	>[!NOTE] We will revisit this information later in the lab to review discovered data and create Sensitive Data Type to Classification mappings.
 
+	>[!ALERT] If you see any failures, it is likely due to SharePoint startup in the VM environment.  If you rerun Start-AIPScan on Scanner01 all files will successfully scan.  This should not happen in a production environment.
 ===
 
 # Exercise 2: Configuring Azure Information Protection Policy
@@ -937,8 +930,7 @@ In this task, we will configure a label protected for internal audiences that ca
 
 However, there are times when external collaboration is required, so we will configure a label to match the name and functionality of the Do Not Forward button in Outlook.  This will allow users to more securely share sensitive information outside the company to any recipient.  By using the name Do Not Forward, the functionality will also be familiar to what previous users of AD RMS or Azure RMS may have used in the past.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] In the Azure Information Protection blade, under **Classifications** in the left pane, click on **Labels** to load the Azure Information Protection – Labels blade.
+1. [] On @lab.VirtualMachine(Client01).SelectLink, in the Azure Information Protection blade, under **Classifications** in the left pane, click on **Labels** to load the Azure Information Protection – Labels blade.
 
 	^IMAGE[Open Screenshot](\Media\mhocvtih.jpg)
 
@@ -1018,17 +1010,22 @@ However, there are times when external collaboration is required, so we will con
 
 In this task, we will assign the new sub-label to the Global policy and configure several global policy settings that will increase Azure Information Protection adoption among your users and reduce ambiguity in the user interface.
 
-1. [] In the Azure Information Protection blade, under **Classifications** on the left, click **Policies** then click the **Global** policy.
+1. [] In the Azure Information Protection blade, under **Classifications** on the left, click **Policies**. 
+2. [] Click the **Global** policy.
 
 	^IMAGE[Open Screenshot](\Media\24qjajs5.jpg)
 
 1. [] In the Policy: Global blade, **wait for the labels to load**.
 
-1. [] Below the labels, click **Add or remove labels**.
+	>[!knowledge] The policies should look like the image below.  If they show as loading, refresh the full browser on this page and go back into the **Global** policy and they should load.
+	>
+	>!IMAGE[labels.png](\Media\labels.png)
 
-1. [] In the Policy: Add or remove labels blade, ensure that the boxes next to all Labels are checked and click **OK**.
+2. [] Below the labels, click **Add or remove labels**.
 
-1. [] In the Policy: Global blade, under the **Configure settings to display and apply on Information Protection end users** section, configure the policy to match the settings shown in the table and image below.
+3. [] In the Policy: Add or remove labels blade, ensure that the boxes next to all Labels are checked and click **OK**.
+
+4. [] In the Policy: Global blade, under the **Configure settings to display and apply on Information Protection end users** section, configure the policy to match the settings shown in the table and image below.
 
 	| Setting | Value |
 	|:--------|:------|
@@ -1154,7 +1151,7 @@ There are many advanced policy settings that are useful to tailor your Azure Inf
 
     ^IMAGE[Open Screenshot](\Media\2jo71ugb.jpg)
 
-1. [] In the Advanced settings blade, in the textbox under **NAME**, type ```OutlookDefaultLabel```.  In the textbox under **VALUE**, paste the **Label ID** for the **General** label you copied previously, then click **Save and close**.
+1. [] In the Advanced settings blade, in the textbox under **VALUE**, paste the **Label ID** for the **General** label you copied previously. In the textbox under **NAME**, type ```OutlookDefaultLabel```, then click **Save and close**.
 
     > [!ALERT] CAUTION: Please check to ensure that there are **no spaces** before or after the **Label ID** when pasting as this will cause the setting to not apply.
 
@@ -1244,8 +1241,7 @@ Although we will not be demonstrating these capabilities in this lab, you can us
  
 In this task, we will activate the labels from the Azure Portal for use in the Security and Compliance Center.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Navigate to ```https://portal.azure.com/?ActivateMigration=true#blade/Microsoft_Azure_InformationProtection/DataClassGroupEditBlade/migrationActivationBlade```
+1. [] On @lab.VirtualMachine(Client01).SelectLink, navigate to ```https://portal.azure.com/?ActivateMigration=true#blade/Microsoft_Azure_InformationProtection/DataClassGroupEditBlade/migrationActivationBlade```
 
 1. [] Click **Activate** and **Yes**.
 
@@ -1272,12 +1268,12 @@ Now that you have 3 test systems with users being affected by different policies
 One of the most common use cases for AIP is the ability to send emails using User Defined Permissions (Do Not Forward). In this task, we will send an email using the Do Not Forward label to test that functionality.
 
 
-1. [] On @lab.VirtualMachine(Client03).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-2. [] Launch Microsoft Outlook, and click **Accept and start Outlook**.
-3. [] The username should auto-populate based on the workplace join we performed earlier.  Click **Connect**.
-4. [] Once configuration completes, **uncheck the box** to **Set up Outlook Mobile** and click **OK**.
-5. [] **Close Outlook** and **reopen** to complete activation.
-6. [] Once Outlook opens, click on the **New email** button.
+1. [] On @lab.VirtualMachine(Client03).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++.
+1. [] Launch Microsoft Outlook, and click **Accept and start Outlook**.
+1. [] The username should auto-populate based on the workplace join we performed earlier.  Click **Connect**.
+1. [] Once configuration completes, **uncheck the box** to **Set up Outlook Mobile** and click **OK**.
+1. [] **Close Outlook** and **reopen** to complete activation.
+1. [] Once Outlook opens, click on the **New email** button.
 
 	!IMAGE[6wan9me1.jpg](\Media\6wan9me1.jpg)
 
@@ -1303,9 +1299,8 @@ One of the most common use cases for AIP is the ability to send emails using Use
 	>
 	> !IMAGE[6v6duzbd.jpg](\Media\6v6duzbd.jpg)
 
-1. [] Switch over to @lab.VirtualMachine(Client01).SelectLink or @lab.VirtualMachine(Client02).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
- 
-2. [] Open Outlook, run through setup, and review the email in Adam Smith or Alice Anderson’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
+1. [] Switch over to @lab.VirtualMachine(Client01).SelectLink or @lab.VirtualMachine(Client02).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++ and open Outlook. 
+2. [] Run through setup, and review the email in Adam Smith or Alice Anderson’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
 
 	!IMAGE[0xby56qt.jpg](\Media\0xby56qt.jpg)
 
@@ -1359,9 +1354,7 @@ In this task, we will create a document and send an email to demonstrate the fun
 1. [] Click on **Confidential** and then **Contoso Internal** and click **Send**.
 
 	^IMAGE[Open Screenshot](\Media\yhokhtkv.jpg)
-1. [] On @lab.VirtualMachine(Client01).SelectLink or @lab.VirtualMachine(Client02).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-
-2. [] Observe that you are able to open the email natively in the Outlook client. Also observe the **header text** that was defined in the label settings.
+1. [] On @lab.VirtualMachine(Client01).SelectLink or @lab.VirtualMachine(Client02).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++ and observe that you are able to open the email natively in the Outlook client. Also observe the **header text** that was defined in the label settings.
 
 	!IMAGE[bxz190x2.jpg](\Media\bxz190x2.jpg)
 	
@@ -1403,8 +1396,8 @@ In this task, we will create a document and send an email from one of the users 
 	>!IMAGE[htjesqwe.jpg](\Media\htjesqwe.jpg)
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-2. [] O]pen **Microsoft Word**.
-3. [] Create a new **Blank document** and type ```This is a test document``` and **save the document**.
+1. [] Open **Microsoft Word**.
+1. [] Create a new **Blank document** and type ```This is a test document``` and **save the document**.
 
 	> [!ALERT] When you click **Save**, you will be prompted to choose a classification.  This is a result of having **None** set as the default label in the scoped policy while requiring all documents to be labeled.  This is a useful for driving **active classification decisions** by specific groups within your organization.  Notice that Outlook still has a default of **General** because of the Advanced setting we added to the scoped policy.  **This is recommended** because user send many more emails each day than they create documents. Actively forcing users to classify each email would be an unpleasant user experience whereas they are typically more understanding of having to classify each document if they are in a sensitive department or role.
 
@@ -1417,8 +1410,8 @@ In this task, we will create a document and send an email from one of the users 
 In this task, we will test the configured recommended and automatic conditions we defined in Exercise 1.  Recommended conditions can be used to help organically train your users to classify sensitive data appropriately and provides a method for testing the accuracy of your dectections prior to switching to automatic classification.  Automatic conditions should be used after thorough testing or with items you are certain need to be protected. Although the examples used here are fairly simple, in production these could be based on complex regex statements or only trigger when a specific quantity of sensitive data is present.
 
 1. [] Switch to @lab.VirtualMachine(Client03).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-2. [] Launch **Microsoft Word**.
-3. [] In Microsoft Word, create a new **Blank document** and type ```My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368``` and **save** the document.
+1. [] Launch **Microsoft Word**.
+1. [] In Microsoft Word, create a new **Blank document** and type ```My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368``` and **save** the document.
 
 	> [!NOTE] This card number is a fake number that was generated using the Credit Card Generator for Testing at [https://developer.paypal.com/developer/creditCardGenerator/](https://developer.paypal.com/developer/creditCardGenerator/).  The Microsoft Classification Engine uses the Luhn Algorithm to prevent false positives so when testing, please make sure to use valid numbers.
 
@@ -1454,7 +1447,7 @@ In this task, we will test the configured recommended and automatic conditions w
 
 In this task, we will perform bulk classification using the built-in functionality of the AIP Client.  This can be useful for users that want to classify/protect many documents that exist in a central location or locations identified by scanner discovery.  Because this is done manually, it is an AIP P1 feature.
 
-1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+1. [] On @lab.VirtualMachine(Scanner01).SelectLink, log in with the password +++@lab.VirtualMachine(Scanner01).Password+++.
 2. [] Browse to the **C:\\**.
 3. [] Right-click on the PII folder and select **Classify and Protect**.
    
@@ -1485,7 +1478,7 @@ In this exercise, you will change the condition we created previously from a rec
  
 Now that we know what types of sensitive data we need to protect, we will configure some automatic conditions (rules) that the scanner can use to classify and protect content.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+1. [] Switch back to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 2. [] Open the browser that is logged into the Azure Portal.
 
 3. [] Under **Classifications** on the left, click **Labels** then expand **Confidential**, and click on **Contoso Internal**.
@@ -1507,7 +1500,7 @@ Now that we know what types of sensitive data we need to protect, we will config
  
 In this task, we will set the AIP scanner to enforce the conditions we set up in the previous task and have it rerun on all files using the Start-AIPScan command.
 
-1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in with the password +++@lab.VirtualMachine(Scanner01).Password+++.
 1. [] Run the commands below to run an enforced scan using defined policy.
 
     ```
@@ -1521,7 +1514,7 @@ In this task, we will set the AIP scanner to enforce the conditions we set up in
 	>
 	>!IMAGE[k3rox8ew.jpg](\Media\k3rox8ew.jpg)
 	>
-	>If we switch back to @lab.VirtualMachine(Client01).SelectLink and look in the reports directory we opened previously at ```\\\Scanner01.contoso.azure\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports```, you will notice that the old scan reports are zipped in the directory and only the most recent results aare showing.  
+	>If we switch back to @lab.VirtualMachine(Client01).SelectLink and look in the reports directory we opened previously at ```\\Scanner01.contoso.azure\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports```, you will notice that the old scan reports are zipped in the directory and only the most recent results aare showing.  
 	>
 	> If needed, use the credentials below:
 	>
@@ -1543,11 +1536,11 @@ In this task, we will set the AIP scanner to enforce the conditions we set up in
 # Reviewing Protected Documents
 [:arrow_left: Home](#azure-information-protection)
 
-Now that we have Classified and Protected documents using the scanner, we can review the documents we looked at previously to see their change in status.
+Now that we have Classified and Protected documents using the scanner, we can review the documents to see their change in status.
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
  
-2. [] Navigate to ```\\\Scanner01.contoso.azure\documents```. 
+2. [] Navigate to ```\\Scanner01.contoso.azure\documents```. 
 
 	> If needed, use the credentials below:
 	>
@@ -1560,30 +1553,41 @@ Now that we have Classified and Protected documents using the scanner, we can re
  
  	
 	
-	> [!NOTE] Observe that the same document is now classified as Confidential \ Contoso Internal. 
+	> [!NOTE] Observe that the document is classified as Confidential \ Contoso Internal. 
 	>
 	>!IMAGE[s1okfpwu.jpg](\Media\s1okfpwu.jpg)
 ===
 # Reviewing the Dashboards
+[:arrow_left: Home](#azure-information-protection)
 
 We can now go back and look at the dashboards and observe how they have changed.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-2. [] Open the browser that is logged into the Azure Portal.
+1. [] On @lab.VirtualMachine(Client01).SelectLink, open the browser that is logged into the Azure Portal.
 
-3. [] Under **Dashboards**, click on **Usage report (Preview)**.
+1. [] Under **Dashboards**, click on **Usage report (Preview)**.
 
-	> [!NOTE] Observe that there are now entries from the AIP scanner, File Explorer, Microsoft Outlook, and Microsoft Word based on our activities in this lab. You may not see details of label data right away as this takes longer to process.  I have included a screenshot of the results below, but you may check back later in the lab to see the full results.
+	> [!NOTE] Observe that there are now entries from the AIP scanner, File Explorer, Microsoft Outlook, and Microsoft Word based on our activities in this lab. 
 	>
-	> !IMAGE[Usage.png](\Media\Usage.png)
-	>
-	> !IMAGE[Usage2.png](\Media\Usage2.png)
-2. [] Next, under dashboards, click on **Data discovery (Preview)**.
+	> !IMAGE[Usage.png](\Media\newusage.png)
 
-	> [!NOTE] As mentioned above, label data may not show up initially but you should start seeing protection data in the portal.  I have included a screenshot of the final result so please check back throughout the lab to see the label data from the AIP scanner.
+2. [] Next, under dashboards, click on **Activity logs (preview)**.
+   
+    > [!NOTE] We can now see activity from various users and clients including the AIP Scanner and specific users. 
+	>
+	> !IMAGE[activity.png](\Media\activity.png)
+	>
+	> You can also very quickly filter to just the **Highly Confidential** documents and identify the repositories and devices that contain this sensitive information.
+	>
+	> !IMAGE[activity2.png](\Media\activity2.png)
+
+3. [] Finally, click on **Data discovery (Preview)**.
+
+	> [!NOTE] In the Data discovery dashboard, you can see a breakdown of how files are being protected and locations that have sensitive content.
 	>
 	> !IMAGE[Discovery.png](\Media\Discovery.png)
 	> 
+	> If you click on one of the devices, you can drill down and see the content that has been protected on that specific device or repository.
+	>
 	> !IMAGE[discovery2.png](\Media\discovery2.png)
 	
 ===
@@ -1596,10 +1600,9 @@ Exchange Online can work in conjunction with Azure Information Protection to pro
 
 In this task, we will configure a mail flow rule to detect sensitive information traversing the network in the clear and encrypt it using the Encrypt Only RMS Template.  We will also create a mail flow rule to prevent messages classified as Confidential \ Contoso Internal from being sent to external recipients.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-2. [] Open an **Admin PowerShell Prompt**.
+1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and open an **Admin PowerShell Prompt**.
 
-3. [] Type the commands below to connect to an Exchange Online PowerShell session.  Use the credentials provided when prompted.
+2. [] Type the commands below to connect to an Exchange Online PowerShell session.  Use the credentials provided when prompted.
 
 	```
 	Set-ExecutionPolicy RemoteSigned
@@ -1650,7 +1653,7 @@ In this task, we will configure a mail flow rule to detect sensitive information
 
 	> [!ALERT] Make sure that there are no spaces before or after the Label ID as this will cause the mail flow rule to be ineffective.
 
-1. [] Next, return to the PowerShell window and type ```$labelid = "``` then paste the **LabelID** for the **Contoso Internal** label, type ```"```, and press **Enter**.
+1. [] Next, return to the PowerShell window and type +++$labelid = "+++ then paste the **LabelID** for the **Contoso Internal** label, type +++"+++, and press **Enter**.
 1. [] Now, create another Exchange Online Mail Flow Rule using the code below:
 
 	```
@@ -1687,7 +1690,8 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 
 1. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject**, type ```Test Credit Card Email``` and for the **Body**, type ```My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368```, then click **Send**.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and review the received email.
+1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+2. [] Review the received email.
 
 	!IMAGE[pidqfaa1.jpg](\Media\pidqfaa1.jpg)
 
@@ -1720,176 +1724,12 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 > [!HINT] There are many other use cases for Exchange Online mail flow rules but this should give you a quick view into what is possible and how easy it is to improve the security of your sensitive data through the use of Exchange Online mail flow rules and Azure Information Protection.
 
 ===
-# Exercise 7: SharePoint IRM Configuration
-[:arrow_left: Home](#azure-information-protection)
-
-In this exercise, you will configure SharePoint Online Information Rights Management (IRM) and configure a document library with an IRM policy to protect documents that are downloaded from that library.
-
-===
-# Enable Information Rights Management in SharePoint Online
-[:arrow_left: Home](#azure-information-protection)
- 
-In this task, we will enable Information Rights Management in SharePoint Online.
-
-1. [] Switch to @lab.VirtualMachine(Client03).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Launch an Edge InPrivate session to ```https://admin.microsoft.com/AdminPortal/Home#/```.
- 
-1. [] If needed, log in using the credentials below:
-
-	 ```@lab.CloudCredential(134).Username```
-	 
-	 ```@lab.CloudCredential(134).Password```
- 
-1. [] Hover over the **Admin centers** section of the bar on the left and choose **SharePoint**.
-
-	!IMAGE[r5a21prc.jpg](\Media\r5a21prc.jpg)
- 
-1. [] In the SharePoint admin center click on **settings**.
-
-1. [] Scroll down to the Information Rights Management (IRM) section and select the option button for **Use the IRM service specified in your configuration**.
- 
-1. [] Click the **Refresh IRM Settings** button.
-
-	!IMAGE[1qv8p13n.jpg](\Media\1qv8p13n.jpg)
-
-	>[!HINT] After the browser refreshes, you can scroll down to the same section and you will see a message stating **We successfully refreshed your setings.**
-	>
-	>!IMAGE[daeglgk9.jpg](\Media\daeglgk9.jpg)
-1. [] Scroll down and click **OK**.
-1. [] Next, navigate to ```https://admin.microsoft.com/AdminPortal/Home#/users```.
-1. [] Click on **Nuck Chorris** and on the profile page, next to Roles, click **Edit**.
-
-	!IMAGE[df6t9nk1.jpg](\Media\df6t9nk1.jpg)
-1. [] On the Edit user roles page, select **Customized administrator**, check the box next to **SharePoint administrator**, and click **Save**.
-
-	!IMAGE[3rj47ym9.jpg](\Media\3rj47ym9.jpg)
-1. [] **Close the Edge InPrivate browser** window to **clear the credentials**.
-
- 
-===
-
-# Site Creation and Information Rights Management Integration
-[:arrow_left: Home](#azure-information-protection)
- 
-In this task, we will create a new SharePoint site and enable Information Rights Management in a document library.
-
-1. [] Launch a new Edge InPrivate session to ```https://portal.office.com```.
-1. [] Log in using the credentials below:
-
-	```NuckC@@lab.CloudCredential(134).TenantName```
-
-	```NinjaCat123```
-1. [] Click on **SharePoint** in the list.
-
-	!IMAGE[twsp6mvj.jpg](\Media\twsp6mvj.jpg)
-
-1. [] Dismiss any introductory screens and, at the top of the page, click **+ Create site**.
-
-	!IMAGE[7v8wctu2.jpg](\Media\7v8wctu2.jpg)
-
-	[!NOTE] If you do not see the **+ Create site** button, resize the VM window by dragging the divider for the instructions to the right until the VM resizes and you can see the button.
- 
-1. [] On the Create a site page, click **Team site**.
-
-	^IMAGE[Open Screenshot](\Media\406ah98f.jpg)
- 
-1. [] On the next page, type ```IRM Demo``` for **Site name** and for the **Site description**, type ```This is a team site for demonstrating SharePoint IRM capabilities``` and set the **Privacy settings** to **Public - anyone in the organization can access the site** and click **Next**.
-
-	^IMAGE[Open Screenshot](\Media\ug4tg8cl.jpg)
-
-1. [] On the Add group members page, click **Finish**.
-1. [] In the newly created site, on the left navigation bar, click **Documents**.
-
-	^IMAGE[Open Screenshot](\Media\yh071obk.jpg)
- 
-1. [] In the upper right-hand corner, click the **Settings icon** and click **Library settings**.
-
-	!IMAGE[1qo31rp6.jpg](\Media\1qo31rp6.jpg)
- 
-1. [] On the Documents > Settings page, under **Permissions and Management**, click **Information Rights Management**.
-
-	!IMAGE[ie2rmsk2.jpg](\Media\ie2rmsk2.jpg)
- 
-	>[!ALERT] It may take up to 10 minutes for the global IRM settings to apply to document libraries.  If this has not appeared after a few minutes, try creating a new document library to see if the link is available. 
-
-1. [] On the Settings > Information Rights Management Settings page, check the box next to Restrict permissions on this library on download and under **Create a permission policy title** type ```Contoso IRM Policy```, and under **Add a permission policy description** type ```This content contained within this file is for use by Contoso Corporation employees only.```
- 
-	^IMAGE[Open Screenshot](\Media\m9v7v7ln.jpg)
-1. [] Next, click on **SHOW OPTIONS** below the policy description and in the **Set additional IRM library settings** section, check the boxes next to **Do not allow users to upload documents that do not support IRM** and **Prevent opening documents in the browser for this Document Library**.
-
-	!IMAGE[0m2qqtqn.jpg](\Media\0m2qqtqn.jpg)
-	>[!KNOWLEDGE] These setting prevent the upload of documents that cannot be protected using Information Rights Managment (Azure RMS) and forces protected documents to be opened in the appropriate application rather than rendering in the SharePoint Online Viewer.
- 
-1. [] Next, under the **Configure document access rights** section, check the box next to **Allow viewers to run script and screen reader to function on downloaded documents**.
-
-	!IMAGE[72fkz2ds.jpg](\Media\72fkz2ds.jpg)
-	>[!HINT] Although this setting may reduce the security of the document, this is typically provided for accessibility purposes.
-1. [] Finally, in the **Configure document access rights** section, check the box next to  **Users must verify their credentials using this interval (days)** and type ```7``` in the text box.
-
-	!IMAGE[tt1quq3f.jpg](\Media\tt1quq3f.jpg)
-1. [] At the bottom of the page, click **OK** to complete the configuration of the protected document library.
-1. [] On the Documents > Settings page, in the left-hand navigation pane, click on **Documents** to return to the document library. section.
- 
-1. [] Leave the browser open and continue to the next task.
- 
-===
-
-# Uploading Content to the Document Library
-[:arrow_left: Home](#azure-information-protection)
- 
-Create an unprotected Word document, label it as Internal, and upload it to the document library. 
-
-1. [] Launch **Microsoft Word**.
-1. [] Create a new **Blank document**.
-
-	>[!NOTE] Notice that by default the document is labeled as the unprotected classification **General**.
- 
-1. [] In the Document, type ```This is a test document```.
- 
-1. [] **Save** the document and **close Microsoft Word**.
-1. [] Return to the IRM Demo protected document library and click on **Upload > Files**.
-
-	!IMAGE[m95ixvv1.jpg](\Media\m95ixvv1.jpg)
-1. [] Navigate to the location where you saved the document, select it and click **Open** to upload the file.
- 
-1. [] Next, minimize the browser window and right-click on the desktop. Hover over **New >** and click on **Microsoft Access Database**. Name the database ```BadFile```.
-
-	!IMAGE[e3nxt4a2.jpg](\Media\e3nxt4a2.jpg)
-1. [] Return to the document library and attempt to upload the file.
-
-	>[!KNOWLEDGE] Notice that you are unable to upload the file because it cannot be protected.
-	>	
-	>!IMAGE[432hu3pi.jpg](\Media\432hu3pi.jpg)
-===
-
-# SharePoint IRM Functionality
-[:arrow_left: Home](#azure-information-protection)
- 
-Files that are uploaded to a SharePoint IRM protected document library are protected upon download based on the user's access rights to the document library.  In this task, we will share a document with Alice Anderson and review the access rights provided.
-
-1. [] Select the uploaded document and click **Share** in the action bar.
-
-	!IMAGE[1u2jsod7.jpg](\Media\1u2jsod7.jpg)
-1. [] In the Send Link dialog, type ```Alice``` and click on **Alice Anderson** then **Send**.
-
-	!IMAGE[j6w1v4z9.jpg](\Media\j6w1v4z9.jpg)
-1. [] Switch to @lab.VirtualMachine(Client02).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Open Outlook and click on the email from Nuck Chorris, then click on the **Open** link.
-
-	^IMAGE[Open Screenshot](\Media\v39ez284.jpg)
-1. [] This will launch the IRM Demo document library.  Click on the document to open it in Microsoft Word.
-
-	!IMAGE[xmv9dmvk.jpg](\Media\xmv9dmvk.jpg)
-1. [] After the document opens, you will be able to observe that it is protected.  Click on the View Permissions button to review the restrictions set on the document.
-
-	!IMAGE[4uya6mro.jpg](\Media\4uya6mro.jpg)
-	>[!NOTE] These permissions are based on the level of access that they user has to the document library.  In a production environment most users would likely have less rights than shown in this example.
-
-===
 # AIP Lab Complete
+[:arrow_left: Home](#azure-information-protection)
+
 Congratulations! You have completed the Azure Information Protection Hands on Lab. 
 ===
-# Experienced with AIP
+# Familiar with AIP
 [:arrow_left: Home](#azure-information-protection)
 
 ## Exercise 1A: Configuring AIP Scanner for Discovery
@@ -1941,7 +1781,7 @@ In order to collect log data from Azure Information Protection clients and servi
 	|Location|**East US**|
 
 	^IMAGE[Open Screenshot](\Media\5butui15.jpg)
-1. [] Next, back in the Configure analytics (preview) blade, **check the box** next to the workspace and click **OK**.
+1. [] Next, back in the Configure analytics (preview) blade, **check the boxes** next to the workspace and to **Enable Content Matches** and click **OK**.
 
 	!IMAGE[gste52sy.jpg](\Media\gste52sy.jpg)
 1. [] Click **Yes**, in the confirmation dialog.
@@ -1956,15 +1796,20 @@ In this task we will install the AIP scanner binaries and create the Azure AD Ap
 
 The first step in configuring the AIP Scanner is to install the service and connect the database.  This is done with the Install-AIPScanner cmdlet that is provided by the AIP Client software.  The AIPScanner service account has been pre-staged in Active Directory for convenience.
 
-1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and use the password +++@lab.VirtualMachine(Client01).Password+++.
 
 1. [] Right-click on the **PowerShell** icon in the taskbar and click on **Run as Administrator**.
 
 	!IMAGE[7to6p334.jpg](\Media\7to6p334.jpg)
 
-1. [] At the PowerShell prompt, type ```$SQL = "Scanner01"``` and press **Enter**.
-1. [] Next, type ```Install-AIPScanner -SQLServerInstance $SQL``` and press **Enter**.
-1. [] When prompted, provide the credentials for the AIP scanner service account.
+1. [] At the PowerShell prompt, click to type the code below 
+   
+   ```
+   $SQL = "Scanner01"
+   Install-AIPScanner -SQLServerInstance $SQL
+   
+   ```
+3. [] When prompted, provide the credentials for the AIP scanner service account.
 	
 	```Contoso\AIPScanner```
 
@@ -1986,11 +1831,9 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 	```@lab.CloudCredential(134).Username```
 	
 	```@lab.CloudCredential(134).Password```
-1. [] Next, click the **T** to **type the commands below** in the PowerShell window. 
+1. [] Next, click the **T** to **type the commands below** in the PowerShell window and press **Enter**. 
 
-	> [!ALERT] Press Enter only after you see **-CustomKeyIdentifier "AIPClient"**.
-
-	> [!NOTE] This will create a new Web App Registration and Service Principal in Azure AD.
+	> [!NOTE] This will create a new Web App Registration, Native App Registration, and associated Service Principals in Azure AD.
 
    ```
    New-AzureADApplication -DisplayName AIPOnBehalfOf -ReplyUrls http://localhost
@@ -1999,36 +1842,26 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
    $WebAppKey = New-Guid
    $Date = Get-Date
    New-AzureADApplicationPasswordCredential -ObjectId $WebApp.ObjectID -startDate $Date -endDate $Date.AddYears(1) -Value $WebAppKey.Guid -CustomKeyIdentifier "AIPClient"
-	```
-
-1. [] Next, we must build the permissions object for the Native App Registration.  This is done using the commands below.
-   
-	> [!ALERT] Press Enter only after you see **$Access.ResourceAccess = $Scope**.
-
-   ```
+	
    $AIPServicePrincipal = Get-AzureADServicePrincipal -All $true | ? {$_.DisplayName -eq 'AIPOnBehalfOf'}
    $AIPPermissions = $AIPServicePrincipal | select -expand Oauth2Permissions
    $Scope = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $AIPPermissions.Id,"Scope"
    $Access = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
    $Access.ResourceAppId = $WebApp.AppId
    $Access.ResourceAccess = $Scope
-	```
-1. [] Next, we will use the object created above to create the Native App Registration.
-   
-	> [!ALERT] Press Enter only after you see **-AppId $NativeApp.AppId**.
 
-   ```
+
    New-AzureADApplication -DisplayName AIPClient -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
    $NativeApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPClient'"
    New-AzureADServicePrincipal -AppId $NativeApp.AppId
-	```
+   ```
    
 1. [] Finally, we will output the Set-AIPAuthentication command by running the commands below and pressing **Enter**.
    
-	> [!ALERT] Press Enter only after you see **Start ~\Desktop\Set-AIPAuthentication.txt**.
-   
+	 
    ```
    "Set-AIPAuthentication -WebAppID " + $WebApp.AppId + " -WebAppKey " + $WebAppKey.Guid + " -NativeAppID " + $NativeApp.AppId | Out-File ~\Desktop\Set-AIPAuthentication.txt
+
 	Start ~\Desktop\Set-AIPAuthentication.txt
 	```
 1. [] In the new notepad window, copy the command to the clipboard.
@@ -2059,7 +1892,7 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 	>
 	>!IMAGE[y2bgsabe.jpg](\Media\y2bgsabe.jpg)
 1. [] **Close the current PowerShell window**.
-1. [] **In the admin PowerShell window** and type the command below and press **Enter**.
+1. [] **In the admin PowerShell window** and type the command below.
 
 	```Restart-Service AIPScanner```
    
@@ -2119,8 +1952,8 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 	>
 	>!IMAGE[agnx2gws.jpg](\Media\agnx2gws.jpg)
  
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Open a **File Explorer** window, and browse to ```\\\Scanner01.contoso.azure\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports```.
+1. [] Next, switch to @lab.VirtualMachine(Client01).SelectLink and log in using the password +++@lab.VirtualMachine(Client01).Password+++.
+1. [] Open a **File Explorer** window, and browse to ```\\Scanner01.contoso.azure\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports```.
 
 	> If needed, use the credentials below:
 	>
@@ -2140,6 +1973,7 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 
 	>[!NOTE] We will revisit this information later in the lab to review discovered data and create Sensitive Data Type to Classification mappings.
 
+	>[!ALERT] If you see any failures, it is likely due to SharePoint startup in the VM environment.  If you rerun Start-AIPScan on Scanner01 all files will successfully scan.  This should not happen in a production environment.
 ===
 
 # Defining Recommended and Automatic Conditions
@@ -2217,8 +2051,7 @@ Although we will not be demonstrating these capabilities in this lab, you can us
  
 In this task, we will activate the labels from the Azure Portal for use in the Security and Compliance Center.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Navigate to ```https://portal.azure.com/?ActivateMigration=true#blade/Microsoft_Azure_InformationProtection/DataClassGroupEditBlade/migrationActivationBlade```
+1. [] On @lab.VirtualMachine(Client01).SelectLink, navigate to ```https://portal.azure.com/?ActivateMigration=true#blade/Microsoft_Azure_InformationProtection/DataClassGroupEditBlade/migrationActivationBlade```
 
 1. [] Click **Activate** and **Yes**.
 
@@ -2236,8 +2069,8 @@ In this task, we will activate the labels from the Azure Portal for use in the S
 
 In this task, we will perform bulk classification using the built-in functionality of the AIP Client.  This can be useful for users that want to classify/protect many documents that exist in a central location or locations identified by scanner discovery.  Because this is done manually, it is an AIP P1 feature.
 
-1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Browse to the **C:\\**.
+1. [] On @lab.VirtualMachine(Scanner01).SelectLink, log in with the password +++@lab.VirtualMachine(Scanner01).Password+++.
+2. [] Browse to the **C:\\**.
 2. [] Right-click on the PII folder and select **Classify and Protect**.
    
    !IMAGE[CandP.png](\Media\CandP.png)
@@ -2268,7 +2101,7 @@ In this exercise, you will change the condition we created previously from a rec
  
 In this task, we will set the AIP scanner to enforce the conditions we set up in the previous task and have it run on all files using the Start-AIPScan command.
 
-1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in with the password +++@lab.VirtualMachine(Scanner01).Password+++.
 1. [] Run the commands below to run an enforced scan using defined policy.
 
     ```
@@ -2282,13 +2115,13 @@ In this task, we will set the AIP scanner to enforce the conditions we set up in
 	>
 	>!IMAGE[k3rox8ew.jpg](\Media\k3rox8ew.jpg)
 	>
-	>If we switch back to @lab.VirtualMachine(Client01).SelectLink and look in the reports directory we opened previously at ```\\\Scanner01.contoso.azure\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports```, you will notice that the old scan reports are zipped in the directory and only the most recent results aare showing.  
+	>If we switch back to @lab.VirtualMachine(Client01).SelectLink and look in the reports directory we opened previously at ```\\Scanner01.contoso.azure\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports```, you will notice that the old scan reports are zipped in the directory and only the most recent results aare showing.  
 	>
 	> If needed, use the credentials below:
 	>
 	>```Contoso\LabUser```
 	>
-	>```Pa$$w0rd```
+	>+++Pa$$w0rd+++
 	>
 	>!IMAGE[s8mn092f.jpg](\Media\s8mn092f.jpg)
 	>
@@ -2304,11 +2137,11 @@ In this task, we will set the AIP scanner to enforce the conditions we set up in
 # Reviewing Protected Documents
 [:arrow_left: Home](#azure-information-protection)
 
-Now that we have Classified and Protected documents using the scanner, we can review the documents we looked at previously to see their change in status.
+Now that we have Classified and Protected documents using the scanner, we can review the documents to see their change in status.
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
  
-2. [] Navigate to ```\\\Scanner01.contoso.azure\documents```. 
+2. [] Navigate to ```\\Scanner01.contoso.azure\documents```. 
 
 	> If needed, use the credentials below:
 	>
@@ -2321,7 +2154,7 @@ Now that we have Classified and Protected documents using the scanner, we can re
  
  	
 	
-	> [!NOTE] Observe that the same document is now classified as Confidential \ All Employees. 
+	> [!NOTE] Observe that the document is classified as Confidential \ Contoso Internal. 
 	>
 	>!IMAGE[s1okfpwu.jpg](\Media\s1okfpwu.jpg)
 ===
@@ -2329,22 +2162,33 @@ Now that we have Classified and Protected documents using the scanner, we can re
 
 We can now go back and look at the dashboards and observe how they have changed.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Open the browser that is logged into the Azure Portal.
+1. [] On @lab.VirtualMachine(Client01).SelectLink, open the browser that is logged into the Azure Portal.
+	> [!ALERT] Some of the content shown in this dashboard will not be present because we skipped the manual labeling sections.  This content has been left in to show the capabilities of the reports.
 
 1. [] Under **Dashboards**, click on **Usage report (Preview)**.
 
-	> [!NOTE] Observe that there are now entries from the AIP scanner, and File Explorer based on our activities in this lab. You may not see details of label data right away as this takes longer to process.  I have included a screenshot of the results below, but you may check back later in the lab to see the full results.
+	> [!NOTE] Observe that there are now entries from the AIP scanner, File Explorer, Microsoft Outlook, and Microsoft Word based on our activities in this lab. 
 	>
-	> !IMAGE[Usage.png](\Media\Usage.png)
-	>
-	> !IMAGE[Usage2.png](\Media\Usage2.png)
-2. [] Next, under dashboards, click on **Data discovery (Preview)**.
+	> !IMAGE[Usage.png](\Media\newusage.png)
 
-	> [!NOTE] As mentioned above, label data may not show up initially but you should start seeing protection data in the portal.  I have included a screenshot of the final result so please check back throughout the lab to see the label data from the AIP scanner.
+2. [] Next, under dashboards, click on **Activity logs (preview)**.
+   
+    > [!NOTE] We can now see activity from various users and clients including the AIP Scanner and specific users. 
+	>
+	> !IMAGE[activity.png](\Media\activity.png)
+	>
+	> You can also very quickly filter to just the **Highly Confidential** documents and identify the repositories and devices that contain this sensitive information.
+	>
+	> !IMAGE[activity2.png](\Media\activity2.png)
+
+3. [] Finally, click on **Data discovery (Preview)**.
+
+	> [!NOTE] In the Data discovery dashboard, you can see a breakdown of how files are being protected and locations that have sensitive content.
 	>
 	> !IMAGE[Discovery.png](\Media\Discovery.png)
 	> 
+	> If you click on one of the devices, you can drill down and see the content that has been protected on that specific device or repository.
+	>
 	> !IMAGE[discovery2.png](\Media\discovery2.png)
 	
 ===
@@ -2357,8 +2201,7 @@ Exchange Online can work in conjunction with Azure Information Protection to pro
 
 In this task, we will configure a mail flow rule to detect sensitive information traversing the network in the clear and encrypt it using the Encrypt Only RMS Template.  We will also create a mail flow rule to prevent messages classified as Confidential \ All Employees from being sent to external recipients.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Open an **Admin PowerShell Prompt**.
+1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and open an **Admin PowerShell Prompt**.
 
 2. [] Type the commands below to connect to an Exchange Online PowerShell session.  Use the credentials provided when prompted.
 
@@ -2411,7 +2254,7 @@ In this task, we will configure a mail flow rule to detect sensitive information
 
 	> [!ALERT] Make sure that there are no spaces before or after the Label ID as this will cause the mail flow rule to be ineffective.
 
-1. [] Next, return to the PowerShell window and type ```$labelid = "``` then paste the **LabelID** for the **All Employees** label, type ```"```, and press **Enter**.
+1. [] Next, return to the PowerShell window and type +++$labelid = "+++ then paste the **LabelID** for the **All Employees** label, type +++"+++, and press **Enter**.
 
     >[!NOTE] The full command should look like **$labelid = "Label ID GUID"**
 1. [] Now, create another Exchange Online Mail Flow Rule using the code below:
@@ -2450,8 +2293,7 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 
 1. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject**, type ```Test Credit Card Email``` and for the **Body**, type ```My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368```, then click **Send**.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Review the received email.
+1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and review the received email.
 
 	!IMAGE[pidqfaa1.jpg](\Media\pidqfaa1.jpg)
 
@@ -2484,178 +2326,10 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 > [!HINT] There are many other use cases for Exchange Online mail flow rules but this should give you a quick view into what is possible and how easy it is to improve the security of your sensitive data through the use of Exchange Online mail flow rules and Azure Information Protection.
 
 ===
-# Exercise 7A: SharePoint IRM Configuration
-[:arrow_left: Home](#azure-information-protection)
-
-In this exercise, you will configure SharePoint Online Information Rights Management (IRM) and configure a document library with an IRM policy to protect documents that are downloaded from that library.
-
-===
-# Enable Information Rights Management in SharePoint Online
-[:arrow_left: Home](#azure-information-protection)
- 
-In this task, we will enable Information Rights Management in SharePoint Online.
-
-1. [] Switch to @lab.VirtualMachine(Client03).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-
-1. [] Launch an Edge InPrivate session to ```https://admin.microsoft.com/AdminPortal/Home#/```.
- 
-1. [] If needed, log in using the credentials below:
-
-	 ```@lab.CloudCredential(134).Username```
-	 
-	 ```@lab.CloudCredential(134).Password```
- 
-1. [] Hover over the **Admin centers** section of the bar on the left and choose **SharePoint**.
-
-	!IMAGE[r5a21prc.jpg](\Media\r5a21prc.jpg)
- 
-1. [] In the SharePoint admin center click on **settings**.
-
-1. [] Scroll down to the Information Rights Management (IRM) section and select the option button for **Use the IRM service specified in your configuration**.
- 
-1. [] Click the **Refresh IRM Settings** button.
-
-	!IMAGE[1qv8p13n.jpg](\Media\1qv8p13n.jpg)
-
-	>[!HINT] After the browser refreshes, you can scroll down to the same section and you will see a message stating **We successfully refreshed your setings.**
-	>
-	>!IMAGE[daeglgk9.jpg](\Media\daeglgk9.jpg)
-1. [] Scroll down and click **OK**.
-1. [] Next, navigate to ```https://admin.microsoft.com/AdminPortal/Home#/users```.
-1. [] Click on **Nuck Chorris** and on the profile page, next to Roles, click **Edit**.
-
-	!IMAGE[df6t9nk1.jpg](\Media\df6t9nk1.jpg)
-1. [] On the Edit user roles page, select **Customized administrator**, check the box next to **SharePoint administrator**, and click **Save**.
-
-	!IMAGE[3rj47ym9.jpg](\Media\3rj47ym9.jpg)
-1. [] **Close the Edge InPrivate browser** window to **clear the credentials**.
-
- 
-===
-
-# Site Creation and Information Rights Management Integration
-[:arrow_left: Home](#azure-information-protection)
- 
-In this task, we will create a new SharePoint site and enable Information Rights Management in a document library.
-
-1. [] Launch a new Edge InPrivate session to ```https://portal.office.com```.
-1. [] Log in using the credentials below:
-
-	```NuckC@@lab.CloudCredential(134).TenantName```
-
-	```NinjaCat123```
-1. [] Click on **SharePoint** in the list.
-
-	!IMAGE[twsp6mvj.jpg](\Media\twsp6mvj.jpg)
-
-1. [] Dismiss any introductory screens and, at the top of the page, click **+ Create site**.
-
-	!IMAGE[7v8wctu2.jpg](\Media\7v8wctu2.jpg)
-
-	[!NOTE] If you do not see the **+ Create site** button, resize the VM window by dragging the divider for the instructions to the right until the VM resizes and you can see the button.
- 
-1. [] On the Create a site page, click **Team site**.
-
-	^IMAGE[Open Screenshot](\Media\406ah98f.jpg)
- 
-1. [] On the next page, type ```IRM Demo``` for **Site name** and for the **Site description**, type ```This is a team site for demonstrating SharePoint IRM capabilities``` and set the **Privacy settings** to **Public - anyone in the organization can access the site** and click **Next**.
-
-	^IMAGE[Open Screenshot](\Media\ug4tg8cl.jpg)
-
-1. [] On the Add group members page, click **Finish**.
-1. [] In the newly created site, on the left navigation bar, click **Documents**.
-
-	^IMAGE[Open Screenshot](\Media\yh071obk.jpg)
- 
-1. [] In the upper right-hand corner, click the **Settings icon** and click **Library settings**.
-
-	!IMAGE[1qo31rp6.jpg](\Media\1qo31rp6.jpg)
- 
-1. [] On the Documents > Settings page, under **Permissions and Management**, click **Information Rights Management**.
-
-	!IMAGE[ie2rmsk2.jpg](\Media\ie2rmsk2.jpg)
-  
-	>[!ALERT] It may take up to 10 minutes for the global IRM settings to apply to document libraries.  If this has not appeared after a few minutes, try creating a new document library to see if the link is available. 
-
-1. [] On the Settings > Information Rights Management Settings page, check the box next to Restrict permissions on this library on download and under **Create a permission policy title** type ```Contoso IRM Policy```, and under **Add a permission policy description** type ```This content contained within this file is for use by Contoso Corporation employees only.```
- 
-	^IMAGE[Open Screenshot](\Media\m9v7v7ln.jpg)
-1. [] Next, click on **SHOW OPTIONS** below the policy description and in the **Set additional IRM library settings** section, check the boxes next to **Do not allow users to upload documents that do not support IRM** and **Prevent opening documents in the browser for this Document Library**.
-
-	!IMAGE[0m2qqtqn.jpg](\Media\0m2qqtqn.jpg)
-	>[!KNOWLEDGE] These setting prevent the upload of documents that cannot be protected using Information Rights Managment (Azure RMS) and forces protected documents to be opened in the appropriate application rather than rendering in the SharePoint Online Viewer.
- 
-1. [] Next, under the **Configure document access rights** section, check the box next to **Allow viewers to run script and screen reader to function on downloaded documents**.
-
-	!IMAGE[72fkz2ds.jpg](\Media\72fkz2ds.jpg)
-	>[!HINT] Although this setting may reduce the security of the document, this is typically provided for accessibility purposes.
-1. [] Finally, in the **Configure document access rights** section, check the box next to  **Users must verify their credentials using this interval (days)** and type ```7``` in the text box.
-
-	!IMAGE[tt1quq3f.jpg](\Media\tt1quq3f.jpg)
-1. [] At the bottom of the page, click **OK** to complete the configuration of the protected document library.
-1. [] On the Documents > Settings page, in the left-hand navigation pane, click on **Documents** to return to the document library. section.
- 
-1. [] Leave the browser open and continue to the next task.
- 
-===
-
-# Uploading Content to the Document Library
-[:arrow_left: Home](#azure-information-protection)
- 
-Create an unprotected Word document, label it as Internal, and upload it to the document library. 
-
-1. [] Launch **Microsoft Word**.
-1. [] Create a new **Blank document**.
-
-	>[!NOTE] Notice that by default the document is labeled as the unprotected classification **General**.
- 
-1. [] In the Document, type ```This is a test document```.
- 
-1. [] **Save** the document and **close Microsoft Word**.
-1. [] Return to the IRM Demo protected document library and click on **Upload > Files**.
-
-	!IMAGE[m95ixvv1.jpg](\Media\m95ixvv1.jpg)
-1. [] Navigate to the location where you saved the document, select it and click **Open** to upload the file.
- 
-1. [] Next, minimize the browser window and right-click on the desktop. Hover over **New >** and click on **Microsoft Access Database**. Name the database ```BadFile```.
-
-	!IMAGE[e3nxt4a2.jpg](\Media\e3nxt4a2.jpg)
-1. [] Return to the document library and attempt to upload the file.
-
-	>[!KNOWLEDGE] Notice that you are unable to upload the file because it cannot be protected.
-	>	
-	>!IMAGE[432hu3pi.jpg](\Media\432hu3pi.jpg)
-===
-
-# SharePoint IRM Functionality
-[:arrow_left: Home](#azure-information-protection)
- 
-Files that are uploaded to a SharePoint IRM protected document library are protected upon download based on the user's access rights to the document library.  In this task, we will share a document with Alice Anderson and review the access rights provided.
-
-1. [] Select the uploaded document and click **Share** in the action bar.
-
-	!IMAGE[1u2jsod7.jpg](\Media\1u2jsod7.jpg)
-1. [] In the Send Link dialog, type ```Alice``` and click on **Alice Anderson** then **Send**.
-
-	!IMAGE[j6w1v4z9.jpg](\Media\j6w1v4z9.jpg)
-1. [] Switch to @lab.VirtualMachine(Client02).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Open Outlook and click on the email from Nuck Chorris, then click on the **Open** link.
-
-	^IMAGE[Open Screenshot](\Media\v39ez284.jpg)
-1. [] This will launch the IRM Demo document library.  Click on the document to open it in Microsoft Word.
-
-	!IMAGE[xmv9dmvk.jpg](\Media\xmv9dmvk.jpg)
-1. [] After the document opens, you will be able to observe that it is protected.  Click on the View Permissions button to review the restrictions set on the document.
-
-	!IMAGE[4uya6mro.jpg](\Media\4uya6mro.jpg)
-	>[!NOTE] These permissions are based on the level of access that they user has to the document library.  In a production environment most users would likely have less rights than shown in this example.
-
-===
 # AIP Lab Complete
-[:arrow_left: Home](#introduction)
+[:arrow_left: Home](#azure-information-protection)
 
-Congratulations! You have completed the Azure Information Protection Hands on Lab. 
-
+Congratulations! You have completed the Azure Information Protection Hands on Lab.
 ===
 # Microsoft Cloud App Security
 [:arrow_left: Home](#introduction)
