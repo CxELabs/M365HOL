@@ -97,7 +97,6 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 3. [] In the InPrivate window, navigate to the provided Windows Defender Advanced Threat Protection Trial Sign up link using the Type Text functionality of the lab environment.
 
 	!IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
-	!IMAGE[e1l35ko2.jpg](\Media\e1l35ko2.jpg)
 
 1. [] Click **Yes, add it to my account**.
 
@@ -232,6 +231,7 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
 1. [] In the PowerShell window, click the code below to assign Office and EMS licenses.
 	
 	```
+	Start-Sleep -s 15
 	foreach ($user in $users){
 
     # Store UPN created from csv and tenant
