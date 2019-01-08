@@ -581,6 +581,16 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 4. [] In the left-hand pane, under POLICY & COMPLIANCE, click on **Security policy**.
 
 	!IMAGE[SecPol](\Media\SecPol.png)
+1. [] On the line where it lists your **workspace**, click on **Edit settings**.
+10. [] In the left pane, click on **Pricing tier**, select **Standard** and click on **Save**.
+
+	^IMAGE[Open Screenshot](\Media\Pricing.png)
+13. [] Click on Data collection and select **All Events** and click on **Save**. 
+
+	^IMAGE[Open Screenshot](\Media\DC.png)
+10. [] Switch back to **Security Policy** and click **OK** to dismiss the message **Your unsaved edits will be discarded**.
+
+	!IMAGE[SecPol](\Media\SC2.png)
 6. [] On the line where it lists your Azure subscription (Azure pass), click on **Edit settings**.
 
 	^IMAGE[Open Screenshot](\Media\EditSettings.png)
@@ -588,18 +598,11 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 8. [] Under Workspace configuration, select **Use another workspace** and select your workspace **ASC-Workspace-xxxx** (which has been created by the template).
 
 	^IMAGE[Open Screenshot](\Media\Workspace.png)
+1. [] Under Windoews secuity events, select **All events**.
 9. [] Click on **Save** at the top of the page.
 9. [] Click on **Yes** on **Would you like to reconfigure monitored VMs?**.
-10. [] Switch back to **Security Policy** and click **OK** to dismiss the message **Your unsaved edits will be discarded**.
-
-	!IMAGE[SecPol](\Media\SC2.png)
-11. [] Next, on the line where it lists your **workspace**, click on **Edit settings**.
-12. [] In the left pane, click on **Pricing tier**, select **Standard** and click on **Save**.
-
-	^IMAGE[Open Screenshot](\Media\Pricing.png)
-13. [] Click on Data collection and select **All Events** and click on **Save**. 
-
-	^IMAGE[Open Screenshot](\Media\DC.png)
+10. [] Click on **Pricing tier** on the left and click **OK** to ignore the dialog.
+11. [] Under Settings - Pricing tier, click **Standard** and click **Save**.
 
 >[!HINT] It can take some time for the VMs to become visible in Security Center
 ===
@@ -615,11 +618,7 @@ Now that the workspace has been deployed (you don't have to wait for all the res
  
    ```@lab.CloudCredential(134).Password``` 
     
-3. []	Click **Create workspace** 
-4. []	Enter name for the workspace (must be unique across azure)
-5. []	Select your Geolocation. 
 6. []	Click **Create**. 
-7. []	Click on the **workspace name** to open the Azure ATP workspace portal. 
 8. []	Click **Provide a username and password to connect to your Active Directory forest**.  
 9. []	On the Directory Services page enter the following and click **Save**: 
  
@@ -628,9 +627,7 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 |Username|```aatpservice```| 
 |Password|```Password123!@#```| 
 |Domain|```contoso.azure```| 
- 
- 
-=== 
+---
 ## Deploy the Azure ATP Sensor  
  
 1. []	Click the **Download Sensor Setup** link. 
