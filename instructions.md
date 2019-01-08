@@ -718,9 +718,8 @@ Often, this can help drive an appropriate level of urgency and attention to the 
 
 In this exercise, we will install the AIP scanner and run it against repositories in discovery mode.  Later in this lab (after configuring labels and conditions) we will revisit the scanner to perform automated classification, labeling, and protection of sensitive documents.
 
-===
+---
 # Configuring Azure Log Analytics
-[:arrow_left: Home](#azure-information-protection)
 
 In order to collect log data from Azure Information Protection clients and services, you must first configure the log analytics workspace.
 
@@ -763,9 +762,10 @@ In order to collect log data from Azure Information Protection clients and servi
 1. [] Click **Yes**, in the confirmation dialog.
 
 	!IMAGE[zgvmm4el.jpg](\Media\zgvmm4el.jpg)
-===
+
+---
 # AIP Scanner Setup
-[:arrow_left: Home](#azure-information-protection)
+[:arrow_up: Top](#exercise-1-configuring-aip-scanner-for-discovery)
 
 In this task we will install the AIP scanner binaries and create the Azure AD Applications necessary for authentication.
 
@@ -873,10 +873,9 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 
 	```Restart-Service AIPScanner```
    
-===
-
+---
 # Configuring Repositories
-[:arrow_left: Home](#azure-information-protection)
+[:arrow_up: Top](#exercise-1-configuring-aip-scanner-for-discovery)
 
 In this task, we will configure repositories to be scanned by the AIP scanner.  As previously mentioned, these can be any type of CIFS file shares including NAS devices sharing over the CIFS protocol.  Additionally, On premises SharePoint 2010, 2013, and 2016 document libraries and lists (attachements) can be scanned.  You can even scan entire SharePoint sites by providing the root URL of the site.  There are several optional 
 
@@ -902,10 +901,9 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
     ```
 	^IMAGE[Open Screenshot](\Media\n5hj5e7j.jpg)
 
-===
-
+---
 # Running Sensitive Data Discovery
-[:arrow_left: Home](#azure-information-protection)
+[:arrow_up: Top](#exercise-1-configuring-aip-scanner-for-discovery)
 
 1. [] Run the commands below to run a discovery cycle.
 
@@ -951,17 +949,17 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 	>[!NOTE] We will revisit this information later in the lab to review discovered data and create Sensitive Data Type to Classification mappings.
 
 	>[!ALERT] If you see any failures, it is likely due to SharePoint startup in the VM environment.  If you rerun Start-AIPScan on Scanner01 all files will successfully scan.  This should not happen in a production environment.
-===
 
+===
 # Exercise 2: Configuring Azure Information Protection Policy
 [:arrow_left: Home](#azure-information-protection)
 
 This exercise demonstrates using the Azure Information Protection blade in the Azure portal to configure policies and sub-labels.  We will create a new sub-label and configure protection and then modify an existing sub-label.  We will also create a label that will be scoped to a specific group.  
 
 Next, we will configure AIP Global Policy to use the General sub-label as default, and finally, we will configure a scoped policy to use the new scoped label by default for Word, Excel, and PowerPoint while still using General as default for Outlook.
-===
+
+---
 # Creating, Configuring, and Modifying Sub-Labels
-[:arrow_left: Home](#azure-information-protection)
 
 In this task, we will configure a label protected for internal audiences that can be used to help secure sensitive data within your company.  By limiting the audience of a specific label to only internal employees, you can dramatically reduce the risk of unintentional disclosure of sensitive data and help reduce the risk of successful data exfiltration by bad actors.  
 
@@ -1043,7 +1041,7 @@ However, there are times when external collaboration is required, so we will con
 ===
 
 # Configuring Global Policy
-[:arrow_left: Home](#azure-information-protection)
+[:arrow_up: Top](#exercise-2-configuring-azure-information-protection-policy)
 
 In this task, we will assign the new sub-label to the Global policy and configure several global policy settings that will increase Azure Information Protection adoption among your users and reduce ambiguity in the user interface.
 
@@ -1082,10 +1080,10 @@ In this task, we will assign the new sub-label to the Global policy and configur
 
 	^IMAGE[Open Screenshot](\Media\m6e4r2u2.jpg)
 
-===
+---
 
 # Creating a Scoped Label and Policy
-[:arrow_left: Home](#azure-information-protection)
+[:arrow_up: Top](#exercise-2-configuring-azure-information-protection-policy)
 
 Now that you have learned how to work with global labels and policies, we will create a new scoped label and policy for the Legal team at Contoso.  
 
