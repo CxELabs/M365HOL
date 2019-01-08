@@ -497,7 +497,9 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
     
 	``` 
 	$UserCredential = Get-Credential
+
     $Session = New-PSSession –ConfigurationName Microsoft.Exchange –ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential –Authentication Basic -AllowRedirection
+
     Import-PSSession $Session
     ```
 
@@ -505,8 +507,8 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
 3. [] Enter the following commands to enable auditing for your mailboxes. The second command let you verify that auditing is correctly enabled.
     ```
-        Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | Set-Mailbox -AuditEnabled $true
-        Get-Mailbox admin | fl audit*
+    Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | Set-Mailbox -AuditEnabled $true
+    Get-Mailbox admin | fl audit*
     ```
     >:warning: When you create new mailboxes, auditing is not enabled by default. You will have to use the same commands again to enable auditing for those newly created mailboxes.
 
