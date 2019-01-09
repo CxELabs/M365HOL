@@ -12,7 +12,7 @@ This lab is designed to be used as a supplement to Instructor Led Training and h
 
 ## [Lab 2: Microsoft Cloud App Security](#microsoft-cloud-app-security)
 
-## [Lab 3: Azure Advanced Threat Protection](#Azure-atp-immersion-lab)
+## [Lab 3: Azure Advanced Threat Protection](#azure-atp-immersion-lab)
 
 ## [Lab 4: Windows Defender Advanced Threat Protection](#windows-defender-advanced-threat-protection)
 
@@ -72,7 +72,7 @@ There are a few prerequisites that need to be set up to complete all the section
 
 - [Redeem Azure Pass](#redeem-azure-pass)
 
-- [Azure AD User Configuration](#Azure-ad-user-configuration)
+- [Azure AD User Configuration](#azure-ad-user-configuration)
 
 - [Azure Security Center Setup](#azure-security-center-setup)
   
@@ -2457,18 +2457,18 @@ Although some labs are pretty straight forward ,we expect you to already have so
 
 The different Cloud App Security capabilities covered in the labs are:
 
-* [Module 01 - Management](#Manage-admin-access)
-* [Module 02 - Cloud Discovery continuous report](#Cloud-App-Security-Discovery-lab)
-* [Module 03 - Information protection](#Information-protection)
-* [Module 04 - Threat detection](#Cloud-App-Security-threat-detection-lab)
-* [Module 05 - Conditional Access App Control with Office 365](#Conditional-Access-App-Control-with-Office-365)
+* [Module 01 - Management](#manage-admin-access)
+* [Module 02 - Cloud Discovery continuous report](#cloud-App-Security-Discovery-lab)
+* [Module 03 - Information protection](#information-protection)
+* [Module 04 - Threat detection](#cloud-App-Security-threat-detection-lab)
+* [Module 05 - Conditional Access App Control with Office 365](#conditional-Access-App-Control-with-Office-365)
 
 ### Optional/follow on labs
 
-* [Module 06a - Management with PowerShell](#Management-with-PowerShell)
-* [Module 06b - Cloud Discovery snapshot report](#Cloud-Discovery-snapshot-report)
-* [Module 06c - Log collector troubleshooting](#Log-collector-troubleshooting)
-* [Module 06d - Conditional Access App Control with 3rd party apps](#Conditional-Access-App-Control-with-3rd-party-apps)
+* [Module 06a - Management with PowerShell](#management-with-PowerShell)
+* [Module 06b - Cloud Discovery snapshot report](#cloud-Discovery-snapshot-report)
+* [Module 06c - Log collector troubleshooting](#log-collector-troubleshooting)
+* [Module 06d - Conditional Access App Control with 3rd party apps](#conditional-Access-App-Control-with-3rd-party-apps)
 
 >:question: If you have questions or want to go further in your Cloud App Security journey, join our **[Tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity)** !
 ===
@@ -2476,7 +2476,7 @@ The different Cloud App Security capabilities covered in the labs are:
 
 [:arrow_left: Home](#labs)
 
-[Manage admin access:](#Manage-admin-access) :clock10: 15 min
+[Manage admin access:](#manage-admin-access) :clock10: 15 min
 
 For this task, you are asked to delegate admin access to monitor a dedicated group of users for a specific region, without adding them to the Global Admin management role.
 
@@ -2566,7 +2566,7 @@ To use this capability, you will perform in this lab the configuration and troub
 
 ## Configure and test continuous reports
 
-[:arrow_up: Top](#Cloud-App-Security-Discovery-lab)
+[:arrow_up: Top](#cloud-App-Security-Discovery-lab)
 
 > NOTE: The Docker engine has been pre-installed on LinuxVM in your lab environment, **Client01** in this case, using the commands (below) provided in the [deployment guide](https://docs.microsoft.com/en-us/cloud-app-security/discovery-docker-ubuntu).
 
@@ -2748,9 +2748,9 @@ Microsoft Cloud App Security helps you prevent this kind of disaster before it h
 
 ## Labs
 
-* [Apply AIP classification to SSN documents:](#Apply-AIP-classification-to-SSN-documents) :clock10: 10 min
-* [Quarantine sensitive PDF for review:](#Quarantine-sensitive-PDF-for-review) :clock10: 10 min
-* [Test our policies:](#Test-our-policies) :clock10: 10 min
+* [Apply AIP classification to SSN documents:](#apply-AIP-classification-to-SSN-documents) :clock10: 10 min
+* [Quarantine sensitive PDF for review:](#quarantine-sensitive-PDF-for-review) :clock10: 10 min
+* [Test our policies:](#test-our-policies) :clock10: 10 min
 
 ---
 
@@ -2759,7 +2759,7 @@ Microsoft Cloud App Security helps you prevent this kind of disaster before it h
 In this task, you will protect a specific sensitive document library in SharePoint Online using the native integration with Azure Information Protection.
 We will apply an Azure Information Protection template on documents containing social security numbers.
 
-[:arrow_up: Top](#Information-protection)
+[:arrow_up: Top](#information-protection)
 
 1. In the Cloud App Security portal, go to **Policies**.
 
@@ -2816,7 +2816,7 @@ We will apply an Azure Information Protection template on documents containing s
 
 ## Quarantine sensitive PDF for review
 
-[:arrow_up: Top](#Information-protection)
+[:arrow_up: Top](#information-protection)
 
 File policies are a great tool for finding threats to your information protection policies, for instance finding places where users stored sensitive information, credit card numbers and third-party ICAP files in your cloud. With Cloud App Security, not only can you detect these unwanted files stored in your cloud that leave you vulnerable, but you can take im/mediate action to stop them in their tracks and lock down the files that pose a threat. Using Admin quarantine, you can protect your files in the cloud and re/mediate problems, as well as prevent future leaks from occurring.
 This is what we are going to configure in this lab.
@@ -2865,7 +2865,7 @@ This is what we are going to configure in this lab.
 
 ## Test our policies
 
-[:arrow_up: Top](#Information-protection)
+[:arrow_up: Top](#information-protection)
 
 To test our files policies, perform the following tasks:
 
@@ -2954,7 +2954,7 @@ You should find the shortcut on your desktop:
 
 ## Environment
 
-[:arrow_up: Top](#Cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
 
 :warning: As your environments auditing might not be configured yet and will take up to **24h** before being enabled, the alerts related investigations will be performed **in the environment provided by your instructor**. Credentials are provided below.
 Search and review the alerts in that environment and investigate to identify the users and the malicious activities performed.
@@ -2979,19 +2979,19 @@ Search and review the alerts in that environment and investigate to identify the
 
 ## Labs
 
-* [Anonymous access:](#Anonymous-access) :clock10: 5 min
-* [Impossible travel:](#Impossible-travel) :clock10: 5 min
-* [Activity from infrequent country:](#Activity-from-infrequent-country) :clock10: 5 min
-* [Malware detection:](#Malware-detection) :clock10: 5 min
-* [Email exfiltration using suspicious inbox forwarding:](#Email-exfiltration-using-suspicious-inbox-forwarding) :clock10: 5 min
-* [Ransomware activity:](#Ransomware-activity) :clock10: 5 min
-* [Suspicious application consent:](#Suspicious-application-consent) :clock10: 5 min
+* [Anonymous access:](#anonymous-access) :clock10: 5 min
+* [Impossible travel:](#impossible-travel) :clock10: 5 min
+* [Activity from infrequent country:](#activity-from-infrequent-country) :clock10: 5 min
+* [Malware detection:](#malware-detection) :clock10: 5 min
+* [Email exfiltration using suspicious inbox forwarding:](#email-exfiltration-using-suspicious-inbox-forwarding) :clock10: 5 min
+* [Ransomware activity:](#ransomware-activity) :clock10: 5 min
+* [Suspicious application consent:](#suspicious-application-consent) :clock10: 5 min
 
 ---
 
 ## Anonymous access
 
-[:arrow_up: Top](#Cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
 
 This detection identifies that users were active from an IP address that has been identified as an anonymous proxy IP address. These proxies are used by people who want to hide their device’s IP address, and may be used for malicious intent. This detection uses a machine learning algorithm that reduces "false positives", such as mis-tagged IP addresses that are widely used by users in the organization.
 
@@ -3037,7 +3037,7 @@ As your authentication during the previous steps came from an anonymous IP addre
 
 ## Impossible travel
 
-[:arrow_up: Top](#Cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
 
 This detection identifies two user activities (is a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second, indicating that a different user is using the same credentials. This detection uses a machine learning algorithm that ignores obvious "false positives" contributing to the impossible travel condition, such as VPNs and locations regularly used by other users in the organization. The detection has an initial learning period of seven days during which it learns a new user’s activity pattern.
 
@@ -3067,7 +3067,7 @@ As the first and the second authentication came from distinct locations, Cloud A
 
 ## Activity from infrequent country
 
-[:arrow_up: Top](#Cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
 
 This detection considers past activity locations to determine new and infrequent locations. The anomaly detection engine stores information about previous locations used by users in the organization. An alert is triggered when an activity occurs from a location that wasn't recently or never visited by any user in the organization.
 
@@ -3091,7 +3091,7 @@ After an initial learning period, Cloud App Security will detect that this locat
 
 ## Malware detection
 
-[:arrow_up: Top](#Cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
 
 This detection identifies malicious files in your cloud storage, whether they're from your Microsoft apps or third-party apps. Microsoft Cloud App Security uses Microsoft's threat intelligence to recognize whether certain files are associated with known malware attacks and are potentially malicious. This built-in policy is disabled by default. Not every file is scanned, but heuristics are used to look for files that are potentially risky. After files are detected, you can then see a list of **Infected files**. Click on the malware file name in the file drawer to open a malware report that provides you with information about that type of malware the file is infected with.
 
@@ -3155,7 +3155,7 @@ This detection identifies malicious files in your cloud storage, whether they're
 
 ## Email exfiltration using suspicious inbox forwarding
 
-[:arrow_up: Top](#Cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
 
 This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address.
 
@@ -3248,7 +3248,7 @@ As the rules redirects your user’s emails to a suspicious external address, Cl
 
 ## Suspicious application consent
 
-[:arrow_up: Top](#Cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
 
 Many third-party productivity apps that might be installed by business users in your organization request permission to access user information and data and sign in on behalf of the user in other cloud apps, such as Office 365, G Suite and Salesforce. 
 When users install these apps, they often click accept without closely reviewing the details in the prompt, including granting permissions to the app. This problem is compounded by the fact that IT may not have enough insight to weigh the security risk of an application against the productivity benefit that it provides.
@@ -3301,7 +3301,7 @@ Here is an example of such user consent:
 
 ## Create your own policies
 
-[:arrow_up: Top](#Cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
 
 Now that we reviewed some of the default detection capabilities of Cloud App Security, you should start creating your [own policies](https://docs.microsoft.com/en-us/cloud-app-security/control-cloud-apps-with-policies).
 Cloud App Security provides by default many [policies templates](https://docs.microsoft.com/en-us/cloud-app-security/policy-template-reference) to start creating your custom policies.
@@ -3687,7 +3687,7 @@ With the access and session policies, you can:
 
 ## Federate Salesforce with Azure AD
 
-[:arrow_up: Top](#Conditional-Access-App-Control)
+[:arrow_up: Top](#conditional-Access-App-Control)
 
 >:warning: As Conditional Access App Control requires the protected app to be federated with your IdP (Azure AD in our case), we will first federate Saleforce with our tenant before moving to the controls configuration. Please go through all the steps exactly as described to avoid any complications further in the lab.
 
@@ -3822,7 +3822,7 @@ With the access and session policies, you can:
 
 ## Deploy Salesforce to your users
 
-[:arrow_up: Top](#Conditional-Access-App-Control)
+[:arrow_up: Top](#conditional-Access-App-Control)
 
 We will now provide access to our users and validate the SSO experience.
 
@@ -3852,7 +3852,7 @@ We will now provide access to our users and validate the SSO experience.
 
 ## Deploy the reverse proxy capability for Salesforce
 
-[:arrow_up: Top](#Conditional-Access-App-Control)
+[:arrow_up: Top](#conditional-Access-App-Control)
 
 The next step of the configuration is to create a Conditional access policy in Azure AD and then complete the configuration in Cloud App Security.
 
@@ -3909,7 +3909,7 @@ The next step of the configuration is to create a Conditional access policy in A
 
 ### Configure device authentication
 
-[:arrow_up: Top](#Conditional-Access-App-Control)
+[:arrow_up: Top](#conditional-Access-App-Control)
 
 Conditional Access App Control is capable to identify company devices using either Azure AD, Intune or certificates (provided by 3rd party MDM for example). We will here simulate the 3rd party MDM scenario, using client certificates.
 
@@ -3929,7 +3929,7 @@ Conditional Access App Control is capable to identify company devices using eith
 
 ### Create a session policy
 
-[:arrow_up: Top](#Conditional-Access-App-Control)
+[:arrow_up: Top](#conditional-Access-App-Control)
 
 To control our users sessions to Salesforce, we have now to create a **policy**.
 
@@ -3986,7 +3986,7 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
 ### Test the user experience
 
-[:arrow_up: Top](#Conditional-Access-App-Control)
+[:arrow_up: Top](#conditional-Access-App-Control)
 
 1. Extract the file **silvia.pfx** from the **Client Certificate** folder in **Demo files.zip** file you've received
 
@@ -4024,7 +4024,7 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
 ### Test the admin experience
 
-[:arrow_up: Top](#Conditional-Access-App-Control)
+[:arrow_up: Top](#conditional-Access-App-Control)
 
 1. Go back to the Cloud App Security portal, and under **Investigate**  choose **Activity log**
 
