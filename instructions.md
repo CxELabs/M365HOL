@@ -3362,11 +3362,11 @@ With the access and session policies, you can:
 
 1. Go to the [Azure portal](https://portal.azure.com) and open the **Azure Active Directory** blade.
 
-   !IMAGE[AAD portal](\Media\aad-1.png "AAD portal")
+   !IMAGE[AAD portal](\Media\aad-1.png)
 
 2. Go to the **Conditional Access** section.
 
-   !IMAGE[AAD portal](\Media\aad-2.png "AAD portal")
+   !IMAGE[AAD portal](\Media\aad-2.png)
 
 3. Create a new conditional access policy with the following settings:
 
@@ -3374,17 +3374,17 @@ With the access and session policies, you can:
    |-|-|-|
    |Office365 AppControl|All users|Exchange, SharePoint|
 
-   !IMAGE[New policy](\Media\cond-policy-1.png "New policy")
+   !IMAGE[New policy](\Media\cond-policy-1.png)
 
-   !IMAGE[New policy](\Media\cond-policy-2.png "New policy")
+   !IMAGE[New policy](\Media\cond-policy-2.png)
 
-   !IMAGE[New policy](\Media\cond-policy-3.png "New policy")
+   !IMAGE[New policy](\Media\cond-policy-3.png)
 
-   !IMAGE[New policy](\Media\cond-policy-4.png "New policy")
+   !IMAGE[New policy](\Media\cond-policy-4.png)
 
    >:warning: Do not forget to enable the policy !
 
-   !IMAGE[New policy](\Media\cond-policy-5.png "New policy")
+   !IMAGE[New policy](\Media\cond-policy-5.png)
 
 4. Sign out, close you browser and open the [Exchange Web App](https://outlook.office.com).
    >:memo: We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
@@ -3392,33 +3392,33 @@ With the access and session policies, you can:
 5. Go back to [Cloud App Security](https://portal.cloudappsecurity.com), click on the gear icon and go to the **Conditional Access App Control** section.
    You will see that Exchange Online appeared and can now be configured.
 
-   !IMAGE[Menu](\Media\appc-office-1.png "Menu")
+   !IMAGE[Menu](\Media\appc-office-1.png)
 
-   !IMAGE[Menu](\Media\appc-office-2.png "Menu")
+   !IMAGE[Menu](\Media\appc-office-2.png)
 
 6. Click on **Continue setup** to enable session control and click on **Add**.
 
-   !IMAGE[Setup](\Media\appc-office-3.png "Setup")
+   !IMAGE[Setup](\Media\appc-office-3.png)
 
-   !IMAGE[Setup](\Media\appc-office-4.png "Setup")
+   !IMAGE[Setup](\Media\appc-office-4.png)
 
-   !IMAGE[Setup](\Media\appc-office-5.png "Setup")
+   !IMAGE[Setup](\Media\appc-office-5.png)
 
 7. Go to the **Policies** menu.
 
-   !IMAGE[Policies](\Media\appc-office-6.png "Policies")
+   !IMAGE[Policies](\Media\appc-office-6.png)
 
 8. Create a new session policy with the following settings:
 
-   !IMAGE[Session policy](\Media\appc-office-7.png "Session policy")
+   !IMAGE[Session policy](\Media\appc-office-7.png)
 
-   !IMAGE[Session policy](\Media\appc-office-8.png "Session policy")
+   !IMAGE[Session policy](\Media\appc-office-8.png)
 
-   !IMAGE[Session policy](\Media\appc-office-9.png "Session policy")
+   !IMAGE[Session policy](\Media\appc-office-9.png)
 
-   !IMAGE[Session policy](\Media\appc-office-10.png "Session policy")
+   !IMAGE[Session policy](\Media\appc-office-10.png)
 
-   !IMAGE[Session policy](\Media\appc-office-11.png "Session policy")
+   !IMAGE[Session policy](\Media\appc-office-11.png)
 
 ---
 
@@ -3429,19 +3429,19 @@ Let's now test our configuration.
 1. Sign out, close you browser and open the [Exchange Web App](https://outlook.office.com).
    You should receive the followin message, as you are redirected through Cloud App Security before accessing the application. **Click** to continue to Exchange Online.
 
-   !IMAGE[Warning](\Media\appc-office-12.png "Warning")
+   !IMAGE[Warning](\Media\appc-office-12.png)
 
 2. You are now in Exchange Online but if you look at **the Url** you can verify that your session is actually being redirected to Cloud App Security:
 
-   !IMAGE[Session](\Media\appc-office-13.png "Session")
+   !IMAGE[Session](\Media\appc-office-13.png)
 
 3. To test our policy, create a new mail containing the demo documents stored on **Client01** desktop as attachements and send it to your account.
 
-   !IMAGE[Test](\Media\appc-office-14.png "Test")
+   !IMAGE[Test](\Media\appc-office-14.png)
 
 4. Try to download the txt file containing social security numbers.
 
-   !IMAGE[Test](\Media\appc-office-15.png "Test")
+   !IMAGE[Test](\Media\appc-office-15.png)
 
 ****to finish******
 
