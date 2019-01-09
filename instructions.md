@@ -2424,7 +2424,6 @@ Congratulations! You have completed the Azure Information Protection Hands on La
 
 !INSTRUCTIONS[][ninja-cat]
 https://blogs.msdn.microsoft.com/oldnewthing/20160804-00/?p=94025
-===
 
 ===
 # Microsoft Cloud App Security
