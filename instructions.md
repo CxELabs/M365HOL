@@ -3178,45 +3178,18 @@ To test our files policies, perform the following tasks:
 
 Cloud App Security provides several [threats detection policies](https://docs.microsoft.com/en-us/cloud-app-security/anomaly-detection-policy) using machine learning and **user behavior analytics** to detect suspicious activities across your different applications.
 Those policies are enabled by default and after an initial learning period, Cloud App Security will start alerting you when suspicious actions like activity from anonymous IP addresses, infrequent country, suspicious IP addresses, impossible travel, ransomware activity, suspicious inbox forwarding configuration or unusual file download are detected.
-In this lab, we will perform some malicious actions that Cloud App Security will detect. As some detections require learning about your users’ behavior, we will focus on the ones you can simulate during this lab.
 
-## Prerequisites
-
-### Tools
-
-To simulate user access from anonymous IPs, we will use TOR browser.
-Go to the [TOR project website](https://www.torproject.org/projects/torbrowser.html.en#downloads) to download the Windows version and install it.
-You should find the shortcut on your desktop:
-
-![TOR browser icon](\Media\td-toricon.png "TOR browser")
-
-> :warning: This tools is for research purposes only. Microsoft does **not** own this tool
-> nor can it guarantee its behavior. This tools should only be run in a test lab environment.
-
-## Environment
-
-[:arrow_up: Top](#Cloud-App-Security-threat-detection-lab)
-
-:warning: As your environments auditing might not be configured yet and will take up to **24h** before being enabled, the alerts related investigations will be performed **in the environment provided by your instructor**. Credentials are provided below.
+:warning: In this lab, as your environments auditing might not be configured yet, as it takes up to **24h** before being enabled, we will investigate **in the environment provided by your instructor**. The credentials are provided below.
 Search and review the alerts in that environment and investigate to identify the users and the malicious activities performed.
 
 |Portal               |Username                   |Password
 |----------------- |----------------------------------- |---------------------
 | https://portal.cloudappsecurity.com | viewer@emslab.tech |EventP@ssword
 
-### URLs
+**URLs**
 
 * Office 365: https://portal.office.com
 * Cloud App Security: https://portal.cloudappsecurity.com
-* Windows Defender ATP: https://securitycenter.windows.com
-
-### Users
-
-| User          | Username                      | Password       |
-| ----          | --------                      | --------       |
-| Admin |admin@xyztenant.onmicrosoft.com  | * |
-| Amy Albers   |amy@xyztenant.onmicrosoft.com | * |
-| Eric Gruber  |eric@xyztenant.onmicrosoft.com | * |
 
 ## Labs
 
@@ -3235,16 +3208,6 @@ Search and review the alerts in that environment and investigate to identify the
 [:arrow_up: Top](#Cloud-App-Security-threat-detection-lab)
 
 This detection identifies that users were active from an IP address that has been identified as an anonymous proxy IP address. These proxies are used by people who want to hide their device’s IP address, and may be used for malicious intent. This detection uses a machine learning algorithm that reduces "false positives", such as mis-tagged IP addresses that are widely used by users in the organization.
-
-### Simulate the malicious activity
-
-1. On your Windows 10 lab VM, open TOR browser:
-
-   ![Connect to TOR](\Media\td-torlaunch.png "Connect to TOR")
-
-2. Open Office 365 web mail by going to https://outlook.office.com and enter Eric Gruber credentials.
-
-3. Go to the **Contoso Team Site** and download some documents.
 
 ### Investigate
 
@@ -3281,12 +3244,6 @@ As your authentication during the previous steps came from an anonymous IP addre
 [:arrow_up: Top](#Cloud-App-Security-threat-detection-lab)
 
 This detection identifies two user activities (is a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second, indicating that a different user is using the same credentials. This detection uses a machine learning algorithm that ignores obvious "false positives" contributing to the impossible travel condition, such as VPNs and locations regularly used by other users in the organization. The detection has an initial learning period of seven days during which it learns a new user’s activity pattern.
-
-### Simulate the malicious activity
-
-1. In your Windows 10 lab VM, open Office 365 web mail by going to https://outlook.office.com and enter Amy Albers credentials. This authentication will come from an Azure IP address, where your client is hosted.
-
-2. On your host PC, go to https://outlook.office.com and authenticate again as Amy Albers.
 
 ### Investigate
 
@@ -3336,36 +3293,6 @@ After an initial learning period, Cloud App Security will detect that this locat
 
 This detection identifies malicious files in your cloud storage, whether they're from your Microsoft apps or third-party apps. Microsoft Cloud App Security uses Microsoft's threat intelligence to recognize whether certain files are associated with known malware attacks and are potentially malicious. This built-in policy is disabled by default. Not every file is scanned, but heuristics are used to look for files that are potentially risky. After files are detected, you can then see a list of **Infected files**. Click on the malware file name in the file drawer to open a malware report that provides you with information about that type of malware the file is infected with.
 
-### Simulate the malicious activity
-
-1. In your Windows 10 lab VM, create a new text file __*test-malware.txt*__ with the following content:
-
-   ``` txt
-   X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
-   ```
-
-   > **INFO:** The file we just created is an [EICAR test file](http://www.eicar.org/86-0-Intended-use.html) usually used to test anti-viruses.
-
-2. This file will normally trigger an antivirus alert and quarantine the file. If this is the case, go to the Windows Security Center and restore it:
-
-   ![Security Center](\Media\td-winsecuritycenter.png "Windows Security Center")
-
-3. Go to https://portal.office.com and enter Amy Albers credentials. Go to OneDrive for Business:
-
-   ![App launcher](\Media\td-officeapplauncher.png "Office apps launcher")
-
-   ![Office apps](\Media\td-officeapps.png "Office apps")
-
-4. Upload the __*test-malware.txt*__ file you created in OneDrive:
-
-   ![OneDrive upload](\Media\td-onedriveupload.png "OneDrive upload")
-
-   ![OneDrive malware](\Media\td-testmalwarefile.png "OneDrive malware")
-
-5. After a few minutes, the file will be detected as a malware and an alert will be triggered in Cloud App Security:
-
-   ![Malware detected](\Media\td-malwaredetected.png "Malware detected")
-
 ### Investigate
 
 1. Go back to the Cloud App Security portal and review the alerts.
@@ -3400,37 +3327,6 @@ This detection identifies malicious files in your cloud storage, whether they're
 
 This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address.
 
-### Simulate the malicious activity
-
-1. On your Windows 10 lab VM, open TOR browser.
-
-2. Open Office 365 web mail by going to https://outlook.office.com and enter Eric Gruber credentials.
-
-3. Click on the “People” icon:
-
-   ![Exchange menu](\Media\td-exomenu.png "Exchange menu")
-
-4. Create a new contact and save it:
-
-   |First name |  Last Name | Email          | Display as|
-   |:----------|:-----------|:---------------|:----------|
-   | .         | .          | badguy@xyz.com | .         |
-   ![Create contact](\Media\td-createcontact.png "Create contact")
-
-5. Now go to the __*Mail*__ settings:
-
-   ![Exchange settings](\Media\td-exosettings.png "Exchange settings")
-
-6. Go to __*Inbox and sweep rules*__ and create a new forwarding rule:
-
-   ![Inbox rules](\Media\td-inboxrules.png "Inbox rules")
-
-7. Create this rule and select the contact you created before as the recipient:
-
-   | Apply to all messages | Select the contact you created | Click **OK** to save          |
-   |:----------|:-----------|:---------------|
-   | ![Inbox rules](\Media\td-newinboxrules01.png "Inbox rules") | ![Inbox rules](\Media\td-newinboxrules02.png "Inbox rules") | ![Inbox rules](\Media\td-newinboxrules03.png "Inbox rules") |
-
 ### Investigate
 
 As the rules redirects your user’s emails to a suspicious external address, Cloud App Security will detect this rule creation and will then alert you.
@@ -3454,8 +3350,6 @@ As the rules redirects your user’s emails to a suspicious external address, Cl
 ## Ransomware activity
 
 Cloud App Security extended its ransomware detection capabilities with anomaly detection to ensure a more comprehensive coverage against sophisticated Ransomware attacks. Using our security research expertise to identify behavioral patterns that reflect ransomware activity, Cloud App Security ensures holistic and robust protection. If Cloud App Security identifies, for example, a high rate of file uploads or file deletion activities it may represent an adverse encryption process. This data is collected in the logs received from connected APIs and is then combined with learned behavioral patterns and threat intelligence, for example, known ransomware extensions. For more information about how Cloud App Security detects ransomware, see Protecting your organization against ransomware.
-
->:memo:**NOTE:** For security reasons, we will note detail in this lab how to simulate ransomware attacks
 
 ### Investigate
 
