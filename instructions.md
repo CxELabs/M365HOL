@@ -88,6 +88,7 @@ There are a few prerequisites that need to be set up to complete all the section
  
 ===
 # Link Windows Defender ATP Licenses
+[:arrow_left: Home](#lab-environment-configuration)
 
 In this task, we will link Windows Defender ATP licenses to your demo tenant.
 
@@ -125,6 +126,7 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 	!IMAGE[6crecugz.jpg](\Media\6crecugz.jpg)
 ===
 # Redeem Azure Pass
+[:arrow_left: Home](#lab-environment-configuration)
 
 For several of the exercises in this lab series, you will require an active subscription.  We are providing an Azure Pass for this purpose.  You will be provided with an Azure Pass code to use with the instructions below.
 
@@ -168,6 +170,7 @@ For several of the exercises in this lab series, you will require an active subs
 1. [] When you are redirected to the Azure Portal, the process is complete.
 ===
 # Azure AD User Configuration
+[:arrow_left: Home](#lab-environment-configuration)
 
 In this task, we will create new Azure AD users and assign licenses via PowerShell.  In a procduction evironment this would be done using Azure AD Connect or a similar tool to maintain a single source of authority, but for lab purposes we are doing it via script to reduce setup time.
 
@@ -244,9 +247,42 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
     Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
 
 	```
+===
+# Exchange Mail Flow Rule Removal
+[:arrow_left: Home](#lab-environment-configuration)
 
+By default, many of the demo tenants provided block external communications via mail flow rule.  As this will hinder many tests in this lab, we will verify if such a rule exists and remove it if necesary.
+
+2. [] Type the commands below to connect to an Exchange Online PowerShell session.  Use the credentials provided when prompted.
+
+	```
+	$UserCredential = Get-Credential
+	```
+
+	```@lab.CloudCredential(134).Username```
+
+	```@lab.CloudCredential(134).Password```
+
+	```
+	$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
+	Import-PSSession $Session
+	```
+
+1. [] Get the active Mail Flow Rules by typing the command below:
+
+	```
+	Get-TransportRule
+	```
+
+1. [] If a rule exists named something similar to **"Delete if sent outside the organization"**, run the code below to remove this rule.
+
+	```
+	Remove-TransportRule *Delete*
+	```
+	
 ===
 # Azure Security Center Setup
+[:arrow_left: Home](#lab-environment-configuration)
 
 ## VM and Workspace Deployment
 
@@ -288,8 +324,8 @@ Use the link below to deploy the following:
 1. [] The deployment takes about 13 minutes. Continue to the next task and we will return to the ASC deployment later.
 
 ===
-
 # Windows Defender ATP Onboarding
+[:arrow_left: Home](#lab-environment-configuration)
 
 In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 
@@ -357,6 +393,7 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 	4. [] Press **Enter** to close the command prompt window.
 ===
 # Workplace Join Clients
+[:arrow_left: Home](#lab-environment-configuration)
 
 In this task, we will join 3 systems to the Azure AD tenant to provide SSO capabilities in Office.
 
@@ -452,6 +489,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 7. [] Press **(Y)** to confirm onboarding.
 ===
 # MCAS Environment Preparation
+[:arrow_left: Home](#lab-environment-configuration)
 
 To be able to complete the different parts of the Cloud App Security labs, the following configuration steps are required.
 
@@ -560,8 +598,16 @@ To prepare the **Information Protection** lab, we have to enable the integration
 
 >:memo: It takes up to **1h** for Cloud App Security to sync the Azure Information classifications.
 
+---
+
+## Enabling Azure Information Protection integration
+
+[:arrow_up: Top](#mcas-environment-preparation)
+
+
 ===
 # Complete Azure Security Center Deployment
+[:arrow_left: Home](#lab-environment-configuration)
 
 Now that the template has been deployed, we can continue with the configuration of the Azure Security Center settings.
 
@@ -607,6 +653,7 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 >[!HINT] It can take some time for the VMs to become visible in Security Center
 ===
 # Azure Advanced Threat Protection Setup
+[:arrow_left: Home](#lab-environment-configuration)
  
 ## Create and configure Azure ATP Workspace 
  
@@ -652,7 +699,8 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 	>[!NOTE] This requires that you have already enabled the Windows Defender ATP service. 
  
 === 
-## Adding Guest User access to Azure ATP Console.  
+## Adding Guest User access to Azure ATP Console.
+[:arrow_left: Home](#lab-environment-configuration)  
  
 To allow users not in the companies Azure Active Directory to access the Azure ATP console you configure a guest user and then add them to the proper Azure ATP AAD group.  
 
@@ -675,7 +723,27 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 12. []	Select the **guest user added above** and click **Select**. 
  
 > [!NOTE]	After the user accepts the invitation the user will be able to access the Azure ATP console for this workspace using their email account.  
- 
+
+===
+## Create Group for MCAS Admin Delegation
+
+1. [] In the Azure AD blade click **Groups**
+2. [] Create a new Azure AD group **US employees** containing a couple of your test users (**not** the McasAdminUS account).
+   !IMAGE[New group](\Media\mgmt-newgroup1.png "New group")
+
+   !IMAGE[New group](\Media\mgmt-newgroup2.png "New group")
+
+3. []Browse to ```https://portal.cloudappsecurity.com```, import the **US employees** group.
+    > :warning: Cloud App Security has to synchronize the Azure AD groups before importing them. This operation can take up to 1h.
+
+    !IMAGE[Import group](\Media\mgmt-import1.png "Import group")
+
+    !IMAGE[Import group](\Media\mgmt-import2.png "Import group")
+
+    !IMAGE[Import group](\Media\mgmt-import3.png "Import group")
+
+    !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
+
 ===
 # Azure Information Protection
 [:arrow_left: Home](#introduction)
@@ -977,6 +1045,8 @@ In this task, we will perform bulk classification using the built-in functionali
 1. [] In the AIP client Classify and protect interface, select **Highly Confidential\\All Employees** and press **Apply**. 
 
 	!IMAGE[CandP2.png](\Media\CandP2.png)
+
+> [!Alert] If you are unable to see the **Apply** button due to screen resolution, click **Alt+A** and **Enter** to apply the label to the content.
 
 > [!NOTE] You may review the results in a text file by clicking show results, or simply close the window.
 ===
@@ -2135,6 +2205,8 @@ In this task, we will perform bulk classification using the built-in functionali
 
 	!IMAGE[CandP2.png](\Media\CandP2.png)
 
+> [!Alert] If you are unable to see the **Apply** button due to screen resolution, click **Alt+A** and **Enter** to apply the label to the content.
+
 > [!NOTE] You may review the results in a text file by clicking show results, or simply close the window.
 ===
 # Security and Compliance Center 🐱‍👤
@@ -2374,6 +2446,11 @@ In this task, we will configure a mail flow rule to detect sensitive information
 
 In this task, we will send emails to demonstrate the results of the Exchange Online mail flow rules we configured in the previous task.  This will demonstrate some ways to protect your sensitive data and ensure a positive user experience with the product.
 
+1. [] On @lab.VirtualMachine(Client01).SelectLink, in the Azure Portal, under **Classifications**, click on **Labels**.
+2. [] Expand **Highly Confidential** and click on **All Employees**.
+3. [] Scroll down to the conditions and click on **Credit Card Number**.
+4. [] In the Condition: Credit Card Number blade, click **Delete** and **OK**.
+5. [] Save and close the **Label: All Employees** blade.
 1. [] Switch to @lab.VirtualMachine(Client03).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 1. [] Open and configure Microsoft Outlook. 
 1. [] Close and reopen Outlook to activate and if you receive a metered connection warning, click **Connect anyway**.
@@ -2488,30 +2565,9 @@ Documentation:
 
 ## Delegate user group administration
 
-In this lab, we are going to delegate the management of US employees to a new administrator. This administrator will only see those users alerts and activities.
+In this ask, we are going to delegate the management of US employees to a new administrator. This administrator will only see those users alerts and activities.
 
-1. In the [Azure Active Directory portal](https://portal.azure.com), create a new user account named **mcasAdminUS**. Do not grant him any specific admin role.
-   !IMAGE[New user](\Media\mgmt-newuser1.png "New user")
-
-   !IMAGE[New user](\Media\mgmt-newuser2.png "New user")
-
-2. Create a new Azure AD group **US employees** containing a couple of your test users (**not** your admin account).
-   !IMAGE[New group](\Media\mgmt-newgroup1.png "New group")
-
-   !IMAGE[New group](\Media\mgmt-newgroup2.png "New group")
-
-3. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), import the **US employees** group.
-    > :warning: Cloud App Security has to synchronize the Azure AD groups before importing them. This operation can take up to 1h.
-
-    !IMAGE[Import group](\Media\mgmt-import1.png "Import group")
-
-    !IMAGE[Import group](\Media\mgmt-import2.png "Import group")
-
-    !IMAGE[Import group](\Media\mgmt-import3.png "Import group")
-
-    !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
-
-4. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add **mcasAdminUS** as **User group admin** for the **US employees** group.
+4. Browse to ```https://portal.cloudappsecurity.com```, add **mcasAdminUS** as **User group admin** for the **US employees** group.
 
     !IMAGE[New admin](\Media\mgmt-admin1.png "New admin")
 
@@ -2533,7 +2589,7 @@ As a **Managed Security Service Providers** (MSSPs), you are asked by your custo
 In this lab, we will see how to answer to that question.
 As the MCAS admin for your company, work with the person next to you to configure an external access for the Managed Security Service Provider to another MCAS tenant.
 
-1. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add the external MCAS admin as **Security reader** in your MCAS tenant.
+1. Browse to ```https://portal.cloudappsecurity.com```, add the external MCAS admin as **Security reader** in your MCAS tenant.
 
     !IMAGE[External admin](\Media\mgmt-admin1.png "External admin")
 
