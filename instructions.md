@@ -231,9 +231,13 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
     
     # MCAS user and group creation
 	$upn = "mcasAdminUS@"+$tenantfqdn
-	New-AzureADUser -AccountEnabled $True -DisplayName "MCAS US admin" -PasswordProfile $PasswordProfile -MailNickName "mcasAdminUS" -UserPrincipalName $upn
+	New-AzureADUser -AccountEnabled $True -DisplayName "MCAS US admin" -PasswordProfile $PasswordProfile -MailNickName "mcasadminUS" -UserPrincipalName $upn
     New-AzureADGroup -DisplayName "US employees" -MailNickName "USemployees" -SecurityEnabled $true -MailEnabled $false
+    $groupId = Get-AzureADGroup -SearchString "usemployees"
+    $userId = Get-AzureADUser -SearchString "mcasadminus"
+    Add-AzureADGroupMember -RefObjectId $userId.ObjectId -ObjectId $groupId.ObjectId
     
+
     ```
 
 1. [] In the PowerShell window, click the code below to assign Office and EMS licenses.
@@ -2643,7 +2647,7 @@ The different Cloud App Security capabilities covered in the labs are:
 
 [:arrow_left: Home](#labs)
 
-[Manage admin access:](#manage-admin-access) :clock10: 15 min
+[Manage admin access:](#manage-admin-access) :clock10: 5 min
 
 For this task, you are asked to delegate admin access to monitor a dedicated group of users for a specific region, without adding them to the Global Admin management role.
 
