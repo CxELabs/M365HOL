@@ -221,7 +221,12 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
     # Create new Azure AD user
     New-AzureADUser -AccountEnabled $True -DisplayName $user.displayname -PasswordProfile $PasswordProfile -MailNickName $user.username -UserPrincipalName $upn
     }
-
+    
+    # MCAS user and group creation
+	$upn = "mcasAdminUS@"+$tenantfqdn
+	New-AzureADUser -AccountEnabled $True -DisplayName "MCAS US admin" -PasswordProfile $PasswordProfile -MailNickName "mcasAdminUS" -UserPrincipalName $upn
+    New-AzureADGroup -DisplayName "US employees" -MailNickName "USemployees" -SecurityEnabled $true -MailEnabled $false
+    
     ```
 
 1. [] In the PowerShell window, click the code below to assign Office and EMS licenses.
@@ -2490,17 +2495,7 @@ Documentation:
 
 In this lab, we are going to delegate the management of US employees to a new administrator. This administrator will only see those users alerts and activities.
 
-1. In the [Azure Active Directory portal](https://portal.azure.com), create a new user account named **mcasAdminUS**. Do not grant him any specific admin role.
-   !IMAGE[New user](\Media\mgmt-newuser1.png "New user")
-
-   !IMAGE[New user](\Media\mgmt-newuser2.png "New user")
-
-2. Create a new Azure AD group **US employees** containing a couple of your test users (**not** your admin account).
-   !IMAGE[New group](\Media\mgmt-newgroup1.png "New group")
-
-   !IMAGE[New group](\Media\mgmt-newgroup2.png "New group")
-
-3. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), import the **US employees** group.
+1. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), import the **US employees** group.
     > :warning: Cloud App Security has to synchronize the Azure AD groups before importing them. This operation can take up to 1h.
 
     !IMAGE[Import group](\Media\mgmt-import1.png "Import group")
@@ -2511,7 +2506,7 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
 
-4. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add **mcasAdminUS** as **User group admin** for the **US employees** group.
+2. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add **mcasAdminUS** as **User group admin** for the **US employees** group.
 
     !IMAGE[New admin](\Media\mgmt-admin1.png "New admin")
 
@@ -2523,7 +2518,7 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     !IMAGE[New admin](\Media\mgmt-admin5.png "New admin")
 
-5. Open a new **private** tab and connect to the [Cloud App Security portal](https://portal.cloudappsecurity.com) with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
+3. Open a new **private** tab and connect to the [Cloud App Security portal](https://portal.cloudappsecurity.com) with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
 
 ---
 
@@ -2938,28 +2933,7 @@ To test our files policies, perform the following tasks:
 Cloud App Security provides several [threats detection policies](https://docs.microsoft.com/en-us/cloud-app-security/anomaly-detection-policy) using machine learning and **user behavior analytics** to detect suspicious activities across your different applications.
 Those policies are enabled by default and after an initial learning period, Cloud App Security will start alerting you when suspicious actions like activity from anonymous IP addresses, infrequent country, suspicious IP addresses, impossible travel, ransomware activity, suspicious inbox forwarding configuration or unusual file download are detected.
 
-<<<<<<< HEAD
 :warning: In this lab, as your environments auditing might not be configured yet, as it takes up to **24h** before being enabled, we will investigate **in the environment provided by your instructor**. The credentials are provided below.
-=======
-## Prerequisites
-
-### Tools
-
-To simulate user access from anonymous IPs, we will use TOR browser.
-Go to the [TOR project website](https://www.torproject.org/projects/torbrowser.html.en#downloads) to download the Windows version and install it.
-You should find the shortcut on your desktop:
-
-!IMAGE[TOR browser icon](\Media\td-toricon.png "TOR browser")
-
-> :warning: This tools is for research purposes only. Microsoft does **not** own this tool
-> nor can it guarantee its behavior. This tools should only be run in a test lab environment.
-
-## Environment
-
-[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
-
-:warning: As your environments auditing might not be configured yet and will take up to **24h** before being enabled, the alerts related investigations will be performed **in the environment provided by your instructor**. Credentials are provided below.
->>>>>>> 1e87c6310ac22edde32f35736aaa8e322142e270
 Search and review the alerts in that environment and investigate to identify the users and the malicious activities performed.
 
 |Portal               |Username                   |Password
@@ -2989,19 +2963,6 @@ Search and review the alerts in that environment and investigate to identify the
 
 This detection identifies that users were active from an IP address that has been identified as an anonymous proxy IP address. These proxies are used by people who want to hide their device’s IP address, and may be used for malicious intent. This detection uses a machine learning algorithm that reduces "false positives", such as mis-tagged IP addresses that are widely used by users in the organization.
 
-<<<<<<< HEAD
-=======
-### Simulate the malicious activity
-
-1. On your Windows 10 lab VM, open TOR browser:
-
-   !IMAGE[Connect to TOR](\Media\td-torlaunch.png "Connect to TOR")
-
-2. Open Office 365 web mail by going to https://outlook.office.com and enter Eric Gruber credentials.
-
-3. Go to the **Contoso Team Site** and download some documents.
-
->>>>>>> 1e87c6310ac22edde32f35736aaa8e322142e270
 ### Investigate
 
 As your authentication during the previous steps came from an anonymous IP address, it will be detected as suspicious by Cloud App Security.
@@ -3086,39 +3047,6 @@ After an initial learning period, Cloud App Security will detect that this locat
 
 This detection identifies malicious files in your cloud storage, whether they're from your Microsoft apps or third-party apps. Microsoft Cloud App Security uses Microsoft's threat intelligence to recognize whether certain files are associated with known malware attacks and are potentially malicious. This built-in policy is disabled by default. Not every file is scanned, but heuristics are used to look for files that are potentially risky. After files are detected, you can then see a list of **Infected files**. Click on the malware file name in the file drawer to open a malware report that provides you with information about that type of malware the file is infected with.
 
-<<<<<<< HEAD
-=======
-### Simulate the malicious activity
-
-1. In your Windows 10 lab VM, create a new text file __*test-malware.txt*__ with the following content:
-
-   ``` txt
-   X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
-   ```
-
-   > **INFO:** The file we just created is an [EICAR test file](http://www.eicar.org/86-0-Intended-use.html) usually used to test anti-viruses.
-
-2. This file will normally trigger an antivirus alert and quarantine the file. If this is the case, go to the Windows Security Center and restore it:
-
-   !IMAGE[Security Center](\Media\td-winsecuritycenter.png "Windows Security Center")
-
-3. Go to https://portal.office.com and enter Amy Albers credentials. Go to OneDrive for Business:
-
-   !IMAGE[App launcher](\Media\td-officeapplauncher.png "Office apps launcher")
-
-   !IMAGE[Office apps](\Media\td-officeapps.png "Office apps")
-
-4. Upload the __*test-malware.txt*__ file you created in OneDrive:
-
-   !IMAGE[OneDrive upload](\Media\td-onedriveupload.png "OneDrive upload")
-
-   !IMAGE[OneDrive malware](\Media\td-testmalwarefile.png "OneDrive malware")
-
-5. After a few minutes, the file will be detected as a malware and an alert will be triggered in Cloud App Security:
-
-   !IMAGE[Malware detected](\Media\td-malwaredetected.png "Malware detected")
-
->>>>>>> 1e87c6310ac22edde32f35736aaa8e322142e270
 ### Investigate
 
 1. Go back to the Cloud App Security portal and review the alerts.
@@ -3153,40 +3081,6 @@ This detection identifies malicious files in your cloud storage, whether they're
 
 This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address.
 
-<<<<<<< HEAD
-=======
-### Simulate the malicious activity
-
-1. On your Windows 10 lab VM, open TOR browser.
-
-2. Open Office 365 web mail by going to https://outlook.office.com and enter Eric Gruber credentials.
-
-3. Click on the “People” icon:
-
-   !IMAGE[Exchange menu](\Media\td-exomenu.png "Exchange menu")
-
-4. Create a new contact and save it:
-
-   |First name |  Last Name | Email          | Display as|
-   |:----------|:-----------|:---------------|:----------|
-   | .         | .          | badguy@xyz.com | .         |
-   !IMAGE[Create contact](\Media\td-createcontact.png "Create contact")
-
-5. Now go to the __*Mail*__ settings:
-
-   !IMAGE[Exchange settings](\Media\td-exosettings.png "Exchange settings")
-
-6. Go to __*Inbox and sweep rules*__ and create a new forwarding rule:
-
-   !IMAGE[Inbox rules](\Media\td-inboxrules.png "Inbox rules")
-
-7. Create this rule and select the contact you created before as the recipient:
-
-   | Apply to all messages | Select the contact you created | Click **OK** to save          |
-   |:----------|:-----------|:---------------|
-   | !IMAGE[Inbox rules](\Media\td-newinboxrules01.png "Inbox rules") | !IMAGE[Inbox rules](\Media\td-newinboxrules02.png "Inbox rules") | !IMAGE[Inbox rules](\Media\td-newinboxrules03.png "Inbox rules") |
-
->>>>>>> 1e87c6310ac22edde32f35736aaa8e322142e270
 ### Investigate
 
 As the rules redirects your user’s emails to a suspicious external address, Cloud App Security will detect this rule creation and will then alert you.
