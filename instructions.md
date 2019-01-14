@@ -85,9 +85,10 @@ There are a few prerequisites that need to be set up to complete all the section
 - [Complete Azure Security Center Deployment](#complete-azure-security-center-deployment)
 
 - [Azure Advanced Threat Protection Setup](#azure-advanced-threat-protection-setup)
- 
+
 ===
 # Link Windows Defender ATP Licenses
+[:arrow_left: Home](#lab-environment-configuration)
 
 In this task, we will link Windows Defender ATP licenses to your demo tenant.
 
@@ -125,6 +126,7 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 	!IMAGE[6crecugz.jpg](\Media\6crecugz.jpg)
 ===
 # Redeem Azure Pass
+[:arrow_left: Home](#lab-environment-configuration)
 
 For several of the exercises in this lab series, you will require an active subscription.  We are providing an Azure Pass for this purpose.  You will be provided with an Azure Pass code to use with the instructions below.
 
@@ -149,31 +151,36 @@ For several of the exercises in this lab series, you will require an active subs
 
 	!IMAGE[teyx280d.jpg](\Media\teyx280d.jpg)
 
-1. [] Enter your promo code in the Promo code box using the Type Text functionality of the lab environment and click **Claim Promo Code**.
+1. [] Paste the provided promo code in the Promo code box and click **Claim Promo Code**.
 
-	!IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
-	!IMAGE[e1l35ko2.jpg](\Media\e1l35ko2.jpg)
+	> [!Knowledge] If pasting into box from your client system does not work natively, use the Type Text functionality of the lab environment 
+	> !IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
+	> !IMAGE[e1l35ko2.jpg](\Media\e1l35ko2.jpg)
+	
 	> [!NOTE] It may take up to 5 minutes to process the redemption.
 
-1. [] Scroll to the bottom of the page and click **Next**.
+8. [] Scroll to the bottom of the page and click **Next**.
 
-	!IMAGE[ihrjazqi.jpg](\Media\ihrjazqi.jpg)
-	> [!NOTE] You can keep the pre-populated information.
+  !IMAGE[ihrjazqi.jpg](\Media\ihrjazqi.jpg)
 
-1. [] Check the box to agree to the terms and click **Sign up**.
+  > [!NOTE] You can keep the pre-populated information.
 
-	!IMAGE[k2a97g8e.jpg](\Media\k2a97g8e.jpg)
-	> [!NOTE] It may take a few minutes to process the request.
+9. [] Check the box to agree to the terms and click **Sign up**.
+
+  !IMAGE[k2a97g8e.jpg](\Media\k2a97g8e.jpg)
+
+  > [!NOTE] It may take a few minutes to process the request.
 
 1. [] When you are redirected to the Azure Portal, the process is complete.
 ===
 # Azure AD User Configuration
+[:arrow_left: Home](#lab-environment-configuration)
 
 In this task, we will create new Azure AD users and assign licenses via PowerShell.  In a procduction evironment this would be done using Azure AD Connect or a similar tool to maintain a single source of authority, but for lab purposes we are doing it via script to reduce setup time.
 
 1. [] Log into @lab.VirtualMachine(Scanner01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++
 2. [] Open a new Administrative PowerShell window and click below to type the code. 
-    
+   
     ```
     $cred = Get-Credential
     ```
@@ -183,7 +190,7 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
 	```@lab.CloudCredential(134).Username```
 
 	```@lab.CloudCredential(134).Password``` 
-    
+   
 1. [] In the PowerShell window, click on the code below to create users.
 
     ```
@@ -249,9 +256,35 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
     Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
 
 	```
+===
+# Exchange Mail Flow Rule Removal
+[:arrow_left: Home](#lab-environment-configuration)
+
+By default, many of the demo tenants provided block external communications via mail flow rule.  As this will hinder many tests in this lab, we will verify if such a rule exists and remove it if necesary.
+
+1. [] In the Admin PowerShell window, type the commands below to connect to an Exchange Online PowerShell session.  Use the credentials provided when prompted.
+
+	```
+	$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $cred -Authentication Basic -AllowRedirection
+	Import-PSSession $Session
+	```
+
+1. [] Get the active Mail Flow Rules by typing the command below:
+
+	```
+	Get-TransportRule
+	```
+
+1. [] If a rule exists named something similar to **"Delete if sent outside the organization"**, run the code below to remove this rule.
+
+	```
+	Remove-TransportRule *Delete*
+	```
+	
 
 ===
 # Azure Security Center Setup
+[:arrow_left: Home](#lab-environment-configuration)
 
 ## VM and Workspace Deployment
 
@@ -293,8 +326,8 @@ Use the link below to deploy the following:
 1. [] The deployment takes about 13 minutes. Continue to the next task and we will return to the ASC deployment later.
 
 ===
-
 # Windows Defender ATP Onboarding
+[:arrow_left: Home](#lab-environment-configuration)
 
 In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 
@@ -336,7 +369,7 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 
 	```@lab.CloudCredential(134).Password```
 1. [] On the left, click the **Settings** icon.
- 
+
 	!IMAGE[settings.png](\Media\settings.png)
 
 3. [] On the Settings page, under **Machine management**, click **Onboarding**.
@@ -362,6 +395,7 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 	4. [] Press **Enter** to close the command prompt window.
 ===
 # Workplace Join Clients
+[:arrow_left: Home](#lab-environment-configuration)
 
 In this task, we will join 3 systems to the Azure AD tenant to provide SSO capabilities in Office.
 
@@ -384,7 +418,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 	```@lab.CloudCredential(134).Password```
 1. [] On the left, click the **Settings** icon.
- 
+
 	!IMAGE[settings.png](\Media\settings.png)
 
 3. [] On the Settings page, under **Machine management**, click **Onboarding**.
@@ -414,7 +448,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 	```@lab.CloudCredential(134).Password```
 1. [] On the left, click the **Settings** icon.
- 
+
 	^IMAGE[Open Screenshot](\Media\settings.png)
 
 3. [] On the Settings page, under **Machine management**, click **Onboarding**.
@@ -444,7 +478,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 	```@lab.CloudCredential(134).Password```
 1. [] On the left, click the **Settings** icon.
- 
+
 	^IMAGE[Open Screenshot](\Media\settings.png)
 
 3. [] On the Settings page, under **Machine management**, click **Onboarding**.
@@ -457,6 +491,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 7. [] Press **(Y)** to confirm onboarding.
 ===
 # MCAS Environment Preparation
+[:arrow_left: Home](#lab-environment-configuration)
 
 To be able to complete the different parts of the Cloud App Security labs, the following configuration steps are required.
 
@@ -482,7 +517,7 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 	>```@lab.CloudCredential(134).Password```
 
 4. [] In the **Security & Compliance Center**, Expand **Search & investigation** and click on **Audit log search**.
-    
+   
 	^IMAGE[Audit log](\Media\conf-auditlog.png "Audit log")
 
 5. [] You can see here that auditing is not enabled. Click on the **Turn on auditing** button to enable it and click **yes** at the prompt.
@@ -499,7 +534,7 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
     ^IMAGE[Open PowerShell](\Media\conf-powershell.png "Open PowerShell")
 
 2. [] Enter the following commands to connect to Exchange Online using PowerShell. When prompted for credentials, enter your Office 365 administrative credentials.
-    
+   
 	```
 
 	$UserCredential = Get-Credential
@@ -565,8 +600,16 @@ To prepare the **Information Protection** lab, we have to enable the integration
 
 >:memo: It takes up to **1h** for Cloud App Security to sync the Azure Information classifications.
 
+---
+
+## Enabling Azure Information Protection integration
+
+[:arrow_up: Top](#mcas-environment-preparation)
+
+
 ===
 # Complete Azure Security Center Deployment
+[:arrow_left: Home](#lab-environment-configuration)
 
 Now that the template has been deployed, we can continue with the configuration of the Azure Security Center settings.
 
@@ -612,30 +655,31 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 >[!HINT] It can take some time for the VMs to become visible in Security Center
 ===
 # Azure Advanced Threat Protection Setup
- 
+[:arrow_left: Home](#lab-environment-configuration)
+
 ## Create and configure Azure ATP Workspace 
- 
+
 1. []	Login into @lab.VirtualMachine(ContosoDC).SelectLink using the password	+++@lab.VirtualMachine(ContosoDC).Password+++ 
- 
+
 2. []	Open Internet Explorer and browse to ```https://portal.atp.azure.com``` and login with the following credentials.  
-    
+   
    ```@lab.CloudCredential(134).UserName``` 
- 
+
    ```@lab.CloudCredential(134).Password``` 
-    
+   
 6. []	Click **Create**. 
 8. []	Click **Provide a username and password to connect to your Active Directory forest**.  
 9. []	On the Directory Services page enter the following and click **Save**: 
- 
-||| 
-|-----|-----| 
-|Username|```aatpservice```| 
-|Password|```Password123!@#```| 
-|Domain|```contoso.azure```| 
+
+|||
+|-----|-----|
+|Username|```aatpservice```|
+|Password|```Password123!@#```|
+|Domain|```contoso.azure```|
 
 ---
 ## Deploy the Azure ATP Sensor  
- 
+
 1. []	Click the **Download Sensor Setup** link. 
 1. []   Click  **Download** to download the Sensor installer package. 
 1. []   Copy the **Access key**, this will be needed during the installation of the Sensor. 
@@ -647,7 +691,7 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 1.	Select the installation language of choice and click **Next**. 
 1.	Click **Next** on the Sensor deployment type page.  
 1.	**Paste the Access key** copied from above and click **Install**.  
- 
+
 ## Configure Domain Synchronizer 
 1.	In the Azure ATP console **click on the deployed Sensor** and **toggle the Domain synchronizer candidate switch** to **On** and click **Save**. 
 
@@ -655,18 +699,19 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 1. In the Azure ATP console click **Windows Dender ATP** and then toggle the **Integration with Widnows Defender ATP** to **On** and click **Save**
 
 	>[!NOTE] This requires that you have already enabled the Windows Defender ATP service. 
- 
+
 === 
-## Adding Guest User access to Azure ATP Console.  
- 
+## Adding Guest User access to Azure ATP Console.
+[:arrow_left: Home](#lab-environment-configuration)  
+
 To allow users not in the companies Azure Active Directory to access the Azure ATP console you configure a guest user and then add them to the proper Azure ATP AAD group.  
 
 1. [] On ContosoDC, open a new tab in IE and browse to ```https://portal.azure.com```. You should be automatically logged in. If not, login with the following credentials.  
    
    ```@lab.CloudCredential(134).UserName``` 
- 
+
    ```@lab.CloudCredential(134).Password``` 
- 
+
 2. []	Close any popup windows that might have opened.  
 3. []	Click **Azure Active Directory**. 
 4. []	Click **Users**. 
@@ -678,9 +723,29 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 10. []	Click **Members**. 
 11. []	Click **Add members**. 
 12. []	Select the **guest user added above** and click **Select**. 
- 
+
 > [!NOTE]	After the user accepts the invitation the user will be able to access the Azure ATP console for this workspace using their email account.  
- 
+
+===
+## Create Group for MCAS Admin Delegation
+
+1. [] In the Azure AD blade click **Groups**
+2. [] Create a new Azure AD group **US employees** containing a couple of your test users (**not** the McasAdminUS account).
+   !IMAGE[New group](\Media\mgmt-newgroup1.png "New group")
+
+   !IMAGE[New group](\Media\mgmt-newgroup2.png "New group")
+
+3. []Browse to ```https://portal.cloudappsecurity.com```, import the **US employees** group.
+    > :warning: Cloud App Security has to synchronize the Azure AD groups before importing them. This operation can take up to 1h.
+
+    !IMAGE[Import group](\Media\mgmt-import1.png "Import group")
+
+    !IMAGE[Import group](\Media\mgmt-import2.png "Import group")
+
+    !IMAGE[Import group](\Media\mgmt-import3.png "Import group")
+
+    !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
+
 ===
 # Azure Information Protection
 [:arrow_left: Home](#introduction)
@@ -814,13 +879,14 @@ The first step in configuring the AIP Scanner is to install the service and conn
 Now that you have installed the scanner bits, you need to get an Azure AD token for the scanner service account to authenticate so that it can run unattended. This requires registering both a Web app and a Native app in Azure Active Directory.  The commands below will do this in an automated fashion rather than needing to go into the Azure portal directly.
 
 1. [] In PowerShell, run ```Connect-AzureAD``` and use the username and password below. 
-	
-	```@lab.CloudCredential(134).Username```
-	
-	```@lab.CloudCredential(134).Password```
+
+  ```@lab.CloudCredential(17).Username```
+
+  ```@lab.CloudCredential(17).Password```
+
 1. [] Next, click the **T** to **type the commands below** in the PowerShell window and press **Enter**. 
 
-	> [!NOTE] This will create a new Web App Registration, Native App Registration, and associated Service Principals in Azure AD.
+   > [!NOTE] This will create a new Web App Registration, Native App Registration, and associated Service Principals in Azure AD.
 
    ```
    New-AzureADApplication -DisplayName AIPOnBehalfOf -ReplyUrls http://localhost
@@ -829,43 +895,44 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
    $WebAppKey = New-Guid
    $Date = Get-Date
    New-AzureADApplicationPasswordCredential -ObjectId $WebApp.ObjectID -startDate $Date -endDate $Date.AddYears(1) -Value $WebAppKey.Guid -CustomKeyIdentifier "AIPClient"
-	
+   
    $AIPServicePrincipal = Get-AzureADServicePrincipal -All $true | ? {$_.DisplayName -eq 'AIPOnBehalfOf'}
    $AIPPermissions = $AIPServicePrincipal | select -expand Oauth2Permissions
    $Scope = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $AIPPermissions.Id,"Scope"
    $Access = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
    $Access.ResourceAppId = $WebApp.AppId
    $Access.ResourceAccess = $Scope
-
-
+   
    New-AzureADApplication -DisplayName AIPClient -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
    $NativeApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPClient'"
    New-AzureADServicePrincipal -AppId $NativeApp.AppId
    ```
-   
+
 1. [] Finally, we will output the Set-AIPAuthentication command by running the commands below and pressing **Enter**.
-   
-	 
+
    ```
    "Set-AIPAuthentication -WebAppID " + $WebApp.AppId + " -WebAppKey " + $WebAppKey.Guid + " -NativeAppID " + $NativeApp.AppId | Out-File ~\Desktop\Set-AIPAuthentication.txt
+   
+   Start ~\Desktop\Set-AIPAuthentication.txt
+   ```
 
-	Start ~\Desktop\Set-AIPAuthentication.txt
-	```
 1. [] Leave the notepad window open in the background.
+
 1. [] Click on the Start menu and type ```PowerShell```, right-click on the PowerShell program, and click **Run as a different user**.
 
-	!IMAGE[zgt5ikxl.jpg](\Media\zgt5ikxl.jpg)
+   !IMAGE[zgt5ikxl.jpg](\Media\zgt5ikxl.jpg)
 
 1. [] When prompted, enter the username and password below and click **OK**.
 
-	```Contoso\AIPScanner``` 
+   ```Contoso\AIPScanner``` 
 
-	```Somepass1```
+   ```Somepass1```
 
-1. [] Copy the **Set-AIPAuthentication** command into this window from the notepad and run it.
-1. [] When prompted, enter the username and password below:
+1. [] Restore the **Notepad** window and copy the **full Set-AIPAuthentication** command into this window from and run it.
 
-	```AIPScanner@@lab.CloudCredential(134).TenantName```
+8. [] When prompted, enter the username and password below:
+
+	```AIPScanner@@lab.CloudCredential(17).TenantName```
 
 	```Somepass1```
 
@@ -879,10 +946,9 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 	>
 	>!IMAGE[y2bgsabe.jpg](\Media\y2bgsabe.jpg)
 1. [] **Close the current PowerShell window**.
-1. [] **In the admin PowerShell window** and type the command below.
+10. [] **In the admin PowerShell window** and type the command below.
 
-	```Restart-Service AIPScanner```
-   
+  ```Restart-Service AIPScanner```
 ---
 
 # Configuring Repositories
@@ -894,7 +960,7 @@ In this task, we will configure repositories to be scanned by the AIP scanner.  
 
 The next task is to configure repositories to scan.  These can be on-premises SharePoint 2010, 2013, or 2016 document libraries and any accessible CIFS based share.
 
-1. [] In the PowerShell window on Scanner01 run the commands below
+1. [] In the Administrative PowerShell window on Scanner01 run the commands below
 
     ```
     Add-AIPScannerRepository -Path http://Scanner01/documents -SetDefaultLabel Off
@@ -927,18 +993,18 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
     ```
 
 	> [!Knowledge] Note that we used the DiscoverInformationTypes -All switch before starting the scan.  This causes the scanner to use any custom conditions that you have specified for labels in the Azure Information Protection policy, and the list of information types that are available to specify for labels in the Azure Information Protection policy.  Although the scanner will discover documents to classify, it will not do so because the default configuration for the scanner is Discover only mode.
- 	
+	
 1. [] Right-click on the **Windows** button in the lower left-hand corner and click on **Event Viewer**.
- 
+
 	^IMAGE[Open Screenshot](\Media\cjvmhaf0.jpg)
 1. [] Expand **Application and Services Logs** and click on **Azure Information Protection**.
 
 	^IMAGE[Open Screenshot](\Media\dy6mnnpv.jpg)
- 
+
 	>[!NOTE] You will see an event like the one below when the scanner completes the cycle.
 	>
 	>!IMAGE[agnx2gws.jpg](\Media\agnx2gws.jpg)
- 
+
 1. [] Next, switch to @lab.VirtualMachine(Client01).SelectLink and log in using the password +++@lab.VirtualMachine(Client01).Password+++.
 1. [] Open a **File Explorer** window, and browse to ```\\Scanner01.contoso.azure\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports```.
 
@@ -982,6 +1048,8 @@ In this task, we will perform bulk classification using the built-in functionali
 1. [] In the AIP client Classify and protect interface, select **Highly Confidential\\All Employees** and press **Apply**. 
 
 	!IMAGE[CandP2.png](\Media\CandP2.png)
+
+> [!Alert] If you are unable to see the **Apply** button due to screen resolution, click **Alt+A** and **Enter** to apply the label to the content.
 
 > [!NOTE] You may review the results in a text file by clicking show results, or simply close the window.
 ===
@@ -1099,7 +1167,7 @@ In this task, we will assign the new sub-label to the Global policy and configur
 
 2. [] Below the labels, click **Add or remove labels**.
 
-3. [] In the Policy: Add or remove labels blade, ensure that the boxes next to all Labels are checked and click **OK**.
+3. [] In the Policy: Add or remove labels blade, ensure that the **boxes** next to **all labels including the new Contoso Internal label** are **checked** and click **OK**.
 
 4. [] In the Policy: Global blade, under the **Configure settings to display and apply on Information Protection end users** section, configure the policy to match the settings shown in the table and image below.
 
@@ -1252,6 +1320,8 @@ However, helping your users to properly classify and protect sensitive data at t
 
 	> [!NOTE] Now that we know the sensitive information types that are most common in this environment, we can use that information to create **Recommended** conditions that will help guide user behavior when they encounter this type of data.
 
+	> [!ALERT] If no data is shown, it may still be processing. Continue with the lab and come back to see the results later.
+
 1. [] Under **Classifications** on the left, click **Labels** then expand **Confidential**, and click on **Contoso Internal**.
 
 	^IMAGE[Open Screenshot](\Media\jyw5vrit.jpg)
@@ -1292,8 +1362,9 @@ However, helping your users to properly classify and protect sensitive data at t
 	^IMAGE[Open Screenshot](\Media\ie6g5kta.jpg)
 1. [] In the Labels: All Employees blade, in the **Configure conditions for automatically applying this label** section, click **Automatic**.
 
-	!IMAGE[245lpjvk.jpg](\Media\245lpjvk.jpg)
-	> [!HINT] The policy tip is automatically updated when you switch the condition to Automatic.
+   !IMAGE[245lpjvk.jpg](\Media\245lpjvk.jpg)
+
+   > [!HINT] The policy tip is automatically updated when you switch the condition to Automatic.
 1. [] Click **Save** in the Label: All Employees blade and **OK** to the Save settings prompt.
 
 	^IMAGE[Open Screenshot](\Media\gek63ks8.jpg)
@@ -1309,11 +1380,10 @@ However, helping your users to properly classify and protect sensitive data at t
 In this exercise, we will migrate your AIP Labels and activate them in the Security and Compliance Center.  This will allow you to see the labels in Microsoft Information Protection based clients such as Office 365 for Mac and Mobile Devices.
 
 Although we will not be demonstrating these capabilities in this lab, you can use the tenant information provided to test on your own devices.
- 
 
 ---
-# Activating Unified Labeling
- 
+## Activating Unified Labeling
+
 In this task, we will activate the labels from the Azure Portal for use in the Security and Compliance Center.
 
 1. [] On @lab.VirtualMachine(Client01).SelectLink, log in with the password +++@lab.VirtualMachine(Client01).Password+++.
@@ -1330,6 +1400,55 @@ In this task, we will activate the labels from the Azure Portal for use in the S
 1. [] In a new tab, browse to ```https://protection.office.com/``` and click on **Classifications** and **Labels** to review the migrated labels. 
 
 	>[!NOTE] Keep in mind that now the SCC Sensitivity Labels have been activated, so any modifications, additions, or deletions will be syncronised to Azure Information Protection in the Azure Portal. There are some functional differences between the two sections (DLP in SCC, HYOK & Custom Permissions in AIP), so please be aware of this when modifying policies to ensure a consistent experience on clients. 
+
+---
+## Deploying Policy in SCC
+
+The previous step enabled the AIP labels for use in the Security and Compliance Center.  However, this did not also recreate the policies from the AIP portal. In this step we will publish a Global policy like the one we used in the AIP portal for use with unified clients.
+
+1. [] In the Security and Compliance Center, under Classifications, click on **Label policies**.
+
+2. [] In the Label policies pane, click **Publish labels**.
+
+   ^IMAGE[Open Screenshot](\Media\SCC01.png)
+
+3. [] On the Choose labels to publish page, click the **Choose labels to publish** link.
+
+   ^IMAGE[Open Screenshot](\Media\SCC02.png)
+
+4. [] In the Choose labels pane, click the + Add button.
+
+   ^IMAGE[Open Screenshot](\Media\SCC03.png)
+
+5. [] Click the box next to Display name to select all labels, then click the Add button.
+
+   ^IMAGE[Open Screenshot](\Media\SCC04.png)
+
+6. [] Click the Done button.
+
+   ^IMAGE[Open Screenshot](\Media\SCC05.png)
+
+7. [] Back on the Choose labels to publish page, click the Next button.
+
+   ^IMAGE[Open Screenshot](\Media\SCC06.png)
+
+8. [] On the Publish to users and groups page, notice that All users are included by default. If you were creating a scoped policy, you would choose specific users or groups to publish to. Click Next.
+
+   ^IMAGE[Open Screenshot](\Media\SCC07.png)
+
+9. [] On the Policy settings page, select the General label from the drop-down next to Apply this label by default to documents and email.
+
+10. [] Check the box next to Users must provide justification to remove a label or lower classification label and click the Next button.
+
+    !IMAGE[Open Screenshot](\Media\SCC08.png)
+
+11. [] In the Name textbox, type ```Global Policy``` and for the Description type ```This is the default global policy for all users.``` and click the Next button.
+
+    ^IMAGE[Open Screenshot](\Media\SCC09.png)
+
+12. [] Finally, on the Review your settings page, click the Publish button.
+
+    !IMAGE[Open Screenshot](\Media\SCC10.png)
 
 ===
 
@@ -1352,69 +1471,63 @@ One of the most common use cases for AIP is the ability to send emails using Use
 
 
 1. [] On @lab.VirtualMachine(Client03).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Launch Microsoft Outlook, and click **Accept and start Outlook**.
-1. [] The username should auto-populate based on the workplace join we performed earlier.  Click **Connect**.
-1. [] Once configuration completes, **uncheck the box** to **Set up Outlook Mobile** and click **OK**.
-1. [] **Close Outlook** and **reopen** to complete activation.
-1. [] Once Outlook opens, if you receive a metered connection warning, click **Connect anyway**.
-1. [] Click on the **New email** button.
+2. [] Launch Microsoft Outlook, and click **Accept and start Outlook**.
+3. [] The username should auto-populate based on the workplace join we performed earlier.  Click **Connect**.
+4. [] Once configuration completes, **uncheck the box** to **Set up Outlook Mobile** and click **OK**.
+5. [] **Close Outlook** and **reopen** to complete activation.
+6. [] Once Outlook opens, if you receive a metered connection warning, click **Connect anyway**.
+7. [] Click on the **New email** button.
 
-	!IMAGE[6wan9me1.jpg](\Media\6wan9me1.jpg)
+  !IMAGE[6wan9me1.jpg](\Media\6wan9me1.jpg)
 
-	> [!KNOWLEDGE] Note that the **Sensitivity** is set to **General** by default.
-	>
-	> !IMAGE[5esnhwkw.jpg](\Media\5esnhwkw.jpg)
+  > [!KNOWLEDGE] Note that the **Sensitivity** is set to **General** by default.
+  >
+  > !IMAGE[5esnhwkw.jpg](\Media\5esnhwkw.jpg)
 
-1. [] Send an email to **Adam Smith** and **Alice Anderson** (```Adam Smith;Alice Anderson```). You may **optionally add an external email address** (preferably from a major social provider like gmail, yahoo, or outlook.com) to test the external recipient experience. For the **Subject** and **Body** type ```Test Do Not Forward Email```.
+8. [] Send an email to **Adam Smith** and **Alice Anderson** (```Adam Smith;Alice Anderson```). You may **optionally add an external email address** (preferably from a major social provider like gmail, yahoo, or outlook.com) to test the external recipient experience. For the **Subject** and **Body** type ```Test Do Not Forward Email```.
 
-	^IMAGE[Open Screenshot](\Media\h0eh40nk.jpg)
+  ^IMAGE[Open Screenshot](\Media\h0eh40nk.jpg)
 
-1. [] In the Sensitivity Toolbar, click on the **pencil** icon to change the Sensitivity label.
+9. [] In the Sensitivity Toolbar, click on **Confidential** and then the **Do Not Forward** sub-label and click **Send**.
 
-	!IMAGE[901v6vpa.jpg](\Media\901v6vpa.jpg)
+  !IMAGE[w8j1w1lm.jpg](\Media\w8j1w1lm.jpg)
 
-	> [!NOTE] If the AIP toolbar is not signed in, click **Sign In** and wait for it to use SSO and download policies (about 30 seconds).
+  > [!Knowledge] If you receive the error message below, click on the Confidential \ Contoso Internal sub-label to force the download of your AIP identity certificates, then follow the steps above to change the label to Confidential \ Do Not Forward.
+  >
+  > !IMAGE[6v6duzbd.jpg](\Media\6v6duzbd.jpg)
 
-1. [] Click on **Confidential** and then the **Do Not Forward** sub-label and click **Send**.
+10. [] On @lab.VirtualMachine(Client01).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++ and open Outlook. 
+11. [] Run through setup, and review the email in Adam Smith or Alice Anderson’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
 
-	!IMAGE[w8j1w1lm.jpg](\Media\w8j1w1lm.jpg)
+   !IMAGE[0xby56qt.jpg](\Media\0xby56qt.jpg)
 
-	> [!Knowledge] If you receive the error message below, click on the Confidential \ Contoso Internal sub-label to force the download of your AIP identity certificates, then follow the steps above to change the label to Confidential \ Do Not Forward.
-	>
-	> !IMAGE[6v6duzbd.jpg](\Media\6v6duzbd.jpg)
+   > [!Hint] The **Do Not Forward** protection template will normally prevent the sharing of the screen and taking screenshots when protected documents or emails are loaded.  However, since this screenshot was taken within a VM, the operating system was unaware of the protected content and could not prevent the capture.  
+   >
+   >It is important to understand that although we put controls in place to reduce risk, if a user has view access to a document or email they can take a picture with their smartphone or even retype the message. That said, if the user is not authorized to read the message then it will not even render and we will demonstrate that next.
 
-1. [] Switch over to @lab.VirtualMachine(Client01).SelectLink or @lab.VirtualMachine(Client02).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++ and open Outlook. 
-2. [] Run through setup, and review the email in Adam Smith or Alice Anderson’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
-
-	!IMAGE[0xby56qt.jpg](\Media\0xby56qt.jpg)
-
-	> [!Hint] The **Do Not Forward** protection template will normally prevent the sharing of the screen and taking screenshots when protected documents or emails are loaded.  However, since this screenshot was taken within a VM, the operating system was unaware of the protected content and could not prevent the capture.  
-	>
-	>It is important to understand that although we put controls in place to reduce risk, if a user has view access to a document or email they can take a picture with their smartphone or even retype the message. That said, if the user is not authorized to read the message then it will not even render and we will demonstrate that next.
-
-	> [!KNOWLEDGE] If you elected to send a Do Not Forward message to an external email, you will have an experience similar to the images below.  These captures are included to demonstrate the functionality for those that chose not to send an external message.
-	>
-	> !IMAGE[tzj04wi9.jpg](\Media\tzj04wi9.jpg)
-	> 
-	> Here the user has received an email from Evan Green and they can click on the **Read the message** button.
-	>
-	>!IMAGE[wiefwcho.jpg](\Media\wiefwcho.jpg)
-	>
-	>Next, the user is given the option to either log in using the social identity provider (**Sign in with Google**, Yahoo, Microsoft Account), or to **sign in with a one-time passcode**.
-	>
-	>If they choose the social identity provider login, it should use the token previously cached by their browser and display the message directly.
-	>
-	>If they choose one-time passcode, they will receive an email like the one below with the one-time passcode.
-	>
-	>!IMAGE[m6voa9xi.jpg](\Media\m6voa9xi.jpg)
-	>
-	>They can then use this code to authenticate to the Office 365 Message Encryption portal.
-	>
-	>!IMAGE[8pllxint.jpg](\Media\8pllxint.jpg)
-	>
-	>After using either of these authentication methods, the user will see a portal experience like the one shown below.
-	>
-	>!IMAGE[3zi4dlk9.jpg](\Media\3zi4dlk9.jpg)
+   > [!KNOWLEDGE] If you elected to send a Do Not Forward message to an external email, you will have an experience similar to the images below.  These captures are included to demonstrate the functionality for those that chose not to send an external message.
+   >
+   > !IMAGE[tzj04wi9.jpg](\Media\tzj04wi9.jpg)
+   > 
+   > Here the user has received an email from Evan Green and they can click on the **Read the message** button.
+   >
+   >!IMAGE[wiefwcho.jpg](\Media\wiefwcho.jpg)
+   >
+   >Next, the user is given the option to either log in using the social identity provider (**Sign in with Google**, Yahoo, Microsoft Account), or to **sign in with a one-time passcode**.
+   >
+   >If they choose the social identity provider login, it should use the token previously cached by their browser and display the message directly.
+   >
+   >If they choose one-time passcode, they will receive an email like the one below with the one-time passcode.
+   >
+   >!IMAGE[m6voa9xi.jpg](\Media\m6voa9xi.jpg)
+   >
+   >They can then use this code to authenticate to the Office 365 Message Encryption portal.
+   >
+   >!IMAGE[8pllxint.jpg](\Media\8pllxint.jpg)
+   >
+   >After using either of these authentication methods, the user will see a portal experience like the one shown below.
+   >
+   >!IMAGE[3zi4dlk9.jpg](\Media\3zi4dlk9.jpg)
 
 ---
 
@@ -1432,14 +1545,11 @@ In this task, we will create a document and send an email to demonstrate the fun
 
 	^IMAGE[Open Screenshot](\Media\9gkqc9uy.jpg)
 
-1. [] In the Sensitivity Toolbar, click on the **pencil** icon to change the Sensitivity label.
+1. [] In the Sensitivity Toolbar, click on **Confidential** and then **Contoso Internal** and click **Send**.
 
-	^IMAGE[Open Screenshot](\Media\901v6vpa.jpg)
+  ^IMAGE[Open Screenshot](\Media\yhokhtkv.jpg)
 
-1. [] Click on **Confidential** and then **Contoso Internal** and click **Send**.
-
-	^IMAGE[Open Screenshot](\Media\yhokhtkv.jpg)
-1. [] On @lab.VirtualMachine(Client01).SelectLink or @lab.VirtualMachine(Client02).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++ and observe that you are able to open the email natively in the Outlook client. Also observe the **header text** that was defined in the label settings.
+1. [] On @lab.VirtualMachine(Client01).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++ and observe that you are able to open the email natively in the Outlook client. Also observe the **header text** that was defined in the label settings.
 
 	!IMAGE[bxz190x2.jpg](\Media\bxz190x2.jpg)
 	
@@ -1529,6 +1639,7 @@ In this task, we will test the configured recommended and automatic conditions w
 
 1. [] In the email, click **Send**.
    
+
 ===
 # Exercise 5: Classification, Labeling, and Protection with the Azure Information Protection Scanner
 [:arrow_left: Home](#azure-information-protection)
@@ -1545,7 +1656,7 @@ In this exercise, you will change the condition we created previously from a rec
 ---
 
 # Configuring Automatic Conditions
- 
+
 Now that we know what types of sensitive data we need to protect, we will configure some automatic conditions (rules) that the scanner can use to classify and protect content.
 
 1. [] Switch back to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
@@ -1567,7 +1678,7 @@ Now that we know what types of sensitive data we need to protect, we will config
 
 # Enforcing Configured Rules
 [:arrow_up: Top](#exercise-5-classification-labeling-and-protection-with-the-azure-information-protection-scanner)
- 
+
 In this task, we will set the AIP scanner to enforce the conditions we set up in the previous task and have it rerun on all files using the Start-AIPScan command.
 
 1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in with the password +++@lab.VirtualMachine(Scanner01).Password+++.
@@ -1609,7 +1720,7 @@ In this task, we will set the AIP scanner to enforce the conditions we set up in
 Now that we have Classified and Protected documents using the scanner, we can review the documents to see their change in status.
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
- 
+
 2. [] Navigate to ```\\Scanner01.contoso.azure\documents```. 
 
 	> If needed, use the credentials below:
@@ -1617,15 +1728,15 @@ Now that we have Classified and Protected documents using the scanner, we can re
 	>```Contoso\LabUser```
 	>
 	>```Pa$$w0rd```
- 
+
 	^IMAGE[Open Screenshot](\Media\hipavcx6.jpg)
-3. [] Open one of the Contoso Purchasing Permissions documents or Run For The Cure spreadsheets.
- 
- 	
-	
-	> [!NOTE] Observe that the document is classified as Confidential \ Contoso Internal. 
-	>
-	>!IMAGE[s1okfpwu.jpg](\Media\s1okfpwu.jpg)
+3. [] Open one of the Contoso Purchasing Permissions documents.
+
+
+​	
+​	> [!NOTE] Observe that the document is classified as Confidential \ Contoso Internal. 
+​	>
+​	>!IMAGE[s1okfpwu.jpg](\Media\s1okfpwu.jpg)
 
 ---
 # Reviewing the Dashboards
@@ -1661,6 +1772,7 @@ We can now go back and look at the dashboards and observe how they have changed.
 	>
 	> !IMAGE[discovery2.png](\Media\discovery2.png)
 	
+
 ===
 # Exercise 6: Exchange Online IRM Capabilities
 [:arrow_left: Home](#azure-information-protection)
@@ -1677,10 +1789,6 @@ In this task, we will configure a mail flow rule to detect sensitive information
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and open an **Admin PowerShell Prompt**.
 
 2. [] Type the commands below to connect to an Exchange Online PowerShell session.  Use the credentials provided when prompted.
-
-	```
-	Set-ExecutionPolicy RemoteSigned
-	```
 
 	```
 	$UserCredential = Get-Credential
@@ -1752,49 +1860,46 @@ In this task, we will configure a mail flow rule to detect sensitive information
 	>[!NOTE] In a production environment, customers would want to create a rule like this for each of their labels that they did not want going externally.
 
 ---
-
-# Demonstrating Exchange Online Mail Flow Rules
+## Demonstrating Exchange Online Mail Flow Rules
 [:arrow_up: Top](#exercise-6-exchange-online-irm-capabilities)
 
 In this task, we will send emails to demonstrate the results of the Exchange Online mail flow rules we configured in the previous task.  This will demonstrate some ways to protect your sensitive data and ensure a positive user experience with the product.
 
 1. [] Switch to @lab.VirtualMachine(Client03).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] In Microsoft Outlook, click on the **New email** button.
+2. [] In Microsoft Outlook, click on the **New email** button.
 
-	^IMAGE[Open Screenshot](\Media\6wan9me1.jpg)
+  ^IMAGE[Open Screenshot](\Media\6wan9me1.jpg)
 
-1. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject**, type ```Test Credit Card Email``` and for the **Body**, type ```My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368```, then click **Send**.
+3. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject**, type ```Test Credit Card Email``` and for the **Body**, type ```My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368```, then click **Send**.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-2. [] Review the received email.
+4. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+5. [] Review the received email.
 
-	!IMAGE[pidqfaa1.jpg](\Media\pidqfaa1.jpg)
+  !IMAGE[pidqfaa1.jpg](\Media\pidqfaa1.jpg)
 
-	> [!Knowledge] Note that there is no encryption applied to the message.  That is because we set up the rule to only apply to external recipients.  If you were to leave that condition out of the mail flow rule, internal recipients would also receive an encrypted copy of the message.  The image below shows the encrypted message that was received externally.
-	>
-	>!IMAGE[c5foyeji.jpg](\Media\c5foyeji.jpg)
-	>
-	>Below is another view of the same message received in Outlook Mobile on an iOS device.
-	>
-	>!IMAGE[599ljwfy.jpg](\Media\599ljwfy.jpg)
+  > [!Knowledge] Note that there is no encryption applied to the message.  That is because we set up the rule to only apply to external recipients.  If you were to leave that condition out of the mail flow rule, internal recipients would also receive an encrypted copy of the message.  The image below shows the encrypted message that was received externally.
+  >
+  >!IMAGE[c5foyeji.jpg](\Media\c5foyeji.jpg)
+  >
+  >Below is another view of the same message received in Outlook Mobile on an iOS device.
+  >
+  >!IMAGE[599ljwfy.jpg](\Media\599ljwfy.jpg)
 
-1. [] Next, in Microsoft Outlook, click on the **New email** button.
+6. [] Next, in Microsoft Outlook, click on the **New email** button.
 
-	^IMAGE[Open Screenshot](\Media\6wan9me1.jpg)
-1. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject** and **Body** type ```Another Test Contoso Internal Email```.
+  ^IMAGE[Open Screenshot](\Media\6wan9me1.jpg)
+7. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject** and **Body** type ```Another Test Contoso Internal Email```.
 
-	^IMAGE[Open Screenshot](\Media\d476fmpg.jpg)
+  ^IMAGE[Open Screenshot](\Media\d476fmpg.jpg)
 
-1. [] In the Sensitivity Toolbar, click on the **pencil** icon to change the Sensitivity label.
+8. [] In the Sensitivity Toolbar, click on **Confidential** and then **Contoso Internal** and click **Send**.
 
-	^IMAGE[Open Screenshot](\Media\901v6vpa.jpg)
+  ^IMAGE[Open Screenshot](\Media\yhokhtkv.jpg)
 
-1. [] Click on **Confidential** and then **Contoso Internal** and click **Send**.
+9. [] In about a minute, you should receive an **Undeliverable** message from Exchange with the users that the message did not reach and the message you defined in the previous task.
 
-	^IMAGE[Open Screenshot](\Media\yhokhtkv.jpg)
-1. [] In about a minute, you should receive an **Undeliverable** message from Exchange with the users that the message did not reach and the message you defined in the previous task.
-
-	!IMAGE[kgjvy7ul.jpg](\Media\kgjvy7ul.jpg)
+  !IMAGE[kgjvy7ul.jpg](\Media\kgjvy7ul.jpg)
+> [!NOTE] This rule may take a few minutes to take effect, so if you do not get the undeliverable message, try again in a few minutes.
 
 > [!HINT] There are many other use cases for Exchange Online mail flow rules but this should give you a quick view into what is possible and how easy it is to improve the security of your sensitive data through the use of Exchange Online mail flow rules and Azure Information Protection.
 
@@ -1914,22 +2019,23 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 	```@lab.CloudCredential(134).Password```
 1. [] Next, click the **T** to **type the commands below** in the PowerShell window and press **Enter**. 
 
-	> [!NOTE] This will create a new Web App Registration, Native App Registration, and associated Service Principals in Azure AD.
+  > [!NOTE] This will create a new Web App Registration, Native App Registration, and associated Service Principals in Azure AD.
 
-   ```
-   New-AzureADApplication -DisplayName AIPOnBehalfOf -ReplyUrls http://localhost
-   $WebApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPOnBehalfOf'"
-   New-AzureADServicePrincipal -AppId $WebApp.AppId
-   $WebAppKey = New-Guid
-   $Date = Get-Date
-   New-AzureADApplicationPasswordCredential -ObjectId $WebApp.ObjectID -startDate $Date -endDate $Date.AddYears(1) -Value $WebAppKey.Guid -CustomKeyIdentifier "AIPClient"
-	
-   $AIPServicePrincipal = Get-AzureADServicePrincipal -All $true | ? {$_.DisplayName -eq 'AIPOnBehalfOf'}
-   $AIPPermissions = $AIPServicePrincipal | select -expand Oauth2Permissions
-   $Scope = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $AIPPermissions.Id,"Scope"
-   $Access = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
-   $Access.ResourceAppId = $WebApp.AppId
-   $Access.ResourceAccess = $Scope
+  ```
+  New-AzureADApplication -DisplayName AIPOnBehalfOf -ReplyUrls http://localhost
+  $WebApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPOnBehalfOf'"
+  New-AzureADServicePrincipal -AppId $WebApp.AppId
+  $WebAppKey = New-Guid
+  $Date = Get-Date
+  New-AzureADApplicationPasswordCredential -ObjectId $WebApp.ObjectID -startDate $Date -endDate $Date.AddYears(1) -Value $WebAppKey.Guid -CustomKeyIdentifier "AIPClient"
+  
+  $AIPServicePrincipal = Get-AzureADServicePrincipal -All $true | ? {$_.DisplayName -eq 'AIPOnBehalfOf'}
+  $AIPPermissions = $AIPServicePrincipal | select -expand Oauth2Permissions
+  $Scope = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $AIPPermissions.Id,"Scope"
+  $Access = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
+  $Access.ResourceAppId = $WebApp.AppId
+  $Access.ResourceAccess = $Scope
+  ```
 
 
    New-AzureADApplication -DisplayName AIPClient -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
@@ -1988,7 +2094,7 @@ In this task, we will configure repositories to be scanned by the AIP scanner.  
 
 The next task is to configure repositories to scan.  These can be on-premises SharePoint 2010, 2013, or 2016 document libraries and any accessible CIFS based share.
 
-1. [] In the PowerShell window on Scanner01 run the commands below
+1. [] In the Administrative PowerShell window on Scanner01 run the commands below
 
     ```
     Add-AIPScannerRepository -Path http://Scanner01/documents -SetDefaultLabel Off
@@ -2021,18 +2127,18 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
     ```
 
 	> [!Knowledge] Note that we used the DiscoverInformationTypes -All switch before starting the scan.  This causes the scanner to use any custom conditions that you have specified for labels in the Azure Information Protection policy, and the list of information types that are available to specify for labels in the Azure Information Protection policy.  Although the scanner will discover documents to classify, it will not do so because the default configuration for the scanner is Discover only mode.
- 	
+	
 1. [] Right-click on the **Windows** button in the lower left-hand corner and click on **Event Viewer**.
- 
+
 	^IMAGE[Open Screenshot](\Media\cjvmhaf0.jpg)
 1. [] Expand **Application and Services Logs** and click on **Azure Information Protection**.
 
 	^IMAGE[Open Screenshot](\Media\dy6mnnpv.jpg)
- 
+
 	>[!NOTE] You will see an event like the one below when the scanner completes the cycle.
 	>
 	>!IMAGE[agnx2gws.jpg](\Media\agnx2gws.jpg)
- 
+
 1. [] Next, switch to @lab.VirtualMachine(Client01).SelectLink and log in using the password +++@lab.VirtualMachine(Client01).Password+++.
 1. [] Open a **File Explorer** window, and browse to ```\\Scanner01.contoso.azure\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports```.
 
@@ -2110,8 +2216,9 @@ However, helping your users to properly classify and protect sensitive data at t
 	^IMAGE[Open Screenshot](\Media\ie6g5kta.jpg)
 1. [] In the Labels: All Employees blade, in the **Configure conditions for automatically applying this label** section, click **Automatic**.
 
-	!IMAGE[245lpjvk.jpg](\Media\245lpjvk.jpg)
-	> [!HINT] The policy tip is automatically updated when you switch the condition to Automatic.
+   !IMAGE[245lpjvk.jpg](\Media\245lpjvk.jpg)
+
+   > [!HINT] The policy tip is automatically updated when you switch the condition to Automatic.
 1. [] Click **Save** in the Label: All Employees blade and **OK** to the Save settings prompt.
 
 	^IMAGE[Open Screenshot](\Media\gek63ks8.jpg)
@@ -2140,6 +2247,8 @@ In this task, we will perform bulk classification using the built-in functionali
 
 	!IMAGE[CandP2.png](\Media\CandP2.png)
 
+> [!Alert] If you are unable to see the **Apply** button due to screen resolution, click **Alt+A** and **Enter** to apply the label to the content.
+
 > [!NOTE] You may review the results in a text file by clicking show results, or simply close the window.
 ===
 # Security and Compliance Center 🐱‍👤
@@ -2148,11 +2257,10 @@ In this task, we will perform bulk classification using the built-in functionali
 In this exercise, we will migrate your AIP Labels and activate them in the Security and Compliance Center.  This will allow you to see the labels in Microsoft Information Protection based clients such as Office 365 for Mac and Mobile Devices.
 
 Although we will not be demonstrating these capabilities in this lab, you can use the tenant information provided to test on your own devices.
- 
 
 ---
-# Activating Unified Labeling
- 
+## Activating Unified Labeling
+
 In this task, we will activate the labels from the Azure Portal for use in the Security and Compliance Center.
 
 1. [] On @lab.VirtualMachine(Client01).SelectLink, log in with the password +++@lab.VirtualMachine(Client01).Password+++.
@@ -2169,6 +2277,56 @@ In this task, we will activate the labels from the Azure Portal for use in the S
 1. [] In a new tab, browse to ```https://protection.office.com/``` and click on **Classifications** and **Labels** to review the migrated labels. 
 
 	>[!NOTE] Keep in mind that now the SCC Sensitivity Labels have been activated, so any modifications, additions, or deletions will be syncronised to Azure Information Protection in the Azure Portal. There are some functional differences between the two sections (DLP in SCC, HYOK & Custom Permissions in AIP), so please be aware of this when modifying policies to ensure a consistent experience on clients. 
+
+---
+## Deploying Policy in SCC
+
+The previous step enabled the AIP labels for use in the Security and Compliance Center.  However, this did not also recreate the policies from the AIP portal. In this step we will publish a Global policy like the one we used in the AIP portal for use with unified clients.
+
+1. [] In the Security and Compliance Center, under Classifications, click on **Label policies**.
+
+2. [] In the Label policies pane, click **Publish labels**.
+
+   ^IMAGE[Open Screenshot](\Media\SCC01.png)
+
+3. [] On the Choose labels to publish page, click the **Choose labels to publish** link.
+
+   ^IMAGE[Open Screenshot](\Media\SCC02.png)
+
+4. [] In the Choose labels pane, click the + Add button.
+
+   ^IMAGE[Open Screenshot](\Media\SCC03.png)
+
+5. [] Click the box next to Display name to select all labels, then click the Add button.
+
+   ^IMAGE[Open Screenshot](\Media\SCC04.png)
+
+6. [] Click the Done button.
+
+   ^IMAGE[Open Screenshot](\Media\SCC05.png)
+
+7. [] Back on the Choose labels to publish page, click the Next button.
+
+   ^IMAGE[Open Screenshot](\Media\SCC06.png)
+
+8. [] On the Publish to users and groups page, notice that All users are included by default. If you were creating a scoped policy, you would choose specific users or groups to publish to. Click Next.
+
+   ^IMAGE[Open Screenshot](\Media\SCC07.png)
+
+9. [] On the Policy settings page, select the General label from the drop-down next to Apply this label by default to documents and email.
+
+10. [] Check the box next to Users must provide justification to remove a label or lower classification label and click the Next button.
+
+    !IMAGE[Open Screenshot](\Media\SCC08.png)
+
+11. [] In the Name textbox, type ```Global Policy``` and for the Description type ```This is the default global policy for all users.``` and click the Next button.
+
+    ^IMAGE[Open Screenshot](\Media\SCC09.png)
+
+12. [] Finally, on the Review your settings page, click the Publish button.
+
+    !IMAGE[Open Screenshot](\Media\SCC10.png)
+
 ===
 
 # Classification, Labeling, and Protection with the Azure Information Protection Scanner 🐱‍👤
@@ -2185,7 +2343,7 @@ In this exercise, we will run the AIP Scanner in enforce mode to classify and pr
 ---
 
 # Enforcing Configured Rules 🐱‍👤
- 
+
 In this task, we will set the AIP scanner to enforce the conditions we set up and have it run on all files using the Start-AIPScan command.
 
 1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in with the password +++@lab.VirtualMachine(Scanner01).Password+++.
@@ -2227,7 +2385,7 @@ In this task, we will set the AIP scanner to enforce the conditions we set up an
 Now that we have Classified and Protected documents using the scanner, we can review the documents to see their change in status.
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
- 
+
 2. [] Navigate to ```\\Scanner01.contoso.azure\documents```. 
 
 	> If needed, use the credentials below:
@@ -2235,15 +2393,14 @@ Now that we have Classified and Protected documents using the scanner, we can re
 	>```Contoso\LabUser```
 	>
 	>```Pa$$w0rd```
- 
+
 	^IMAGE[Open Screenshot](\Media\hipavcx6.jpg)
-3. [] Open one of the Contoso Purchasing Permissions documents or Run For The Cure spreadsheets.
- 
- 	
-	
-	> [!NOTE] Observe that the document is classified as Confidential \ Contoso Internal. 
-	>
-	>!IMAGE[s1okfpwu.jpg](\Media\s1okfpwu.jpg)
+3. [] Open one of the Contoso Purchasing Permissions documents.
+
+​	
+​	> [!NOTE] Observe that the document is classified as Confidential \ All Employees. 
+​	>
+​	>!IMAGE[s1okfpwu.jpg](\Media\s1okfpwu.jpg)
 
 ---
 # Reviewing the Dashboards 🐱‍👤
@@ -2252,7 +2409,8 @@ Now that we have Classified and Protected documents using the scanner, we can re
 We can now go back and look at the dashboards and observe how they have changed.
 
 1. [] On @lab.VirtualMachine(Client01).SelectLink, open the browser that is logged into the Azure Portal.
-	> [!ALERT] Some of the content shown in this dashboard will not be present because we skipped the manual labeling sections.  This content has been left in to show the capabilities of the reports.
+
+  > [!ALERT] Some of the content shown in this dashboard will not be present because we skipped the manual labeling sections.  This content has been left in to show the capabilities of the reports.
 
 1. [] Under **Dashboards**, click on **Usage report (Preview)**.
 
@@ -2280,6 +2438,7 @@ We can now go back and look at the dashboards and observe how they have changed.
 	>
 	> !IMAGE[discovery2.png](\Media\discovery2.png)
 	
+
 ===
 # Exchange Online IRM Capabilities 🐱‍👤
 [:arrow_left: Home](#azure-information-protection)
@@ -2373,59 +2532,62 @@ In this task, we will configure a mail flow rule to detect sensitive information
 	>[!NOTE] In a production environment, customers would want to create a rule like this for each of their labels that they did not want going externally.
 
 ---
-
-# Demonstrating Exchange Online Mail Flow Rules 🐱‍👤
+## Demonstrating Exchange Online Mail Flow Rules 🐱‍👤
 [:arrow_up: Top](#exchange-online-irm-capabilities-🐱‍👤)
 
 In this task, we will send emails to demonstrate the results of the Exchange Online mail flow rules we configured in the previous task.  This will demonstrate some ways to protect your sensitive data and ensure a positive user experience with the product.
 
-1. [] Switch to @lab.VirtualMachine(Client03).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Open and configure Microsoft Outlook. 
-1. [] Close and reopen Outlook to activate and if you receive a metered connection warning, click **Connect anyway**.
-2. [] Click on the **New email** button.
+1. [] On @lab.VirtualMachine(Client01).SelectLink, in the Azure Portal, under **Classifications**, click on **Labels**.
+2. [] Expand **Highly Confidential** and click on **All Employees**.
+3. [] Scroll down to the conditions and click on **Credit Card Number**.
+4. [] In the Condition: Credit Card Number blade, click **Delete** and **OK**.
+5. [] Save and close the **Label: All Employees** blade.
+6. [] Switch to @lab.VirtualMachine(Client03).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+7. [] Open and configure Microsoft Outlook. 
+8. [] Close and reopen Outlook to activate and if you receive a metered connection warning, click **Connect anyway**.
+9. [] Click on the **New email** button.
 
-	^IMAGE[Open Screenshot](\Media\6wan9me1.jpg)
+  ^IMAGE[Open Screenshot](\Media\6wan9me1.jpg)
 
-1. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject**, type ```Test Credit Card Email``` and for the **Body**, type ```My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368```, then click **Send**.
+10. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject**, type ```Test Credit Card Email``` and for the **Body**, type ```My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368```, then click **Send**.
 
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and review the received email.
+11. [] Switch to @lab.VirtualMachine(Client01).SelectLink and review the received email.
 
-	!IMAGE[pidqfaa1.jpg](\Media\pidqfaa1.jpg)
+   !IMAGE[pidqfaa1.jpg](\Media\pidqfaa1.jpg)
 
-	> [!Knowledge] Note that there is no encryption applied to the message.  That is because we set up the rule to only apply to external recipients.  If you were to leave that condition out of the mail flow rule, internal recipients would also receive an encrypted copy of the message.  The image below shows the encrypted message that was received externally.
-	>
-	>!IMAGE[c5foyeji.jpg](\Media\c5foyeji.jpg)
-	>
-	>Below is another view of the same message received in Outlook Mobile on an iOS device.
-	>
-	>!IMAGE[599ljwfy.jpg](\Media\599ljwfy.jpg)
+   > [!Knowledge] Note that there is no encryption applied to the message.  That is because we set up the rule to only apply to external recipients.  If you were to leave that condition out of the mail flow rule, internal recipients would also receive an encrypted copy of the message.  The image below shows the encrypted message that was received externally.
+   >
+   >!IMAGE[c5foyeji.jpg](\Media\c5foyeji.jpg)
+   >
+   >Below is another view of the same message received in Outlook Mobile on an iOS device.
+   >
+   >!IMAGE[599ljwfy.jpg](\Media\599ljwfy.jpg)
 
-1. [] Click on the **New email** button.
+12. [] Click on the **New email** button.
 
-	^IMAGE[Open Screenshot](\Media\6wan9me1.jpg)
-1. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject** and **Body** type ```Another Test All Employees Email```.
+   ^IMAGE[Open Screenshot](\Media\6wan9me1.jpg)
+13. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject** and **Body** type ```Another Test All Employees Email```.
 
-	^IMAGE[Open Screenshot](\Media\d476fmpg.jpg)
+   ^IMAGE[Open Screenshot](\Media\d476fmpg.jpg)
 
-1. [] In the Sensitivity Toolbar, click on the **pencil** icon to change the Sensitivity label.
+14. [] In the Sensitivity Toolbar, click on **Confidential** and then **All Employees** and click **Send**.
 
-	^IMAGE[Open Screenshot](\Media\901v6vpa.jpg)
+   ^IMAGE[Open Screenshot](\Media\yhokhtkv.jpg)
 
-1. [] Click on **Confidential** and then **All Employees** and click **Send**.
+15. [] In about a minute, you should receive an **Undeliverable** message from Exchange with the users that the message did not reach and the message you defined in the previous task.
 
-	^IMAGE[Open Screenshot](\Media\yhokhtkv.jpg)
-1. [] In about a minute, you should receive an **Undeliverable** message from Exchange with the users that the message did not reach and the message you defined in the previous task.
-
-	!IMAGE[kgjvy7ul.jpg](\Media\kgjvy7ul.jpg)
+   !IMAGE[kgjvy7ul.jpg](\Media\kgjvy7ul.jpg)
+> [!NOTE] This rule may take a few minutes to take effect, so if you do not get the undeliverable message, try again in a few minutes.
 
 > [!HINT] There are many other use cases for Exchange Online mail flow rules but this should give you a quick view into what is possible and how easy it is to improve the security of your sensitive data through the use of Exchange Online mail flow rules and Azure Information Protection.
 
 ===
+
 # AIP Lab Complete 🐱‍👤
 [:arrow_left: Home](#azure-information-protection)
 
 Congratulations! You have completed the Azure Information Protection Hands on Lab. 
->[ninja-cat]: ![](\Media\ninjacat.png)
+>[ninja-cat]: !(\Media\ninjacat.png)
 
 !INSTRUCTIONS[][ninja-cat]
 https://blogs.msdn.microsoft.com/oldnewthing/20160804-00/?p=94025
@@ -2493,7 +2655,7 @@ Documentation:
 
 ## Delegate user group administration
 
-In this lab, we are going to delegate the management of US employees to a new administrator. This administrator will only see those users alerts and activities.
+In this lab, we are going to delegate the management of US employees to a new administrator (**mcasadminUS**). This administrator will only see those users alerts and activities for the users bieing members of the group **US employees**.
 
 1. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), import the **US employees** group.
     > :warning: Cloud App Security has to synchronize the Azure AD groups before importing them. This operation can take up to 1h.
@@ -2528,7 +2690,7 @@ As a **Managed Security Service Providers** (MSSPs), you are asked by your custo
 In this lab, we will see how to answer to that question.
 As the MCAS admin for your company, work with the person next to you to configure an external access for the Managed Security Service Provider to another MCAS tenant.
 
-1. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add the external MCAS admin as **Security reader** in your MCAS tenant.
+1. Browse to ```https://portal.cloudappsecurity.com```, add the external MCAS admin as **Security reader** in your MCAS tenant.
 
     !IMAGE[External admin](\Media\mgmt-admin1.png "External admin")
 
@@ -2670,17 +2832,19 @@ Those commands download a script installing the Docker engine on your host compu
     !IMAGE[Putty prompt](\Media\dis-puttylogin.png)
 
 16. Type the command below and press **Enter**. Provide the user password when prompted.
-    ``` bash
-    sudo -i
-    ```
-    !IMAGE[sudo](\Media\dis-sudo.png)
-    >**INFO**: The previous command elevates your permissions in the Linux environment like the UAC prompt would do on a Windows machine.
+     ``` bash
+     sudo -i
+     ```
+     !IMAGE[sudo](\Media\dis-sudo.png)
+
+     >**INFO**: The previous command elevates your permissions in the Linux environment like the UAC prompt would do on a Windows machine.
 
 17. Return to the *Create log collector* dialog, copy the **collector configuration** command from step 2 and run it in the PuTTY window.
 
-    !IMAGE[Copy token](\Media\dis-addlogcollectorcopy.png "Copy token")
-    !IMAGE[New container](\Media\dis-newcontainer.png "New container")
-    >**INFO:** The output of this command is the id of the newly created container/log collector.
+     !IMAGE[Copy token](\Media\dis-addlogcollectorcopy.png "Copy token")
+     !IMAGE[New container](\Media\dis-newcontainer.png "New container")
+
+     >**INFO:** The output of this command is the id of the newly created container/log collector.
 
 18. Now, launch **WinSCP** from the start-menu.
 
@@ -3276,6 +3440,7 @@ With the access and session policies, you can:
    !IMAGE[New policy](\Media\cond-policy-5.png)
 
 4. Sign out, close you browser and open the [Exchange Web App](https://outlook.office.com).
+
    >:memo: We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
 
 5. Go back to [Cloud App Security](https://portal.cloudappsecurity.com), click on the gear icon and go to the **Conditional Access App Control** section.
@@ -3871,7 +4036,7 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
 12. Disable this policy
 
- ---
+---
 
 ### Test the user experience
 
@@ -3922,7 +4087,7 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
     !IMAGE[j0vuo06k.jpg](\Media\j0vuo06k.jpg)
 
 === 
- 
+
 ## Azure ATP Immersion Lab 
 [:arrow_left: Home](#introduction)
 
@@ -4070,7 +4235,8 @@ Let’s see what happens when users try to sign in from the Tor Browser, which a
 
 	1. []	Notice how you are prompted for MFA due to the risky sign-ins policy
 4. []	To generate an additional risky sign-in, open a new Tor window and log-in to ```https://portal.office.com++ with ```AliceA@@lab.CloudCredential(134).TenantName```
-	1. []	Notice how you are prompted for MFA due to the risky sign-ins policy
+
+  1. []	Notice how you are prompted for MFA due to the risky sign-ins policy
 
 ##What happens if a user is targeted by the risky sign-ins policy but has not yet registered for MFA?
 
@@ -4102,10 +4268,10 @@ There are four steps to accessing Identity Protection data through Microsoft Gra
 
 	!IMAGE[h5fd84va.jpg](\Media\h5fd84va.jpg)
 2. []	In the menu on the top, click New application registration.
- 
+
 	!IMAGE[vptami21.jpg](\Media\vptami21.jpg)
 3. []	On the Create page, perform the following steps:
- 
+
 	!IMAGE[uh5cjkmi.jpg](\Media\uh5cjkmi.jpg)
 	1. [] In the Name textbox, type a name for your application (e.g.: AADIP Risk Event API Application).
 	1. [] As Type, select Web Application And / Or Web API.
@@ -4119,22 +4285,22 @@ There are four steps to accessing Identity Protection data through Microsoft Gra
 [:arrow_left: Home](#azure-active-directory)
 
 1. []	On the Settings page, click Required permissions.
- 
+
 	!IMAGE[87aolleh.jpg](\Media\87aolleh.jpg)
 2. []	On the Required permissions page, in the toolbar on the top, click Add.
   
 	!IMAGE[3yfprrsu.jpg](\Media\3yfprrsu.jpg)
 3. []	On the Add API access page, click Select an API.
- 
+
 	!IMAGE[dwvs40oh.jpg](\Media\dwvs40oh.jpg)
 4. []	On the Select an API page, select Microsoft Graph, and then click Select.
- 
+
 	!IMAGE[c2wo5n3e.jpg](\Media\c2wo5n3e.jpg)
 5. []	On the Add API access page, click Select permissions.
- 
+
 	!IMAGE[k275899m.jpg](\Media\k275899m.jpg)
 6. []	On the Enable Access page, click Read all identity risk information, and then click Select.
- 
+
 	!IMAGE[wlcqechy.jpg](\Media\wlcqechy.jpg)
 7. []	On the Add API access page, click Done.
 8. []	On the Required Permissions page, click Grant Permissions, and then click Yes.
@@ -4145,10 +4311,10 @@ There are four steps to accessing Identity Protection data through Microsoft Gra
 [:arrow_left: Home](#azure-active-directory)
 
 1. []	On the Settings page, click Keys.
- 
+
 	!IMAGE[to0mwhls.jpg](\Media\to0mwhls.jpg)
 2. []	On the Keys page, perform the following steps:
- 
+
 	!IMAGE[3xrwo38o.jpg](\Media\3xrwo38o.jpg)
 	1. [] In the Key description textbox, type a description (for example, AADIP Risk Event).
 	1. [] As Duration, select In 1 year.
