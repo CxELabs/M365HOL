@@ -836,41 +836,40 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 
 1. [] In PowerShell, run ```Connect-AzureAD``` and use the username and password below. 
 
-  ```@lab.CloudCredential(17).Username```
+  ```@lab.CloudCredential(134).Username```
 
-  ```@lab.CloudCredential(17).Password```
+  ```@lab.CloudCredential(134).Password```
 
 1. [] Next, click the **T** to **type the commands below** in the PowerShell window and press **Enter**. 
 
-   > [!NOTE] This will create a new Web App Registration, Native App Registration, and associated Service Principals in Azure AD.
+	> [!NOTE] This will create a new Web App Registration, Native App Registration, and associated Service Principals in Azure AD.
 
-   ```
-   New-AzureADApplication -DisplayName AIPOnBehalfOf -ReplyUrls http://localhost
-   $WebApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPOnBehalfOf'"
-   New-AzureADServicePrincipal -AppId $WebApp.AppId
-   $WebAppKey = New-Guid
-   $Date = Get-Date
-   New-AzureADApplicationPasswordCredential -ObjectId $WebApp.ObjectID -startDate $Date -endDate $Date.AddYears(1) -Value $WebAppKey.Guid -CustomKeyIdentifier "AIPClient"
-   
-   $AIPServicePrincipal = Get-AzureADServicePrincipal -All $true | ? {$_.DisplayName -eq 'AIPOnBehalfOf'}
-   $AIPPermissions = $AIPServicePrincipal | select -expand Oauth2Permissions
-   $Scope = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $AIPPermissions.Id,"Scope"
-   $Access = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
-   $Access.ResourceAppId = $WebApp.AppId
-   $Access.ResourceAccess = $Scope
-   
-   New-AzureADApplication -DisplayName AIPClient -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
-   $NativeApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPClient'"
-   New-AzureADServicePrincipal -AppId $NativeApp.AppId
-   ```
+	```
+	New-AzureADApplication -DisplayName AIPOnBehalfOf -ReplyUrls http://localhost
+	$WebApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPOnBehalfOf'"
+	New-AzureADServicePrincipal -AppId $WebApp.AppId
+	$WebAppKey = New-Guid
+	$Date = Get-Date
+	New-AzureADApplicationPasswordCredential -ObjectId $WebApp.ObjectID -startDate $Date -endDate $Date.AddYears(1) -Value $WebAppKey.Guid -CustomKeyIdentifier "AIPClient"
+	
+	$AIPServicePrincipal = Get-AzureADServicePrincipal -All $true | ? {$_.DisplayName -eq 'AIPOnBehalfOf'}
+	$AIPPermissions = $AIPServicePrincipal | select -expand Oauth2Permissions
+	$Scope = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $AIPPermissions.Id,"Scope"
+	$Access = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
+	$Access.ResourceAppId = $WebApp.AppId
+	$Access.ResourceAccess = $Scope
+	
+	New-AzureADApplication -DisplayName AIPClient -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
+	$NativeApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPClient'"
+	New-AzureADServicePrincipal -AppId $NativeApp.AppId
+	```
 
 1. [] Finally, we will output the Set-AIPAuthentication command by running the commands below and pressing **Enter**.
 
-   ```
-   "Set-AIPAuthentication -WebAppID " + $WebApp.AppId + " -WebAppKey " + $WebAppKey.Guid + " -NativeAppID " + $NativeApp.AppId | Out-File ~\Desktop\Set-AIPAuthentication.txt
-   
-   Start ~\Desktop\Set-AIPAuthentication.txt
-   ```
+	```
+	"Set-AIPAuthentication -WebAppID " + $WebApp.AppId + " -WebAppKey " + $WebAppKey.Guid + " -NativeAppID " + $NativeApp.AppId | Out-File ~\Desktop\Set-AIPAuthentication.txt
+	Start ~\Desktop\Set-AIPAuthentication.txt
+	```
 
 1. [] Leave the notepad window open in the background.
 
@@ -888,7 +887,7 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 
 8. [] When prompted, enter the username and password below:
 
-	```AIPScanner@@lab.CloudCredential(17).TenantName```
+	```AIPScanner@@lab.CloudCredential(134).TenantName```
 
 	```Somepass1```
 
@@ -905,6 +904,7 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 10. [] **In the admin PowerShell window** and type the command below.
 
   ```Restart-Service AIPScanner```
+
 ---
 
 # Configuring Repositories
@@ -1320,10 +1320,12 @@ However, helping your users to properly classify and protect sensitive data at t
 
    !IMAGE[245lpjvk.jpg](\Media\245lpjvk.jpg)
 
-   > [!HINT] The policy tip is automatically updated when you switch the condition to Automatic.
+	> [!HINT] The policy tip is automatically updated when you switch the condition to Automatic.
+
 1. [] Click **Save** in the Label: All Employees blade and **OK** to the Save settings prompt.
 
 	^IMAGE[Open Screenshot](\Media\gek63ks8.jpg)
+
 1. [] Press the **X** in the upper right-hand corner to close the Label: All Employees blade.
 
 	^IMAGE[Open Screenshot](\Media\wzwfc1l4.jpg)
@@ -1457,33 +1459,33 @@ One of the most common use cases for AIP is the ability to send emails using Use
 
    !IMAGE[0xby56qt.jpg](\Media\0xby56qt.jpg)
 
-   > [!Hint] The **Do Not Forward** protection template will normally prevent the sharing of the screen and taking screenshots when protected documents or emails are loaded.  However, since this screenshot was taken within a VM, the operating system was unaware of the protected content and could not prevent the capture.  
-   >
-   >It is important to understand that although we put controls in place to reduce risk, if a user has view access to a document or email they can take a picture with their smartphone or even retype the message. That said, if the user is not authorized to read the message then it will not even render and we will demonstrate that next.
+	> [!Hint] The **Do Not Forward** protection template will normally prevent the sharing of the screen and taking screenshots when protected documents or emails are loaded.  However, since this screenshot was taken within a VM, the operating system was unaware of the protected content and could not prevent the capture.  
+	>
+	>It is important to understand that although we put controls in place to reduce risk, if a user has view access to a document or email they can take a picture with their smartphone or even retype the message. That said, if the user is not authorized to read the message then it will not even render and we will demonstrate that next.
 
-   > [!KNOWLEDGE] If you elected to send a Do Not Forward message to an external email, you will have an experience similar to the images below.  These captures are included to demonstrate the functionality for those that chose not to send an external message.
-   >
-   > !IMAGE[tzj04wi9.jpg](\Media\tzj04wi9.jpg)
-   > 
-   > Here the user has received an email from Evan Green and they can click on the **Read the message** button.
-   >
-   >!IMAGE[wiefwcho.jpg](\Media\wiefwcho.jpg)
-   >
-   >Next, the user is given the option to either log in using the social identity provider (**Sign in with Google**, Yahoo, Microsoft Account), or to **sign in with a one-time passcode**.
-   >
-   >If they choose the social identity provider login, it should use the token previously cached by their browser and display the message directly.
-   >
-   >If they choose one-time passcode, they will receive an email like the one below with the one-time passcode.
-   >
-   >!IMAGE[m6voa9xi.jpg](\Media\m6voa9xi.jpg)
-   >
-   >They can then use this code to authenticate to the Office 365 Message Encryption portal.
-   >
-   >!IMAGE[8pllxint.jpg](\Media\8pllxint.jpg)
-   >
-   >After using either of these authentication methods, the user will see a portal experience like the one shown below.
-   >
-   >!IMAGE[3zi4dlk9.jpg](\Media\3zi4dlk9.jpg)
+	> [!KNOWLEDGE] If you elected to send a Do Not Forward message to an external email, you will have an experience similar to the images below.  These captures are included to demonstrate the functionality for those that chose not to send an external message.
+	>
+	> !IMAGE[tzj04wi9.jpg](\Media\tzj04wi9.jpg)
+	> 
+	> Here the user has received an email from Evan Green and they can click on the **Read the message** button.
+	>
+	>!IMAGE[wiefwcho.jpg](\Media\wiefwcho.jpg)
+	>
+	>Next, the user is given the option to either log in using the social identity provider (**Sign in with Google**, Yahoo, Microsoft Account), or to **sign in with a one-time passcode**.
+	>
+	>If they choose the social identity provider login, it should use the token previously cached by their browser and display the message directly.
+	>
+	>If they choose one-time passcode, they will receive an email like the one below with the one-time passcode.
+	>
+	>!IMAGE[m6voa9xi.jpg](\Media\m6voa9xi.jpg)
+	>
+	>They can then use this code to authenticate to the Office 365 Message Encryption portal.
+	>
+	>!IMAGE[8pllxint.jpg](\Media\8pllxint.jpg)
+	>
+	>After using either of these authentication methods, the user will see a portal experience like the one shown below.
+	>
+	>!IMAGE[3zi4dlk9.jpg](\Media\3zi4dlk9.jpg)
 
 ---
 
@@ -1686,14 +1688,25 @@ Now that we have Classified and Protected documents using the scanner, we can re
 	>```Pa$$w0rd```
 
 	^IMAGE[Open Screenshot](\Media\hipavcx6.jpg)
+
 3. [] Open one of the Contoso Purchasing Permissions documents.
-
-
 ​	
-​	> [!NOTE] Observe that the document is classified as Confidential \ Contoso Internal. 
-​	>
-​	>!IMAGE[s1okfpwu.jpg](\Media\s1okfpwu.jpg)
+	> [!NOTE] Observe that the document is classified as Confidential \ Contoso Internal. 
+	>
+	> !IMAGE[s1okfpwu.jpg](\Media\s1okfpwu.jpg)
 
+4. [] Next, in the same documents folder, open one of the pdf files.
+5. [] When prompted by Adobe, enter ```AdamS@@lab.CloudCredential(134).TenantName``` and press OK.
+6. [] Check the box to save credentials and press OK.
+
+	> [!NOTE] The PDF will now open and display the sensitivity across the top of the document.
+
+	> [!Knowledge] The latest version of Acrobat Reader DC and the MIP Plugin have been installed on this system prior to the lab. Additionally, the sensitivity does not display by default in Adobe Acrobat Reader DC.  You must make the modifications below to the registry to make this bar display.
+	>
+	> In **HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\DC\MicrosoftAIP**, create a new **DWORD** value of **bShowDMB** and set the **Value** to **1**.
+	>
+	> !IMAGE[1547416250228](\Media\1547416250228.png)
+  
 ---
 # Reviewing the Dashboards
 [:arrow_up: Top](#exercise-5-classification-labeling-and-protection-with-the-azure-information-protection-scanner)
@@ -1710,7 +1723,7 @@ We can now go back and look at the dashboards and observe how they have changed.
 
 2. [] Next, under dashboards, click on **Activity logs (preview)**.
    
-    > [!NOTE] We can now see activity from various users and clients including the AIP Scanner and specific users. 
+	> [!NOTE] We can now see activity from various users and clients including the AIP Scanner and specific users. 
 	>
 	> !IMAGE[activity.png](\Media\activity.png)
 	>
@@ -1833,13 +1846,13 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 
   !IMAGE[pidqfaa1.jpg](\Media\pidqfaa1.jpg)
 
-  > [!Knowledge] Note that there is no encryption applied to the message.  That is because we set up the rule to only apply to external recipients.  If you were to leave that condition out of the mail flow rule, internal recipients would also receive an encrypted copy of the message.  The image below shows the encrypted message that was received externally.
-  >
-  >!IMAGE[c5foyeji.jpg](\Media\c5foyeji.jpg)
-  >
-  >Below is another view of the same message received in Outlook Mobile on an iOS device.
-  >
-  >!IMAGE[599ljwfy.jpg](\Media\599ljwfy.jpg)
+	> [!Knowledge] Note that there is no encryption applied to the message.  That is because we set up the rule to only apply to external recipients.  If you were to leave that condition out of the mail flow rule, internal recipients would also receive an encrypted copy of the message.  The image below shows the encrypted message that was received externally.
+	>
+	>!IMAGE[c5foyeji.jpg](\Media\c5foyeji.jpg)
+	>
+	>Below is another view of the same message received in Outlook Mobile on an iOS device.
+	>
+	>!IMAGE[599ljwfy.jpg](\Media\599ljwfy.jpg)
 
 6. [] Next, in Microsoft Outlook, click on the **New email** button.
 
@@ -1855,9 +1868,10 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 9. [] In about a minute, you should receive an **Undeliverable** message from Exchange with the users that the message did not reach and the message you defined in the previous task.
 
   !IMAGE[kgjvy7ul.jpg](\Media\kgjvy7ul.jpg)
-> [!NOTE] This rule may take a few minutes to take effect, so if you do not get the undeliverable message, try again in a few minutes.
 
-> [!HINT] There are many other use cases for Exchange Online mail flow rules but this should give you a quick view into what is possible and how easy it is to improve the security of your sensitive data through the use of Exchange Online mail flow rules and Azure Information Protection.
+	> [!NOTE] This rule may take a few minutes to take effect, so if you do not get the undeliverable message, try again in a few minutes.
+
+	> [!HINT] There are many other use cases for Exchange Online mail flow rules but this should give you a quick view into what is possible and how easy it is to improve the security of your sensitive data through the use of Exchange Online mail flow rules and Azure Information Protection.
 
 ===
 # AIP Lab Complete
@@ -1975,38 +1989,37 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 	```@lab.CloudCredential(134).Password```
 1. [] Next, click the **T** to **type the commands below** in the PowerShell window and press **Enter**. 
 
-  > [!NOTE] This will create a new Web App Registration, Native App Registration, and associated Service Principals in Azure AD.
+	> [!NOTE] This will create a new Web App Registration, Native App Registration, and associated Service Principals in Azure AD.
 
-  ```
-  New-AzureADApplication -DisplayName AIPOnBehalfOf -ReplyUrls http://localhost
-  $WebApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPOnBehalfOf'"
-  New-AzureADServicePrincipal -AppId $WebApp.AppId
-  $WebAppKey = New-Guid
-  $Date = Get-Date
-  New-AzureADApplicationPasswordCredential -ObjectId $WebApp.ObjectID -startDate $Date -endDate $Date.AddYears(1) -Value $WebAppKey.Guid -CustomKeyIdentifier "AIPClient"
-  
-  $AIPServicePrincipal = Get-AzureADServicePrincipal -All $true | ? {$_.DisplayName -eq 'AIPOnBehalfOf'}
-  $AIPPermissions = $AIPServicePrincipal | select -expand Oauth2Permissions
-  $Scope = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $AIPPermissions.Id,"Scope"
-  $Access = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
-  $Access.ResourceAppId = $WebApp.AppId
-  $Access.ResourceAccess = $Scope
-  ```
+	```
+	New-AzureADApplication -DisplayName AIPOnBehalfOf -ReplyUrls http://localhost
+	$WebApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPOnBehalfOf'"
+	New-AzureADServicePrincipal -AppId $WebApp.AppId
+	$WebAppKey = New-Guid
+	$Date = Get-Date
+	New-AzureADApplicationPasswordCredential -ObjectId $WebApp.ObjectID -startDate $Date -endDate $Date.AddYears(1) -Value $WebAppKey.Guid -CustomKeyIdentifier "AIPClient"
+	
+	$AIPServicePrincipal = Get-AzureADServicePrincipal -All $true | ? {$_.DisplayName -eq 'AIPOnBehalfOf'}
+	$AIPPermissions = $AIPServicePrincipal | select -expand Oauth2Permissions
+	$Scope = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $AIPPermissions.Id,"Scope"
+	$Access = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
+	$Access.ResourceAppId = $WebApp.AppId
+	$Access.ResourceAccess = $Scope
 
-
-   New-AzureADApplication -DisplayName AIPClient -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
-   $NativeApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPClient'"
-   New-AzureADServicePrincipal -AppId $NativeApp.AppId
-   ```
+	New-AzureADApplication -DisplayName AIPClient -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
+	$NativeApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPClient'"
+	New-AzureADServicePrincipal -AppId $NativeApp.AppId
+	```
    
 1. [] Finally, we will output the Set-AIPAuthentication command by running the commands below and pressing **Enter**.
    
 	 
-   ```
-   "Set-AIPAuthentication -WebAppID " + $WebApp.AppId + " -WebAppKey " + $WebAppKey.Guid + " -NativeAppID " + $NativeApp.AppId | Out-File ~\Desktop\Set-AIPAuthentication.txt
+	```
+	"Set-AIPAuthentication -WebAppID " + $WebApp.AppId + " -WebAppKey " + $WebAppKey.Guid + " -NativeAppID " + $NativeApp.AppId | Out-File ~\Desktop\Set-AIPAuthentication.txt
 
 	Start ~\Desktop\Set-AIPAuthentication.txt
 	```
+
 1. [] Leave the notepad window open in the background.
 1. [] Click on the Start menu and type ```PowerShell```, right-click on the PowerShell program, and click **Run as a different user**.
 
@@ -2174,10 +2187,12 @@ However, helping your users to properly classify and protect sensitive data at t
 
    !IMAGE[245lpjvk.jpg](\Media\245lpjvk.jpg)
 
-   > [!HINT] The policy tip is automatically updated when you switch the condition to Automatic.
+	> [!HINT] The policy tip is automatically updated when you switch the condition to Automatic.
+
 1. [] Click **Save** in the Label: All Employees blade and **OK** to the Save settings prompt.
 
 	^IMAGE[Open Screenshot](\Media\gek63ks8.jpg)
+
 1. [] Press the **X** in the upper right-hand corner to close the Label: All Employees blade.
 
 	^IMAGE[Open Screenshot](\Media\wzwfc1l4.jpg)
@@ -2351,12 +2366,24 @@ Now that we have Classified and Protected documents using the scanner, we can re
 	>```Pa$$w0rd```
 
 	^IMAGE[Open Screenshot](\Media\hipavcx6.jpg)
-3. [] Open one of the Contoso Purchasing Permissions documents.
 
+3. [] Open one of the Contoso Purchasing Permissions documents.
 ​	
-​	> [!NOTE] Observe that the document is classified as Confidential \ All Employees. 
-​	>
-​	>!IMAGE[s1okfpwu.jpg](\Media\s1okfpwu.jpg)
+	> [!NOTE] Observe that the document is classified as Confidential \ Contoso Internal. 
+	>
+	> !IMAGE[s1okfpwu.jpg](\Media\s1okfpwu.jpg)
+
+4. [] Next, in the same documents folder, open one of the pdf files.
+5. [] When prompted by Adobe, enter ```AdamS@@lab.CloudCredential(134).TenantName``` and press OK.
+6. [] Check the box to save credentials and press OK.
+
+	> [!NOTE] The PDF will now open and display the sensitivity across the top of the document.
+
+	> [!Knowledge] The latest version of Acrobat Reader DC and the MIP Plugin have been installed on this system prior to the lab. Additionally, the sensitivity does not display by default in Adobe Acrobat Reader DC.  You must make the modifications below to the registry to make this bar display.
+	>
+	> In **HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\DC\MicrosoftAIP**, create a new **DWORD** value of **bShowDMB** and set the **Value** to **1**.
+	>
+	> !IMAGE[1547416250228](\Media\1547416250228.png)
 
 ---
 # Reviewing the Dashboards 🐱‍👤
@@ -2366,7 +2393,7 @@ We can now go back and look at the dashboards and observe how they have changed.
 
 1. [] On @lab.VirtualMachine(Client01).SelectLink, open the browser that is logged into the Azure Portal.
 
-  > [!ALERT] Some of the content shown in this dashboard will not be present because we skipped the manual labeling sections.  This content has been left in to show the capabilities of the reports.
+	> [!ALERT] Some of the content shown in this dashboard will not be present because we skipped the manual labeling sections.  This content has been left in to show the capabilities of the reports.
 
 1. [] Under **Dashboards**, click on **Usage report (Preview)**.
 
@@ -2509,15 +2536,15 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 
 11. [] Switch to @lab.VirtualMachine(Client01).SelectLink and review the received email.
 
-   !IMAGE[pidqfaa1.jpg](\Media\pidqfaa1.jpg)
+	!IMAGE[pidqfaa1.jpg](\Media\pidqfaa1.jpg)
 
-   > [!Knowledge] Note that there is no encryption applied to the message.  That is because we set up the rule to only apply to external recipients.  If you were to leave that condition out of the mail flow rule, internal recipients would also receive an encrypted copy of the message.  The image below shows the encrypted message that was received externally.
-   >
-   >!IMAGE[c5foyeji.jpg](\Media\c5foyeji.jpg)
-   >
-   >Below is another view of the same message received in Outlook Mobile on an iOS device.
-   >
-   >!IMAGE[599ljwfy.jpg](\Media\599ljwfy.jpg)
+	> [!Knowledge] Note that there is no encryption applied to the message.  That is because we set up the rule to only apply to external recipients.  If you were to leave that condition out of the mail flow rule, internal recipients would also receive an encrypted copy of the message.  The image below shows the encrypted message that was received externally.
+	>
+	>!IMAGE[c5foyeji.jpg](\Media\c5foyeji.jpg)
+	>
+	>Below is another view of the same message received in Outlook Mobile on an iOS device.
+	>
+	>!IMAGE[599ljwfy.jpg](\Media\599ljwfy.jpg)
 
 12. [] Click on the **New email** button.
 
@@ -2533,9 +2560,9 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 15. [] In about a minute, you should receive an **Undeliverable** message from Exchange with the users that the message did not reach and the message you defined in the previous task.
 
    !IMAGE[kgjvy7ul.jpg](\Media\kgjvy7ul.jpg)
-> [!NOTE] This rule may take a few minutes to take effect, so if you do not get the undeliverable message, try again in a few minutes.
+	> [!NOTE] This rule may take a few minutes to take effect, so if you do not get the undeliverable message, try again in a few minutes.
 
-> [!HINT] There are many other use cases for Exchange Online mail flow rules but this should give you a quick view into what is possible and how easy it is to improve the security of your sensitive data through the use of Exchange Online mail flow rules and Azure Information Protection.
+	> [!HINT] There are many other use cases for Exchange Online mail flow rules but this should give you a quick view into what is possible and how easy it is to improve the security of your sensitive data through the use of Exchange Online mail flow rules and Azure Information Protection.
 
 ===
 
@@ -2543,10 +2570,11 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 [:arrow_left: Home](#azure-information-protection)
 
 Congratulations! You have completed the Azure Information Protection Hands on Lab. 
->[ninja-cat]: !(\Media\ninjacat.png)
 
-!INSTRUCTIONS[][ninja-cat]
-https://blogs.msdn.microsoft.com/oldnewthing/20160804-00/?p=94025
+!IMAGE[](\Media\ninjacat.png)
+
+[https://blogs.msdn.microsoft.com/oldnewthing/20160804-00/?p=94025](https://blogs.msdn.microsoft.com/oldnewthing/20160804-00/?p=94025)
+
 
 ===
 # Microsoft Cloud App Security
