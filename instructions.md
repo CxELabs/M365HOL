@@ -95,9 +95,7 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 1. [] Log into @lab.VirtualMachine(Client01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++
 2. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
 
-3. [] In the InPrivate window, navigate to the provided Windows Defender Advanced Threat Protection Trial Sign up link using the Type Text functionality of the lab environment.
-
-	!IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
+3. [] In the InPrivate window, paste the provided Windows Defender Advanced Threat Protection Trial Sign up link.
 
 1. [] Click **Sign in** in the upper right corner of the page and use the credentials below.
    
@@ -124,6 +122,7 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 1. [] Toggle the **WD ATP** license to On and click **Save**.
 
 	!IMAGE[6crecugz.jpg](\Media\6crecugz.jpg)
+
 ===
 # Redeem Azure Pass
 [:arrow_left: Home](#lab-environment-configuration)
@@ -161,17 +160,18 @@ For several of the exercises in this lab series, you will require an active subs
 
 8. [] Scroll to the bottom of the page and click **Next**.
 
-  !IMAGE[ihrjazqi.jpg](\Media\ihrjazqi.jpg)
+  	!IMAGE[ihrjazqi.jpg](\Media\ihrjazqi.jpg)
 
-  > [!NOTE] You can keep the pre-populated information.
+  	> [!NOTE] You can keep the pre-populated information.
 
 9. [] Check the box to agree to the terms and click **Sign up**.
 
-  !IMAGE[k2a97g8e.jpg](\Media\k2a97g8e.jpg)
+  	!IMAGE[k2a97g8e.jpg](\Media\k2a97g8e.jpg)
 
-  > [!NOTE] It may take a few minutes to process the request.
+  	> [!NOTE] It may take a few minutes to process the request.
 
-1. [] When you are redirected to the Azure Portal, the process is complete.
+1. [] While this is processing, you may continue to the next task.
+
 ===
 # Azure AD User Configuration
 [:arrow_left: Home](#lab-environment-configuration)
@@ -243,7 +243,7 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
 1. [] In the PowerShell window, click the code below to assign Office and EMS licenses.
 	
 	```
-	Start-Sleep -s 15
+	Start-Sleep -s 10
 	foreach ($user in $users){
 
     # Store UPN created from csv and tenant
@@ -260,31 +260,6 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
     Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
 
 	```
-===
-# Exchange Mail Flow Rule Removal
-[:arrow_left: Home](#lab-environment-configuration)
-
-By default, many of the demo tenants provided block external communications via mail flow rule.  As this will hinder many tests in this lab, we will verify if such a rule exists and remove it if necesary.
-
-1. [] In the Admin PowerShell window, type the commands below to connect to an Exchange Online PowerShell session.  Use the credentials provided when prompted.
-
-	```
-	$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $cred -Authentication Basic -AllowRedirection
-	Import-PSSession $Session
-	```
-
-1. [] Get the active Mail Flow Rules by typing the command below:
-
-	```
-	Get-TransportRule
-	```
-
-1. [] If a rule exists named something similar to **"Delete if sent outside the organization"**, run the code below to remove this rule.
-
-	```
-	Remove-TransportRule *Delete*
-	```
-	
 
 ===
 # Azure Security Center Setup
@@ -606,9 +581,6 @@ To prepare the **Information Protection** lab, we have to enable the integration
 
 ---
 
-## Enabling Azure Information Protection integration
-
-[:arrow_up: Top](#mcas-environment-preparation)
 
 
 ===
@@ -729,26 +701,6 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 12. []	Select the **guest user added above** and click **Select**. 
 
 > [!NOTE]	After the user accepts the invitation the user will be able to access the Azure ATP console for this workspace using their email account.  
-
-===
-## Create Group for MCAS Admin Delegation
-
-1. [] In the Azure AD blade click **Groups**
-2. [] Create a new Azure AD group **US employees** containing a couple of your test users (**not** the McasAdminUS account).
-   !IMAGE[New group](\Media\mgmt-newgroup1.png "New group")
-
-   !IMAGE[New group](\Media\mgmt-newgroup2.png "New group")
-
-3. []Browse to ```https://portal.cloudappsecurity.com```, import the **US employees** group.
-    > :warning: Cloud App Security has to synchronize the Azure AD groups before importing them. This operation can take up to 1h.
-
-    !IMAGE[Import group](\Media\mgmt-import1.png "Import group")
-
-    !IMAGE[Import group](\Media\mgmt-import2.png "Import group")
-
-    !IMAGE[Import group](\Media\mgmt-import3.png "Import group")
-
-    !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
 
 ===
 # Azure Information Protection
