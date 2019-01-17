@@ -3426,7 +3426,7 @@ With the access and session policies, you can:
 3. Create a new conditional access policy with the following settings:
 
    |Name|Assignments|Apps|
-   |-|-|-|
+   |-----|-----|-----|
    |Office365 AppControl|All users|Exchange, SharePoint|
 
    !IMAGE[New policy](\Media\cond-policy-1.png)
