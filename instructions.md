@@ -2609,7 +2609,7 @@ Although some labs are pretty straight forward ,we expect you to already have so
 * **LinuxVM** is an Ubuntu 18.04 computer on which we install Docker to run the Cloud App Security Discovery log collector.
 * Office 365 and Cloud App Security are test tenants for the labs.
 
->:memo: We recommend using the [Cloud App Security documentation](https://docs.microsoft.com/en-us/cloud-app-security/what-is-cloud-app-security "Cloud App Security documentation") to have details on the different use cases, capabilities and configuration steps.
+
 
 ### Portals URLs
 
@@ -2658,7 +2658,10 @@ For this task, you are asked to delegate admin access to monitor a dedicated gro
 
 In this lab, we are going to delegate the management of US employees to a new administrator (**mcasadminUS**). This administrator will only see those users alerts and activities for the users bieing members of the group **US employees**.
 
-1. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), import the **US employees** group.
+1. [] On @lab.VirtualMachine(Client01).SelectLink log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+
+1. [] In a in Private Browsing session navigate to the ```https://portal.cloudappsecurity.com```
+1. [] Import the **US employees** group.
     > :warning: Cloud App Security has to synchronize the Azure AD groups before importing them. This operation can take up to 1h.
 
     !IMAGE[Import group](\Media\mgmt-import1.png "Import group")
