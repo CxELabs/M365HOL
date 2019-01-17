@@ -2727,7 +2727,7 @@ To use this capability, you will perform in this lab the configuration and troub
 
 ## Configure and test continuous reports
 
-[:arrow_up: Top](#cloud-App-Security-Discovery-lab)
+[:arrow_up: Top](#cloud-app-security-discovery-lab)
 
 > NOTE: The Docker engine has been pre-installed on LinuxVM in your lab environment, **Client01** in this case, using the commands (below) provided in the [deployment guide](https://docs.microsoft.com/en-us/cloud-app-security/discovery-docker-ubuntu).
 
@@ -3127,7 +3127,7 @@ Search and review the alerts in that environment and investigate to identify the
 
 ## Anonymous access
 
-[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-app-security-threat-detection-lab)
 
 This detection identifies that users were active from an IP address that has been identified as an anonymous proxy IP address. These proxies are used by people who want to hide their device’s IP address, and may be used for malicious intent. This detection uses a machine learning algorithm that reduces "false positives", such as mis-tagged IP addresses that are widely used by users in the organization.
 
@@ -3163,7 +3163,7 @@ As your authentication during the previous steps came from an anonymous IP addre
 
 ## Impossible travel
 
-[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-app-security-threat-detection-lab)
 
 This detection identifies two user activities (is a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it would have taken the user to travel from the first location to the second, indicating that a different user is using the same credentials. This detection uses a machine learning algorithm that ignores obvious "false positives" contributing to the impossible travel condition, such as VPNs and locations regularly used by other users in the organization. The detection has an initial learning period of seven days during which it learns a new user’s activity pattern.
 
@@ -3187,7 +3187,7 @@ As the first and the second authentication came from distinct locations, Cloud A
 
 ## Activity from infrequent country
 
-[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-app-security-threat-detection-lab)
 
 This detection considers past activity locations to determine new and infrequent locations. The anomaly detection engine stores information about previous locations used by users in the organization. An alert is triggered when an activity occurs from a location that wasn't recently or never visited by any user in the organization.
 
@@ -3211,7 +3211,7 @@ After an initial learning period, Cloud App Security will detect that this locat
 
 ## Malware detection
 
-[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-app-security-threat-detection-lab)
 
 This detection identifies malicious files in your cloud storage, whether they're from your Microsoft apps or third-party apps. Microsoft Cloud App Security uses Microsoft's threat intelligence to recognize whether certain files are associated with known malware attacks and are potentially malicious. This built-in policy is disabled by default. Not every file is scanned, but heuristics are used to look for files that are potentially risky. After files are detected, you can then see a list of **Infected files**. Click on the malware file name in the file drawer to open a malware report that provides you with information about that type of malware the file is infected with.
 
@@ -3245,7 +3245,7 @@ This detection identifies malicious files in your cloud storage, whether they're
 
 ## Email exfiltration using suspicious inbox forwarding
 
-[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-app-security-threat-detection-lab)
 
 This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address.
 
@@ -3305,7 +3305,7 @@ As the rules redirects your user’s emails to a suspicious external address, Cl
 
 ## Suspicious application consent
 
-[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-app-security-threat-detection-lab)
 
 Many third-party productivity apps that might be installed by business users in your organization request permission to access user information and data and sign in on behalf of the user in other cloud apps, such as Office 365, G Suite and Salesforce. 
 When users install these apps, they often click accept without closely reviewing the details in the prompt, including granting permissions to the app. This problem is compounded by the fact that IT may not have enough insight to weigh the security risk of an application against the productivity benefit that it provides.
@@ -3358,7 +3358,7 @@ Here is an example of such user consent:
 
 ## Create your own policies
 
-[:arrow_up: Top](#cloud-App-Security-threat-detection-lab)
+[:arrow_up: Top](#cloud-app-security-threat-detection-lab)
 
 Now that we reviewed some of the default detection capabilities of Cloud App Security, you should start creating your [own policies](https://docs.microsoft.com/en-us/cloud-app-security/control-cloud-apps-with-policies).
 Cloud App Security provides by default many [policies templates](https://docs.microsoft.com/en-us/cloud-app-security/policy-template-reference) to start creating your custom policies.
