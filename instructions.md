@@ -709,6 +709,7 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 
 ## Overview
 
+
 Azure Information Protection (AIP) is a cloud-based solution that can help organizations to protect sensitive information by classifying and (optionally) encrypting documents and emails on Windows, Mac, and Mobile devices. This is done using an organization defined classification taxonomy made up of labels and sub-labels. These labels may be applied manually by users, or automatically by administrators via defined rules and conditions.
 
 The phases of AIP are shown in the graphic below.  
