@@ -2627,17 +2627,17 @@ Although some labs are pretty straight forward ,we expect you to already have so
 The different Cloud App Security capabilities covered in the labs are:
 
 * [Module 01 - Management](#manage-admin-access)
-* [Module 02 - Cloud Discovery continuous report](#cloud-App-Security-Discovery-lab)
+* [Module 02 - Cloud Discovery continuous report](#cloud-app-security-discovery-lab)
 * [Module 03 - Information protection](#information-protection)
-* [Module 04 - Threat detection](#cloud-App-Security-threat-detection-lab)
-* [Module 05 - Conditional Access App Control with Office 365](#conditional-Access-App-Control-with-Office-365)
+* [Module 04 - Threat detection](#cloud-app-security-threat-detection-lab)
+* [Module 05 - Conditional Access App Control with Office 365](#conditional-access-app-control-with-office-365)
 
 ### Optional/follow on labs
 
-* [Module 06a - Management with PowerShell](#management-with-PowerShell)
-* [Module 06b - Cloud Discovery snapshot report](#cloud-Discovery-snapshot-report)
+* [Module 06a - Management with PowerShell](#management-with-powershell)
+* [Module 06b - Cloud Discovery snapshot report](#cloud-discovery-snapshot-report)
 * [Module 06c - Log collector troubleshooting](#log-collector-troubleshooting)
-* [Module 06d - Conditional Access App Control with 3rd party apps](#conditional-Access-App-Control-with-3rd-party-apps)
+* [Module 06d - Conditional Access App Control with 3rd party apps](#conditional-access-app-control-with-3rd-party-apps)
 
 >:question: If you have questions or want to go further in your Cloud App Security journey, join our **[Tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity)** !
 ===
@@ -2652,8 +2652,7 @@ For this task, you are asked to delegate admin access to monitor a dedicated gro
 > :memo: Cloud App Security Global admin role is not the same as the regular Office 365 Global admin role.
 > Although the Office 365 Global admins are automatically granted the Cloud App Security Global admin role, you can grant users MCAS Global Admin role without adding them to the Office 365 Global admins
 
-Documentation:
-[https://docs.microsoft.com/en-us/cloud-app-security/manage-admins](https://docs.microsoft.com/en-us/cloud-app-security/manage-admins)
+
 
 ## Delegate user group administration
 
@@ -3426,7 +3425,7 @@ With the access and session policies, you can:
 3. Create a new conditional access policy with the following settings:
 
    |Name|Assignments|Apps|
-   |-|-|-|
+   |-----|-----|-----|
    |Office365 AppControl|All users|Exchange, SharePoint|
 
    !IMAGE[New policy](\Media\cond-policy-1.png)
