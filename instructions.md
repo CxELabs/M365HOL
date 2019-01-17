@@ -2673,7 +2673,7 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
 
-2. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add **mcasAdminUS** as **User group admin** for the **US employees** group.
+2. [] In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add **mcasAdminUS** as **User group admin** for the **US employees** group.
 
     !IMAGE[New admin](\Media\mgmt-admin1.png "New admin")
 
@@ -2685,7 +2685,7 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     !IMAGE[New admin](\Media\mgmt-admin5.png "New admin")
 
-3. Open a new **private** tab and connect to the [Cloud App Security portal](https://portal.cloudappsecurity.com) with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
+3. [] Open a new **private** tab and connect to the [Cloud App Security portal](https://portal.cloudappsecurity.com) with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
 
 ---
 
