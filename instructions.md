@@ -727,7 +727,7 @@ Finally, we will demonstrate how to use the new AIP Dashboards to leverage Azure
 
 > [!ALERT] Please ensure you have completed the steps in the [Lab Environment Configuration](#lab-environment-configuration) before continuing.
 
-### Objectives
+## Objectives
 
 There are 2 options for this Lab.  These options contain similar content except for the items called out below.
 
