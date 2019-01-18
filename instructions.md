@@ -2732,7 +2732,7 @@ To use this capability, you will perform in this lab the configuration and troub
 
 > NOTE: The Docker engine has been pre-installed on LinuxVM in your lab environment, **Client01** in this case, using the commands (below) provided in the [deployment guide](https://docs.microsoft.com/en-us/cloud-app-security/discovery-docker-ubuntu).
 
-``` bash
+```
     curl -o /tmp/MCASInstallDocker.sh https://adaprodconsole.blob.core.windows.net/public-files/MCASInstallDocker.sh && chmod +x /tmp/MCASInstallDocker.sh; /tmp/MCASInstallDocker.sh
 ```
 
@@ -2806,7 +2806,7 @@ Those commands download a script installing the Docker engine on your host compu
 
     !IMAGE[Create log collector command](\Media\dis-addlogcollectortoken.png "Create log collector command")
 
-    ``` bash
+    ``` 
     (echo 1f5b5fb2a0d778e3d57f26ca5ab11574db0751166477940528ccf19a7c4) | docker run --name LogCollector -p 21:21 -p 20000-20099:20000-20099 -e "PUBLICIP='192.168.141.125'" -e "PROXY=" -e "SYSLOG=false" -e "CONSOLE=xyztenant.eu.portal.cloudappsecurity.com" -e "COLLECTOR=LogCollector" --security-opt apparmor:unconfined --cap-add=SYS_ADMIN --restart unless-stopped -a stdin -i microsoft/caslogcollector starter
     ```
 
@@ -2837,7 +2837,7 @@ Those commands download a script installing the Docker engine on your host compu
     !IMAGE[Putty prompt](\Media\dis-puttylogin.png)
 
 16. [] Type the command below and press **Enter**. Provide the user password when prompted.
-     ``` bash
+     ``` 
      sudo -i
      ```
      !IMAGE[sudo](\Media\dis-sudo.png)
@@ -3651,7 +3651,7 @@ There are several things to test at different locations: in the log collector, i
 
 2. [] Run the following commands:
 
-    ``` bash
+    ``` 
     sudo -i
     docker stats
     ```
@@ -3663,7 +3663,7 @@ There are several things to test at different locations: in the log collector, i
 
 4. [] Next, run the command below:
 
-    ``` bash
+    ``` 
     docker logs --details LogCollector
     ```
     !IMAGE[Docker log](\Media\dis-dockerlog.png "Docker log")
@@ -3674,14 +3674,14 @@ There are several things to test at different locations: in the log collector, i
 
 1. [] Type the following command:
 
-    ``` bash
+    ``` 
     docker exec -it LogCollector bash
     ```
      >**INFO:** This command will execute the container's bash. You will then be able to execute commands *from inside* of the log collector.
 
 2. [] You can now explore the container filesystem and inspect the **/var/adallom** directory. This directory is where you will investigate most of the issues with the syslog or ftp logs being sent to the log collector.
 
-    ``` bash
+    ``` 
     cd /var/adallom
     ll
     ```
@@ -3695,7 +3695,7 @@ There are several things to test at different locations: in the log collector, i
 
 3. [] To validate that logs are correctly received from the network appliance, you can also verify the **/var/log/pure-ftpd** directory and check the transfer log:
 
-    ``` bash
+    ``` 
     tail transfer.log
     ```
 
