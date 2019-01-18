@@ -709,6 +709,7 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 
 ## Overview
 
+
 Azure Information Protection (AIP) is a cloud-based solution that can help organizations to protect sensitive information by classifying and (optionally) encrypting documents and emails on Windows, Mac, and Mobile devices. This is done using an organization defined classification taxonomy made up of labels and sub-labels. These labels may be applied manually by users, or automatically by administrators via defined rules and conditions.
 
 The phases of AIP are shown in the graphic below.  
@@ -2672,7 +2673,11 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
 
-2. In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add **mcasAdminUS** as **User group admin** for the **US employees** group.
+<<<<<<< HEAD
+2.[] In the Cloud App Security portal```https://portal.cloudappsecurity.com```, add **mcasAdminUS** as **User group admin** for the **US employees** group.
+=======
+2. [] In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add **mcasAdminUS** as **User group admin** for the **US employees** group.
+>>>>>>> 27696da7e6d77f390ac4ba36135f66d4b29a0435
 
     !IMAGE[New admin](\Media\mgmt-admin1.png "New admin")
 
@@ -2684,7 +2689,11 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     !IMAGE[New admin](\Media\mgmt-admin5.png "New admin")
 
-3. Open a new **private** tab and connect to the [Cloud App Security portal](https://portal.cloudappsecurity.com) with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
+<<<<<<< HEAD
+3. Open a new **private** tab and connect to the [Cloud App Security portal] ```https://portal.cloudappsecurity.com``` with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
+=======
+3. [] Open a new **private** tab and connect to the [Cloud App Security portal](https://portal.cloudappsecurity.com) with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
+>>>>>>> 27696da7e6d77f390ac4ba36135f66d4b29a0435
 
 ---
 
@@ -2741,7 +2750,7 @@ Those commands download a script installing the Docker engine on your host compu
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 
-2. Create a new tab in the InPrivate window and browse to ```https://portal.cloudappsecurity.com```.
+2. Create a new tab in the in Private window and browse to ```https://portal.cloudappsecurity.com```.
 
    >INFO: If necessary, log in using the credentials below:
    >
@@ -2911,8 +2920,8 @@ Microsoft Cloud App Security helps you prevent this kind of disaster before it h
 
 ## Labs
 
-* [Apply AIP classification to SSN documents:](#apply-AIP-classification-to-SSN-documents) :clock10: 10 min
-* [Quarantine sensitive PDF for review:](#quarantine-sensitive-PDF-for-review) :clock10: 10 min
+* [Apply AIP classification to SSN documents:](#apply-aip-classification-to-ssn-documents) :clock10: 10 min
+* [Quarantine sensitive PDF for review:](#quarantine-sensitive-pdf-for-review) :clock10: 10 min
 * [Test our policies:](#test-our-policies) :clock10: 10 min
 
 ---
@@ -3417,7 +3426,7 @@ With the access and session policies, you can:
 
 ## Configuration
 
-1. Go to the [Azure portal](https://portal.azure.com) and open the **Azure Active Directory** blade.
+1. Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
 
    !IMAGE[AAD portal](\Media\aad-1.png)
 
@@ -3443,11 +3452,11 @@ With the access and session policies, you can:
 
    !IMAGE[New policy](\Media\cond-policy-5.png)
 
-4. Sign out, close you browser and open the [Exchange Web App](https://outlook.office.com).
+4. Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
 
    >:memo: We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
 
-5. Go back to [Cloud App Security](https://portal.cloudappsecurity.com), click on the gear icon and go to the **Conditional Access App Control** section.
+5. Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the gear icon and go to the **Conditional Access App Control** section.
    You will see that Exchange Online appeared and can now be configured.
 
    !IMAGE[Menu](\Media\appc-office-1.png)
@@ -3484,7 +3493,7 @@ With the access and session policies, you can:
 
 Let's now test our configuration.
 
-1. Sign out, close you browser and open the [Exchange Web App](https://outlook.office.com).
+1. Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
    You should receive the followin message, as you are redirected through Cloud App Security before accessing the application. **Click** to continue to Exchange Online.
 
    !IMAGE[Warning](\Media\appc-office-12.png)
@@ -4044,7 +4053,7 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
 ### Test the user experience
 
-[:arrow_up: Top](#conditional-Access-App-Control)
+[:arrow_up: Top](#conditional-access-app-control)
 
 1. Extract the file **silvia.pfx** from the **Client Certificate** folder in **Demo files.zip** file you've received
 
@@ -4082,7 +4091,7 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
 ### Test the admin experience
 
-[:arrow_up: Top](#conditional-Access-App-Control)
+[:arrow_up: Top](#conditional-access-app-control)
 
 1. Go back to the Cloud App Security portal, and under **Investigate**  choose **Activity log**
 
