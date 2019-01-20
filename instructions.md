@@ -2674,10 +2674,14 @@ In this lab, we are going to delegate the management of US employees to a new ad
     !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 2.[] In the Cloud App Security portal```https://portal.cloudappsecurity.com```, add **mcasAdminUS** as **User group admin** for the **US employees** group.
 =======
 2. [] In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add **mcasAdminUS** as **User group admin** for the **US employees** group.
 >>>>>>> 27696da7e6d77f390ac4ba36135f66d4b29a0435
+=======
+2. [] In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add **mcasAdminUS** as **User group admin** for the **US employees** group.
+>>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
 
     !IMAGE[New admin](\Media\mgmt-admin1.png "New admin")
 
@@ -2690,10 +2694,14 @@ In this lab, we are going to delegate the management of US employees to a new ad
     !IMAGE[New admin](\Media\mgmt-admin5.png "New admin")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 3. Open a new **private** tab and connect to the [Cloud App Security portal] ```https://portal.cloudappsecurity.com``` with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
 =======
 3. [] Open a new **private** tab and connect to the [Cloud App Security portal](https://portal.cloudappsecurity.com) with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
 >>>>>>> 27696da7e6d77f390ac4ba36135f66d4b29a0435
+=======
+3. [] Open a new **private** tab and connect to the [Cloud App Security portal](https://portal.cloudappsecurity.com) with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
+>>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
 
 ---
 
@@ -2703,7 +2711,7 @@ As a **Managed Security Service Providers** (MSSPs), you are asked by your custo
 In this lab, we will see how to answer to that question.
 As the MCAS admin for your company, work with the person next to you to configure an external access for the Managed Security Service Provider to another MCAS tenant.
 
-1. Browse to ```https://portal.cloudappsecurity.com```, add the external MCAS admin as **Security reader** in your MCAS tenant.
+1. [] Browse to ```https://portal.cloudappsecurity.com```, add the external MCAS admin as **Security reader** in your MCAS tenant.
 
     !IMAGE[External admin](\Media\mgmt-admin1.png "External admin")
 
@@ -2719,11 +2727,11 @@ As the MCAS admin for your company, work with the person next to you to configur
 
     !IMAGE[External admin](\Media\mgmt-externaladmin2.png "External admin")
 
-2. After adding the external admin, **log off** and log on again from Cloud App Security.
+2. [] After adding the external admin, **log off** and log on again from Cloud App Security.
 
     !IMAGE[Log off](\Media\mgmt-switch1.png "Log off")
 
-3. Switch to the external Cloud App Security tenant where you have been added as an external admin and look at the actions you can perform.
+3. [] Switch to the external Cloud App Security tenant where you have been added as an external admin and look at the actions you can perform.
 
     !IMAGE[Switch](\Media\mgmt-switch2.png "Switch")
 ===
@@ -2740,7 +2748,7 @@ To use this capability, you will perform in this lab the configuration and troub
 
 > NOTE: The Docker engine has been pre-installed on LinuxVM in your lab environment, **Client01** in this case, using the commands (below) provided in the [deployment guide](https://docs.microsoft.com/en-us/cloud-app-security/discovery-docker-ubuntu).
 
-``` bash
+```
     curl -o /tmp/MCASInstallDocker.sh https://adaprodconsole.blob.core.windows.net/public-files/MCASInstallDocker.sh && chmod +x /tmp/MCASInstallDocker.sh; /tmp/MCASInstallDocker.sh
 ```
 
@@ -2750,7 +2758,11 @@ Those commands download a script installing the Docker engine on your host compu
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 
+<<<<<<< HEAD
 2. Create a new tab in the in Private window and browse to ```https://portal.cloudappsecurity.com```.
+=======
+2. [] Create a new tab in the InPrivate window and browse to ```https://portal.cloudappsecurity.com```.
+>>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
 
    >INFO: If necessary, log in using the credentials below:
    >
@@ -2758,15 +2770,15 @@ Those commands download a script installing the Docker engine on your host compu
    >
    >```@lab.CloudCredential(134).Password```
 
-3. In the Cloud App Security dashboard, click on the **Settings** icon and click **Log collectors**.
+3. [] In the Cloud App Security dashboard, click on the **Settings** icon and click **Log collectors**.
 
    !IMAGE[Settings](\Media\dis-settings.png "Settings")
 
-4. On the **Data sources tab**, click the **Add data source...** button.
+4. [] On the **Data sources tab**, click the **Add data source...** button.
 
     !IMAGE[New data source](\Media\dis-newsource.png "New data source")
 
-5. In the Add data source window, use the settings below (do not close the window yet):
+5. [] In the Add data source window, use the settings below (do not close the window yet):
 
     >|||
     >|---------|---------|
@@ -2779,27 +2791,27 @@ Those commands download a script installing the Docker engine on your host compu
 
     >:memo: **NOTE:** In this lab we use FTP as the receiver type but usually companies will use Syslog.
 
-6. While still in the Add data source dialog, click **View sample of expected log file**.
+6. [] While still in the Add data source dialog, click **View sample of expected log file**.
 
     >:memo: **NOTE:** Using this information, you can verify with your network team that the provided logs match the format expect by Cloud App Security. If it doesn't, you should use a custom parser.
 
     !IMAGE[Verify log format](\Media\dis-verifylog.png "Verify log format")
 
-7. In the Verify your log format dialog, click **Download sample log** and save to your desktop. Those logs will be used to simulate an appliance sending traffic logs to the log collector.
+7. [] In the Verify your log format dialog, click **Download sample log** and save to your desktop. Those logs will be used to simulate an appliance sending traffic logs to the log collector.
 
     !IMAGE[Download sample](\Media\dis-downloadsample.png "Download sample log")
 
-8. Close the *Verify your log format* window, then click **Add** in the **Add** data source dialog.
+8. [] Close the *Verify your log format* window, then click **Add** in the **Add** data source dialog.
 
     !IMAGE[Add source](\Media\dis-addsource.png "Add source")
 
     >**INFO:** We just created a data source which is the logical representation of the network appliance data source type the log collector will receive.
 
-9. Next, click on the **Log collectors tab** and click the **Add log collector...** button.
+9. [] Next, click on the **Log collectors tab** and click the **Add log collector...** button.
 
     !IMAGE[Add log collector](\Media\dis-addlogcollector.png "Add log collector")
 
-10. In the Create log collector dialog, provide the settings below and click the **Update** button.
+10. [] In the Create log collector dialog, provide the settings below and click the **Update** button.
 
     |||
     |-----|-----|
@@ -2809,12 +2821,12 @@ Those commands download a script installing the Docker engine on your host compu
 
     !IMAGE[Create log collector](\Media\dis-createlogcollector.png "Create log collector")
 
-11. After clicking on the **Update** button, you have now the required steps to create your log collector instance on **LinuxVM**.
+11. [] After clicking on the **Update** button, you have now the required steps to create your log collector instance on **LinuxVM**.
     >:warning: Do not close this window!
 
     !IMAGE[Create log collector command](\Media\dis-addlogcollectortoken.png "Create log collector command")
 
-    ``` bash
+    ``` 
     (echo 1f5b5fb2a0d778e3d57f26ca5ab11574db0751166477940528ccf19a7c4) | docker run --name LogCollector -p 21:21 -p 20000-20099:20000-20099 -e "PUBLICIP='192.168.141.125'" -e "PROXY=" -e "SYSLOG=false" -e "CONSOLE=xyztenant.eu.portal.cloudappsecurity.com" -e "COLLECTOR=LogCollector" --security-opt apparmor:unconfined --cap-add=SYS_ADMIN --restart unless-stopped -a stdin -i microsoft/caslogcollector starter
     ```
 
@@ -2822,15 +2834,15 @@ Those commands download a script installing the Docker engine on your host compu
     >* An API token to connect to Cloud App Security for uploading the logs: *1f5b5fb2a0d778e3d57f26ca5ab11574db0751166477940528ccf19a7c4*
     >* The docker parameters to configure the log collector container: *docker run ...*
 
-12. Copy the command line provided at the end of the previous step and **minimize** the browser. Open **Putty (64-bit)**. You should have the icon on your desktop.
+12. [] Copy the command line provided at the end of the previous step and **minimize** the browser. Open **Putty (64-bit)**. You should have the icon on your desktop.
 
     !IMAGE[Putty](\Media\dis-putty.png "Putty")
 
-13. In the PuTTY Configuration window, enter **192.168.141.125** and click **Open**.
+13. [] In the PuTTY Configuration window, enter **192.168.141.125** and click **Open**.
 
     !IMAGE[Putty config](\Media\dis-puttyconfig.png "Putty config")
 
-14. At the Putty warning message, click **Yes**.
+14. [] At the Putty warning message, click **Yes**.
     >**INFO:** This warning is due to the ssh certificate. You can safely ignore this warning in this lab.
 
     !IMAGE[Putty warning](\Media\dis-puttywarning.png "Putty warning")
@@ -2844,26 +2856,26 @@ Those commands download a script installing the Docker engine on your host compu
 
     !IMAGE[Putty prompt](\Media\dis-puttylogin.png)
 
-16. Type the command below and press **Enter**. Provide the user password when prompted.
-     ``` bash
+16. [] Type the command below and press **Enter**. Provide the user password when prompted.
+     ``` 
      sudo -i
      ```
      !IMAGE[sudo](\Media\dis-sudo.png)
 
      >**INFO**: The previous command elevates your permissions in the Linux environment like the UAC prompt would do on a Windows machine.
 
-17. Return to the *Create log collector* dialog, copy the **collector configuration** command from step 2 and run it in the PuTTY window.
+17. [] Return to the *Create log collector* dialog, copy the **collector configuration** command from step 2 and run it in the PuTTY window.
 
      !IMAGE[Copy token](\Media\dis-addlogcollectorcopy.png "Copy token")
      !IMAGE[New container](\Media\dis-newcontainer.png "New container")
 
      >**INFO:** The output of this command is the id of the newly created container/log collector.
 
-18. Now, launch **WinSCP** from the start-menu.
+18. [] Now, launch **WinSCP** from the start-menu.
 
     !IMAGE[WinSCP](\Media\dis-winscp.png "WinSCP")
 
-19. Use the details below in the WinSCP window to connect to the log collector FTP service.
+19. [] Use the details below in the WinSCP window to connect to the log collector FTP service.
 
     |File Protocol|Host name|User name|Password|
     |-----|-----|-----|-----|
@@ -2881,27 +2893,27 @@ Those commands download a script installing the Docker engine on your host compu
 
     >:warning: If you are **not** able to connect to the log collector FTP service, verify that you successfully created the new log collector instance within Putty in previous steps.
 
-20. On the left pane, move to the **Desktop** folder and drag your example Squid log (From Step 7) into the folder named for your data source (**SquidLogs**). After some minutes, the log collector will upload your logs.
+20. [] On the left pane, move to the **Desktop** folder and drag your example Squid log (From Step 7) into the folder named for your data source (**SquidLogs**). After some minutes, the log collector will upload your logs.
 
     !IMAGE[Log upload](\Media\dis-winscplogupload.png "Log upload")
     !IMAGE[Log upload](\Media\dis-winscplogupload2.png "Log upload")
     !IMAGE[Log upload](\Media\dis-winscplogupload3.png "Log upload")
 
-21. Return to the Cloud App Security portal and click on **Settings** > **Governance log**.
+21. [] Return to the Cloud App Security portal and click on **Settings** > **Governance log**.
 
     !IMAGE[Settings Governance log](\Media\dis-governancelog.png "Settings Governance log")
 
-22. Verify the status of the uploaded logs.
+22. [] Verify the status of the uploaded logs.
 
     >**INFO:** The status you see is the parsing status of the logs. Parsing status can be successful, pending or failed.
 
     !IMAGE[Log uploaded](\Media\dis-loguploaded.png "Log uploaded")
 
-23. You can also verify the **last data received** status on the *Data sources* tab under **Automatic log upload** settings.
+23. [] You can also verify the **last data received** status on the *Data sources* tab under **Automatic log upload** settings.
 
     !IMAGE[Last data received](\Media\dis-lastreceived.png "Last data received")
 
-24. Go to the **Cloud Discovery dashboard** to verify the discovered apps.
+24. [] Go to the **Cloud Discovery dashboard** to verify the discovered apps.
 
     !IMAGE[Discovery dashboard](\Media\dis-discoverydashboard.png "Discovery dashboard")
 
@@ -2933,15 +2945,15 @@ We will apply an Azure Information Protection template on documents containing s
 
 [:arrow_up: Top](#information-protection)
 
-1. In the Cloud App Security portal, go to **Policies**.
+1. [] In the Cloud App Security portal, go to **Policies**.
 
     !IMAGE[Policies](\Media\info-policies.png "Policies")
 
-2. Create a new **File policy**.
+2. [] Create a new **File policy**.
 
     !IMAGE[New policy](\Media\info-newpolicy.png "New policy")
 
-3. Provide the following settings to that policy:
+3. [] Provide the following settings to that policy:
 
     >|||
     >|---------|---------|
@@ -2954,35 +2966,35 @@ We will apply an Azure Information Protection template on documents containing s
 
     !IMAGE[Select folder](\Media\info-folder.png "Select folder")
 
-4. Verify that you have one selected folder and click on **Done**.
+4. [] Verify that you have one selected folder and click on **Done**.
 
     !IMAGE[Done](\Media\info-done.png "Done")
 
     !IMAGE[Folder](\Media\info-folder.png "Folder")
 
-5. In inspection method, select **Data Classification Service**.
+5. [] In inspection method, select **Data Classification Service**.
 
     >:memo: [Microsoft Data Classification Service](https://docs.microsoft.com/en-us/cloud-app-security/dcs-inspection) provides a **unified** information protection experience across Office 365, Azure Information Protection, and Microsoft Cloud App Security.
     >The classification service allows you to extend your data classification efforts to the third-party cloud apps protected by Cloud App Security, using the decisions you already made across an even greater number of apps.
 
     !IMAGE[DCS](\Media\info-dcs.png "DCS")
 
-6. Click on **Choose inspection type** and then on **sensitive information type**. Search and select the **SSN related** ones and click on **Done**.
+6. [] Click on **Choose inspection type** and then on **sensitive information type**. Search and select the **SSN related** ones and click on **Done**.
 
     !IMAGE[SSN type](\Media\info-type.png "SSN type")
     !IMAGE[SSN type](\Media\info-ssn.png "SSN type")
 
-7. Click on the **Unmask** checkbox.
+7. [] Click on the **Unmask** checkbox.
 
     !IMAGE[Unmask](\Media\info-unmask.png "Unmask")
 
-8. In the Governance actions, click on **Microsoft SharePoint Online** and select **Apply classification label**.
+8. [] In the Governance actions, click on **Microsoft SharePoint Online** and select **Apply classification label**.
 
     !IMAGE[Template](\Media\info-template.png "Template")
 
     >:warning: If you are not able to select Azure Information Protection templates, verify that you configured the integration in the prerequisites section or that you waited the 1h for the classifications to sync.
 
-9. Click **Create** to finish the policy creation.
+9. [] Click **Create** to finish the policy creation.
 
 ---
 
@@ -2993,15 +3005,15 @@ We will apply an Azure Information Protection template on documents containing s
 File policies are a great tool for finding threats to your information protection policies, for instance finding places where users stored sensitive information, credit card numbers and third-party ICAP files in your cloud. With Cloud App Security, not only can you detect these unwanted files stored in your cloud that leave you vulnerable, but you can take im/mediate action to stop them in their tracks and lock down the files that pose a threat. Using Admin quarantine, you can protect your files in the cloud and re/mediate problems, as well as prevent future leaks from occurring.
 This is what we are going to configure in this lab.
 
-1. In Cloud App Security, go to the **Settings**.
+1. [] In Cloud App Security, go to the **Settings**.
 
     !IMAGE[Settings](\Media\info-settings.png)
 
-2. In the Information Protection section, go to **Admin quarantine**.
+2. [] In the Information Protection section, go to **Admin quarantine**.
 
     !IMAGE[Settings admin quarantine](\Media\info-adminq1.png "Settings admin quarantine")
 
-3. Configure **Admin quarantine**.
+3. [] Configure **Admin quarantine**.
 
     * In the dropdown menu, select your root SharePoint site.
 
@@ -3015,13 +3027,13 @@ This is what we are going to configure in this lab.
 
     >:memo: This message will be provided in the placeholders when a file is put in quarantine.
 
-4. Next, go to the policies menu and create a new **file policy**. The policy is the component that will decide which files should be put in quarantine.
+4. [] Next, go to the policies menu and create a new **file policy**. The policy is the component that will decide which files should be put in quarantine.
 
     !IMAGE[Policies](\Media\info-policy1.png "Policies")
 
     !IMAGE[New policy](\Media\info-policy2.png "New policy")
 
-5. Provide the following settings to that policy:
+5. [] Provide the following settings to that policy:
 
     >|Policy name|Files matching all of the following|
     >|---------|---------|
@@ -3029,7 +3041,7 @@ This is what we are going to configure in this lab.
 
     !IMAGE[New policy](\Media\info-policy3.png "New policy")
 
-6. Check the **Create an alert for each matching file** checkbox. In Governance actions of the policy, select **Put in admin quarantine** for OneDrive and SharePoint and click on the **Create** button.
+6. [] Check the **Create an alert for each matching file** checkbox. In Governance actions of the policy, select **Put in admin quarantine** for OneDrive and SharePoint and click on the **Create** button.
 
     !IMAGE[New policy](\Media\info-policy4.png "New policy")
 
@@ -3041,9 +3053,9 @@ This is what we are going to configure in this lab.
 
 To test our files policies, perform the following tasks:
 
-1. On Client01, unzip the content of the **Demo files.zip**.
+1. [] On Client01, unzip the content of the **Demo files.zip**.
 
-2. Go to the **Contoso Team Site** documents library. You can use the **Search** to find the address to this site.
+2. [] Go to the **Contoso Team Site** documents library. You can use the **Search** to find the address to this site.
 
     !IMAGE[Team site](\Media\info-test1.png "Team site")
 
@@ -3053,7 +3065,7 @@ To test our files policies, perform the following tasks:
 
     !IMAGE[Team site](\Media\info-test4.png "Team site")
 
-3. Upload the unzipped files to the site.
+3. [] Upload the unzipped files to the site.
 
     !IMAGE[Upload](\Media\info-test5.png "Upload")
 
@@ -3061,33 +3073,33 @@ To test our files policies, perform the following tasks:
 
     !IMAGE[Upload](\Media\info-test7.png "Upload")
 
-4. Cloud App Security will now scan those documents and search for matches to our created policies.
+4. [] Cloud App Security will now scan those documents and search for matches to our created policies.
 
     >:memo: The scan can take **several minutes** before completion.
 
-5. To monitor the evolution of the scan, go back to Cloud App Security and open the **Files** page of the investigations.
+5. [] To monitor the evolution of the scan, go back to Cloud App Security and open the **Files** page of the investigations.
 
     !IMAGE[Search files](\Media\info-files1.png "Search files")
 
-6. You can search for the files you uploaded using different criteria, like **file name**, **type**, ... or just look at all the files discovered by Cloud App Security.
+6. [] You can search for the files you uploaded using different criteria, like **file name**, **type**, ... or just look at all the files discovered by Cloud App Security.
 
     !IMAGE[Search files](\Media\info-files2.png "Search files")
 
     >:memo: The search page do not refresh automatically.
 
-7. When a policy match is discovered, you will see it in this page.
+7. [] When a policy match is discovered, you will see it in this page.
 
     >:memo: Next to the file name, you have icons showing that an AIP label was applied and that we have a policy match.
 
     !IMAGE[Policy match](\Media\info-files3.png "Policy match")
 
-8. To open the details of the file, click on its name. You can see there the matched policies and the scan status of the files.
+8. [] To open the details of the file, click on its name. You can see there the matched policies and the scan status of the files.
 
     !IMAGE[Policy match](\Media\info-files4.png "Policy match")
 
     !IMAGE[Scan status](\Media\info-files5.png "Scan status")
 
-9. You can also view the related governance actions, like applying the Azure Information classification or moving the file to the quarantine folder, at the file level or in the **Governance log**.
+9. [] You can also view the related governance actions, like applying the Azure Information classification or moving the file to the quarantine folder, at the file level or in the **Governance log**.
 
     !IMAGE[File governance](\Media\info-files6.png "File governance")
 
@@ -3095,7 +3107,7 @@ To test our files policies, perform the following tasks:
 
     !IMAGE[Governance action](\Media\info-files7.png "Governance action")
 
-10. If you go back to the **Contoso Team Site**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
+10. [] If you go back to the **Contoso Team Site**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
 
     !IMAGE[Site](\Media\as3niznc.jpg "Site")
 
@@ -3144,7 +3156,7 @@ This detection identifies that users were active from an IP address that has bee
 
 As your authentication during the previous steps came from an anonymous IP address, it will be detected as suspicious by Cloud App Security.
 
-1. Go back to the Cloud App Security portal and review the alerts.
+1. [] Go back to the Cloud App Security portal and review the alerts.
 
    !IMAGE[MCAS alerts menu](\Media\td-alerts.png "Security Alerts")
 
@@ -3152,21 +3164,21 @@ As your authentication during the previous steps came from an anonymous IP addre
 
    !IMAGE[TOR alert](\Media\td-toralert.png "TOR alert")
 
-2. Click on the alert to open it.
+2. [] Click on the alert to open it.
    You see in this page more information on the alert and the related activities:
 
    !IMAGE[TOR alert](\Media\td-toralert-details.png "TOR alert details")
 
-3. Click on the activities to get more information on the specific activity, the user and the IP address:
+3. [] Click on the activities to get more information on the specific activity, the user and the IP address:
 
    !IMAGE[TOR alert](\Media\td-toralert-details-user.png "TOR alert user")
    !IMAGE[TOR alert](\Media\td-toralert-details-ip.png "TOR alert IP address")
 
-4. You can go further in your investigation by looking at the related actions performed during that session by clicking on the “investigate in activity log" button:
+4. [] You can go further in your investigation by looking at the related actions performed during that session by clicking on the “investigate in activity log" button:
 
    !IMAGE[TOR alert](\Media\td-toralert-details-activities.png "TOR alert activities")
 
-5. You will then be redirected to the activity log where you will be able to investigate on the actions performed during that session, like configuration changes or data exfiltration.
+5. [] You will then be redirected to the activity log where you will be able to investigate on the actions performed during that session, like configuration changes or data exfiltration.
 
 ---
 
@@ -3180,7 +3192,7 @@ This detection identifies two user activities (is a single or multiple sessions)
 
 As the first and the second authentication came from distinct locations, Cloud App Security will detect that those time to travel between those two locations was to short and will then alert you.
 
-1. Go back to the Cloud App Security portal and review the alerts.
+1. [] Go back to the Cloud App Security portal and review the alerts.
 
    !IMAGE[MCAS alerts menu](\Media\td-alerts.png "Security Alerts")
 
@@ -3188,7 +3200,7 @@ As the first and the second authentication came from distinct locations, Cloud A
 
    !IMAGE[Impossible travel alert](\Media\td-impossibletravelalert.png "Impossible travel alert")
 
-2. The investigation steps are similar to the anonymous access but by looking at the IP address details and the **ISP**, you will be able to determine the possible risk:
+2. [] The investigation steps are similar to the anonymous access but by looking at the IP address details and the **ISP**, you will be able to determine the possible risk:
 
    !IMAGE[Impossible travel alert](\Media\td-impossibletravelalert-details.png "Impossible travel alert details")
 
@@ -3204,7 +3216,7 @@ This detection considers past activity locations to determine new and infrequent
 
 After an initial learning period, Cloud App Security will detect that this location was not used before by your user or other people within the organization and will then alert you.
 
-1. Go back to the Cloud App Security portal and review the alerts.
+1. [] Go back to the Cloud App Security portal and review the alerts.
 
    !IMAGE[MCAS alerts menu](\Media\td-alerts.png "Security Alerts")
 
@@ -3212,7 +3224,7 @@ After an initial learning period, Cloud App Security will detect that this locat
 
    !IMAGE[Infrequent country alert](\Media\td-infrequentcountryalert.png "Infrequent country alert")
 
-2. The investigation steps are similar to the anonymous access but by looking at the IP address details and the ISP, you will be able to determine the possible risk. In this specific example, we see it’s coming from a TOR IP, so this authentication is suspicious:
+2. [] The investigation steps are similar to the anonymous access but by looking at the IP address details and the ISP, you will be able to determine the possible risk. In this specific example, we see it’s coming from a TOR IP, so this authentication is suspicious:
 
    !IMAGE[Infrequent country alert](\Media\td-infrequentcountryalert-details.png "Infrequent country alert details")
 
@@ -3226,7 +3238,7 @@ This detection identifies malicious files in your cloud storage, whether they're
 
 ### Investigate
 
-1. Go back to the Cloud App Security portal and review the alerts.
+1. [] Go back to the Cloud App Security portal and review the alerts.
 
    !IMAGE[MCAS alerts menu](\Media\td-alerts.png "Security Alerts")
 
@@ -3234,19 +3246,19 @@ This detection identifies malicious files in your cloud storage, whether they're
 
    !IMAGE[Malware detected alert](\Media\td-malwarealert.png "Malware detected alert")
 
-2. Click on the alert to open it. You see in this page more information on the alert and the related activities:
+2. [] Click on the alert to open it. You see in this page more information on the alert and the related activities:
 
    !IMAGE[Malware detected alert](\Media\td-malwarealert-details.png "Malware detected alert")
 
-3. In the alert, you have more information on the file and its location, but also the malware that we identified:
+3. [] In the alert, you have more information on the file and its location, but also the malware that we identified:
 
    !IMAGE[Malware family](\Media\td-malwarefamily.png "Malware family")
 
-4. Click on the malware type link to have access to the Microsoft Threat Intelligence report regarding this file:
+4. [] Click on the malware type link to have access to the Microsoft Threat Intelligence report regarding this file:
 
    !IMAGE[Malware family](\Media\td-malwarefamilymti.png "Malware family")
 
-5. Back in the alert, you can scroll down to the related activities. There, you will have more information on how the file was uploaded to OneDrive and possibly who downloaded it:
+5. [] Back in the alert, you can scroll down to the related activities. There, you will have more information on how the file was uploaded to OneDrive and possibly who downloaded it:
 
    !IMAGE[Malware family](\Media\td-malwarealert-activities.png "Malware family")
 
@@ -3262,7 +3274,7 @@ This detection looks for suspicious email forwarding rules, for example, if a us
 
 As the rules redirects your user’s emails to a suspicious external address, Cloud App Security will detect this rule creation and will then alert you.
 
-1. Go back to the Cloud App Security portal and review the alerts.
+1. [] Go back to the Cloud App Security portal and review the alerts.
 
    !IMAGE[MCAS alerts menu](\Media\td-alerts.png "Security Alerts")
 
@@ -3270,11 +3282,11 @@ As the rules redirects your user’s emails to a suspicious external address, Cl
 
    !IMAGE[Suspicious forwarding alert](\Media\td-suspiciousforwardingalert.png "Suspicious forwarding alert")
 
-2. Click on the alert to open it. You see in this page more information on the alert, like the **destination address** and the related activities:
+2. [] Click on the alert to open it. You see in this page more information on the alert, like the **destination address** and the related activities:
 
    !IMAGE[Suspicious forwarding alert](\Media\td-suspiciousforwardingalert-details.png "Suspicious forwarding alert")
 
-3. With this information, you can now go back to the user to remove this rule but also investigate in Exchange trace logs which emails were sent to that destination address.
+3. [] With this information, you can now go back to the user to remove this rule but also investigate in Exchange trace logs which emails were sent to that destination address.
 
 ---
 
@@ -3286,7 +3298,7 @@ Cloud App Security extended its ransomware detection capabilities with anomaly d
 
 As the rules redirects your user’s emails to a suspicious external address, Cloud App Security will detect this rule creation and will then alert you.
 
-1. Go back to the Cloud App Security portal and review the alerts.
+1. [] Go back to the Cloud App Security portal and review the alerts.
 
    !IMAGE[MCAS alerts menu](\Media\td-alerts.png "Security Alerts")
 
@@ -3294,19 +3306,19 @@ As the rules redirects your user’s emails to a suspicious external address, Cl
 
    !IMAGE[Ransomware alert](\Media\td-ransomwarealert.png "Ransomware alert")
 
-2. Click on the alert to open it. You see in this page more information on the impacted user, the number of encrypted files, the location of the files and the related activities:
+2. [] Click on the alert to open it. You see in this page more information on the impacted user, the number of encrypted files, the location of the files and the related activities:
 
    !IMAGE[Ransomware alert](\Media\td-ransomwarealert-details.png "Ransomware alert")
 
-3. Now that we’ve seen the alert, let’s go back to the policies:
+3. [] Now that we’ve seen the alert, let’s go back to the policies:
 
    !IMAGE[Policies](\Media\td-policies.png "Policies")
 
-4. Search for the “Ransomware activity” policy and open it:
+4. [] Search for the “Ransomware activity” policy and open it:
 
    !IMAGE[Ransomware policy](\Media\td-policiesransomware.png "Ransomware policies")
 
-5. At the bottom of the policy, review the possible alerts and governance actions:
+5. [] At the bottom of the policy, review the possible alerts and governance actions:
 
    !IMAGE[Ransomware policy](\Media\td-policiesransomware-governance.png "Ransomware policies")
 
@@ -3326,40 +3338,40 @@ Here is an example of such user consent:
 
 ### Investigate
 
-1. Without even creating policies, Cloud App Security shows you the applications that received permissions from your users:
+1. [] Without even creating policies, Cloud App Security shows you the applications that received permissions from your users:
 
    !IMAGE[App permissions](\Media\td-oauth.png "App permissions")
 
-2. From this page, you can easily see who granted permissions to those apps, if they are commonly used or their permissions level:
+2. [] From this page, you can easily see who granted permissions to those apps, if they are commonly used or their permissions level:
 
    !IMAGE[App commodity](\Media\td-zapiercommodity.png "App commodity")
 
-3. If you detect that an application should not be granted access to your environment, you can revoke the app access.
+3. [] If you detect that an application should not be granted access to your environment, you can revoke the app access.
    > **IMPORTANT:** This operation will apply to the **entire** organization:
 
    !IMAGE[App revoke](\Media\td-apprevoke.png "App revoke")
 
-4. When investigating, you can search for apps rarely used in Office 365 which were granted high privileges and create a **policy** to be automatically alerted when such action is performed:
+4. [] When investigating, you can search for apps rarely used in Office 365 which were granted high privileges and create a **policy** to be automatically alerted when such action is performed:
 
    !IMAGE[App filter](\Media\td-appfilter.png "App filter")
 
-5. After clicking on the “New policy from search” button, you can see that your filter will be used to create a new policy:
+5. [] After clicking on the “New policy from search” button, you can see that your filter will be used to create a new policy:
 
    !IMAGE[App policy](\Media\td-apppolicy.png "App policy")
 
-6. Go down on that page and review the possible alerts and governance automatic actions that you can configure:
+6. [] Go down on that page and review the possible alerts and governance automatic actions that you can configure:
 
    !IMAGE[App policy](\Media\td-apppolicy-governance.png "App policy")
 
-7. To go further in your investigation, let’s now pivot to the “Activity log”:
+7. [] To go further in your investigation, let’s now pivot to the “Activity log”:
 
    !IMAGE[Activity log](\Media\td-activitylog.png "Activity log")
 
-8. In the activity log, search for "**Consent to application**" activities:
+8. [] In the activity log, search for "**Consent to application**" activities:
 
    !IMAGE[Activity log](\Media\td-activitylog-consent01.png "Activity log")
 
-9. You will then be able to investigate on who, when and from where your users granted access to applications:
+9. [] You will then be able to investigate on who, when and from where your users granted access to applications:
 
    !IMAGE[Activity log](\Media\td-activitylog-consent02.png "Activity log")
 
@@ -3372,29 +3384,29 @@ Here is an example of such user consent:
 Now that we reviewed some of the default detection capabilities of Cloud App Security, you should start creating your [own policies](https://docs.microsoft.com/en-us/cloud-app-security/control-cloud-apps-with-policies).
 Cloud App Security provides by default many [policies templates](https://docs.microsoft.com/en-us/cloud-app-security/policy-template-reference) to start creating your custom policies.
 
-1. To create your policies, go to “Policies”:
+1. [] To create your policies, go to “Policies”:
 
    !IMAGE[Policies](\Media\td-policies.png "Policies")
 
-2. Click on “Create policy” and select the type of policy you want to create:
+2. [] Click on “Create policy” and select the type of policy you want to create:
 
    !IMAGE[Policies types](\Media\td-policiestypes.png "Policies types")
 
-3. In the policy screen, choose the policy template you want to use:
+3. [] In the policy screen, choose the policy template you want to use:
 
    !IMAGE[Policies templates](\Media\td-policiestemplates.png "Policies templates")
 
-4. Apply the template:
+4. [] Apply the template:
 
    !IMAGE[Apply template](\Media\td-applytemplate.png "Apply template")
 
-5. Cloud App Security will then populate the different properties of the policy:
+5. [] Cloud App Security will then populate the different properties of the policy:
 
    !IMAGE[Policy template filter](\Media\td-policytemplatefilter.png "Policy template filter")
 
-6. Review those properties and customize them if needed.
+6. [] Review those properties and customize them if needed.
 
-7. Explore other types of policies and review the proposed templates.
+7. [] Explore other types of policies and review the proposed templates.
 
  **To go further in your Cloud App Security journey, join our [tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity) !**
 
@@ -3426,15 +3438,19 @@ With the access and session policies, you can:
 
 ## Configuration
 
+<<<<<<< HEAD
 1. Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
+=======
+1. [] Go to the [Azure portal](https://portal.azure.com) and open the **Azure Active Directory** blade.
+>>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
 
    !IMAGE[AAD portal](\Media\aad-1.png)
 
-2. Go to the **Conditional Access** section.
+2. [] Go to the **Conditional Access** section.
 
    !IMAGE[AAD portal](\Media\aad-2.png)
 
-3. Create a new conditional access policy with the following settings:
+3. [] Create a new conditional access policy with the following settings:
 
    |Name|Assignments|Apps|
    |-----|-----|-----|
@@ -3452,18 +3468,26 @@ With the access and session policies, you can:
 
    !IMAGE[New policy](\Media\cond-policy-5.png)
 
+<<<<<<< HEAD
 4. Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
 
    >:memo: We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
 
 5. Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the gear icon and go to the **Conditional Access App Control** section.
+=======
+4. [] Sign out, close you browser and open the [Exchange Web App](https://outlook.office.com).
+
+   >:memo: We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
+
+5. [] Go back to [Cloud App Security](https://portal.cloudappsecurity.com), click on the gear icon and go to the **Conditional Access App Control** section.
+>>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
    You will see that Exchange Online appeared and can now be configured.
 
    !IMAGE[Menu](\Media\appc-office-1.png)
 
    !IMAGE[Menu](\Media\appc-office-2.png)
 
-6. Click on **Continue setup** to enable session control and click on **Add**.
+6. [] Click on **Continue setup** to enable session control and click on **Add**.
 
    !IMAGE[Setup](\Media\appc-office-3.png)
 
@@ -3471,11 +3495,11 @@ With the access and session policies, you can:
 
    !IMAGE[Setup](\Media\appc-office-5.png)
 
-7. Go to the **Policies** menu.
+7. [] Go to the **Policies** menu.
 
    !IMAGE[Policies](\Media\appc-office-6.png)
 
-8. Create a new session policy with the following settings:
+8. [] Create a new session policy with the following settings:
 
    !IMAGE[Session policy](\Media\appc-office-7.png)
 
@@ -3493,20 +3517,24 @@ With the access and session policies, you can:
 
 Let's now test our configuration.
 
+<<<<<<< HEAD
 1. Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
+=======
+1. [] Sign out, close you browser and open the [Exchange Web App](https://outlook.office.com).
+>>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
    You should receive the followin message, as you are redirected through Cloud App Security before accessing the application. **Click** to continue to Exchange Online.
 
    !IMAGE[Warning](\Media\appc-office-12.png)
 
-2. You are now in Exchange Online but if you look at **the Url** you can verify that your session is actually being redirected to Cloud App Security:
+2. [] You are now in Exchange Online but if you look at **the Url** you can verify that your session is actually being redirected to Cloud App Security:
 
    !IMAGE[Session](\Media\appc-office-13.png)
 
-3. To test our policy, create a new mail containing the demo documents stored on **Client01** desktop as attachements and send it to your account.
+3. [] To test our policy, create a new mail containing the demo documents stored on **Client01** desktop as attachements and send it to your account.
 
    !IMAGE[Test](\Media\appc-office-14.png)
 
-4. Try to download the txt file containing social security numbers.
+4. [] Try to download the txt file containing social security numbers.
 
    !IMAGE[Test](\Media\appc-office-15.png)
 
@@ -3545,19 +3573,19 @@ Hint: you'll have to create an API token in Cloud App Security.
 
 Using PowerShell:
 
-1.  Review the list of MCAS administrators and when they were granted
+1.  [] Review the list of MCAS administrators and when they were granted
     those permissions
 
-2.   Review your security alerts and close them in bulk
+2.  [] Review your security alerts and close them in bulk
 
-3.   Download a sample SQUID log and send it to MCAS as a snapshot
+3.   [] Download a sample SQUID log and send it to MCAS as a snapshot
     report.
 
-4.   In the portal, in Discovery, tag some apps as unsanctioned and
+4.   [] In the portal, in Discovery, tag some apps as unsanctioned and
     generate a blocking script for your appliance to block access to
     those apps.
 
-5.   You are asked to define corporate IP's in MCAS. Subnets go from
+5.   [] You are asked to define corporate IP's in MCAS. Subnets go from
     10.50.50.0/24 to 10.50.80.0/24
 
 ===
@@ -3570,11 +3598,11 @@ Snapshot Reports are the manual method of uploading files into Cloud App Securit
 
 To create snapshot reports:
 
-1. Go to the **Discover** section and click on **Create snapshot report**.
+1. [] Go to the **Discover** section and click on **Create snapshot report**.
 
     !IMAGE[Create snapshot](\Media\dis-newsnaphsot.png "Create snapshot")
 
-2. In the Add data source window, use the settings below (do not close the window yet) and click on **View and verify...**:
+2. [] In the Add data source window, use the settings below (do not close the window yet) and click on **View and verify...**:
 
     >|||
     >|---------|---------|
@@ -3585,27 +3613,27 @@ To create snapshot reports:
     >
     !IMAGE[New snapshot](\Media\dis-createsnapshot.png "New snapshot")
 
-3. In the **Verify your log format** window, click on the **Download sample log** button and save it to your desktop.
+3. [] In the **Verify your log format** window, click on the **Download sample log** button and save it to your desktop.
 
     !IMAGE[Download log](\Media\dis-downloadlog.png "Download log")
 
-4. Close that window.
+4. [] Close that window.
 
-5. Click on the **Browse** button and in the new window, select the log you downloaded and click **Open**.
+5. [] Click on the **Browse** button and in the new window, select the log you downloaded and click **Open**.
 
     !IMAGE[Browse logs](\Media\dis-browse.png "Browse logs")
 
     !IMAGE[Select logs](\Media\dis-selectlogs.png "Select logs")
 
-6. Now that the log has been selected, click on the **Create** button to create your report.
+6. [] Now that the log has been selected, click on the **Create** button to create your report.
 
     !IMAGE[Create snapshot](\Media\dis-snapshotcreate.png "Create snapshot")
 
-7. Your report will then be processed.
+7. [] Your report will then be processed.
 
     !IMAGE[Report processing](\Media\dis-processing.png "Report processing")
 
-8. When your report is ready, you can click on it and start exploring the discovered apps, users, IPs.
+8. [] When your report is ready, you can click on it and start exploring the discovered apps, users, IPs.
 
     !IMAGE[Report dashboard](\Media\dis-dashboard.png "Report dashboard")
 
@@ -3645,7 +3673,7 @@ There are several things to test at different locations: in the log collector, i
 
 ## Verify the log collector (container) status
 
-1. On **Client01**, open a session on PuTTY to **192.168.141.125** and use the credentials below.
+1. [] On **Client01**, open a session on PuTTY to **192.168.141.125** and use the credentials below.
     In the PuTTY Configuration window, enter **192.168.141.125** and click **Open**.
 
     !IMAGE[Putty config](\Media\dis-puttyconfig.png "Putty config")
@@ -3657,9 +3685,9 @@ There are several things to test at different locations: in the log collector, i
     >
     >:warning:The password doesn't appear in the command prompt, you can safely press enter to validate the credentials.
 
-2. Run the following commands:
+2. [] Run the following commands:
 
-    ``` bash
+    ``` 
     sudo -i
     docker stats
     ```
@@ -3667,11 +3695,11 @@ There are several things to test at different locations: in the log collector, i
 
      >**INFO:** This command will show you the status of the log collector instance.
 
-3. Press `Ctrl-C` to end the command.
+3. [] Press `Ctrl-C` to end the command.
 
-4. Next, run the command below:
+4. [] Next, run the command below:
 
-    ``` bash
+    ``` 
     docker logs --details LogCollector
     ```
     !IMAGE[Docker log](\Media\dis-dockerlog.png "Docker log")
@@ -3680,16 +3708,16 @@ There are several things to test at different locations: in the log collector, i
 
 ### Verify the log collector logs
 
-1. Type the following command:
+1. [] Type the following command:
 
-    ``` bash
+    ``` 
     docker exec -it LogCollector bash
     ```
      >**INFO:** This command will execute the container's bash. You will then be able to execute commands *from inside* of the log collector.
 
-2. You can now explore the container filesystem and inspect the **/var/adallom** directory. This directory is where you will investigate most of the issues with the syslog or ftp logs being sent to the log collector.
+2. [] You can now explore the container filesystem and inspect the **/var/adallom** directory. This directory is where you will investigate most of the issues with the syslog or ftp logs being sent to the log collector.
 
-    ``` bash
+    ``` 
     cd /var/adallom
     ll
     ```
@@ -3701,15 +3729,15 @@ There are several things to test at different locations: in the log collector, i
     * **/adallom/syslog/discovery**: if you setup the log collector to receive syslog messages, this is where the flat file of aggregated messages will reside until it is uploaded.
     * **/adallom/discoverylogsbackup**: this folder contains the last file that was sent to MCAS. This is useful for looking at the raw log in case there are parsing issues.
 
-3. To validate that logs are correctly received from the network appliance, you can also verify the **/var/log/pure-ftpd** directory and check the transfer log:
+3. [] To validate that logs are correctly received from the network appliance, you can also verify the **/var/log/pure-ftpd** directory and check the transfer log:
 
-    ``` bash
+    ``` 
     tail transfer.log
     ```
 
     !IMAGE[FTP logs](\Media\dis-pureftp.png "FTP logs")
 
-4. Now, move to the **/var/log/adallom** directory.
+4. [] Now, move to the **/var/log/adallom** directory.
 
     !IMAGE[var log](\Media\dis-varlog.png "var log")
 
@@ -3758,7 +3786,7 @@ With the access and session policies, you can:
 
 >:warning: As Conditional Access App Control requires the protected app to be federated with your IdP (Azure AD in our case), we will first federate Saleforce with our tenant before moving to the controls configuration. Please go through all the steps exactly as described to avoid any complications further in the lab.
 
-1. Create a Salesforce developer account.
+1. [] Create a Salesforce developer account.
 
     * On Client01, launch a browser and create a Salesforce developer org at this address: [https://developer.salesforce.com/signup](https://developer.salesforce.com/signup).
       This org (or tenant) will allow you to create a test environment to federate with our Azure AD tenant.
@@ -3775,7 +3803,7 @@ With the access and session policies, you can:
 
         !IMAGE[Dev sign-up](\Media\appc-signup3.png "Salesforce sign-up")
 
-2. Configure Salesforce in Azure AD for single sign-on.
+2. [] Configure Salesforce in Azure AD for single sign-on.
 
     * In Salesforce, go to **Setup**, search for **My Domain** and register a new domain matching your Office 365 lab domain, e.g., **ems123456-dev-ed.salesforce.com**
 
@@ -3793,7 +3821,7 @@ With the access and session policies, you can:
 
     * Go to **https://portal.azure.com** were we will add Salesforce as an Enterprise application and configure **single sign-on**, which is a requirement for using App Control.
 
-3. Go to **Azure Active Directory**, click on **Enterprise applications**, and add the **Salesforce** application. Call it **SalesforceCAS**, and click on **Add**.
+3. [] Go to **Azure Active Directory**, click on **Enterprise applications**, and add the **Salesforce** application. Call it **SalesforceCAS**, and click on **Add**.
 
     !IMAGE[Add SF](\Media\appc-app1.png "Add SF")
 
@@ -3803,15 +3831,15 @@ With the access and session policies, you can:
 
     !IMAGE[Add SF](\Media\appc-app4.png "Add SF")
 
-4. Now that Salesforce has been added as an Enterprise application, we have to configure **single sign-on**.
+4. [] Now that Salesforce has been added as an Enterprise application, we have to configure **single sign-on**.
 
     !IMAGE[Add SF](\Media\appc-app5.png "Add SF")
 
-5. Select **SAML** as the SSO method.
+5. [] Select **SAML** as the SSO method.
 
     !IMAGE[Add SF](\Media\appc-app6.png "Add SF")
 
-6. We will now configure the SAML single sign-on using the information provided by Salesforce when we added our domain.
+6. [] We will now configure the SAML single sign-on using the information provided by Salesforce when we added our domain.
 
     >:warning: Do not forget to add **https://** in front of the domain name provided by Salesforce.
 
@@ -3819,21 +3847,21 @@ With the access and session policies, you can:
 
     !IMAGE[Add SF](\Media\appc-app8.png "Add SF")
 
-7. Close the pane and go to the **Step 4** of the SSO wizard and click on **View step-by-step instructions**. This page will give you all the required information for configuring Salesforce SSO.
+7. [] Close the pane and go to the **Step 4** of the SSO wizard and click on **View step-by-step instructions**. This page will give you all the required information for configuring Salesforce SSO.
 
     !IMAGE[Add SF](\Media\appc-app9.png "Add SF")
 
     !IMAGE[Add SF](\Media\appc-app10.png "Add SF")
 
-8. Go back to the **Salesforce admin page** and go to the **Signle sign-on** settings. There, click on the **Edit** button.
+8. [] Go back to the **Salesforce admin page** and go to the **Signle sign-on** settings. There, click on the **Edit** button.
 
     !IMAGE[Add SF](\Media\appc-app11.png "Add SF")
 
-9. Enable single sign-on using SAML and click on the **Save** button.
+9. [] Enable single sign-on using SAML and click on the **Save** button.
 
     !IMAGE[Add SF](\Media\appc-app12.png "Add SF")
 
-10. Back on the configuration page, under **SAML Single Sign-On Settings**, click on **New**.
+10. [] Back on the configuration page, under **SAML Single Sign-On Settings**, click on **New**.
 
     !IMAGE[Add SF](\Media\appc-app13.png "Add SF")
 
@@ -3841,11 +3869,11 @@ With the access and session policies, you can:
 
     !IMAGE[Add SF](\Media\appc-app14.png "Add SF")
 
-11. For the configuration, you will have to use the information provided at the bottom of the Azure AD **Configure sign-on** pane. Scroll down until you reach the **Quick reference** section.
+11. [] For the configuration, you will have to use the information provided at the bottom of the Azure AD **Configure sign-on** pane. Scroll down until you reach the **Quick reference** section.
 
     !IMAGE[Add SF](\Media\appc-app15.png "Add SF")
 
-12. Copy/paste the information from the **Quick reference** to the Salesforce **single sign-on settings** page.
+12. [] Copy/paste the information from the **Quick reference** to the Salesforce **single sign-on settings** page.
 
     a.In the Name textbox, type the name of the configuration: **AzureAD**.
 
@@ -3871,11 +3899,11 @@ With the access and session policies, you can:
 
     !IMAGE[Add SF](\Media\appc-app17.png "Add SF")
 
-13. Go back to **My Domain** in Salesforce and in **Authentication Configuration**, click on **Edit**. You will be redirected to another page.
+13. [] Go back to **My Domain** in Salesforce and in **Authentication Configuration**, click on **Edit**. You will be redirected to another page.
 
     !IMAGE[Add SF](\Media\appc-app18.png "Add SF")
 
-14. In **Authentication Configuration**, un-check the **Login Page** checkbox and check the **Azure AD** checkbox. Click on Save. When back on the configuration page, click on the **login** button to complete the configuration.
+14. [] In **Authentication Configuration**, un-check the **Login Page** checkbox and check the **Azure AD** checkbox. Click on Save. When back on the configuration page, click on the **login** button to complete the configuration.
 
     !IMAGE[Add SF](\Media\appc-app19.png "Add SF")
 
@@ -3893,11 +3921,11 @@ With the access and session policies, you can:
 
 We will now provide access to our users and validate the SSO experience.
 
-1. Go back to the Azure AD portal, within the **SalesforceCAS** app and choose **Users and groups**
+1. [] Go back to the Azure AD portal, within the **SalesforceCAS** app and choose **Users and groups**
 
     !IMAGE[Assign users](\Media\appc-app21.png "Assign users")
 
-2. Click on **+ Add user**. Choose your admin account as the user (e.g.,admin@ems123456.onmicrosoft.com) and select **System Administrator** as the Role. Click on **Assign**
+2. [] Click on **+ Add user**. Choose your admin account as the user (e.g.,admin@ems123456.onmicrosoft.com) and select **System Administrator** as the Role. Click on **Assign**
 
     !IMAGE[Assign users](\Media\appc-app22.png "Assign users")
 
@@ -3907,7 +3935,7 @@ We will now provide access to our users and validate the SSO experience.
 
     >:warning: If you want to assign Salesforce to more users, you must create a user for them in Salesforce as we didn't configured **provisionning**. Our admin account already has an an account matching his UPN, created during the Salesforce configuration.
 
-3. Test the setup by going to [https://myapps.microsoft.com](https://myapps.microsoft.com) with your admin account and click on the **SalesforceCAS** app. You should then experience SSO to Salesforce.
+3. [] Test the setup by going to [https://myapps.microsoft.com](https://myapps.microsoft.com) with your admin account and click on the **SalesforceCAS** app. You should then experience SSO to Salesforce.
 
     !IMAGE[Test SSO](\Media\appc-app25.png "Test SSO")
 
@@ -3925,15 +3953,15 @@ The next step of the configuration is to create a Conditional access policy in A
 
 >:memo: Soon, you will be able to perform the full configuration from the Azure AD conditional access policy configuration pane.
 
-1. In Azure Active Directory, under **Security**, click on **Conditional access**.
+1. [] In Azure Active Directory, under **Security**, click on **Conditional access**.
 
     !IMAGE[Configure policy](\Media\appc-policy1.png "Configure policy")
 
-2. Click on **New policy** and create a new policy.
+2. [] Click on **New policy** and create a new policy.
 
     !IMAGE[Configure policy](\Media\appc-policy2.png "Configure policy")
 
-3. Use the following settings in your policy.
+3. [] Use the following settings in your policy.
 
     **Name**: Test Cloud App Security proxy
     **Assignment**: choose your admin
@@ -3946,15 +3974,15 @@ The next step of the configuration is to create a Conditional access policy in A
 
     !IMAGE[Configure policy](\Media\appc-policy5.png "Configure policy")
 
-4. Enable your policy and click on **Create**
+4. [] Enable your policy and click on **Create**
 
     !IMAGE[Configure policy](\Media\appc-policy6.png "Configure policy")
 
     !IMAGE[Configure policy](\Media\appc-policy7.png "Configure policy")
 
-5. After the policy was created successfully, open a new browser, ***make sure you are logged out***, go to [https://myapps.microsoft.com](https://myapps.microsoft.com), connect with the admin user and click on the SalesforceCAS tile.
+5. [] After the policy was created successfully, open a new browser, ***make sure you are logged out***, go to ```https://myapps.microsoft.com```, connect with the admin user and click on the SalesforceCAS tile.
 
-6. Go back to the Cloud App Security portal, and under the settings cog choose **Conditional Access App Control**.
+6. [] Go back to the Cloud App Security portal, and under the settings cog choose **Conditional Access App Control**.
 
     !IMAGE[Configure policy](\Media\appc-policy8.png "Configure policy")
 
@@ -3980,11 +4008,11 @@ The next step of the configuration is to create a Conditional access policy in A
 
 Conditional Access App Control is capable to identify company devices using either Azure AD, Intune or certificates (provided by 3rd party MDM for example). We will here simulate the 3rd party MDM scenario, using client certificates.
 
-1. Go to the settings and at the bottom of the page, choose **Device identification**.
+1. [] Go to the settings and at the bottom of the page, choose **Device identification**.
 
     !IMAGE[Device authentication](\Media\appc-device1.png "Device authentication")
 
-2. Click on the **Browse** button and upload the **CASTestCA.crt** certificate from the **Client Certificate** folder within the **Demofiles.zip** file you've received as the certificate authority root certificate.
+2. [] Click on the **Browse** button and upload the **CASTestCA.crt** certificate from the **Client Certificate** folder within the **Demofiles.zip** file you've received as the certificate authority root certificate.
 
     !IMAGE[Device authentication](\Media\appc-device2.png "Device authentication")
 
@@ -4000,19 +4028,19 @@ Conditional Access App Control is capable to identify company devices using eith
 
 To control our users sessions to Salesforce, we have now to create a **policy**.
 
-1. In the Cloud App Security portal, select **Control** followed by **Policies**.
+1. [] In the Cloud App Security portal, select **Control** followed by **Policies**.
 
     !IMAGE[Session policy](\Media\appc-session1.png "Session policy")
 
-2. In the **Policies** page, click **Create policy** and select **Session policy**.
+2. [] In the **Policies** page, click **Create policy** and select **Session policy**.
 
     !IMAGE[Session policy](\Media\appc-session2.png "Session policy")
 
-3. In the **Session policy** window, assign a name for your policy, such as **Block download of sensitive documents to unmanaged devices** and in the **Session control type** field, select **Control file download (with DLP)**
+3. [] In the **Session policy** window, assign a name for your policy, such as **Block download of sensitive documents to unmanaged devices** and in the **Session control type** field, select **Control file download (with DLP)**
 
      !IMAGE[Session policy](\Media\appc-session3.png "Session policy")
 
-4. Under **Activity source** in the **Activities matching all of the following** section, select the following activity filters to apply to the policy:
+4. [] Under **Activity source** in the **Activities matching all of the following** section, select the following activity filters to apply to the policy:
 
     **Device tags** does not equal **Valid client certificate**
     **App** equals **Salesforce**
@@ -4020,34 +4048,34 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
     !IMAGE[Session policy](\Media\appc-session4.png "Session policy")
 
-5. Check the **Include files that match a preset expression** radio button. In the dropdown menu just below the radio button, scroll all the way to the end to choose **US: PII: Social security number** and check the **Don't require relevant context** checkbox, just below the dropdown menu.
+5. [] Check the **Include files that match a preset expression** radio button. In the dropdown menu just below the radio button, scroll all the way to the end to choose **US: PII: Social security number** and check the **Don't require relevant context** checkbox, just below the dropdown menu.
 
     !IMAGE[Session policy](\Media\appc-session5.png "Session policy")
 
-6. Under **Actions**, select **Block**. Check the **Customize block message** checkbox, and add a custom message in the textbox that has opened, e.g.: "This file is sensitive"
+6. [] Under **Actions**, select **Block**. Check the **Customize block message** checkbox, and add a custom message in the textbox that has opened, e.g.: "This file is sensitive"
 
     !IMAGE[Session policy](\Media\appc-session6.png "Session policy")
 
-7. Click on **Create**
+7. [] Click on **Create**
 
-8. Create a second **Session policy** called **Protect download to unmanaged devices**. In the **Session control type** field Select **Control file download (with DLP)**.
+8. [] Create a second **Session policy** called **Protect download to unmanaged devices**. In the **Session control type** field Select **Control file download (with DLP)**.
 
     !IMAGE[Session policy](\Media\appc-session7.png "Session policy")
 
-9. Under **Activity source** in the **Activities matching all of the following** section, select the following activity filters to apply to the policy:
+9. [] Under **Activity source** in the **Activities matching all of the following** section, select the following activity filters to apply to the policy:
 
     **Device tags** does not equal **Valid client certificate**
     **App** equals **Salesforce**
 
     !IMAGE[Session policy](\Media\appc-session8.png "Session policy")
 
-10. Check the **Enabled** checkbox near **Content inspection**. Under **Actions**, select **Protect**
+10. [] Check the **Enabled** checkbox near **Content inspection**. Under **Actions**, select **Protect**
 
     !IMAGE[Session policy](\Media\appc-session9.png "Session policy")
 
-11. Click on **Create**
+11. [] Click on **Create**
 
-12. Disable this policy
+12. [] Disable this policy
 
 ---
 
@@ -4055,35 +4083,35 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
 [:arrow_up: Top](#conditional-access-app-control)
 
-1. Extract the file **silvia.pfx** from the **Client Certificate** folder in **Demo files.zip** file you've received
+1. [] Extract the file **silvia.pfx** from the **Client Certificate** folder in **Demo files.zip** file you've received
 
-2. Double click on the **silvia.pfx** file, click **Next**, **Next**, enter the password **acme**, click **Next**, **Next**, **Finish**.
+2. [] Double click on the **silvia.pfx** file, click **Next**, **Next**, enter the password **acme**, click **Next**, **Next**, **Finish**.
 
-3. Open a new browser in an Incognito mode
+3. [] Open a new browser in an Incognito mode
 
-4. Go to [https://myapps.microsoft.com](https://myapps.microsoft.com) and login with the admin user.
+4. [] Go to [https://myapps.microsoft.com](https://myapps.microsoft.com) and login with the admin user.
 
-5. Click on the **SalesforceCAS** icon.
+5. [] Click on the **SalesforceCAS** icon.
 
-6. You should now see a certificate prompt. Click on **Cancel**.
+6. [] You should now see a certificate prompt. Click on **Cancel**.
 
     >:memo: This will simulate a connection from an unmannaged device. **In a real demo**, you can open two different browsers, side by side, and show the user experience from a managed and unmanaged device by clicking on **OK** in one browser and **Cancel** in the other.
 
    !IMAGE[Session policy](\Media\appc-session10.png "Session policy")
 
-7. You should then see a Monitored access message, click on **Continue to Salesforce** to continue.
+7. [] You should then see a Monitored access message, click on **Continue to Salesforce** to continue.
 
     !IMAGE[Session policy](\Media\appc-session11.png "Session policy")
 
-8. Now you are logged in to Salesforce. Click on + and go to Files
+8. [] Now you are logged in to Salesforce. Click on + and go to Files
 
     !IMAGE[d0ik67yl.jpg](\Media\d0ik67yl.jpg)
 
-9. Upload the files **Personal employees information.docx** and **Protect with Microsoft Cloud App Security proxy.pdf** from the **Demo files.zip** file to the Files page in Salesforce
+9. [] Upload the files **Personal employees information.docx** and **Protect with Microsoft Cloud App Security proxy.pdf** from the **Demo files.zip** file to the Files page in Salesforce
 
-10. Download the **Protect with Microsoft Cloud App Security proxy.pdf** files and see that it is downloaded, and you can open it.
+10. [] Download the **Protect with Microsoft Cloud App Security proxy.pdf** files and see that it is downloaded, and you can open it.
 
-11. Download the **Personal employees information.docx** file and see that you get a blocking message and instead of the file, you get a **Blocked...txt** file.
+11. [] Download the **Personal employees information.docx** file and see that you get a blocking message and instead of the file, you get a **Blocked...txt** file.
 
    !IMAGE[wvk16zl2.jpg](\Media\wvk16zl2.jpg)
 
@@ -4093,9 +4121,9 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
 [:arrow_up: Top](#conditional-access-app-control)
 
-1. Go back to the Cloud App Security portal, and under **Investigate**  choose **Activity log**
+1. [] Go back to the Cloud App Security portal, and under **Investigate**  choose **Activity log**
 
-2. See the login activity that was redirected to the session control, the file download that was not blocked, and the file download that was blocked because it matched the policy.
+2. [] See the login activity that was redirected to the session control, the file download that was not blocked, and the file download that was blocked because it matched the policy.
 
     !IMAGE[j0vuo06k.jpg](\Media\j0vuo06k.jpg)
 
