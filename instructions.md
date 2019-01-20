@@ -3439,7 +3439,7 @@ With the access and session policies, you can:
 
 ## Configuration
 
-<<<<<<< HEAD
+
 1. Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
 =======
 1. [] Go to the [Azure portal](https://portal.azure.com) and open the **Azure Active Directory** blade.
