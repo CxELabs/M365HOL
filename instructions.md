@@ -3455,35 +3455,34 @@ With the access and session policies, you can:
    |-----|-----|-----|
    |Office365 AppControl|All users|Exchange, SharePoint|
 
-	[] Click on "New Policy". 
+   **Click on "New Policy"**
 
    !IMAGE[New policy](\Media\cond-policy-1.png)
 
-	[]  Name: Office365 App Control 
-	[]  Assignments: Click on "All users" and then Done 
+	**Name: Office365 App Control**
+	**Assignments: Click on "All users" and then Done**
 
    !IMAGE[New policy](\Media\cond-policy-2.png)
 
-   	[] Go to the next section: Cloud Apps: Select Apps and choose 
-	   Office 365 Exchange Online and Office 365 SharePoint Online and Done 
+   **Go to the next section: Cloud Apps: Select Apps and choose Office 365 Exchange Online and Office 365 SharePoint Online and Done** 
 
    !IMAGE[New policy](\Media\cond-policy-3.png)
     
-	[] Click on "Session" and check off "Use Conditional Access App Control" 
+
+   **Click on "Session" and check off "Use Conditional Access App Control"**
  
    !IMAGE[New policy](\Media\cond-policy-4.png)
-
-  	[] Enable the policy and click "Create"
+	
+   **Enable the policy and click "Create"**
 
    !IMAGE[New policy](\Media\cond-policy-5.png)
 
-<<<<<<< HEAD
 4. Sign out of the Azure Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
 
    >:memo: We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
 
 5. Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the gear icon and go to the **Conditional Access App Control** section.
-=======
+
 4. [] Sign out of the Cloud App Security Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
 
    >:memo: We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
@@ -3541,11 +3540,9 @@ With the access and session policies, you can:
 
 Let's now test our configuration.
 
-<<<<<<< HEAD
 1. Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
-=======
-1. [] Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
->>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
+
+
    You should receive the followin message, as you are redirected through Cloud App Security before accessing the application. **Click** to continue to Exchange Online.
 
    !IMAGE[Warning](\Media\appc-office-12.png)
@@ -3564,7 +3561,7 @@ Let's now test our configuration.
 
 ****to finish******
 
-===
+====
 
 # Management with PowerShell
 
