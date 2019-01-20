@@ -705,7 +705,6 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 ===
 # Azure Information Protection
 [:arrow_left: Home](#introduction)
-### Objectives
 
 ## Overview
 
@@ -727,6 +726,8 @@ Finally, we will demonstrate how to use the new AIP Dashboards to leverage Azure
 !IMAGE[Two overlaying screenshots of the Azure Information Protection scanner's blade in the Azure portal. This blade provides dashboards that consolidate information for all deployed Azure Information Protection scanners, including health status, scan results, classification and policy settings, and more.](\Media\8324-image001.png)
 
 > [!ALERT] Please ensure you have completed the steps in the [Lab Environment Configuration](#lab-environment-configuration) before continuing.
+
+## Objectives
 
 There are 2 options for this Lab.  These options contain similar content except for the items called out below.
 
