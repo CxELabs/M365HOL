@@ -2764,10 +2764,7 @@ Those commands download a script installing the Docker engine on your host compu
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 
 
-2. Create a new tab in the in Private window and browse to ```https://portal.cloudappsecurity.com```.
-
-2. [] Create a new tab in the InPrivate window and browse to ```https://portal.cloudappsecurity.com```.
->>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
+2. [] Create a new tab in the in a  Private window and browse to ```https://portal.cloudappsecurity.com```.
 
    >INFO: If necessary, log in using the credentials below:
    >
@@ -3445,9 +3442,6 @@ With the access and session policies, you can:
 
 
 1. Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
-=======
-1. [] Go to the [Azure portal](https://portal.azure.com) and open the **Azure Active Directory** blade.
->>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
 
    !IMAGE[AAD portal](\Media\aad-1.png)
 
