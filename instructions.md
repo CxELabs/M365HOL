@@ -2653,7 +2653,7 @@ For this task, you are asked to delegate admin access to monitor a dedicated gro
 
 
 > [!NOTE] Cloud App Security Global admin role is not the same as the Office 365 Global admin role.
-> [!NOTE] Although the Office 365 Global admins are automatically granted the Cloud App Security Global admin role, you can grant users MCAS Global Admin role without adding them to the Office 365 Global admins.
+> [!NOTE] Although the Office 365 Global admins are automatically granted the Cloud App Security Global admin role, you can grant users           MCAS Global Admin role without adding them to the Office 365 Global admins.
 
 
 
@@ -2664,10 +2664,11 @@ In this lab, we are going to delegate the management of US employees to a new ad
 1. [] On @lab.VirtualMachine(Client01).SelectLink log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 
 2. [] In a in Private Browsing session navigate to the ```https://portal.cloudappsecurity.com```
+
 3. [] Import the **US employees** group.
     > :warning: Cloud App Security has to synchronize the Azure AD groups before importing them. This operation can take up to 1h.
 
-	Click on the **gear** under Data Enrichement, click on **User groups**
+	Click on the **Gear** under Data Enrichement, click on **User groups**
 
     !IMAGE[Import group](\Media\mgmt-import1.png "Import group")
 
@@ -2679,9 +2680,7 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
 
-
 4. [] In the Cloud App Security portal```https://portal.cloudappsecurity.com```, add **mcasAdminUS** as **User group admin** for the **US employees** group.
-
 
     !IMAGE[New admin](\Media\mgmt-admin1.png "New admin")
 
@@ -2717,7 +2716,7 @@ As the MCAS admin for your company, work with the person next to you to configur
 
     !IMAGE[External admin](\Media\mgmt-externaladmin1.png "External admin")
 
-    > :memo: Note here that the icon next to the newly added admin shows that the user is external to the company.
+    >[!NOTE] Note here that the icon next to the newly added admin shows that the user is external to the company.
 
     !IMAGE[External admin](\Media\mgmt-externaladmin2.png "External admin")
 
