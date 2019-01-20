@@ -2651,8 +2651,9 @@ The different Cloud App Security capabilities covered in the labs are:
 
 For this task, you are asked to delegate admin access to monitor a dedicated group of users for a specific region, without adding them to the Global Admin management role.
 
-> :memo: Cloud App Security Global admin role is not the same as the Office 365 Global admin role.
-> Although the Office 365 Global admins are automatically granted the Cloud App Security Global admin role, you can grant users MCAS Global Admin role without adding them to the Office 365 Global admins.
+
+> [!NOTE] Cloud App Security Global admin role is not the same as the Office 365 Global admin role.
+> [!NOTE] Although the Office 365 Global admins are automatically granted the Cloud App Security Global admin role, you can grant users MCAS Global Admin role without adding them to the Office 365 Global admins.
 
 
 
@@ -2662,8 +2663,8 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
 1. [] On @lab.VirtualMachine(Client01).SelectLink log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 
-1. [] In a in Private Browsing session navigate to the ```https://portal.cloudappsecurity.com```
-1. [] Import the **US employees** group.
+2. [] In a in Private Browsing session navigate to the ```https://portal.cloudappsecurity.com```
+3. [] Import the **US employees** group.
     > :warning: Cloud App Security has to synchronize the Azure AD groups before importing them. This operation can take up to 1h.
 
 	Click on the **gear** under Data Enrichement, click on **User groups**
@@ -2678,15 +2679,9 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-2.[] In the Cloud App Security portal```https://portal.cloudappsecurity.com```, add **mcasAdminUS** as **User group admin** for the **US employees** group.
-=======
-2. [] In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add **mcasAdminUS** as **User group admin** for the **US employees** group.
->>>>>>> 27696da7e6d77f390ac4ba36135f66d4b29a0435
-=======
-2. [] In the [Cloud App Security portal](https://portal.cloudappsecurity.com), add **mcasAdminUS** as **User group admin** for the **US employees** group.
->>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
+
+4. [] In the Cloud App Security portal```https://portal.cloudappsecurity.com```, add **mcasAdminUS** as **User group admin** for the **US employees** group.
+
 
     !IMAGE[New admin](\Media\mgmt-admin1.png "New admin")
 
@@ -2698,15 +2693,9 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     !IMAGE[New admin](\Media\mgmt-admin5.png "New admin")
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-3. Open a new **private** tab and connect to the [Cloud App Security portal] ```https://portal.cloudappsecurity.com``` with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
-=======
-3. [] Open a new **private** tab and connect to the [Cloud App Security portal](https://portal.cloudappsecurity.com) with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
->>>>>>> 27696da7e6d77f390ac4ba36135f66d4b29a0435
-=======
-3. [] Open a new **private** tab and connect to the [Cloud App Security portal](https://portal.cloudappsecurity.com) with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
->>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
+
+5. Open a new **private** tab and connect to the [Cloud App Security portal] ```https://portal.cloudappsecurity.com``` with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
+
 
 ---
 
@@ -3294,7 +3283,7 @@ As the rules redirects your user’s emails to a suspicious external address, Cl
 
 ## Ransomware activity
 
-Cloud App Security extended its ransomware detection capabilities with anomaly detection to ensure a more comprehensive coverage against sophisticated Ransomware attacks. Using our security research expertise to identify behavioral patterns that reflect ransomware activity, Cloud App Security ensures holistic and robust protection. If Cloud App Security identifies, for example, a high rate of file uploads or file deletion activities it may represent an adverse encryption process. This data is collected in the logs received from connected APIs and is then combined with learned behavioral patterns and threat intelligence, for example, known ransomware extensions. For more information about how Cloud App Security detects ransomware, see Protecting your organization against ransomware.
+Cloud App Security extended its ransomware detection capabilities with anomaly detection to ensure a more comprehensive coverage against sophisticated Ransomware attacks. Using our security research expertise to identify behavioral patterns that reflect ransomware activity,Cloud App Security ensures holistic and robust protection. If Cloud App Security identifies, for example, a high rate of file uploads or file deletion activities it may represent an adverse encryption process. This data is collected in the logs received from connected APIs and is then combined with learned behavioral patterns and threat intelligence, for example, known ransomware extensions. For more information about how Cloud App Security detects ransomware, see Protecting your organization against ransomware.
 
 ### Investigate
 
@@ -3479,7 +3468,7 @@ With the access and session policies, you can:
 
 4. Sign out of the Azure Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
 
-   >:memo: We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
+   [!NOTE] We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
 
 5. Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the gear icon and go to the **Conditional Access App Control** section.
 
@@ -3488,7 +3477,7 @@ With the access and session policies, you can:
    >:memo: We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
 
 5. [] Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the gear icon and go to the **Conditional Access App Control** section.
->>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
+
   
    !IMAGE[Menu](\Media\appc-office-1.png)
 
@@ -3520,17 +3509,22 @@ With the access and session policies, you can:
  
    !IMAGE[Session policy](\Media\appc-office-8.png)
 
-   Activity source: 
+   Activity source:
    Add Activity Filters: Device Tag does not equal Compliant, Domain joined
-						 App equals Office 365 Exchange Online and Office 365 SharePoint Online
+   App equals Office 365 Exchange Online and Office 365 SharePoint Online
 
    !IMAGE[Session policy](\Media\appc-office-9.png)
 
-   Content inspection check "Enabled" 
-   Include files that match 
+   Content inspection check "Enabled"
+   Include files that match a preset expression anc choose US: PII: Social Security Number 
 
 
    !IMAGE[Session policy](\Media\appc-office-10.png)
+
+   Actions: Block
+   Click: Customize block message: The containes SSN information and cannot be downloaded on non-coporate devices.
+   Click: Create an alert for each matching event with the policy's severity 
+   Click **Create**
 
    !IMAGE[Session policy](\Media\appc-office-11.png)
 
