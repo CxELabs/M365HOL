@@ -2651,8 +2651,8 @@ The different Cloud App Security capabilities covered in the labs are:
 
 For this task, you are asked to delegate admin access to monitor a dedicated group of users for a specific region, without adding them to the Global Admin management role.
 
-> :memo: Cloud App Security Global admin role is not the same as the regular Office 365 Global admin role.
-> Although the Office 365 Global admins are automatically granted the Cloud App Security Global admin role, you can grant users MCAS Global Admin role without adding them to the Office 365 Global admins
+> :memo: Cloud App Security Global admin role is not the same as the Office 365 Global admin role.
+> Although the Office 365 Global admins are automatically granted the Cloud App Security Global admin role, you can grant users MCAS Global Admin role without adding them to the Office 365 Global admins.
 
 
 
@@ -2666,7 +2666,11 @@ In this lab, we are going to delegate the management of US employees to a new ad
 1. [] Import the **US employees** group.
     > :warning: Cloud App Security has to synchronize the Azure AD groups before importing them. This operation can take up to 1h.
 
+	Click on the **gear** under Data Enrichement, click on **User groups**
+
     !IMAGE[Import group](\Media\mgmt-import1.png "Import group")
+
+	Click on **Import user group**
 
     !IMAGE[Import group](\Media\mgmt-import2.png "Import group")
 
@@ -2759,9 +2763,9 @@ Those commands download a script installing the Docker engine on your host compu
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 
-<<<<<<< HEAD
+
 2. Create a new tab in the in Private window and browse to ```https://portal.cloudappsecurity.com```.
-=======
+
 2. [] Create a new tab in the InPrivate window and browse to ```https://portal.cloudappsecurity.com```.
 >>>>>>> 33879626fd4f82940804a4486867f9bf3244cc15
 
