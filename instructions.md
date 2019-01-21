@@ -2652,8 +2652,8 @@ The different Cloud App Security capabilities covered in the labs are:
 For this task, you are asked to delegate admin access to monitor a dedicated group of users for a specific region, without adding them to the Global Admin management role.
 
 
-> [!NOTE] Cloud App Security Global admin role is not the same as the Office 365 Global admin role.
-> [!NOTE] Although the Office 365 Global admins are automatically granted the Cloud App Security Global admin role, you can grant users           MCAS Global Admin role without adding them to the Office 365 Global admins.
+>:[!NOTE] Cloud App Security Global admin role is not the same as the Office 365 Global admin role.
+>:[!NOTE] Although the Office 365 Global admins are automatically granted the Cloud App Security Global admin role, you can grant users           MCAS Global Admin role without adding them to the Office 365 Global admins.
 
 
 
@@ -2667,7 +2667,7 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
 3. [] Import the **US employees** group.
     
-	[!NOTE] ***The import can take up to one hour. Cloud App Security has to synchronize the Azure AD groups before importing them.***
+	>:[!NOTE] ***The import can take up to one hour. Cloud App Security has to synchronize the Azure AD groups before importing them.***
 
 	**Click on the *Gear* under Data Enrichement, click on *User groups***
 
@@ -2749,7 +2749,7 @@ As the MCAS admin for your company, work with the person next to you to configur
 
     !IMAGE[External admin](\Media\mgmt-externaladmin1.png "External admin")
 
-    >[!NOTE] Note here that the icon next to the newly added admin shows that the user is external to the company.
+    >:[!NOTE] Note here that the icon next to the newly added admin shows that the user is external to the company.
 
     !IMAGE[External admin](\Media\mgmt-externaladmin2.png "External admin")
 
@@ -3438,7 +3438,7 @@ Azure AD conditional access allows you to enforce access controls on your organi
 
 Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are utilized within the Cloud App Security portal to further refine filters and set actions to be taken on a user.
 
->[!NOTE] **Access and Session policies give you the capability to the following:
+>:[!NOTE] **Access and Session policies give you the capability to the following:
 * **Block on download**: You can block the download of sensitive documents. For example, on unmanaged devices.
 * **Protect on download**: Instead of blocking the download of sensitive documents, you can require documents to be protected via encryption on download. This ensures that the document is protected, and user access is authenticated, if the data is downloaded to an untrusted device.
 * **Monitor low-trust user sessions**: Risky users are monitored when they sign into apps and their actions are logged from within the session. You can investigate and analyze user behavior to understand where, and under what conditions, session policies should be applied in the future.
@@ -3453,11 +3453,11 @@ Conditional Access App Control enables user app access and sessions to be monito
 ## Configuration
 
 
-1. Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
+1.[] Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
 
    !IMAGE[AAD portal](\Media\aad-1.png)
 
-2. [] Scroll down to Security and click on **Conditional Access**. 
+2. [] Scroll down to **Security** and click on **Conditional Access**. 
 
    !IMAGE[AAD portal](\Media\aad-2.png)
 
@@ -3489,11 +3489,11 @@ Conditional Access App Control enables user app access and sessions to be monito
 
    !IMAGE[New policy](\Media\cond-policy-5.png)
 
-4. Sign out of the Azure Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
+4. [] Sign out of the Azure Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
 
-   >[!NOTE] This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
+   >:[!NOTE] This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
 
-5. Go back to Cloud App Security  portal ```https://portal.cloudappsecurity.com``` and then click on the **gear icon** and  click on **Conditional Access App Control.**
+5. [] Go back to Cloud App Security  portal ```https://portal.cloudappsecurity.com``` and then click on the **gear icon** and  click on **Conditional Access App Control.**
 
 6. [] Sign out of the Cloud App Security Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
 
@@ -3533,7 +3533,9 @@ Conditional Access App Control enables user app access and sessions to be monito
    !IMAGE[Session policy](\Media\appc-office-8.png)
 
    **Activity source:**
+
    **Add Activity Filters:** *Device Tag does not equal Compliant, Domain joined*
+
    *App equals Office 365 Exchange Online and Office 365 SharePoint Online*
 
    !IMAGE[Session policy](\Media\appc-office-9.png)
@@ -3560,7 +3562,7 @@ Conditional Access App Control enables user app access and sessions to be monito
 
 Let's now test our configuration.
 
-1. Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
+1. [] Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
 
 
   **You should receive the following message, as you are redirected through Cloud App Security before accessing the application.*
@@ -3573,7 +3575,9 @@ Let's now test our configuration.
 
   >:[!NOTE] **By taking a look at the the URL, you can verify that your session is actually being redirected to Cloud App Security.**
 
+
    !IMAGE[Session](\Media\appc-office-13.png)
+
 
 3. [] To test our policy, create a new mail containing the demo documents stored on *Client01* desktop as attachements and send it to your admin account. 
 
