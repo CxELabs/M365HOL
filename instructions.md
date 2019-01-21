@@ -3504,7 +3504,7 @@ Conditional Access App Control enables user app access and sessions to be monito
   
    !IMAGE[Menu](\Media\appc-office-1.png)
 
-    You will see that Exchange Online has appeared as an application and can now be configured.
+    **You will see that Exchange Online has appeared as an application and can now be configured.**
 
    !IMAGE[Menu](\Media\appc-office-2.png)
 
@@ -3513,8 +3513,8 @@ Conditional Access App Control enables user app access and sessions to be monito
    !IMAGE[Setup](\Media\appc-office-3.png)
 
    !IMAGE[Setup](\Media\appc-office-4.png)
-
-   You're now notified that the application is under Session Control. 
+  
+   **You're now notified that the application is under Session Control.**
 
    !IMAGE[Setup](\Media\appc-office-5.png)
 
@@ -3545,9 +3545,12 @@ Conditional Access App Control enables user app access and sessions to be monito
    !IMAGE[Session policy](\Media\appc-office-10.png)
 
    **Actions:** *Block*
+
    **Click:** *Customize block message: The containes SSN information and cannot be downloaded on non-coporate devices.*
+
    **Click:** *Create an alert for each matching event with the policy's severity*
-  **Click:S** **Create**
+   
+  **Click:** **Create**
 
    !IMAGE[Session policy](\Media\appc-office-11.png)
 
