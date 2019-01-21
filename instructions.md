@@ -3438,7 +3438,7 @@ Azure AD conditional access allows you to enforce access controls on your organi
 
 Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are utilized within the Cloud App Security portal to further refine filters and set actions to be taken on a user.
 
-[!NOTE] With the access and session policies, you can:
+>[!NOTE] **Access and Session policies give you the capability to the following:
 * **Block on download**: You can block the download of sensitive documents. For example, on unmanaged devices.
 * **Protect on download**: Instead of blocking the download of sensitive documents, you can require documents to be protected via encryption on download. This ensures that the document is protected, and user access is authenticated, if the data is downloaded to an untrusted device.
 * **Monitor low-trust user sessions**: Risky users are monitored when they sign into apps and their actions are logged from within the session. You can investigate and analyze user behavior to understand where, and under what conditions, session policies should be applied in the future.
@@ -3491,15 +3491,15 @@ Conditional Access App Control enables user app access and sessions to be monito
 
 4. Sign out of the Azure Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
 
-   [!NOTE] We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
+   >[!NOTE] This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
 
-5. Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the gear icon and go to the **Conditional Access App Control** section.
+5. Go back to Cloud App Security  portal ```https://portal.cloudappsecurity.com``` and then click on the **gear icon** and  click on **Conditional Access App Control.**
 
-4. [] Sign out of the Cloud App Security Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
+6. [] Sign out of the Cloud App Security Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
 
-   >:memo: We do this to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
+   >:[!NOTE] This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
 
-5. [] Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the gear icon and go to the **Conditional Access App Control** section.
+7. [] Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the **gear icon** and click on **Conditional Access App Control.** 
 
   
    !IMAGE[Menu](\Media\appc-office-1.png)
@@ -3508,7 +3508,7 @@ Conditional Access App Control enables user app access and sessions to be monito
 
    !IMAGE[Menu](\Media\appc-office-2.png)
 
-6. [] Click on **Continue setup** to enable session control and click on **Add**.
+8. [] Click on **Continue setup** to enable session control and click on **Add**.
 
    !IMAGE[Setup](\Media\appc-office-3.png)
 
@@ -3518,11 +3518,11 @@ Conditional Access App Control enables user app access and sessions to be monito
 
    !IMAGE[Setup](\Media\appc-office-5.png)
 
-7. [] On the left hand side click on Control and then **Policies**.
+9. [] On the left hand side click on Control and then **Policies**.
 
    !IMAGE[Policies](\Media\appc-office-6.png)
 
-8. [] Create a new session policy with the following settings:
+10. [] Create a new session policy with the following settings:
 
     **Click on "Create Policy" and pick a Session policy.**
 
@@ -3550,7 +3550,7 @@ Conditional Access App Control enables user app access and sessions to be monito
 
    **Click:** *Create an alert for each matching event with the policy's severity*
 
-  **Click:** **Create**
+   **Click:** **Create**
 
    !IMAGE[Session policy](\Media\appc-office-11.png)
 
@@ -3563,15 +3563,19 @@ Let's now test our configuration.
 1. Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
 
 
-   You should receive the followin message, as you are redirected through Cloud App Security before accessing the application. **Click** to continue to Exchange Online.
+  **You should receive the following message, as you are redirected through Cloud App Security before accessing the application.*
+  
+  **Click to continue to Exchange Online.**
 
    !IMAGE[Warning](\Media\appc-office-12.png)
 
-2. [] You are now in Exchange Online but if you look at **the URL** you can verify that your session is actually being redirected to  Cloud App Security. 
+2. [] You've been directed to Exchange Online 
+
+  >:[!NOTE] **By taking a look at the the URL, you can verify that your session is actually being redirected to Cloud App Security.**
 
    !IMAGE[Session](\Media\appc-office-13.png)
 
-3. [] To test our policy, create a new mail containing the demo documents stored on **Client01** desktop as attachements and send it to your account.
+3. [] To test our policy, create a new mail containing the demo documents stored on *Client01* desktop as attachements and send it to your admin account. 
 
    !IMAGE[Test](\Media\appc-office-14.png)
 
