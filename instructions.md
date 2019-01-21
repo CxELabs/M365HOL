@@ -3549,7 +3549,7 @@ Conditional Access App Control enables user app access and sessions to be monito
    **Click:** *Customize block message: The containes SSN information and cannot be downloaded on non-coporate devices.*
 
    **Click:** *Create an alert for each matching event with the policy's severity*
-   
+
   **Click:** **Create**
 
    !IMAGE[Session policy](\Media\appc-office-11.png)
@@ -3567,7 +3567,7 @@ Let's now test our configuration.
 
    !IMAGE[Warning](\Media\appc-office-12.png)
 
-2. [] You are now in Exchange Online but if you look at **the Url** you can verify that your session is actually being redirected to Cloud App Security:
+2. [] You are now in Exchange Online but if you look at **the URL** you can verify that your session is actually being redirected to  Cloud App Security. 
 
    !IMAGE[Session](\Media\appc-office-13.png)
 
