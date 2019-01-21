@@ -2666,29 +2666,48 @@ In this lab, we are going to delegate the management of US employees to a new ad
 2. [] In a in Private Browsing session navigate to the ```https://portal.cloudappsecurity.com```
 
 3. [] Import the **US employees** group.
-    > :warning: Cloud App Security has to synchronize the Azure AD groups before importing them. This operation can take up to 1h.
+    
+	[!NOTE] ***The import can take up to one hour. Cloud App Security has to synchronize the Azure AD groups before importing them.***
 
-	Click on the **Gear** under Data Enrichement, click on **User groups**
+	**Click on the *Gear* under Data Enrichement, click on *User groups***
 
     !IMAGE[Import group](\Media\mgmt-import1.png "Import group")
 
-	Click on **Import user group**
+	**Click on *Import user group***
 
     !IMAGE[Import group](\Media\mgmt-import2.png "Import group")
 
+	**Select an app to import group from: *Office 365(AzureAD)***
+
     !IMAGE[Import group](\Media\mgmt-import3.png "Import group")
+
+	**The user group will be importing**
 
     !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
 
 4. [] In the Cloud App Security portal```https://portal.cloudappsecurity.com```, add **mcasAdminUS** as **User group admin** for the **US employees** group.
 
+	**Click on the *Gear* under System, click on *Manage admin access***
+
     !IMAGE[New admin](\Media\mgmt-admin1.png "New admin")
+
+	**Click on the plus**
 
     !IMAGE[New admin](\Media\mgmt-admin2.png "New admin")
 
+	**Type the admin user name**: *mcasadminus@LODSA293123.onmicrosoft.com*
+	**Select Role**: *User group admin*
+
+
     !IMAGE[New admin](\Media\mgmt-admin3.png "New admin")
 
+	**Select groups for this admin**: *US employees*
+	**Click on Add admin**
+
+
     !IMAGE[New admin](\Media\mgmt-admin4.png "New admin")
+
+	**The user should be populated with the *role* and *scope.***
 
     !IMAGE[New admin](\Media\mgmt-admin5.png "New admin")
 
@@ -2706,13 +2725,27 @@ As the MCAS admin for your company, work with the person next to you to configur
 
 1. [] Browse to ```https://portal.cloudappsecurity.com```, add the external MCAS admin as **Security reader** in your MCAS tenant.
 
+    **Click on the *Gear* under System, click on *Manage admin access***
+
     !IMAGE[External admin](\Media\mgmt-admin1.png "External admin")
+
+	**Click on the plus**
 
     !IMAGE[External admin](\Media\mgmt-admin2.png "External admin")
 
+	**Type the admin user name**: *external admin*
+	**Select Role**: *User group admin*
+
     !IMAGE[External admin](\Media\mgmt-admin3.png "External admin")
 
+	**Select groups for this admin**: *US employees*
+	**Click on Add admin**
+
+
     !IMAGE[External admin](\Media\mgmt-admin4.png "External admin")
+
+	**Type Admin user name:**
+	**Select type of role for this admin:** *Security Reader*
 
     !IMAGE[External admin](\Media\mgmt-externaladmin1.png "External admin")
 
@@ -2954,22 +2987,22 @@ We will apply an Azure Information Protection template on documents containing s
 
     !IMAGE[Policy filter](\Media\info-filter.png "Policy filter")
 
-    !IMAGE[Select folder](\Media\info-folder.png "Select folder")
+    
 
 4. [] Verify that you have one selected folder and click on **Done**.
 
     !IMAGE[Done](\Media\info-done.png "Done")
 
-    !IMAGE[Folder](\Media\info-folder.png "Folder")
+   
 
 5. [] In inspection method, select **Data Classification Service**.
 
-    >:memo: [Microsoft Data Classification Service](https://docs.microsoft.com/en-us/cloud-app-security/dcs-inspection) provides a **unified** information protection experience across Office 365, Azure Information Protection, and Microsoft Cloud App Security.
-    >The classification service allows you to extend your data classification efforts to the third-party cloud apps protected by Cloud App Security, using the decisions you already made across an even greater number of apps.
+    [!NOTE]*Microsoft Data Classification Service provides a **unified** information protection experience across Office 365, Azure Information Protection, and Microsoft Cloud App Security.*
+    *The classification service allows you to extend your data classification efforts to the third-party cloud apps protected by Cloud App Security, using the decisions you already made across an even greater number of apps.*
 
     !IMAGE[DCS](\Media\info-dcs.png "DCS")
 
-6. [] Click on **Choose inspection type** and then on **sensitive information type**. Search and select the **SSN related** ones and click on **Done**.
+6. [] Click on **Choose inspection type** and then on **sensitive information type**. Search and select the **all the SSN's that populate** and click on **Done**.
 
     !IMAGE[SSN type](\Media\info-type.png "SSN type")
     !IMAGE[SSN type](\Media\info-ssn.png "SSN type")
@@ -2978,9 +3011,9 @@ We will apply an Azure Information Protection template on documents containing s
 
     !IMAGE[Unmask](\Media\info-unmask.png "Unmask")
 
-8. [] In the Governance actions, click on **Microsoft SharePoint Online** and select **Apply classification label**.
+8. [] In the Governance actions, click on **Box** and select **Apply classification label**.
 
-    !IMAGE[Template](\Media\info-template.png "Template")
+    
 
     >:warning: If you are not able to select Azure Information Protection templates, verify that you configured the integration in the prerequisites section or that you waited the 1h for the classifications to sync.
 
@@ -3005,7 +3038,7 @@ This is what we are going to configure in this lab.
 
 3. [] Configure **Admin quarantine**.
 
-    * In the dropdown menu, select your root SharePoint site.
+    **In the dropdown menu, select your root *BOX* site.**
 
     !IMAGE[Settings admin quarantine site](\Media\info-adminq2.png "Settings admin quarantine site")
 
@@ -3031,9 +3064,9 @@ This is what we are going to configure in this lab.
 
     !IMAGE[New policy](\Media\info-policy3.png "New policy")
 
-6. [] Check the **Create an alert for each matching file** checkbox. In Governance actions of the policy, select **Put in admin quarantine** for OneDrive and SharePoint and click on the **Create** button.
+6. [] Check the **Create an alert for each matching file** checkbox. In Governance actions of the policy, select **Put in admin quarantine** for BOX and click on the **Create** button.
 
-    !IMAGE[New policy](\Media\info-policy4.png "New policy")
+    add box image 
 
 ---
 
@@ -3045,23 +3078,15 @@ To test our files policies, perform the following tasks:
 
 1. [] On Client01, unzip the content of the **Demo files.zip**.
 
-2. [] Go to the **Contoso Team Site** documents library. You can use the **Search** to find the address to this site.
+2. [] Go to the **BOX** documents library. 
 
-    !IMAGE[Team site](\Media\info-test1.png "Team site")
-
-    !IMAGE[Team site](\Media\info-test2.png "Team site")
-
-    !IMAGE[Team site](\Media\info-test3.png "Team site")
-
-    !IMAGE[Team site](\Media\info-test4.png "Team site")
+    
 
 3. [] Upload the unzipped files to the site.
 
     !IMAGE[Upload](\Media\info-test5.png "Upload")
 
-    !IMAGE[Upload](\Media\info-test6.png "Upload")
-
-    !IMAGE[Upload](\Media\info-test7.png "Upload")
+   
 
 4. [] Cloud App Security will now scan those documents and search for matches to our created policies.
 
@@ -3097,7 +3122,7 @@ To test our files policies, perform the following tasks:
 
     !IMAGE[Governance action](\Media\info-files7.png "Governance action")
 
-10. [] If you go back to the **Contoso Team Site**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
+10. [] If you go back to **BOX**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
 
     !IMAGE[Site](\Media\as3niznc.jpg "Site")
 
@@ -3109,7 +3134,7 @@ To test our files policies, perform the following tasks:
 
 [:arrow_left: Home](#labs)
 
-Cloud App Security provides several [threats detection policies](https://docs.microsoft.com/en-us/cloud-app-security/anomaly-detection-policy) using machine learning and **user behavior analytics** to detect suspicious activities across your different applications.
+Cloud App Security provides several threats detection policies using machine learning and **user behavior analytics** to detect suspicious activities across your different applications.
 Those policies are enabled by default and after an initial learning period, Cloud App Security will start alerting you when suspicious actions like activity from anonymous IP addresses, infrequent country, suspicious IP addresses, impossible travel, ransomware activity, suspicious inbox forwarding configuration or unusual file download are detected.
 
 :warning: In this lab, as your environments auditing might not be configured yet, as it takes up to **24h** before being enabled, we will investigate **in the environment provided by your instructor**. The credentials are provided below.
@@ -3121,8 +3146,8 @@ Search and review the alerts in that environment and investigate to identify the
 
 **URLs**
 
-* Office 365: https://portal.office.com
-* Cloud App Security: https://portal.cloudappsecurity.com
+* Office 365: ```https://portal.office.com```
+* Cloud App Security: ```https://portal.cloudappsecurity.com```
 
 ## Labs
 
@@ -3371,8 +3396,8 @@ Here is an example of such user consent:
 
 [:arrow_up: Top](#cloud-app-security-threat-detection-lab)
 
-Now that we reviewed some of the default detection capabilities of Cloud App Security, you should start creating your [own policies](https://docs.microsoft.com/en-us/cloud-app-security/control-cloud-apps-with-policies).
-Cloud App Security provides by default many [policies templates](https://docs.microsoft.com/en-us/cloud-app-security/policy-template-reference) to start creating your custom policies.
+Now that we reviewed some of the default detection capabilities of Cloud App Security, you should start creating your own policies.
+Cloud App Security provides by default many has policies templates to start creating your custom policies.
 
 1. [] To create your policies, go to “Policies”:
 
@@ -3413,8 +3438,7 @@ Azure AD conditional access allows you to enforce access controls on your organi
 
 Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are utilized within the Cloud App Security portal to further refine filters and set actions to be taken on a user.
 
-With the access and session policies, you can:
-
+[!NOTE] With the access and session policies, you can:
 * **Block on download**: You can block the download of sensitive documents. For example, on unmanaged devices.
 * **Protect on download**: Instead of blocking the download of sensitive documents, you can require documents to be protected via encryption on download. This ensures that the document is protected, and user access is authenticated, if the data is downloaded to an untrusted device.
 * **Monitor low-trust user sessions**: Risky users are monitored when they sign into apps and their actions are logged from within the session. You can investigate and analyze user behavior to understand where, and under what conditions, session policies should be applied in the future.
@@ -3422,7 +3446,7 @@ With the access and session policies, you can:
 * **Create read-only mode**: By monitoring and blocking custom in-app activities you can create a read-only mode to specific apps for specific users.
 * **Restrict user sessions from non-corporate networks**: Users accessing a protected app from a location that is not part of your corporate network, are allowed restricted access and the download of sensitive materials is blocked or protected.
 
->:memo: In this lab, we will cover only some scenarios.
+
 
 ---
 
@@ -3500,30 +3524,30 @@ With the access and session policies, you can:
 
 8. [] Create a new session policy with the following settings:
 
-    Click on "Create Policy" and pick a Session policy. 
+    **Click on "Create Policy" and pick a Session policy.**
 
    !IMAGE[Session policy](\Media\appc-office-7.png)
 
-    Under Session Control Type choose Control filedownload (with DLP)
+   **Under Session Control Type choose Control filedownload (with DLP)**
  
    !IMAGE[Session policy](\Media\appc-office-8.png)
 
-   Activity source:
-   Add Activity Filters: Device Tag does not equal Compliant, Domain joined
-   App equals Office 365 Exchange Online and Office 365 SharePoint Online
+   **Activity source:**
+   **Add Activity Filters:** *Device Tag does not equal Compliant, Domain joined*
+   *App equals Office 365 Exchange Online and Office 365 SharePoint Online*
 
    !IMAGE[Session policy](\Media\appc-office-9.png)
 
-   Content inspection check "Enabled"
-   Include files that match a preset expression anc choose US: PII: Social Security Number 
+   **Content inspection check "Enabled"**
+   **Include files that match a preset expression anc choose US: PII: Social Security Number**
 
 
    !IMAGE[Session policy](\Media\appc-office-10.png)
 
-   Actions: Block
-   Click: Customize block message: The containes SSN information and cannot be downloaded on non-coporate devices.
-   Click: Create an alert for each matching event with the policy's severity 
-   Click **Create**
+   **Actions:** *Block*
+   **Click:** *Customize block message: The containes SSN information and cannot be downloaded on non-coporate devices.*
+   **Click:** *Create an alert for each matching event with the policy's severity*
+  **Click:S** **Create**
 
    !IMAGE[Session policy](\Media\appc-office-11.png)
 
