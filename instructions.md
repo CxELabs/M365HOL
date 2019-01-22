@@ -562,6 +562,7 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 
     !IMAGE[Test connectivity](\Media\conf-testoffice.png "Test connectivity")
 
+
  **Connecting BOX to Cloud App Security**
 
  1. Go to the gear icon and select **App connectors**.
