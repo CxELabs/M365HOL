@@ -2369,11 +2369,11 @@ To create snapshot reports:
     >|Data Source| **SQUID (Common)**|
     >|Anonymize private information |**Check the box**|
     >
-    !IMAGE[New snapshot](\Media\dis-createsnapshot.png "New snapshot") change pic to new one 
+    !IMAGE[New snapshot](\Media\dis-createsnapshot.png "New snapshot")
 
 3. [] In the **Verify your log format** window, click on the **Download sample log** button and save it to your desktop.
 
-    !IMAGE[Download log](Media\dis-downloadsample.png "Download log")
+    !IMAGE[Download log](Media\dis-squiddownload.png "Download log")
 
 4. [] Close that window.
 
@@ -2381,17 +2381,21 @@ To create snapshot reports:
 
     !IMAGE[Browse logs](\Media\dis-browse.png "Browse logs")
 
-    !IMAGE[Select logs](\Media\dis-selectlogs.png "Select logs") change pic to new one 
+    !IMAGE[Select logs](\Media\dis-squidselect.png "Select logs") 
 
 6. [] Now that the log has been selected, click on the **Create** button to create your report.
 
-    !IMAGE[Create snapshot](\Media\dis-snapshotcreate.png "Create snapshot") change pic 
+    !IMAGE[Create snapshot](\Media\dis-squidcreate.png "Create snapshot")
 
-7. [] Your report will then be processed.
+7. [] Your report will then be processed. It will take a couple of minutes before it's marked as **Ready**.
 
     !IMAGE[Report processing](\Media\dis-processing.png "Report processing")
 
-8. [] When your report is ready, you can click on it and start exploring the discovered apps, users, IPs.
+    !IMAGE[Report processing](\Media\dis-reportready.png "Report processing")
+
+8. [] Now that your report is marked as **ready**, click on the text **Ready**. You will be then redirected to your snapshot report where you can start exploring the discovered apps, users, IPs. Your instructor can give you more details on how to use the dashboard.
+
+    !IMAGE[Report processing](\Media\dis-reportready2.png "Report ready")
 
     !IMAGE[Report dashboard](\Media\dis-dashboard.png "Report dashboard")
 
