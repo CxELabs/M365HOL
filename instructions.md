@@ -2331,11 +2331,11 @@ To create snapshot reports:
     >|Data Source| **SQUID (Common)**|
     >|Anonymize private information |**Check the box**|
     >
-    !IMAGE[New snapshot](\Media\dis-createsnapshot.png "New snapshot")
+    !IMAGE[New snapshot](\Media\dis-createsnapshot.png "New snapshot") change pic to new one 
 
 3. [] In the **Verify your log format** window, click on the **Download sample log** button and save it to your desktop.
 
-    !IMAGE[Download log](\Media\dis-downloadlog.png "Download log")
+    !IMAGE[Download log](Media\dis-downloadsample.png "Download log")
 
 4. [] Close that window.
 
@@ -2343,11 +2343,11 @@ To create snapshot reports:
 
     !IMAGE[Browse logs](\Media\dis-browse.png "Browse logs")
 
-    !IMAGE[Select logs](\Media\dis-selectlogs.png "Select logs")
+    !IMAGE[Select logs](\Media\dis-selectlogs.png "Select logs") change pic to new one 
 
 6. [] Now that the log has been selected, click on the **Create** button to create your report.
 
-    !IMAGE[Create snapshot](\Media\dis-snapshotcreate.png "Create snapshot")
+    !IMAGE[Create snapshot](\Media\dis-snapshotcreate.png "Create snapshot") change pic 
 
 7. [] Your report will then be processed.
 
@@ -2494,8 +2494,8 @@ Those commands download a script installing the Docker engine on your host compu
     !IMAGE[WinSCP connection](\Media\dis-winscpconnection.png "WinSCP connection")
 
     >**INFO**: this information was provided during the log collector creation.
-    >
-    >:memo: **NOTE:** the password is common to every new log collector. To change it, follow [this guide](https://docs.microsoft.com/en-us/cloud-app-security/troubleshoot-docker#docker-deployment) in the documentation.
+    
+   
 
     You should then be able to see a folder with your data source name.
 
