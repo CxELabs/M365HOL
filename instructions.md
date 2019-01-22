@@ -2335,7 +2335,7 @@ To create snapshot reports:
     >|---------|---------|
     >|Report Name| **Demo report**|
     >|Description| |
-    >|Data Source| **Barracuda - F-Series Firewall**|
+    >|Data Source| **SQUID (Common)**|
     >|Anonymize private information |**Check the box**|
     >
     !IMAGE[New snapshot](\Media\dis-createsnapshot.png "New snapshot")
@@ -2418,27 +2418,17 @@ Those commands download a script installing the Docker engine on your host compu
 
     >:memo: **NOTE:** In this lab we use FTP as the receiver type but usually companies will use Syslog.
 
-6. [] While still in the Add data source dialog, click **View sample of expected log file**.
-
-    >:memo: **NOTE:** Using this information, you can verify with your network team that the provided logs match the format expect by Cloud App Security. If it doesn't, you should use a custom parser.
-
-    !IMAGE[Verify log format](\Media\dis-verifylog.png "Verify log format")
-
-7. [] In the Verify your log format dialog, click **Download sample log** and save to your desktop. Those logs will be used to simulate an appliance sending traffic logs to the log collector.
-
-    !IMAGE[Download sample](\Media\dis-downloadsample.png "Download sample log")
-
-8. [] Close the *Verify your log format* window, then click **Add** in the **Add** data source dialog.
+6. [] Close the *Verify your log format* window, then click **Add** in the **Add** data source dialog.
 
     !IMAGE[Add source](\Media\dis-addsource.png "Add source")
 
     >**INFO:** We just created a data source which is the logical representation of the network appliance data source type the log collector will receive.
 
-9. [] Next, click on the **Log collectors tab** and click the **Add log collector...** button.
+7. [] Next, click on the **Log collectors tab** and click the **Add log collector...** button.
 
     !IMAGE[Add log collector](\Media\dis-addlogcollector.png "Add log collector")
 
-10. [] In the Create log collector dialog, provide the settings below and click the **Update** button.
+8. [] In the Create log collector dialog, provide the settings below and click the **Update** button.
 
     |||
     |-----|-----|
@@ -2448,7 +2438,7 @@ Those commands download a script installing the Docker engine on your host compu
 
     !IMAGE[Create log collector](\Media\dis-createlogcollector.png "Create log collector")
 
-11. [] After clicking on the **Update** button, you have now the required steps to create your log collector instance on **LinuxVM**.
+9. [] After clicking on the **Update** button, you have now the required steps to create your log collector instance on **LinuxVM**.
     >:warning: Do not close this window!
 
     !IMAGE[Create log collector command](\Media\dis-addlogcollectortoken.png "Create log collector command")
@@ -2461,20 +2451,20 @@ Those commands download a script installing the Docker engine on your host compu
     >* An API token to connect to Cloud App Security for uploading the logs: *1f5b5fb2a0d778e3d57f26ca5ab11574db0751166477940528ccf19a7c4*
     >* The docker parameters to configure the log collector container: *docker run ...*
 
-12. [] Copy the command line provided at the end of the previous step and **minimize** the browser. Open **Putty (64-bit)**. You should have the icon on your desktop.
+10. [] Copy the command line provided at the end of the previous step and **minimize** the browser. Open **Putty (64-bit)**. You should have the icon on your desktop.
 
     !IMAGE[Putty](\Media\dis-putty.png "Putty")
 
-13. [] In the PuTTY Configuration window, enter **192.168.141.125** and click **Open**.
+11. [] In the PuTTY Configuration window, enter **192.168.141.125** and click **Open**.
 
     !IMAGE[Putty config](\Media\dis-puttyconfig.png "Putty config")
 
-14. [] At the Putty warning message, click **Yes**.
+12. [] At the Putty warning message, click **Yes**.
     >**INFO:** This warning is due to the ssh certificate. You can safely ignore this warning in this lab.
 
     !IMAGE[Putty warning](\Media\dis-puttywarning.png "Putty warning")
 
-15. Log in using the credentials below.
+13. Log in using the credentials below.
     >|Username|Password|
     >|---|---|
     >|```user01```|```Passw0rd1```|
@@ -2483,7 +2473,7 @@ Those commands download a script installing the Docker engine on your host compu
 
     !IMAGE[Putty prompt](\Media\dis-puttylogin.png)
 
-16. [] Type the command below and press **Enter**. Provide the user password when prompted.
+14. [] Type the command below and press **Enter**. Provide the user password when prompted.
      ``` 
      sudo -i
      ```
@@ -2491,18 +2481,18 @@ Those commands download a script installing the Docker engine on your host compu
 
      >**INFO**: The previous command elevates your permissions in the Linux environment like the UAC prompt would do on a Windows machine.
 
-17. [] Return to the *Create log collector* dialog, copy the **collector configuration** command from step 2 and run it in the PuTTY window.
+15. [] Return to the *Create log collector* dialog, copy the **collector configuration** command from step 2 and run it in the PuTTY window.
 
      !IMAGE[Copy token](\Media\dis-addlogcollectorcopy.png "Copy token")
      !IMAGE[New container](\Media\dis-newcontainer.png "New container")
 
      >**INFO:** The output of this command is the id of the newly created container/log collector.
 
-18. [] Now, launch **WinSCP** from the start-menu.
+16. [] Now, launch **WinSCP** from the start-menu.
 
     !IMAGE[WinSCP](\Media\dis-winscp.png "WinSCP")
 
-19. [] Use the details below in the WinSCP window to connect to the log collector FTP service.
+17. [] Use the details below in the WinSCP window to connect to the log collector FTP service.
 
     |File Protocol|Host name|User name|Password|
     |-----|-----|-----|-----|
@@ -2520,27 +2510,27 @@ Those commands download a script installing the Docker engine on your host compu
 
     >:warning: If you are **not** able to connect to the log collector FTP service, verify that you successfully created the new log collector instance within Putty in previous steps.
 
-20. [] On the left pane, move to the **Desktop** folder and drag your example Squid log (From Step 7) into the folder named for your data source (**SquidLogs**). After some minutes, the log collector will upload your logs.
+18. [] On the left pane, move to the **Desktop** folder and drag your example Squid log (From Step 7) into the folder named for your data source (**SquidLogs**). After some minutes, the log collector will upload your logs.
 
     !IMAGE[Log upload](\Media\dis-winscplogupload.png "Log upload")
     !IMAGE[Log upload](\Media\dis-winscplogupload2.png "Log upload")
     !IMAGE[Log upload](\Media\dis-winscplogupload3.png "Log upload")
 
-21. [] Return to the Cloud App Security portal and click on **Settings** > **Governance log**.
+19. [] Return to the Cloud App Security portal and click on **Settings** > **Governance log**.
 
     !IMAGE[Settings Governance log](\Media\dis-governancelog.png "Settings Governance log")
 
-22. [] Verify the status of the uploaded logs.
+20. [] Verify the status of the uploaded logs.
 
     >**INFO:** The status you see is the parsing status of the logs. Parsing status can be successful, pending or failed.
 
     !IMAGE[Log uploaded](\Media\dis-loguploaded.png "Log uploaded")
 
-23. [] You can also verify the **last data received** status on the *Data sources* tab under **Automatic log upload** settings.
+21. [] You can also verify the **last data received** status on the *Data sources* tab under **Automatic log upload** settings.
 
     !IMAGE[Last data received](\Media\dis-lastreceived.png "Last data received")
 
-24. [] Go to the **Cloud Discovery dashboard** to verify the discovered apps.
+22. [] Go to the **Cloud Discovery dashboard** to verify the discovered apps.
 
     !IMAGE[Discovery dashboard](\Media\dis-discoverydashboard.png "Discovery dashboard")
 
@@ -2549,6 +2539,7 @@ Those commands download a script installing the Docker engine on your host compu
     >:memo: **NOTE:**  After validating that your logs have been successfully uploaded and processed by MCAS, you will not usually see directly the analysis of your data. Why?
     >
     >**ANSWER:** Cloud Discovery logs are only parsed **twice a day**.
+
 ===
 # Information protection
 
