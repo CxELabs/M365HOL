@@ -474,7 +474,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 To be able to complete the different parts of the Cloud App Security labs, the following configuration steps are required.
 
 * [Enabling Office 365 auditing](#enabling-office-365-auditing)
-* [Connect Office 365 to Cloud App Security](#connect-office-365-to-cloud-app-security)
+* [Connect Office 365 and BOX to Cloud App Security](#connect-office-365-to-cloud-app-security)
 * [Enabling Azure Information Protection integration](#enabling-azure-information-protection-integration)
 
 ---
@@ -544,7 +544,7 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
 To connect Cloud App Security to Office 365, you will have to use the Office 365 app connector. App connectors use the APIs of app providers to enable greater visibility and control by Microsoft Cloud App Security over the apps you connect to.
 
-1. [] Open a new InPrivate tab and navigate to ```https://portal.cloudappsecurity.com```
+1. [] Open a new in Private tab in your browser and navigate to ```https://portal.cloudappsecurity.com```
 
 2. [] Go to the gear icon and select **App connectors**.
 
@@ -556,13 +556,56 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 
 4. [] Click on **Connect Office 365**. Cloud App Security will then have access to Office 365 activities and files.
 
-    !IMAGE[Connect Office"](\Media\conf-connectoffice.png "Connect Office")
+    !IMAGE[Connect Office](\Media\conf-connectoffice.png "Connect Office")
 
 5. [] Click on **Test now** to validate the configuration.
 
     !IMAGE[Test connectivity](\Media\conf-testoffice.png "Test connectivity")
 
+
  **Connecting BOX to Cloud App Security**
+
+ 1. Go to the gear icon and select **App connectors**.
+
+ 	!IMAGE(\Media\apibox1.JPG)
+
+ 2. Click on the **Plus** button and click on BOX.
+
+	!IMAGE(\Media\apibox2.JPG)
+
+ 3. Type the name of your corporate instance and click **Connect Box.**
+
+	!IMAGE(\Media\apibox3.JPG)
+
+ 4. Follow the **link** that shows up in the pop up.
+
+	!IMAGE(\Media\apibox4.JPG)
+
+5. Log into BOX with the same credentials used to create your developer account. 
+
+	!IMAGE(\Media\apibox5.JPG)
+
+6. Click on **Grant access to BOX**
+
+	!IMAGE(\Media\apibox6.JPG)
+
+7. Go back to the Cloud App Security portal and click on "Test Now" to see if the connection worked. 
+
+	!IMAGE(\Media\apibox7.JPG)
+
+	If the connection is succesful - it will say **Connected.** 
+
+    !IMAGE(\Media\apibox8.JPG)
+
+8. You should be able to see BOX as a connected app in the list. 
+
+	!IMAGE(\Media\apibox9.JPG) 
+
+
+
+
+
+
 
 ---
 
