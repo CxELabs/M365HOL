@@ -2315,10 +2315,64 @@ As the MCAS admin for your company, work with the person next to you to configur
 
 [:arrow_left: Home](#labs)
 
-Continuous reports in Cloud Discovery analyze all logs that are forwarded from your network using Cloud App Security. They provide improved visibility over all data, and automatically identify anomalous use using either the Machine Learning anomaly detection engine or by using custom policies that you define.
-To use this capability, you will perform in this lab the configuration and troubleshooting of the Cloud Discovery feature.
+TO EDIT Discovery text/intro
+
+# Cloud Discovery snapshot report
+
+[:arrow_left: Home](#labs) :clock10: 10 min
+
+Snapshot Reports are the manual method of uploading files into Cloud App Security. You can upload batches of 20 logs of 1 GB max at a time and they will parse into their own separate report. Any discovery policies you create **will not** apply to these types of reports. Creating Snapshot reports is a great and easy way to validate your logs format of have a quick look at the Cloud App Security Discovery capability.
+
+To create snapshot reports:
+
+1. [] Go to the **Discover** section and click on **Create snapshot report**.
+
+    !IMAGE[Create snapshot](\Media\dis-newsnaphsot.png "Create snapshot")
+
+2. [] In the Add data source window, use the settings below (do not close the window yet) and click on **View and verify...**:
+
+    >|||
+    >|---------|---------|
+    >|Report Name| **Demo report**|
+    >|Description| |
+    >|Data Source| **Barracuda - F-Series Firewall**|
+    >|Anonymize private information |**Check the box**|
+    >
+    !IMAGE[New snapshot](\Media\dis-createsnapshot.png "New snapshot")
+
+3. [] In the **Verify your log format** window, click on the **Download sample log** button and save it to your desktop.
+
+    !IMAGE[Download log](\Media\dis-downloadlog.png "Download log")
+
+4. [] Close that window.
+
+5. [] Click on the **Browse** button and in the new window, select the log you downloaded and click **Open**.
+
+    !IMAGE[Browse logs](\Media\dis-browse.png "Browse logs")
+
+    !IMAGE[Select logs](\Media\dis-selectlogs.png "Select logs")
+
+6. [] Now that the log has been selected, click on the **Create** button to create your report.
+
+    !IMAGE[Create snapshot](\Media\dis-snapshotcreate.png "Create snapshot")
+
+7. [] Your report will then be processed.
+
+    !IMAGE[Report processing](\Media\dis-processing.png "Report processing")
+
+8. [] When your report is ready, you can click on it and start exploring the discovered apps, users, IPs.
+
+    !IMAGE[Report dashboard](\Media\dis-dashboard.png "Report dashboard")
+
+    !IMAGE[Report dashboard -risk](\Media\dis-risk.png "Report dashboard - risk")
+
+===
+
 
 ## Configure and test continuous reports
+
+Continuous reports in Cloud Discovery analyze all logs that are forwarded from your network using Cloud App Security. They provide improved visibility over all data, and automatically identify anomalous use using either the Machine Learning anomaly detection engine or by using custom policies that you define.
+To use this capability, you will perform in this lab the configuration and troubleshooting of the Cloud Discovery feature.
 
 [:arrow_up: Top](#cloud-app-security-discovery-lab)
 
@@ -3207,56 +3261,6 @@ Using PowerShell:
 5.   [] You are asked to define corporate IP's in MCAS. Subnets go from
     10.50.50.0/24 to 10.50.80.0/24
 
-===
-
-# Cloud Discovery snapshot report
-
-[:arrow_left: Home](#labs) :clock10: 10 min
-
-Snapshot Reports are the manual method of uploading files into Cloud App Security. You can upload batches of 20 logs of 1 GB max at a time and they will parse into their own separate report. Any discovery policies you create **will not** apply to these types of reports. Creating Snapshot reports is a great and easy way to validate your logs format of have a quick look at the Cloud App Security Discovery capability.
-
-To create snapshot reports:
-
-1. [] Go to the **Discover** section and click on **Create snapshot report**.
-
-    !IMAGE[Create snapshot](\Media\dis-newsnaphsot.png "Create snapshot")
-
-2. [] In the Add data source window, use the settings below (do not close the window yet) and click on **View and verify...**:
-
-    >|||
-    >|---------|---------|
-    >|Report Name| **Demo report**|
-    >|Description| |
-    >|Data Source| **Barracuda - F-Series Firewall**|
-    >|Anonymize private information |**Check the box**|
-    >
-    !IMAGE[New snapshot](\Media\dis-createsnapshot.png "New snapshot")
-
-3. [] In the **Verify your log format** window, click on the **Download sample log** button and save it to your desktop.
-
-    !IMAGE[Download log](\Media\dis-downloadlog.png "Download log")
-
-4. [] Close that window.
-
-5. [] Click on the **Browse** button and in the new window, select the log you downloaded and click **Open**.
-
-    !IMAGE[Browse logs](\Media\dis-browse.png "Browse logs")
-
-    !IMAGE[Select logs](\Media\dis-selectlogs.png "Select logs")
-
-6. [] Now that the log has been selected, click on the **Create** button to create your report.
-
-    !IMAGE[Create snapshot](\Media\dis-snapshotcreate.png "Create snapshot")
-
-7. [] Your report will then be processed.
-
-    !IMAGE[Report processing](\Media\dis-processing.png "Report processing")
-
-8. [] When your report is ready, you can click on it and start exploring the discovered apps, users, IPs.
-
-    !IMAGE[Report dashboard](\Media\dis-dashboard.png "Report dashboard")
-
-    !IMAGE[Report dashboard -risk](\Media\dis-risk.png "Report dashboard - risk")
 ===
 
 # Log collector troubleshooting
