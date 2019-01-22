@@ -3008,7 +3008,8 @@ Azure AD conditional access allows you to enforce access controls on your organi
 
 Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are utilized within the Cloud App Security portal to further refine filters and set actions to be taken on a user.
 
-> [!NOTE] **Access and Session policies give you the capability to the following:
+> [!NOTE] **Access and Session policies give you the capability to the following:**
+
 * **Block on download**: You can block the download of sensitive documents. For example, on unmanaged devices.
 * **Protect on download**: Instead of blocking the download of sensitive documents, you can require documents to be protected via encryption on download. This ensures that the document is protected, and user access is authenticated, if the data is downloaded to an untrusted device.
 * **Monitor low-trust user sessions**: Risky users are monitored when they sign into apps and their actions are logged from within the session. You can investigate and analyze user behavior to understand where, and under what conditions, session policies should be applied in the future.
