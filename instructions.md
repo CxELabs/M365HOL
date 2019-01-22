@@ -563,43 +563,43 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
     !IMAGE[Test connectivity](\Media\conf-testoffice.png "Test connectivity")
 
 
- **Connecting BOX to Cloud App Security**
+ ## Connecting BOX to Cloud App Security**
 
- 1. [] Go to the gear icon and select **App connectors**.
+ 1. [] Go to the gear icon and select **App connectors**
 
- 	!IMAGE(\Media\apibox1.JPG)
+ 	!IMAGE[1](\Media\apibox1.JPG) "1") 
 
  2. []  Click on the **Plus** button and click on BOX.
 
-	!IMAGE(\Media\apibox2.JPG)
+	!IMAGE[2](\Media\apibox2.JPG)
 
  3. [] Type the name of your corporate instance and click **Connect Box.**
 
-	!IMAGE(\Media\apibox3.JPG)
+	!IMAGE[3](\Media\apibox3.JPG)
 
  4. []  Follow the **link** that shows up in the pop up.
 
-	!IMAGE(\Media\apibox4.JPG)
+	!IMAGE[4](\Media\apibox4.JPG)
 
 5. [] Log into BOX with the same credentials used to create your developer account. 
 
-	!IMAGE(\Media\apibox5.JPG)
+	!IMAGE[5](\Media\apibox5.JPG)
 
 6. [] Click on **Grant access to BOX**
 
-	!IMAGE(\Media\apibox6.JPG)
+	!IMAGE[6](\Media\apibox6.JPG)
 
 7. [] Go back to the Cloud App Security portal and click on "Test Now" to see if the connection worked. 
 
-	!IMAGE(\Media\apibox7.JPG)
+	!IMAGE[7](\Media\apibox7.JPG)
 
 	If the connection is succesful - it will say **Connected.** 
 
-    !IMAGE(\Media\apibox8.JPG)
+    !IMAGE[8](\Media\apibox8.JPG)
 
 8. []  You should be able to see BOX as a connected app in the list. 
 
-	!IMAGE(\Media\apibox9.JPG) 
+	!IMAGE[9](\Media\apibox9.JPG) 
 
 
 ---
