@@ -3221,7 +3221,7 @@ As the first and the second authentication came from distinct locations, Cloud A
 	> 
 	> **To scope an anomaly detection policy:**
 	> 
-    > 1.Click Control and then Policies, and set the Type filter to Anomaly detection policy.
+    > 1. Click Control and then Policies, and set the Type filter to Anomaly detection policy.
 	> 2. Click on the policy you want to scope. 
     > 3. Under Scope, change the drop-down from the default setting of All users and groups, to Specific users and groups. 
 	> 4. Select Include to specify the users and groups for whom this policy will apply. Any user or group not selected here won't be    considered a threat and won't generate an alert.
