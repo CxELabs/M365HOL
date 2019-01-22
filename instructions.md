@@ -3115,6 +3115,7 @@ To test our files policies, perform the following tasks:
 9. [] You can also view the related governance actions, like applying the Azure Information classification or moving the file to the quarantine folder, at the file level or in the **Governance log**.
 
 
+
     !IMAGE[Governance log](\Media\info-governance.png "Governance log")
 
    
