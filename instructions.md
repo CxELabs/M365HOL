@@ -3212,7 +3212,7 @@ As the first and the second authentication came from distinct locations, Cloud A
 
    !IMAGE[Impossible travel alert](\Media\td-impossibletravelalert-details.png "Impossible travel alert details")
 
- 	> [!NOTE] To reduce the amount of false positives, edit the impossible travel policy. 
+ 	>:memo: To reduce the amount of false positives, edit the impossible travel policy. 
 	>  
  	> **You can adjust the policy by clicking on the alert and *Resolve* and click on *Adjust policy.**
 	> 
