@@ -598,7 +598,7 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 
 8. You should be able to see BOX as a connected app in the list. 
 
-	!IMAGE(\Media\apibox9.JPG)
+	!IMAGE(\Media\apibox9.JPG) 
 
 
 
