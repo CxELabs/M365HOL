@@ -22,7 +22,6 @@ This lab is designed to be used as a supplement to Instructor Led Training and h
 
 > [!ALERT] When stopping each section, please ensure that you SAVE the session in between labs rather than END the lab.  If you end the lab, all VM configuration will be reset to initial state and will hinder the experience during future labs.  We have designed this lab to be a good representation of the interoperability between Microsoft 365 Security Technologies so several of the labs will feed information into future labs.
 
-
 ===
 # Tips and Tricks
 [:arrow_left: Home](#introduction)
@@ -2764,28 +2763,26 @@ As the first and the second authentication came from distinct locations, Cloud A
 
    !IMAGE[Impossible travel alert](\Media\td-impossibletravelalert-details.png "Impossible travel alert details")
 
- >[!NOTE] To reduce the amount of false positives, edit the impossible travel policy. 
- 		  **You can adjust the policy by clicking on the alert and *Resolve* and click on *Adjust policy.**
-
-	Each anomaly detection policy can be independently scoped so that it applies only to the users and groups you want to include and exclude in the policy. For example, you can set the Activity from infrequent county detection to ignore a specific user who travels frequently.
-
-	**To scope an anomaly detection policy:**
-
-    1.Click Control > Policies, and set the Type filter to Anomaly detection policy.-
-	
-	2. Click on the policy you want to scope.
-
-    3. Under Scope, change the drop-down from the default setting of All users and groups, to Specific users and groups.
-
-	4. Select Include to specify the users and groups for whom this policy will apply. Any user or group not selected here won't be    considered a threat and won't generate an alert.
-
-	5. Select Exclude to specify users for whom this policy won't apply. Any user selected here won't be considered a threat and won't generate an alert, even if they're members of groups selected under Include.
-
-	**Sensitivity Slider:**
-
-    You can set the sensitivity slider to determine the level of anomalous behavior needed before an alert is triggered. For example, if you set it to low, it will suppress Impossible Travel alerts from a user’s common locations, and if you set it to high, it will surface such alerts.
-
-	 !IMAGE[Impossible Travel Sensitivity Bar](/Media/updated impossible travel.JPG)  
+ 	>:memo: To reduce the amount of false positives, edit the impossible travel policy. 
+	>  
+ 	> **You can adjust the policy by clicking on the alert and *Resolve* and click on *Adjust policy.**
+	> 
+	> Each anomaly detection policy can be independently scoped so that it applies only to the users and 
+	groups you want to include and exclude in the policy. For example, you can set the Activity from infrequent county detection to ignore a specific user who travels frequently.
+	> 
+	> **To scope an anomaly detection policy:**
+	> 
+    > 1. Click Control and then Policies, and set the Type filter to Anomaly detection policy.
+	> 2. Click on the policy you want to scope. 
+    > 3. Under Scope, change the drop-down from the default setting of All users and groups, to Specific users and groups. 
+	> 4. Select Include to specify the users and groups for whom this policy will apply. Any user or group not selected here won't be    considered a threat and won't generate an alert.
+	> 5. Select Exclude to specify users for whom this policy won't apply. Any user selected here won't be considered a threat and won't generate an alert, even if they're members of groups selected under Include.
+	> 
+	> **Sensitivity Slider:**
+	> 
+    > You can set the sensitivity slider to determine the level of anomalous behavior needed before an alert is triggered. For example, if you set it to low, it will suppress Impossible Travel alerts from a user’s common locations, and if you set it to high, it will surface such alerts.
+	> 
+	>  !IMAGE[Impossible Travel Sensitivity Bar](\Media\updatedimpossibletravel.JPG)  
 
 ---
 
