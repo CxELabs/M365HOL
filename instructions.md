@@ -3472,7 +3472,7 @@ Conditional Access App Control enables user app access and sessions to be monito
 ## Configuration
 
 
-1.[] Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
+1. [] Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
 
    !IMAGE[AAD portal](\Media\aad-1.png)
 
