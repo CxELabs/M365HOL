@@ -538,7 +538,7 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
 ---
 
-## Connect Office 365 to Cloud App Security
+## Connect Office 365  and BOX to Cloud App Security 
 
 [:arrow_up: Top](#mcas-environment-preparation)
 
@@ -561,6 +561,8 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 5. [] Click on **Test now** to validate the configuration.
 
     !IMAGE[Test connectivity](\Media\conf-testoffice.png "Test connectivity")
+
+ **Connecting BOX to Cloud App Security**
 
 ---
 
@@ -2283,18 +2285,9 @@ As the MCAS admin for your company, work with the person next to you to configur
 
     !IMAGE[External admin](\Media\mgmt-admin2.png "External admin")
 
-	**Type the admin user name**: *external admin*
-	**Select Role**: *User group admin*
 
-    !IMAGE[External admin](\Media\mgmt-admin3.png "External admin")
+	**Type Admin user name:**  
 
-	**Select groups for this admin**: *US employees*
-	**Click on Add admin**
-
-
-    !IMAGE[External admin](\Media\mgmt-admin4.png "External admin")
-
-	**Type Admin user name:**
 	**Select type of role for this admin:** *Security Reader*
 
     !IMAGE[External admin](\Media\mgmt-externaladmin1.png "External admin")
