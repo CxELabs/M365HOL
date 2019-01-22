@@ -2327,7 +2327,7 @@ To create snapshot reports:
     >|||
     >|---------|---------|
     >|Report Name| **Demo report**|
-    >|Description| |
+    >|Description| 
     >|Data Source| **SQUID (Common)**|
     >|Anonymize private information |**Check the box**|
     >
