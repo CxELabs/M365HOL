@@ -2968,7 +2968,7 @@ We will apply an Azure Information Protection template on documents containing s
 
 [:arrow_up: Top](#information-protection)
 
-1. [] In the Cloud App Security portal, go to **Policies**.
+1. [] In the Cloud App Security portal, go to **Control** and then click on **Policies.**
 
     !IMAGE[Policies](\Media\info-policies.png "Policies")
 
@@ -2983,7 +2983,7 @@ We will apply an Azure Information Protection template on documents containing s
     >|Policy Name| **Protect SSN documents in sensitive site**|
     >|Files matching all of the following| **remove the filters** |
     >|Apply to| **selected folder**|
-    >:memo: Here, select the **Shared Documents** folder from the default SharePoint site.
+
 
     !IMAGE[Policy filter](\Media\info-filter.png "Policy filter")
 
@@ -2997,7 +2997,8 @@ We will apply an Azure Information Protection template on documents containing s
 
 5. [] In inspection method, select **Data Classification Service**.
 
-    [!NOTE]*Microsoft Data Classification Service provides a **unified** information protection experience across Office 365, Azure Information Protection, and Microsoft Cloud App Security.*
+    > [!NOTE]*Microsoft Data Classification Service provides a **unified** information protection experience across Office 365, Azure Information Protection, and Microsoft Cloud App Security.*
+
     *The classification service allows you to extend your data classification efforts to the third-party cloud apps protected by Cloud App Security, using the decisions you already made across an even greater number of apps.*
 
     !IMAGE[DCS](\Media\info-dcs.png "DCS")
@@ -3011,9 +3012,7 @@ We will apply an Azure Information Protection template on documents containing s
 
     !IMAGE[Unmask](\Media\info-unmask.png "Unmask")
 
-8. [] In the Governance actions, click on **Box** and select **Apply classification label**.
-
-    
+8. [] In the Governance actions, click on **Box** and select **Apply classification label**. Select the **Highly Confidental Employees Only** label. 
 
     >:warning: If you are not able to select Azure Information Protection templates, verify that you configured the integration in the prerequisites section or that you waited the 1h for the classifications to sync.
 
@@ -3028,7 +3027,7 @@ We will apply an Azure Information Protection template on documents containing s
 File policies are a great tool for finding threats to your information protection policies, for instance finding places where users stored sensitive information, credit card numbers and third-party ICAP files in your cloud. With Cloud App Security, not only can you detect these unwanted files stored in your cloud that leave you vulnerable, but you can take im/mediate action to stop them in their tracks and lock down the files that pose a threat. Using Admin quarantine, you can protect your files in the cloud and re/mediate problems, as well as prevent future leaks from occurring.
 This is what we are going to configure in this lab.
 
-1. [] In Cloud App Security, go to the **Settings**.
+1. [] In Cloud App Security Portal, go to the **Gear** and then **Settings**.
 
     !IMAGE[Settings](\Media\info-settings.png)
 
@@ -3050,7 +3049,7 @@ This is what we are going to configure in this lab.
 
     >:memo: This message will be provided in the placeholders when a file is put in quarantine.
 
-4. [] Next, go to the policies menu and create a new **file policy**. The policy is the component that will decide which files should be put in quarantine.
+4. [] Next, go to **Control** and then **Policies** and create a new **File policy**. The following policy will determine which files should be placed in quarantine.
 
     !IMAGE[Policies](\Media\info-policy1.png "Policies")
 
@@ -3084,7 +3083,6 @@ To test our files policies, perform the following tasks:
 
 3. [] Upload the unzipped files to the site.
 
-    !IMAGE[Upload](\Media\info-test5.png "Upload")
 
    
 
@@ -3106,29 +3104,24 @@ To test our files policies, perform the following tasks:
 
     >:memo: Next to the file name, you have icons showing that an AIP label was applied and that we have a policy match.
 
-    !IMAGE[Policy match](\Media\info-files3.png "Policy match")
+    
 
 8. [] To open the details of the file, click on its name. You can see there the matched policies and the scan status of the files.
 
-    !IMAGE[Policy match](\Media\info-files4.png "Policy match")
+   
 
     !IMAGE[Scan status](\Media\info-files5.png "Scan status")
 
 9. [] You can also view the related governance actions, like applying the Azure Information classification or moving the file to the quarantine folder, at the file level or in the **Governance log**.
 
-    !IMAGE[File governance](\Media\info-files6.png "File governance")
 
     !IMAGE[Governance log](\Media\info-governance.png "Governance log")
 
-    !IMAGE[Governance action](\Media\info-files7.png "Governance action")
+   
 
 10. [] If you go back to **BOX**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
 
-    !IMAGE[Site](\Media\as3niznc.jpg "Site")
-
-    !IMAGE[Placeholder](\Media\juas1s58.jpg "Placeholder")
-
-    !IMAGE[Quarantine](\Media\drm0yj0c.jpg "Quarantine")
+    
 ===
 # Cloud App Security threat detection lab
 
@@ -3219,6 +3212,29 @@ As the first and the second authentication came from distinct locations, Cloud A
 
    !IMAGE[Impossible travel alert](\Media\td-impossibletravelalert-details.png "Impossible travel alert details")
 
+ >[!NOTE] To reduce the amount of false positives, edit the impossible travel policy. 
+ 		  **You can adjust the policy by clicking on the alert and *Resolve* and click on *Adjust policy.**
+
+	Each anomaly detection policy can be independently scoped so that it applies only to the users and groups you want to include and exclude in the policy. For example, you can set the Activity from infrequent county detection to ignore a specific user who travels frequently.
+
+	**To scope an anomaly detection policy:**
+
+    1.Click Control > Policies, and set the Type filter to Anomaly detection policy.-
+	
+	2. Click on the policy you want to scope.
+
+    3. Under Scope, change the drop-down from the default setting of All users and groups, to Specific users and groups.
+
+	4. Select Include to specify the users and groups for whom this policy will apply. Any user or group not selected here won't be    considered a threat and won't generate an alert.
+
+	5. Select Exclude to specify users for whom this policy won't apply. Any user selected here won't be considered a threat and won't generate an alert, even if they're members of groups selected under Include.
+
+	**Sensitivity Slider:**
+
+    You can set the sensitivity slider to determine the level of anomalous behavior needed before an alert is triggered. For example, if you set it to low, it will suppress Impossible Travel alerts from a user’s common locations, and if you set it to high, it will surface such alerts.
+
+	 !IMAGE[Impossible Travel Sensitivity Bar](/Media/updated impossible travel.JPG)  
+
 ---
 
 ## Activity from infrequent country
@@ -3242,6 +3258,11 @@ After an initial learning period, Cloud App Security will detect that this locat
 2. [] The investigation steps are similar to the anonymous access but by looking at the IP address details and the ISP, you will be able to determine the possible risk. In this specific example, we see it’s coming from a TOR IP, so this authentication is suspicious:
 
    !IMAGE[Infrequent country alert](\Media\td-infrequentcountryalert-details.png "Infrequent country alert details")
+
+	> [!NOTE] Possible resolution options are available on the top bar for single click remediation. 
+
+	!IMAGE[Infrequent country alert](\Media\infrequentcountry1.JPG)
+
 
 ---
 
