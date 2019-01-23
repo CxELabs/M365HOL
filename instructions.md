@@ -2214,12 +2214,26 @@ In this exercise, we created several Exchange Online Mail Flow Rules to protect 
 [:arrow_left: Home](#azure-information-protection)
 
 Congratulations! You have completed the Azure Information Protection Hands on Lab. 
+
 ===
+
 # Microsoft Cloud App Security
 [:arrow_left: Home](#introduction)
 
-This lab will guide you through the different Microsoft Cloud App Security (MCAS) capabilities.
-Although some labs are pretty straight forward ,we expect you to already have some basic experience with Cloud App Security or Office 365 management.
+## Introduction
+
+Microsoft Cloud App Security is Microsoft **CASB** (Cloud Access Security Broker) and is a critical component of the Microsoft Cloud Security stack.
+It's a comprehensive solution that can help your organization as you move to take full advantage of the promise of cloud applications, but keeps you in control through improved visibility into activity. It also helps increase the protection of critical data across cloud applications (Microsoft **and** 3rd parties).
+With tools that help uncover shadow IT, assess risk, enforce policies, investigate activities, and stop threats, your organization can more safely move to the cloud while maintaining control of critical data.
+
+The diagram below describe typical use cases for CASB's.
+
+!IMAGE[MCAS intro](\Media\mcasintro-1.png "MCAS intro")
+
+This lab will guide you through some of Microsoft Cloud App Security (MCAS) capabilities.
+Although  labs are pretty straight forward, we expect you to already have basic experience with Microsoft Cloud Security stack and Office 365 management.
+
+===
 
 ## Lab environment
 
@@ -2238,11 +2252,11 @@ Although some labs are pretty straight forward ,we expect you to already have so
 * Security & Compliance Center: ```https://protection.office.com```
 * Windows Defender ATP: ```https://securitycenter.windows.com```
 
----
+===
 
 ## Labs
 
-> [!ALERT] Before going to the different labs section, please complete the **[environment preparation](#mcas-environment-preparation)**. 
+> [!ALERT] Before going to the different labs section, please be sure to complete the **[environment preparation](#mcas-environment-preparation)**.
 
 The different Cloud App Security capabilities covered in the labs are:
 
