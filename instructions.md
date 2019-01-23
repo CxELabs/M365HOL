@@ -3099,9 +3099,11 @@ Cloud App Security provides by default many has policies templates to start crea
 Conditional Access App Control utilizes a reverse proxy architecture and is uniquely integrated with Azure AD conditional access.
 Azure AD conditional access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define who (for example a user, or group of users) and what (which cloud apps) and where (which locations and networks) a conditional access policy is applied to. After you’ve determined the conditions, you can route users to the Microsoft Cloud App Security where you can protect data with Conditional Access App Control by applying access and session controls.
 
-Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are utilized within the Cloud App Security portal to further refine filters and set actions to be taken on a user.
+Conditional Access App Control enables user app access and sessions to be **monitored and controlled in real time** based on access and session policies.
 
-> [!NOTE] **Access and Session policies give you the capability to the following:**
+!IMAGE[AAD portal](\Media\caac-overview.png)
+
+> [!NOTE] **App Control Access and Session policies give you the capability to the following:**
 * **Block on download**: You can block the download of sensitive documents. For example, on unmanaged devices.
 * **Protect on download**: Instead of blocking the download of sensitive documents, you can require documents to be protected via encryption on download. This ensures that the document is protected, and user access is authenticated, if the data is downloaded to an untrusted device.
 * **Monitor low-trust user sessions**: Risky users are monitored when they sign into apps and their actions are logged from within the session. You can investigate and analyze user behavior to understand where, and under what conditions, session policies should be applied in the future.
@@ -3109,9 +3111,7 @@ Conditional Access App Control enables user app access and sessions to be monito
 * **Create read-only mode**: By monitoring and blocking custom in-app activities you can create a read-only mode to specific apps for specific users.
 * **Restrict user sessions from non-corporate networks**: Users accessing a protected app from a location that is not part of your corporate network, are allowed restricted access and the download of sensitive materials is blocked or protected.
 
-
-
----
+===
 
 ## Configuration
 
@@ -3152,13 +3152,15 @@ Conditional Access App Control enables user app access and sessions to be monito
 
    !IMAGE[New policy](\Media\cond-policy-5.png)
 
-4. [] Sign out of the Azure Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
+4. [] Sign out of the Azure Portal and close you browser.
 
-   >:memo: This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
+5.  Open your browser and go to the Exchange Web App ```https://outlook.office.com```.
 
-5. [] Go back to Cloud App Security  portal ```https://portal.cloudappsecurity.com``` and then click on the **gear icon** and  click on **Conditional Access App Control.**
+6. Connect using :
 
-6. [] Sign out of the Cloud App Security Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
+   >```@lab.CloudCredential(134).Username```
+   >
+   >```@lab.CloudCredential(134).Password```
 
    >:memo: This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
 
@@ -3189,6 +3191,8 @@ Conditional Access App Control enables user app access and sessions to be monito
 
     **Click on "Create Policy" and pick a Session policy.**
 
+    **Name**: *Proxy - Block sensitive files download*
+
    !IMAGE[Session policy](\Media\appc-office-7.png)
 
    **Under Session Control Type choose Control filedownload (with DLP)**
@@ -3211,7 +3215,7 @@ Conditional Access App Control enables user app access and sessions to be monito
 
    **Actions:** *Block*
 
-   **Click:** *Customize block message: The containes SSN information and cannot be downloaded on non-coporate devices.*
+   **Click:** *Customize block message: This file containes SSN information and cannot be downloaded on non-coporate devices.*
 
    **Click:** *Create an alert for each matching event with the policy's severity*
 
@@ -3221,12 +3225,17 @@ Conditional Access App Control enables user app access and sessions to be monito
 
 ====
 
-# Testing the Session Policy 
+# Testing the Session Policy
+[:arrow_left: Home](#labs)
 
-Let's now test our configuration.
+Now is time to test our configuration. We will here simulate the userexperience while accessing company apps protected by Cloud App Security from an unmanaged device
 
 1. [] Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
-
+  
+   >**Credentials**:
+   >```@lab.CloudCredential(134).Username```
+   >
+   >```@lab.CloudCredential(134).Password```
 
   **You should receive the following message, as you are redirected through Cloud App Security before accessing the application.*
   
@@ -3234,7 +3243,7 @@ Let's now test our configuration.
 
    !IMAGE[Warning](\Media\appc-office-12.png)
 
-2. [] You've been directed to Exchange Online 
+2. [] You've been directed to Exchange Online and your session is now passing **through** Cloud App Security.
 
     >:memo: **By taking a look at the the URL, you can verify that your session is actually being redirected to Cloud App Security.**
 
@@ -3242,17 +3251,67 @@ Let's now test our configuration.
    !IMAGE[Session](\Media\appc-office-13.png)
 
 
-3. [] To test our policy, create a new mail containing the demo documents stored on *Client01* desktop as attachements and send it to your admin account. 
+3. [] To test our policy, create a new mail and attach the Word document named **Personal employees information.docx** and the Excel spreadsheet named **Workplace Innovation.xlsx** stored on **Client01** desktop. Send the mail to your user, ```@lab.CloudCredential(134).Username```
 
    !IMAGE[Test](\Media\appc-office-14.png)
 
-4. [] Try to download the txt file containing social security numbers.
+4. [] Wait until you receive your email in the webmail. Once the message is received, click on the attached document **Personal employees information.docx**. This will open the file preview.
+As you can see, the user can access the document using the Office Online app.
 
-   !IMAGE[Test](\Media\appc-office-15.png)
+!IMAGE[Warning](\Media\appc-office-15.png)
 
-****to finish******
+5. [] Try now to download the **Personal employees information.docx** document. As this file contains social security numbers, the download will be blocked and will trigger an alert in Cloud App Security.
+
+   !IMAGE[Test](\Media\appc-office-16.png)
+
+   !IMAGE[Test](\Media\appc-office-17.png)
+
+6. [] Now let's try to download the **Workplace Innovation.xlsx** spreadsheet. As this file **do not** contain social security numbers, the download will be allowed.
+
+   !IMAGE[Test](\Media\appc-office-18.png)
+
+   !IMAGE[Test](\Media\appc-office-19.png)
+
+   !IMAGE[Test](\Media\appc-office-20.png)
+
+   !IMAGE[Test](\Media\appc-office-21.png)
+
+>:memo: **We just demonstrated App Control capabilities to go further than just allow/block scenarios, based on session risks.**
 
 ====
+
+# Reviewing the alerts
+[:arrow_left: Home](#labs)
+
+Now that we validated our configuration, let's go back to the admin view.
+
+1. [] Go back to the Cloud App Security console ```https://portal.cloudappsecurity.com```
+
+2. [] Go to the **Alerts** page.
+
+   !IMAGE[Menu](\Media\appc-admin-1.png)
+
+3. [] Click on the alert generated by our policy.
+
+   !IMAGE[Menu](\Media\appc-admin-2.png)
+
+4. [] On the alert page, you can see that the **admin** user tried to download a file named **Personal employees information.docx** but **Session control** blocked the download. You also see the name of the policy that triggered the alert.
+
+   !IMAGE[Menu](\Media\appc-admin-3.png)
+
+5. [] To go further in the investigation, click on  **View all user activity**. This will redirect you to the Activity log where you can see all the user activities.
+
+   !IMAGE[Menu](\Media\appc-admin-4.png)
+
+6. [] By looking at the user activities, you can follow her/his trace:
+
+   > Below, you can see that the user was redirected to Cloud App Security
+   !IMAGE[Menu](\Media\appc-admin-5.png)
+
+   > Here, you can see that during her/his session, the user successfuly downloaded a file named **Worplace Innovation.xlsx**, as this file didn't match any blocking policy.
+   !IMAGE[Menu](\Media\appc-admin-6.png)
+
+===
 
 # Management with PowerShell
 
