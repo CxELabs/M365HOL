@@ -2409,8 +2409,7 @@ Once the logs have been analyzed, Cloud App Security provides the visibility on 
 !IMAGE[Discovery intro](\Media\dis-intro2.png "Discovery intro")
 
 
->:memo: In this lab, we will simulate the upload of network logs from a SQUID proxy to analyze the apps used withing your company.
->We will not test the Windows Defender ATP integration at it can take up to **2h** before the logs are parsed and the results are visible in the console.
+> [!NOTE] In this lab, we will simulate the upload of network logs from a SQUID proxy to analyze the apps used withing your company. We will not test the Windows Defender ATP integration at it can take up to **2h** before the logs are parsed and the results are visible in the console.
 
 ===
 
@@ -2487,7 +2486,7 @@ These reports can be created by connecting in the following ways:
 In this lab you will perform the configuration of a **Log collector**.
 
 
->:memo: After completing this portion of the lab and validating that your logs have been successfully uploaded and processed by MCAS, you will not immediately see a loaded Discovery Dashboard. Due to Cloud Discovery logs being  parsed **twice a day**.
+> [!NOTE] After completing this portion of the lab and validating that your logs have been successfully uploaded and processed by MCAS, you will not immediately see a loaded Discovery Dashboard. Due to Cloud Discovery logs being  parsed **twice a day**.
 
 
  **The Docker engine has been pre-installed on LinuxVM in your lab environment, **Client01*** in this case.**
@@ -2530,7 +2529,7 @@ Those commands download a script installing the Docker engine on your host compu
     >
     !IMAGE[Squid source](\Media\dis-squidsource.png)
 
-    >:memo: **NOTE:** In this lab we use FTP as the receiver type but usually companies will use Syslog.
+    >[!NOTE] In this lab we use FTP as the receiver type but usually companies will use Syslog.
 
 6. [] Close the *Verify your log format* window, then click **Add** in the **Add** data source dialog.
 
@@ -2664,7 +2663,7 @@ Microsoft Cloud App Security helps you prevent this kind of disaster before it h
 * [Quarantine sensitive PDF for review:](#quarantine-sensitive-pdf-for-review) :clock10: 10 min
 * [Test our policies:](#test-our-policies) :clock10: 10 min
 
----
+===
 
 ## Apply AIP classification to SSN documents
 
