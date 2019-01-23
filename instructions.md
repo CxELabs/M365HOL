@@ -178,87 +178,75 @@ For several of the exercises in this lab series, you will require an active subs
 In this task, we will create new Azure AD users and assign licenses via PowerShell.  In a procduction evironment this would be done using Azure AD Connect or a similar tool to maintain a single source of authority, but for lab purposes we are doing it via script to reduce setup time.
 
 1. [] Log into @lab.VirtualMachine(Scanner01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++
-2. [] Open a new Administrative PowerShell window and click below to type the code. 
-   
-    ```
-    $cred = Get-Credential
-    ```
-
+2. [] On the desktop, right-click on **AADConfig.ps1** and click Run with PowerShell.
+1. [] When prompted for the Tenant name, enter ```@lab.CloudCredentials(134).TenantName```
 1. [] When prompted, provide the credentials below:
 
 	```@lab.CloudCredential(134).Username```
 
 	```@lab.CloudCredential(134).Password``` 
    
-1. [] In the PowerShell window, click on the code below to create users.
+	> [!KNOWLEDGE] We are running the PowerShell code below to create 
+    > 
+    > # Store Tenant FQDN and Short name
+    > $tenantfqdn = "@lab.CloudCredential(134).TenantName"
+    > $tenant = $tenantfqdn.Split('.')[0]
+	> 
+    > # Build Licensing SKUs
+    > $office = $tenant+":ENTERPRISEPREMIUM"
+    > $ems = $tenant+":EMSPREMIUM"
+	> 
+    > # Connect to MSOLService for licensing Operations
+    > Connect-MSOLService -Credential $cred
+	> 
+    > # Remove existing licenses to ensure enough licenses exist for our users
+    > $LicensedUsers = Get-MsolUser -All  | where {$_.isLicensed -eq $true}
+    > $LicensedUsers | foreach {Set-MsolUserLicense -UserPrincipalName $_.UserPrincipalName -RemoveLicenses $office, $ems}
+	> 
+    > # Connect to Azure AD using stored credentials to create users
+    > Connect-AzureAD -Credential $cred
+	> 
+    > # Import Users from local csv file
+    > $users = Import-csv C:\users.csv
+	> 
+    > foreach ($user in $users){
+    > 	
+    > # Store UPN created from csv and tenant
+    > $upn = $user.username+"@"+$tenantfqdn
+	> 
+    > # Create password profile preventing automatic password change and storing password from csv
+    > $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile 
+    > $PasswordProfile.ForceChangePasswordNextLogin = $false 
+    > $PasswordProfile.Password = $user.password
+	> 
+    > # Create new Azure AD user
+    > New-AzureADUser -AccountEnabled $True -DisplayName $user.displayname -PasswordProfile $PasswordProfile -MailNickName $user.username -UserPrincipalName $upn
+    > }
+    > 
+    > # MCAS user and group creation
+	> $upn = "mcasAdminUS@"+$tenantfqdn
+	> New-AzureADUser -AccountEnabled $True -DisplayName "MCAS US admin" -PasswordProfile $PasswordProfile -MailNickName "mcasadminUS" -UserPrincipalName $upn
+    > New-AzureADGroup -DisplayName "US employees" -MailNickName "USemployees" -SecurityEnabled $true -MailEnabled $false
+    > $groupId = Get-AzureADGroup -SearchString "usemployees"
+    > $userId = Get-AzureADUser -SearchString "mcasadminus"
+    > Add-AzureADGroupMember -RefObjectId $userId.ObjectId -ObjectId $groupId.ObjectId
+	> 
+	> Start-Sleep -s 10
+	> foreach ($user in $users){
+	> 
+    > # Store UPN created from csv and tenant
+    > $upn = $user.username+"@"+$tenantfqdn
+	> 
+    > # Assign Office and EMS licenses to users
+    > Set-MsolUser -UserPrincipalName $upn -UsageLocation US
+    > Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
+    > }
+	> 
+    > # Assign Office and EMS licenses to Admin user
+    > $upn = "admin@"+$tenantfqdn
+    > Set-MsolUser -UserPrincipalName $upn -UsageLocation US
+    > Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
 
-    ```
-    # Store Tenant FQDN and Short name
-    $tenantfqdn = "@lab.CloudCredential(134).TenantName"
-    $tenant = $tenantfqdn.Split('.')[0]
-
-    # Build Licensing SKUs
-    $office = $tenant+":ENTERPRISEPREMIUM"
-    $ems = $tenant+":EMSPREMIUM"
-
-    # Connect to MSOLService for licensing Operations
-    Connect-MSOLService -Credential $cred
-
-    # Remove existing licenses to ensure enough licenses exist for our users
-    $LicensedUsers = Get-MsolUser -All  | where {$_.isLicensed -eq $true}
-    $LicensedUsers | foreach {Set-MsolUserLicense -UserPrincipalName $_.UserPrincipalName -RemoveLicenses $office, $ems}
-
-    # Connect to Azure AD using stored credentials to create users
-    Connect-AzureAD -Credential $cred
-
-    # Import Users from local csv file
-    $users = Import-csv C:\users.csv
-
-    foreach ($user in $users){
-    	
-    # Store UPN created from csv and tenant
-    $upn = $user.username+"@"+$tenantfqdn
-
-    # Create password profile preventing automatic password change and storing password from csv
-    $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile 
-    $PasswordProfile.ForceChangePasswordNextLogin = $false 
-    $PasswordProfile.Password = $user.password
-
-    # Create new Azure AD user
-    New-AzureADUser -AccountEnabled $True -DisplayName $user.displayname -PasswordProfile $PasswordProfile -MailNickName $user.username -UserPrincipalName $upn
-    }
-    
-    # MCAS user and group creation
-	$upn = "mcasAdminUS@"+$tenantfqdn
-	New-AzureADUser -AccountEnabled $True -DisplayName "MCAS US admin" -PasswordProfile $PasswordProfile -MailNickName "mcasadminUS" -UserPrincipalName $upn
-    New-AzureADGroup -DisplayName "US employees" -MailNickName "USemployees" -SecurityEnabled $true -MailEnabled $false
-    $groupId = Get-AzureADGroup -SearchString "usemployees"
-    $userId = Get-AzureADUser -SearchString "mcasadminus"
-    Add-AzureADGroupMember -RefObjectId $userId.ObjectId -ObjectId $groupId.ObjectId
-    
-
-    ```
-
-1. [] In the PowerShell window, click the code below to assign Office and EMS licenses.
-	
-	```
-	Start-Sleep -s 10
-	foreach ($user in $users){
-
-    # Store UPN created from csv and tenant
-    $upn = $user.username+"@"+$tenantfqdn
-
-    # Assign Office and EMS licenses to users
-    Set-MsolUser -UserPrincipalName $upn -UsageLocation US
-    Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
-    }
-
-    # Assign Office and EMS licenses to Admin user
-    $upn = "admin@"+$tenantfqdn
-    Set-MsolUser -UserPrincipalName $upn -UsageLocation US
-    Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
-
-	```
 
 ===
 # Azure Security Center Setup
