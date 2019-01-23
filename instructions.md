@@ -328,7 +328,7 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 1. [] In the Windows protected your PC dialog, click the **More info** link and click **Run anyway**.
 1. [] In the User Account Control window, click on **More choices** and select use a different account.
 
-	> [!NOTE] If you do not see the UAC window, 
+	> [!NOTE] If you do not see the UAC window, minimize all windows and it will be in the background.
 1. [] Enter the credentials below and click **Yes**:
 
 	```LabUser```
