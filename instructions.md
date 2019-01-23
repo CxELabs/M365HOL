@@ -3163,13 +3163,15 @@ Conditional Access App Control enables user app access and sessions to be monito
 
    !IMAGE[New policy](\Media\cond-policy-5.png)
 
-4. [] Sign out of the Azure Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
+4. [] Sign out of the Azure Portal and close you browser.
 
-   >:memo: This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
+5.  Open your browser and go to the Exchange Web App ```https://outlook.office.com```.
 
-5. [] Go back to Cloud App Security  portal ```https://portal.cloudappsecurity.com``` and then click on the **gear icon** and  click on **Conditional Access App Control.**
+6. Connect using :
 
-6. [] Sign out of the Cloud App Security Portal, close you browser and open the Exchange Web App ```https://outlook.office.com```.
+   >```@lab.CloudCredential(134).Username```
+   >
+   >```@lab.CloudCredential(134).Password```
 
    >:memo: This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
 
