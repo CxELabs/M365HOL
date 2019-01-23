@@ -127,6 +127,8 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 
 	!IMAGE[6crecugz.jpg](\Media\6crecugz.jpg)
 
+---
+
 ===
 # Redeem Azure Pass
 [:arrow_left: Home](#lab-environment-configuration)
@@ -174,6 +176,8 @@ For several of the exercises in this lab series, you will require an active subs
 
 1. [] While this is processing, you may continue to the next task.
 
+---
+
 ===
 # Azure AD User Configuration
 [:arrow_left: Home](#lab-environment-configuration)
@@ -187,7 +191,7 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
 
 	> [!NOTE] If prompted to change the execution policy, type **y** and **Enter**.
 
-1. [] When prompted for the **Tenant name**, click in the text box and enter ```@lab.CloudCredential(134).TenantName```.
+1. [] When prompted for the **Tenant name**, **click in the text box** and enter ```@lab.CloudCredential(134).TenantName```.
 1. [] When prompted, provide the credentials below:
 
 	```@lab.CloudCredential(134).Username```
@@ -256,6 +260,9 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
     > Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
 
 	> [!NOTE] The PowerShell window will automatically close once users have been created and licenses have been assigned.
+
+---
+
 ===
 # Azure Security Center Setup
 [:arrow_left: Home](#lab-environment-configuration)
@@ -286,24 +293,24 @@ Use the link below to deploy the following:
 	>
 	>```@lab.CloudCredential(134).Password```
 
-1. [] On the Custom deployment page, next to **Resource group** click **Create new**.
+1. [] On the Custom deployment page, below the **Resource group** drop-down, click **Create new**.
 
 	!IMAGE[NewRG.png](\Media\NewRG.png)
 1. [] When prompted for a Name, provide a name such as ```ASC-Labs``` and press **OK**.
 
 	^IMAGE[Open Screenshot](\Media\RGName.png)
-1. [] Select a location, then under **Settings**, type the password ```Securitycenter4ever!```.
+1. [] **Select a location**, then under **Settings**, next to **Pwd Or Ssh** type the password ```Securitycenter4ever!```.
 1. [] Finally, check the Box to agree to the terms and click **Purchase**.
 
 	^IMAGE[Open Screenshot](\Media\Password.png)
 
-1. [] The deployment takes about 13 minutes. Continue to the next task and we will return to the ASC deployment later.
+1. [] The deployment takes about **13 minutes**. **Continue to the next task** and we will return to the ASC deployment later.
 
 ===
 # Windows Defender ATP Onboarding
 [:arrow_left: Home](#lab-environment-configuration)
 
-In this task, we will perform initial setup of WD ATP and onboard 2 machines.
+In this task, we will perform initial setup of WD ATP and onboard 2 machines.  
 
 1. [] Switch to @lab.VirtualMachine(AdminPC).SelectLink and log in with the password +++@lab.VirtualMachine(AdminPC).Password+++.
 
@@ -318,10 +325,12 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 1. [] On Step 2, choose a data storage location and click **Next**.
 1. [] On Step 3, click **Next** several times until the Create your cloud instance dialog pops up, then click **Continue**.
 1. [] On Step 4, click the **Download package** button and save the package to your desktop.
-1. [] Extract the zip file to your desktop.
+1. [] **Extract the zip file** to your desktop.
 1. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
 1. [] In the Windows protected your PC dialog, click the **More info** link and click **Run anyway**.
-1. [] In the UAC window, click on **More choices** and select use a different account.
+1. [] In the User Account Control window, click on **More choices** and select use a different account.
+
+	> [!NOTE] If you do not see the UAC window, 
 1. [] Enter the credentials below and click **Yes**:
 
 	```LabUser```
@@ -329,10 +338,11 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 	```Pa$$w0rd```
 
 1. [] Press **(Y)** to confirm onboarding.
-2. [] Return to the browser and click **Start using Windows Defender ATP** (ignore any warnings about onboarding).
+2. [] Return to the browser, scroll to the bottom of the page, and click **Start using Windows Defender ATP**.
+1. [] Click **Proceed anyway** if you receive a Setup incomplete popup.
 3. [] In the Windows Defender Security Center, click on **Settings > Advanced Features** and toggle the switches on for **Azure ATP integration**, **Office 365 Threat Intelligence Connection**, **Microsoft Cloud App Security**, and **Azure Information Protection** and press the **Save preferences** button at the bottom of the page.
 	
-	!IMAGE[g47p8c30.jpg](\Media\g47p8c30.jpg)
+	!IMAGE[g47p8c30.jpg](\Media\wdatpadv.png)
 
 1. [] Switch to @lab.VirtualMachine(VictimPC).SelectLink and log in with the password +++@lab.VirtualMachine(VictimPC).Password+++.
 
