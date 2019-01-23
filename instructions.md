@@ -2258,21 +2258,22 @@ Although  labs are pretty straight forward, we expect you to already have basic 
 
 The different Cloud App Security capabilities covered in the labs are:
 
-* [Module 01 - Management](#manage-admin-access)
-* [Module 02 - Cloud Discovery continuous report](#cloud-app-security-discovery-lab)
-* [Module 03 - Information protection](#information-protection)
-* [Module 04 - Threat detection](#cloud-app-security-threat-detection-lab)
-* [Module 05 - Conditional Access App Control with Office 365](#conditional-access-app-control-with-office-365)
+* [Management](#manage-admin-access)
+* [Cloud apps Discovery](#cloud-app-security-discovery-lab)
+* [Information protection](#information-protection)
+* [Conditional Access App Control with Office 365](#conditional-access-app-control-with-office-365)
+* [Threat detection](#cloud-app-security-threat-detection-lab)
 
 ### Optional/follow on labs
 
-* [Module 06a - Management with PowerShell](#management-with-powershell)
-* [Module 06b - Cloud Discovery snapshot report](#cloud-discovery-snapshot-report)
-* [Module 06c - Log collector troubleshooting](#log-collector-troubleshooting)
-* [Module 06d - Conditional Access App Control with 3rd party apps](#conditional-access-app-control-with-3rd-party-apps)
+* [Management with PowerShell](#management-with-powershell)
+* [Log collector troubleshooting](#log-collector-troubleshooting)
+* [Conditional Access App Control with 3rd party apps](#conditional-access-app-control-with-3rd-party-apps)
 
 >:question: If you have questions or want to go further in your Cloud App Security journey, join our **[Tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity)** !
+
 ===
+
 # Manage admin access
 [:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
