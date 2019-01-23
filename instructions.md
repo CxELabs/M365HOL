@@ -538,7 +538,35 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
 ---
 
-## Connect Office 365  and BOX to Cloud App Security 
+## Create a Developer BOX Account 
+
+
+1. [] Go to ```box.com``` and click on **Sign Up** in the top right hand corner. 
+
+ !IMAGE[boxdev](\Media\boxdev1.jpg)
+
+2. [] Click on **Plaform Plans** and choose **Developer.**
+
+3. [] Using your Office 365 crendetials provided in *your tenant* as the email address and password. 
+
+			*Example Tenant Credentials* 
+
+ !IMAGE[boxdev](\Media\tenantcredentials.jpg)
+
+ !IMAGE[boxdev](\Media\boxdev2.jpg)
+
+ 4. [] After you signed up, go to ```https://outlook.office.com``` and you should recieve an email from BOX. Open the email and verify your email address. 
+
+ !IMAGE[boxdev](\Media\boxdev4.jpg)
+
+ 5. [] Change your password and after the change you should recieve an email verifying that your password has been sucessfully changed. 
+
+ !IMAGE[boxdev](\Media\boxdev5.jpg)
+
+
+---
+
+## Connect Office 365 and BOX to Cloud App Security 
 
 [:arrow_up: Top](#mcas-environment-preparation)
 
