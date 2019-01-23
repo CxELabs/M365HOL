@@ -94,17 +94,22 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 1. [] Log into @lab.VirtualMachine(Client01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++
 2. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
 
-3. [] In the InPrivate window, paste the provided Windows Defender Advanced Threat Protection Trial Sign up link.
+3. [] In the InPrivate window, paste the **provided Windows E5 Trial Sign up link**.
 
-1. [] Click **Sign in** in the upper right corner of the page and use the credentials below.
+	> [!Knowledge] If pasting into Box from your client system does not work natively, use the Type Text functionality of the lab environment 
+	> !IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
+	
+1. [] Click **Sign in** and use the credentials below.
    
     ```@lab.CloudCredential(134).Username```
 
 	```@lab.CloudCredential(134).Password```  
+
+	^IMAGE[Open Screenshot](\Media\signin.png)
 	
 2. [] On the Check out page, click **Try now**.
 
-	!IMAGE[wlgzkp40.jpg](\Media\wlgzkp40.jpg)
+	^IMAGE[Open Screenshot](\Media\wlgzkp40.jpg)
 1. [] On the Order Receipt page, click **Continue**.
 
 1. [] Next, click on **Active Users >** or navigate to ```https://admin.microsoft.com/AdminPortal/Home#/users```.
@@ -130,44 +135,40 @@ For several of the exercises in this lab series, you will require an active subs
 
 ## Redeeming a Microsoft Azure Pass Promo Code:
 
-1. [] Log into @lab.VirtualMachine(Client01).SelectLink using the password +++Pa$$w0rd+++
-2. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
+1. [] On @lab.VirtualMachine(Client01).SelectLink, open a **new InPrivate tab**.
 
-3. [] In the InPrivate window, navigate to ```https://www.microsoftazurepass.com```
+3. [] Navigate to ```https://www.microsoftazurepass.com```.
 
 4. [] Click the **Start** button to get started.
 
 	!IMAGE[wdir7lb3.jpg](\Media\wdir7lb3.jpg)
-1. [] Enter the credentials below and select **Sign In**.
 
-	```@lab.CloudCredential(134).Username```
+	>[!NOTE] If necessary, log in using the credentials below:
+	>
+	>```@lab.CloudCredential(134).Username```
+	>
+	>```@lab.CloudCredential(134).Password```
 
-	```@lab.CloudCredential(134).Password``` 
+1. [] Click **Confirm Microsoft Account** if the Microsoft email shows **@lab.CloudCredential(134).Username**. If any other email is shown, sign out and sign in using the credentials above.
 
-	!IMAGE[gtg8pvp1.jpg](\Media\gtg8pvp1.jpg)
-1. [] Click **Confirm** if the correct email address is listed.
+	!IMAGE[teyx280d.jpg](\Media\confirm.png)
 
-	!IMAGE[teyx280d.jpg](\Media\teyx280d.jpg)
-
-1. [] Paste the provided promo code in the Promo code Box and click **Claim Promo Code**.
+1. [] Click in the **Promo code text box**, paste the **provided promo code**, and click **Claim Promo Code**.
 
 	> [!Knowledge] If pasting into Box from your client system does not work natively, use the Type Text functionality of the lab environment 
 	> !IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
-	> !IMAGE[e1l35ko2.jpg](\Media\e1l35ko2.jpg)
-	
-	> [!NOTE] It may take up to 5 minutes to process the redemption.
 
-8. [] Scroll to the bottom of the page and click **Next**.
+	!IMAGE[e1l35ko2.jpg](\Media\promo.png)
+
+8. [] On the Azure Pass - Sponsorship page, leave the default info and scroll to the bottom of the page and click **Next**.
 
   	!IMAGE[ihrjazqi.jpg](\Media\ihrjazqi.jpg)
 
-  	> [!NOTE] You can keep the pre-populated information.
-
 9. [] Check the Box to agree to the terms and click **Sign up**.
 
-  	!IMAGE[k2a97g8e.jpg](\Media\k2a97g8e.jpg)
+  	!IMAGE[k2a97g8e.jpg](\Media\agreement.png)
 
-  	> [!NOTE] It may take a few minutes to process the request.
+	> [!NOTE] It may take up to 5 minutes to process the redemption.
 
 1. [] While this is processing, you may continue to the next task.
 
@@ -182,7 +183,7 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
 
 	!IMAGE[AADConfig](\Media\AADConfig.png)
 
-1. [] When prompted for the **Tenant name**, enter ```@lab.CloudCredential(134).TenantName```.
+1. [] When prompted for the **Tenant name**, click in the text box and enter ```@lab.CloudCredential(134).TenantName```.
 1. [] When prompted, provide the credentials below:
 
 	```@lab.CloudCredential(134).Username```
@@ -191,7 +192,7 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
    
 	> [!KNOWLEDGE] We are running the PowerShell code below to create the accounts and groups in AAD and assign licenses for EMS E5 and Office E5
     > 
-    > #### Store Tenant FQDN and Short name
+    > #### Azure AD User and Group Configuration
     > $tenantfqdn = "@lab.CloudCredential(134).TenantName"
     > $tenant = $tenantfqdn.Split('.')[0]
 	> 
@@ -250,7 +251,7 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
     > Set-MsolUser -UserPrincipalName $upn -UsageLocation US
     > Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
 
-
+	> [!NOTE] The PowerShell window will automatically close once users have been created and licenses have been assigned.
 ===
 # Azure Security Center Setup
 [:arrow_left: Home](#lab-environment-configuration)
