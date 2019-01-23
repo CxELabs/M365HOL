@@ -2220,14 +2220,29 @@ In this exercise, we created several Exchange Online Mail Flow Rules to protect 
 [:arrow_left: Home](#azure-information-protection)
 
 Congratulations! You have completed the Azure Information Protection Hands on Lab. 
+
 ===
+
 # Microsoft Cloud App Security
 [:arrow_left: Home](#introduction)
 
-This lab will guide you through the different Microsoft Cloud App Security (MCAS) capabilities.
-Although some labs are pretty straight forward ,we expect you to already have some basic experience with Cloud App Security or Office 365 management.
+## Introduction
+
+Microsoft Cloud App Security is Microsoft **CASB** (Cloud Access Security Broker) and is a critical component of the Microsoft Cloud Security stack.
+It's a comprehensive solution that can help your organization as you move to take full advantage of the promise of cloud applications, but keeps you in control through improved visibility into activity. It also helps increase the protection of critical data across cloud applications (Microsoft **and** 3rd parties).
+With tools that help uncover shadow IT, assess risk, enforce policies, investigate activities, and stop threats, your organization can more safely move to the cloud while maintaining control of critical data.
+
+The diagram below describe typical use cases for CASB's.
+
+!IMAGE[MCAS intro](\Media\mcasintro-1.png "MCAS intro")
+
+This lab will guide you through some of Microsoft Cloud App Security (MCAS) capabilities.
+Although  labs are pretty straight forward, we expect you to already have basic experience with Microsoft Cloud Security stack and Office 365 management.
+
+===
 
 ## Lab environment
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 !IMAGE[Lab environment](\Media\mcaslabenvironment.png "Lab environment")
 
@@ -2244,32 +2259,33 @@ Although some labs are pretty straight forward ,we expect you to already have so
 * Security & Compliance Center: ```https://protection.office.com```
 * Windows Defender ATP: ```https://securitycenter.windows.com```
 
----
+===
 
 ## Labs
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
-> [!ALERT] Before going to the different labs section, please complete the **[environment preparation](#mcas-environment-preparation)**. 
+> [!ALERT] Before going to the different labs section, please be sure to complete the **[environment preparation](#mcas-environment-preparation)**.
 
 The different Cloud App Security capabilities covered in the labs are:
 
-* [Module 01 - Management](#manage-admin-access)
-* [Module 02 - Cloud Discovery continuous report](#cloud-app-security-discovery-lab)
-* [Module 03 - Information protection](#information-protection)
-* [Module 04 - Threat detection](#cloud-app-security-threat-detection-lab)
-* [Module 05 - Conditional Access App Control with Office 365](#conditional-access-app-control-with-office-365)
+* [Management](#manage-admin-access)
+* [Cloud apps Discovery](#cloud-app-security-discovery-lab)
+* [Information protection](#information-protection)
+* [Conditional Access App Control with Office 365](#conditional-access-app-control-with-office-365)
+* [Threat detection](#cloud-app-security-threat-detection-lab)
 
 ### Optional/follow on labs
 
-* [Module 06a - Management with PowerShell](#management-with-powershell)
-* [Module 06b - Cloud Discovery snapshot report](#cloud-discovery-snapshot-report)
-* [Module 06c - Log collector troubleshooting](#log-collector-troubleshooting)
-* [Module 06d - Conditional Access App Control with 3rd party apps](#conditional-access-app-control-with-3rd-party-apps)
+* [Management with PowerShell](#management-with-powershell)
+* [Log collector troubleshooting](#log-collector-troubleshooting)
+* [Conditional Access App Control with 3rd party apps](#conditional-access-app-control-with-3rd-party-apps)
 
 >:question: If you have questions or want to go further in your Cloud App Security journey, join our **[Tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity)** !
-===
-# Manage admin access
 
-[:arrow_left: Home](#labs)
+===
+
+# Manage admin access
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 [Manage admin access:](#manage-admin-access) :clock10: 5 min
 
@@ -2385,18 +2401,35 @@ As the MCAS admin for your company, work with the person next to you to configur
 3. [] Switch to the external Cloud App Security tenant where you have been added as an external admin and look at the actions you can perform.
 
     !IMAGE[Switch](\Media\mgmt-switch2.png "Switch")
+
 ===
+
 # Cloud App Security Discovery lab
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
-[:arrow_left: Home](#labs)
+On average, more than 1,100 cloud applications are used by enterprises today, of which 61% are **not** sanctioned by IT. This results in duplicate capabilities, apps not meeting compliance standards or posing a security risk to the organization without any IT oversight.
+**Discovery** identifies current cloud apps, provides risk assessments and ongoing analytics and lifecycle management capabilities to control the use.
 
-TO EDIT Discovery text/intro
+To provide this visibility on Shadow IT and cloud apps usage, Cloud App Security ingest and analyze network logs from proxy, firewall but also from **Windows 10** clients within or **ouside** the corporate network, using the native integration with **Windows Defender ATP**.
+
+!IMAGE[Discovery intro](\Media\dis-intro1.png "Discovery intro")
+
+
+Once the logs have been analyzed, Cloud App Security provides the visibility on **Shadow IT** and alerts you when it detects risky apps or anomalous usage.
+
+!IMAGE[Discovery intro](\Media\dis-intro2.png "Discovery intro")
+
+
+> [!NOTE] In this lab, we will simulate the upload of network logs from a SQUID proxy to analyze the apps used withing your company. We will not test the Windows Defender ATP integration at it can take up to **2h** before the logs are parsed and the results are visible in the console.
+
+===
 
 # Cloud Discovery Snapshot Report
+[:arrow_left: Discovery lab](#cloud-app-security-discovery-lab) :clock10: 15 min
 
-[:arrow_left: Home](#labs) :clock10: 10 min
-
-Snapshot Reports are the manual method of uploading files into Cloud App Security. You can upload batches of 20 logs of 1 GB max at a time and they will parse into their own separate report. Any discovery policies you create **will not** apply to these types of reports. Creating Snapshot reports is a great and easy way to validate your logs format of have a quick look at the Cloud App Security Discovery capability.
+In this lab, we will create a Discovery **Snapshot report**.
+Snapshot Reports is the manual method of uploading files into Cloud App Security. This process is a great and easy way to validate your logs format of have a quick look at the Cloud App Security Discovery capability.
+You can upload batches of 20 logs of 1 GB max at a time and they will parse into their own separate report. Any discovery policies you create **will not** apply to these types of reports.
 
 To create snapshot reports:
 
@@ -2447,14 +2480,24 @@ To create snapshot reports:
 
 ===
 
-
 ## Configure and Test Continuous Reports
+[:arrow_left: Discovery lab](#cloud-app-security-discovery-lab) :clock10: 20 min
 
-Continuous reports in Cloud Discovery analyze all logs that are forwarded from your network using Cloud App Security. They provide improved visibility over all data, and automatically identify anomalous use using either the Machine Learning anomaly detection engine or by using custom policies that you define.
-To use this capability, you will perform in this lab the configuration and troubleshooting of the Cloud Discovery feature.
+In this lab, we will implement Continuous reports.
+Continuous reports analyze all logs that are forwarded from your network using Cloud App Security. They provide improved visibility over all data, and **automatically** identify anomalous use using either the Machine Learning anomaly detection engine or by using custom policies that you define.
+
+These reports can be created by connecting in the following ways:
+
+* **Windows Defender ATP integration**: Cloud App Security integrates with Windows Defender Advanced Threat Protection (ATP) natively, to simplify rollout of Cloud Discovery, extend Cloud Discovery capabilities beyond your corporate network, and enable machine-based investigation.
+
+* **Log collector**: Log collectors enable you to easily automate log upload from your network. The log collector runs on your network and receives logs over Syslog or FTP.
+
+* **Zscaler integration**: If you work with both Cloud App Security and Zscaler, you can integrate the two products to enhance your security Cloud Discovery experience. Together, Cloud App Security and Zscaler provide seamless deployment of Cloud Discovery, automatic blocking of unsanctioned apps, and risk assessment directly in the Zscaler portal.
+
+In this lab you will perform the configuration of a **Log collector**.
 
 
->:memo: After completing this portion of the lab and validating that your logs have been successfully uploaded and processed by MCAS, you will not immediately see a loaded Discovery Dashboard. Due to Cloud Discovery logs being  parsed **twice a day**.
+> [!NOTE] After completing this portion of the lab and validating that your logs have been successfully uploaded and processed by MCAS, you will not immediately see a loaded Discovery Dashboard. Due to Cloud Discovery logs being  parsed **twice a day**.
 
 
  **The Docker engine has been pre-installed on LinuxVM in your lab environment, **Client01*** in this case.**
@@ -2497,7 +2540,7 @@ Those commands download a script installing the Docker engine on your host compu
     >
     !IMAGE[Squid source](\Media\dis-squidsource.png)
 
-    >:memo: **NOTE:** In this lab we use FTP as the receiver type but usually companies will use Syslog.
+    >[!NOTE] In this lab we use FTP as the receiver type but usually companies will use Syslog.
 
 6. [] Close the *Verify your log format* window, then click **Add** in the **Add** data source dialog.
 
@@ -2617,13 +2660,10 @@ Those commands download a script installing the Docker engine on your host compu
 
     !IMAGE[Discovery data](\Media\dis-discoverydata.png "Discovery data")
 
-    
-  
-
 ===
-# Information protection
 
-[:arrow_left: Home](#labs)
+# Information protection
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 In a perfect world, all your employees understand the importance of information protection and work within your policies. But in a real world, it's probable that a partner who works with accounting uploads a document to your Box repository with the wrong permissions, and a week later you realize that your enterprise's confidential information was leaked to your competition.
 Microsoft Cloud App Security helps you prevent this kind of disaster before it happens.
@@ -2634,7 +2674,7 @@ Microsoft Cloud App Security helps you prevent this kind of disaster before it h
 * [Quarantine sensitive PDF for review:](#quarantine-sensitive-pdf-for-review) :clock10: 10 min
 * [Test our policies:](#test-our-policies) :clock10: 10 min
 
----
+===
 
 ## Apply AIP classification to SSN documents
 
@@ -2771,11 +2811,233 @@ To test our files policies, perform the following tasks:
 >:memo: **For Box, the quarantine folder location and user message can't be customized. The folder location is the drive of the admin who connected Box to Cloud App Security and the user message is: This file was quarantined to your administrator's drive because it might violate your company's security and compliance policies. Contact your IT administrator for help.**
 
 	!IMAGE[results](\Media\Boxportalresults.jpg)
-    
-===
-# Cloud App Security: Threat Detection Lab
 
+===
+
+# Conditional Access App Control with Office 365
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security) :clock10: 15 min
+
+## Introduction
+
+Conditional Access App Control utilizes a reverse proxy architecture and is uniquely integrated with Azure AD conditional access.
+Azure AD conditional access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define who (for example a user, or group of users) and what (which cloud apps) and where (which locations and networks) a conditional access policy is applied to. After you’ve determined the conditions, you can route users to the Microsoft Cloud App Security where you can protect data with Conditional Access App Control by applying access and session controls.
+
+Conditional Access App Control enables user app access and sessions to be **monitored and controlled in real time** based on access and session policies.
+
+!IMAGE[AAD portal](\Media\caac-overview.png)
+
+> [!NOTE] **App Control Access and Session policies give you the capability to the following:**
+* **Block on download**: You can block the download of sensitive documents. For example, on unmanaged devices.
+* **Protect on download**: Instead of blocking the download of sensitive documents, you can require documents to be protected via encryption on download. This ensures that the document is protected, and user access is authenticated, if the data is downloaded to an untrusted device.
+* **Monitor low-trust user sessions**: Risky users are monitored when they sign into apps and their actions are logged from within the session. You can investigate and analyze user behavior to understand where, and under what conditions, session policies should be applied in the future.
+* **Block access**: You can completely block access to specific apps for users coming from unmanaged devices or from non-corporate networks.
+* **Create read-only mode**: By monitoring and blocking custom in-app activities you can create a read-only mode to specific apps for specific users.
+* **Restrict user sessions from non-corporate networks**: Users accessing a protected app from a location that is not part of your corporate network, are allowed restricted access and the download of sensitive materials is blocked or protected.
+
+===
+
+## Configuration
+
+
+1. [] Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
+
+   !IMAGE[AAD portal](\Media\aad-1.png)
+
+2. [] Scroll down to **Security** and click on **Conditional Access**. 
+
+   !IMAGE[AAD portal](\Media\aad-2.png)
+
+3. [] Create a new conditional access policy with the following settings:
+
+   |Name|Assignments|Apps|
+   |-----|-----|-----|
+   |Office365 AppControl|All users|Exchange, SharePoint|
+
+   **Click on "New Policy"**
+
+   !IMAGE[New policy](\Media\cond-policy-1.png)
+
+	**Name: Office365 App Control**
+	**Assignments: Click on "All users" and then Done**
+
+   !IMAGE[New policy](\Media\cond-policy-2.png)
+
+   **Go to the next section: Cloud Apps: Select Apps and choose Office 365 Exchange Online and Office 365 SharePoint Online and Done** 
+
+   !IMAGE[New policy](\Media\cond-policy-3.png)
+    
+
+   **Click on "Session" and check off "Use Conditional Access App Control"**
+ 
+   !IMAGE[New policy](\Media\cond-policy-4.png)
+	
+   **Enable the policy and click "Create"**
+
+   !IMAGE[New policy](\Media\cond-policy-5.png)
+
+4. [] Sign out of the Azure Portal and close you browser.
+
+5.  Open your browser and go to the Exchange Web App ```https://outlook.office.com```.
+
+6. Connect using :
+
+   >```@lab.CloudCredential(134).Username```
+   >
+   >```@lab.CloudCredential(134).Password```
+
+   >:memo: This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
+
+7. [] Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the **gear icon** and click on **Conditional Access App Control.** 
+
+  
+   !IMAGE[Menu](\Media\appc-office-1.png)
+
+    **You will see that Exchange Online has appeared as an application and can now be configured.**
+
+   !IMAGE[Menu](\Media\appc-office-2.png)
+
+8. [] Click on **Continue setup** to enable session control and click on **Add**.
+
+   !IMAGE[Setup](\Media\appc-office-3.png)
+
+   !IMAGE[Setup](\Media\appc-office-4.png)
+  
+   **You're now notified that the application is under Session Control.**
+
+   !IMAGE[Setup](\Media\appc-office-5.png)
+
+9. [] On the left hand side click on Control and then **Policies**.
+
+   !IMAGE[Policies](\Media\appc-office-6.png)
+
+10. [] Create a new session policy with the following settings:
+
+    **Click on "Create Policy" and pick a Session policy.**
+
+    **Name**: *Proxy - Block sensitive files download*
+
+   !IMAGE[Session policy](\Media\appc-office-7.png)
+
+   **Under Session Control Type choose Control filedownload (with DLP)**
+ 
+   !IMAGE[Session policy](\Media\appc-office-8.png)
+
+   **Activity source:**
+
+   **Add Activity Filters:** *Device Tag does not equal Compliant, Domain joined*
+
+   *App equals Office 365 Exchange Online and Office 365 SharePoint Online*
+
+   !IMAGE[Session policy](\Media\appc-office-9.png)
+
+   **Content inspection check "Enabled"**
+   **Include files that match a preset expression anc choose US: PII: Social Security Number**
+
+
+   !IMAGE[Session policy](\Media\appc-office-10.png)
+
+   **Actions:** *Block*
+
+   **Click:** *Customize block message: This file containes SSN information and cannot be downloaded on non-coporate devices.*
+
+   **Click:** *Create an alert for each matching event with the policy's severity*
+
+   **Click:** **Create**
+
+   !IMAGE[Session policy](\Media\appc-office-11.png)
+
+====
+
+# Testing the Session Policy
 [:arrow_left: Home](#labs)
+
+Now is time to test our configuration. We will here simulate the userexperience while accessing company apps protected by Cloud App Security from an unmanaged device
+
+1. [] Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
+  
+   >**Credentials**:
+   >```@lab.CloudCredential(134).Username```
+   >
+   >```@lab.CloudCredential(134).Password```
+
+  **You should receive the following message, as you are redirected through Cloud App Security before accessing the application.*
+  
+  **Click to continue to Exchange Online.**
+
+   !IMAGE[Warning](\Media\appc-office-12.png)
+
+2. [] You've been directed to Exchange Online and your session is now passing **through** Cloud App Security.
+
+    >:memo: **By taking a look at the the URL, you can verify that your session is actually being redirected to Cloud App Security.**
+
+
+   !IMAGE[Session](\Media\appc-office-13.png)
+
+
+3. [] To test our policy, create a new mail and attach the Word document named **Personal employees information.docx** and the Excel spreadsheet named **Workplace Innovation.xlsx** stored on **Client01** desktop. Send the mail to your user, ```@lab.CloudCredential(134).Username```
+
+   !IMAGE[Test](\Media\appc-office-14.png)
+
+4. [] Wait until you receive your email in the webmail. Once the message is received, click on the attached document **Personal employees information.docx**. This will open the file preview.
+As you can see, the user can access the document using the Office Online app.
+
+!IMAGE[Warning](\Media\appc-office-15.png)
+
+5. [] Try now to download the **Personal employees information.docx** document. As this file contains social security numbers, the download will be blocked and will trigger an alert in Cloud App Security.
+
+   !IMAGE[Test](\Media\appc-office-16.png)
+
+   !IMAGE[Test](\Media\appc-office-17.png)
+
+6. [] Now let's try to download the **Workplace Innovation.xlsx** spreadsheet. As this file **do not** contain social security numbers, the download will be allowed.
+
+   !IMAGE[Test](\Media\appc-office-18.png)
+
+   !IMAGE[Test](\Media\appc-office-19.png)
+
+   !IMAGE[Test](\Media\appc-office-20.png)
+
+   !IMAGE[Test](\Media\appc-office-21.png)
+
+>:memo: **We just demonstrated App Control capabilities to go further than just allow/block scenarios, based on session risks.**
+
+====
+
+# Reviewing the alerts
+[:arrow_left: Home](#labs)
+
+Now that we validated our configuration, let's go back to the admin view.
+
+1. [] Go back to the Cloud App Security console ```https://portal.cloudappsecurity.com```
+
+2. [] Go to the **Alerts** page.
+
+   !IMAGE[Menu](\Media\appc-admin-1.png)
+
+3. [] Click on the alert generated by our policy.
+
+   !IMAGE[Menu](\Media\appc-admin-2.png)
+
+4. [] On the alert page, you can see that the **admin** user tried to download a file named **Personal employees information.docx** but **Session control** blocked the download. You also see the name of the policy that triggered the alert.
+
+   !IMAGE[Menu](\Media\appc-admin-3.png)
+
+5. [] To go further in the investigation, click on  **View all user activity**. This will redirect you to the Activity log where you can see all the user activities.
+
+   !IMAGE[Menu](\Media\appc-admin-4.png)
+
+6. [] By looking at the user activities, you can follow her/his trace:
+
+   > Below, you can see that the user was redirected to Cloud App Security
+   !IMAGE[Menu](\Media\appc-admin-5.png)
+
+   > Here, you can see that during her/his session, the user successfuly downloaded a file named **Worplace Innovation.xlsx**, as this file didn't match any blocking policy.
+   !IMAGE[Menu](\Media\appc-admin-6.png)
+
+===
+
+# Cloud App Security: Threat Detection Lab
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 Cloud App Security provides several threats detection policies using machine learning and **user behavior analytics** to detect suspicious activities across your different applications.
 Those policies are enabled by default and after an initial learning period, Cloud App Security will start alerting you when suspicious actions like activity from anonymous IP addresses, infrequent country, suspicious IP addresses, impossible travel, ransomware activity, suspicious inBox forwarding configuration or unusual file download are detected.
@@ -3093,235 +3355,10 @@ Cloud App Security provides by default many has policies templates to start crea
 
 7. [] Explore other types of policies and review the proposed templates.
 
- 
-===
-
-# Conditional Access App Control with Office 365
-
-[:arrow_left: Home](#labs) :clock10: 15 min
-
-## Introduction
-
-Conditional Access App Control utilizes a reverse proxy architecture and is uniquely integrated with Azure AD conditional access.
-Azure AD conditional access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define who (for example a user, or group of users) and what (which cloud apps) and where (which locations and networks) a conditional access policy is applied to. After you’ve determined the conditions, you can route users to the Microsoft Cloud App Security where you can protect data with Conditional Access App Control by applying access and session controls.
-
-Conditional Access App Control enables user app access and sessions to be **monitored and controlled in real time** based on access and session policies.
-
-!IMAGE[AAD portal](\Media\caac-overview.png)
-
-> [!NOTE] **App Control Access and Session policies give you the capability to the following:**
-* **Block on download**: You can block the download of sensitive documents. For example, on unmanaged devices.
-* **Protect on download**: Instead of blocking the download of sensitive documents, you can require documents to be protected via encryption on download. This ensures that the document is protected, and user access is authenticated, if the data is downloaded to an untrusted device.
-* **Monitor low-trust user sessions**: Risky users are monitored when they sign into apps and their actions are logged from within the session. You can investigate and analyze user behavior to understand where, and under what conditions, session policies should be applied in the future.
-* **Block access**: You can completely block access to specific apps for users coming from unmanaged devices or from non-corporate networks.
-* **Create read-only mode**: By monitoring and blocking custom in-app activities you can create a read-only mode to specific apps for specific users.
-* **Restrict user sessions from non-corporate networks**: Users accessing a protected app from a location that is not part of your corporate network, are allowed restricted access and the download of sensitive materials is blocked or protected.
-
-===
-
-## Configuration
-
-
-1. [] Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
-
-   !IMAGE[AAD portal](\Media\aad-1.png)
-
-2. [] Scroll down to **Security** and click on **Conditional Access**. 
-
-   !IMAGE[AAD portal](\Media\aad-2.png)
-
-3. [] Create a new conditional access policy with the following settings:
-
-   |Name|Assignments|Apps|
-   |-----|-----|-----|
-   |Office365 AppControl|All users|Exchange, SharePoint|
-
-   **Click on "New Policy"**
-
-   !IMAGE[New policy](\Media\cond-policy-1.png)
-
-	**Name: Office365 App Control**
-	**Assignments: Click on "All users" and then Done**
-
-   !IMAGE[New policy](\Media\cond-policy-2.png)
-
-   **Go to the next section: Cloud Apps: Select Apps and choose Office 365 Exchange Online and Office 365 SharePoint Online and Done** 
-
-   !IMAGE[New policy](\Media\cond-policy-3.png)
-    
-
-   **Click on "Session" and check off "Use Conditional Access App Control"**
- 
-   !IMAGE[New policy](\Media\cond-policy-4.png)
-	
-   **Enable the policy and click "Create"**
-
-   !IMAGE[New policy](\Media\cond-policy-5.png)
-
-4. [] Sign out of the Azure Portal and close you browser.
-
-5.  Open your browser and go to the Exchange Web App ```https://outlook.office.com```.
-
-6. Connect using :
-
-   >```@lab.CloudCredential(134).Username```
-   >
-   >```@lab.CloudCredential(134).Password```
-
-   >:memo: This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
-
-7. [] Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the **gear icon** and click on **Conditional Access App Control.** 
-
-  
-   !IMAGE[Menu](\Media\appc-office-1.png)
-
-    **You will see that Exchange Online has appeared as an application and can now be configured.**
-
-   !IMAGE[Menu](\Media\appc-office-2.png)
-
-8. [] Click on **Continue setup** to enable session control and click on **Add**.
-
-   !IMAGE[Setup](\Media\appc-office-3.png)
-
-   !IMAGE[Setup](\Media\appc-office-4.png)
-  
-   **You're now notified that the application is under Session Control.**
-
-   !IMAGE[Setup](\Media\appc-office-5.png)
-
-9. [] On the left hand side click on Control and then **Policies**.
-
-   !IMAGE[Policies](\Media\appc-office-6.png)
-
-10. [] Create a new session policy with the following settings:
-
-    **Click on "Create Policy" and pick a Session policy.**
-
-    **Name**: *Proxy - Block sensitive files download*
-
-   !IMAGE[Session policy](\Media\appc-office-7.png)
-
-   **Under Session Control Type choose Control filedownload (with DLP)**
- 
-   !IMAGE[Session policy](\Media\appc-office-8.png)
-
-   **Activity source:**
-
-   **Add Activity Filters:** *Device Tag does not equal Compliant, Domain joined*
-
-   *App equals Office 365 Exchange Online and Office 365 SharePoint Online*
-
-   !IMAGE[Session policy](\Media\appc-office-9.png)
-
-   **Content inspection check "Enabled"**
-   **Include files that match a preset expression anc choose US: PII: Social Security Number**
-
-
-   !IMAGE[Session policy](\Media\appc-office-10.png)
-
-   **Actions:** *Block*
-
-   **Click:** *Customize block message: This file containes SSN information and cannot be downloaded on non-coporate devices.*
-
-   **Click:** *Create an alert for each matching event with the policy's severity*
-
-   **Click:** **Create**
-
-   !IMAGE[Session policy](\Media\appc-office-11.png)
-
-====
-
-# Testing the Session Policy
-[:arrow_left: Home](#labs)
-
-Now is time to test our configuration. We will here simulate the userexperience while accessing company apps protected by Cloud App Security from an unmanaged device
-
-1. [] Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
-  
-   >**Credentials**:
-   >```@lab.CloudCredential(134).Username```
-   >
-   >```@lab.CloudCredential(134).Password```
-
-  **You should receive the following message, as you are redirected through Cloud App Security before accessing the application.*
-  
-  **Click to continue to Exchange Online.**
-
-   !IMAGE[Warning](\Media\appc-office-12.png)
-
-2. [] You've been directed to Exchange Online and your session is now passing **through** Cloud App Security.
-
-    >:memo: **By taking a look at the the URL, you can verify that your session is actually being redirected to Cloud App Security.**
-
-
-   !IMAGE[Session](\Media\appc-office-13.png)
-
-
-3. [] To test our policy, create a new mail and attach the Word document named **Personal employees information.docx** and the Excel spreadsheet named **Workplace Innovation.xlsx** stored on **Client01** desktop. Send the mail to your user, ```@lab.CloudCredential(134).Username```
-
-   !IMAGE[Test](\Media\appc-office-14.png)
-
-4. [] Wait until you receive your email in the webmail. Once the message is received, click on the attached document **Personal employees information.docx**. This will open the file preview.
-As you can see, the user can access the document using the Office Online app.
-
-!IMAGE[Warning](\Media\appc-office-15.png)
-
-5. [] Try now to download the **Personal employees information.docx** document. As this file contains social security numbers, the download will be blocked and will trigger an alert in Cloud App Security.
-
-   !IMAGE[Test](\Media\appc-office-16.png)
-
-   !IMAGE[Test](\Media\appc-office-17.png)
-
-6. [] Now let's try to download the **Workplace Innovation.xlsx** spreadsheet. As this file **do not** contain social security numbers, the download will be allowed.
-
-   !IMAGE[Test](\Media\appc-office-18.png)
-
-   !IMAGE[Test](\Media\appc-office-19.png)
-
-   !IMAGE[Test](\Media\appc-office-20.png)
-
-   !IMAGE[Test](\Media\appc-office-21.png)
-
->:memo: **We just demonstrated App Control capabilities to go further than just allow/block scenarios, based on session risks.**
-
-====
-
-# Reviewing the alerts
-[:arrow_left: Home](#labs)
-
-Now that we validated our configuration, let's go back to the admin view.
-
-1. [] Go back to the Cloud App Security console ```https://portal.cloudappsecurity.com```
-
-2. [] Go to the **Alerts** page.
-
-   !IMAGE[Menu](\Media\appc-admin-1.png)
-
-3. [] Click on the alert generated by our policy.
-
-   !IMAGE[Menu](\Media\appc-admin-2.png)
-
-4. [] On the alert page, you can see that the **admin** user tried to download a file named **Personal employees information.docx** but **Session control** blocked the download. You also see the name of the policy that triggered the alert.
-
-   !IMAGE[Menu](\Media\appc-admin-3.png)
-
-5. [] To go further in the investigation, click on  **View all user activity**. This will redirect you to the Activity log where you can see all the user activities.
-
-   !IMAGE[Menu](\Media\appc-admin-4.png)
-
-6. [] By looking at the user activities, you can follow her/his trace:
-
-   > Below, you can see that the user was redirected to Cloud App Security
-   !IMAGE[Menu](\Media\appc-admin-5.png)
-
-   > Here, you can see that during her/his session, the user successfuly downloaded a file named **Worplace Innovation.xlsx**, as this file didn't match any blocking policy.
-   !IMAGE[Menu](\Media\appc-admin-6.png)
-
 ===
 
 # Management with PowerShell
-
-[:arrow_left: Home](#labs) :clock10: 20 min
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)) :clock10: 15 min
 
 To help administrators interact with MCAS in a programmatic way, two
 Microsoft employees created a non-official PowerShell module for Cloud
@@ -3368,8 +3405,7 @@ Using PowerShell:
 ===
 
 # Log collector troubleshooting
-
-[:arrow_left: Home](#labs) :clock10: 15 min
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security) :clock10: 15 min
 
 In this task, you will review possible troubleshooting steps to identify issues in automatic logs upload from the log collector.
 There are several things to test at different locations: in the log collector, in MCAS, at the network level.
@@ -3485,8 +3521,7 @@ An easy way to test the connectivity after configuring the log collector is to d
 ===
 
 # Conditional Access App Control with 3rd party apps
-
-[:arrow_left: Home](#labs) :clock10: 45 min
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security) :clock10: 45 min
 
 ## Introduction
 
@@ -3505,7 +3540,7 @@ With the access and session policies, you can:
 
 >:memo: In this lab, we will cover only some scenarios.
 
----
+===
 
 ## Federate Salesforce with Azure AD
 
@@ -3670,7 +3705,7 @@ We will now provide access to our users and validate the SSO experience.
 
     :warning: If you receive an error message, verify that you validated the SSO configuration by clicking on the **Log in** button in **step 14**.
 
----
+===
 
 ## Deploy the reverse proxy capability for Salesforce
 
