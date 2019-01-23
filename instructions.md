@@ -30,10 +30,10 @@ There are a few extras throughout this lab that are designed to make your lab ex
 
 ## Interactive Elements
 
-- Each task contains a series of steps required for successful completion of the lab.  To track your progress throughout the lab, check the box to the left of the numbered series.  
+- Each task contains a series of steps required for successful completion of the lab.  To track your progress throughout the lab, check the Box to the left of the numbered series.  
 
 	!IMAGE[6mfi1ekm.jpg](\Media\6mfi1ekm.jpg)
-- After you check each box, you will see your lab progress at the bottom of the instruction pane.
+- After you check each Box, you will see your lab progress at the bottom of the instruction pane.
 
 	!IMAGE[0ggu265u.jpg](\Media\0ggu265u.jpg)
 - When you see an instruction for switching computers, click on the **blue link** in the text to have that VM loaded automatically.
@@ -149,9 +149,9 @@ For several of the exercises in this lab series, you will require an active subs
 
 	!IMAGE[teyx280d.jpg](\Media\teyx280d.jpg)
 
-1. [] Paste the provided promo code in the Promo code box and click **Claim Promo Code**.
+1. [] Paste the provided promo code in the Promo code Box and click **Claim Promo Code**.
 
-	> [!Knowledge] If pasting into box from your client system does not work natively, use the Type Text functionality of the lab environment 
+	> [!Knowledge] If pasting into Box from your client system does not work natively, use the Type Text functionality of the lab environment 
 	> !IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
 	> !IMAGE[e1l35ko2.jpg](\Media\e1l35ko2.jpg)
 	
@@ -163,7 +163,7 @@ For several of the exercises in this lab series, you will require an active subs
 
   	> [!NOTE] You can keep the pre-populated information.
 
-9. [] Check the box to agree to the terms and click **Sign up**.
+9. [] Check the Box to agree to the terms and click **Sign up**.
 
   	!IMAGE[k2a97g8e.jpg](\Media\k2a97g8e.jpg)
 
@@ -297,7 +297,7 @@ Use the link below to deploy the following:
 
 	^IMAGE[Open Screenshot](\Media\RGName.png)
 1. [] Select a location, then under **Settings**, type the password ```Securitycenter4ever!```.
-1. [] Finally, check the box to agree to the terms and click **Purchase**.
+1. [] Finally, check the Box to agree to the terms and click **Purchase**.
 
 	^IMAGE[Open Screenshot](\Media\Password.png)
 
@@ -474,7 +474,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 To be able to complete the different parts of the Cloud App Security labs, the following configuration steps are required.
 
 * [Enabling Office 365 auditing](#enabling-office-365-auditing)
-* [Connect Office 365 and BOX to Cloud App Security](#connect-office-365-to-cloud-app-security)
+* [Connect Office 365 and Box to Cloud App Security](#connect-office-365-to-cloud-app-security)
 * [Enabling Azure Information Protection integration](#enabling-azure-information-protection-integration)
 
 ---
@@ -505,7 +505,7 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
     >:warning: As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts for the threat detection lab.
 
-:warning: In addition to enabling auditing in Office 365, some applications like Exchange Online require extra configuration. After enabling auditing at the Office 365 level, we have to enable auditing at the mailbox level. We will perform this configuration before going to the labs.
+:warning: In addition to enabling auditing in Office 365, some applications like Exchange Online require extra configuration. After enabling auditing at the Office 365 level, we have to enable auditing at the mailBox level. We will perform this configuration before going to the labs.
 
 1. [] On Client01, open PowerShell.
 
@@ -525,48 +525,48 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
     !IMAGE[Exchange PowerShell](\Media\conf-psonline.png "Exchange PowerShell")
 
-3. [] Enter the following commands to enable auditing for your mailboxes. The second command let you verify that auditing is correctly enabled.
+3. [] Enter the following commands to enable auditing for your mailBoxes. The second command let you verify that auditing is correctly enabled.
     ```
-    Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | Set-Mailbox -AuditEnabled $true
-    Get-Mailbox admin | fl audit*
+    Get-MailBox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailBox"} | Set-MailBox -AuditEnabled $true
+    Get-MailBox admin | fl audit*
     ```
-    >:warning: When you create new mailboxes, auditing is not enabled by default. You will have to use the same commands again to enable auditing for those newly created mailboxes.
+    >:warning: When you create new mailBoxes, auditing is not enabled by default. You will have to use the same commands again to enable auditing for those newly created mailBoxes.
 
-    !IMAGE[Mailbox auditing](\Media\conf-mbxauditing.png "Mailbox Auditing")
+    !IMAGE[MailBox auditing](\Media\conf-mbxauditing.png "MailBox Auditing")
 
->:memo: **Reference:** [Enabling auditing for Exchange Online mailboxes](https://docs.microsoft.com/en-us/office365/securitycompliance/enable-mailbox-auditing?redirectSourcePath=%252fen-us%252farticle%252fenable-mailbox-auditing-in-office-365-aaca8987-5b62-458b-9882-c28476a66918)).
+>:memo: **Reference:** [Enabling auditing for Exchange Online mailBoxes](https://docs.microsoft.com/en-us/office365/securitycompliance/enable-mailBox-auditing?redirectSourcePath=%252fen-us%252farticle%252fenable-mailBox-auditing-in-office-365-aaca8987-5b62-458b-9882-c28476a66918)).
 
 ---
 
-## Create a Developer BOX Account 
+## Create a Developer Box Account 
 
 
-1. [] Go to ```box.com``` and click on **Sign Up** in the top right hand corner. 
+1. [] Go to ```Box.com``` and click on **Sign Up** in the top right hand corner. 
 
- !IMAGE[boxdev](\Media\boxdev1.jpg)
+ !IMAGE[Boxdev](\Media\Boxdev1.jpg)
 
 2. [] Click on **Plaform Plans** and choose **Developer.**
+
+!IMAGE[Boxdev](\Media\Boxdev2.jpg)
 
 3. [] Using your Office 365 crendetials provided in *your tenant* as the email address and password. 
 
 			*Example Tenant Credentials* 
 
- !IMAGE[boxdev](\Media\tenantcredentials.jpg)
+ !IMAGE[Boxdev](\Media\tenantcredentials.jpg)
 
- !IMAGE[boxdev](\Media\boxdev2.jpg)
+ 4. [] After you signed up, go to ```https://outlook.office.com``` and you should recieve an email from Box. Open the email and verify your email address. 
 
- 4. [] After you signed up, go to ```https://outlook.office.com``` and you should recieve an email from BOX. Open the email and verify your email address. 
-
- !IMAGE[boxdev](\Media\boxdev4.jpg)
+ !IMAGE[Boxdev](\Media\Boxdev4.jpg)
 
  5. [] Change your password and after the change you should recieve an email verifying that your password has been sucessfully changed. 
 
- !IMAGE[boxdev](\Media\boxdev5.jpg)
+ !IMAGE[Boxdev](\Media\Boxdev5.jpg)
 
 
 ---
 
-## Connect Office 365 and BOX to Cloud App Security 
+## Connect Office 365 and Box to Cloud App Security 
 
 [:arrow_up: Top](#mcas-environment-preparation)
 
@@ -591,43 +591,43 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
     !IMAGE[Test connectivity](\Media\conf-testoffice.png "Test connectivity")
 
 
- ##Connecting BOX to Cloud App Security
+ ##Connecting Box to Cloud App Security
 
  1. [] Go to the gear icon and select **App connectors**
 
- 	!IMAGE[1](\Media\apibox1.JPG) "1") 
+ 	!IMAGE[1](\Media\apiBox1.JPG) "1") 
 
- 2. []  Click on the **Plus** button and click on BOX.
+ 2. []  Click on the **Plus** button and click on Box.
 
-	!IMAGE[2](\Media\apibox2.JPG)
+	!IMAGE[2](\Media\apiBox2.JPG)
 
  3. [] Type the name of your corporate instance and click **Connect Box.**
 
-	!IMAGE[3](\Media\apibox3.JPG)
+	!IMAGE[3](\Media\apiBox3.JPG)
 
  4. []  Follow the **link** that shows up in the pop up.
 
-	!IMAGE[4](\Media\apibox4.JPG)
+	!IMAGE[4](\Media\apiBox4.JPG)
 
-5. [] Log into BOX with the same credentials used to create your developer account. 
+5. [] Log into Box with the same credentials used to create your developer account. 
 
-	!IMAGE[5](\Media\apibox5.JPG)
+	!IMAGE[5](\Media\apiBox5.JPG)
 
-6. [] Click on **Grant access to BOX**
+6. [] Click on **Grant access to Box**
 
-	!IMAGE[6](\Media\apibox6.JPG)
+	!IMAGE[6](\Media\apiBox6.JPG)
 
 7. [] Go back to the Cloud App Security portal and click on "Test Now" to see if the connection worked. 
 
-	!IMAGE[7](\Media\apibox7.JPG)
+	!IMAGE[7](\Media\apiBox7.JPG)
 
 	If the connection is succesful - it will say **Connected.** 
 
-    !IMAGE[8](\Media\apibox8.JPG)
+    !IMAGE[8](\Media\apiBox8.JPG)
 
-8. []  You should be able to see BOX as a connected app in the list. 
+8. []  You should be able to see Box as a connected app in the list. 
 
-	!IMAGE[9](\Media\apibox9.JPG) 
+	!IMAGE[9](\Media\apiBox9.JPG) 
 
 
 ---
@@ -636,12 +636,12 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 
 [:arrow_up: Top](#mcas-environment-preparation)
 
-To prepare the **Information Protection** lab, we have to enable the integration between Cloud App Security and Azure Information Protection as explained in the [Cloud App Security documentation](https://docs.microsoft.com/en-us/cloud-app-security/azip-integration). Enabling the integration between the two solutions is as easy as selecting one single checkbox.
+To prepare the **Information Protection** lab, we have to enable the integration between Cloud App Security and Azure Information Protection as explained in the [Cloud App Security documentation](https://docs.microsoft.com/en-us/cloud-app-security/azip-integration). Enabling the integration between the two solutions is as easy as selecting one single checkBox.
 
 1. [] Go to Cloud App Security settings.
     !IMAGE[Settings](\Media\conf-settings.png "Settings")
 
-2. [] Go down in the settings to the **Azure Information Protection** section and check the **Automatically scan new files** checkbox and click on the "**Save** button.
+2. [] Go down in the settings to the **Azure Information Protection** section and check the **Automatically scan new files** checkBox and click on the "**Save** button.
     !IMAGE[Enable AIP](\Media\conf-aip.png "Enable AIP")
 
 >:memo: It takes up to **1h** for Cloud App Security to sync the Azure Information classifications.
@@ -843,7 +843,7 @@ In order to collect log data from Azure Information Protection clients and servi
 	|Location|**East US** (Or a location near the event)|
 
 	^IMAGE[Open Screenshot](\Media\5butui15.jpg)
-1. [] Next, back in the Configure analytics (preview) blade, **check the boxes** next to the **workspace** and next to **Enable Content Matches**, and click **OK**.
+1. [] Next, back in the Configure analytics (preview) blade, **check the Boxes** next to the **workspace** and next to **Enable Content Matches**, and click **OK**.
 
 	!IMAGE[gste52sy.jpg](\Media\gste52sy.jpg)
 1. [] Click **Yes**, in the confirmation dialog.
@@ -1186,7 +1186,7 @@ However, there are times when external collaboration is required, so we will con
 
 	^IMAGE[Open Screenshot](\Media\qwyranz0.jpg)
 
-1. [] In the Protection blade, under **Set user-defined permissions (Preview)**, verify that only the box next to **In Outlook apply Do Not Forward** is checked, then click **OK**.
+1. [] In the Protection blade, under **Set user-defined permissions (Preview)**, verify that only the Box next to **In Outlook apply Do Not Forward** is checked, then click **OK**.
 
 	^IMAGE[Open Screenshot](\Media\16.png)
 
@@ -1220,7 +1220,7 @@ In this task, we will assign the new sub-label to the Global policy and configur
 
 2. [] Below the labels, click **Add or remove labels**.
 
-3. [] In the Policy: Add or remove labels blade, ensure that the **boxes** next to **all labels including the new Contoso Internal label** are **checked** and click **OK**.
+3. [] In the Policy: Add or remove labels blade, ensure that the **Boxes** next to **all labels including the new Contoso Internal label** are **checked** and click **OK**.
 
 4. [] In the Policy: Global blade, under the **Configure settings to display and apply on Information Protection end users** section, configure the policy to match the settings shown in the table and image below.
 
@@ -1273,7 +1273,7 @@ Now that you have learned how to work with global labels and policies, we will c
 
 	^IMAGE[Open Screenshot](\Media\2lvwim24.jpg)
 
-1. [] In the AAD Users and Groups blade, **wait for the names to load**, then check the boxes next to **Adam Smith** and **Alice Anderson**, and click the **Select** button.
+1. [] In the AAD Users and Groups blade, **wait for the names to load**, then check the Boxes next to **Adam Smith** and **Alice Anderson**, and click the **Select** button.
 
 	^IMAGE[Open Screenshot](\Media\uishk9yh.jpg)
 
@@ -1302,7 +1302,7 @@ Now that you have learned how to work with global labels and policies, we will c
 	!IMAGE[1sjw3mc7.jpg](\Media\1sjw3mc7.jpg)
 
 1. [] In the AAD Users and Groups blade, click on **Users/Groups**.  
-1. [] Then in the second AAD Users and Groups blade, **wait for the names to load** and check the boxes next to **AIPScanner**, **Adam Smith**, and **Alice Anderson**.
+1. [] Then in the second AAD Users and Groups blade, **wait for the names to load** and check the Boxes next to **AIPScanner**, **Adam Smith**, and **Alice Anderson**.
 
 	>[!NOTE] The **AIPScanner** account is added here to prevent all scanned documents from being labeled with a default label.
 1. [] Click the **Select** button.
@@ -1314,7 +1314,7 @@ Now that you have learned how to work with global labels and policies, we will c
 
 	!IMAGE[b6e9nbui.jpg](\Media\b6e9nbui.jpg)
 
-1. [] In the Policy: Add or remove labels blade, check the box next to **Legal Only** and click **OK**.
+1. [] In the Policy: Add or remove labels blade, check the Box next to **Legal Only** and click **OK**.
 
 	^IMAGE[Open Screenshot](\Media\c2429kv9.jpg)
 
@@ -1348,7 +1348,7 @@ There are many advanced policy settings that are useful to tailor your Azure Inf
 
     ^IMAGE[Open Screenshot](\Media\2jo71ugb.jpg)
 
-1. [] In the Advanced settings blade, in the textbox under **VALUE**, paste the **Label ID** for the **General** label you copied previously. In the textbox under **NAME**, type ```OutlookDefaultLabel```, then click **Save and close**.
+1. [] In the Advanced settings blade, in the textBox under **VALUE**, paste the **Label ID** for the **General** label you copied previously. In the textBox under **NAME**, type ```OutlookDefaultLabel```, then click **Save and close**.
 
     > [!ALERT] CAUTION: Please check to ensure that there are **no spaces** before or after the **Label ID** when pasting as this will cause the setting to not apply.
 
@@ -1381,10 +1381,10 @@ However, helping your users to properly classify and protect sensitive data at t
 1. [] In the Label: Contoso Internal blade, scroll down to the **Configure conditions for automatically applying this label** section, and click on **+ Add a new condition**.
 
 	!IMAGE[cws1ptfd.jpg](\Media\cws1ptfd.jpg)
-1. [] In the Condition blade, in the **Select information types** search box, type ```EU``` and check the boxes next to the **items shown below**.
+1. [] In the Condition blade, in the **Select information types** search Box, type ```EU``` and check the Boxes next to the **items shown below**.
 
 	!IMAGE[xaj5hupc.jpg](\Media\xaj5hupc.jpg)
-1. [] Next, before saving, replace EU in the search bar with ```credit``` and check the box next to **Credit Card Number**.
+1. [] Next, before saving, replace EU in the search bar with ```credit``` and check the Box next to **Credit Card Number**.
 
 	^IMAGE[Open Screenshot](\Media\9rozp61b.jpg)
 1. [] Click **Save** in the Condition blade and **OK** to the Save settings prompt.
@@ -1407,7 +1407,7 @@ However, helping your users to properly classify and protect sensitive data at t
 1. [] In the Label: All Employees blade, scroll down to the **Configure conditions for automatically applying this label** section, and click on **+ Add a new condition**.
 
 	^IMAGE[Open Screenshot](\Media\8cdmltcj.jpg)
-1. [] In the Condition blade, select the **Custom** tab and enter ```Password``` for the **Name** and in the textbox below **Match exact phrase or pattern**, type ```pass@word1```.
+1. [] In the Condition blade, select the **Custom** tab and enter ```Password``` for the **Name** and in the textBox below **Match exact phrase or pattern**, type ```pass@word1```.
 
 	!IMAGE[ra7dnyg6.jpg](\Media\ra7dnyg6.jpg)
 1. [] Click **Save** in the Condition blade and **OK** to the Save settings prompt.
@@ -1481,10 +1481,10 @@ One of the most common use cases for AIP is the ability to send emails using Use
 
 1. [] On @lab.VirtualMachine(Client03).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++.
 2. [] Launch Microsoft Outlook, and click **Accept and start Outlook**.
-3. [] In the username box, type ```EvanG@@lab.cloudcredential(134).TenantName``` and click **Connect**.
+3. [] In the username Box, type ```EvanG@@lab.cloudcredential(134).TenantName``` and click **Connect**.
 4. [] When prompted, type ```pass@word1``` and Sign in.
 5. [] On the Use this account everywhere page, click **Yes** then click **Done**.
-6. [] Once configuration completes, **uncheck the box** to **Set up Outlook Mobile** and click **OK**.
+6. [] Once configuration completes, **uncheck the Box** to **Set up Outlook Mobile** and click **OK**.
 7. [] **Close Outlook** and **reopen** to complete activation.
 8. [] Once Outlook opens, if you receive a metered connection warning, click **Connect anyway**.
 9. [] Click on the **New email** button.
@@ -1748,7 +1748,7 @@ The Azure Information Protection Scanner uses Automatic conditions to identify s
 1. [] In the Label: All Employees blade, scroll down to the **Configure conditions for automatically applying this label** section, and click on **+ Add a new condition**.
 
 	!IMAGE[cws1ptfd.jpg](\Media\cws1ptfd.jpg)
-1. [] In the Condition blade, in the **Select information types** search box, type ```EU``` and check the boxes next to the **items shown below**.
+1. [] In the Condition blade, in the **Select information types** search Box, type ```EU``` and check the Boxes next to the **items shown below**.
 
 	!IMAGE[xaj5hupc.jpg](\Media\xaj5hupc.jpg)
 
@@ -1769,7 +1769,7 @@ The Azure Information Protection Scanner uses Automatic conditions to identify s
 1. [] In the Label: All Employees blade, scroll down to the **Configure conditions for automatically applying this label** section, and click on **+ Add a new condition**.
 
 	^IMAGE[Open Screenshot](\Media\8cdmltcj.jpg)
-1. [] In the Condition blade, in the search bar type ```credit``` and check the box next to **Credit Card Number**.
+1. [] In the Condition blade, in the search bar type ```credit``` and check the Box next to **Credit Card Number**.
 
 	^IMAGE[Open Screenshot](\Media\9rozp61b.jpg)
 1. [] Click **Save** in the Condition blade and **OK** to the Save settings prompt.
@@ -1918,7 +1918,7 @@ The previous step enabled the AIP labels for use in the Security and Compliance 
 
    ^IMAGE[Open Screenshot](\Media\SCC03.png)
 
-5. [] Click the box next to **Display name** to select all labels, then click the **Add** button.
+5. [] Click the Box next to **Display name** to select all labels, then click the **Add** button.
 
    ^IMAGE[Open Screenshot](\Media\SCC04.png)
 
@@ -1936,11 +1936,11 @@ The previous step enabled the AIP labels for use in the Security and Compliance 
 
 9. [] On the Policy settings page, select the **General** label from the drop-down next to **Apply this label by default to documents and email**.
 
-10. [] Check the box next to **Users must provide justification to remove a label or lower classification label** and click the **Next** button.
+10. [] Check the Box next to **Users must provide justification to remove a label or lower classification label** and click the **Next** button.
 
     !IMAGE[Open Screenshot](\Media\SCC08.png)
 
-11. [] In the Name textbox, type ```Global Policy``` and for the Description type ```This is the default global policy for all users.``` and click the **Next** button.
+11. [] In the Name textBox, type ```Global Policy``` and for the Description type ```This is the default global policy for all users.``` and click the **Next** button.
 
     ^IMAGE[Open Screenshot](\Media\SCC09.png)
 
@@ -2233,10 +2233,10 @@ Although some labs are pretty straight forward ,we expect you to already have so
 
 ### Portals URLs
 
-* Office 365: https://portal.office.com
-* Cloud App Security: https://portal.cloudappsecurity.com
-* Security & Compliance Center: https://protection.office.com
-* Windows Defender ATP: https://securitycenter.windows.com
+* Office 365:```https://portal.office.com```
+* Cloud App Security: ```https://portal.cloudappsecurity.com```
+* Security & Compliance Center: ```https://protection.office.com```
+* Windows Defender ATP: ```https://securitycenter.windows.com```
 
 ---
 
@@ -2405,7 +2405,7 @@ To create snapshot reports:
     >|Report Name| **Demo report**|
     >|Description| 
     >|Data Source| **SQUID (Common)**|
-    >|Anonymize private information |**Check the box**|
+    >|Anonymize private information |**Check the Box**|
     >
     !IMAGE[New snapshot](\Media\dis-createsnapshot.png "New snapshot")
 
@@ -2487,7 +2487,7 @@ Those commands download a script installing the Docker engine on your host compu
     >|Name| **SquiDLogs**|
     >|Source| **SQUID (Common)**|
     >|Receiver type| **FTP**|
-    >|Anonymize private information |**Check the box**|
+    >|Anonymize private information |**Check the Box**|
     >
     !IMAGE[Squid source](\Media\dis-squidsource.png)
 
@@ -2651,10 +2651,10 @@ We will apply an Azure Information Protection template on documents containing s
     >|---------|---------|
     >|Policy Name| **Protect SSN documents in sensitive site**|
     >|Files matching all of the following| **remove the filters** |
-    >|Apply to| **Selected Folders , All Files(BOX)** |
+    >|Apply to| **Selected Folders , All Files(Box)** |
 
 
-    !IMAGE[box](\Media\allfilesbox1.JPG)  
+    !IMAGE[Box](\Media\allfilesBox1.JPG)  
 
 4. [] Verify that you have one selected folder and click on **Done**.
 
@@ -2672,7 +2672,7 @@ We will apply an Azure Information Protection template on documents containing s
     !IMAGE[SSN type](\Media\info-type.png "SSN type")
     !IMAGE[SSN type](\Media\info-ssn.png "SSN type")
 
-7. [] Click on the **Unmask** checkbox.
+7. [] Click on the **Unmask** checkBox.
 
     !IMAGE[Unmask](\Media\info-unmask.png "Unmask")
 
@@ -2680,7 +2680,7 @@ We will apply an Azure Information Protection template on documents containing s
 
     >:warning: If you are not able to select Azure Information Protection templates, verify that you configured the integration in the prerequisites section or that you waited the 1h for the classifications to sync.
 
-  !IMAGE[gov](\Media\boxgovssn.JPG)
+  !IMAGE[gov](\Media\Boxgovssn.JPG)
 
 
 9. [] Click **Create** to finish the policy creation.
@@ -2704,7 +2704,7 @@ This is what we are going to configure in this lab.
 
 3. [] Configure **Admin quarantine**.
 
-    **In the dropdown menu, select your root *BOX* site.**
+    **In the dropdown menu, select your root *Box* site.**
 
     >:memo: As best practice, you should create and use a **dedicated** site with restricted access as the admin quarantine location.
 
@@ -2726,9 +2726,9 @@ This is what we are going to configure in this lab.
 
     !IMAGE[New policy](\Media\info-policy3.png "New policy")
 
-6. [] Check the **Create an alert for each matching file** checkbox. In Governance actions of the policy, select **Put in admin quarantine** for BOX and click on the **Create** button.
+6. [] Check the **Create an alert for each matching file** checkBox. In Governance actions of the policy, select **Put in admin quarantine** for Box and click on the **Create** button.
 
-      !IMAGE[Unmask](\Media\boxgovadmin.JPG)
+      !IMAGE[Unmask](\Media\Boxgovadmin.JPG)
 
 ---
 
@@ -2740,7 +2740,7 @@ To test our files policies, perform the following tasks:
 
 1. [] On Client01, unzip the content of the **Demo files.zip**.
 
-2. [] Go to the **BOX** documents library. 
+2. [] Go to the **Box** documents library. 
 
 3. [] Upload the unzipped files to the site.
 
@@ -2756,14 +2756,14 @@ To test our files policies, perform the following tasks:
 
 6. [] You can search for the files you uploaded using different criteria, like **file name**, **type**, ... or just look at all the files discovered by Cloud App Security.
 
-    !IMAGE[Search files](\Media\boxfilesmatch.JPG)
+    !IMAGE[Search files](\Media\Boxfilesmatch.JPG)
 
 
 7. [] When a policy match is discovered, you will see it in this page.
 
     >:memo: Next to the file name, you have icons showing that an AIP label was applied and that we have a policy match.
 
-	  !IMAGE[PolicyMatch](\Media\boxmatchedpolicies.JPG)
+	  !IMAGE[PolicyMatch](\Media\Boxmatchedpolicies.JPG)
 
 8. [] To open the details of the file, click on its name. You can see there the matched policies and the scan status of the files.
 
@@ -2771,11 +2771,11 @@ To test our files policies, perform the following tasks:
 
 9. [] You can also view the related governance actions, like applying the Azure Information classification or moving the file to the quarantine folder, at the file level or in the **Governance log**.
 
-    !IMAGE[Governance log](\Media\boxgovlog.jpg) "Governance log")
+    !IMAGE[Governance log](\Media\Boxgovlog.jpg) "Governance log")
 
-10. [] If you go back to **BOX**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
+10. [] If you go back to **Box**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
 
-!IMAGE[results](\Media\boxportalresults.jpg)
+!IMAGE[results](\Media\Boxportalresults.jpg)
     
 ===
 # Cloud App Security: Threat Detection Lab
@@ -2783,7 +2783,7 @@ To test our files policies, perform the following tasks:
 [:arrow_left: Home](#labs)
 
 Cloud App Security provides several threats detection policies using machine learning and **user behavior analytics** to detect suspicious activities across your different applications.
-Those policies are enabled by default and after an initial learning period, Cloud App Security will start alerting you when suspicious actions like activity from anonymous IP addresses, infrequent country, suspicious IP addresses, impossible travel, ransomware activity, suspicious inbox forwarding configuration or unusual file download are detected.
+Those policies are enabled by default and after an initial learning period, Cloud App Security will start alerting you when suspicious actions like activity from anonymous IP addresses, infrequent country, suspicious IP addresses, impossible travel, ransomware activity, suspicious inBox forwarding configuration or unusual file download are detected.
 
 :warning: In this lab, as your environments auditing might not be configured yet, as it takes up to **24h** before being enabled, we will investigate **in the environment provided by your instructor**. The credentials are provided below.
 Search and review the alerts in that environment and investigate to identify the users and the malicious activities performed.
@@ -2803,7 +2803,7 @@ Search and review the alerts in that environment and investigate to identify the
 * [Impossible travel:](#impossible-travel) :clock10: 5 min
 * [Activity from infrequent country:](#activity-from-infrequent-country) :clock10: 5 min
 * [Malware detection:](#malware-detection) :clock10: 5 min
-* [Email exfiltration using suspicious inbox forwarding:](#email-exfiltration-using-suspicious-inbox-forwarding) :clock10: 5 min
+* [Email exfiltration using suspicious inBox forwarding:](#email-exfiltration-using-suspicious-inBox-forwarding) :clock10: 5 min
 * [Ransomware activity:](#ransomware-activity) :clock10: 5 min
 * [Suspicious application consent:](#suspicious-application-consent) :clock10: 5 min
 
@@ -2953,11 +2953,11 @@ This detection identifies malicious files in your cloud storage, whether they're
 
 ---
 
-## Email exfiltration using suspicious inbox forwarding
+## Email exfiltration using suspicious inBox forwarding
 
 [:arrow_up: Top](#cloud-app-security-threat-detection-lab)
 
-This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address.
+This detection looks for suspicious email forwarding rules, for example, if a user created an inBox rule that forwards a copy of all emails to an external address.
 
 ### Investigate
 
@@ -3469,7 +3469,7 @@ With the access and session policies, you can:
 
       !IMAGE[Dev sign-up](\Media\appc-signup.png "Salesforce sign-up")
 
-    * Fill in the rest of details, click **Sign me up**, accept the **verification email** in your mailbox, and choose a new password. Use the admin password provided in the lab environment if possible.
+    * Fill in the rest of details, click **Sign me up**, accept the **verification email** in your mailBox, and choose a new password. Use the admin password provided in the lab environment if possible.
 
         !IMAGE[Dev sign-up](\Media\appc-signup2.png "Salesforce sign-up")
 
@@ -3547,11 +3547,11 @@ With the access and session policies, you can:
 
 12. [] Copy/paste the information from the **Quick reference** to the Salesforce **single sign-on settings** page.
 
-    a.In the Name textbox, type the name of the configuration: **AzureAD**.
+    a.In the Name textBox, type the name of the configuration: **AzureAD**.
 
-    b. Paste **Azure AD SAML Entity ID** value into the **Issuer** textbox.
+    b. Paste **Azure AD SAML Entity ID** value into the **Issuer** textBox.
 
-    c. In the **Entity Id** textbox, type in the **Sign On URL** that you entered in **Step 1**, which should be in this format: **http://company.my.salesforce.com**
+    c. In the **Entity Id** textBox, type in the **Sign On URL** that you entered in **Step 1**, which should be in this format: **http://company.my.salesforce.com**
 
     d. Download the **Azure AD Signing Certificate** in the Azure portal and then click **Browse** to upload the downloaded certificate Azure AD Signing Certificate in the **Salesforce setting page**.
 
@@ -3559,9 +3559,9 @@ With the access and session policies, you can:
 
     f. As **SAML Identity Location**, select **Identity is in the NameIdentifier element of the Subject statement**.
 
-    g. Paste **Azure AD Single Sign-On Service URL** into the **Identity Provider Login URL** textbox.
+    g. Paste **Azure AD Single Sign-On Service URL** into the **Identity Provider Login URL** textBox.
 
-    h. Salesforce does not support SAML logout. As a workaround, paste **Azure AD Sign Out URL** into the **Identity Provider Logout URL** textbox.
+    h. Salesforce does not support SAML logout. As a workaround, paste **Azure AD Sign Out URL** into the **Identity Provider Logout URL** textBox.
 
     i. As **Service Provider Initiated Request Binding**, select **HTTP POST**.
 
@@ -3575,7 +3575,7 @@ With the access and session policies, you can:
 
     !IMAGE[Add SF](\Media\appc-app18.png "Add SF")
 
-14. [] In **Authentication Configuration**, un-check the **Login Page** checkbox and check the **Azure AD** checkbox. Click on Save. When back on the configuration page, click on the **login** button to complete the configuration.
+14. [] In **Authentication Configuration**, un-check the **Login Page** checkBox and check the **Azure AD** checkBox. Click on Save. When back on the configuration page, click on the **login** button to complete the configuration.
 
     !IMAGE[Add SF](\Media\appc-app19.png "Add SF")
 
@@ -3638,7 +3638,7 @@ The next step of the configuration is to create a Conditional access policy in A
     **Name**: Test Cloud App Security proxy
     **Assignment**: choose your admin
     **Cloud apps**: SalesforceCAS
-    **Access control / Session**: Use Conditional Access App Control **checkbox**
+    **Access control / Session**: Use Conditional Access App Control **checkBox**
 
     !IMAGE[Configure policy](\Media\appc-policy3.png "Configure policy")
 
@@ -3716,15 +3716,15 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
     **Device tags** does not equal **Valid client certificate**
     **App** equals **Salesforce**
-    Check the **Enabled** checkbox near **Content inspection**
+    Check the **Enabled** checkBox near **Content inspection**
 
     !IMAGE[Session policy](\Media\appc-session4.png "Session policy")
 
-5. [] Check the **Include files that match a preset expression** radio button. In the dropdown menu just below the radio button, scroll all the way to the end to choose **US: PII: Social security number** and check the **Don't require relevant context** checkbox, just below the dropdown menu.
+5. [] Check the **Include files that match a preset expression** radio button. In the dropdown menu just below the radio button, scroll all the way to the end to choose **US: PII: Social security number** and check the **Don't require relevant context** checkBox, just below the dropdown menu.
 
     !IMAGE[Session policy](\Media\appc-session5.png "Session policy")
 
-6. [] Under **Actions**, select **Block**. Check the **Customize block message** checkbox, and add a custom message in the textbox that has opened, e.g.: "This file is sensitive"
+6. [] Under **Actions**, select **Block**. Check the **Customize block message** checkBox, and add a custom message in the textBox that has opened, e.g.: "This file is sensitive"
 
     !IMAGE[Session policy](\Media\appc-session6.png "Session policy")
 
@@ -3741,7 +3741,7 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
     !IMAGE[Session policy](\Media\appc-session8.png "Session policy")
 
-10. [] Check the **Enabled** checkbox near **Content inspection**. Under **Actions**, select **Protect**
+10. [] Check the **Enabled** checkBox near **Content inspection**. Under **Actions**, select **Protect**
 
     !IMAGE[Session policy](\Media\appc-session9.png "Session policy")
 
@@ -3986,9 +3986,9 @@ There are four steps to accessing Identity Protection data through Microsoft Gra
 3. []	On the Create page, perform the following steps:
 
 	!IMAGE[uh5cjkmi.jpg](\Media\uh5cjkmi.jpg)
-	1. [] In the Name textbox, type a name for your application (e.g.: AADIP Risk Event API Application).
+	1. [] In the Name textBox, type a name for your application (e.g.: AADIP Risk Event API Application).
 	1. [] As Type, select Web Application And / Or Web API.
-	1. [] In the Sign-on URL textbox, type ```http://localhost```.
+	1. [] In the Sign-on URL textBox, type ```http://localhost```.
 	1. [] Click Create.
 4. []	To open the Settings page, in the applications list, click your newly created app registration. 
 5. []	Copy the Application ID and paste it into a new text document. This will be needed later in the lab.
@@ -4029,7 +4029,7 @@ There are four steps to accessing Identity Protection data through Microsoft Gra
 2. []	On the Keys page, perform the following steps:
 
 	!IMAGE[3xrwo38o.jpg](\Media\3xrwo38o.jpg)
-	1. [] In the Key description textbox, type a description (for example, AADIP Risk Event).
+	1. [] In the Key description textBox, type a description (for example, AADIP Risk Event).
 	1. [] As Duration, select In 1 year.
 	1. [] Click Save.
 	1. [] Copy the key value, and then paste it into a safe location. 
