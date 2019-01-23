@@ -3202,6 +3202,8 @@ Conditional Access App Control enables user app access and sessions to be monito
 
     **Click on "Create Policy" and pick a Session policy.**
 
+    **Name**: *Proxy - Block sensitive files download*
+
    !IMAGE[Session policy](\Media\appc-office-7.png)
 
    **Under Session Control Type choose Control filedownload (with DLP)**
@@ -3224,7 +3226,7 @@ Conditional Access App Control enables user app access and sessions to be monito
 
    **Actions:** *Block*
 
-   **Click:** *Customize block message: The containes SSN information and cannot be downloaded on non-coporate devices.*
+   **Click:** *Customize block message: This file containes SSN information and cannot be downloaded on non-coporate devices.*
 
    **Click:** *Create an alert for each matching event with the policy's severity*
 
@@ -3239,7 +3241,10 @@ Conditional Access App Control enables user app access and sessions to be monito
 Let's now test our configuration.
 
 1. [] Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
-
+   **Credentials**:
+   >```@lab.CloudCredential(134).Username```
+   >
+   >```@lab.CloudCredential(134).Password```
 
   **You should receive the following message, as you are redirected through Cloud App Security before accessing the application.*
   
@@ -3247,7 +3252,7 @@ Let's now test our configuration.
 
    !IMAGE[Warning](\Media\appc-office-12.png)
 
-2. [] You've been directed to Exchange Online 
+2. [] You've been directed to Exchange Online and your session is now passing **through** Cloud App Security.
 
     >:memo: **By taking a look at the the URL, you can verify that your session is actually being redirected to Cloud App Security.**
 
@@ -3255,15 +3260,32 @@ Let's now test our configuration.
    !IMAGE[Session](\Media\appc-office-13.png)
 
 
-3. [] To test our policy, create a new mail containing the demo documents stored on *Client01* desktop as attachements and send it to your admin account. 
+3. [] To test our policy, create a new mail and attach the Word document named **Personal employees information.docx** and the Excel spreadsheet named **Workplace Innovation.xlsx** stored on **Client01** desktop. Send the mail to your user, ```@lab.CloudCredential(134).Username```
 
    !IMAGE[Test](\Media\appc-office-14.png)
 
-4. [] Try to download the txt file containing social security numbers.
+4. [] Wait until you receive your email in the webmail. Once the message is received, click on the attached document **Personal employees information.docx**. This will open the file preview.
+As you can see, the user can access the document using the Office Online app.
 
-   !IMAGE[Test](\Media\appc-office-15.png)
+!IMAGE[Warning](\Media\appc-office-15.png)
 
-****to finish******
+5. Try now to download the **Personal employees information.docx** document. As this file contains social security numbers, the download will be blocked and trigger an alert in Cloud App Security.
+
+   !IMAGE[Test](\Media\appc-office-16.png)
+
+   !IMAGE[Test](\Media\appc-office-17.png)
+
+6. Now let's try to download the **Workplace Innovation.xlsx** spreadsheet. As this file **do not** contain social security numbers, the download will be allowed.
+
+   !IMAGE[Test](\Media\appc-office-18.png)
+
+   !IMAGE[Test](\Media\appc-office-19.png)
+
+   !IMAGE[Test](\Media\appc-office-20.png)
+
+   !IMAGE[Test](\Media\appc-office-21.png)
+
+>:memo: **We just demonstrated App Control capabilities to go further than just allow/block scenarios, based on session risks.**
 
 ====
 
