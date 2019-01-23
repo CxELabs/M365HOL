@@ -155,10 +155,12 @@ For several of the exercises in this lab series, you will require an active subs
 
 1. [] Click in the **Promo code text box**, paste the **provided promo code**, and click **Claim Promo Code**.
 
+	!IMAGE[e1l35ko2.jpg](\Media\promo.png)
+	
 	> [!Knowledge] If pasting into Box from your client system does not work natively, use the Type Text functionality of the lab environment 
+	>
 	> !IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
 
-	!IMAGE[e1l35ko2.jpg](\Media\promo.png)
 
 8. [] On the Azure Pass - Sponsorship page, leave the default info and scroll to the bottom of the page and click **Next**.
 
@@ -182,6 +184,8 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
 2. [] On the desktop, **right-click** on **AADConfig.ps1** and click **Run with PowerShell**.
 
 	!IMAGE[AADConfig](\Media\AADConfig.png)
+
+	> [!NOTE] If prompted to change the execution policy, type **y** and **Enter**.
 
 1. [] When prompted for the **Tenant name**, click in the text box and enter ```@lab.CloudCredential(134).TenantName```.
 1. [] When prompted, provide the credentials below:
