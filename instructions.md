@@ -2232,6 +2232,7 @@ Although  labs are pretty straight forward, we expect you to already have basic 
 ===
 
 ## Lab environment
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 !IMAGE[Lab environment](\Media\mcaslabenvironment.png "Lab environment")
 
@@ -2251,6 +2252,7 @@ Although  labs are pretty straight forward, we expect you to already have basic 
 ===
 
 ## Labs
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 > [!ALERT] Before going to the different labs section, please be sure to complete the **[environment preparation](#mcas-environment-preparation)**.
 
@@ -2272,8 +2274,7 @@ The different Cloud App Security capabilities covered in the labs are:
 >:question: If you have questions or want to go further in your Cloud App Security journey, join our **[Tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity)** !
 ===
 # Manage admin access
-
-[:arrow_left: Home](#labs)
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 [Manage admin access:](#manage-admin-access) :clock10: 5 min
 
@@ -2389,18 +2390,36 @@ As the MCAS admin for your company, work with the person next to you to configur
 3. [] Switch to the external Cloud App Security tenant where you have been added as an external admin and look at the actions you can perform.
 
     !IMAGE[Switch](\Media\mgmt-switch2.png "Switch")
+
 ===
+
 # Cloud App Security Discovery lab
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
-[:arrow_left: Home](#labs)
+On average, more than 1,100 cloud applications are used by enterprises today, of which 61% are **not** sanctioned by IT. This results in duplicate capabilities, apps not meeting compliance standards or posing a security risk to the organization without any IT oversight.
+**Discovery** identifies current cloud apps, provides risk assessments and ongoing analytics and lifecycle management capabilities to control the use.
 
-TO EDIT Discovery text/intro
+To provide this visibility on Shadow IT and cloud apps usage, Cloud App Security ingest and analyze network logs from proxy, firewall but also from **Windows 10** clients within or **ouside** the corporate network, using the native integration with **Windows Defender ATP**.
+
+!IMAGE[Discovery intro](\Media\dis-intro1.png "Discovery intro")
+
+
+Once the logs have been analyzed, Cloud App Security provides the visibility on **Shadow IT** and alerts you when it detects risky apps or anomalous usage.
+
+!IMAGE[Discovery intro](\Media\dis-intro2.png "Discovery intro")
+
+
+>:memo: In this lab, we will simulate the upload of network logs from a SQUID proxy to analyze the apps used withing your company.
+>We will not test the Windows Defender ATP integration at it can take up to **2h** before the logs are parsed and the results are visible in the console.
+
+===
 
 # Cloud Discovery Snapshot Report
+[:arrow_left: Discovery lab](#cloud-app-security-discovery-lab) :clock10: 15 min
 
-[:arrow_left: Home](#labs) :clock10: 10 min
-
-Snapshot Reports are the manual method of uploading files into Cloud App Security. You can upload batches of 20 logs of 1 GB max at a time and they will parse into their own separate report. Any discovery policies you create **will not** apply to these types of reports. Creating Snapshot reports is a great and easy way to validate your logs format of have a quick look at the Cloud App Security Discovery capability.
+In this lab, we will create a Discovery **Snapshot report**.
+Snapshot Reports is the manual method of uploading files into Cloud App Security. This process is a great and easy way to validate your logs format of have a quick look at the Cloud App Security Discovery capability.
+You can upload batches of 20 logs of 1 GB max at a time and they will parse into their own separate report. Any discovery policies you create **will not** apply to these types of reports.
 
 To create snapshot reports:
 
@@ -2451,11 +2470,21 @@ To create snapshot reports:
 
 ===
 
-
 ## Configure and Test Continuous Reports
+[:arrow_left: Discovery lab](#cloud-app-security-discovery-lab) :clock10: 20 min
 
-Continuous reports in Cloud Discovery analyze all logs that are forwarded from your network using Cloud App Security. They provide improved visibility over all data, and automatically identify anomalous use using either the Machine Learning anomaly detection engine or by using custom policies that you define.
-To use this capability, you will perform in this lab the configuration and troubleshooting of the Cloud Discovery feature.
+In this lab, we will implement Continuous reports.
+Continuous reports analyze all logs that are forwarded from your network using Cloud App Security. They provide improved visibility over all data, and **automatically** identify anomalous use using either the Machine Learning anomaly detection engine or by using custom policies that you define.
+
+These reports can be created by connecting in the following ways:
+
+* **Windows Defender ATP integration**: Cloud App Security integrates with Windows Defender Advanced Threat Protection (ATP) natively, to simplify rollout of Cloud Discovery, extend Cloud Discovery capabilities beyond your corporate network, and enable machine-based investigation.
+
+* **Log collector**: Log collectors enable you to easily automate log upload from your network. The log collector runs on your network and receives logs over Syslog or FTP.
+
+* **Zscaler integration**: If you work with both Cloud App Security and Zscaler, you can integrate the two products to enhance your security Cloud Discovery experience. Together, Cloud App Security and Zscaler provide seamless deployment of Cloud Discovery, automatic blocking of unsanctioned apps, and risk assessment directly in the Zscaler portal.
+
+In this lab you will perform the configuration of a **Log collector**.
 
 
 >:memo: After completing this portion of the lab and validating that your logs have been successfully uploaded and processed by MCAS, you will not immediately see a loaded Discovery Dashboard. Due to Cloud Discovery logs being  parsed **twice a day**.
@@ -2621,13 +2650,10 @@ Those commands download a script installing the Docker engine on your host compu
 
     !IMAGE[Discovery data](\Media\dis-discoverydata.png "Discovery data")
 
-    
-  
-
 ===
-# Information protection
 
-[:arrow_left: Home](#labs)
+# Information protection
+[:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 In a perfect world, all your employees understand the importance of information protection and work within your policies. But in a real world, it's probable that a partner who works with accounting uploads a document to your Box repository with the wrong permissions, and a week later you realize that your enterprise's confidential information was leaked to your competition.
 Microsoft Cloud App Security helps you prevent this kind of disaster before it happens.
