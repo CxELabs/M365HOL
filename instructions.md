@@ -563,7 +563,7 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
     !IMAGE[Test connectivity](\Media\conf-testoffice.png "Test connectivity")
 
 
- ## Connecting BOX to Cloud App Security**
+ ##Connecting BOX to Cloud App Security
 
  1. [] Go to the gear icon and select **App connectors**
 
@@ -2754,7 +2754,7 @@ To test our files policies, perform the following tasks:
 
     
 ===
-# Cloud App Security threat detection lab
+# Cloud App Security: Threat Detection Lab
 
 [:arrow_left: Home](#labs)
 
@@ -3073,8 +3073,7 @@ Cloud App Security provides by default many has policies templates to start crea
 
 7. [] Explore other types of policies and review the proposed templates.
 
- **To go further in your Cloud App Security journey, join our [tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity) !**
-
+ 
 ===
 
 # Conditional Access App Control with Office 365
@@ -3206,9 +3205,9 @@ Conditional Access App Control enables user app access and sessions to be monito
 
    !IMAGE[Session policy](\Media\appc-office-11.png)
 
----
+====
 
-## Testing the policy
+# Testing the Session Policy 
 
 Let's now test our configuration.
 
@@ -3223,7 +3222,7 @@ Let's now test our configuration.
 
 2. [] You've been directed to Exchange Online 
 
-  > [!NOTE] **By taking a look at the the URL, you can verify that your session is actually being redirected to Cloud App Security.**
+    >:memo: **By taking a look at the the URL, you can verify that your session is actually being redirected to Cloud App Security.**
 
 
    !IMAGE[Session](\Media\appc-office-13.png)
