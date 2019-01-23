@@ -10,9 +10,9 @@ This lab is designed to be used as a supplement to Instructor Led Training and h
 
 ## [Lab 1: Azure Information Protection](#azure-information-protection)
 
-## [Lab 2: Microsoft Cloud App Security](#microsoft-cloud-app-security)
+## [Lab 2: Azure Advanced Threat Protection](#azure-atp-immersion-lab)
 
-## [Lab 3: Azure Advanced Threat Protection](#azure-atp-immersion-lab)
+## [Lab 3: Microsoft Cloud App Security](#microsoft-cloud-app-security)
 
 ## [Lab 4: Windows Defender Advanced Threat Protection](#windows-defender-advanced-threat-protection)
 
@@ -33,9 +33,7 @@ There are a few extras throughout this lab that are designed to make your lab ex
 - Each task contains a series of steps required for successful completion of the lab.  To track your progress throughout the lab, check the Box to the left of the numbered series.  
 
 	!IMAGE[6mfi1ekm.jpg](\Media\6mfi1ekm.jpg)
-- After you check each Box, you will see your lab progress at the bottom of the instruction pane.
 
-	!IMAGE[0ggu265u.jpg](\Media\0ggu265u.jpg)
 - When you see an instruction for switching computers, click on the **blue link** in the text to have that VM loaded automatically.
 
 	!IMAGE[12i85vgl.jpg](\Media\12i85vgl.jpg)
@@ -2221,6 +2219,12 @@ In this exercise, we created several Exchange Online Mail Flow Rules to protect 
 
 Congratulations! You have completed the Azure Information Protection Hands on Lab. 
 
+=== 
+
+## Azure ATP Immersion Lab 
+[:arrow_left: Home](#introduction)
+
+The rest of the lab will be instructor led via PowerPoint. 
 ===
 
 # Microsoft Cloud App Security
@@ -3889,12 +3893,7 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
     !IMAGE[j0vuo06k.jpg](\Media\j0vuo06k.jpg)
 
-=== 
 
-## Azure ATP Immersion Lab 
-[:arrow_left: Home](#introduction)
-
-The rest of the lab will be instructor led via PowerPoint. 
 ===
 # Windows Defender Advanced Threat Protection
 [:arrow_left: Home](#introduction)
