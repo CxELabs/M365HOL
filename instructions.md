@@ -2247,7 +2247,7 @@ For this task, you are asked to delegate admin access to monitor a dedicated gro
 
 
 
-## Delegate user group administration
+## Delegate User Group Administration
 
 In this lab, we are going to delegate the management of US employees to a new administrator (**mcasadminUS**). This administrator will only see those users alerts and activities for the users bieing members of the group **US employees**.
 
@@ -2285,13 +2285,19 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     !IMAGE[New admin](\Media\mgmt-admin2.png "New admin")
 
-	**Type the admin user name**: *mcasadminus@LODSA293123.onmicrosoft.com*
+	> [!NOTE] Use the Office 365 Credentials provided in your tenant 
+
+	 !IMAGE[Tenant](\Media\tenantcredentials.JPG)
+
+	**Type the admin user name**: *Example:mcasadminus@LODSA293123.onmicrosoft.com* 
+
 	**Select Role**: *User group admin*
 
 
     !IMAGE[New admin](\Media\mgmt-admin3.png "New admin")
 
 	**Select groups for this admin**: *US employees*
+
 	**Click on Add admin**
 
 
@@ -2324,9 +2330,13 @@ As the MCAS admin for your company, work with the person next to you to configur
     !IMAGE[External admin](\Media\mgmt-admin2.png "External admin")
 
 
-	**Type Admin user name:**  
+	**Type Admin user name:**  *Use your neighbors Office 365 credentials provided in their tenant as the external admin* 
 
 	**Select type of role for this admin:** *Security Reader*
+
+	!IMAGE[Tenant Example](\Media\tenantcredentials.JPG)
+
+	**Add Admin**
 
     !IMAGE[External admin](\Media\mgmt-externaladmin1.png "External admin")
 
@@ -2348,7 +2358,7 @@ As the MCAS admin for your company, work with the person next to you to configur
 
 TO EDIT Discovery text/intro
 
-# Cloud Discovery snapshot report
+# Cloud Discovery Snapshot Report
 
 [:arrow_left: Home](#labs) :clock10: 10 min
 
@@ -2404,14 +2414,16 @@ To create snapshot reports:
 ===
 
 
-## Configure and test continuous reports
+## Configure and Test Continuous Reports
 
 Continuous reports in Cloud Discovery analyze all logs that are forwarded from your network using Cloud App Security. They provide improved visibility over all data, and automatically identify anomalous use using either the Machine Learning anomaly detection engine or by using custom policies that you define.
 To use this capability, you will perform in this lab the configuration and troubleshooting of the Cloud Discovery feature.
 
-[:arrow_up: Top](#cloud-app-security-discovery-lab)
 
-> NOTE: The Docker engine has been pre-installed on LinuxVM in your lab environment, **Client01** in this case, using the commands (below) provided in the [deployment guide](https://docs.microsoft.com/en-us/cloud-app-security/discovery-docker-ubuntu).
+>:memo: After completing this portion of the lab and validating that your logs have been successfully uploaded and processed by MCAS, you will not immediately see a loaded Discovery Dashboard. Due to Cloud Discovery logs being  parsed **twice a day**.
+
+
+ **The Docker engine has been pre-installed on LinuxVM in your lab environment, **Client01*** in this case.**
 
 ```
     curl -o /tmp/MCASInstallDocker.sh https://adaprodconsole.blob.core.windows.net/public-files/MCASInstallDocker.sh && chmod +x /tmp/MCASInstallDocker.sh; /tmp/MCASInstallDocker.sh
@@ -2419,7 +2431,7 @@ To use this capability, you will perform in this lab the configuration and troub
 
 Those commands download a script installing the Docker engine on your host computer (Ubuntu in this case) and pull the latest Cloud App Security collector image from the Docker library.
 
-### Create a data source and a log collector in the Cloud App Security portal
+### Create a data source and a log collector in the Cloud App Security Portal
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 
@@ -2571,9 +2583,8 @@ Those commands download a script installing the Docker engine on your host compu
 
     !IMAGE[Discovery data](\Media\dis-discoverydata.png "Discovery data")
 
-    >:memo: **NOTE:**  After validating that your logs have been successfully uploaded and processed by MCAS, you will not usually see directly the analysis of your data. Why?
-    >
-    >**ANSWER:** Cloud Discovery logs are only parsed **twice a day**.
+    
+  
 
 ===
 # Information protection
@@ -2612,20 +2623,15 @@ We will apply an Azure Information Protection template on documents containing s
     >|---------|---------|
     >|Policy Name| **Protect SSN documents in sensitive site**|
     >|Files matching all of the following| **remove the filters** |
-    >|Apply to| **selected folder**|
+    >|Apply to| **Selected Folders , All Files(BOX)** |
 
 
-    !IMAGE[Policy filter](\Media\info-filter.png "Policy filter")
-
-    
+    !IMAGE[box](\Media\allfilesbox1.JPG)  
 
 4. [] Verify that you have one selected folder and click on **Done**.
 
-    !IMAGE[Done](\Media\info-done.png "Done")
 
-   
-
-5. [] In inspection method, select **Data Classification Service**.
+5. [] In the inspection method, select **Data Classification Service**.
 
     > [!NOTE]*Microsoft Data Classification Service provides a **unified** information protection experience across Office 365, Azure Information Protection, and Microsoft Cloud App Security.*
 
@@ -2645,6 +2651,9 @@ We will apply an Azure Information Protection template on documents containing s
 8. [] In the Governance actions, click on **Box** and select **Apply classification label**. Select the **Highly Confidental Employees Only** label. 
 
     >:warning: If you are not able to select Azure Information Protection templates, verify that you configured the integration in the prerequisites section or that you waited the 1h for the classifications to sync.
+
+  !IMAGE[gov](\Media\boxgovssn.JPG)
+
 
 9. [] Click **Create** to finish the policy creation.
 
@@ -2669,13 +2678,9 @@ This is what we are going to configure in this lab.
 
     **In the dropdown menu, select your root *BOX* site.**
 
-    !IMAGE[Settings admin quarantine site](\Media\info-adminq2.png "Settings admin quarantine site")
-
     >:memo: As best practice, you should create and use a **dedicated** site with restricted access as the admin quarantine location.
 
     * In user notification, type **Your content has been quarantined. Please contact your admin.** and click on the **Save** button.
-
-    !IMAGE[Settings admin quarantine message](\Media\info-adminq3.png "Settings admin quarantine message")
 
     >:memo: This message will be provided in the placeholders when a file is put in quarantine.
 
@@ -2695,7 +2700,7 @@ This is what we are going to configure in this lab.
 
 6. [] Check the **Create an alert for each matching file** checkbox. In Governance actions of the policy, select **Put in admin quarantine** for BOX and click on the **Create** button.
 
-    add box image 
+      !IMAGE[Unmask](\Media\boxgovadmin.JPG)
 
 ---
 
@@ -2709,16 +2714,13 @@ To test our files policies, perform the following tasks:
 
 2. [] Go to the **BOX** documents library. 
 
-    
-
 3. [] Upload the unzipped files to the site.
-
-
-   
 
 4. [] Cloud App Security will now scan those documents and search for matches to our created policies.
 
     >:memo: The scan can take **several minutes** before completion.
+
+
 
 5. [] To monitor the evolution of the scan, go back to Cloud App Security and open the **Files** page of the investigations.
 
@@ -2726,32 +2728,26 @@ To test our files policies, perform the following tasks:
 
 6. [] You can search for the files you uploaded using different criteria, like **file name**, **type**, ... or just look at all the files discovered by Cloud App Security.
 
-    !IMAGE[Search files](\Media\info-files2.png "Search files")
+    !IMAGE[Search files](\Media\boxfilesmatch.JPG)
 
-    >:memo: The search page do not refresh automatically.
 
 7. [] When a policy match is discovered, you will see it in this page.
 
     >:memo: Next to the file name, you have icons showing that an AIP label was applied and that we have a policy match.
 
-    
+	  !IMAGE[PolicyMatch](\Media\boxmatchedpolicies.JPG)
 
 8. [] To open the details of the file, click on its name. You can see there the matched policies and the scan status of the files.
-
-   
 
     !IMAGE[Scan status](\Media\info-files5.png "Scan status")
 
 9. [] You can also view the related governance actions, like applying the Azure Information classification or moving the file to the quarantine folder, at the file level or in the **Governance log**.
 
-
-
-    !IMAGE[Governance log](\Media\info-governance.png "Governance log")
-
-   
+    !IMAGE[Governance log](\Media\boxgovlog.jpg) "Governance log")
 
 10. [] If you go back to **BOX**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
 
+!IMAGE[results](\Media\boxportalresults.jpg)
     
 ===
 # Cloud App Security: Threat Detection Lab
