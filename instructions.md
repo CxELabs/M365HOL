@@ -178,8 +178,11 @@ For several of the exercises in this lab series, you will require an active subs
 In this task, we will create new Azure AD users and assign licenses via PowerShell.  In a procduction evironment this would be done using Azure AD Connect or a similar tool to maintain a single source of authority, but for lab purposes we are doing it via script to reduce setup time.
 
 1. [] Log into @lab.VirtualMachine(Scanner01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++
-2. [] On the desktop, right-click on **AADConfig.ps1** and click **Run with PowerShell**.
-1. [] When prompted for the Tenant name, enter ```@lab.CloudCredential(134).TenantName```
+2. [] On the desktop, **right-click** on **AADConfig.ps1** and click **Run with PowerShell**.
+
+	> !Image[AADConfig](\Media\AADConfig.png)
+
+1. [] When prompted for the **Tenant name**, enter ```@lab.CloudCredential(134).TenantName```.
 1. [] When prompted, provide the credentials below:
 
 	```@lab.CloudCredential(134).Username```
