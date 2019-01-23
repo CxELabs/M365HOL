@@ -363,8 +363,7 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 3. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
 1. [] If you get the Windows protected your PC dialog, click the **More info** link and click **Run anyway**.
 4. [] Press **(Y)** to confirm onboarding.
-5. [] Run **Attack Simulation #1 "Automated investigation (fileless attack)"** by following the instructions below:
-	1. [] Right-click **on AttackSimulation1.ps1** on the desktop and click **Run with PowerShell**.
+5. [] To run **Attack Simulation #1 "Automated investigation (fileless attack)"**, right-click **on AttackSimulation1.ps1** on the desktop, and click **Run with PowerShell**.
 
 	> ![NOTE] A notepad window will launch to show that the attack was successful. Leave the notepad window open and continue with the lab.
 	
