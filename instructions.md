@@ -2694,31 +2694,18 @@ We will apply an Azure Information Protection template on documents containing s
 File policies are a great tool for finding threats to your information protection policies, for instance finding places where users stored sensitive information, credit card numbers and third-party ICAP files in your cloud. With Cloud App Security, not only can you detect these unwanted files stored in your cloud that leave you vulnerable, but you can take im/mediate action to stop them in their tracks and lock down the files that pose a threat. Using Admin quarantine, you can protect your files in the cloud and re/mediate problems, as well as prevent future leaks from occurring.
 This is what we are going to configure in this lab.
 
-1. [] In Cloud App Security Portal, go to the **Gear** and then **Settings**.
-
-    !IMAGE[Settings](\Media\info-settings.png)
-
-2. [] In the Information Protection section, go to **Admin quarantine**.
-
-    !IMAGE[Settings admin quarantine](\Media\info-adminq1.png "Settings admin quarantine")
-
-3. [] Configure **Admin quarantine**.
-
-    **In the dropdown menu, select your root *Box* site.**
-
-    >:memo: As best practice, you should create and use a **dedicated** site with restricted access as the admin quarantine location.
-
-    * In user notification, type **Your content has been quarantined. Please contact your admin.** and click on the **Save** button.
-
-    >:memo: This message will be provided in the placeholders when a file is put in quarantine.
-
-4. [] Next, go to **Control** and then **Policies** and create a new **File policy**. The following policy will determine which files should be placed in quarantine.
+1. [] Next, go to **Control** and then **Policies**.  
 
     !IMAGE[Policies](\Media\info-policy1.png "Policies")
 
+
+2. Create a new **File policy**. The following policy will determine which files should be placed in quarantine.
+
+
+
     !IMAGE[New policy](\Media\info-policy2.png "New policy")
 
-5. [] Provide the following settings to that policy:
+2. [] Provide the following settings to that policy:
 
     >|Policy name|Files matching all of the following|
     >|---------|---------|
@@ -2726,7 +2713,7 @@ This is what we are going to configure in this lab.
 
     !IMAGE[New policy](\Media\info-policy3.png "New policy")
 
-6. [] Check the **Create an alert for each matching file** checkBox. In Governance actions of the policy, select **Put in admin quarantine** for Box and click on the **Create** button.
+3. [] Check the **Create an alert for each matching file** checkBox. In Governance actions of the policy, select **Put in admin quarantine** for Box and click on the **Create** button.
 
       !IMAGE[Unmask](\Media\Boxgovadmin.JPG)
 
@@ -2775,7 +2762,9 @@ To test our files policies, perform the following tasks:
 
 10. [] If you go back to **Box**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
 
-!IMAGE[results](\Media\Boxportalresults.jpg)
+>:memo: **For Box, the quarantine folder location and user message can't be customized. The folder location is the drive of the admin who connected Box to Cloud App Security and the user message is: This file was quarantined to your administrator's drive because it might violate your company's security and compliance policies. Contact your IT administrator for help.**
+
+	!IMAGE[results](\Media\Boxportalresults.jpg)
     
 ===
 # Cloud App Security: Threat Detection Lab
