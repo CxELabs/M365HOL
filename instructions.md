@@ -2785,12 +2785,13 @@ To test our files policies, perform the following tasks:
 Cloud App Security provides several threats detection policies using machine learning and **user behavior analytics** to detect suspicious activities across your different applications.
 Those policies are enabled by default and after an initial learning period, Cloud App Security will start alerting you when suspicious actions like activity from anonymous IP addresses, infrequent country, suspicious IP addresses, impossible travel, ransomware activity, suspicious inBox forwarding configuration or unusual file download are detected.
 
-:warning: In this lab, as your environments auditing might not be configured yet, as it takes up to **24h** before being enabled, we will investigate **in the environment provided by your instructor**. The credentials are provided below.
-Search and review the alerts in that environment and investigate to identify the users and the malicious activities performed.
+>:memo: **It can take up 24 hours for the auditing in Cloud App Security to be configured and for alerts to populate** **For this portion of the lab we will be using a pre-populated tenant to see alerts and have the ability to investigate and remediate them.**
+
+> [!NOTE] **LOG OUT OF YOUR CURRENT CLOUD APP SECURITY TENANT AND LOG BACK IN USING THE CREDENTIALS BELOW**
 
 |Portal               |Username                   |Password
 |----------------- |----------------------------------- |---------------------
-| https://portal.cloudappsecurity.com | viewer@emslab.tech |EventP@ssword
+| ```https://portal.cloudappsecurity.com``` | viewer@emslab.tech |EventP@ssword
 
 **URLs**
 
