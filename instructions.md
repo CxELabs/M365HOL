@@ -534,51 +534,51 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 
 4. [] Click on **Connect Office 365**. Cloud App Security will then have access to Office 365 activities and files.
 
-    !IMAGE[Connect Office](\Media\conf-connectoffice.png "Connect Office")
+    ^IMAGE[Open Screenshot](\Media\conf-connectoffice.png "Connect Office")
 
 5. [] Click on **Test now** to validate the configuration.
 
-    !IMAGE[Test connectivity](\Media\conf-testoffice.png "Test connectivity")
+    ^IMAGE[Open Screenshot](\Media\conf-testoffice.png "Test connectivity")
+
+---
+
+ ## Connecting Box to Cloud App Security
 
 
- ##Connecting Box to Cloud App Security
+1. []  Click on the **+** button again, and this time click on Box.
 
- 1. [] Go to the gear icon and select **App connectors**
+	!IMAGE[2](\Media\box-connect.png)
 
- 	!IMAGE[1](\Media\apiBox1.JPG) "1") 
+3. [] In the Instance name box, type ```Box API Demo```, and click **Connect Box**.
 
- 2. []  Click on the **Plus** button and click on Box.
+	^IMAGE[Open Screenshot](\Media\apiBox3.JPG)
 
-	!IMAGE[2](\Media\apiBox2.JPG)
+4. [] In the Connect Box dialog, click **follow this link**.
 
- 3. [] Type the name of your corporate instance and click **Connect Box.**
+	!IMAGE[4](\Media\box-follow.png)
 
-	!IMAGE[3](\Media\apiBox3.JPG)
+5. [] Log into Box using the credentials below:
 
- 4. []  Follow the **link** that shows up in the pop up.
+	```@lab.CloudCredential(134).Username```
 
-	!IMAGE[4](\Media\apiBox4.JPG)
-
-5. [] Log into Box with the same credentials used to create your developer account. 
-
-	!IMAGE[5](\Media\apiBox5.JPG)
+	```@lab.CloudCredential(134).Password```
 
 6. [] Click on **Grant access to Box**
 
-	!IMAGE[6](\Media\apiBox6.JPG)
+	^IMAGE[Open Screenshot](\Media\box-grant.png)
 
-7. [] Go back to the Cloud App Security portal and click on "Test Now" to see if the connection worked. 
+7. [] Close the Connect Box dialog and click on **Box API Demo** to expand.
+1. [] Click on the **Test now** link.
 
-	!IMAGE[7](\Media\apiBox7.JPG)
+	^IMAGE[Open Screenshot](\Media\apiBox7.JPG)
 
-	If the connection is succesful - it will say **Connected.** 
+	> [!KNOWLEDGE] Once the connection is succesful - it will say **Connected.** 
+	>
+	> !IMAGE[8](\Media\apiBox8.JPG)
 
-    !IMAGE[8](\Media\apiBox8.JPG)
+8. []  Close the dialog and you should be able to see Box API Demo as a connected app in the list. 
 
-8. []  You should be able to see Box as a connected app in the list. 
-
-	!IMAGE[9](\Media\apiBox9.JPG) 
-
+	^IMAGE[9](\Media\apiBox9.JPG) 
 
 ---
 
