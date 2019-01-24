@@ -2231,21 +2231,6 @@ This lab will guide you through some of Microsoft Cloud App Security (MCAS) capa
 
 The different Cloud App Security capabilities covered in the labs are:
 
-<<<<<<< HEAD
-* [Module 01 - Management](#manage-admin-access)
-* [Module 02 - Cloud Discovery ContinuousRreport](#cloud-app-security-discovery-lab)
-* [Module 03 - Information Protection](#information-protection)
-* [Module 04 - Threat Detection](#cloud-app-security-threat-detection-lab)
-* [Module 05 - Conditional Access App Control with Office 365](#conditional-access-app-control-with-office-365)
-
-### Optional/follow on Labs
-
-* [Module 06a - Management with PowerShell](#management-with-powershell)
-* [Module 06b - Cloud Discovery](#cloud-discovery-snapshot-report)
-* [Module 06c - Log Collector Troubleshooting](#log-collector-troubleshooting)
-* [Module 06d - Conditional Access App Control with 3rd party apps](#conditional-access-app-control-with-3rd-party-apps)
-
-=======
 * [Management](#manage-admin-access)
 * [Cloud apps Discovery](#cloud-app-security-discovery-lab)
 * [Information Protection](#information-protection)
@@ -2257,7 +2242,6 @@ The different Cloud App Security capabilities covered in the labs are:
 * [Management with PowerShell](#management-with-powershell)
 * [Log collector troubleshooting](#log-collector-troubleshooting)
 * [Conditional Access App Control with 3rd party apps](#conditional-access-app-control-with-3rd-party-apps)
->>>>>>> 6f95cdd147384d4dea318b348636e2c74b701b44
 
 >:question: If you have questions or want to go further in your Cloud App Security journey, join our **[Tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity)** !
 
