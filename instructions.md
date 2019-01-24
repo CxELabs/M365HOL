@@ -458,7 +458,7 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
 5. [] You can see here that auditing is not enabled. Click on the **Turn on auditing** button to enable it and click **yes** at the prompt.
 
-    ^IMAGE[Turn on auditing](\Media\conf-auditlog.png "Turn on on auditing")
+    ^IMAGE[Turn on auditing](\Media\conf-enableauditing.png "Turn on on auditing")
 
     ^IMAGE[Auditing enabled](\Media\conf-auditenabled.png "Auditing enabled")
 
