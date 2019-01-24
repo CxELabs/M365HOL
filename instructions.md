@@ -2218,8 +2218,7 @@ Congratulations! You have completed the Azure Information Protection Hands on La
 # Microsoft Cloud App Security
 [:arrow_left: Home](#introduction)
 
-This lab will guide you through the different Microsoft Cloud App Security (MCAS) capabilities.
-Although some labs are pretty straight forward ,we expect you to already have some basic experience with Cloud App Security or Office 365 management.
+
 
 ## Lab Environment
 
@@ -2247,16 +2246,16 @@ Although some labs are pretty straight forward ,we expect you to already have so
 The different Cloud App Security capabilities covered in the labs are:
 
 * [Module 01 - Management](#manage-admin-access)
-* [Module 02 - Cloud Discovery continuous report](#cloud-app-security-discovery-lab)
-* [Module 03 - Information protection](#information-protection)
-* [Module 04 - Threat detection](#cloud-app-security-threat-detection-lab)
+* [Module 02 - Cloud Discovery ContinuousRreport](#cloud-app-security-discovery-lab)
+* [Module 03 - Information Protection](#information-protection)
+* [Module 04 - Threat Detection](#cloud-app-security-threat-detection-lab)
 * [Module 05 - Conditional Access App Control with Office 365](#conditional-access-app-control-with-office-365)
 
 ### Optional/follow on labs
 
 * [Module 06a - Management with PowerShell](#management-with-powershell)
-* [Module 06b - Cloud Discovery snapshot report](#cloud-discovery-snapshot-report)
-* [Module 06c - Log collector Troubleshooting](#log-collector-troubleshooting)
+* [Module 06b - Cloud Discovery](#cloud-discovery-snapshot-report)
+* [Module 06c - Log Collector Troubleshooting](#log-collector-troubleshooting)
 * [Module 06d - Conditional Access App Control with 3rd party apps](#conditional-access-app-control-with-3rd-party-apps)
 
 >:question: If you have questions or want to go further in your Cloud App Security journey, join our **[Tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity)** !
@@ -2787,13 +2786,13 @@ Those policies are enabled by default and after an initial learning period, Clou
 
 ## Labs
 
-* [Anonymous access:](#anonymous-access) :clock10: 5 min
-* [Impossible travel:](#impossible-travel) :clock10: 5 min
+* [Anonymous Access:](#anonymous-access) :clock10: 5 min
+* [Impossible Travel:](#impossible-travel) :clock10: 5 min
 * [Activity from infrequent country:](#activity-from-infrequent-country) :clock10: 5 min
-* [Malware detection:](#malware-detection) :clock10: 5 min
-* [Email exfiltration using suspicious inBox forwarding:](#email-exfiltration-using-suspicious-inBox-forwarding) :clock10: 5 min
-* [Ransomware activity:](#ransomware-activity) :clock10: 5 min
-* [Suspicious application consent:](#suspicious-application-consent) :clock10: 5 min
+* [Malware Detection:](#malware-detection) :clock10: 5 min
+* [Email exfiltration using suspicious inbox forwarding:](#email-exfiltration-using-suspicious-inBox-forwarding) :clock10: 5 min
+* [Ransomware Activity:](#ransomware-activity) :clock10: 5 min
+* [Suspicious Application Consent:](#suspicious-application-consent) :clock10: 5 min
 
 ---
 
