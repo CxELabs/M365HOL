@@ -520,7 +520,7 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 
 [:arrow_up: Top](#mcas-environment-preparation)
 
-To connect Cloud App Security to Office 365, you will have to use the Office 365 app connector. App connectors use the APIs of app providers to enable greater visibility and control by Microsoft Cloud App Security over the apps you connect to.
+To connect Cloud App Security to Office 365, you will have to use the Office 365 app connector. App connectors use the APIs of app providers to enable greater visibility and control by Microsoft Cloud App Security over the apps you connect to.  We will also use this method to show integration with the 3rd Party API for Box.
 
 1. [] Open a new in Private tab in your browser and navigate to ```https://portal.cloudappsecurity.com```
 
@@ -542,7 +542,7 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 
 ---
 
- ## Connecting Box to Cloud App Security
+## Connecting Box to Cloud App Security
 
 
 1. []  Click on the **+** button again, and this time click on Box.
