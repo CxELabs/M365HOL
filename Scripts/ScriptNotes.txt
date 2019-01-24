@@ -1,0 +1,4 @@
+This file contains scriptlets that help in creating scripts
+
+Add-Type -AssemblyName Microsoft.VisualBasic
+$Variable = [Microsoft.VisualBasic.Interaction]::InputBox('This is where the text description goes', 'BoxTitle', "ExampleValue")
