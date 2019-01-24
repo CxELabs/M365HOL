@@ -2221,7 +2221,7 @@ Congratulations! You have completed the Azure Information Protection Hands on La
 This lab will guide you through the different Microsoft Cloud App Security (MCAS) capabilities.
 Although some labs are pretty straight forward ,we expect you to already have some basic experience with Cloud App Security or Office 365 management.
 
-## Lab environment
+## Lab Environment
 
 !IMAGE[Lab environment](\Media\mcaslabenvironment.png "Lab environment")
 
@@ -2256,7 +2256,7 @@ The different Cloud App Security capabilities covered in the labs are:
 
 * [Module 06a - Management with PowerShell](#management-with-powershell)
 * [Module 06b - Cloud Discovery snapshot report](#cloud-discovery-snapshot-report)
-* [Module 06c - Log collector troubleshooting](#log-collector-troubleshooting)
+* [Module 06c - Log collector Troubleshooting](#log-collector-troubleshooting)
 * [Module 06d - Conditional Access App Control with 3rd party apps](#conditional-access-app-control-with-3rd-party-apps)
 
 >:question: If you have questions or want to go further in your Cloud App Security journey, join our **[Tech community](https://techcommunity.microsoft.com/t5/Microsoft-Cloud-App-Security/bd-p/MicrosoftCloudAppSecurity)** !
@@ -2576,8 +2576,6 @@ Those commands download a script installing the Docker engine on your host compu
     !IMAGE[WinSCP connection](\Media\dis-winscpconnection.png "WinSCP connection")
 
     >**INFO**: this information was provided during the log collector creation.
-    
-   
 
     You should then be able to see a folder with your data source name.
 
@@ -2605,7 +2603,7 @@ Those commands download a script installing the Docker engine on your host compu
 
     !IMAGE[Last data received](\Media\dis-lastreceived.png "Last data received")
 
-22. [] Go to the **Cloud Discovery dashboard** to verify the discovered apps.
+22. [] Go to the **Cloud Discovery Dashboard** to verify the discovered apps.
 
     !IMAGE[Discovery dashboard](\Media\dis-discoverydashboard.png "Discovery dashboard")
 
@@ -2615,7 +2613,7 @@ Those commands download a script installing the Docker engine on your host compu
   
 
 ===
-# Information protection
+# Information Protection
 
 [:arrow_left: Home](#labs)
 
@@ -3361,7 +3359,7 @@ Using PowerShell:
 
 ===
 
-# Log collector troubleshooting
+# Log Collector Troubleshooting
 
 [:arrow_left: Home](#labs) :clock10: 15 min
 
