@@ -512,10 +512,7 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 
 	^IMAGE[Open Screenshot](\Media\box-verify.png)
 
- 5. [] In the new window that opens, enter ```@lab.CloudCredential(134).password``` in **each of the password boxes** and click the **Update** button. 
-
- !IMAGE[Boxdev](\Media\Boxdev5.jpg)
-
+1. [] In the new window that opens, enter ```@lab.CloudCredential(134).password``` in **each of the password boxes** and click the **Update** button. 
 
 ---
 
