@@ -2190,11 +2190,6 @@ The rest of the lab will be instructor led via PowerPoint.
 # Microsoft Cloud App Security
 [:arrow_left: Home](#introduction)
 
-<<<<<<< HEAD
-
-
-## Lab Environment
-=======
 ## Introduction
 
 Microsoft Cloud App Security is Microsoft **CASB** (Cloud Access Security Broker) and is a critical component of the Microsoft Cloud Security stack.
@@ -2211,7 +2206,6 @@ This lab will guide you through some of Microsoft Cloud App Security (MCAS) capa
 
 ## Lab environment
 [:arrow_left: MCAS Home](#microsoft-cloud-app-security)
->>>>>>> 6f95cdd147384d4dea318b348636e2c74b701b44
 
 !IMAGE[Lab environment](\Media\mcaslabenvironment.png "Lab environment")
 
@@ -2650,7 +2644,6 @@ Those commands download a script installing the Docker engine on your host compu
     !IMAGE[Discovery data](\Media\dis-discoverydata.png "Discovery data")
 
 ===
-# Information Protection
 
 # Information Protection
 [:arrow_left: MCAS Home](#microsoft-cloud-app-security)
