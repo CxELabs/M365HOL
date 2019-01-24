@@ -599,8 +599,6 @@ To prepare the **Information Protection** lab, we have to enable the integration
 
 ---
 
-
-
 ===
 # Complete Azure Security Center Deployment
 [:arrow_left: Home](#lab-environment-configuration)
@@ -609,12 +607,9 @@ Now that the template has been deployed, we can continue with the configuration 
 
 ## Configure the data collection settings in ASC
 
-Now that the workspace has been deployed (you don't have to wait for all the resources to be deployed), do the following:
+1. [] On @lab.VirtualMachine(Client01).SelectLink, open a new InPrivate window and navigate to ```https://portal.azure.com/#blade/Microsoft_Azure_Security```.
 
-1. [] Navigate to the **Security Center** blade.
-
-	^IMAGE[Open Screenshot](\Media\SC.png)
-2. [] In the Security Center - Getting started blade, scroll to the bottom of the window and click on **Start Trial**.
+2. [] In the Security Center - Getting started blade, scroll to the bottom of the main window and click on **Start Trial**.
 
 	^IMAGE[Open Screenshot](\Media\StartTrial.png)
 3. [] In the next pane, click on **Install agents**.
@@ -624,29 +619,34 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 
 	!IMAGE[SecPol](\Media\SecPol.png)
 1. [] On the line where it lists your **workspace**, click on **Edit settings**.
-10. [] In the left pane, click on **Pricing tier**, select **Standard** and click on **Save**.
+
+	!Image[settings](\Media\asc-edit1.png)
+10. [] In the left pane, under Policy components, click on **Pricing tier**.
+1. [] Select **Standard** and click on **Save**.
 
 	^IMAGE[Open Screenshot](\Media\Pricing.png)
 13. [] Click on Data collection and select **All Events** and click on **Save**. 
 
 	^IMAGE[Open Screenshot](\Media\DC.png)
-10. [] Switch back to **Security Policy** and click **OK** to dismiss the message **Your unsaved edits will be discarded**.
+10. [] At the top, click on **Security Center - Security Policy** and click **OK** to dismiss the message **Your unsaved edits will be discarded**.
 
 	!IMAGE[SecPol](\Media\SC2.png)
-6. [] On the line where it lists your Azure subscription (Azure pass), click on **Edit settings**.
+6. [] On the line where it lists **Azure Pass - Sponsorship**, click on **Edit settings**.
 
 	^IMAGE[Open Screenshot](\Media\EditSettings.png)
 7. [] Verify that **Auto Provisioning** is set to **On**.
-8. [] Under Workspace configuration, select **Use another workspace** and select your workspace **ASC-Workspace-xxxx** (which has been created by the template).
+8. [] Under Workspace configuration, select the option button for **Use another workspace**, and select your workspace **ASC-Workspace-xxxx** (which has been created by the template).
 
 	^IMAGE[Open Screenshot](\Media\Workspace.png)
 1. [] Under Windoews secuity events, select **All events**.
 9. [] Click on **Save** at the top of the page.
 9. [] Click on **Yes** on **Would you like to reconfigure monitored VMs?**.
 10. [] Click on **Pricing tier** on the left and click **OK** to ignore the dialog.
-11. [] Under Settings - Pricing tier, click **Standard** and click **Save**.
+11. [] Under Settings - Pricing tier, verify that it is set to **Standard**.  If not, select **Standard** and click **Save**.
 
->[!HINT] It can take some time for the VMs to become visible in Security Center
+>[!HINT] It can take some time for the resources (VMs) to become visible in Security Center.
+
+---
 
 ===
 # Azure Advanced Threat Protection Setup
@@ -675,25 +675,29 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 ---
 ## Deploy the Azure ATP Sensor  
 
-1. []	Click the **Download Sensor Setup** link. 
+1. []	Scroll up and click the **Download Sensor Setup** link. 
 1. []   Click  **Download** to download the Sensor installer package. 
 1. []   Copy the **Access key**, this will be needed during the installation of the Sensor. 
 1. []   Extract the installation files from the Zip file and run **Azure ATP sensor setup.exe**. 
 
 	>[!NOTE] Do not run the installer from within the Zip file, you need to extract the files before running the installer.
 
-1.	Click **Run** in the Open File Security Warning page. 
-1.	Select the installation language of choice and click **Next**. 
-1.	Click **Next** on the Sensor deployment type page.  
-1.	**Paste the Access key** copied from above and click **Install**.  
+1. []	Click **Run** in the Open File Security Warning page. 
+1. []	Select the installation language of choice and click **Next**. 
+1. []	Click **Next** on the Sensor deployment type page.  
+1. []	**Paste the Access key** copied from above and click **Install**.  
+1. []   Click **Finish** to complete the installation.
+---
 
 ## Configure Domain Synchronizer 
-1.	In the Azure ATP console **click on the deployed Sensor** and **toggle the Domain synchronizer candidate switch** to **On** and click **Save**. 
+1. []	In the Azure ATP console **click on the deployed Sensor (ContosoDC)** and **toggle the Domain synchronizer candidate switch** to **On** and click **Save**. 
 
 ## Configure Windows Defender ATP Integration 
-1. In the Azure ATP console click **Windows Dender ATP** and then toggle the **Integration with Widnows Defender ATP** to **On** and click **Save**
+1. [] In the Azure ATP console click **Windows Dender ATP** and then toggle the **Integration with Widnows Defender ATP** to **On** and click **Save**
 
 	>[!NOTE] This requires that you have already enabled the Windows Defender ATP service. 
+
+---
 
 === 
 ## Adding Guest User access to Azure ATP Console.
@@ -712,7 +716,7 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 4. []	Click **Users**. 
 5. []	Click **New guest user**. 
 6. []	Enter email address for guest user such as ```@lab.User.Email``` and click **Invite**. 
-7. []	Close the Users blade by clicking the **X** in the right-hand side.  
+7. []	At the top of the window, click on the **Contoso** link or browse to ```https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade```.  
 8. []	Click **Groups**. 
 9. []	Click **Azure ATP {workspace name} Administrators group** (the first Azure ATP Group).  
 10. []	Click **Members**. 
@@ -720,6 +724,14 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 12. []	Select the **guest user added above** and click **Select**. 
 
 > [!NOTE]	After the user accepts the invitation the user will be able to access the Azure ATP console for this workspace using their email account.  
+---
+
+===
+# Lab Environment Setup Complete
+
+The lab environment setup is now complete. The next section will cover Azure Information Protection (Roadmap discussion then Hands On Lab). If you decide to close out of the Lab during the roadmap discussion, please ensure that you **Save** the lab using the menu in the upper right corner of the browser.
+
+!IMAGE[Save](\Media\save.png)
 
 ===
 # Azure Information Protection Lab
