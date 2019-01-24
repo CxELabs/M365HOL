@@ -196,7 +196,7 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
 
 	```@lab.CloudCredential(134).Password``` 
    
-	> [!KNOWLEDGE] We are running the PowerShell code below to create the accounts and groups in AAD and assign licenses for EMS E5 and Office E5
+	> [!KNOWLEDGE] We are running the PowerShell code below to create the accounts and groups in AAD and assign licenses for EMS E5 and Office E5. This script is also available at [https://aka.ms/labscripts](https://aka.ms/labscripts) as AADConfig.ps1.
     > 
     > #### Azure AD User and Group Configuration
     > $tenantfqdn = "@lab.CloudCredential(134).TenantName"
