@@ -459,38 +459,31 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 5. [] You can see here that auditing is not enabled. Click on the **Turn on auditing** button to enable it and click **yes** at the prompt.
 
     ^IMAGE[Turn on auditing](\Media\conf-auditlog.png "Turn on on auditing")
+
     ^IMAGE[Auditing enabled](\Media\conf-auditenabled.png "Auditing enabled")
 
     >:warning: As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts for the threat detection lab.
 
-:warning: In addition to enabling auditing in Office 365, some applications like Exchange Online require extra configuration. After enabling auditing at the Office 365 level, we have to enable auditing at the mailBox level. We will perform this configuration before going to the labs.
+### Exchange Auditing Configuration
 
-1. [] On Client01, open PowerShell.
+In addition to enabling auditing in Office 365, some applications like Exchange Online require extra configuration. After enabling auditing at the Office 365 level, we have to enable auditing at the mailBox level. We will perform this configuration before going to the labs.
 
-    ^IMAGE[Open PowerShell](\Media\conf-powershell.png "Open PowerShell")
+1. [] On the desktop, right-click on **EnableMailboxAudit.ps1** and click **Run with PowerShell**.
 
-2. [] Enter the following commands to connect to Exchange Online using PowerShell. When prompted for credentials, enter your Office 365 administrative credentials.
-   
-	```
-
-	$UserCredential = Get-Credential
-
-    $Session = New-PSSession –ConfigurationName Microsoft.Exchange –ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential –Authentication Basic -AllowRedirection
-
-    Import-PSSession $Session
+	> [!KNOWLEDGE] The following commands will be run to connect to Exchange Online and Enable Mailbox Auditing on the Admin account.
+    >
+	> $UserCredential = Get-Credential
+    >
+	> $Session = New-PSSession –ConfigurationName Microsoft.Exchange –ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential –Authentication Basic -AllowRedirection
+	>
+	>Import-PSSession $Session
+    >
+	> Get-MailBox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailBox"} | Set-MailBox -AuditEnabled $true
+    > Get-MailBox admin | fl audit*
     
-	```
+    > [!ALERT] When you create new mailBoxes, **auditing is not enabled** by default. You will have to use the same commands again to enable auditing for those newly created mailBoxes.
 
-    !IMAGE[Exchange PowerShell](\Media\conf-psonline.png "Exchange PowerShell")
-
-3. [] Enter the following commands to enable auditing for your mailBoxes. The second command let you verify that auditing is correctly enabled.
-    ```
-    Get-MailBox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailBox"} | Set-MailBox -AuditEnabled $true
-    Get-MailBox admin | fl audit*
-    ```
-    >:warning: When you create new mailBoxes, auditing is not enabled by default. You will have to use the same commands again to enable auditing for those newly created mailBoxes.
-
-    !IMAGE[MailBox auditing](\Media\conf-mbxauditing.png "MailBox Auditing")
+    !IMAGE[MailBox auditing](\Media\MailboxAudit.png "MailBox Auditing")
 
 >:memo: **Reference:** [Enabling auditing for Exchange Online mailBoxes](https://docs.microsoft.com/en-us/office365/securitycompliance/enable-mailBox-auditing?redirectSourcePath=%252fen-us%252farticle%252fenable-mailBox-auditing-in-office-365-aaca8987-5b62-458b-9882-c28476a66918)).
 

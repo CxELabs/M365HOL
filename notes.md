@@ -41,9 +41,7 @@ Removed from WorkplaceJoin Setup
 
 Add to
 
-	Swap MCAS and AATP order in lab as MCAS is day 2
 
-	Change instruction to Windows E5 Trial Code
 
     Update in MCAS instructions
 
