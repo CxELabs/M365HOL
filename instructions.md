@@ -2205,8 +2205,7 @@ The diagram below describe typical use cases for CASB's.
 
 !IMAGE[MCAS intro](\Media\mcasintro-1.png "MCAS intro")
 
-This lab will guide you through some of Microsoft Cloud App Security (MCAS) capabilities.
-Although  labs are pretty straight forward, we expect you to already have basic experience with Microsoft Cloud Security stack and Office 365 management.
+This lab will guide you through some of Microsoft Cloud App Security (MCAS) capabilities and top use cases.
 
 ===
 
@@ -2245,20 +2244,21 @@ The different Cloud App Security capabilities covered in the labs are:
 * [Module 04 - Threat Detection](#cloud-app-security-threat-detection-lab)
 * [Module 05 - Conditional Access App Control with Office 365](#conditional-access-app-control-with-office-365)
 
-### Optional/follow on labs
+### Optional/follow on Labs
 
 * [Module 06a - Management with PowerShell](#management-with-powershell)
 * [Module 06b - Cloud Discovery](#cloud-discovery-snapshot-report)
 * [Module 06c - Log Collector Troubleshooting](#log-collector-troubleshooting)
 * [Module 06d - Conditional Access App Control with 3rd party apps](#conditional-access-app-control-with-3rd-party-apps)
+
 =======
 * [Management](#manage-admin-access)
 * [Cloud apps Discovery](#cloud-app-security-discovery-lab)
-* [Information protection](#information-protection)
+* [Information Protection](#information-protection)
 * [Conditional Access App Control with Office 365](#conditional-access-app-control-with-office-365)
-* [Threat detection](#cloud-app-security-threat-detection-lab)
+* [Threat Detection](#cloud-app-security-threat-detection-lab)
 
-### Optional/follow on labs
+### Optional/Follow on labs
 
 * [Management with PowerShell](#management-with-powershell)
 * [Log collector troubleshooting](#log-collector-troubleshooting)
@@ -2269,7 +2269,7 @@ The different Cloud App Security capabilities covered in the labs are:
 
 ===
 
-# Manage admin access
+# Manage Admin Access
 [:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 [Manage admin access:](#manage-admin-access) :clock10: 5 min
@@ -2395,6 +2395,10 @@ As the MCAS admin for your company, work with the person next to you to configur
 On average, more than 1,100 cloud applications are used by enterprises today, of which 61% are **not** sanctioned by IT. This results in duplicate capabilities, apps not meeting compliance standards or posing a security risk to the organization without any IT oversight.
 **Discovery** identifies current cloud apps, provides risk assessments and ongoing analytics and lifecycle management capabilities to control the use.
 
+
+!IMAGE[Discovery](\Media\discovery3.JPG)
+
+
 To provide this visibility on Shadow IT and cloud apps usage, Cloud App Security ingest and analyze network logs from proxy, firewall but also from **Windows 10** clients within or **ouside** the corporate network, using the native integration with **Windows Defender ATP**.
 
 !IMAGE[Discovery intro](\Media\dis-intro1.png "Discovery intro")
@@ -2473,11 +2477,13 @@ Continuous reports analyze all logs that are forwarded from your network using C
 
 These reports can be created by connecting in the following ways:
 
-* **Windows Defender ATP integration**: Cloud App Security integrates with Windows Defender Advanced Threat Protection (ATP) natively, to simplify rollout of Cloud Discovery, extend Cloud Discovery capabilities beyond your corporate network, and enable machine-based investigation.
+* **Windows Defender ATP Integration**: Cloud App Security integrates with Windows Defender Advanced Threat Protection (ATP) natively, to simplify rollout of Cloud Discovery, extend Cloud Discovery capabilities beyond your corporate network, and enable machine-based investigation.
 
-* **Log collector**: Log collectors enable you to easily automate log upload from your network. The log collector runs on your network and receives logs over Syslog or FTP.
+* **Log Collector**: Log collectors enable you to easily automate log upload from your network. The log collector runs on your network and receives logs over Syslog or FTP.
 
-* **Zscaler integration**: If you work with both Cloud App Security and Zscaler, you can integrate the two products to enhance your security Cloud Discovery experience. Together, Cloud App Security and Zscaler provide seamless deployment of Cloud Discovery, automatic blocking of unsanctioned apps, and risk assessment directly in the Zscaler portal.
+* **Zscaler Integration**: If you work with both Cloud App Security and Zscaler, you can integrate the two products to enhance your security Cloud Discovery experience. Together, Cloud App Security and Zscaler provide seamless deployment of Cloud Discovery, automatic blocking of unsanctioned apps, and risk assessment directly in the Zscaler portal.
+
+!IMAGE[Zscaler](\Media\SWG.JPG)
 
 In this lab you will perform the configuration of a **Log collector**.
 
@@ -2644,16 +2650,15 @@ Those commands download a script installing the Docker engine on your host compu
     !IMAGE[Discovery data](\Media\dis-discoverydata.png "Discovery data")
 
 ===
-<<<<<<< HEAD
 # Information Protection
-=======
->>>>>>> 6f95cdd147384d4dea318b348636e2c74b701b44
 
-# Information protection
+# Information Protection
 [:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 In a perfect world, all your employees understand the importance of information protection and work within your policies. But in a real world, it's probable that a partner who works with accounting uploads a document to your Box repository with the wrong permissions, and a week later you realize that your enterprise's confidential information was leaked to your competition.
 Microsoft Cloud App Security helps you prevent this kind of disaster before it happens.
+
+!IMAGE[IP](\Media\IPCAS.JPG)
 
 ## Labs
 
@@ -2752,7 +2757,7 @@ This is what we are going to configure in this lab.
 
 ---
 
-## Test our policies
+## Test our Policies
 
 [:arrow_up: Top](#information-protection)
 
@@ -2811,7 +2816,7 @@ Azure AD conditional access allows you to enforce access controls on your organi
 
 Conditional Access App Control enables user app access and sessions to be **monitored and controlled in real time** based on access and session policies.
 
-!IMAGE[AAD portal](\Media\caac-overview.png)
+!IMAGE[AAD portal](\Media\caac1.jpg)
 
 > [!NOTE] **App Control Access and Session policies give you the capability to the following:**
 * **Block on download**: You can block the download of sensitive documents. For example, on unmanaged devices.
@@ -2825,7 +2830,6 @@ Conditional Access App Control enables user app access and sessions to be **moni
 
 ## Configuration
 
-<<<<<<< HEAD
 * [Anonymous Access:](#anonymous-access) :clock10: 5 min
 * [Impossible Travel:](#impossible-travel) :clock10: 5 min
 * [Activity from infrequent country:](#activity-from-infrequent-country) :clock10: 5 min
@@ -2833,8 +2837,6 @@ Conditional Access App Control enables user app access and sessions to be **moni
 * [Email exfiltration using suspicious inbox forwarding:](#email-exfiltration-using-suspicious-inBox-forwarding) :clock10: 5 min
 * [Ransomware Activity:](#ransomware-activity) :clock10: 5 min
 * [Suspicious Application Consent:](#suspicious-application-consent) :clock10: 5 min
-=======
->>>>>>> 6f95cdd147384d4dea318b348636e2c74b701b44
 
 1. [] Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
 
@@ -3000,7 +3002,7 @@ As you can see, the user can access the document using the Office Online app.
 
 ====
 
-# Reviewing the alerts
+# Reviewing the Alerts
 [:arrow_left: Home](#labs)
 
 Now that we validated our configuration, let's go back to the admin view.
