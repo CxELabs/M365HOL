@@ -545,7 +545,7 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 ## Connecting Box to Cloud App Security
 
 
-1. []  Click on the **+** button again, and this time click on Box.
+1. []  Click on the **+** button again, and this time click on **Box**.
 
 	!IMAGE[2](\Media\box-connect.png)
 
@@ -576,7 +576,7 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 	>
 	> !IMAGE[8](\Media\apiBox8.JPG)
 
-8. []  Close the dialog and you should be able to see Box API Demo as a connected app in the list. 
+8. []  Close the dialog and you should be able to see **Box API Demo** as a **Connected** app in the list. 
 
 	^IMAGE[9](\Media\apiBox9.JPG) 
 
@@ -589,6 +589,7 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 To prepare the **Information Protection** lab, we have to enable the integration between Cloud App Security and Azure Information Protection as explained in the [Cloud App Security documentation](https://docs.microsoft.com/en-us/cloud-app-security/azip-integration). Enabling the integration between the two solutions is as easy as selecting one single checkBox.
 
 1. [] Go to Cloud App Security settings.
+
     !IMAGE[Settings](\Media\conf-settings.png "Settings")
 
 2. [] Go down in the settings to the **Azure Information Protection** section and check the **Automatically scan new files** checkBox and click on the "**Save** button.
