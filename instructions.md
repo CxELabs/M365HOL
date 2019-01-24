@@ -479,7 +479,8 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 	>Import-PSSession $Session
     >
 	> Get-MailBox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailBox"} | Set-MailBox -AuditEnabled $true
-    > Get-MailBox admin | fl audit*
+    >
+	> Get-MailBox admin | fl audit*
     
     > [!ALERT] When you create new mailBoxes, **auditing is not enabled** by default. You will have to use the same commands again to enable auditing for those newly created mailBoxes.
 
@@ -492,25 +493,26 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 ## Create a Developer Box Account 
 
 
-1. [] Go to ```Box.com``` and click on **Sign Up** in the top right hand corner. 
+1. [] Next, navigate to ```https://developer.box.com``` and click on **Get Started**. 
 
- !IMAGE[Boxdev](\Media\Boxdev1.jpg)
+	!IMAGE[Boxdev](\Media\box-getstarted.png)
 
-2. [] Click on **Plaform Plans** and choose **Developer.**
+2. [] **Enter the values** from the table below, **check the box** to solve the captcha, and click **Submit**.
 
-!IMAGE[Boxdev](\Media\Boxdev2.jpg)
+	|||
+	|-----|-----|
+	|**Full Name**|```MOD Admin```|
+	|**Email Address**|```@lab.CloudCredential(134).UserName```|
 
-3. [] Using your Office 365 crendetials provided in *your tenant* as the email address and password. 
+	^IMAGE[Open Screenshot](\Media\box-signup.png)
 
-			*Example Tenant Credentials* 
+3. [] In a new tab, browse to ```https://outlook.office365.com/OWA```. 
+1. [] Choose a time zone and click **Save**.
+1. [] In the MOD Admin inbox, click on **Other** mail, and click the **Verify Email** link in the email from Box.
 
- !IMAGE[Boxdev](\Media\tenantcredentials.jpg)
+	^IMAGE[Open Screenshot](\Media\box-verify.png)
 
- 4. [] After you signed up, go to ```https://outlook.office.com``` and you should recieve an email from Box. Open the email and verify your email address. 
-
- !IMAGE[Boxdev](\Media\Boxdev4.jpg)
-
- 5. [] Change your password and after the change you should recieve an email verifying that your password has been sucessfully changed. 
+ 5. [] In the new window that opens, enter ```@lab.CloudCredential(134).password``` in **each of the password boxes** and click the **Update** button. 
 
  !IMAGE[Boxdev](\Media\Boxdev5.jpg)
 
