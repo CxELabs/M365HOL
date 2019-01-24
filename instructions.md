@@ -2651,13 +2651,13 @@ Those commands download a script installing the Docker engine on your host compu
 In a perfect world, all your employees understand the importance of information protection and work within your policies. But in a real world, it's probable that a partner who works with accounting uploads a document to your Box repository with the wrong permissions, and a week later you realize that your enterprise's confidential information was leaked to your competition.
 Microsoft Cloud App Security helps you prevent this kind of disaster before it happens.
 
-!IMAGE[IP](\Media\IPCAS.JPG)
-
 ## Labs
 
 * [Apply AIP classification to SSN documents:](#apply-aip-classification-to-ssn-documents) :clock10: 10 min
 * [Quarantine sensitive PDF for review:](#quarantine-sensitive-pdf-for-review) :clock10: 10 min
 * [Test our policies:](#test-our-policies) :clock10: 10 min
+
+	!IMAGE[IP](\Media\IPCAS.JPG)
 
 ===
 
