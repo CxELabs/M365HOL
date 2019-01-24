@@ -723,7 +723,8 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 11. []	Click **Add members**. 
 12. []	Select the **guest user added above** and click **Select**. 
 
-> [!NOTE]	After the user accepts the invitation the user will be able to access the Azure ATP console for this workspace using their email account.  
+	> [!NOTE]	After the user accepts the invitation the user will be able to access the Azure ATP console for this workspace using their email account. 
+
 ---
 
 ===
