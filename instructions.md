@@ -3048,13 +3048,13 @@ Those policies are enabled by default and after an initial learning period, Clou
 
 ## Labs
 
-* [Anonymous access:](#anonymous-access) :clock10: 5 min
-* [Impossible travel:](#impossible-travel) :clock10: 5 min
-* [Activity from infrequent country:](#activity-from-infrequent-country) :clock10: 5 min
-* [Malware detection:](#malware-detection) :clock10: 5 min
-* [Email exfiltration using suspicious inBox forwarding:](#email-exfiltration-using-suspicious-inBox-forwarding) :clock10: 5 min
-* [Ransomware activity:](#ransomware-activity) :clock10: 5 min
-* [Suspicious application consent:](#suspicious-application-consent) :clock10: 5 min
+* [Anonymous access:](#anonymous-access)
+* [Impossible travel:](#impossible-travel)
+* [Activity from infrequent country:](#activity-from-infrequent-country)
+* [Malware detection:](#malware-detection)
+* [Email exfiltration using suspicious inBox forwarding:](#email-exfiltration-using-suspicious-inBox-forwarding)
+* [Ransomware activity:](#ransomware-activity)
+* [Suspicious application consent:](#suspicious-application-consent)
 
 ---
 
@@ -3395,14 +3395,8 @@ Using PowerShell:
 
 ===
 
-<<<<<<< HEAD
 # Log Collector Troubleshooting
-
 [:arrow_left: Home](#labs) :clock10: 15 min
-=======
-# Log collector troubleshooting
-[:arrow_left: MCAS Home](#microsoft-cloud-app-security) :clock10: 15 min
->>>>>>> 6f95cdd147384d4dea318b348636e2c74b701b44
 
 In this task, you will review possible troubleshooting steps to identify issues in automatic logs upload from the log collector.
 There are several things to test at different locations: in the log collector, in MCAS, at the network level.
@@ -3436,7 +3430,7 @@ There are several things to test at different locations: in the log collector, i
 1. [] On **Client01**, open a session on PuTTY to **192.168.141.125** and use the credentials below.
     In the PuTTY Configuration window, enter **192.168.141.125** and click **Open**.
 
-    !IMAGE[Putty config](\Media\dis-puttyconfig.png "Putty config")
+    ^IMAGE[Open Screenshot](\Media\dis-puttyconfig.png "Putty config")
 
     Log in using the credentials below.
     >|Username|Password|
@@ -3513,7 +3507,7 @@ An easy way to test the connectivity after configuring the log collector is to d
 
 !IMAGE[Pending log](\Media\dis-pending.png "Log pending")
 
->:memo: **NOTE:**  If the log stays in the source folder for too long, then you know you probably have a connection issue between the log collector and Cloud App Security and should go investigate the logs reviewed previously.
+> [!HINT]  If the log stays in the source folder for too long, then you know you probably have a connection issue between the log collector and Cloud App Security and should go investigate the logs reviewed previously.
 
 ===
 
