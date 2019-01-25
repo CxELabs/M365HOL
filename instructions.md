@@ -4426,7 +4426,7 @@ https:/aka.ms/asc_containers_preview
 !IMAGE[alt text](\Media\container_in_asc.png) <br><br>
 
 **Clicking on the container shows more details:**
-!IMAGE[alt text](\Media\docker_details.png) <br><br>
+!IMAGE[alt text](\Media\docker_details.png) <br><br> 
 
 !IMAGE[alt text](\Media\docker_details2.png)
 
