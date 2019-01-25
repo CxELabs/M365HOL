@@ -18,39 +18,47 @@
 
 	+++@lab.CloudCredential(134).Password+++
 
+> [!KNOWLEDGE] The script runs the code below. This script is available online at https://aka.ms/labscripts
+	>
+	>  
 
-	Swap MCAS and AATP order in lab as MCAS is day 2
+Removed from WorkplaceJoin Setup
 
-	Change instruction to Windows E5 Trial Code
+1. [] Open an Edge InPrivate window and navigate to ```https://securitycenter.windows.com/```.
+1. [] Log in using the credentials below:
+
+	```@lab.CloudCredential(134).Username```
+
+	```@lab.CloudCredential(134).Password```
+1. [] On the left, click the **Settings** icon.
+
+	!IMAGE[settings.png](\Media\settings.png)
+
+3. [] On the Settings page, under **Machine management**, click **Onboarding**.
+   
+	!IMAGE[Open Screenshot](\Media\onboarding.png)
+
+1. [] Click **Download package** and **Open** when the download dialog pops up.
+2. [] Copy the **WindowsDefenderATPLocalOnboardingScript** to the desktop.
+1. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
+1. [] Press **(Y)** to confirm onboarding.
+
+Add scripts instructions for 
+
+ ScannerInstall
+ AuthToken
+ ConfigureRepo
+ StartDiscovery
+ StartEnforce
+ ExchangeMFRs x2
+
+Replace scripts on VMs
+
+ EnableMailboxAudit
+ ConfigRepo
+ 
 
     Update in MCAS instructions
-
-	prep
-
-	step 4 fix horizontal images
-	Fix numbering by indenting 2nd warn block
-	Open admin powershell
-	Delete Open PS image as icon does not exist on Client01
-	Add credentials for get-cred
-	remove extra close paren in reference
-
-	need steps to sign up for a box developer account
-	go to ```https://developer.box.com```
-	Click Get Started
-	Enter the values below in the fields, check the box, and solve the captcha.  Then click Submit
-	In a new tab, go to ```https://outlook.office365.com/OWA```
-	Choose a time zone and click save
-	In the inbox, click on Other mail and click the Verify Email link sent from Box
-	In the window that opens, enter ```@lab.CloudCredential(134).password``` in each of the boxes and click the Update button
-
-	fix a/b numbering under BOX section
-	remove first under box 
-	Change second to read, Click the plus to add a second connector
-	Note about if the test now does not come up, close the dialog and click on Box to see the Test now link
-
-	AIP section
-	line break before first image
-	Note that there is now also an option to search within AIP protected files. Not doing that in this lab, but good to know this option exists.
 
 
 	Delegate access

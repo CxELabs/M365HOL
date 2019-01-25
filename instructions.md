@@ -10,9 +10,9 @@ This lab is designed to be used as a supplement to Instructor Led Training and h
 
 ## [Lab 1: Azure Information Protection](#azure-information-protection)
 
-## [Lab 2: Microsoft Cloud App Security](#microsoft-cloud-app-security)
+## [Lab 2: Azure Advanced Threat Protection](#azure-atp-immersion-lab)
 
-## [Lab 3: Azure Advanced Threat Protection](#azure-atp-immersion-lab)
+## [Lab 3: Microsoft Cloud App Security](#microsoft-cloud-app-security)
 
 ## [Lab 4: Windows Defender Advanced Threat Protection](#windows-defender-advanced-threat-protection)
 
@@ -33,9 +33,7 @@ There are a few extras throughout this lab that are designed to make your lab ex
 - Each task contains a series of steps required for successful completion of the lab.  To track your progress throughout the lab, check the Box to the left of the numbered series.  
 
 	!IMAGE[6mfi1ekm.jpg](\Media\6mfi1ekm.jpg)
-- After you check each Box, you will see your lab progress at the bottom of the instruction pane.
 
-	!IMAGE[0ggu265u.jpg](\Media\0ggu265u.jpg)
 - When you see an instruction for switching computers, click on the **blue link** in the text to have that VM loaded automatically.
 
 	!IMAGE[12i85vgl.jpg](\Media\12i85vgl.jpg)
@@ -127,6 +125,8 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 
 	!IMAGE[6crecugz.jpg](\Media\6crecugz.jpg)
 
+---
+
 ===
 # Redeem Azure Pass
 [:arrow_left: Home](#lab-environment-configuration)
@@ -174,6 +174,8 @@ For several of the exercises in this lab series, you will require an active subs
 
 1. [] While this is processing, you may continue to the next task.
 
+---
+
 ===
 # Azure AD User Configuration
 [:arrow_left: Home](#lab-environment-configuration)
@@ -187,14 +189,14 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
 
 	> [!NOTE] If prompted to change the execution policy, type **y** and **Enter**.
 
-1. [] When prompted for the **Tenant name**, click in the text box and enter ```@lab.CloudCredential(134).TenantName```.
+1. [] When prompted for the **Tenant name**, **click in the text box** and enter ```@lab.CloudCredential(134).TenantName```.
 1. [] When prompted, provide the credentials below:
 
 	```@lab.CloudCredential(134).Username```
 
 	```@lab.CloudCredential(134).Password``` 
    
-	> [!KNOWLEDGE] We are running the PowerShell code below to create the accounts and groups in AAD and assign licenses for EMS E5 and Office E5
+	> [!KNOWLEDGE] We are running the PowerShell code below to create the accounts and groups in AAD and assign licenses for EMS E5 and Office E5. This script is also available at [https://aka.ms/labscripts](https://aka.ms/labscripts) as AADConfig.ps1.
     > 
     > #### Azure AD User and Group Configuration
     > $tenantfqdn = "@lab.CloudCredential(134).TenantName"
@@ -256,6 +258,9 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
     > Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
 
 	> [!NOTE] The PowerShell window will automatically close once users have been created and licenses have been assigned.
+
+---
+
 ===
 # Azure Security Center Setup
 [:arrow_left: Home](#lab-environment-configuration)
@@ -286,24 +291,24 @@ Use the link below to deploy the following:
 	>
 	>```@lab.CloudCredential(134).Password```
 
-1. [] On the Custom deployment page, next to **Resource group** click **Create new**.
+1. [] On the Custom deployment page, below the **Resource group** drop-down, click **Create new**.
 
 	!IMAGE[NewRG.png](\Media\NewRG.png)
 1. [] When prompted for a Name, provide a name such as ```ASC-Labs``` and press **OK**.
 
 	^IMAGE[Open Screenshot](\Media\RGName.png)
-1. [] Select a location, then under **Settings**, type the password ```Securitycenter4ever!```.
+1. [] **Select a location**, then under **Settings**, next to **Pwd Or Ssh** type the password ```Securitycenter4ever!```.
 1. [] Finally, check the Box to agree to the terms and click **Purchase**.
 
 	^IMAGE[Open Screenshot](\Media\Password.png)
 
-1. [] The deployment takes about 13 minutes. Continue to the next task and we will return to the ASC deployment later.
+1. [] The deployment takes about **13 minutes**. **Continue to the next task** and we will return to the ASC deployment later.
 
 ===
 # Windows Defender ATP Onboarding
 [:arrow_left: Home](#lab-environment-configuration)
 
-In this task, we will perform initial setup of WD ATP and onboard 2 machines.
+In this task, we will perform initial setup of WD ATP and onboard 2 machines.  
 
 1. [] Switch to @lab.VirtualMachine(AdminPC).SelectLink and log in with the password +++@lab.VirtualMachine(AdminPC).Password+++.
 
@@ -318,10 +323,12 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 1. [] On Step 2, choose a data storage location and click **Next**.
 1. [] On Step 3, click **Next** several times until the Create your cloud instance dialog pops up, then click **Continue**.
 1. [] On Step 4, click the **Download package** button and save the package to your desktop.
-1. [] Extract the zip file to your desktop.
+1. [] **Extract the zip file** to your desktop.
 1. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
 1. [] In the Windows protected your PC dialog, click the **More info** link and click **Run anyway**.
-1. [] In the UAC window, click on **More choices** and select use a different account.
+1. [] In the User Account Control (UAC) window, click on **More choices** and select use a different account.
+
+	> [!NOTE] If you do not see the UAC window, minimize all windows and it will be in the background.
 1. [] Enter the credentials below and click **Yes**:
 
 	```LabUser```
@@ -329,10 +336,11 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 	```Pa$$w0rd```
 
 1. [] Press **(Y)** to confirm onboarding.
-2. [] Return to the browser and click **Start using Windows Defender ATP** (ignore any warnings about onboarding).
+2. [] Return to the browser, scroll to the bottom of the page, and click **Start using Windows Defender ATP**.
+1. [] Click **Proceed anyway** if you receive a Setup incomplete popup.
 3. [] In the Windows Defender Security Center, click on **Settings > Advanced Features** and toggle the switches on for **Azure ATP integration**, **Office 365 Threat Intelligence Connection**, **Microsoft Cloud App Security**, and **Azure Information Protection** and press the **Save preferences** button at the bottom of the page.
 	
-	!IMAGE[g47p8c30.jpg](\Media\g47p8c30.jpg)
+	!IMAGE[g47p8c30.jpg](\Media\wdatpadv.png)
 
 1. [] Switch to @lab.VirtualMachine(VictimPC).SelectLink and log in with the password +++@lab.VirtualMachine(VictimPC).Password+++.
 
@@ -353,20 +361,25 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 1. [] Click **Download package** and **Open** when the download dialog pops up.
 2. [] Copy the **WindowsDefenderATPLocalOnboardingScript** to the desktop.
 3. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
+1. [] If you get the Windows protected your PC dialog, click the **More info** link and click **Run anyway**.
 4. [] Press **(Y)** to confirm onboarding.
-5. [] Run **Attack Simulation #1 "Automated investigation (fileless attack)"** by following the instructions below:
-	1. [] Open a PowerShell window and click on the code below to type it in the window (please wait until you see **($decryptedBytes))** before pressing **Enter**):
+5. [] To run **Attack Simulation #1 "Automated investigation (fileless attack)"**, right-click **on AttackSimulation1.ps1** on the desktop, and click **Run with PowerShell**.
+
+	> [!NOTE] A notepad window will launch to show that the attack was successful. Leave the notepad window open and continue with the lab.
 	
-	```
-	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;$xor = [System.Text.Encoding]::UTF8.GetBytes('WinATP-Intro-Injection');$base64String = (Invoke-WebRequest -URI https://winatpmanagement.windows.com/client/management/static/WinATP-Intro-Fileless.txt -UseBasicParsing).Content;Try{ $contentBytes = [System.Convert]::FromBase64String($base64String) } Catch { $contentBytes = [System.Convert]::FromBase64String($base64String.Substring(3)) };$i = 0; $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i]; $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
-	```
+	> [!KNOWLEDGE] The powershell commands that are included in the ps1 file are in the block below.
+	> 
+	> \[Net.ServicePointManager\]::SecurityProtocol = \[Net.SecurityProtocolType\]::Tls12;$xor = \[System.Text.Encoding\]::UTF8.GetBytes('WinATP-Intro-Injection');$base64String = (Invoke-WebRequest -URI https://winatpmanagement.windows.com/client/management/static/WinATP-Intro-Fileless.txt -UseBasicParsing).Content;Try{ $contentBytes = \[System.Convert\]::FromBase64String($base64String) } Catch { $contentBytes = \[System.Convert\]::FromBase64String($base64String.Substring(3)) };$i = 0; $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i]; $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression (\[System.Text.Encoding\]::UTF8.GetString($decryptedBytes))
 
 1. [] Switch to @lab.VirtualMachine(AdminPC).SelectLink and log in with the password +++@lab.VirtualMachine(AdminPC).Password+++.
 1. [] Run **Attack Simulation #2 "Automated investigation (backdoor)"** by following the instructions below:
 	1. [] On the desktop, double-click on **RS4_WinATP-Intro-Invoice.docm** and enter ```WDATP!diy#``` when prompted for a password.
-	2. [] Once the file opens, in the **Security Warning** ribbon, click **Enable Content**.
+
+		> [!ALERT] If you receive an activation warning, click **Cancel**.
+
+	2. [] Once the file opens, in the Security Warning ribbon at the top of the document, click **Enable Content**.
 	3. [] Click **OK** to confirm the attack.
-	4. [] Press **Enter** to close the command prompt window.
+	4. [] Wait about a minute, then **close the generated command prompt** window.
 ===
 # Workplace Join Clients
 [:arrow_left: Home](#lab-environment-configuration)
@@ -385,24 +398,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 		
 	```pass@word1```
 1. [] Click **Done**.
-1. [] Open an Edge InPrivate window and navigate to ```https://securitycenter.windows.com/```.
-1. [] Log in using the credentials below:
 
-	```@lab.CloudCredential(134).Username```
-
-	```@lab.CloudCredential(134).Password```
-1. [] On the left, click the **Settings** icon.
-
-	!IMAGE[settings.png](\Media\settings.png)
-
-3. [] On the Settings page, under **Machine management**, click **Onboarding**.
-   
-	!IMAGE[Open Screenshot](\Media\onboarding.png)
-
-1. [] Click **Download package** and **Open** when the download dialog pops up.
-2. [] Copy the **WindowsDefenderATPLocalOnboardingScript** to the desktop.
-1. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
-1. [] Press **(Y)** to confirm onboarding.
 1. [] Log into @lab.VirtualMachine(Client02).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++.
 1. [] Right-click on the start menu and click **Run**.
 1. [] In the Run dialog, type ```ms-settings:workplace``` and click **OK**.
@@ -415,24 +411,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 		
 	```pass@word1```
 1. [] Click **Done**.
-1. [] Open an Edge InPrivate window and navigate to ```https://securitycenter.windows.com/```.
-1. [] Log in using the credentials below:
 
-	```@lab.CloudCredential(134).Username```
-
-	```@lab.CloudCredential(134).Password```
-1. [] On the left, click the **Settings** icon.
-
-	^IMAGE[Open Screenshot](\Media\settings.png)
-
-3. [] On the Settings page, under **Machine management**, click **Onboarding**.
-   
-	^IMAGE[Open Screenshot](\Media\onboarding.png)
-
-1. [] Click **Download package** and **Open** when the download dialog pops up.
-2. [] Copy the **WindowsDefenderATPLocalOnboardingScript** to the desktop.
-1. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
-1. [] Press **(Y)** to confirm onboarding.
 1. [] Log into @lab.VirtualMachine(Client03).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++.
 1. [] Right-click on the start menu and click **Run**.
 1. [] In the Run dialog, type ```ms-settings:workplace``` and click **OK**.
@@ -445,24 +424,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 		
 	```pass@word1```
 1. [] Click **Done**.
-1. [] Open an Edge InPrivate window and navigate to ```https://securitycenter.windows.com/```.
-1. [] Log in using the credentials below:
 
-	```@lab.CloudCredential(134).Username```
-
-	```@lab.CloudCredential(134).Password```
-1. [] On the left, click the **Settings** icon.
-
-	^IMAGE[Open Screenshot](\Media\settings.png)
-
-3. [] On the Settings page, under **Machine management**, click **Onboarding**.
-   
-	^IMAGE[Open Screenshot](\Media\onboarding.png)
-
-4. [] Click **Download package** and **Open** when the download dialog pops up.
-5. [] Copy the **WindowsDefenderATPLocalOnboardingScript** to the desktop.
-6. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
-7. [] Press **(Y)** to confirm onboarding.
 ===
 # MCAS Environment Preparation
 [:arrow_left: Home](#lab-environment-configuration)
@@ -496,39 +458,33 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
 5. [] You can see here that auditing is not enabled. Click on the **Turn on auditing** button to enable it and click **yes** at the prompt.
 
-    ^IMAGE[Turn on auditing](\Media\conf-auditlog.png "Turn on on auditing")
+    ^IMAGE[Turn on auditing](\Media\conf-enableauditing.png "Turn on on auditing")
+
     ^IMAGE[Auditing enabled](\Media\conf-auditenabled.png "Auditing enabled")
 
     >:warning: As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts for the threat detection lab.
 
-:warning: In addition to enabling auditing in Office 365, some applications like Exchange Online require extra configuration. After enabling auditing at the Office 365 level, we have to enable auditing at the mailBox level. We will perform this configuration before going to the labs.
+### Exchange Auditing Configuration
 
-1. [] On Client01, open PowerShell.
+In addition to enabling auditing in Office 365, some applications like Exchange Online require extra configuration. After enabling auditing at the Office 365 level, we have to enable auditing at the mailBox level. We will perform this configuration before going to the labs.
 
-    ^IMAGE[Open PowerShell](\Media\conf-powershell.png "Open PowerShell")
+1. [] On the desktop, right-click on **EnableMailboxAudit.ps1** and click **Run with PowerShell**.
 
-2. [] Enter the following commands to connect to Exchange Online using PowerShell. When prompted for credentials, enter your Office 365 administrative credentials.
-   
-	```
-
-	$UserCredential = Get-Credential
-
-    $Session = New-PSSession –ConfigurationName Microsoft.Exchange –ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential –Authentication Basic -AllowRedirection
-
-    Import-PSSession $Session
+	> [!KNOWLEDGE] The following commands will be run to connect to Exchange Online and Enable Mailbox Auditing on the Admin account.
+    >
+	> $UserCredential = Get-Credential
+    >
+	> $Session = New-PSSession –ConfigurationName Microsoft.Exchange –ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential –Authentication Basic -AllowRedirection
+	>
+	>Import-PSSession $Session
+    >
+	> Get-MailBox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailBox"} | Set-MailBox -AuditEnabled $true
+    >
+	> Get-MailBox admin | fl audit*
     
-	```
+    > [!ALERT] When you create new mailBoxes, **auditing is not enabled** by default. You will have to use the same commands again to enable auditing for those newly created mailBoxes.
 
-    !IMAGE[Exchange PowerShell](\Media\conf-psonline.png "Exchange PowerShell")
-
-3. [] Enter the following commands to enable auditing for your mailBoxes. The second command let you verify that auditing is correctly enabled.
-    ```
-    Get-MailBox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailBox"} | Set-MailBox -AuditEnabled $true
-    Get-MailBox admin | fl audit*
-    ```
-    >:warning: When you create new mailBoxes, auditing is not enabled by default. You will have to use the same commands again to enable auditing for those newly created mailBoxes.
-
-    !IMAGE[MailBox auditing](\Media\conf-mbxauditing.png "MailBox Auditing")
+    !IMAGE[MailBox auditing](\Media\MailboxAudit.png "MailBox Auditing")
 
 >:memo: **Reference:** [Enabling auditing for Exchange Online mailBoxes](https://docs.microsoft.com/en-us/office365/securitycompliance/enable-mailBox-auditing?redirectSourcePath=%252fen-us%252farticle%252fenable-mailBox-auditing-in-office-365-aaca8987-5b62-458b-9882-c28476a66918)).
 
@@ -537,28 +493,26 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 ## Create a Developer Box Account 
 
 
-1. [] Go to ```Box.com``` and click on **Sign Up** in the top right hand corner. 
+1. [] Next, navigate to ```https://developer.box.com``` and click on **Get Started**. 
 
- !IMAGE[Boxdev](\Media\Boxdev1.jpg)
+	!IMAGE[Boxdev](\Media\box-getstarted.png)
 
-2. [] Click on **Plaform Plans** and choose **Developer.**
+2. [] **Enter the values** from the table below, **check the box** to solve the captcha, and click **Submit**.
 
-!IMAGE[Boxdev](\Media\Boxdev2.jpg)
+	|||
+	|-----|-----|
+	|**Full Name**|```MOD Admin```|
+	|**Email Address**|```@lab.CloudCredential(134).UserName```|
 
-3. [] Using your Office 365 crendetials provided in *your tenant* as the email address and password. 
+	^IMAGE[Open Screenshot](\Media\box-signup.png)
 
-			*Example Tenant Credentials* 
+3. [] In a new tab, browse to ```https://outlook.office365.com/OWA```. 
+1. [] Choose a time zone and click **Save**.
+1. [] In the MOD Admin inbox, click on **Other** mail, and click the **Verify Email** link in the email from Box.
 
- !IMAGE[Boxdev](\Media\tenantcredentials.jpg)
+	^IMAGE[Open Screenshot](\Media\box-verify.png)
 
- 4. [] After you signed up, go to ```https://outlook.office.com``` and you should recieve an email from Box. Open the email and verify your email address. 
-
- !IMAGE[Boxdev](\Media\Boxdev4.jpg)
-
- 5. [] Change your password and after the change you should recieve an email verifying that your password has been sucessfully changed. 
-
- !IMAGE[Boxdev](\Media\Boxdev5.jpg)
-
+1. [] In the new window that opens, enter ```@lab.CloudCredential(134).password``` in **each of the password boxes** and click the **Update** button. 
 
 ---
 
@@ -566,7 +520,7 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
 [:arrow_up: Top](#mcas-environment-preparation)
 
-To connect Cloud App Security to Office 365, you will have to use the Office 365 app connector. App connectors use the APIs of app providers to enable greater visibility and control by Microsoft Cloud App Security over the apps you connect to.
+To connect Cloud App Security to Office 365, you will have to use the Office 365 app connector. App connectors use the APIs of app providers to enable greater visibility and control by Microsoft Cloud App Security over the apps you connect to.  We will also use this method to show integration with the 3rd Party API for Box.
 
 1. [] Open a new in Private tab in your browser and navigate to ```https://portal.cloudappsecurity.com```
 
@@ -580,51 +534,51 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 
 4. [] Click on **Connect Office 365**. Cloud App Security will then have access to Office 365 activities and files.
 
-    !IMAGE[Connect Office](\Media\conf-connectoffice.png "Connect Office")
+    ^IMAGE[Open Screenshot](\Media\conf-connectoffice.png "Connect Office")
 
 5. [] Click on **Test now** to validate the configuration.
 
-    !IMAGE[Test connectivity](\Media\conf-testoffice.png "Test connectivity")
+    ^IMAGE[Open Screenshot](\Media\conf-testoffice.png "Test connectivity")
+
+---
+
+## Connecting Box to Cloud App Security
 
 
- ##Connecting Box to Cloud App Security
+1. []  Click on the **+** button again, and this time click on **Box**.
 
- 1. [] Go to the gear icon and select **App connectors**
+	!IMAGE[2](\Media\box-connect.png)
 
- 	!IMAGE[1](\Media\apiBox1.JPG) "1") 
+3. [] In the Instance name box, type ```Box API Demo```, and click **Connect Box**.
 
- 2. []  Click on the **Plus** button and click on Box.
+	^IMAGE[Open Screenshot](\Media\apiBox3.JPG)
 
-	!IMAGE[2](\Media\apiBox2.JPG)
+4. [] In the Connect Box dialog, click **follow this link**.
 
- 3. [] Type the name of your corporate instance and click **Connect Box.**
+	!IMAGE[4](\Media\box-follow.png)
 
-	!IMAGE[3](\Media\apiBox3.JPG)
+5. [] Log into Box using the credentials below:
 
- 4. []  Follow the **link** that shows up in the pop up.
+	```@lab.CloudCredential(134).Username```
 
-	!IMAGE[4](\Media\apiBox4.JPG)
-
-5. [] Log into Box with the same credentials used to create your developer account. 
-
-	!IMAGE[5](\Media\apiBox5.JPG)
+	```@lab.CloudCredential(134).Password```
 
 6. [] Click on **Grant access to Box**
 
-	!IMAGE[6](\Media\apiBox6.JPG)
+	^IMAGE[Open Screenshot](\Media\box-grant.png)
 
-7. [] Go back to the Cloud App Security portal and click on "Test Now" to see if the connection worked. 
+7. [] Close the Connect Box dialog and click on **Box API Demo** to expand.
+1. [] Click on the **Test now** link.
 
-	!IMAGE[7](\Media\apiBox7.JPG)
+	^IMAGE[Open Screenshot](\Media\apiBox7.JPG)
 
-	If the connection is succesful - it will say **Connected.** 
+	> [!KNOWLEDGE] Once the connection is succesful - it will say **Connected.** 
+	>
+	> !IMAGE[8](\Media\apiBox8.JPG)
 
-    !IMAGE[8](\Media\apiBox8.JPG)
+8. []  Close the dialog and you should be able to see **Box API Demo** as a **Connected** app in the list. 
 
-8. []  You should be able to see Box as a connected app in the list. 
-
-	!IMAGE[9](\Media\apiBox9.JPG) 
-
+	^IMAGE[Open Screenshot](\Media\apiBox9.JPG) 
 
 ---
 
@@ -635,6 +589,7 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 To prepare the **Information Protection** lab, we have to enable the integration between Cloud App Security and Azure Information Protection as explained in the [Cloud App Security documentation](https://docs.microsoft.com/en-us/cloud-app-security/azip-integration). Enabling the integration between the two solutions is as easy as selecting one single checkBox.
 
 1. [] Go to Cloud App Security settings.
+
     !IMAGE[Settings](\Media\conf-settings.png "Settings")
 
 2. [] Go down in the settings to the **Azure Information Protection** section and check the **Automatically scan new files** checkBox and click on the "**Save** button.
@@ -644,8 +599,6 @@ To prepare the **Information Protection** lab, we have to enable the integration
 
 ---
 
-
-
 ===
 # Complete Azure Security Center Deployment
 [:arrow_left: Home](#lab-environment-configuration)
@@ -654,12 +607,9 @@ Now that the template has been deployed, we can continue with the configuration 
 
 ## Configure the data collection settings in ASC
 
-Now that the workspace has been deployed (you don't have to wait for all the resources to be deployed), do the following:
+1. [] On @lab.VirtualMachine(Client01).SelectLink, open a new InPrivate window and navigate to ```https://portal.azure.com/#blade/Microsoft_Azure_Security/SecurityMenuBlade/18```.
 
-1. [] Navigate to the **Security Center** blade.
-
-	^IMAGE[Open Screenshot](\Media\SC.png)
-2. [] In the Security Center - Getting started blade, scroll to the bottom of the window and click on **Start Trial**.
+2. [] In the Security Center - Getting started blade, scroll to the bottom of the main window and click on **Start Trial**.
 
 	^IMAGE[Open Screenshot](\Media\StartTrial.png)
 3. [] In the next pane, click on **Install agents**.
@@ -669,29 +619,34 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 
 	!IMAGE[SecPol](\Media\SecPol.png)
 1. [] On the line where it lists your **workspace**, click on **Edit settings**.
-10. [] In the left pane, click on **Pricing tier**, select **Standard** and click on **Save**.
+
+	!IMAGE[settings](\Media\asc-edit1.png)
+10. [] In the left pane, under Policy components, click on **Pricing tier**.
+1. [] Select **Standard** and click on **Save**.
 
 	^IMAGE[Open Screenshot](\Media\Pricing.png)
 13. [] Click on Data collection and select **All Events** and click on **Save**. 
 
 	^IMAGE[Open Screenshot](\Media\DC.png)
-10. [] Switch back to **Security Policy** and click **OK** to dismiss the message **Your unsaved edits will be discarded**.
+10. [] At the top, click on **Security Center - Security Policy** and click **OK** to dismiss the message **Your unsaved edits will be discarded**.
 
 	!IMAGE[SecPol](\Media\SC2.png)
-6. [] On the line where it lists your Azure subscription (Azure pass), click on **Edit settings**.
+6. [] On the line where it lists **Azure Pass - Sponsorship**, click on **Edit settings**.
 
 	^IMAGE[Open Screenshot](\Media\EditSettings.png)
 7. [] Verify that **Auto Provisioning** is set to **On**.
-8. [] Under Workspace configuration, select **Use another workspace** and select your workspace **ASC-Workspace-xxxx** (which has been created by the template).
+8. [] Under Workspace configuration, select the option button for **Use another workspace**, and select your workspace **ASC-Workspace-xxxx** (which has been created by the template).
 
 	^IMAGE[Open Screenshot](\Media\Workspace.png)
 1. [] Under Windoews secuity events, select **All events**.
 9. [] Click on **Save** at the top of the page.
 9. [] Click on **Yes** on **Would you like to reconfigure monitored VMs?**.
 10. [] Click on **Pricing tier** on the left and click **OK** to ignore the dialog.
-11. [] Under Settings - Pricing tier, click **Standard** and click **Save**.
+11. [] Under Settings - Pricing tier, verify that it is set to **Standard**.  If not, select **Standard** and click **Save**.
 
->[!HINT] It can take some time for the VMs to become visible in Security Center
+>[!HINT] It can take some time for the resources (VMs) to become visible in Security Center.
+
+---
 
 ===
 # Azure Advanced Threat Protection Setup
@@ -720,25 +675,30 @@ Now that the workspace has been deployed (you don't have to wait for all the res
 ---
 ## Deploy the Azure ATP Sensor  
 
-1. []	Click the **Download Sensor Setup** link. 
+1. []	Scroll up and click the **Download Sensor Setup** link. 
 1. []   Click  **Download** to download the Sensor installer package. 
 1. []   Copy the **Access key**, this will be needed during the installation of the Sensor. 
 1. []   Extract the installation files from the Zip file and run **Azure ATP sensor setup.exe**. 
 
 	>[!NOTE] Do not run the installer from within the Zip file, you need to extract the files before running the installer.
 
-1.	Click **Run** in the Open File Security Warning page. 
-1.	Select the installation language of choice and click **Next**. 
-1.	Click **Next** on the Sensor deployment type page.  
-1.	**Paste the Access key** copied from above and click **Install**.  
+1. []	Click **Run** in the Open File Security Warning page. 
+1. []	Select the installation language of choice and click **Next**. 
+1. []	Click **Next** on the Sensor deployment type page.  
+1. []	**Paste the Access key** copied from above and click **Install**.  
+1. []   Click **Finish** to complete the installation.
+
+---
 
 ## Configure Domain Synchronizer 
-1.	In the Azure ATP console **click on the deployed Sensor** and **toggle the Domain synchronizer candidate switch** to **On** and click **Save**. 
+1. []	In the Azure ATP console **click on the deployed Sensor (ContosoDC)** and **toggle the Domain synchronizer candidate switch** to **On** and click **Save**. 
 
 ## Configure Windows Defender ATP Integration 
-1. In the Azure ATP console click **Windows Dender ATP** and then toggle the **Integration with Widnows Defender ATP** to **On** and click **Save**
+1. [] In the Azure ATP console click **Windows Dender ATP** and then toggle the **Integration with Widnows Defender ATP** to **On** and click **Save**
 
 	>[!NOTE] This requires that you have already enabled the Windows Defender ATP service. 
+
+---
 
 === 
 ## Adding Guest User access to Azure ATP Console.
@@ -757,14 +717,23 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 4. []	Click **Users**. 
 5. []	Click **New guest user**. 
 6. []	Enter email address for guest user such as ```@lab.User.Email``` and click **Invite**. 
-7. []	Close the Users blade by clicking the **X** in the right-hand side.  
+7. []	At the top of the window, click on the **Contoso** link or browse to ```https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade```.  
 8. []	Click **Groups**. 
 9. []	Click **Azure ATP {workspace name} Administrators group** (the first Azure ATP Group).  
 10. []	Click **Members**. 
 11. []	Click **Add members**. 
 12. []	Select the **guest user added above** and click **Select**. 
 
-> [!NOTE]	After the user accepts the invitation the user will be able to access the Azure ATP console for this workspace using their email account.  
+	> [!NOTE]	After the user accepts the invitation the user will be able to access the Azure ATP console for this workspace using their email account. 
+
+---
+
+===
+# Lab Environment Setup Complete
+
+The lab environment setup is now complete. The next section will cover Azure Information Protection (Roadmap discussion then Hands On Lab). If you decide to close out of the Lab during the roadmap discussion, please ensure that you **Save** the lab using the menu in the upper right corner of the browser.
+
+!IMAGE[Save](\Media\save.png)
 
 ===
 # Azure Information Protection Lab
@@ -817,6 +786,7 @@ Microsoft 365 E5 Tenant credentials will be provided during the event.  If you w
 
 In order to collect log data from Azure Information Protection clients and services, you must first configure the log analytics workspace.
 
+1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 1. [] In the Azure portal, type the word ```info``` into the **search bar** and press **Enter**, then click on **Azure Information Protection**. 
 
 	!IMAGE[2598c48n.jpg](\Media\2598c48n.jpg)
@@ -830,6 +800,13 @@ In order to collect log data from Azure Information Protection clients and servi
 1. [] Next, click on **+ Create new workspace**.
 
 	!IMAGE[qu68gqfd.jpg](\Media\qu68gqfd.jpg)
+
+	> [!ALERT] The reason we recommend creating a new workspace here is that, by default, only the creator and subscription administrators have access to an Azure Log Analytics workspace.  
+	>
+	> The data contained in this workspace will contain details about the **location** and **contents** of files containing **sensitive information**. 
+	>
+	> Restricting access to this workspace only to **trusted administrators** with a **need to know** is **highly recommended**.
+
 1. [] Configure the Log analytics workspace using the values in the table below and click **OK**.
 
 	|||
@@ -913,13 +890,12 @@ The first step in configuring the AIP Scanner is to install the service and conn
 
 1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in using the password +++@lab.VirtualMachine(Client01).Password+++.
 
-1. [] At the Administrative PowerShell prompt, type the code below 
-   
-	```
-	$SQL = "Scanner01"
-	Install-AIPScanner -SQLServerInstance $SQL
-	
-	```
+1. [] Open an **Administrative PowerShell Window** and type ```C:\Users\LabUser\Desktop\InstallScanner.ps1``` and press **Enter**. 
+
+1. [] In the popup box, click **OK** to accept the default of **Scanner01**.
+
+	> [!NOTE] We have preconfigured SQL Server on Scanner01 with a **default instance**. If using a **named instance** or **SQL Server Express**, you would populate this with **ServerName\\InstanceName** or **ServerName\\SqlExpress** respectively.
+
 3. [] When prompted, provide the credentials for the **local** AIP scanner service account.
 	
 	```Contoso\AIPScanner```
@@ -928,50 +904,57 @@ The first step in configuring the AIP Scanner is to install the service and conn
 
 	^IMAGE[Open Screenshot](\Media\pc9myg9x.jpg)
 
-	> [!knowledge] You should see a success message like the one below. 
+	> [!KNOWLEDGE] This script installs the AIP scanner Service account using the **local domain user** account provisioned for the AIP Scanner. This account will need to be provided **read** access to **all repositories** that need to be scanned during **discovery**.  
 	>
-	>!IMAGE[w7goqgop.jpg](\Media\w7goqgop.jpg)
+	> When you begin **classifying and labeling** files with the AIP scanner, this account will also need **write** access to the repositories, so this is something you should consider during rights assignment. 
+	>
+	> This script will run the code below. This script is available online at https://aka.ms/labscripts
+	>
+	> Add-Type -AssemblyName Microsoft.VisualBasic
+	> 
+	> $SQL = [Microsoft.VisualBasic.Interaction]::InputBox('Enter the name of your SQL Server or Server\Instance', 'SQL Server', "Scanner01")
+	>
+	> Install-AIPScanner -SQLServerInstance $SQL
+	
+	^IMAGE[Open Screenshot](\Media\w7goqgop.jpg)
 
 ### Creating Azure AD Applications for the AIP Scanner
 
 Now that you have installed the scanner bits, you need to get an Azure AD token for the scanner service account to authenticate so that it can run unattended. This requires registering both a Web app and a Native app in Azure Active Directory.  The commands below will do this in an automated fashion rather than needing to go into the Azure portal directly.
 
-1. [] In the same PowerShell window, run ```Connect-AzureAD``` and use the username and password below. 
+1. [] Next, on the desktop, right-click on **GenerateAuthToken.ps1** and click **Run with PowerShell**.
+1. [] When prompted, provide the username and password below. 
 	
 	```@lab.CloudCredential(134).Username```
 	
 	```@lab.CloudCredential(134).Password```
-1. [] Next, click the **T** to **type the commands below** in the PowerShell window and press **Enter**. 
 
-	```
-	New-AzureADApplication -DisplayName AIPOnBehalfOf -ReplyUrls http://localhost
-	$WebApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPOnBehalfOf'"
-	New-AzureADServicePrincipal -AppId $WebApp.AppId
-	$WebAppKey = New-Guid
-	$Date = Get-Date
-	New-AzureADApplicationPasswordCredential -ObjectId $WebApp.ObjectID -startDate $Date -endDate $Date.AddYears(1) -Value $WebAppKey.Guid -CustomKeyIdentifier "AIPClient"
-
-	$AIPServicePrincipal = Get-AzureADServicePrincipal -All $true | ? {$_.DisplayName -eq 'AIPOnBehalfOf'}
-	$AIPPermissions = $AIPServicePrincipal | select -expand Oauth2Permissions
-	$Scope = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $AIPPermissions.Id,"Scope"
-	$Access = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
-	$Access.ResourceAppId = $WebApp.AppId
-	$Access.ResourceAccess = $Scope
-
-	New-AzureADApplication -DisplayName AIPClient -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
-	$NativeApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPClient'"
-	New-AzureADServicePrincipal -AppId $NativeApp.AppId
-	```
-
-    >[!NOTE] This will create a new Web App Registration, Native App Registration, and associated Service Principals in Azure AD.
-
-1. [] Finally, we will output the Set-AIPAuthentication command by running the commands below and pressing **Enter**.
-   
+	> [!HINT] This will create a new **Web App Registration**, **Native App Registration**, and associated **Service Principals** in Azure AD. 
+	>
+	> Next, the script will output a new text file containing the **Set-AIPAuthentication** command and the **required values to generate the authentication token** for **any** AIP scanner server in an environment.
 	
-    ```
-    "Set-AIPAuthentication -WebAppID " + $WebApp.AppId + " -WebAppKey " + $WebAppKey.Guid + " -NativeAppID " + $NativeApp.AppId | Out-File ~\Desktop\Set-AIPAuthentication.txt
-	Start ~\Desktop\Set-AIPAuthentication.txt
-	```
+	> [!KNOWLEDGE] This script will run the code below. This script is available online at https://aka.ms/labscripts
+	>
+	> New-AzureADApplication -DisplayName AIPOnBehalfOf -ReplyUrls http://localhost
+	> $WebApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPOnBehalfOf'"
+	> New-AzureADServicePrincipal -AppId $WebApp.AppId
+	> $WebAppKey = New-Guid
+	> $Date = Get-Date
+	> New-AzureADApplicationPasswordCredential -ObjectId $WebApp.ObjectID -startDate $Date -endDate $Date.AddYears(1) -Value $WebAppKey.Guid -CustomKeyIdentifier "AIPClient"
+	>
+	> $AIPServicePrincipal = Get-AzureADServicePrincipal -All $true | ? {$_.DisplayName -eq 'AIPOnBehalfOf'}
+	> $AIPPermissions = $AIPServicePrincipal | select -expand Oauth2Permissions
+	> $Scope = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $AIPPermissions.Id,"Scope"
+	> $Access = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
+	> $Access.ResourceAppId = $WebApp.AppId
+	> $Access.ResourceAccess = $Scope
+	>
+	> New-AzureADApplication -DisplayName AIPClient -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
+	> $NativeApp = Get-AzureADApplication -Filter "DisplayName eq 'AIPClient'"
+	> New-AzureADServicePrincipal -AppId $NativeApp.AppId
+	>
+    > "Set-AIPAuthentication -WebAppID " + $WebApp.AppId + " -WebAppKey " + $WebAppKey.Guid + " -NativeAppID " + $NativeApp.AppId | Out-File ~\Desktop\Set-AIPAuthentication.txt
+	> Start ~\Desktop\Set-AIPAuthentication.txt
 
 1. [] Leave the notepad window open in the background.
 1. [] **Click on the Start menu** and type ```PowerShell```, right-click on the PowerShell program, and click **Run as a different user**.
@@ -984,7 +967,7 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 
 	```Somepass1```
 
-1. [] Restore the **Notepad** window and copy the **full Set-AIPAuthentication** command into this window and run it.
+1. [] Return to the **Notepad** window and copy the **full Set-AIPAuthentication** command into this window and run it.
 1. [] When prompted, enter the username and password below:
 
 	```AIPScanner@@lab.CloudCredential(134).TenantName```
@@ -1001,13 +984,11 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 	>
 	>!IMAGE[y2bgsabe.jpg](\Media\y2bgsabe.jpg)
 
-1. [] **Close the current PowerShell window**.
-1. [] **In the admin PowerShell window** and type the command below.
+1. [] **Close the PowerShell window**.
+1. [] Next, in the **Admin PowerShell window**, run the command below.
 
 	```Restart-Service AIPScanner```
    
-   > [!Note] Leave the PowerShell window open for the next task
-
 ---
 
 ## Configuring Repositories 
@@ -1018,39 +999,41 @@ In this task, we will configure repositories to be scanned by the AIP scanner.  
 
 The next task is to configure repositories to scan.  These can be on-premises SharePoint 2010, 2013, or 2016 document libraries and any accessible CIFS based share.
 
-1. [] In the Administrative PowerShell window on Scanner01, run the commands below
+1. [] In the **Admin PowerShell window**, type ```C:\Users\LabUser\Desktop\ConfigureRepository.ps1``` and press **Enter**.
 
-    ```
-    Add-AIPScannerRepository -Path http://Scanner01/documents -SetDefaultLabel Off
-	```
-	```
-	Add-AIPScannerRepository -Path \\Scanner01\documents -SetDefaultLabel Off
-    ```
-	>[!Knowledge] Notice that we added the **-SetDefaultLabel Off** switch to each of these repositories.  This is necessary because our Global policy has a Default label of **General**.  If we did not add this switch, any file that did not match a condition would be labeled as General when we do the enforced scan.
+	> [!HINT] This command configures a **CIFS fileshare** repository and a **SharePoint document library** repository then **displays the configuration** to verify they were added.
 
-	^IMAGE[Open Screenshot](\Media\00niixfd.jpg)
-1. [] To verify the repositories configured, run the command below.
-	
-    ```
-    Get-AIPScannerRepository
-    ```
-	^IMAGE[Open Screenshot](\Media\n5hj5e7j.jpg)
+	^IMAGE[Open Screenshot](\Media\scanner-repo.png)
+
+    > [!KNOWLEDGE] The script runs the code below. This script is available online at https://aka.ms/labscripts
+	>
+	> Add-AIPScannerRepository -Path http://Scanner01/documents -SetDefaultLabel Off
+	>
+	> Add-AIPScannerRepository -Path \\Scanner01\documents -SetDefaultLabel Off
+	>
+	> Get-AIPScannerRepository
+   
+	>[!HINT] Notice that we added the **-SetDefaultLabel Off** switch to each of these repositories.  This is useful to prevent any Default labels from applying to files that do not match a condition when we do the enforced scan. This is optional and may be removed if desired.
+
 
 ---
 
 ## Running Sensitive Data Discovery 
 [:arrow_up: Top](#configuring-aip-scanner-for-discovery)
 
-1. [] Run the commands below to run a discovery cycle.
+1. [] In the **Admin PowerShell window**, type ```C:\Users\LabUser\Desktop\StartDiscovery.ps1``` and press **Enter**.
 
-    ```
-	Set-AIPScannerConfiguration -DiscoverInformationTypes All -Enforce Off
-	```
-	```
-	Start-AIPScan
-    ```
+	> [!HINT] This command sets the global configuration of the AIP scanner to use **any custom conditions** that you have specified for labels in the Azure Information Protection policy, and the list of all **default sensitive information types** that are available to specify as conditions for labels.
+	>
+	> Although the scanner will discover documents to classify, it will not classify them because the configuration for the scanner is set to Discover only mode (Enforce Off).
+	>
+	> This command also starts the **initial discovery scan**.
 
-	> [!Knowledge] Note that we used the DiscoverInformationTypes -All switch before starting the scan.  This causes the scanner to use any custom conditions that you have specified for labels in the Azure Information Protection policy, and the list of information types that are available to specify for labels in the Azure Information Protection policy.  Although the scanner will discover documents to classify, it will not do so because the default configuration for the scanner is Discover only mode.
+	> [!KNOWLEDGE] The script runs the code below. This script is available online at https://aka.ms/labscripts
+	>
+	> Set-AIPScannerConfiguration -DiscoverInformationTypes All -Enforce Off
+	>
+	> Start-AIPScan
 	
 1. [] Right-click on the **Windows** button in the lower left-hand corner and click on **Event Viewer**.
 
@@ -1059,7 +1042,9 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 
 	^IMAGE[Open Screenshot](\Media\dy6mnnpv.jpg)
 
-	>[!NOTE] You will see an event like the one below when the scanner completes the cycle. If you see a .NET exception, press OK. This is due to SharePoint startup in the VM environment.
+	> [!ALERT] If you see a **.NET exception**, press **OK**. This is due to SharePoint startup in the VM environment. This event **must be acknowledged** to complete the discovery scan.
+
+	> [!NOTE] You will see an event like the one below when the scanner completes the cycle. 
 	>
 	>!IMAGE[agnx2gws.jpg](\Media\agnx2gws.jpg)
 
@@ -1199,7 +1184,7 @@ However, there are times when external collaboration is required, so we will con
 ---
 
 ## Configuring Global Policy
-[:arrow_up: Top](#configuring-azure-information-protection-policy)
+[:arrow_up: Top](#base-configuration)
 
 In this task, we will assign the new sub-label to the Global policy and configure several global policy settings that will increase Azure Information Protection adoption among your users and reduce ambiguity in the user interface.
 
@@ -1223,10 +1208,11 @@ In this task, we will assign the new sub-label to the Global policy and configur
 	| Setting | Value |
 	|:--------|:------|
 	| Select the default label | General |
-	|All documents and emails must have a label…|On
-	Users must provide justification to set a lower…|On
-	For email messages with attachments, apply a label…|Automatic
-	Add the Do Not Forward button to the Outlook ribbon|Off
+	|All documents and emails must have a label…|On|
+	|Users must provide justification to set a lower…|On|
+	|For email messages with attachments, apply a label…|Automatic|
+	|Display the Information Protection Bar in Office apps|On|
+	|Add the Do Not Forward button to the Outlook ribbon|Off|
 
 	!IMAGE[Open Screenshot](\Media\mtqhe3sj.jpg)
 
@@ -1241,7 +1227,7 @@ In this task, we will assign the new sub-label to the Global policy and configur
 ---
 
 ## Creating a Scoped Label and Policy
-[:arrow_up: Top](#configuring-azure-information-protection-policy)
+[:arrow_up: Top](#base-configuration)
 
 Now that you have learned how to work with global labels and policies, we will create a new scoped label and policy for the Legal team at Contoso.  
 
@@ -1327,7 +1313,7 @@ Now that you have learned how to work with global labels and policies, we will c
 ---
 
 ## Configuring Advanced Policy Settings
-[:arrow_up: Top](#configuring-azure-information-protection-policy)
+[:arrow_up: Top](#base-configuration)
 
 There are many advanced policy settings that are useful to tailor your Azure Information Protection deployment to the needs of your environment.  In this task, we will cover one of the settings that is very complimentary when using scoped policies that have no default label or a protected default label.  Because the No Default Label Scoped Policy we created in the previous task uses a protected default label, we will be adding an alternate default label for Outlook to provide a more palatable user experience for those users.
 
@@ -1355,7 +1341,7 @@ There are many advanced policy settings that are useful to tailor your Azure Inf
 ---
 
 ## Defining Recommended and Automatic Conditions
-[:arrow_up: Top](#configuring-azure-information-protection-policy)
+[:arrow_up: Top](#base-configuration)
 
 One of the most powerful features of Azure Information Protection is the ability to guide your users in making sound decisions around safeguarding sensitive data.  This can be achieved in many ways through user education or reactive events such as blocking emails containing sensitive data. 
 
@@ -1431,7 +1417,6 @@ However, helping your users to properly classify and protect sensitive data at t
 
 Now that you have 3 test systems with users being affected by different policies configured, we can start testing these policies.  This exercise will run through various scenarios to demonstrate the use of AIP global and scoped policies and show the functionality of recommended and automatic labeling. This Exercise will walk you through the items below.
 
-- [Exchange Mail Flow Rule Removal](#exchange-mail-flow-rule-removal)
 - [Testing User Defined Permissions](#testing-user-defined-permissions)
 - [Testing Global Policy](#testing-global-policy)
 - [Testing Scoped Policy](#testing-scoped-policy)
@@ -1440,35 +1425,7 @@ Now that you have 3 test systems with users being affected by different policies
 > [!ALERT] If you see a warning about a metered connection in Office, click **Connect anyway** to allow Office to connect.  If you do not do this you will get errors when connecting to the AIP service. The VMs are set to metered to increase network speed.
 
 ---
-## Exchange Mail Flow Rule Removal
 
-By default, many of the demo tenants provided block external communications via mail flow rule.  As this will hinder many demos in this lab, we will verify if such a rule exists and remove it if necesary.
-
-1. [] In the Admin PowerShell window, type the commands below to connect to an Exchange Online PowerShell session.  Use the credentials provided when prompted.
-
-	```
-	$cred = Get-Credential
-	$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $cred -Authentication Basic -AllowRedirection
-	Import-PSSession $Session
-	```
-
-	> ```@lab.CloudCredential(134).Username```
-	>
-	> ```@lab.CloudCredential(134).Password```
-
-3. [] Get the active Mail Flow Rules by typing the command below:
-
-	```
-	Get-TransportRule
-	```
-
-4. [] If a rule exists named something similar to **"Delete if sent outside the organization"**, run the code below to remove this rule.
-
-	```
-	Remove-TransportRule *Delete*
-	```
-
----
 ## Testing User Defined Permissions
 [:arrow_up: Top](#testing-aip-policies)
 
@@ -2211,6 +2168,12 @@ In this exercise, we created several Exchange Online Mail Flow Rules to protect 
 
 Congratulations! You have completed the Azure Information Protection Hands on Lab. 
 
+=== 
+
+## Azure ATP Immersion Lab 
+[:arrow_left: Home](#introduction)
+
+The rest of the lab will be instructor led via PowerPoint. 
 ===
 
 # Microsoft Cloud App Security
@@ -2226,8 +2189,7 @@ The diagram below describe typical use cases for CASB's.
 
 !IMAGE[MCAS intro](\Media\mcasintro-1.png "MCAS intro")
 
-This lab will guide you through some of Microsoft Cloud App Security (MCAS) capabilities.
-Although  labs are pretty straight forward, we expect you to already have basic experience with Microsoft Cloud Security stack and Office 365 management.
+This lab will guide you through some of Microsoft Cloud App Security (MCAS) capabilities and top use cases.
 
 ===
 
@@ -2260,11 +2222,11 @@ The different Cloud App Security capabilities covered in the labs are:
 
 * [Management](#manage-admin-access)
 * [Cloud apps Discovery](#cloud-app-security-discovery-lab)
-* [Information protection](#information-protection)
+* [Information Protection](#information-protection)
 * [Conditional Access App Control with Office 365](#conditional-access-app-control-with-office-365)
-* [Threat detection](#cloud-app-security-threat-detection-lab)
+* [Threat Detection](#cloud-app-security-threat-detection-lab)
 
-### Optional/follow on labs
+### Optional/Follow on labs
 
 * [Management with PowerShell](#management-with-powershell)
 * [Log collector troubleshooting](#log-collector-troubleshooting)
@@ -2274,7 +2236,7 @@ The different Cloud App Security capabilities covered in the labs are:
 
 ===
 
-# Manage admin access
+# Manage Admin Access
 [:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 [Manage admin access:](#manage-admin-access) :clock10: 5 min
@@ -2400,6 +2362,10 @@ As the MCAS admin for your company, work with the person next to you to configur
 On average, more than 1,100 cloud applications are used by enterprises today, of which 61% are **not** sanctioned by IT. This results in duplicate capabilities, apps not meeting compliance standards or posing a security risk to the organization without any IT oversight.
 **Discovery** identifies current cloud apps, provides risk assessments and ongoing analytics and lifecycle management capabilities to control the use.
 
+
+!IMAGE[Discovery](\Media\discovery3.JPG)
+
+
 To provide this visibility on Shadow IT and cloud apps usage, Cloud App Security ingest and analyze network logs from proxy, firewall but also from **Windows 10** clients within or **ouside** the corporate network, using the native integration with **Windows Defender ATP**.
 
 !IMAGE[Discovery intro](\Media\dis-intro1.png "Discovery intro")
@@ -2478,11 +2444,13 @@ Continuous reports analyze all logs that are forwarded from your network using C
 
 These reports can be created by connecting in the following ways:
 
-* **Windows Defender ATP integration**: Cloud App Security integrates with Windows Defender Advanced Threat Protection (ATP) natively, to simplify rollout of Cloud Discovery, extend Cloud Discovery capabilities beyond your corporate network, and enable machine-based investigation.
+* **Windows Defender ATP Integration**: Cloud App Security integrates with Windows Defender Advanced Threat Protection (ATP) natively, to simplify rollout of Cloud Discovery, extend Cloud Discovery capabilities beyond your corporate network, and enable machine-based investigation.
 
-* **Log collector**: Log collectors enable you to easily automate log upload from your network. The log collector runs on your network and receives logs over Syslog or FTP.
+* **Log Collector**: Log collectors enable you to easily automate log upload from your network. The log collector runs on your network and receives logs over Syslog or FTP.
 
-* **Zscaler integration**: If you work with both Cloud App Security and Zscaler, you can integrate the two products to enhance your security Cloud Discovery experience. Together, Cloud App Security and Zscaler provide seamless deployment of Cloud Discovery, automatic blocking of unsanctioned apps, and risk assessment directly in the Zscaler portal.
+* **Zscaler Integration**: If you work with both Cloud App Security and Zscaler, you can integrate the two products to enhance your security Cloud Discovery experience. Together, Cloud App Security and Zscaler provide seamless deployment of Cloud Discovery, automatic blocking of unsanctioned apps, and risk assessment directly in the Zscaler portal.
+
+!IMAGE[Zscaler](\Media\SWG.JPG)
 
 In this lab you will perform the configuration of a **Log collector**.
 
@@ -2615,8 +2583,6 @@ Those commands download a script installing the Docker engine on your host compu
     !IMAGE[WinSCP connection](\Media\dis-winscpconnection.png "WinSCP connection")
 
     >**INFO**: this information was provided during the log collector creation.
-    
-   
 
     You should then be able to see a folder with your data source name.
 
@@ -2644,7 +2610,7 @@ Those commands download a script installing the Docker engine on your host compu
 
     !IMAGE[Last data received](\Media\dis-lastreceived.png "Last data received")
 
-22. [] Go to the **Cloud Discovery dashboard** to verify the discovered apps.
+22. [] Go to the **Cloud Discovery Dashboard** to verify the discovered apps.
 
     !IMAGE[Discovery dashboard](\Media\dis-discoverydashboard.png "Discovery dashboard")
 
@@ -2652,7 +2618,7 @@ Those commands download a script installing the Docker engine on your host compu
 
 ===
 
-# Information protection
+# Information Protection
 [:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 In a perfect world, all your employees understand the importance of information protection and work within your policies. But in a real world, it's probable that a partner who works with accounting uploads a document to your Box repository with the wrong permissions, and a week later you realize that your enterprise's confidential information was leaked to your competition.
@@ -2663,6 +2629,8 @@ Microsoft Cloud App Security helps you prevent this kind of disaster before it h
 * [Apply AIP classification to SSN documents:](#apply-aip-classification-to-ssn-documents) :clock10: 10 min
 * [Quarantine sensitive PDF for review:](#quarantine-sensitive-pdf-for-review) :clock10: 10 min
 * [Test our policies:](#test-our-policies) :clock10: 10 min
+
+	!IMAGE[IP](\Media\IPCAS.JPG)
 
 ===
 
@@ -2755,7 +2723,7 @@ This is what we are going to configure in this lab.
 
 ---
 
-## Test our policies
+## Test our Policies
 
 [:arrow_up: Top](#information-protection)
 
@@ -2814,7 +2782,7 @@ Azure AD conditional access allows you to enforce access controls on your organi
 
 Conditional Access App Control enables user app access and sessions to be **monitored and controlled in real time** based on access and session policies.
 
-!IMAGE[AAD portal](\Media\caac-overview.png)
+!IMAGE[AAD portal](\Media\caac1.jpg)
 
 > [!NOTE] **App Control Access and Session policies give you the capability to the following:**
 * **Block on download**: You can block the download of sensitive documents. For example, on unmanaged devices.
@@ -2828,6 +2796,13 @@ Conditional Access App Control enables user app access and sessions to be **moni
 
 ## Configuration
 
+* [Anonymous Access:](#anonymous-access) :clock10: 5 min
+* [Impossible Travel:](#impossible-travel) :clock10: 5 min
+* [Activity from infrequent country:](#activity-from-infrequent-country) :clock10: 5 min
+* [Malware Detection:](#malware-detection) :clock10: 5 min
+* [Email exfiltration using suspicious inbox forwarding:](#email-exfiltration-using-suspicious-inBox-forwarding) :clock10: 5 min
+* [Ransomware Activity:](#ransomware-activity) :clock10: 5 min
+* [Suspicious Application Consent:](#suspicious-application-consent) :clock10: 5 min
 
 1. [] Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
 
@@ -2993,7 +2968,7 @@ As you can see, the user can access the document using the Office Online app.
 
 ====
 
-# Reviewing the alerts
+# Reviewing the Alerts
 [:arrow_left: Home](#labs)
 
 Now that we validated our configuration, let's go back to the admin view.
@@ -3394,8 +3369,14 @@ Using PowerShell:
 
 ===
 
+<<<<<<< HEAD
+# Log Collector Troubleshooting
+
+[:arrow_left: Home](#labs) :clock10: 15 min
+=======
 # Log collector troubleshooting
 [:arrow_left: MCAS Home](#microsoft-cloud-app-security) :clock10: 15 min
+>>>>>>> 6f95cdd147384d4dea318b348636e2c74b701b44
 
 In this task, you will review possible troubleshooting steps to identify issues in automatic logs upload from the log collector.
 There are several things to test at different locations: in the log collector, in MCAS, at the network level.
@@ -3879,12 +3860,7 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
     !IMAGE[j0vuo06k.jpg](\Media\j0vuo06k.jpg)
 
-=== 
 
-## Azure ATP Immersion Lab 
-[:arrow_left: Home](#introduction)
-
-The rest of the lab will be instructor led via PowerPoint. 
 ===
 # Windows Defender Advanced Threat Protection
 [:arrow_left: Home](#introduction)

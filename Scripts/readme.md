@@ -1,0 +1,1 @@
+This scripts directory is used to store varios scripts used in the Microsoft 365 Security Technologies Lab
