@@ -3901,7 +3901,10 @@ The labs are divided into 2 tracks, a beginner (level 50/100) and an advanced (l
 
 ## [Beginner Track](#beginner-track)
 
-## [Advanced Track]()
+## [Advanced Track](#policy-and-compliance)
+
+---
+
 ===
 # Beginner Track
 Welcome to the labs which will guide you through Azure Security Center (ASC). <br>
@@ -4008,7 +4011,7 @@ The example above is based on Container security monitoring (you have a lab that
 ---
 
 ===
-# 03 - Policy and Compliance
+# Policy and Compliance
 ##### Estimated lab time: 10 minutes
 
 This lab covers ASC Policy and Regulatory Compliance and guides you through some preview features.<br>
