@@ -3909,20 +3909,25 @@ The labs are intended to make you familiar with the different Security Center's 
 ### Exploring the Security Center Overview blade
 1. [] Navigate to the Azure portal (https://portal.azure.com) and click on Security Center
 2. [] In the Overview blade note the **Policy & compliance** section. This provides an overview of your secure score, based on your resources, regulatory standards and your subscription coverage: <br><br>
+
    !IMAGE[alt text](\Media\policy_compliancy_tile.png)<br><br>
 3. [] Click on the **Subscription coverage** tile
+
    !IMAGE[alt text](\Media\subscription_coverage.png)<br>
 This shows you the number of subscriptions and the coverage type.<br>
 *Note:* in this lab you will only have one subscription which should be under **Standard coverage** <br>
    This view will help you find subscriptions that are not covered by ASC to help identify "shadow IT" subscriptions <br>
 4. [] Go back to the overview blade and note the **Secure Score** tile under Policy & compliance. When you **click on the Secure Score tile**, you can explore your **Secure score by category** by clicking on each tile:<br><br>
-!IMAGE[alt text](\Media\secure_score_dashboard.png)<br><br>
+
+	!IMAGE[alt text](\Media\secure_score_dashboard.png)<br><br>
 
 ### Security Center Policies
 In the Security Center Overview, click on **Security policy** and then click on your subscription (Azure Pass):
+
 !IMAGE[alt text](\Media\policy_setting1.png)<br><br>
 This brings you to the **Security policy settings** for your subscription (*note: if your subscription is not showing, refresh your browser*):  <br>
 If you click on your subscription for the first time, you will be prompted to enable Security Center's default policy iniative. Click on the button **Assign security policy** to assign it: <br><br>
+
 !IMAGE[alt text](\Media\security_policy_enable.png)<br><br>
 
 This brings you to the ASC policy settings - which are Azure policies - where you can set the parameters for each policy definition. This is where you can enable or disable a specific policy definition by clicking on the parameter setting:
@@ -3933,53 +3938,66 @@ Scroll down to the bottom and click on **Assign** to save the Policy initiative.
 
 ### Edit Subscription settings (including Data Collection settings)
 1. [] Go back to the **Security Policy** blade and under **Policy Management** click on **Edit settings:**
-!IMAGE[alt text](\Media\subscription_settings.png)<br><br>
+
+	!IMAGE[alt text](\Media\subscription_settings.png)<br><br>
 2. [] Notice the 4 options:
-!IMAGE[alt text](\Media\policy_setting3.png)<br>
-The Auto Provisioning settings - if set to On - will take care of automatic installation of the Microsoft Monitoring Agent (MMA) for all VM's in your subscription, either existing or new.<br><br>
-**Threat detection** is the new integration with **Microsoft Cloud App Security** (MCAS) and **Windows Defender ATP** (WDATP):
-!IMAGE[alt text](\Media\policy_setting4.png)<br><br>
 
-**Email notifications** allows you to configure one or more email addresses to be used to send high severity alerts.<br><br>
+	!IMAGE[alt text](\Media\policy_setting3.png)<br>
+	The Auto Provisioning settings - if set to On - will take care of automatic installation of the Microsoft Monitoring Agent (MMA) for all VM's in your subscription, either existing or new.<br><br>
+	**Threat detection** is the new integration with **Microsoft Cloud App Security** (MCAS) and **Windows Defender ATP** (WDATP):
 
-**Pricing Tier** shows you the difference between what's offered in the Free and Standard tier (it should be set to Standard for our labs):<br>
-!IMAGE[alt text](\Media\policy_setting5.png)<br><br>
+	!IMAGE[alt text](\Media\policy_setting4.png)<br><br>
 
-Notice that there are different pricing plans for **VM's, SQL servers** and **App Services**:
-!IMAGE[alt text](\Media\policy_setting6.png)<br><br>
+	**Email notifications** allows you to configure one or more email addresses to be used to send high severity alerts.<br><br>
+
+	**Pricing Tier** shows you the difference between what's offered in the Free and Standard tier (it should be set to Standard for our labs):<br>
+
+	!IMAGE[alt text](\Media\policy_setting5.png)<br><br>
+
+	Notice that there are different pricing plans for **VM's, SQL servers** and **App Services**:
+
+	!IMAGE[alt text](\Media\policy_setting6.png)<br><br>
 
 ### Edit workspace settings (Including Data Collection settings)
 1. [] Go back one more time to the **Security policy** blade, but this time click on **Edit settings** on the line where your **workspace** is listed:
-!IMAGE[alt text](\Media\policy_setting7.png)<br><br>
-This allows you to configure the Windows security events collection settings for your workspace and helps you to perform auditing, investigation and and analysis.<br>
-Notice that the options are potentially grayed out.<br>
-If so, you first need to set the workspace Pricing tier to Standard.
+
+	!IMAGE[alt text](\Media\policy_setting7.png)<br><br>
+	This allows you to configure the Windows security events collection settings for your workspace and helps you to perform auditing, investigation and and analysis.<br>
+	Notice that the options are potentially grayed out.<br>
+	If so, you first need to set the workspace Pricing tier to Standard.
 2. [] Click on **Pricing tier** and set the pricing tier to **Standard** and click on **Save**
 3. [] Click on **Data collection**, you should now be able to configure the Windows security events collection
 4. [] Set the collection to **All Events** and click on **Save**
-!IMAGE[alt text](\Media\policy_setting8.png)<br><br>
+
+	!IMAGE[alt text](\Media\policy_setting8.png)<br><br>
 
 **Note:**
 You don't have to change the setting **None** to receive alerts in Security Center, change this setting only if you want to do investigations and analysis of your threats in Log Analytics.
 
 ### Secure Score
+
 In the beginning of this lab, you explored briefly the **Secure Score** tile. Let's look a little bit deeper into it. <br>
 Security Center mimics the work of the security analyst, reviewing your security recommendations and applying advanced algorithms to determine how crucial each recommendation is.
 
 1. [] Go to the Security Center Overview blade
 2. [] Click on the **Secure score** tile and then under **Secure score by category** click on **Compute & apps**
-!IMAGE[alt text](\Media\secure_score_dashboard.png)<br><br>
+
+	!IMAGE[alt text](\Media\secure_score_dashboard.png)<br><br>
 3. [] Observe the number under the **Secure score impact column** and the affected **Resource** column. This helps in prioritizing working on the recommendations, the higher the number, the greater the impact <br><br>
 4. [] Click on a recommendation, for example **Install endpoint protection solution on virtual machines**
-!IMAGE[alt text](\Media\install_endpoint_protection1.png)<br><br>
-5. [] Click on **Install on 1 VMs**:<br><br>
-!IMAGE[alt text](\Media\install_endpoint_protection2.png)<br><br>
-6. [] Select **Microsoft Antimalware** and click on **Create** (scroll down if you don't see the Create button):<br><br>
-!IMAGE[alt text](\Media\install_endpoint_protection3.png)<br><br>
-Provide your settings of choice, then click **OK**, this starts the endpoint protection installation.
 
-Another example which might not exist in your lab environment is a recommendation for containers:<br><br>:
-!IMAGE[alt text](\Media\secure_score3.png)<br><br>
+	!IMAGE[alt text](\Media\install_endpoint_protection1.png)<br><br>
+5. [] Click on **Install on 1 VMs**:<br><br>
+
+	!IMAGE[alt text](\Media\install_endpoint_protection2.png)<br><br>
+6. [] Select **Microsoft Antimalware** and click on **Create** (scroll down if you don't see the Create button):<br><br>
+
+	!IMAGE[alt text](\Media\install_endpoint_protection3.png)<br><br>
+	Provide your settings of choice, then click **OK**, this starts the endpoint protection installation.
+
+	Another example which might not exist in your lab environment is a recommendation for containers:
+
+	!IMAGE[alt text](\Media\secure_score3.png)<br><br>
 
 The example above is based on Container security monitoring (you have a lab that deploys a docker container). It shows the **Recommendation impact**, the **Threats** found and the **Remediation steps**
 
@@ -3996,7 +4014,7 @@ This lab covers ASC Policy and Regulatory Compliance and guides you through some
 ### Regulatory Compliance (Preview)
 Open a new browser tab/window and copy and paste the following URL in your browser to get access to the Regulatory Compliance preview:
 
-```txt
+```
 Ask your instructor for the link
 ```
 <br>
@@ -4004,7 +4022,7 @@ Ask your instructor for the link
 1. [] Navigate to the **Security Center** blade
 2. [] Click on **Regulatory Compliance**
 
-!IMAGE[alt text](\Media\regulatoryblade.png)<br>
+	!IMAGE[alt text](\Media\regulatoryblade.png)<br>
 
 3. [] Explore the different regulations (like Azure CIS)
 4. [] Click on the different assessments
@@ -4014,7 +4032,7 @@ This exercise remediates a failed assessment for PCI DSS 3.2
 1. [] Click on the **PCI DSS 3.2** tab
 2. [] Under the **Assessment** column, notice that you have a **Enable Network Security Groups on subnets** failed assessment
 
-!IMAGE[alt text](\Media\nsg_assessment.png)<br>
+	!IMAGE[alt text](\Media\nsg_assessment.png)<br>
 
 1. [] Click on the Assessment
 2. [] This shows you which subnet is at risk (subnet01), click on the subnet
@@ -4030,12 +4048,12 @@ This exercise guides you through the current Security Center policies and is int
 1. [] Within the Azure portal, navigate to the **Policy** blade
 2. [] Click on **Definitions** (under Authoring)
 3. [] Under **Categories**, deselect all the categories and select only **Security Center** <br><br>
-!IMAGE[alt text](\Media\asc_policies.png)<br>
+	!IMAGE[alt text](\Media\asc_policies.png)<br>
 
 4. [] Explore the policies by clicking on them
 5. [] Notice the different icons as shown below, they represent a **Policy** and an **Initiative** (group of policies): <br>
 
-!IMAGE[alt text](\Media\initiative.png) <br><br>
+	!IMAGE[alt text](\Media\initiative.png) <br><br>
 
 6. [] Click on each of those to explore the difference
 
@@ -4057,7 +4075,7 @@ In this lab you will protect your VMs with Just-In-Time (JIT) access. JIT has be
 
 ### Enable JIT on a VM in ASC
 1. [] Open the Azure portal using this <a href="https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.jitconnect=true" target="_blank">link </a>, or copy and paste this URL:
-```html
+```
 https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.jitconnect=true
 ```
 
@@ -4068,7 +4086,8 @@ https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.jitconnect=tru
 6. [] In the Azure portal (using the same session), navigate to **Virtual Machines**
 7. [] Select the VM you have enabled for JIT and in the Overview blade, click on Connect
 8. [] On the opened blade at the right, notice the banner saying "*This VM has a just-in-time access policy*..."<br><br>
-!IMAGE[alt text](\Media\ConnectVM_JIT_Enabled.png)
+
+	!IMAGE[alt text](\Media\ConnectVM_JIT_Enabled.png)
 9. [] Click on the button **Request access**
 10. [] When you have the proper permission, access will be granted and you can now connect to the VM
 
@@ -4077,19 +4096,18 @@ https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.jitconnect=tru
 2. [] Select a VM for which you have not enabled JIT
 3. [] Click on **Connect** in the Overview blade
 4. [] Notice the banner saying "*To improve security, enable just-in-time access*"<br><br>
-!IMAGE[alt text](\Media\EnableJITfromVMblade.png)
+
+	!IMAGE[alt text](\Media\EnableJITfromVMblade.png)
 5. [] Click on the arrow pointing to the right (as shown in the previous image) and click on the button **Enable just-in-time policy**<br><br>
-!IMAGE[alt text](\Media\EnableJITbutton.png)
+
+	!IMAGE[alt text](\Media\EnableJITbutton.png)
 6. [] You have now enabled JIT for this VM. You can click on the link **Open Azure Security Center** to edit or disable the policy
 7. [] When you have clicked on the link in the previous step, notice the column last access. That should say Active now, since we just enable JIT access to a VM in the previous steps
-!IMAGE[alt text](\Media\JitActiveNow.png)
+
+	!IMAGE[alt text](\Media\JitActiveNow.png)
 
 ### [Optional Lab] Enable custom JIT ports with PowerShell
 ***Requirements**:*<br>
-Navigate to **Module 08 - Automation with PowerShell** and make sure that you have completed **Labs 01 - 
-AzureRm PowerShell cmdlets installation and 02 - 
-Security Center PowerShell cmdlets installation** before proceeding with this lab<br>
-
 
 To enable JIT through PowerShell you can leverage the following syntax:
 ```
@@ -4118,9 +4136,10 @@ In this lab we will explore the new Linux detection's in ASC by executing attack
 
 #### Create a Kali Linux VM
 ***Note**: time to create the Kali Linux VM is approx 3 minutes. Make sure to add a port that enables you to connect.*
+
 1. [] In the Azure portal, click on **Create a resource** and search for **Kali Linux** and **create** the VM
 
-!IMAGE[alt text](\Media\kali_marketplace.png)
+	!IMAGE[alt text](\Media\kali_marketplace.png)
 
 ***Note**: you don't have to wait until the deployment is complete. Proceed with the next exercise*
 
@@ -4138,23 +4157,23 @@ sudo adduser <userName>
 1. [] Connect to the Kali Linux VM with SSH (ensure that your VM deployment in step 1 was successful)
 2. [] Navigate to the folder **/usr/share/wordlists**
 3. [] Upload the **<a href="https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_users.txt" target="_blank">lab_users.txt</a>** and **<a href="https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_pass.txt" target="_blank">lab_pass.txt</a>** files to this folder by executing:
-```text
+```
 sudo wget https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_users.txt
 ```
 and
-```text
+```
 sudo wget https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_pass.txt
 ```
 4. [] Copy the IP address from the Linux Victim VM that you have deployed earlier. We are going to brute force attack this VM
 5. [] Type the command below in your Kali VM, and replace "**IP**" with **yourLinuxVM** public IP address
-```text
+```
 hydra -I -L lab_users.txt -P lab_pass.txt <IP> -t 4 ssh
 ```
 6. [] Wait until it finishes, and the result should show you the username and the password that was found
 
 #### Simulate capturing credentials and other useful information
 1. [] Run the command below in the Linux Victim VM to simulate an attacker that is trying to start logkeys to set up the system to capture credentials and other useful information: 
-```text
+```
 logkeys --start
 ```
 ***Note**:<br> Ignore the error message if you don't have logkeys installed. Security Center will detect this attack anyway*
@@ -4162,7 +4181,7 @@ logkeys --start
 #### Simulate an attack against a web server
 Assuming that the attacker has already performed some internal recon using nmap, you are going to simulate an attack against a web server
 1. [] Run the command below in the Linux Victim VM:
-```text
+```
 perl slowloris.pl -dns server.contoso.com
 ```
 ***Note**:<br> Ignore the error message if you don't have this script on your system. Security Center will detect this attack anyway*
@@ -4172,11 +4191,11 @@ Attackers usually will communicate with command and control (C2) to transfer dat
 For this example, you will download the EICAR malware test file using WGET for the IP address.  The commands that follows must be executed in the Linux Victim VM:<br><br>
 
 1. [] First, obtain the IP address of the target:
-```text
+```
 nslookup eicar.com 
 ```
 2. [] Now replace the XXX.XXX.XXX.XXX on the command below with the IP obtained from nslookup: 
-```text
+```
 wget http://XXX.XXX.XXX.XXX/download/eicar.com
 ```
 ***Note**:<br>  if you have issues download eicar.com, try download eicar.txt (same command line, just change the extension).*
@@ -4185,9 +4204,9 @@ wget http://XXX.XXX.XXX.XXX/download/eicar.com
 1. [] Navigate to the **Security Center>Security Alerts** blade (under Threat Protection)
 2. [] Organize the alerts by date by clicking on the Date column, and review the alerts that were generated during this lab, it should look similar like this:
 
-!IMAGE[alt text](\Media\Security_incident_detected_Linux.png)
+	!IMAGE[alt text](\Media\Security_incident_detected_Linux.png)
 
-!IMAGE[alt text](\Media\Security_incident_detected_Linux2.png)
+	!IMAGE[alt text](\Media\Security_incident_detected_Linux2.png)
 
 <br><br>
 ### Continue with the next lab
@@ -4221,7 +4240,7 @@ ASC_AlertTest_662jfi039N.exe -foo
 Skip the following steps if you already have a ServiceNow instance <br>
 
 If you don't want to create an instance of your own and want to leverage a shared environment, make a note of the following:
-```txt
+```
 Please ask your instructor for the shared ServiceNow URL, username and password
 ```
 <br>
@@ -4231,7 +4250,7 @@ Please ask your instructor for the shared ServiceNow URL, username and password
 2. [] Go through all the steps until you have a developer instance which is active and running
 3. [] Take a note of the following information, because you will need that in the following steps:
 - The URL of your developer instance, similar to
-```txt
+```
 https://dev12345.service-now.com
 ```
 - admin account name & password <br><br>
@@ -4245,20 +4264,23 @@ https://dev12345.service-now.com
 4. [] When the playbook has been created, select the playbook. This should bring you to the **Logic Apps Designer** (if that does not happen, click on your playbook and click on **Edit**)
 5. [] Under Templates, select the **Blank Logic App**
 6. [] In the **Seach connectors and triggers field**, type in security center and select **When a response to an Azure Security Center alert is triggered** <br><br>
-!IMAGE[alt text](\Media\asc_trigger.png)
+
+	!IMAGE[alt text](\Media\asc_trigger.png)
 7. [] Click on **+ New Step**
 8. [] In the **Seach connectors and triggers field** search for **ServiceNow**
 9. [] Under **Actions**, select **Create Record**<br><br>
-!IMAGE[alt text](\Media\ServiceNowConnection.png)<br><br>
+
+	!IMAGE[alt text](\Media\ServiceNowConnection.png)<br><br>
 10. [] Provide a **Connection Name** and fill in the ServiceNow **Instance Name**, **Username** and **Password** that you have captured in the previous steps and click on **Create**
 11. [] Click on **Show advanced options**, as shown below:<br><br>
-!IMAGE[alt text](\Media\snow_advanced_options.png)<br><br>
+
+	!IMAGE[alt text](\Media\snow_advanced_options.png)<br><br>
 12. Under **Record Type** dropdown box, select **Incident** (this collapses the incident options)
 13. [] In the **Record fields**, scroll down, click once in the fields highlighted below and select the values as shown below:<br>
-*Note: if you are using a shared ServiceNow environment, put your name in the Short description field as well*<br>
+	*Note: if you are using a shared ServiceNow environment, put your name in the Short description field as well*<br>
 
 
-!IMAGE[alt text](\Media\incident_fields.png)<br><br>
+	!IMAGE[alt text](\Media\incident_fields.png)<br><br>
 14. [] Click on **Save**
 
 #### Invoke the ServiceNow playbook from an ASC alert
@@ -4272,16 +4294,20 @@ https://dev12345.service-now.com
 	!IMAGE[alt text](\Media\view_playbooks_button.png)
 
 5. [] Click on **Run playbook**<br><br>
-!IMAGE[alt text](\Media\run_playbook.png)
+
+	!IMAGE[alt text](\Media\run_playbook.png)
 6. [] Switch to the playbook history and notice the status, but you can also click on the playbook to see details and even runtime information <br><br>
-!IMAGE[alt text](\Media\playbook_history.png) <br><br>
-!IMAGE[alt text](\Media\playbook_history_details.png)<br><br>
+
+	!IMAGE[alt text](\Media\playbook_history.png) <br><br>
+
+	!IMAGE[alt text](\Media\playbook_history_details.png)<br><br>
 
 
 
 
 7. [] Switch to your ServiceNow developer instance and check for a new created incident record<br><br>
-!IMAGE[alt text](\Media\snow_record.png)
+
+	!IMAGE[alt text](\Media\snow_record.png)
 
 <br>
 
@@ -4298,19 +4324,23 @@ This optional lab points you to a number of preview features for you to explore.
 *Note: This exercise also shows you how to use Azure CLI straight from the Azure portal*
 
 1. [] In the Azure portal click on the **Cloud Shell** icon in the upper right, next to your account, as shown below <br><br>
-!IMAGE[alt text](\Media\Azure_cli.png) <br><br>
+
+	!IMAGE[alt text](\Media\Azure_cli.png) <br><br>
 
 2. [] If you are prompted for selecting Bash or PowerShell, select **Bash**
-!IMAGE[alt text](\Media\bash_selection.png) <br><br>
+
+	!IMAGE[alt text](\Media\bash_selection.png) <br><br>
 
 3. [] If you are receiving a message that you have no storage mounted, click on **Create storage**
-!IMAGE[alt text](\Media\create_storage.png) <br><br>
+
+	!IMAGE[alt text](\Media\create_storage.png) <br><br>
 
 4. [] This creates a cloud shell session: <br><br>
-!IMAGE[alt text](\Media\bash_cloudshell.png) <br><br>
+
+	!IMAGE[alt text](\Media\bash_cloudshell.png) <br><br>
 
 5. [] Create a new resource group for your container by typing in the following (replace **myResourceGroup** with your name of choice)
-```text
+```
 az group create --name <myResourceGroup> --location eastus
 ```
 <br>
@@ -4318,34 +4348,38 @@ az group create --name <myResourceGroup> --location eastus
 6. [] The following command creates a Docker container with a small web app written in Node.js <br>
 ***Note***: The container name must be in **lowercase**
 
-```txt
+```
 az container create --resource-group <yourResourceGroupName> --name <yourContainerName> --image microsoft/aci-helloworld --dns-name-label <yourDnsLabel> --ports 80
 ```
 7. [] Wait for the container to be deployed
 
-!IMAGE[alt text](\Media\container_create.png)<br>
+	!IMAGE[alt text](\Media\container_create.png)<br>
 
-!IMAGE[alt text](\Media\container_created.png) <br><br>
+	!IMAGE[alt text](\Media\container_created.png) <br><br>
 
 8. [] Verify that the container has been created under your resource group in the Azure portal: <br><br>
-!IMAGE[alt text](\Media\resourcegroup.png) <br><br>
+
+	!IMAGE[alt text](\Media\resourcegroup.png) <br><br>
+
 ***Note**: It takes some time for the container to become visible in Security Center* <br>
 
 #### Explore the new Container tab under Compute & Apps
 1. [] The new container view in Security Center is accessible through a feature flag. Copy and paste the following URL in your Azure portal session:
-```text
-https://aka.ms/asc_containers_preview
-```
-<br>
+	
+	```
+	https://aka.ms/asc_containers_preview
+	```
+	<br>
 
-**This shows the container in Security Center:** <br><br>
+	**This shows the container in Security Center:** <br><br>
 
-!IMAGE[alt text](\Media\container_in_asc.png) <br><br>
+	!IMAGE[alt text](\Media\container_in_asc.png) <br><br>
 
 2. [] Clicking on the container shows more details:
-!IMAGE[alt text](\Media\docker_details.png) <br><br>
 
-!IMAGE[alt text](\Media\docker_details2.png)
+	!IMAGE[alt text](\Media\docker_details.png) <br><br>
+
+	!IMAGE[alt text](\Media\docker_details2.png)
 
 <br>
 
@@ -4484,7 +4518,8 @@ For using these labs in combination with Labs On Demand (LOD), open an incognito
 3. [] Click on **Security Policy**
 4. [] On the line where it shows your subscription, click on **Edit settings**
 5. [] Explore the settings, specifically the **email notification settings**.<br><br>
-!IMAGE[alt text](\Media\asc_emailsettings.png)
+	
+	!IMAGE[alt text](\Media\asc_emailsettings.png)
 
 For the first ARM deployment exercise we are going to start with configuring the **Email notification** settings
 
@@ -4544,7 +4579,8 @@ New-AzureRmResourceGroupDeployment -Name myWorkspaceDeploy -ResourceGroupName $R
 #### Change the Pricing tier and data collection settings of your workspace 
 You can set the pricing tier and data collection settings per workspace, which is often not clear to customers, therefore we are going to set it in the portal instead of through automation (although you can automate it)
 1. [] In the **Policy Management** view where your workspace is listed, click on **Edit settings** <br><br>
-!IMAGE[alt text](\Media\pricing_workspace1.png)<br>
+
+	!IMAGE[alt text](\Media\pricing_workspace1.png)<br>
 2. [] Click on **Pricing tier** and note that by default it is set to **Free**
 3. [] Click on **Standard** and click on **Save**
 4. [] Click on **Data collection**
@@ -4565,7 +4601,7 @@ Now that you have explored how to deploy an ARM template to configure an ASC set
 ASC stores MMA collected data (and more) in a Log Analytics workspace. In a more complex environment, you often will find an existing Log Analytics workspace which needs to be integrated with ASC (aka the Central Workspace scenario).<br><br>
 The following lab assumes that a (Central) Log Analytics workspace already exists (although this can be deployed with an ARM template at the same time) and you are going to configure ASC to use the existing Log Analytics workspace. In addition we are going to enable **Auto Provisioning** which will deploy the MMA extension automatically, as you would configure it in the portal, like this:<br><br>
 
-!IMAGE[alt text](\Media\autoProvisioning_custom_%20Workspace.png)
+	!IMAGE[alt text](\Media\autoProvisioning_custom_%20Workspace.png)
 
 Also we will configure ASC policies through the ARM template.
 
@@ -4602,15 +4638,20 @@ This lab contains additional exercises. <br><br>
 ### File Integrity Monitoring (FIM)
 1. [] Navigate to the Security Center blade in the Azure Portal
 2. [] Under Advanced Cloud Defense, click on File Integrity Monitoring: <br><br>
-!IMAGE[Alt Text](\Media\fim.png) <br><br>
+
+	!IMAGE[Alt Text](\Media\fim.png) <br><br>
 3. [] Click on Enable on the line where it lists your workspace
-!IMAGE[Alt Text](\Media\fim_enable.png) <br><br>
+
+	!IMAGE[Alt Text](\Media\fim_enable.png) <br><br>
 4. [] Keep the default values and click on **Enable File Integrity Monitoring**
-!IMAGE[Alt Text](\Media\fim_settings.png) <br><br>
+
+	!IMAGE[Alt Text](\Media\fim_settings.png) <br><br>
 5. [] Click on Settings: <br>
-!IMAGE[Alt Text](\Media\fim_settings1.png) <br><br>
+
+	!IMAGE[Alt Text](\Media\fim_settings1.png) <br><br>
 6. [] Under Windows Files, add folder to be recursively monitored (e.g. c:\ASC-Labs): <br><br>
-!IMAGE[Alt Text](\Media\windows_file_tracking.png) <br><br>
+
+	!IMAGE[Alt Text](\Media\windows_file_tracking.png) <br><br>
 6. [] Login to either your Windows or Linux VM and make some changes (e.g. for Windows, create the c:\asc-labs folder and create a file in that folder)
 6. [] Check back later to see the changes made on your system
 
