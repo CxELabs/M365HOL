@@ -2259,24 +2259,24 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
 1. [] Import the **US employees** group.
     
-	> [!HINT]] The import can take **up to one hour**. Cloud App Security has to synchronize the Azure AD groups before importing them.
-	> [!HINT]] If the import takes too long, don't hesitate to move to the next section and come back to complete this task.
+	> [!HINT] The import can take **up to one hour**. Cloud App Security has to synchronize the Azure AD groups before importing them.
+	> [!HINT] If the import takes too long, don't hesitate to move to the next section and come back to complete this task.
 
-    1. Click on the **Gear** under Data Enrichement, click on **User groups**
+    1. Click on the **Gear** and under the Data Enrichement section, select **User groups**
 
-    ^IMAGE[Open Screenshot](\Media\mgmt-import1.png "Import group")
+	    ^IMAGE[Open Screenshot](\Media\mgmt-import1.png "Import group")
 
     1. Click on **Import user group**
 
-    !IMAGE[Import group](\Media\mgmt-import2.png "Import group")
+        !IMAGE[Import group](\Media\mgmt-import2.png "Import group")
 
     1. Select an app to import group from: **Office 365(AzureAD)***
 
-    ^IMAGE[Open Screenshot](\Media\mgmt-import3.png "Import group")
+        ^IMAGE[Open Screenshot](\Media\mgmt-import3.png "Import group")
 
 	1. The user group will be seen as **Tmporting**.
 
-    !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
+        !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
 
 1. [] In the Cloud App Security portal```https://portal.cloudappsecurity.com```, add **mcasAdminUS** as **User group admin** for the **US employees** group.
 
@@ -2288,14 +2288,14 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     ^IMAGE[Open Screenshot](\Media\mgmt-admin2.png "New admin")
 
-    1. Type the admin user name**: ```mcasadminus@@lab.CloudCredential(134).TenantName```
+    1. Type the admin user name: ```mcasadminus@@lab.CloudCredential(134).TenantName```
 
 	> [!HINT] The tenant name is the one provided for your lab environment. This information is available in your **Resources** section, at the top of the instructions.
 
 	 ^IMAGE[Open Screenshot](\Media\tenantcredentials.JPG)
 
     > [!KNOWLEDGE] **Group admin** has permissions to all of the data in Microsoft Cloud App Security that deals exclusively with the specific group selected here. The admin can view and modify information in Microsoft Cloud App Security only for that user group.
-	> [!KNOWLEDGE] [For more details about admin roles]```https://docs.microsoft.com/en-us/cloud-app-security/manage-admins```
+	> [!KNOWLEDGE] For more details about admin roles```https://docs.microsoft.com/en-us/cloud-app-security/manage-admins```
 
 	1. Select Role: **User group admin**
 
@@ -2314,12 +2314,12 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
 
 1. [] Open a new **private** tab and connect to the [Cloud App Security portal]```https://portal.cloudappsecurity.com``` with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
-> ```mcasadminus@@lab.CloudCredential(134).TenantName```
-> ```pass@word1```
+    > ```mcasadminus@@lab.CloudCredential(134).TenantName```
+    > ```pass@word1```
 
-> [!NOTE] As you can see, this administrator can not see **Discovery** data, **Files** or **Alerts** that are not related to the users from the group he/she manages.
+    > [!NOTE] As you can see, this administrator can not see **Discovery** data, **Files** or **Alerts** that are not related to the users from the group he/she manages.
 
-!IMAGE[New admin](\Media\mgmt-admin6.png "New admin")
+    !IMAGE[New admin](\Media\mgmt-admin6.png "New admin")
 
 ---
 
