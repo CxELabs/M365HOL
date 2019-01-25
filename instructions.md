@@ -2401,9 +2401,9 @@ To create snapshot reports:
 
 1. [] Go to the **Discover** section and click on **Create snapshot report**.
 
-    !IMAGE[Create snapshot](\Media\dis-newsnaphsot.png "Create snapshot")
+    ^IMAGE[Open Screenshot](\Media\dis-newsnaphsot.png "Create snapshot")
 
-2. [] In the Add data source window, use the settings below (do not close the window yet) and click on **View and verify...**:
+1. [] In the Add data source window, use the settings below (do not close the window yet) and click on **View and verify...**.
 
     >|||
     >|---------|---------|
@@ -2412,33 +2412,33 @@ To create snapshot reports:
     >|Data Source| **SQUID (Common)**|
     >|Anonymize private information |**Check the Box**|
     >
-    !IMAGE[New snapshot](\Media\dis-createsnapshot.png "New snapshot")
+    ^IMAGE[Open Screenshot](\Media\dis-createsnapshot.png "New snapshot")
 
-3. [] In the **Verify your log format** window, click on the **Download sample log** button and save it to your desktop.
+1. [] In the **Verify your log format** window, click on the **Download sample log** button and save it to your desktop.
 
-    !IMAGE[Download log](Media\dis-squiddownload.png "Download log")
+    ^IMAGE[Open Screenshot](Media\dis-squiddownload.png "Download log")
 
-4. [] Close that window.
+1. [] Close that window.
 
-5. [] Click on the **Browse** button and in the new window, select the log you downloaded and click **Open**.
+1. [] Click on the **Browse** button and in the new window, select the log you downloaded and click **Open**.
 
-    !IMAGE[Browse logs](\Media\dis-browse.png "Browse logs")
+    ^IMAGE[Open Screenshot](\Media\dis-browse.png "Browse logs")
 
-    !IMAGE[Select logs](\Media\dis-squidselect.png "Select logs") 
+    ^IMAGE[Open Screenshot](\Media\dis-squidselect.png "Select logs")
 
-6. [] Now that the log has been selected, click on the **Create** button to create your report.
+1. [] Now that the log has been selected, click on the **Create** button to create your report.
 
-    !IMAGE[Create snapshot](\Media\dis-squidcreate.png "Create snapshot")
+    ^IMAGE[Open Screenshot](\Media\dis-squidcreate.png "Create snapshot")
 
-7. [] Your report will then be processed. It will take a couple of minutes before it's marked as **Ready**.
+1. [] Your report will then be processed. It will take a couple of minutes before it's marked as **Ready**.
 
     !IMAGE[Report processing](\Media\dis-processing.png "Report processing")
 
     !IMAGE[Report processing](\Media\dis-reportready.png "Report processing")
 
-8. [] Now that your report is marked as **ready**, click on the text **Ready**. You will be then redirected to your snapshot report where you can start exploring the discovered apps, users, IPs. Your instructor can give you more details on how to use the dashboard.
+1. [] Now that your report is marked as ready, click on the text **Ready**. You will be redirected to your snapshot report where you can start exploring the discovered apps, users, IPs. Your instructor can give you more details on how to use the dashboard.
 
-    !IMAGE[Report processing](\Media\dis-reportready2.png "Report ready")
+    ^IMAGE[Open Screenshot](\Media\dis-reportready2.png "Report ready")
 
     !IMAGE[Report dashboard](\Media\dis-dashboard.png "Report dashboard")
 
@@ -2465,40 +2465,36 @@ These reports can be created by connecting in the following ways:
 In this lab you will perform the configuration of a **Log collector**.
 
 
-> [!NOTE] After completing this portion of the lab and validating that your logs have been successfully uploaded and processed by MCAS, you will not immediately see a loaded Discovery Dashboard. Due to Cloud Discovery logs being  parsed **twice a day**.
+> [!ALERT] After completing this portion of the lab and validating that your logs have been successfully uploaded and processed by MCAS, you will not immediately see a loaded Discovery Dashboard. Due to Cloud Discovery logs being  parsed **twice a day**.
 
 
- > [!KNOWLEDGE]For this lab, the Docker engine has been pre-installed on **LinuxVM** in your lab environment, but normally you have to configure it on your host using the command below.
- > [!KNOWLEDGE]The command downloads a script installing the Docker engine on your host computer (Ubuntu in this case) and pull the latest Cloud App Security collector image from the Docker library.
+> [!HINT] For this lab, the Docker engine has been pre-installed on **LinuxVM** in your lab environment, but normally you have to configure it on your host using the command below.
+> [!HINT] The command downloads a script installing the Docker engine on your host computer (Ubuntu in this case) and pull the latest Cloud App Security collector image from the Docker library.
+> [!HINT]
+> [!HINT]```curl -o /tmp/MCASInstallDocker.sh https://adaprodconsole.blob.core.windows.net/public-files/MCASInstallDocker.sh && chmod +x /tmp/MCASInstallDocker.sh; /tmp/MCASInstallDocker.sh```
 
-
-```
-    curl -o /tmp/MCASInstallDocker.sh https://adaprodconsole.blob.core.windows.net/public-files/MCASInstallDocker.sh && chmod +x /tmp/MCASInstallDocker.sh; /tmp/MCASInstallDocker.sh
-```
-
+---
 
 ### Create a data source and a log collector in the Cloud App Security Portal
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 
 
-2. [] Create a new tab in the in a  Private window and browse to ```https://portal.cloudappsecurity.com```.
+1. [] Create a new tab in the in a  Private window and browse to ```https://portal.cloudappsecurity.com```.
 
-   >INFO: If necessary, log in using the credentials below:
-   >
-   >```@lab.CloudCredential(134).Username```
-   >
-   >```@lab.CloudCredential(134).Password```
+       >```@lab.CloudCredential(134).Username```
+       >
+       >```@lab.CloudCredential(134).Password```
 
-3. [] In the Cloud App Security dashboard, click on the **Settings** icon and click **Log collectors**.
+1. [] In the Cloud App Security dashboard, click on the **Gear** icon and select **Log collectors**.
 
-   !IMAGE[Settings](\Media\dis-settings.png "Settings")
+       ^IMAGE[Open Screenshot](\Media\dis-settings.png "Settings")
 
-4. [] On the **Data sources tab**, click the **Add data source...** button.
+1. [] On the **Data sources tab**, click the **Add data source...** button.
 
-    !IMAGE[New data source](\Media\dis-newsource.png "New data source")
+       ^IMAGE[Open Screenshot](\Media\dis-newsource.png "New data source")
 
-5. [] In the Add data source window, use the settings below (do not close the window yet):
+1. [] In the Add data source window, use the settings below (do not close the window yet):
 
     >|||
     >|---------|---------|
@@ -2507,21 +2503,21 @@ In this lab you will perform the configuration of a **Log collector**.
     >|Receiver type| **FTP**|
     >|Anonymize private information |**Check the Box**|
     >
-    !IMAGE[Squid source](\Media\dis-squidsource.png)
+    >^IMAGE[Open Screenshot](\Media\dis-squidsource.png)
 
-    >[!NOTE] In this lab we use FTP as the receiver type but usually companies will use Syslog.
+    > [!KNOWLEDGE] In this lab we use FTP as the receiver type but usually companies will use Syslog.
 
-6. [] Close the *Verify your log format* window, then click **Add** in the **Add** data source dialog.
+1. [] Close the **Verify your log format** window, then click **Add** in the **Add data source** dialog.
 
-    !IMAGE[Add source](\Media\dis-addsource.png "Add source")
+	^IMAGE[Open Screenshot](\Media\dis-addsource.png "Add source")
 
-    >**INFO:** We just created a data source which is the logical representation of the network appliance data source type the log collector will receive.
+    > [!HINT] We just created a data source which is the logical representation of the network appliance data source type the log collector will receive.
 
-7. [] Next, click on the **Log collectors tab** and click the **Add log collector...** button.
+1. [] Next, click on the **Log collectors tab** and click the **Add log collector...** button.
 
     !IMAGE[Add log collector](\Media\dis-addlogcollector.png "Add log collector")
 
-8. [] In the Create log collector dialog, provide the settings below and click the **Update** button.
+1. [] In the Create log collector dialog, provide the settings below and click the **Update** button.
 
     |||
     |-----|-----|
@@ -2529,103 +2525,106 @@ In this lab you will perform the configuration of a **Log collector**.
     |Host IP address|```192.168.141.125```
     |Data source(s)|**SquidLogs**
 
-    !IMAGE[Create log collector](\Media\dis-createlogcollector.png "Create log collector")
+    ^IMAGE[Open Screenshot](\Media\dis-createlogcollector.png "Create log collector")
 
-9. [] After clicking on the **Update** button, you have now the required steps to create your log collector instance on **LinuxVM**.
-    >:warning: Do not close this window!
+1. [] After clicking on the **Update** button, follow the required steps to create your log collector instance on **LinuxVM**. You'll have to use the provided command line in **Putty** in the following steps to configure your log collector.
+    > [!ALERT] Do not close this window until your log collector is up and running!
 
-    !IMAGE[Create log collector command](\Media\dis-addlogcollectortoken.png "Create log collector command")
+    !IMAGE[Create log collector command](\Media\dis-addlogcollectortoken.png "Create log collector")
 
-    ``` 
-    (echo 1f5b5fb2a0d778e3d57f26ca5ab11574db0751166477940528ccf19a7c4) | docker run --name LogCollector -p 21:21 -p 20000-20099:20000-20099 -e "PUBLICIP='192.168.141.125'" -e "PROXY=" -e "SYSLOG=false" -e "CONSOLE=xyztenant.eu.portal.cloudappsecurity.com" -e "COLLECTOR=LogCollector" --security-opt apparmor:unconfined --cap-add=SYS_ADMIN --restart unless-stopped -a stdin -i microsoft/caslogcollector starter
-    ```
+    > [!KNOWLEDGE] This command line contains the different parameters to instantiate a new log collector on the Linux host:
+    > [!KNOWLEDGE] An API token to connect to Cloud App Security for uploading the logs: *1f5b5fb2a0d778e3d57f26ca5ab11574db0751166477940528ccf19a7c4*
+    > [!KNOWLEDGE] The docker parameters to configure the log collector container: *docker run ...*
 
-    >**INFO:** This command line contains the different parameters to instantiate a new log collector on the Linux host:
-    >* An API token to connect to Cloud App Security for uploading the logs: *1f5b5fb2a0d778e3d57f26ca5ab11574db0751166477940528ccf19a7c4*
-    >* The docker parameters to configure the log collector container: *docker run ...*
+1. [] **Copy the command line** provided at the end of the previous step and **minimize** the browser. 
 
-10. [] Copy the command line provided at the end of the previous step and **minimize** the browser. Open **Putty (64-bit)**. You should have the icon on your desktop.
+1. Open **Putty (64-bit)**. You should have the icon on your desktop.
 
-    !IMAGE[Putty](\Media\dis-putty.png "Putty")
+    ^IMAGE[Open Screenshot](\Media\dis-putty.png "Putty")
 
-11. [] In the PuTTY Configuration window, enter **192.168.141.125** and click **Open**.
+1. [] In the PuTTY Configuration window, enter **192.168.141.125** and click **Open**.
 
-    !IMAGE[Putty config](\Media\dis-puttyconfig.png "Putty config")
+    ^IMAGE[Open Screenshot](\Media\dis-puttyconfig.png "Putty config")
 
-12. [] At the Putty warning message, click **Yes**.
-    >**INFO:** This warning is due to the ssh certificate. You can safely ignore this warning in this lab.
+1. [] At the Putty warning message, click **Yes**.
 
-    !IMAGE[Putty warning](\Media\dis-puttywarning.png "Putty warning")
+    > [!KNOWLEDGE] This warning is due to the ssh certificate provided by LinuxVM not being trusted by your computer. You can safely ignore this warning in this lab.
 
-13. Log in using the credentials below.
+    ^IMAGE[Open Screenshot](\Media\dis-puttywarning.png "Putty warning")
+
+1. Log in using the credentials below.
     >|Username|Password|
     >|---|---|
     >|```user01```|```Passw0rd1```|
-    >
-    >:warning:The password doesn't appear in the command prompt, you can safely press enter to validate the credentials.
 
-    !IMAGE[Putty prompt](\Media\dis-puttylogin.png)
+    > [!HINT] The password doesn't appear in the command prompt when you type it. You can safely press enter to validate the credentials.
 
-14. [] Type the command below and press **Enter**. Provide the user password when prompted.
-     ``` 
-     sudo -i
-     ```
-     !IMAGE[sudo](\Media\dis-sudo.png)
+    ^IMAGE[Open Screenshot](\Media\dis-puttylogin.png)
 
-     >**INFO**: The previous command elevates your permissions in the Linux environment like the UAC prompt would do on a Windows machine.
+1. [] Type the command below and press **Enter**. Provide the user password when prompted.
 
-15. [] Return to the *Create log collector* dialog, copy the **collector configuration** command from step 2 and run it in the PuTTY window.
+     ```sudo -i```
 
-     !IMAGE[Copy token](\Media\dis-addlogcollectorcopy.png "Copy token")
+    ```Passw0rd1```
+
+     ^IMAGE[Open Screenshot](\Media\dis-sudo.png)
+
+     > [!KNOWLEDGE] The previous command elevates your permissions in the Linux environment like the UAC prompt would do on a Windows machine.
+
+1. [] Return to the **Create log collector** dialog.
+
+1. [] Copy the **collector configuration** command from step 2 and run it in the PuTTY window.
+
+     ^IMAGE[Open Screenshot](\Media\dis-addlogcollectorcopy.png "Copy token")
      !IMAGE[New container](\Media\dis-newcontainer.png "New container")
 
-     >**INFO:** The output of this command is the id of the newly created container/log collector.
+     > [!KNOWLEDGE] The output of this command is the id of the newly created container/log collector.
 
-16. [] Now, launch **WinSCP** from the start-menu.
+1. [] Launch the **WinSCP** application from **Client01** start menu.
 
-    !IMAGE[WinSCP](\Media\dis-winscp.png "WinSCP")
+    ^IMAGE[Open Screenshot](\Media\dis-winscp.png "WinSCP")
 
-17. [] Use the details below in the WinSCP window to connect to the log collector FTP service.
+1. [] Use the details below in the WinSCP window to connect to the log collector FTP service.
 
     |File Protocol|Host name|User name|Password|
     |-----|-----|-----|-----|
     |**FTP**|```192.168.141.125```|```discovery```|```BP98Jw4Ns*zpTFrH```|
 
-    !IMAGE[WinSCP connection](\Media\dis-winscpconnection.png "WinSCP connection")
+    ^IMAGE[Open Screenshot](\Media\dis-winscpconnection.png "WinSCP connection")
 
-    >**INFO**: this information was provided during the log collector creation.
+    > [!HINT] this information was provided during the log collector creation.
 
-    You should then be able to see a folder with your data source name.
+1. [] You should then be able to see a folder with your data source name (**SquidLogs**).
 
     !IMAGE[WinSCP connection](\Media\dis-winscpfolder.png "WinSCP connection")
 
-    >:warning: If you are **not** able to connect to the log collector FTP service, verify that you successfully created the new log collector instance within Putty in previous steps.
+    > [!ALERT] If you are **not** able to connect to the log collector FTP service, verify that you successfully created the new log collector instance within Putty in previous steps.
 
-18. [] On the left pane, move to the **Desktop** folder and drag your example Squid log (From Step 7) into the folder named for your data source (**SquidLogs**). After some minutes, the log collector will upload your logs.
+1. [] On the left pane, move to the **Desktop** folder and drag your example Squid log (From Step 7) into the folder named for your data source (**SquidLogs**). After some minutes, the log collector will upload your logs.
 
     !IMAGE[Log upload](\Media\dis-winscplogupload.png "Log upload")
     !IMAGE[Log upload](\Media\dis-winscplogupload2.png "Log upload")
     !IMAGE[Log upload](\Media\dis-winscplogupload3.png "Log upload")
 
-19. [] Return to the Cloud App Security portal and click on **Settings** > **Governance log**.
+1. [] Return to the Cloud App Security portal and click on the **Gear** icon and select **Governance log**.
 
-    !IMAGE[Settings Governance log](\Media\dis-governancelog.png "Settings Governance log")
+    ^IMAGE[Open Screenshot](\Media\dis-governancelog.png "Settings Governance log")
 
-20. [] Verify the status of the uploaded logs.
+1. [] Verify the status of the uploaded logs.
 
-    >**INFO:** The status you see is the parsing status of the logs. Parsing status can be successful, pending or failed.
+    ^IMAGE[Open Screenshot](\Media\dis-loguploaded.png "Log uploaded")
 
-    !IMAGE[Log uploaded](\Media\dis-loguploaded.png "Log uploaded")
+    > [!KNOWLEDGE] The status you see is the parsing status of the logs. Parsing status can be successful, pending or failed.
 
-21. [] You can also verify the **last data received** status on the *Data sources* tab under **Automatic log upload** settings.
+1. [] You can also verify the **Last data received** date on the **Data sources** tab under **Automatic log upload** in the settings.
 
     !IMAGE[Last data received](\Media\dis-lastreceived.png "Last data received")
 
-22. [] Go to the **Cloud Discovery Dashboard** to verify the discovered apps.
+1. [] Go to the **Cloud Discovery Dashboard** to verify the discovered apps. As explained at the beginning of the lab, the data you uploaded is probably not already available as the data is analyzed **twice a day**.
 
-    !IMAGE[Discovery dashboard](\Media\dis-discoverydashboard.png "Discovery dashboard")
+    ^IMAGE[Open Screenshot](\Media\dis-discoverydashboard.png "Discovery dashboard")
 
-    !IMAGE[Discovery data](\Media\dis-discoverydata.png "Discovery data")
+    ^IMAGE[Open Screenshot](\Media\dis-discoverydata.png "Discovery data")
 
 ===
 
