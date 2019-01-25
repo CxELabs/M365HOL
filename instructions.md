@@ -2270,11 +2270,11 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
         !IMAGE[Import group](\Media\mgmt-import2.png "Import group")
 
-    1. Select an app to import group from: **Office 365(AzureAD)***
+    1. Select an app to import group from: **Office 365(AzureAD)**
 
         ^IMAGE[Open Screenshot](\Media\mgmt-import3.png "Import group")
 
-	1. The user group will be seen as **Tmporting**.
+	1. The user group will be seen as **Importing**.
 
         !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
 
@@ -2282,35 +2282,34 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     1. Click on the **Gear** under System, and select **Manage admin access**
 
-    ^IMAGE[Open Screenshot](\Media\mgmt-admin1.png "New admin")
+        ^IMAGE[Open Screenshot](\Media\mgmt-admin1.png "New admin")
 
 	1. Click on the **+** icon.
 
-    ^IMAGE[Open Screenshot](\Media\mgmt-admin2.png "New admin")
+        ^IMAGE[Open Screenshot](\Media\mgmt-admin2.png "New admin")
 
     1. Type the admin user name: ```mcasadminus@@lab.CloudCredential(134).TenantName```
 
-	> [!HINT] The tenant name is the one provided for your lab environment. This information is available in your **Resources** section, at the top of the instructions.
-
-	 ^IMAGE[Open Screenshot](\Media\tenantcredentials.JPG)
-
-    > [!KNOWLEDGE] **Group admin** has permissions to all of the data in Microsoft Cloud App Security that deals exclusively with the specific group selected here. The admin can view and modify information in Microsoft Cloud App Security only for that user group.
-	> [!KNOWLEDGE] For more details about admin roles```https://docs.microsoft.com/en-us/cloud-app-security/manage-admins```
+    	> [!HINT] The tenant name is the one provided for your lab environment. This information is available in your **Resources** section, at the top of the instructions.
+    
+    	 ^IMAGE[Open Screenshot](\Media\tenantcredentials.JPG)
+    
+        >[!KNOWLEDGE] **Group admin** has permissions to all of the data in Microsoft Cloud App Security that deals exclusively with the specific group selected here. The admin can view and modify information in Microsoft Cloud App Security only for that user group.
+    	>[!KNOWLEDGE] For more details about admin roles```https://docs.microsoft.com/en-us/cloud-app-security/manage-admins```
 
 	1. Select Role: **User group admin**
 
-    !IMAGE[New admin](\Media\mgmt-admin3.png "New admin")
+        !IMAGE[New admin](\Media\mgmt-admin3.png "New admin")
 
 	1. Select groups for this admin**: **US employees**
 
 	1. Click on **Add admin**
 
-
-    !IMAGE[New admin](\Media\mgmt-admin4.png "New admin")
+        !IMAGE[New admin](\Media\mgmt-admin4.png "New admin")
 
 	1. The user should be populated with the **role** and **scope** you selected.
 
-    !IMAGE[New admin](\Media\mgmt-admin5.png "New admin")
+        !IMAGE[New admin](\Media\mgmt-admin5.png "New admin")
 
 
 1. [] Open a new **private** tab and connect to the [Cloud App Security portal]```https://portal.cloudappsecurity.com``` with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
@@ -2328,39 +2327,35 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
 As a **Managed Security Service Providers** (MSSPs), you are asked by your customer how you could access their environment to manage their alerts in the Cloud App Security portal.
 In this lab, we will see how to answer to that question.
-As the MCAS admin for your company, work with the person next to you to configure an external access for the Managed Security Service Provider to another MCAS tenant.
 
-1. [] Browse to ```https://portal.cloudappsecurity.com```, add the external MCAS admin as **Security reader** in your MCAS tenant.
+>[!ALERT] For this task, work with the person next to you to configure an external access for the Managed Security Service Provider to another MCAS tenant. You will need that person's tenant name that can be found in the **Resources** section, at the top of the instructions.
+>[!ALERT] Both attendees need to perform the operation in parralel.
+>[!ALERT]^IMAGE[Open Screenshot](\Media\tenantcredentials.JPG)
 
-    * **Click on the *Gear* under System, click on *Manage admin access***
+1. [] Browse to ```https://portal.cloudappsecurity.com``` and add the external MCAS admin (your neighboor's admin username) as **Security reader** in your MCAS tenant.
 
-    !IMAGE[External admin](\Media\mgmt-admin1.png "External admin")
+    1. Click on the **Gear** under System and select **Manage admin access**.
+        ^IMAGE[External admin](\Media\mgmt-admin1.png "External admin")
 
-	* **Click on the plus**
+	1. Click on the **+** icon.
+        ^IMAGE[External admin](\Media\mgmt-admin2.png "External admin")
 
-    !IMAGE[External admin](\Media\mgmt-admin2.png "External admin")
+    1. Type **Admin user name**:  *Use your neighbor's credentials provided in their tenant as the external admin.
 
+	1. Select type of role for this admin:**Security Reader**
 
-	* **Type Admin user name:**  *Use your neighbor's Office 365 credentials provided in their tenant as the external admin* 
+	    ^IMAGE[Tenant Example](\Media\tenantcredentials.JPG)
 
-	* **Select type of role for this admin:** *Security Reader*
+	1. Click on **Add Admin**
+        ^IMAGE[External admin](\Media\mgmt-externaladmin1.png "External admin")
 
-	!IMAGE[Tenant Example](\Media\tenantcredentials.JPG)
+        >[!HINT] Note here that the icon next to the newly added admin shows that the user is external to the company.
+        !IMAGE[External admin](\Media\mgmt-externaladmin2.png "External admin")
 
-	* **Add Admin**
+1. [] After adding the external admin, **log off** and log on again from Cloud App Security.
+    ^IMAGE[Log off](\Media\mgmt-switch1.png "Log off")
 
-    !IMAGE[External admin](\Media\mgmt-externaladmin1.png "External admin")
-
-    > [!NOTE] Note here that the icon next to the newly added admin shows that the user is external to the company.
-
-    !IMAGE[External admin](\Media\mgmt-externaladmin2.png "External admin")
-
-2. [] After adding the external admin, **log off** and log on again from Cloud App Security.
-
-    !IMAGE[Log off](\Media\mgmt-switch1.png "Log off")
-
-3. [] Switch to the external Cloud App Security tenant where you have been added as an external admin and look at the actions you can perform.
-
+3. [] Switch to the external Cloud App Security tenant where you have been added as an external admin and compare at the actions you can perform using this security role as external admin.
     !IMAGE[Switch](\Media\mgmt-switch2.png "Switch")
 
 ===
