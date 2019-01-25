@@ -890,7 +890,11 @@ The first step in configuring the AIP Scanner is to install the service and conn
 
 1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in using the password +++@lab.VirtualMachine(Client01).Password+++.
 
-1. [] On the desktop, right-click on **InstallScanner.ps1** and click **Run with PowerShell**. 
+1. [] Open an **Administrative PowerShell Window** and type ```C:\Users\LabUser\Desktop\InstallScanner.ps1``` and press **Enter**. 
+
+1. [] In the popup box, click **OK** to accept the default of **Scanner01**.
+
+	> [!NOTE] We have preconfigured SQL Server on Scanner01 with a **default instance**. If using a **named instance** or **SQL Server Express**, you would populate this with **ServerName\\InstanceName** or **ServerName\\SqlExpress** respectively.
 
 3. [] When prompted, provide the credentials for the **local** AIP scanner service account.
 	
@@ -912,9 +916,7 @@ The first step in configuring the AIP Scanner is to install the service and conn
 	>
 	> Install-AIPScanner -SQLServerInstance $SQL
 	
-	> [!knowledge] You should see a success message like the one below. 
-	>
-	>!IMAGE[w7goqgop.jpg](\Media\w7goqgop.jpg)
+	^IMAGE[Open Screenshot](\Media\w7goqgop.jpg)
 
 ### Creating Azure AD Applications for the AIP Scanner
 
@@ -926,11 +928,10 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 	```@lab.CloudCredential(134).Username```
 	
 	```@lab.CloudCredential(134).Password```
-1. [] Next, click the **T** to **type the commands below** in the PowerShell window and press **Enter**. 
 
 	> [!HINT] This will create a new **Web App Registration**, **Native App Registration**, and associated **Service Principals** in Azure AD. 
 	>
-	> Next, the script will output a new text file containing the **Set-AIPAuthentication** command and the **required values to generate the authentication token** on **all** AIP scanner servers in an environment.
+	> Next, the script will output a new text file containing the **Set-AIPAuthentication** command and the **required values to generate the authentication token** for **any** AIP scanner server in an environment.
 	
 	> [!KNOWLEDGE] This script will run the code below. This script is available online at https://aka.ms/labscripts
 	>
@@ -960,9 +961,6 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 
 	!IMAGE[zgt5ikxl.jpg](\Media\zgt5ikxl.jpg)
 
-1. [] In the popup box, click **OK** to accept the default of **Scanner01**.
-
-	> [!NOTE] We have preconfigured SQL Server on Scanner01 with a **default instance**. If using a **named instance** or **SQL Server Express**, you would populate this with **ServerName\\InstanceName** or **ServerName\\SqlExpress** respectively.
 1. [] When prompted, enter the username and password below and click **OK**.
 
 	```Contoso\AIPScanner``` 
@@ -987,7 +985,7 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 	>!IMAGE[y2bgsabe.jpg](\Media\y2bgsabe.jpg)
 
 1. [] **Close the PowerShell window**.
-1. [] Next, open an **Admin PowerShell window** and type the command below.
+1. [] Next, in the **Admin PowerShell window**, run the command below.
 
 	```Restart-Service AIPScanner```
    
@@ -1001,7 +999,7 @@ In this task, we will configure repositories to be scanned by the AIP scanner.  
 
 The next task is to configure repositories to scan.  These can be on-premises SharePoint 2010, 2013, or 2016 document libraries and any accessible CIFS based share.
 
-1. [] Next, on the desktop, right-click on **ConfigureRepository.ps1** and click **Run with PowerShell**.
+1. [] Next, in the admin PowerShell prompt, type ```C:\Users\LabUser\Desktop\ConfigureRepository.ps1``` and press **Enter**.
 
 	> [!HINT] This command configures a **CIFS fileshare** repository and a **SharePoint document library** repository then **displays the configuration** to verify they were added.
 
@@ -1023,7 +1021,7 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 ## Running Sensitive Data Discovery 
 [:arrow_up: Top](#configuring-aip-scanner-for-discovery)
 
-1. [] Finally, on the desktop, right-click on **StartDiscovery.ps1** and click **Run with PowerShell**.
+1. [] Next, in the admin PowerShell prompt, type ```C:\Users\LabUser\Desktop\StartDiscovery.ps1``` and press **Enter**.
 
 	> [!HINT] This command sets the global configuration of the AIP scanner to use **any custom conditions** that you have specified for labels in the Azure Information Protection policy, and the list of all **default sensitive information types** that are available to specify as conditions for labels.
 	>
@@ -1044,7 +1042,9 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 
 	^IMAGE[Open Screenshot](\Media\dy6mnnpv.jpg)
 
-	>[!NOTE] You will see an event like the one below when the scanner completes the cycle. If you see a .NET exception, press OK. This is due to SharePoint startup in the VM environment.
+	> [!ALERT] If you see a .NET exception, press OK. This is due to SharePoint startup in the VM environment. This event must be acknowledged to complete the discovery scan.
+
+	> [!NOTE] You will see an event like the one below when the scanner completes the cycle. 
 	>
 	>!IMAGE[agnx2gws.jpg](\Media\agnx2gws.jpg)
 

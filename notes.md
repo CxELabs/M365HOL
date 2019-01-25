@@ -52,6 +52,11 @@ Add scripts instructions for
  StartEnforce
  ExchangeMFRs x2
 
+Replace scripts on VMs
+
+ EnableMailboxAudit
+ ConfigRepo
+ 
 
     Update in MCAS instructions
 
