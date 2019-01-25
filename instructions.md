@@ -2379,7 +2379,7 @@ In this lab, we will see how to answer to that question.
 
 ===
 
-# Cloud App Security Discovery lab
+# Cloud App Security Discovery
 [:arrow_left: MCAS Home](#microsoft-cloud-app-security)
 
 On average, more than 1,100 cloud applications are used by enterprises today, of which 61% are **not** sanctioned by IT. This results in duplicate capabilities, apps not meeting compliance standards or posing a security risk to the organization without any IT oversight.
@@ -2402,9 +2402,16 @@ Once the logs have been analyzed, Cloud App Security provides the visibility on 
 > [!NOTE] In this lab, we will simulate the upload of network logs from a SQUID proxy to analyze the apps used withing your company. We will not test the Windows Defender ATP integration at it can take up to **2h** before the logs are parsed and the results are visible in the console.
 
 ===
+# Cloud App Security Discovery Lab
+[:arrow_left: Discovery lab](#cloud-app-security-discovery)
+
+* [Cloud Discovery Snapshot Report](#cloud-discovery-snapshotreport)
+* [Configure and Test Continuous Reports](#configure-and-test-continuous-reports)
+
+===
 
 # Cloud Discovery Snapshot Report
-[:arrow_left: Discovery lab](#cloud-app-security-discovery-lab) :clock10: 15 min
+[:arrow_left: Discovery lab](#cloud-app-security-discovery-lab)
 
 In this lab, we will create a Discovery **Snapshot report**.
 Snapshot Reports is the manual method of uploading files into Cloud App Security. This process is a great and easy way to validate your logs format of have a quick look at the Cloud App Security Discovery capability.
@@ -2460,7 +2467,7 @@ To create snapshot reports:
 ===
 
 ## Configure and Test Continuous Reports
-[:arrow_left: Discovery lab](#cloud-app-security-discovery-lab) :clock10: 20 min
+[:arrow_left: Discovery lab](#cloud-app-security-discovery-lab)
 
 In this lab, we will implement Continuous reports.
 Continuous reports analyze all logs that are forwarded from your network using Cloud App Security. They provide improved visibility over all data, and **automatically** identify anomalous use using either the Machine Learning anomaly detection engine or by using custom policies that you define.
@@ -2511,7 +2518,7 @@ In this lab you will perform the configuration of a **Log collector**.
 
     >|||
     >|---------|---------|
-    >|Name| **SquiDLogs**|
+    >|Name| **SquidLogs**|
     >|Source| **SQUID (Common)**|
     >|Receiver type| **FTP**|
     >|Anonymize private information |**Check the Box**|
@@ -2650,14 +2657,14 @@ Microsoft Cloud App Security helps you prevent this kind of disaster before it h
 !IMAGE[IP](\Media\IPCAS.JPG)
 
 ===
-## Labs
+## Information Protection Lab
+
+File policies are a great tool for finding threats to your information protection policies, for instance finding places where users stored sensitive information, credit card numbers and third-party ICAP files in your cloud. With Cloud App Security, not only can you detect these unwanted files stored in your cloud that leave you vulnerable, but you can take im/mediate action to stop them in their tracks and lock down the files that pose a threat.
+Using Admin quarantine, you can protect your files in the cloud and remediate problems, as well as prevent future leaks from occurring.
 
 * [Apply AIP classification to SSN documents:](#apply-aip-classification-to-ssn-documents)
 * [Quarantine sensitive PDF for review:](#quarantine-sensitive-pdf-for-review)
 * [Test our policies:](#test-our-policies)
-
-File policies are a great tool for finding threats to your information protection policies, for instance finding places where users stored sensitive information, credit card numbers and third-party ICAP files in your cloud. With Cloud App Security, not only can you detect these unwanted files stored in your cloud that leave you vulnerable, but you can take im/mediate action to stop them in their tracks and lock down the files that pose a threat.
-Using Admin quarantine, you can protect your files in the cloud and remediate problems, as well as prevent future leaks from occurring.
 
 ## Apply AIP classification to SSN documents
 [:arrow_up: Top](#information-protection)
@@ -2828,8 +2835,15 @@ Conditional Access App Control enables user app access and sessions to be **moni
 * **Restrict user sessions from non-corporate networks**: Users accessing a protected app from a location that is not part of your corporate network, are allowed restricted access and the download of sensitive materials is blocked or protected.
 
 ===
+# App Control Lab
+[:arrow_left: Discovery lab](#cloud-app-security-discovery)
 
-## Configuration
+* [App Control Configuration](#app-control-configuration)
+* [Testing the Session Policy](#testing-the-session-policy)
+
+===
+
+## App Control Configuration
 
 1. [] Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
 
@@ -2937,7 +2951,7 @@ Conditional Access App Control enables user app access and sessions to be **moni
 ====
 
 # Testing the Session Policy
-[:arrow_left: Home](#labs)
+[:arrow_left: Home](#app-control-labs)
 
 Now is time to test our configuration. We will here simulate the userexperience while accessing company apps protected by Cloud App Security from an unmanaged device
 
