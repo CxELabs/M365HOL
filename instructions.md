@@ -2370,7 +2370,7 @@ As the MCAS admin for your company, work with the person next to you to configur
     !IMAGE[External admin](\Media\mgmt-admin2.png "External admin")
 
 
-	**Type Admin user name:**  *Use your neighbors Office 365 credentials provided in their tenant as the external admin* 
+	**Type Admin user name:**  *Use your neighbor's Office 365 credentials provided in their tenant as the external admin* 
 
 	**Select type of role for this admin:** *Security Reader*
 
