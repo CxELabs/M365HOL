@@ -3033,6 +3033,10 @@ Now that we validated our configuration, let's go back to the admin view.
 Cloud App Security provides several threats detection policies using machine learning and **user behavior analytics** to detect suspicious activities across your different applications.
 Those policies are enabled by default and after an initial learning period, Cloud App Security will start alerting you when suspicious actions like activity from anonymous IP addresses, infrequent country, suspicious IP addresses, impossible travel, ransomware activity, suspicious inBox forwarding configuration or unusual file download are detected.
 
+!IMAGE[Thret protection](\Media\tp-intro.png)
+
+===
+
 > [!ALERT] It can take **up to 24 hours** for the auditing in Office 365 to be configured, meaning that Cloud App Security will not receive the activities events. As many alerts relies on activities events to work, we will be using a pre-populated tenant for this portion of the lab so we can see alerts and have the ability to investigate them.
 
 > [!HINT] LOG OUT OF YOUR CURRENT CLOUD APP SECURITY TENANT AND LOG BACK IN USING THE CREDENTIALS BELOW.
@@ -3056,7 +3060,7 @@ Those policies are enabled by default and after an initial learning period, Clou
 * [Ransomware activity:](#ransomware-activity)
 * [Suspicious application consent:](#suspicious-application-consent)
 
----
+===
 
 ## Anonymous access
 
@@ -3447,7 +3451,7 @@ There are several things to test at different locations: in the log collector, i
     ```
     !IMAGE[Docker stats](\Media\dis-dockerstats.png "Docker stats")
 
-     >**INFO:** This command will show you the status of the log collector instance.
+     > [!HINT] This command will show you the status of the log collector instance.
 
 3. [] Press `Ctrl-C` to end the command.
 
@@ -3458,7 +3462,7 @@ There are several things to test at different locations: in the log collector, i
     ```
     !IMAGE[Docker log](\Media\dis-dockerlog.png "Docker log")
 
-     >**INFO:** This command will show you the container logs to verify if it encountered errors when initiating.
+     > [!HINT] This command will show you the container logs to verify if it encountered errors when initiating.
 
 ### Verify the log collector logs
 
@@ -3467,7 +3471,7 @@ There are several things to test at different locations: in the log collector, i
     ``` 
     docker exec -it LogCollector bash
     ```
-     >**INFO:** This command will execute the container's bash. You will then be able to execute commands *from inside* of the log collector.
+     > [!HINT] This command will execute the container's bash. You will then be able to execute commands *from inside* of the log collector.
 
 2. [] You can now explore the container filesystem and inspect the **/var/adallom** directory. This directory is where you will investigate most of the issues with the syslog or ftp logs being sent to the log collector.
 
@@ -3507,7 +3511,7 @@ An easy way to test the connectivity after configuring the log collector is to d
 
 !IMAGE[Pending log](\Media\dis-pending.png "Log pending")
 
-> [!HINT]  If the log stays in the source folder for too long, then you know you probably have a connection issue between the log collector and Cloud App Security and should go investigate the logs reviewed previously.
+> [!HINT] If the log stays in the source folder for too long, then you know you probably have a connection issue between the log collector and Cloud App Security and should go investigate the logs reviewed previously.
 
 ===
 
@@ -3686,7 +3690,7 @@ We will now provide access to our users and validate the SSO experience.
 
     !IMAGE[Assign users](\Media\appc-app24.png "Assign users")
 
-    >:warning: If you want to assign Salesforce to more users, you must create a user for them in Salesforce as we didn't configured **provisionning**. Our admin account already has an an account matching his UPN, created during the Salesforce configuration.
+    > [!ALERT] If you want to assign Salesforce to more users, you must create a user for them in Salesforce as we didn't configured **provisionning**. Our admin account already has an an account matching his UPN, created during the Salesforce configuration.
 
 3. [] Test the setup by going to [https://myapps.microsoft.com](https://myapps.microsoft.com) with your admin account and click on the **SalesforceCAS** app. You should then experience SSO to Salesforce.
 
@@ -3704,7 +3708,7 @@ We will now provide access to our users and validate the SSO experience.
 
 The next step of the configuration is to create a Conditional access policy in Azure AD and then complete the configuration in Cloud App Security.
 
->:memo: Soon, you will be able to perform the full configuration from the Azure AD conditional access policy configuration pane.
+> [!HINT] Soon, you will be able to perform the full configuration from the Azure AD conditional access policy configuration pane.
 
 1. [] In Azure Active Directory, under **Security**, click on **Conditional access**.
 
@@ -3743,7 +3747,7 @@ The next step of the configuration is to create a Conditional access policy in A
 
     !IMAGE[Configure policy](\Media\appc-policy9.png "Configure policy")
 
-    >:warning: If the message does not appear, go back to step 5. (After the policy was created...) this time, close the browser and open a new browser in Incognito mode.
+    > [!HINT] If the message does not appear, go back to step 5. (After the policy was created...) this time, close the browser and open a new browser in Incognito mode.
 
     In the dialog that opens, click on **Add**.
 
@@ -3848,7 +3852,7 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 
 6. [] You should now see a certificate prompt. Click on **Cancel**.
 
-    >:memo: This will simulate a connection from an unmannaged device. **In a real demo**, you can open two different browsers, side by side, and show the user experience from a managed and unmanaged device by clicking on **OK** in one browser and **Cancel** in the other.
+    > [!HINT] This will simulate a connection from an unmannaged device. **In a real demo**, you can open two different browsers, side by side, and show the user experience from a managed and unmanaged device by clicking on **OK** in one browser and **Cancel** in the other.
 
    !IMAGE[Session policy](\Media\appc-session10.png "Session policy")
 
