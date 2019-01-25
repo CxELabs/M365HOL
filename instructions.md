@@ -2470,8 +2470,8 @@ In this lab you will perform the configuration of a **Log collector**.
 
 > [!HINT] For this lab, the Docker engine has been pre-installed on **LinuxVM** in your lab environment, but normally you have to configure it on your host using the command below.
 > [!HINT] The command downloads a script installing the Docker engine on your host computer (Ubuntu in this case) and pull the latest Cloud App Security collector image from the Docker library.
-> [!HINT]
-> [!HINT]```curl -o /tmp/MCASInstallDocker.sh https://adaprodconsole.blob.core.windows.net/public-files/MCASInstallDocker.sh && chmod +x /tmp/MCASInstallDocker.sh; /tmp/MCASInstallDocker.sh```
+
+>```curl -o /tmp/MCASInstallDocker.sh https://adaprodconsole.blob.core.windows.net/public-files/MCASInstallDocker.sh && chmod +x /tmp/MCASInstallDocker.sh; /tmp/MCASInstallDocker.sh```
 
 ---
 
@@ -2538,7 +2538,7 @@ In this lab you will perform the configuration of a **Log collector**.
 
 1. [] **Copy the command line** provided at the end of the previous step and **minimize** the browser. 
 
-1. Open **Putty (64-bit)**. You should have the icon on your desktop.
+1. [] Open **Putty (64-bit)**. You should have the icon on your desktop.
 
     ^IMAGE[Open Screenshot](\Media\dis-putty.png "Putty")
 
@@ -2552,7 +2552,7 @@ In this lab you will perform the configuration of a **Log collector**.
 
     ^IMAGE[Open Screenshot](\Media\dis-puttywarning.png "Putty warning")
 
-1. Log in using the credentials below.
+1. [] Log in using the credentials below.
     >|Username|Password|
     >|---|---|
     >|```user01```|```Passw0rd1```|
@@ -2569,7 +2569,7 @@ In this lab you will perform the configuration of a **Log collector**.
 
      ^IMAGE[Open Screenshot](\Media\dis-sudo.png)
 
-     > [!KNOWLEDGE] The previous command elevates your permissions in the Linux environment like the UAC prompt would do on a Windows machine.
+    > [!KNOWLEDGE] The previous command elevates your permissions in the Linux environment like the UAC prompt would do on a Windows machine.
 
 1. [] Return to the **Create log collector** dialog.
 
@@ -2578,7 +2578,7 @@ In this lab you will perform the configuration of a **Log collector**.
      ^IMAGE[Open Screenshot](\Media\dis-addlogcollectorcopy.png "Copy token")
      !IMAGE[New container](\Media\dis-newcontainer.png "New container")
 
-     > [!KNOWLEDGE] The output of this command is the id of the newly created container/log collector.
+    > [!KNOWLEDGE] The output of this command is the id of the newly created container/log collector.
 
 1. [] Launch the **WinSCP** application from **Client01** start menu.
 
@@ -2644,11 +2644,12 @@ Microsoft Cloud App Security helps you prevent this kind of disaster before it h
 
 ===
 
+File policies are a great tool for finding threats to your information protection policies, for instance finding places where users stored sensitive information, credit card numbers and third-party ICAP files in your cloud. With Cloud App Security, not only can you detect these unwanted files stored in your cloud that leave you vulnerable, but you can take im/mediate action to stop them in their tracks and lock down the files that pose a threat.
+Using Admin quarantine, you can protect your files in the cloud and remediate problems, as well as prevent future leaks from occurring.
+
+In this lab, we are going to configure files policies to apply an **Azure Information Protection** template on documents containing social security numbers and quarantine sensitive files that are shared externally.
+
 ## Apply AIP classification to SSN documents
-
-In this task, you will protect a specific sensitive document library in SharePoint Online using the native integration with Azure Information Protection.
-We will apply an Azure Information Protection template on documents containing social security numbers.
-
 [:arrow_up: Top](#information-protection)
 
 1. [] In the Cloud App Security portal, go to **Control** and then click on **Policies.**
@@ -2706,24 +2707,17 @@ We will apply an Azure Information Protection template on documents containing s
 ---
 
 ## Quarantine sensitive PDF for review
-
 [:arrow_up: Top](#information-protection)
 
-File policies are a great tool for finding threats to your information protection policies, for instance finding places where users stored sensitive information, credit card numbers and third-party ICAP files in your cloud. With Cloud App Security, not only can you detect these unwanted files stored in your cloud that leave you vulnerable, but you can take im/mediate action to stop them in their tracks and lock down the files that pose a threat. Using Admin quarantine, you can protect your files in the cloud and re/mediate problems, as well as prevent future leaks from occurring.
-This is what we are going to configure in this lab.
+1. [] In the Cloud App Security portal, go to **Control** and then click on **Policies.**
 
-1. [] Next, go to **Control** and then **Policies**.  
+    ^IMAGE[Open Screenshot](\Media\info-policies.png "Policies")
 
-    !IMAGE[Policies](\Media\info-policy1.png "Policies")
+1. [] Create a new **File policy** that will determine which files should be placed in quarantine.
 
+    ^IMAGE[Open Screenshot](\Media\info-newpolicy.png "New policy")
 
-2. Create a new **File policy**. The following policy will determine which files should be placed in quarantine.
-
-
-
-    !IMAGE[New policy](\Media\info-policy2.png "New policy")
-
-2. [] Provide the following settings to that policy:
+1. [] Provide the following settings to that policy:
 
     >|Policy name|Files matching all of the following|
     >|---------|---------|
@@ -2731,7 +2725,7 @@ This is what we are going to configure in this lab.
 
     !IMAGE[New policy](\Media\info-policy3.png "New policy")
 
-3. [] Check the **Create an alert for each matching file** checkBox. In Governance actions of the policy, select **Put in admin quarantine** for Box and click on the **Create** button.
+1. [] Check the **Create an alert for each matching file** checkBox. In Governance actions of the policy, select **Put in admin quarantine** for Box and click on the **Create** button.
 
       !IMAGE[Unmask](\Media\Boxgovadmin.JPG)
 
