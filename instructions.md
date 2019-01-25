@@ -2738,7 +2738,7 @@ In this lab, we are going to configure a file policy to quarantine sensitive PDF
     >|---------|---------|
     >|```Quarantine sensitive pdf```| Extension equals pdf **and** Access level equals Public, External|
 
-    !IMAGE[New policy](\Media\info-policy3.png "New policy")
+    ^IMAGE[Open Screenshot](\Media\info-policy3.png "New policy")
 
 1. [] Check the **Create an alert for each matching file** checkBox. 
 
@@ -2767,38 +2767,43 @@ To test our files policies, perform the following tasks:
 
     ^IMAGE[Open Screenshot](\Media\info-share2.png "Upload")
 
-1. [] Cloud App Security will now scan those documents and search for matches to our created policies.
+1. [] Cloud App Security will now scan those documents and search for matches to your created policies.
 
-    >:memo: The scan can take **several minutes** before completion.
+    > [!HINT] The scan can take **several minutes** before completion.
 
-1. [] To monitor the evolution of the scan, go back to Cloud App Security and open the **Files** page of the investigations.
+1. [] To monitor the evolution of the scan, go back to Cloud App Security, select **Investigate** and open the **Files** page.
 
-    !IMAGE[Search files](\Media\info-files1.png "Search files")
+    ^IMAGE[Open Screenshot](\Media\info-files1.png "Search files")
 
-1. [] You can search for the files you uploaded using different criteria, like **file name**, **type**, ... or just look at all the files discovered by Cloud App Security.
+1. [] You can search for the files you uploaded using different criteria, like **file name**, **type**, ... or just look at all the files discovered by Cloud App Security. When a policy match is discovered, you will notice it on this page by looking at the icones next to the file name. You will also have icons related to the applied **Governance action** (AIP label or Admin Quarantine in our lab).
 
-    !IMAGE[Search files](\Media\Boxfilesmatch.JPG)
-
-
-1. [] When a policy match is discovered, you will see it in this page.
-
-    >:memo: Next to the file name, you have icons showing that an AIP label was applied and that we have a policy match.
-
-	  !IMAGE[PolicyMatch](\Media\Boxmatchedpolicies.JPG)
+    ^IMAGE[Open Screenshot](\Media\Boxfilesmatch.png)
 
 1. [] To open the details of the file, click on its name. You can see there the matched policies and the scan status of the files.
 
-    !IMAGE[Scan status](\Media\info-files5.png "Scan status")
+    ^IMAGE[Scan status](\Media\info-files5.png "Scan status")
 
 1. [] You can also view the related governance actions, like applying the Azure Information classification or moving the file to the quarantine folder, at the file level or in the **Governance log**.
 
     !IMAGE[Governance log](\Media\Boxgovlog.jpg) "Governance log")
 
-1. [] If you go back to **Box**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
+1. [] As we configured **Alerts** in our lab, you can also review the related alerts in the **Alerts page**.
 
-    > [!KNOWLEDGE]  For Box, the quarantine folder location and user message **can't be customized**. The folder location is the drive of the admin who connected Box to Cloud App Security and the user message is: This file was quarantined to your administrator's drive because it might violate your company's security and compliance policies. Contact your IT administrator for help.
+    ^IMAGE[Alert](\Media\Boxalert1.png) "alerts")
 
-    !IMAGE[results](\Media\Boxportalresults.jpg)
+    ^IMAGE[Alert](\Media\Boxalert2.png) "alerts")
+
+1. [] If you go back to **Box**, you will also notice that the quarantined files will be replaced by **placeholders**. The original file will be moved to the **Quarantine**.
+
+    > [!KNOWLEDGE]  For Box, the quarantine folder location and user message **can't be customized**. The folder location is the drive of the admin who connected Box to Cloud App Security. For **SharePoint and OneDrive**, the location and the message can be customized in Cloud App Security settings.
+
+    ^IMAGE[Open Screenshot](\Media\boxquarantine2.png)
+
+    ^IMAGE[Open Screenshot](\Media\boxquarantine1.png)
+
+1. [] The other way to review the policy matches is to go back to the **Policies page** and look at the **matches number**.
+
+    !IMAGE[Matches](\Media\info=matches.png)
 
 ===
 
