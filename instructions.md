@@ -999,7 +999,7 @@ In this task, we will configure repositories to be scanned by the AIP scanner.  
 
 The next task is to configure repositories to scan.  These can be on-premises SharePoint 2010, 2013, or 2016 document libraries and any accessible CIFS based share.
 
-1. [] Next, in the admin PowerShell prompt, type ```C:\Users\LabUser\Desktop\ConfigureRepository.ps1``` and press **Enter**.
+1. [] In the **Admin PowerShell window**, type ```C:\Users\LabUser\Desktop\ConfigureRepository.ps1``` and press **Enter**.
 
 	> [!HINT] This command configures a **CIFS fileshare** repository and a **SharePoint document library** repository then **displays the configuration** to verify they were added.
 
@@ -1013,7 +1013,7 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 	>
 	> Get-AIPScannerRepository
    
-	>[!Knowledge] Notice that we added the **-SetDefaultLabel Off** switch to each of these repositories.  This is useful to prevent any Default labels from applying to files that do not match a condition when we do the enforced scan. This is optional and may be removed if desired.
+	>[!HINT] Notice that we added the **-SetDefaultLabel Off** switch to each of these repositories.  This is useful to prevent any Default labels from applying to files that do not match a condition when we do the enforced scan. This is optional and may be removed if desired.
 
 
 ---
@@ -1021,11 +1021,11 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 ## Running Sensitive Data Discovery 
 [:arrow_up: Top](#configuring-aip-scanner-for-discovery)
 
-1. [] Next, in the admin PowerShell prompt, type ```C:\Users\LabUser\Desktop\StartDiscovery.ps1``` and press **Enter**.
+1. [] In the **Admin PowerShell window**, type ```C:\Users\LabUser\Desktop\StartDiscovery.ps1``` and press **Enter**.
 
 	> [!HINT] This command sets the global configuration of the AIP scanner to use **any custom conditions** that you have specified for labels in the Azure Information Protection policy, and the list of all **default sensitive information types** that are available to specify as conditions for labels.
 	>
-	> Although the scanner will discover documents to classify, it will not do so because the default configuration for the scanner is Discover only mode (Enforce Off).
+	> Although the scanner will discover documents to classify, it will not classify them because the configuration for the scanner is set to Discover only mode (Enforce Off).
 	>
 	> This command also starts the **initial discovery scan**.
 
@@ -1042,7 +1042,7 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 
 	^IMAGE[Open Screenshot](\Media\dy6mnnpv.jpg)
 
-	> [!ALERT] If you see a .NET exception, press OK. This is due to SharePoint startup in the VM environment. This event must be acknowledged to complete the discovery scan.
+	> [!ALERT] If you see a **.NET exception**, press **OK**. This is due to SharePoint startup in the VM environment. This event **must be acknowledged** to complete the discovery scan.
 
 	> [!NOTE] You will see an event like the one below when the scanner completes the cycle. 
 	>
@@ -1184,7 +1184,7 @@ However, there are times when external collaboration is required, so we will con
 ---
 
 ## Configuring Global Policy
-[:arrow_up: Top](#configuring-azure-information-protection-policy)
+[:arrow_up: Top](#base-configuration)
 
 In this task, we will assign the new sub-label to the Global policy and configure several global policy settings that will increase Azure Information Protection adoption among your users and reduce ambiguity in the user interface.
 
@@ -1226,7 +1226,7 @@ In this task, we will assign the new sub-label to the Global policy and configur
 ---
 
 ## Creating a Scoped Label and Policy
-[:arrow_up: Top](#configuring-azure-information-protection-policy)
+[:arrow_up: Top](#base-configuration)
 
 Now that you have learned how to work with global labels and policies, we will create a new scoped label and policy for the Legal team at Contoso.  
 
@@ -1312,7 +1312,7 @@ Now that you have learned how to work with global labels and policies, we will c
 ---
 
 ## Configuring Advanced Policy Settings
-[:arrow_up: Top](#configuring-azure-information-protection-policy)
+[:arrow_up: Top](#base-configuration)
 
 There are many advanced policy settings that are useful to tailor your Azure Information Protection deployment to the needs of your environment.  In this task, we will cover one of the settings that is very complimentary when using scoped policies that have no default label or a protected default label.  Because the No Default Label Scoped Policy we created in the previous task uses a protected default label, we will be adding an alternate default label for Outlook to provide a more palatable user experience for those users.
 
@@ -1340,7 +1340,7 @@ There are many advanced policy settings that are useful to tailor your Azure Inf
 ---
 
 ## Defining Recommended and Automatic Conditions
-[:arrow_up: Top](#configuring-azure-information-protection-policy)
+[:arrow_up: Top](#base-configuration)
 
 One of the most powerful features of Azure Information Protection is the ability to guide your users in making sound decisions around safeguarding sensitive data.  This can be achieved in many ways through user education or reactive events such as blocking emails containing sensitive data. 
 
