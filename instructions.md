@@ -970,7 +970,7 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 	> Start ~\Desktop\Set-AIPAuthentication.txt
 
 1. [] Leave the notepad window open in the background.
-1. [] **Click on the Start menu** and type ``````, right-click on the PowerShell program, and click **Run as a different user**.
+1. [] **Click on the Start menu** and type ```PowerShell```, right-click on the PowerShell program, and click **Run as a different user**.
 
 	!IMAGE[zgt5ikxl.jpg](\Media\zgt5ikxl.jpg)
 
@@ -4029,34 +4029,18 @@ The example above is based on Container security monitoring (you have a lab that
 
 This lab covers ASC Policy and Regulatory Compliance and guides you through some preview features.<br>
 
+This lab covers ASC Policy and Regulatory Compliance and guides you through the preview features.<br>
+
 ### Regulatory Compliance (Preview)
-Open a new browser tab/window and copy and paste the following URL in your browser to get access to the Regulatory Compliance preview:
+From the Azure Security Center overview blade, click on the **Least compliant regulatory standards** tile: <br><br>
+!IMAGE[alt text](\Media\policy_compliance_dashboard.png)<br><br>
 
-```
-Ask your instructor for the link
-```
-<br>
+Explore the different Compliance Controls for every Regulatory Compliance: <br>
 
-1. [] Navigate to the **Security Center** blade
-2. [] Click on **Regulatory Compliance**
+!IMAGE[alt text](\Media\policy_compliance_details.png)<br><br>
 
-	!IMAGE[alt text](\Media\regulatoryblade.png)<br>
-
-3. [] Explore the different regulations (like Azure CIS)
-4. [] Click on the different assessments
-
-#### Remediate PCI DSS 3.2
-This exercise remediates a failed assessment for PCI DSS 3.2
-1. [] Click on the **PCI DSS 3.2** tab
-2. [] Under the **Assessment** column, notice that you have a **Enable Network Security Groups on subnets** failed assessment
-
-	!IMAGE[alt text](\Media\nsg_assessment.png)<br>
-
-1. [] Click on the Assessment
-2. [] This shows you which subnet is at risk (subnet01), click on the subnet
-3. [] Remediate the failed assessment by clicking on **Create new**
-4. [] Give your new Network Security Group (NSG) a name and click on **OK** This adds a new NSG
-5. [] This will resolve your failed assessment on the next scan
+When you click on **All** you will see an overview of all the Regulatory Compliance controls per subscription:
+!IMAGE[alt text](\Media\policy_compliance_all.png)<br><br>
 
 ### Policy Management
 This exercise guides you through the current Security Center policies and is intended for exploration purposes only. <br>
