@@ -2751,7 +2751,7 @@ In this lab, we are going to configure a file policy to quarantine sensitive PDF
 ## Test our Policies
 [:arrow_up: Top](#information-protection)
 
-To test our files policies, perform the following tasks:
+We are now going to test our files policies by performing the following actions.
 
 1. [] On Client01, unzip the content of the **Demo files.zip**.
 
@@ -2785,13 +2785,13 @@ To test our files policies, perform the following tasks:
 
 1. [] You can also view the related governance actions, like applying the Azure Information classification or moving the file to the quarantine folder, at the file level or in the **Governance log**.
 
-    !IMAGE[Governance log](\Media\Boxgovlog.jpg) "Governance log")
+    !IMAGE[Governance log](\Media\Boxgovlog.jpg)
 
 1. [] As we configured **Alerts** in our lab, you can also review the related alerts in the **Alerts page**.
 
-    ^IMAGE[Alert](\Media\Boxalert1.png) "alerts")
+    ^IMAGE[Alert](\Media\Boxalert1.png)
 
-    ^IMAGE[Alert](\Media\Boxalert2.png) "alerts")
+    ^IMAGE[Alert](\Media\Boxalert2.png)
 
 1. [] If you go back to **Box**, you will also notice that the quarantined files will be replaced by **placeholders**. The original file will be moved to the **Quarantine**.
 
@@ -2833,110 +2833,106 @@ Conditional Access App Control enables user app access and sessions to be **moni
 
 1. [] Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
 
-   !IMAGE[AAD portal](\Media\aad-1.png)
+   ^IMAGE[Open Screenshot](\Media\aad-1.png)
 
-2. [] Scroll down to **Security** and click on **Conditional Access**. 
+1. [] Scroll down to **Security** and click on **Conditional Access**.
 
-   !IMAGE[AAD portal](\Media\aad-2.png)
+   ^IMAGE[Open Screenshot](\Media\aad-2.png)
 
-3. [] Create a new conditional access policy with the following settings:
+1. [] Create a new conditional access policy with the following settings:
 
    |Name|Assignments|Apps|
    |-----|-----|-----|
    |Office365 AppControl|All users|Exchange, SharePoint|
 
-   **Click on "New Policy"**
+    1. Click on **New Policy**
 
-   !IMAGE[New policy](\Media\cond-policy-1.png)
+	    ^IMAGE[Open Screenshot](\Media\cond-policy-1.png)
 
-	**Name: Office365 App Control**
-	**Assignments: Click on "All users" and then Done**
+    1. Name it ```Office365 App Control```
 
-   !IMAGE[New policy](\Media\cond-policy-2.png)
+    1. Assignments: Click on **All users** and then **Done**
 
-   **Go to the next section: Cloud Apps: Select Apps and choose Office 365 Exchange Online and Office 365 SharePoint Online and Done** 
+       ^IMAGE[Open Screenshot](\Media\cond-policy-2.png)
 
-   !IMAGE[New policy](\Media\cond-policy-3.png)
-    
+	1. Go to the next section: Cloud Apps: Select Apps and choose Office 365 Exchange Online and Office 365 SharePoint Online and Done**
 
-   **Click on "Session" and check off "Use Conditional Access App Control"**
- 
-   !IMAGE[New policy](\Media\cond-policy-4.png)
-	
-   **Enable the policy and click "Create"**
+       ^IMAGE[Open Screenshot](\Media\cond-policy-3.png)
 
-   !IMAGE[New policy](\Media\cond-policy-5.png)
+    1. Click on **Session** and check off **Use Conditional Access App Control"**
 
-4. [] Sign out of the Azure Portal and close you browser.
+       ^IMAGE[Open Screenshot](\Media\cond-policy-4.png)
 
-5.  Open your browser and go to the Exchange Web App ```https://outlook.office.com```.
+    1. Enable the policy and click **Create**
 
-6. Connect using :
+       ^IMAGE[Open Screenshot](\Media\cond-policy-5.png)
+
+1. [] Sign out of the Azure Portal and close you browser.
+
+1. [] Open your browser and go to the Exchange Web App ```https://outlook.office.com```.
+
+1. [] Connect using :
 
    >```@lab.CloudCredential(134).Username```
    >
    >```@lab.CloudCredential(134).Password```
 
-   >:memo: This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to add the application for App Control.
+   > [!HINT] This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to configure the application for App Control in Cloud App Security.
 
-7. [] Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the **gear icon** and click on **Conditional Access App Control.** 
-
+1. [] Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the **Gear** icon and click on **Conditional Access App Control**.
   
-   !IMAGE[Menu](\Media\appc-office-1.png)
+   ^IMAGE[Open Screenshot](\Media\appc-office-1.png)
 
-    **You will see that Exchange Online has appeared as an application and can now be configured.**
+    > [!HINT] You will see that **Exchange Online** has now appeared as an application and can now be configured.
 
-   !IMAGE[Menu](\Media\appc-office-2.png)
+   ^IMAGE[Open Screenshot](\Media\appc-office-2.png)
 
-8. [] Click on **Continue setup** to enable session control and click on **Add**.
+1. [] Click on **Continue setup** to enable session control and click on **Add**.
 
-   !IMAGE[Setup](\Media\appc-office-3.png)
+   ^IMAGE[Open Screenshot](\Media\appc-office-3.png)
 
-   !IMAGE[Setup](\Media\appc-office-4.png)
+   ^IMAGE[Open Screenshot](\Media\appc-office-4.png)
   
-   **You're now notified that the application is under Session Control.**
+1. [] You are now notified that the application is under Session Control.
 
    !IMAGE[Setup](\Media\appc-office-5.png)
 
-9. [] On the left hand side click on Control and then **Policies**.
+1. [] On the left hand side click on Control and then **Policies**.
 
-   !IMAGE[Policies](\Media\appc-office-6.png)
+   ^IMAGE[Open Screenshot](\Media\appc-office-6.png)
 
-10. [] Create a new session policy with the following settings:
+1. [] Create a new session policy with the following settings:
 
-    **Click on "Create Policy" and pick a Session policy.**
+    1. Click on "Create Policy" and pick **Session policy**.
 
-    **Name**: *Proxy - Block sensitive files download*
+        ^IMAGE[Open Screenshot](\Media\appc-office-7.png)
 
-   !IMAGE[Session policy](\Media\appc-office-7.png)
+    1. **Name**: ```Proxy - Block sensitive files download```
 
-   **Under Session Control Type choose Control filedownload (with DLP)**
- 
-   !IMAGE[Session policy](\Media\appc-office-8.png)
+    1. Under Session Control Type choose **Control filedownload (with DLP)**
 
-   **Activity source:**
+        ^IMAGE[Open Screenshot](\Media\appc-office-8.png)
 
-   **Add Activity Filters:** *Device Tag does not equal Compliant, Domain joined*
+    1. Add Activity Filters: **Device Tag** does not equal **Compliant, Domain joined**
 
-   *App equals Office 365 Exchange Online and Office 365 SharePoint Online*
+    1. **App** equals **Office 365 Exchange Online and Office 365 SharePoint Online**
 
-   !IMAGE[Session policy](\Media\appc-office-9.png)
+       !IMAGE[Session policy](\Media\appc-office-9.png)
 
-   **Content inspection check "Enabled"**
-   **Include files that match a preset expression anc choose US: PII: Social Security Number**
+   1. Content inspection check **Enabled**
+   Include files that match a preset expression anc choose US: **PII: Social Security Number**
 
+       !IMAGE[Session policy](\Media\appc-office-10.png)
 
-   !IMAGE[Session policy](\Media\appc-office-10.png)
+   1. Actions: **Block**
 
-   **Actions:** *Block*
+   1. Click: **Customize block message**: ```This file containes SSN information and cannot be downloaded on non-coporate devices.```
 
-   **Click:** *Customize block message: This file containes SSN information and cannot be downloaded on non-coporate devices.*
+   1. Click: **Create an alert for each matching event with the policy's severity**
 
-   **Click:** *Create an alert for each matching event with the policy's severity*
+   1. Click: **Create**
 
-   **Click:** **Create**
-
-   !IMAGE[Session policy](\Media\appc-office-11.png)
+       !IMAGE[Session policy](\Media\appc-office-11.png)
 
 ====
 
