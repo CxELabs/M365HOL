@@ -2636,9 +2636,9 @@ Microsoft Cloud App Security helps you prevent this kind of disaster before it h
 
 ## Labs
 
-* [Apply AIP classification to SSN documents:](#apply-aip-classification-to-ssn-documents) :clock10: 10 min
-* [Quarantine sensitive PDF for review:](#quarantine-sensitive-pdf-for-review) :clock10: 10 min
-* [Test our policies:](#test-our-policies) :clock10: 10 min
+* [Apply AIP classification to SSN documents:](#apply-aip-classification-to-ssn-documents)
+* [Quarantine sensitive PDF for review:](#quarantine-sensitive-pdf-for-review)
+* [Test our policies:](#test-our-policies)
 
 	!IMAGE[IP](\Media\IPCAS.JPG)
 
@@ -2653,13 +2653,13 @@ We will apply an Azure Information Protection template on documents containing s
 
 1. [] In the Cloud App Security portal, go to **Control** and then click on **Policies.**
 
-    !IMAGE[Policies](\Media\info-policies.png "Policies")
+    ^IMAGE[Open Screenshot](\Media\info-policies.png "Policies")
 
-2. [] Create a new **File policy**.
+1. [] Create a new **File policy**.
 
-    !IMAGE[New policy](\Media\info-newpolicy.png "New policy")
+    ^IMAGE[Open Screenshot](\Media\info-newpolicy.png "New policy")
 
-3. [] Provide the following settings to that policy:
+1. [] Provide the following settings to that policy:
 
     >|||
     >|---------|---------|
@@ -2668,36 +2668,40 @@ We will apply an Azure Information Protection template on documents containing s
     >|Apply to| **Selected Folders , All Files(Box)** |
 
 
-    !IMAGE[Box](\Media\allfilesBox1.JPG)  
+    ^IMAGE[Open Screenshot](\Media\allfilesBox1.JPG)  
 
-4. [] Verify that you have one selected folder and click on **Done**.
+1. [] Verify that you have one selected folder and click on **Done**.
 
 
-5. [] In the inspection method, select **Data Classification Service**.
+1. [] In the inspection method, select **Data Classification Service**.
 
-    > [!NOTE]*Microsoft Data Classification Service provides a **unified** information protection experience across Office 365, Azure Information Protection, and Microsoft Cloud App Security.*
+    ^IMAGE[Open Screenshot](\Media\info-dcs.png "DCS")
 
-    *The classification service allows you to extend your data classification efforts to the third-party cloud apps protected by Cloud App Security, using the decisions you already made across an even greater number of apps.*
+    > [!KNOWLEDGE] **Microsoft Data Classification Service** provides a **unified** information protection experience across Office 365, Azure Information Protection, and Microsoft Cloud App Security.
+    > [!KNOWLEDGE]
+    > [!KNOWLEDGE] The classification service allows you to extend your data classification efforts to the third-party cloud apps protected by Cloud App Security, using the decisions you already made across an even greater number of apps.
 
-    !IMAGE[DCS](\Media\info-dcs.png "DCS")
+1. [] Click on **Choose inspection type** and then on **sensitive information type**.
 
-6. [] Click on **Choose inspection type** and then on **sensitive information type**. Search and select the **all the SSN's that populate** and click on **Done**.
+    ^IMAGE[Open Screenshot](\Media\info-type.png "SSN type")
 
-    !IMAGE[SSN type](\Media\info-type.png "SSN type")
+
+1. Search and select the **all the SSN's that populate** and click on **Done**.
+
     !IMAGE[SSN type](\Media\info-ssn.png "SSN type")
 
-7. [] Click on the **Unmask** checkBox.
+1. [] Click on the **Unmask** checkBox.
 
-    !IMAGE[Unmask](\Media\info-unmask.png "Unmask")
+    ^IMAGE[Open Screenshot](\Media\info-unmask.png "Unmask")
 
-8. [] In the Governance actions, click on **Box** and select **Apply classification label**. Select the **Highly Confidental Employees Only** label. 
+1. [] In the Governance actions, click on **Box** and select **Apply classification label**. Select the **Highly Confidental Employees Only** label. 
 
-    >:warning: If you are not able to select Azure Information Protection templates, verify that you configured the integration in the prerequisites section or that you waited the 1h for the classifications to sync.
+    > [!ALERT] If you are not able to select Azure Information Protection templates, verify that you configured the integration in the prerequisites section or that you waited the 1h for the classifications to sync.
 
   !IMAGE[gov](\Media\Boxgovssn.JPG)
 
 
-9. [] Click **Create** to finish the policy creation.
+1. [] Click **Create** to finish the policy creation.
 
 ---
 
