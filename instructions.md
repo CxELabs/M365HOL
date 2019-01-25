@@ -432,13 +432,14 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 To be able to complete the different parts of the Cloud App Security labs, the following configuration steps are required.
 
 * [Enabling Office 365 auditing](#enabling-office-365-auditing)
-* [Connect Office 365 and Box to Cloud App Security](#connect-office-365-to-cloud-app-security)
+* [Enabling file monitoring](#enabling-file-monitoring)
+* [Create a Developer Box Account](#create-a-developer-box-account)
+* [Connect Office 365 and Box to Cloud App Security](#connect-office-365-and-box-to-cloud-app-security)
 * [Enabling Azure Information Protection integration](#enabling-azure-information-protection-integration)
 
 ---
 
 ## Enabling Office 365 auditing
-
 [:arrow_up: Top](#mcas-environment-preparation)
 
 Most Cloud App Security treat detections capabilities rely on auditing being enabled in your environment. By default, auditing is not enabled in Office 365 and must then be turned on using the **Security & Compliance** admin console or PowerShell.
@@ -465,6 +466,7 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
     >:warning: As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts for the threat detection lab.
 
 ### Exchange Auditing Configuration
+[:arrow_up: Top](#mcas-environment-preparation)
 
 In addition to enabling auditing in Office 365, some applications like Exchange Online require extra configuration. After enabling auditing at the Office 365 level, we have to enable auditing at the mailBox level. We will perform this configuration before going to the labs.
 
@@ -490,8 +492,21 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 
 ---
 
-## Create a Developer Box Account 
+## Enabling file monitoring
+[:arrow_up: Top](#mcas-environment-preparation)
 
+1. [] Go to Cloud App Security settings.
+
+    !IMAGE[Settings](\Media\conf-settings.png "Settings")
+
+1. [] Go down in the settings to the **Files** section and check the **Enable file monitoring** checkbox and click on the "**Save** button.
+
+    !IMAGE[Enable files](\Media\conf-files.png "Enable files")
+
+---
+
+## Create a Developer Box Account
+[:arrow_up: Top](#mcas-environment-preparation)
 
 1. [] Next, navigate to ```https://developer.box.com``` and click on **Get Started**. 
 
@@ -517,7 +532,6 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 ---
 
 ## Connect Office 365 and Box to Cloud App Security 
-
 [:arrow_up: Top](#mcas-environment-preparation)
 
 To connect Cloud App Security to Office 365, you will have to use the Office 365 app connector. App connectors use the APIs of app providers to enable greater visibility and control by Microsoft Cloud App Security over the apps you connect to.  We will also use this method to show integration with the 3rd Party API for Box.
@@ -543,7 +557,7 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 ---
 
 ## Connecting Box to Cloud App Security
-
+[:arrow_up: Top](#mcas-environment-preparation)
 
 1. []  Click on the **+** button again, and this time click on **Box**.
 
@@ -583,7 +597,6 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 ---
 
 ## Enabling Azure Information Protection integration
-
 [:arrow_up: Top](#mcas-environment-preparation)
 
 To prepare the **Information Protection** lab, we have to enable the integration between Cloud App Security and Azure Information Protection as explained in the [Cloud App Security documentation](https://docs.microsoft.com/en-us/cloud-app-security/azip-integration). Enabling the integration between the two solutions is as easy as selecting one single checkBox.
@@ -2634,23 +2647,22 @@ In this lab you will perform the configuration of a **Log collector**.
 In a perfect world, all your employees understand the importance of information protection and work within your policies. But in a real world, it's probable that a partner who works with accounting uploads a document to your Box repository with the wrong permissions, and a week later you realize that your enterprise's confidential information was leaked to your competition.
 Microsoft Cloud App Security helps you prevent this kind of disaster before it happens.
 
+!IMAGE[IP](\Media\IPCAS.JPG)
+
+===
 ## Labs
 
 * [Apply AIP classification to SSN documents:](#apply-aip-classification-to-ssn-documents)
 * [Quarantine sensitive PDF for review:](#quarantine-sensitive-pdf-for-review)
 * [Test our policies:](#test-our-policies)
 
-	!IMAGE[IP](\Media\IPCAS.JPG)
-
-===
-
 File policies are a great tool for finding threats to your information protection policies, for instance finding places where users stored sensitive information, credit card numbers and third-party ICAP files in your cloud. With Cloud App Security, not only can you detect these unwanted files stored in your cloud that leave you vulnerable, but you can take im/mediate action to stop them in their tracks and lock down the files that pose a threat.
 Using Admin quarantine, you can protect your files in the cloud and remediate problems, as well as prevent future leaks from occurring.
 
-In this lab, we are going to configure files policies to apply an **Azure Information Protection** template on documents containing social security numbers and quarantine sensitive files that are shared externally.
-
 ## Apply AIP classification to SSN documents
 [:arrow_up: Top](#information-protection)
+
+In this lab, we are going to configure a file policy to apply an **Azure Information Protection** template on documents containing social security numbers. This method could be compared to the **Azure Information Protection Scanner** for documents that are stored on file servers.
 
 1. [] In the Cloud App Security portal, go to **Control** and then click on **Policies.**
 
@@ -2664,15 +2676,12 @@ In this lab, we are going to configure files policies to apply an **Azure Inform
 
     >|||
     >|---------|---------|
-    >|Policy Name| **Protect SSN documents in sensitive site**|
-    >|Files matching all of the following| **remove the filters** |
-    >|Apply to| **Selected Folders , All Files(Box)** |
+    >|Policy Name| ```Protect SSN documents in sensitive site```|
+    >|Files matching all of the following| **App equals Box** |
+    >|Apply to| **All Files** |
 
 
-    ^IMAGE[Open Screenshot](\Media\allfilesBox1.JPG)  
-
-1. [] Verify that you have one selected folder and click on **Done**.
-
+    ^IMAGE[Open Screenshot](\Media\allfilesBox1.png)  
 
 1. [] In the inspection method, select **Data Classification Service**.
 
@@ -2687,13 +2696,17 @@ In this lab, we are going to configure files policies to apply an **Azure Inform
     ^IMAGE[Open Screenshot](\Media\info-type.png "SSN type")
 
 
-1. Search and select the **all the SSN's that populate** and click on **Done**.
+1. Search and select the **all** the information types matching ```SSN``` and click on **Done**.
+
+    > [!HINT] Be sure to select the checkboxes as clicking on the name do not select the information type.
 
     !IMAGE[SSN type](\Media\info-ssn.png "SSN type")
 
-1. [] Click on the **Unmask** checkBox.
+1. [] Click on the **Unmask the last 4 characters of a match** and the **Create an alert for each matching file** checkboxes.
 
     ^IMAGE[Open Screenshot](\Media\info-unmask.png "Unmask")
+
+    > [!KNOWLEDGE] In production scenarios, as you will probably have thousands of matches, you will **not** create alerts but use the **policy matches** approach instead.
 
 1. [] In the Governance actions, click on **Box** and select **Apply classification label**. Select the **Highly Confidental Employees Only** label. 
 
@@ -2709,6 +2722,8 @@ In this lab, we are going to configure files policies to apply an **Azure Inform
 ## Quarantine sensitive PDF for review
 [:arrow_up: Top](#information-protection)
 
+In this lab, we are going to configure a file policy to quarantine sensitive PDF files that are shared externally, so an admin can review those files and validate if they could or not be shared externally. **Admin quarantine** can also be used to isolate files that should not have been uploaded to cloud storage apps.
+
 1. [] In the Cloud App Security portal, go to **Control** and then click on **Policies.**
 
     ^IMAGE[Open Screenshot](\Media\info-policies.png "Policies")
@@ -2721,62 +2736,69 @@ In this lab, we are going to configure files policies to apply an **Azure Inform
 
     >|Policy name|Files matching all of the following|
     >|---------|---------|
-    >|Quarantine sensitive pdf| Extension equals pdf|
+    >|```Quarantine sensitive pdf```| Extension equals pdf **and** Access level equals Public, External|
 
     !IMAGE[New policy](\Media\info-policy3.png "New policy")
 
-1. [] Check the **Create an alert for each matching file** checkBox. In Governance actions of the policy, select **Put in admin quarantine** for Box and click on the **Create** button.
+1. [] Check the **Create an alert for each matching file** checkBox. 
 
-      !IMAGE[Unmask](\Media\Boxgovadmin.JPG)
+1. [] In Governance actions of the policy, select **Put in admin quarantine** for Box and click on the **Create** button.
+
+    !IMAGE[Unmask](\Media\Boxgovadmin.JPG)
 
 ---
 
 ## Test our Policies
-
 [:arrow_up: Top](#information-protection)
 
 To test our files policies, perform the following tasks:
 
 1. [] On Client01, unzip the content of the **Demo files.zip**.
 
-2. [] Go to the **Box** documents library. 
+1. [] Go to the **Box** files ```https://app.box.com/folder/0```
 
-3. [] Upload the unzipped files to the site.
+1. [] Upload the unzipped files to the site.
 
-4. [] Cloud App Security will now scan those documents and search for matches to our created policies.
+    ^IMAGE[Open Screenshot](\Media\info-uploadbox.png "Upload")
+
+1. [] After upload is complete, **share** the PDF document named **Protect with Microsoft Cloud App Security proxy.pdf**
+
+    ^IMAGE[Open Screenshot](\Media\info-share1.png "Upload")
+
+    ^IMAGE[Open Screenshot](\Media\info-share2.png "Upload")
+
+1. [] Cloud App Security will now scan those documents and search for matches to our created policies.
 
     >:memo: The scan can take **several minutes** before completion.
 
-
-
-5. [] To monitor the evolution of the scan, go back to Cloud App Security and open the **Files** page of the investigations.
+1. [] To monitor the evolution of the scan, go back to Cloud App Security and open the **Files** page of the investigations.
 
     !IMAGE[Search files](\Media\info-files1.png "Search files")
 
-6. [] You can search for the files you uploaded using different criteria, like **file name**, **type**, ... or just look at all the files discovered by Cloud App Security.
+1. [] You can search for the files you uploaded using different criteria, like **file name**, **type**, ... or just look at all the files discovered by Cloud App Security.
 
     !IMAGE[Search files](\Media\Boxfilesmatch.JPG)
 
 
-7. [] When a policy match is discovered, you will see it in this page.
+1. [] When a policy match is discovered, you will see it in this page.
 
     >:memo: Next to the file name, you have icons showing that an AIP label was applied and that we have a policy match.
 
 	  !IMAGE[PolicyMatch](\Media\Boxmatchedpolicies.JPG)
 
-8. [] To open the details of the file, click on its name. You can see there the matched policies and the scan status of the files.
+1. [] To open the details of the file, click on its name. You can see there the matched policies and the scan status of the files.
 
     !IMAGE[Scan status](\Media\info-files5.png "Scan status")
 
-9. [] You can also view the related governance actions, like applying the Azure Information classification or moving the file to the quarantine folder, at the file level or in the **Governance log**.
+1. [] You can also view the related governance actions, like applying the Azure Information classification or moving the file to the quarantine folder, at the file level or in the **Governance log**.
 
     !IMAGE[Governance log](\Media\Boxgovlog.jpg) "Governance log")
 
-10. [] If you go back to **Box**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
+1. [] If you go back to **Box**, you will also notice that the quarantined files will be replaced by placeholders containing your custom message. The original file will be moved to the "Quarantine" location we defined in the settings.
 
->:memo: **For Box, the quarantine folder location and user message can't be customized. The folder location is the drive of the admin who connected Box to Cloud App Security and the user message is: This file was quarantined to your administrator's drive because it might violate your company's security and compliance policies. Contact your IT administrator for help.**
+    > [!KNOWLEDGE]  For Box, the quarantine folder location and user message **can't be customized**. The folder location is the drive of the admin who connected Box to Cloud App Security and the user message is: This file was quarantined to your administrator's drive because it might violate your company's security and compliance policies. Contact your IT administrator for help.
 
-	!IMAGE[results](\Media\Boxportalresults.jpg)
+    !IMAGE[results](\Media\Boxportalresults.jpg)
 
 ===
 
