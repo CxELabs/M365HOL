@@ -18,6 +18,10 @@
 
 	+++@lab.CloudCredential(134).Password+++
 
+> [!KNOWLEDGE] The script runs the code below. This script is available online at https://aka.ms/labscripts
+	>
+	>  
+
 Removed from WorkplaceJoin Setup
 
 1. [] Open an Edge InPrivate window and navigate to ```https://securitycenter.windows.com/```.
