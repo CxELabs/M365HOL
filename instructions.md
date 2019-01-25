@@ -960,6 +960,9 @@ Now that you have installed the scanner bits, you need to get an Azure AD token 
 
 	!IMAGE[zgt5ikxl.jpg](\Media\zgt5ikxl.jpg)
 
+1. [] In the popup box, click **OK** to accept the default of **Scanner01**.
+
+	> [!NOTE] We have preconfigured SQL Server on Scanner01 with a **default instance**. If using a **named instance** or **SQL Server Express**, you would populate this with **ServerName\\InstanceName** or **ServerName\\SqlExpress** respectively.
 1. [] When prompted, enter the username and password below and click **OK**.
 
 	```Contoso\AIPScanner``` 
