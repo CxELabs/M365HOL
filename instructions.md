@@ -800,6 +800,13 @@ In order to collect log data from Azure Information Protection clients and servi
 1. [] Next, click on **+ Create new workspace**.
 
 	!IMAGE[qu68gqfd.jpg](\Media\qu68gqfd.jpg)
+
+	> [!ALERT] The reason we recommend creating a new workspace here is that, by default, only the creator and subscription administrators have access to an Azure Log Analytics workspace.  
+	>
+	> The data contained in this workspace will contain details about the **location** and **contents** of files containing **sensitive information**. 
+	>
+	> Restricting access to this workspace to only **trusted administrators** with a need to know is **highly recommended**.
+	
 1. [] Configure the Log analytics workspace using the values in the table below and click **OK**.
 
 	|||
