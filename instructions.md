@@ -607,7 +607,7 @@ Now that the template has been deployed, we can continue with the configuration 
 
 ## Configure the data collection settings in ASC
 
-1. [] On @lab.VirtualMachine(Client01).SelectLink, open a new InPrivate window and navigate to ```https://portal.azure.com/#blade/Microsoft_Azure_Security```.
+1. [] On @lab.VirtualMachine(Client01).SelectLink, open a new InPrivate window and navigate to ```https://portal.azure.com/#blade/Microsoft_Azure_Security/SecurityMenuBlade/18```.
 
 2. [] In the Security Center - Getting started blade, scroll to the bottom of the main window and click on **Start Trial**.
 
@@ -620,7 +620,7 @@ Now that the template has been deployed, we can continue with the configuration 
 	!IMAGE[SecPol](\Media\SecPol.png)
 1. [] On the line where it lists your **workspace**, click on **Edit settings**.
 
-	!Image[settings](\Media\asc-edit1.png)
+	!IMAGE[settings](\Media\asc-edit1.png)
 10. [] In the left pane, under Policy components, click on **Pricing tier**.
 1. [] Select **Standard** and click on **Save**.
 
@@ -687,6 +687,7 @@ Now that the template has been deployed, we can continue with the configuration 
 1. []	Click **Next** on the Sensor deployment type page.  
 1. []	**Paste the Access key** copied from above and click **Install**.  
 1. []   Click **Finish** to complete the installation.
+
 ---
 
 ## Configure Domain Synchronizer 
@@ -785,6 +786,7 @@ Microsoft 365 E5 Tenant credentials will be provided during the event.  If you w
 
 In order to collect log data from Azure Information Protection clients and services, you must first configure the log analytics workspace.
 
+1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 1. [] In the Azure portal, type the word ```info``` into the **search bar** and press **Enter**, then click on **Azure Information Protection**. 
 
 	!IMAGE[2598c48n.jpg](\Media\2598c48n.jpg)

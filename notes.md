@@ -39,17 +39,14 @@ Removed from WorkplaceJoin Setup
 1. [] Right-click on **WindowsDefenderATPLocalOnboardingScript** and click **Run as Administrator**.
 1. [] Press **(Y)** to confirm onboarding.
 
-Add scripts to 
+Add scripts instructions for 
 
-Scanner01
- AAD
  ScannerInstall
  AuthToken
-AdminPC
- attack
-Client01
- auditmailbox
- ExchangeMFRs
+ ConfigureRepo
+ StartDiscovery
+ StartEnforce
+ ExchangeMFRs x2
 
 
     Update in MCAS instructions
