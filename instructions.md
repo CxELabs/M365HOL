@@ -3901,7 +3901,7 @@ The labs are divided into 2 tracks, a beginner (level 50/100) and an advanced (l
 
 ## [Beginner Track](#beginner-track)
 
-## [Advanced Track](#policy-and-compliance)
+## [Advanced Track](#policy-and-compliance) 
 
 ---
 
