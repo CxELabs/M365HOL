@@ -2244,8 +2244,8 @@ The different Cloud App Security capabilities covered in the labs are:
 For this task, you are asked to delegate admin access to monitor a dedicated group of users for a specific region, without adding them to the Global Admin management role.
 
 
-> [!NOTE] Cloud App Security Global admin role is not the same as the Office 365 Global admin role.
-> [!NOTE] Although the Office 365 Global admins are automatically granted the Cloud App Security Global admin role, you can grant users           MCAS Global Admin role without adding them to the Office 365 Global admins.
+> [!KNOWLEDGE] Cloud App Security Global admin role is not the same as the Office 365 Global admin role.
+> [!KNOWLEDGE] Although the Office 365 Global admins are automatically granted the Cloud App Security Global admin role, you can grant users           MCAS Global Admin role without adding them to the Office 365 Global admins.
 
 
 
@@ -2259,7 +2259,8 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
 3. [] Import the **US employees** group.
     
-	> [!NOTE] ***The import can take up to one hour. Cloud App Security has to synchronize the Azure AD groups before importing them.***
+	> [!HINT]] The import can take **up to one hour**. Cloud App Security has to synchronize the Azure AD groups before importing them.
+	> [!HINT]] If the import takes too long, don't hesitate to move to the next section and come back to complete this task.
 
 	* **Click on the *Gear* under Data Enrichement, click on *User groups***
 
@@ -2287,11 +2288,12 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
     !IMAGE[New admin](\Media\mgmt-admin2.png "New admin")
 
-	> [!NOTE] Use the Office 365 Credentials provided in your tenant 
+    * **Type the admin user name**: ```mcasadminus@@lab.CloudCredential(134).TenantName```
 
-	 !IMAGE[Tenant](\Media\tenantcredentials.JPG)
+	> [!HINT] The tenant name is the one provided for your lab environment. This information is available in your **Resources** section, at the top of the instructions.
 
-	* **Type the admin user name**: *Example:mcasadminus@LODSA293123.onmicrosoft.com* 
+	 ^IMAGE[Open Screenshot](\Media\tenantcredentials.JPG)
+
 
 	* **Select Role**: *User group admin*
 
@@ -2310,7 +2312,7 @@ In this lab, we are going to delegate the management of US employees to a new ad
     !IMAGE[New admin](\Media\mgmt-admin5.png "New admin")
 
 
-5. Open a new **private** tab and connect to the [Cloud App Security portal] ```https://portal.cloudappsecurity.com``` with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
+5. [] Open a new **private** tab and connect to the [Cloud App Security portal] ```https://portal.cloudappsecurity.com``` with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
 
 
 ---
@@ -2458,13 +2460,14 @@ In this lab you will perform the configuration of a **Log collector**.
 > [!NOTE] After completing this portion of the lab and validating that your logs have been successfully uploaded and processed by MCAS, you will not immediately see a loaded Discovery Dashboard. Due to Cloud Discovery logs being  parsed **twice a day**.
 
 
- **The Docker engine has been pre-installed on LinuxVM in your lab environment, **Client01*** in this case.**
+ > [!KNOWLEDGE]For this lab, the Docker engine has been pre-installed on **LinuxVM** in your lab environment, but normally you have to configure it on your host using the command below.
+ > [!KNOWLEDGE]The command downloads a script installing the Docker engine on your host computer (Ubuntu in this case) and pull the latest Cloud App Security collector image from the Docker library.
+
 
 ```
     curl -o /tmp/MCASInstallDocker.sh https://adaprodconsole.blob.core.windows.net/public-files/MCASInstallDocker.sh && chmod +x /tmp/MCASInstallDocker.sh; /tmp/MCASInstallDocker.sh
 ```
 
-Those commands download a script installing the Docker engine on your host computer (Ubuntu in this case) and pull the latest Cloud App Security collector image from the Docker library.
 
 ### Create a data source and a log collector in the Cloud App Security Portal
 
