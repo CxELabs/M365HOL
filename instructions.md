@@ -2261,29 +2261,29 @@ In this lab, we are going to delegate the management of US employees to a new ad
     
 	> [!NOTE] ***The import can take up to one hour. Cloud App Security has to synchronize the Azure AD groups before importing them.***
 
-	**Click on the *Gear* under Data Enrichement, click on *User groups***
+	* **Click on the *Gear* under Data Enrichement, click on *User groups***
 
     !IMAGE[Import group](\Media\mgmt-import1.png "Import group")
 
-	**Click on *Import user group***
+	* **Click on *Import user group***
 
     !IMAGE[Import group](\Media\mgmt-import2.png "Import group")
 
-	**Select an app to import group from: *Office 365(AzureAD)***
+	* **Select an app to import group from: *Office 365(AzureAD)***
 
     !IMAGE[Import group](\Media\mgmt-import3.png "Import group")
 
-	**The user group will be importing**
+	* **The user group will be importing**
 
     !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
 
 4. [] In the Cloud App Security portal```https://portal.cloudappsecurity.com```, add **mcasAdminUS** as **User group admin** for the **US employees** group.
 
-	**Click on the *Gear* under System, click on *Manage admin access***
+	* **Click on the *Gear* under System, click on *Manage admin access***
 
     !IMAGE[New admin](\Media\mgmt-admin1.png "New admin")
 
-	**Click on the plus**
+	* **Click on the plus**
 
     !IMAGE[New admin](\Media\mgmt-admin2.png "New admin")
 
@@ -2291,21 +2291,21 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
 	 !IMAGE[Tenant](\Media\tenantcredentials.JPG)
 
-	**Type the admin user name**: *Example:mcasadminus@LODSA293123.onmicrosoft.com* 
+	* **Type the admin user name**: *Example:mcasadminus@LODSA293123.onmicrosoft.com* 
 
-	**Select Role**: *User group admin*
+	* **Select Role**: *User group admin*
 
 
     !IMAGE[New admin](\Media\mgmt-admin3.png "New admin")
 
-	**Select groups for this admin**: *US employees*
+	* **Select groups for this admin**: *US employees*
 
-	**Click on Add admin**
+	* **Click on Add admin**
 
 
     !IMAGE[New admin](\Media\mgmt-admin4.png "New admin")
 
-	**The user should be populated with the *role* and *scope.***
+	* **The user should be populated with the *role* and *scope.***
 
     !IMAGE[New admin](\Media\mgmt-admin5.png "New admin")
 
@@ -2323,22 +2323,22 @@ As the MCAS admin for your company, work with the person next to you to configur
 
 1. [] Browse to ```https://portal.cloudappsecurity.com```, add the external MCAS admin as **Security reader** in your MCAS tenant.
 
-    **Click on the *Gear* under System, click on *Manage admin access***
+    * **Click on the *Gear* under System, click on *Manage admin access***
 
     !IMAGE[External admin](\Media\mgmt-admin1.png "External admin")
 
-	**Click on the plus**
+	* **Click on the plus**
 
     !IMAGE[External admin](\Media\mgmt-admin2.png "External admin")
 
 
-	**Type Admin user name:**  *Use your neighbor's Office 365 credentials provided in their tenant as the external admin* 
+	* **Type Admin user name:**  *Use your neighbor's Office 365 credentials provided in their tenant as the external admin* 
 
-	**Select type of role for this admin:** *Security Reader*
+	* **Select type of role for this admin:** *Security Reader*
 
 	!IMAGE[Tenant Example](\Media\tenantcredentials.JPG)
 
-	**Add Admin**
+	* **Add Admin**
 
     !IMAGE[External admin](\Media\mgmt-externaladmin1.png "External admin")
 
@@ -2795,14 +2795,6 @@ Conditional Access App Control enables user app access and sessions to be **moni
 ===
 
 ## Configuration
-
-* [Anonymous Access:](#anonymous-access) :clock10: 5 min
-* [Impossible Travel:](#impossible-travel) :clock10: 5 min
-* [Activity from infrequent country:](#activity-from-infrequent-country) :clock10: 5 min
-* [Malware Detection:](#malware-detection) :clock10: 5 min
-* [Email exfiltration using suspicious inbox forwarding:](#email-exfiltration-using-suspicious-inBox-forwarding) :clock10: 5 min
-* [Ransomware Activity:](#ransomware-activity) :clock10: 5 min
-* [Suspicious Application Consent:](#suspicious-application-consent) :clock10: 5 min
 
 1. [] Go to the Azure portal ```https://portal.azure.com``` and open the **Azure Active Directory** blade.
 
