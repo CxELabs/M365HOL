@@ -2877,7 +2877,7 @@ Conditional Access App Control enables user app access and sessions to be **moni
    >
    >```@lab.CloudCredential(134).Password```
 
-   > [!HINT] This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to configure the application for App Control in Cloud App Security.
+    > [!HINT] This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to configure the application for App Control in Cloud App Security.
 
 1. [] Go back to Cloud App Security ```https://portal.cloudappsecurity.com```, click on the **Gear** icon and click on **Conditional Access App Control**.
   
@@ -2941,53 +2941,54 @@ Conditional Access App Control enables user app access and sessions to be **moni
 
 Now is time to test our configuration. We will here simulate the userexperience while accessing company apps protected by Cloud App Security from an unmanaged device
 
-1. [] Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```.
+1. [] Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```. Use the following credentials to connect:
   
-   >**Credentials**:
    >```@lab.CloudCredential(134).Username```
    >
    >```@lab.CloudCredential(134).Password```
 
-  **You should receive the following message, as you are redirected through Cloud App Security before accessing the application.*
+1. You should receive the following message, as you are redirected through Cloud App Security before accessing the application.
   
-  **Click to continue to Exchange Online.**
+  Click **Continue to Exchange Online**.
 
    !IMAGE[Warning](\Media\appc-office-12.png)
 
-2. [] You've been directed to Exchange Online and your session is now passing **through** Cloud App Security.
+1. [] You are now directed to Exchange Online and your session is now passing **through** Cloud App Security.
 
-    >:memo: **By taking a look at the the URL, you can verify that your session is actually being redirected to Cloud App Security.**
-
+    > [!HINT] By taking a look at the **URL**, you can verify that your session is actually being redirected to **Cloud App Security**.
 
    !IMAGE[Session](\Media\appc-office-13.png)
 
+1. [] To test our policy, perform the following:
 
-3. [] To test our policy, create a new mail and attach the Word document named **Personal employees information.docx** and the Excel spreadsheet named **Workplace Innovation.xlsx** stored on **Client01** desktop. Send the mail to your user, ```@lab.CloudCredential(134).Username```
+    1. Create a new mail and attach the Word document named **Personal employees information.docx** and the Excel spreadsheet named **Workplace Innovation.xlsx** stored on **Client01** desktop. Send the mail to your user, ```@lab.CloudCredential(134).Username```
 
-   !IMAGE[Test](\Media\appc-office-14.png)
+       !IMAGE[Test](\Media\appc-office-14.png)
 
-4. [] Wait until you receive your email in the webmail. Once the message is received, click on the attached document **Personal employees information.docx**. This will open the file preview.
-As you can see, the user can access the document using the Office Online app.
+    1. [] Wait until you receive your email in the webmail. 
 
-!IMAGE[Warning](\Media\appc-office-15.png)
+    1. Once the message is received, click on the attached document **Personal employees information.docx**. This will open the file preview.
+    As you can see, the user can access the document using the Office Online app.
 
-5. [] Try now to download the **Personal employees information.docx** document. As this file contains social security numbers, the download will be blocked and will trigger an alert in Cloud App Security.
+        !IMAGE[Warning](\Media\appc-office-15.png)
 
-   !IMAGE[Test](\Media\appc-office-16.png)
+    1. [] Try now to download the **Personal employees information.docx** document. As this file contains social security numbers, the download will be blocked and will trigger an alert in Cloud App Security.
 
-   !IMAGE[Test](\Media\appc-office-17.png)
+       !IMAGE[Test](\Media\appc-office-16.png)
+    
+       !IMAGE[Test](\Media\appc-office-17.png)
 
-6. [] Now let's try to download the **Workplace Innovation.xlsx** spreadsheet. As this file **do not** contain social security numbers, the download will be allowed.
+    1. [] Now let's try to download the **Workplace Innovation.xlsx** spreadsheet. As this file **do not** contain social security numbers, the download will be allowed.
 
-   !IMAGE[Test](\Media\appc-office-18.png)
+       !IMAGE[Test](\Media\appc-office-18.png)
+    
+       !IMAGE[Test](\Media\appc-office-19.png)
+    
+       !IMAGE[Test](\Media\appc-office-20.png)
+    
+       !IMAGE[Test](\Media\appc-office-21.png)
 
-   !IMAGE[Test](\Media\appc-office-19.png)
-
-   !IMAGE[Test](\Media\appc-office-20.png)
-
-   !IMAGE[Test](\Media\appc-office-21.png)
-
->:memo: **We just demonstrated App Control capabilities to go further than just allow/block scenarios, based on session risks.**
+> [!KNOWLEDGE] We just demonstrated App Control capabilities to go further than just allow/block scenarios, based on session risks. This capability can open many scenarios, like BYOD access for example.
 
 ====
 
