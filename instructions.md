@@ -1417,7 +1417,6 @@ However, helping your users to properly classify and protect sensitive data at t
 
 Now that you have 3 test systems with users being affected by different policies configured, we can start testing these policies.  This exercise will run through various scenarios to demonstrate the use of AIP global and scoped policies and show the functionality of recommended and automatic labeling. This Exercise will walk you through the items below.
 
-- [Exchange Mail Flow Rule Removal](#exchange-mail-flow-rule-removal)
 - [Testing User Defined Permissions](#testing-user-defined-permissions)
 - [Testing Global Policy](#testing-global-policy)
 - [Testing Scoped Policy](#testing-scoped-policy)
@@ -1426,35 +1425,7 @@ Now that you have 3 test systems with users being affected by different policies
 > [!ALERT] If you see a warning about a metered connection in Office, click **Connect anyway** to allow Office to connect.  If you do not do this you will get errors when connecting to the AIP service. The VMs are set to metered to increase network speed.
 
 ---
-## Exchange Mail Flow Rule Removal
 
-By default, many of the demo tenants provided block external communications via mail flow rule.  As this will hinder many demos in this lab, we will verify if such a rule exists and remove it if necesary.
-
-1. [] In the Admin PowerShell window, type the commands below to connect to an Exchange Online PowerShell session.  Use the credentials provided when prompted.
-
-	```
-	$cred = Get-Credential
-	$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $cred -Authentication Basic -AllowRedirection
-	Import-PSSession $Session
-	```
-
-	> ```@lab.CloudCredential(134).Username```
-	>
-	> ```@lab.CloudCredential(134).Password```
-
-3. [] Get the active Mail Flow Rules by typing the command below:
-
-	```
-	Get-TransportRule
-	```
-
-4. [] If a rule exists named something similar to **"Delete if sent outside the organization"**, run the code below to remove this rule.
-
-	```
-	Remove-TransportRule *Delete*
-	```
-
----
 ## Testing User Defined Permissions
 [:arrow_up: Top](#testing-aip-policies)
 
