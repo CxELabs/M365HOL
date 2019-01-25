@@ -1208,10 +1208,11 @@ In this task, we will assign the new sub-label to the Global policy and configur
 	| Setting | Value |
 	|:--------|:------|
 	| Select the default label | General |
-	|All documents and emails must have a label…|On
-	Users must provide justification to set a lower…|On
-	For email messages with attachments, apply a label…|Automatic
-	Add the Do Not Forward button to the Outlook ribbon|Off
+	|All documents and emails must have a label…|On|
+	|Users must provide justification to set a lower…|On|
+	|For email messages with attachments, apply a label…|Automatic|
+	|Display the Information Protection Bar in Office apps|On|
+	|Add the Do Not Forward button to the Outlook ribbon|Off|
 
 	!IMAGE[Open Screenshot](\Media\mtqhe3sj.jpg)
 
