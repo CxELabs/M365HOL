@@ -3925,7 +3925,7 @@ Azure Security Center addresses the three most urgent security challenges:
 	!IMAGE[score](\Media\sc-recommendations.png)
 
 - Security skills are in short supply - The number of security alerts and alerting systems far outnumbers the number of administrators with the necessary background and experience far to make sure your environments are protected. Staying up-to-date with the latest attacks is a constant challenge, making it impossible to stay in place while the world of security is an ever-changing front.
-	!IMAGE[Attacks(\Media\sc-brute-force.png)
+	!IMAGE[Attacks](\Media\sc-brute-force.png)
 	
 To help you protect yourself against these challenges, Security Center provides you with the tools to:
 
