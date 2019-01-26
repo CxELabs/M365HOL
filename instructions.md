@@ -3918,27 +3918,27 @@ Keeping your resources safe is a joint effort between your cloud provider, Azure
 
 ### Azure Security Center addresses the three most urgent security challenges:
 
-- Rapidly changing workloads – It’s both a strength and a challenge of the cloud. On the one hand, end users are empowered to do more. On the other, how do you make sure that the ever-changing services people are using and creating are up to your security standards and follow security best practices?
+- **Rapidly changing workloads** – It’s both a strength and a challenge of the cloud. On the one hand, end users are empowered to do more. On the other, how do you make sure that the ever-changing services people are using and creating are up to your security standards and follow security best practices?
 	> !IMAGE[score](\Media\sc-secure-score.png)
 
-- Increasingly sophisticated attacks - Wherever you run your workloads, the attacks keep getting more sophisticated. You have to secure your public cloud workloads, which are, in effect, an Internet facing workload that can leave you even more vulnerable if you don't follow security best practices.
+- **Increasingly sophisticated attacks** - Wherever you run your workloads, the attacks keep getting more sophisticated. You have to secure your public cloud workloads, which are, in effect, an Internet facing workload that can leave you even more vulnerable if you don't follow security best practices.
 	> !IMAGE[score](\Media\sc-recommendations.png)
 
-- Security skills are in short supply - The number of security alerts and alerting systems far outnumbers the number of administrators with the necessary background and experience far to make sure your environments are protected. Staying up-to-date with the latest attacks is a constant challenge, making it impossible to stay in place while the world of security is an ever-changing front.
+- **Security skills are in short supply** - The number of security alerts and alerting systems far outnumbers the number of administrators with the necessary background and experience far to make sure your environments are protected. Staying up-to-date with the latest attacks is a constant challenge, making it impossible to stay in place while the world of security is an ever-changing front.
 	
 	> !IMAGE[Attacks](\Media\sc-brute-force.png)
 	
-To help you protect yourself against these challenges, Security Center provides you with the tools to:
+### To help you protect yourself against these challenges, Security Center provides you with the tools to:
 
-- Strengthen security posture: Security Center assesses your environment and enables you to understand the status of your resources, are they secure or not?
+- **Strengthen security posture**: Security Center assesses your environment and enables you to understand the status of your resources, are they secure or not?
 	
 	> !IMAGE[Dashboard](\Media\sc-dashboard.png)
 
-- Protect against threats: Security Center assesses your workloads and raises threat prevention recommendations and threat detection alerts.
+- **Protect against threats**: Security Center assesses your workloads and raises threat prevention recommendations and threat detection alerts.
 	
 	> !IMAGE[sc-attack-recommendation.png](\Media\sc-attack-recommendation.png)
 
-- Get secure faster: In Security Center, everything is done in cloud speed. Because it is natively integrated, deployment of Security Center is easy, providing you with autoprovisioning and protection with Azure services.
+- **Get secure faster**: In Security Center, everything is done in cloud speed. Because it is natively integrated, deployment of Security Center is easy, providing you with autoprovisioning and protection with Azure services.
 
 The Azure Security Center labs are divided into 2 tracks, a beginner (level 50/100) and an advanced (level 300+) track. <br><br>
 
