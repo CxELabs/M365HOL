@@ -4177,7 +4177,8 @@ Set-AzureRmJitNetworkAccessPolicy -ResourceGroupName "<rescourceGroupName>" -Loc
 **In the following excercise you are going to enable JIT for a specific VM, configuring custom ports.**
 1. [] Paste the PS code below into in your favorite PowerShell editor.
 
-	```auto	$AzureSubID = "<YourAzureSubscriptionID>"
+	```
+	$AzureSubID = "<YourAzureSubscriptionID>"
 	$vmName = "<YourVMName>"
 	$resourceGroupName = "YourResourceGroupName"
 	$location = "<YourLocation>"
@@ -4198,11 +4199,8 @@ Set-AzureRmJitNetworkAccessPolicy -ResourceGroupName "<rescourceGroupName>" -Loc
 
 	$JitPolicyArray=@($JitPolicy)
 
-	Set-AzureRmJitNetworkAccessPolicy -Kind "Basic" `
-	-Location $location -Name "default" `
-	-ResourceGroupName $resourceGroupName `
-	-VirtualMachine $JitPolicyArray
-	auto```
+	Set-AzureRmJitNetworkAccessPolicy -Kind "Basic" -Location $location -Name "default" -ResourceGroupName $resourceGroupName -VirtualMachine $JitPolicyArray
+	```
 
 2. [] Make sure you replace all the variables within **<>** and update the script with your required ports
 3. [] Make sure that you are logged into Azure and that you have selected the Azure subscription which has been given to you
