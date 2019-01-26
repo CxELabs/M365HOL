@@ -3916,7 +3916,7 @@ Keeping your resources safe is a joint effort between your cloud provider, Azure
 
 > !IMAGE[Map](\Media\sc-net-map.png)
 
-Azure Security Center addresses the three most urgent security challenges:
+### Azure Security Center addresses the three most urgent security challenges:
 
 - Rapidly changing workloads – It’s both a strength and a challenge of the cloud. On the one hand, end users are empowered to do more. On the other, how do you make sure that the ever-changing services people are using and creating are up to your security standards and follow security best practices?
 	> !IMAGE[score](\Media\sc-secure-score.png)
