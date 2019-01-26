@@ -297,6 +297,10 @@ Use the link below to deploy the following:
 1. [] When prompted for a Name, provide a name such as ```ASC-Labs``` and press **OK**.
 
 	^IMAGE[Open Screenshot](\Media\RGName.png)
+1. [] Under Location, choose **East US**.
+
+	> [!ALERT] Ensure that you have chosen East US (or a datacenter near the event) or the workspace will take longer to deploy and the VMs will have latency.
+	
 1. [] **Select a location**, then under **Settings**, next to **Pwd Or Ssh** type the password ```Securitycenter4ever!```.
 1. [] Finally, check the Box to agree to the terms and click **Purchase**.
 
@@ -3964,8 +3968,8 @@ The labs are intended to make you familiar with the different Security Center's 
 	> ```@lab.CloudCredential(134).Username```
 	>
 	> ```@lab.CloudCredential(134).Password```
-	
-2. [] In the Overview blade note the **Policy & compliance** section. This provides an overview of your secure score, based on your resources, regulatory standards and your subscription coverage: 
+
+2. [] In the Overview blade note the **Policy & compliance** section. This provides an overview of your **secure score**, based on your **resources**, **regulatory standards** and your **subscription coverage**: 
 
 	> !IMAGE[alt text](\Media\policy_compliancy_tile.png)
 3. [] Click on the **Subscription coverage** tile.
