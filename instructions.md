@@ -4224,7 +4224,7 @@ In this lab we will explore the new Linux detection's in ASC by executing attack
 
 #### Create a Kali Linux VM
 
-> [!NOTE] time to create the Kali Linux VM is approx 5 minutes. Make sure to add a port that enables you to connect.*
+> [!NOTE] The time to create the Kali Linux VM is approx 5 minutes. Make sure to add a port that enables you to connect.
 
 1. [] In the Azure portal, click on **Create a resource** and search for **Kali Linux** and **create** the VM
 
@@ -4246,33 +4246,33 @@ sudo adduser <userName>
 1. [] Connect to the Kali Linux VM with SSH (ensure that your VM deployment in step 1 was successful)
 2. [] Navigate to the folder **/usr/share/wordlists**
 3. [] Upload the **<a href="https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_users.txt" target="_blank">lab_users.txt</a>** and **<a href="https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_pass.txt" target="_blank">lab_pass.txt</a>** files to this folder by executing:
-```
-sudo wget https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_users.txt
-```
+
++++sudo wget https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_users.txt+++
+
 and
-```
-sudo wget https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_pass.txt
-```
+
++++sudo wget https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/05%20-%20Linux%20Detections/Files/lab_pass.txt+++
+
 4. [] Copy the IP address from the Linux Victim VM that you have deployed earlier. We are going to brute force attack this VM
 5. [] Type the command below in your Kali VM, and replace "**IP**" with **yourLinuxVM** public IP address
-```
-hydra -I -L lab_users.txt -P lab_pass.txt <IP> -t 4 ssh
-```
+
++++hydra -I -L lab_users.txt -P lab_pass.txt <IP> -t 4 ssh+++
+
 6. [] Wait until it finishes, and the result should show you the username and the password that was found
 
 #### Simulate capturing credentials and other useful information
 1. [] Run the command below in the Linux Victim VM to simulate an attacker that is trying to start logkeys to set up the system to capture credentials and other useful information: 
-```
-logkeys --start
-```
+
+	+++logkeys --start+++
+
 	> [!NOTE] Ignore the error message if you don't have logkeys installed. Security Center will detect this attack anyway*
 
 #### Simulate an attack against a web server
 Assuming that the attacker has already performed some internal recon using nmap, you are going to simulate an attack against a web server
 1. [] Run the command below in the Linux Victim VM:
-```
-perl slowloris.pl -dns server.contoso.com
-```
+
+	+++perl slowloris.pl -dns server.contoso.com+++
+
 	> [!NOTE] Ignore the error message if you don't have this script on your system. Security Center will detect this attack anyway*
 
 #### Command & Control (C2) simulation
@@ -4280,13 +4280,13 @@ Attackers usually will communicate with command and control (C2) to transfer dat
 For this example, you will download the EICAR malware test file using WGET for the IP address.  The commands that follows must be executed in the Linux Victim VM:
 
 1. [] First, obtain the IP address of the target:
-```
-nslookup eicar.com 
-```
+
++++nslookup eicar.com+++
+
 2. [] Now replace the XXX.XXX.XXX.XXX on the command below with the IP obtained from nslookup: 
-```
-wget http://XXX.XXX.XXX.XXX/download/eicar.com
-```
+
+	+++wget http://XXX.XXX.XXX.XXX/download/eicar.com+++
+
 	> [!NOTE]  if you have issues download eicar.com, try download eicar.txt (same command line, just change the extension).*
 
 #### Review Security Center alerts
@@ -4308,12 +4308,14 @@ wget http://XXX.XXX.XXX.XXX/download/eicar.com
 
 ##### Estimated lab time: 25 minutes
 In this lab you are going to explore the Security Center integration with Logic Apps.
-	> [!NOTE] More comprehensive guidance can be found* <a href="https://techcommunity.microsoft.com/t5/Security-Identity/Automate-Azure-Security-Center-actions-with-Playbooks-and/td-p/264843" target="_blank">here</a>.
+
+> [!NOTE] More comprehensive guidance can be found <a href="https://techcommunity.microsoft.com/t5/Security-Identity/Automate-Azure-Security-Center-actions-with-Playbooks-and/td-p/264843" target="_blank">here</a>.
 
 The most asked automation integration use case is how Security Center integrates with ITSM solutions like ServiceNow, so in this lab we are going to explore exactly that integration.
 
 #### Create an ASC test alert
-	> [!NOTE] if you want to run more validation steps to simulate attacks in VMs/Computers monitored by Azure Security Center (out of scope for this lab)* <a href="https://gallery.technet.microsoft.com/Azure-Security-Center-549aa7a4" target="_blank">go here</a>
+
+> [!NOTE] if you want to run more validation steps to simulate attacks in VMs/Computers monitored by Azure Security Center (out of scope for this lab) <a href="https://gallery.technet.microsoft.com/Azure-Security-Center-549aa7a4" target="_blank">go here</a>
 
 Before you are going to create the playbook, let's make sure that we have an ASC alert we can act upon.
 1. [] Login to your Windows VM that you have created earlier and is monitored by Security Center
@@ -4321,9 +4323,10 @@ Before you are going to create the playbook, let's make sure that we have an ASC
 3. [] Copy **calc.exe** from **c:\windows\system32** to **c:\temp**
 4. [] Rename **calc.exe** to **ASC_AlertTest_662jfi039N.exe**
 5. [] Open a command prompt and execute this file as follows (this will generate an ASC test alert):
-```dos
-ASC_AlertTest_662jfi039N.exe -foo
-```
+
+	```
+	ASC_AlertTest_662jfi039N.exe -foo
+	```
 
 6. [] Close the calculator window
 
@@ -4331,20 +4334,18 @@ ASC_AlertTest_662jfi039N.exe -foo
 Skip the following steps if you already have a ServiceNow instance 
 
 If you don't want to create an instance of your own and want to leverage a shared environment, make a note of the following:
-```
-Please ask your instructor for the shared ServiceNow URL, username and password
-```
 
+**Please ask your instructor for the shared ServiceNow URL, username and password**
 
 #### Create a ServiceNow developer instance
-1. [] Navigate to the <a href="https://signon.service-now.com/ssoregister.do?redirectUri=https://developer.servicenow.com" target="_blank">ServiceNow developer website</a> and create a developer instance
+1. [] Navigate to ```https://signon.service-now.com/ssoregister.do?redirectUri=https://developer.servicenow.com``` and create a developer instance
 2. [] Go through all the steps until you have a developer instance which is active and running
 3. [] Take a note of the following information, because you will need that in the following steps:
 - The URL of your developer instance, similar to
-```
-https://dev12345.service-now.com
-```
-- admin account name & password 
+
+	**https://dev12345.service-now.com**
+
+	- admin account name & password 
 
 #### Create the ServiceNow playbook
 
@@ -4368,8 +4369,8 @@ https://dev12345.service-now.com
 	> !IMAGE[alt text](\Media\snow_advanced_options.png)
 12. Under **Record Type** dropdown box, select **Incident** (this collapses the incident options)
 13. [] In the **Record fields**, scroll down, click once in the fields highlighted below and select the values as shown below:
-	*Note: if you are using a shared ServiceNow environment, put your name in the Short description field as well*
-
+	
+	> [!Note] if you are using a shared ServiceNow environment, put your name in the Short description field as well
 
 	> !IMAGE[alt text](\Media\incident_fields.png)
 14. [] Click on **Save**
@@ -4393,14 +4394,9 @@ https://dev12345.service-now.com
 
 	> !IMAGE[alt text](\Media\playbook_history_details.png)
 
-
-
-
 7. [] Switch to your ServiceNow developer instance and check for a new created incident record
 
 	> !IMAGE[alt text](\Media\snow_record.png)
-
-
 
 ### Continue with the next lab
 
@@ -4414,7 +4410,7 @@ https://dev12345.service-now.com
 This optional lab points you to a number of preview features for you to explore.
 
 #### Container Security Monitoring
-*Note: This exercise also shows you how to use Azure CLI straight from the Azure portal*
+> [!Note] This exercise also shows you how to use Azure CLI straight from the Azure portal
 
 1. [] In the Azure portal click on the **Cloud Shell** icon in the upper right, next to your account, as shown below 
 
@@ -4433,13 +4429,14 @@ This optional lab points you to a number of preview features for you to explore.
 	> !IMAGE[alt text](\Media\bash_cloudshell.png) 
 
 5. [] Create a new resource group for your container by typing in the following (replace **myResourceGroup** with your name of choice)
-```
-az group create --name <myResourceGroup> --location eastus
-```
 
+	```
+	az group create --name <myResourceGroup> --location eastus
+	```
 
 6. [] The following command creates a Docker container with a small web app written in Node.js 
-***Note***: The container name must be in **lowercase**
+	
+	> [!Note] The container name must be in **lowercase**
 
 ```
 az container create --resource-group <yourResourceGroupName> --name <yourContainerName> --image microsoft/aci-helloworld --dns-name-label <yourDnsLabel> --ports 80
@@ -4597,7 +4594,7 @@ A sample which contains how to use the AzureRm.Security module can be found <a h
 In this lab you are going to explore what the ASC automation options are leveraging Azure Resource Manager (ARM) templates
 
 #### Requirements
-1. [] You have completed **Module 08 - Automation with PowerShell**
+1. [] You have completed **Automation with PowerShell**
 2. [] You have received an Azure pass or you have a test environment available. Please don't use these lab exercises in a production environment (or at your own risk) 
 
 For using these labs in combination with Labs On Demand (LOD), open an incognito/in-private browser session on your laptop and login to the Azure portal leveraging the LOD account (like for example admin@ems123456.onmicrosoft.com)
@@ -4620,7 +4617,7 @@ For the first ARM deployment exercise we are going to start with configuring the
 
 #### Explore the Email Notifications ARM template
 
-1. [] Open the <a href="https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/09%20-%20Automation%20with%20ARM/Files/configureAscEmailNotifications.json" target="_blank">ARM template</a> for email notifications in a new browser window
+1. [] Open the ```https://raw.githubusercontent.com/tianderturpijn/Azure-Security-Center/master/Labs/09%20-%20Automation%20with%20ARM/Files/configureAscEmailNotifications.json``` ARM template for email notifications in a new browser window
 2. [] Notice the ARM template **parameter** allowed values. These values are case sensitive and are mandatory.
 3. [] Under the ARM resources section  (**Microsoft.Security/securityContacts**), use "default1", "default2", etc. as value for the field name. These are mandatory fields and can only be used in this format
 
@@ -4652,7 +4649,7 @@ Security Centers stores MMA collected information (and more) in a Log Analytics 
 In the next exercise we will create a new workspace which will be used as your default ASC workspace.
 
 #### Create a Log Analytics workspace
-	> [!NOTE] if you already have deployed a Log Analytics workspace you can skip this exercise, or create a second one to test drive multiple custom workspaces reporting up to ASC.*
+> [!NOTE] if you already have deployed a Log Analytics workspace you can skip this exercise, or create a second one to test drive multiple custom workspaces reporting up to ASC.*
 
 You can either create a workspace through the Azure portal, leverage an ARM template, or use PowerShell.
 1. [] Navigate to the Azure portal and create a Log Analytics workspace **OR**:
@@ -4696,7 +4693,7 @@ Now that you have explored how to deploy an ARM template to configure an ASC set
 ASC stores MMA collected data (and more) in a Log Analytics workspace. In a more complex environment, you often will find an existing Log Analytics workspace which needs to be integrated with ASC (aka the Central Workspace scenario).
 The following lab assumes that a (Central) Log Analytics workspace already exists (although this can be deployed with an ARM template at the same time) and you are going to configure ASC to use the existing Log Analytics workspace. In addition we are going to enable **Auto Provisioning** which will deploy the MMA extension automatically, as you would configure it in the portal, like this:
 
-	> !IMAGE[alt text](\Media\autoProvisioning_custom_%20Workspace.png)
+> !IMAGE[alt text](\Media\autoProvisioning_custom_%20Workspace.png)
 
 Also we will configure ASC policies through the ARM template.
 
