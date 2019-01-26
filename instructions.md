@@ -3950,6 +3950,8 @@ The Azure Security Center labs are divided into 2 tracks, a beginner (level 50/1
 
 ===
 # Beginner Track
+[:arrow_left: Home](#azure-security-center)
+
 Welcome to the labs which will guide you through Azure Security Center (ASC). 
 The labs are intended to make you familiar with the different Security Center's features. 
 
@@ -4054,6 +4056,8 @@ The example above is based on Container security monitoring (you have a lab that
 
 ===
 # Policy and Compliance
+[:arrow_left: Home](#azure-security-center)
+
 ##### Estimated lab time: 10 minutes
 
 This lab covers ASC Policy and Regulatory Compliance and guides you through some preview features.
@@ -4093,6 +4097,8 @@ This exercise guides you through the current Security Center policies, based on 
 
 ===
 # VM Protection with Just in Time (JIT) access
+[:arrow_left: Home](#azure-security-center)
+
 ##### Estimated lab time: 15 minutes
 
 ***Requirements**:*
@@ -4159,6 +4165,8 @@ Set-AzureRmJitNetworkAccessPolicy -ResourceGroupName "<rescourceGroupName>" -Loc
 
 ===
 # Linux Detections
+[:arrow_left: Home](#azure-security-center)
+
 ##### Estimated lab time: 25 minutes
 *The following lab is based on the* <a href="https://gallery.technet.microsoft.com/Azure-Security-Center-0ac8a5ef" target="_blank">Linux Detections playbook</a> *written by Yuri Diogenes. This playbook provides a more comphrensive explanation than is covered in this lab*
 
@@ -4246,6 +4254,8 @@ wget http://XXX.XXX.XXX.XXX/download/eicar.com
 
 ===
 # Logic Apps integration
+[:arrow_left: Home](#azure-security-center)
+
 ##### Estimated lab time: 25 minutes
 In this lab you are going to explore the Security Center integration with Logic Apps.
 	> [!NOTE] More comprehensive guidance can be found* <a href="https://techcommunity.microsoft.com/t5/Security-Identity/Automate-Azure-Security-Center-actions-with-Playbooks-and/td-p/264843" target="_blank">here</a>.
@@ -4348,6 +4358,8 @@ https://dev12345.service-now.com
 
 ===
 # Preview Features
+[:arrow_left: Home](#azure-security-center)
+
 ##### Estimated lab time: 15 minutes
 This optional lab points you to a number of preview features for you to explore.
 
@@ -4420,6 +4432,7 @@ az container create --resource-group <yourResourceGroupName> --name <yourContain
 
 ===
 # Automation with PowerShell
+[:arrow_left: Home](#azure-security-center)
 
 ##### Estimated lab time: 15 minutes
 In this lab you are going to explore what the ASC automation options with PowerShell are.
@@ -4528,6 +4541,7 @@ A sample which contains how to use the AzureRm.Security module can be found <a h
 
 ===
 # Automation with ARM
+[:arrow_left: Home](#azure-security-center)
 
 ##### Estimated lab time: 15 minutes
 In this lab you are going to explore what the ASC automation options are leveraging Azure Resource Manager (ARM) templates
@@ -4664,6 +4678,8 @@ New-AzureRmDeployment -TemplateFile 'https://raw.githubusercontent.com/tiandertu
 
 ===
 # Additional Labs
+[:arrow_left: Home](#azure-security-center)
+
 This lab contains additional exercises. 
 
 ### File Integrity Monitoring (FIM)
