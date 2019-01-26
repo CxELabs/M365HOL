@@ -18,6 +18,12 @@
 
 	+++@lab.CloudCredential(134).Password+++
 
+	> [!NOTE] If necessary, log in using the credentials below:
+	> 
+	> ```@lab.CloudCredential(134).Username```
+	>
+	> ```@lab.CloudCredential(134).Password```
+
 > [!KNOWLEDGE] The script runs the code below. This script is available online at https://aka.ms/labscripts
 	>
 	>  

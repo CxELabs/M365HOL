@@ -3958,6 +3958,13 @@ The labs are intended to make you familiar with the different Security Center's 
 ### Exploring the Security Center Overview blade
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 1. [] Navigate to the Azure portal at ```https://portal.azure.com``` and click on **Security Center**.
+
+	> [!NOTE] If necessary, log in using the credentials below:
+	> 
+	> ```@lab.CloudCredential(134).Username```
+	>
+	> ```@lab.CloudCredential(134).Password```
+	
 2. [] In the Overview blade note the **Policy & compliance** section. This provides an overview of your secure score, based on your resources, regulatory standards and your subscription coverage: 
 
 	> !IMAGE[alt text](\Media\policy_compliancy_tile.png)
@@ -4735,11 +4742,11 @@ This lab contains additional exercises.
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 1. [] Navigate to ```https://portal.azure.com```.
 
-1. [] If necessary, log in using the credentials below:
-
-	```@lab.CloudCredential(134).Username```
-
-	```@lab.CloudCredential(134).Password```
+	> [!NOTE] If necessary, log in using the credentials below:
+	> 
+	> ```@lab.CloudCredential(134).Username```
+	>
+	> ```@lab.CloudCredential(134).Password```
 
 2. []	Browse to **Azure Active Directory > Groups > New group**.
 3. []	Create a Security group named **Identity Protection Users** with assigned membership type.
