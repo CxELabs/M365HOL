@@ -300,7 +300,7 @@ Use the link below to deploy the following:
 1. [] Under Location, choose **East US**.
 
 	> [!ALERT] Ensure that you have chosen East US (or a datacenter near the event) or the workspace will take longer to deploy and the VMs will have latency.
-	
+
 1. [] **Select a location**, then under **Settings**, next to **Pwd Or Ssh** type the password ```Securitycenter4ever!```.
 1. [] Finally, check the Box to agree to the terms and click **Purchase**.
 
@@ -4081,32 +4081,39 @@ The example above is based on Container security monitoring (you have a lab that
 This lab covers ASC Policy and Regulatory Compliance and guides you through some preview features.
 
 ### Regulatory Compliance (Preview)
-From the Azure Security Center overview blade, click on the **Least compliant regulatory standards** tile: 
-> !IMAGE[alt text](\Media\policy_compliance_dashboard.png)
 
-Explore the different Compliance Controls for every Regulatory Compliance: 
+1. [] From the Azure Security Center overview blade, click on the **Least compliant regulatory standards** tile: 
+	
+	> !IMAGE[alt text](\Media\policy_compliance_dashboard.png)
 
-> !IMAGE[alt text](\Media\policy_compliance_details.png)
+1. [] Explore the different Compliance Controls for every Regulatory Compliance: 
 
-When you click on **All** you will see an overview of all the Regulatory Compliance controls per subscription:
-> !IMAGE[alt text](\Media\policy_compliance_all.png)
+	> !IMAGE[alt text](\Media\policy_compliance_details.png)
+
+1. [] When you click on **All** you will see an overview of all the Regulatory Compliance controls per subscription:
+
+	> !IMAGE[alt text](\Media\policy_compliance_all.png)
 
 ### Policy Management
 This exercise guides you through the current Security Center policies, based on Azure Policy, and shows you where to enable or disable Security Center polices. 
 
 > [!NOTE] at this time we only support out-of-the-box Security Center policies. Support for custom policies is coming in the near future*
 
-1. Within the Azure portal, navigate to the **Policy** blade 
-*Note: when you can't find Policy, click in the search bar on top of the Azure portal and search for **Policy**:*
-> !IMAGE[alt text](\Media\search_policy.png)
+1. [] Within the Azure portal, navigate to the **Policy** blade 
 
-2. Click on **Assignments** (under Authoring)
-3. Notice the 80 policy definitions under that initiative. Click on the **[Preview]: Enable Monitoring in Azure Security Center** initiative:
-> !IMAGE[alt text](\Media\policy_assignment.png)
-4. Clicking on the initiative allows you to disable the definition:
-> !IMAGE[alt text](\Media\disable_definition.png)
+	> [!Note] If you can't find Policy, click in the search bar on top of the Azure portal and search for **Policy**
+	
+	> !IMAGE[alt text](\Media\search_policy.png)
 
-> [!NOTE] In the near future we will provide custom policies which will support deployIfNotExists type of policies*
+2. [] Click on **Assignments** (under Authoring)
+3. [] Notice the 80 policy definitions under that initiative. Click on the **[Preview]: Enable Monitoring in Azure Security Center** initiative:
+
+	> !IMAGE[alt text](\Media\policy_assignment.png)
+4. [] Clicking on the initiative allows you to disable the definition:
+
+	> !IMAGE[alt text](\Media\disable_definition.png)
+
+	> [!NOTE] In the near future we will provide custom policies which will support deployIfNotExists type of policies*
 
 
 ### Continue with the next lab
