@@ -435,8 +435,8 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 To be able to complete the different parts of the Cloud App Security labs, the following configuration steps are required.
 
-* [Enabling Office 365 auditing](#enabling-office-365-auditing)
-* [Enabling file monitoring](#enabling-file-monitoring)
+* [Enabling Office 365 Auditing](#enabling-office-365-auditing)
+* [Enabling File Monitoring](#enabling-file-monitoring)
 * [Create a Developer Box Account](#create-a-developer-box-account)
 * [Connect Office 365 and Box to Cloud App Security](#connect-office-365-and-box-to-cloud-app-security)
 * [Enabling Azure Information Protection integration](#enabling-azure-information-protection-integration)
