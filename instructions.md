@@ -5018,7 +5018,7 @@ First, let’s assess how many risk events we have that are medium or high risk.
 	Write-Output $oauth
 	if ($oauth.access_token -ne $null) {
 	$headerParams = @{'Authorization'="$($oauth.token_type) $($oauth.access_token)"}
-	$url = "https://graph.microsoft.com/beta/identityRiskEvents $filter=riskLevel eq 'high' or riskLevel eq 'medium'" 
+	$url = "https://graph.microsoft.com/beta/identityRiskEvents?`$filter=riskLevel eq 'high' or riskLevel eq 'medium'" 
 	Write-Output $url
 	$myReport = (Invoke-WebRequest -UseBasicParsing -Headers $headerParams -Uri $url)
 	foreach ($event in ($myReport.Content | ConvertFrom-Json).value) {
