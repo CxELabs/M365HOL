@@ -448,8 +448,10 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 
 Most Cloud App Security treat detections capabilities rely on auditing being enabled in your environment. By default, auditing is not enabled in Office 365 and must then be turned on using the **Security & Compliance** admin console or PowerShell.
 
-	> [!ALERT] As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts for the threat detection lab.
 
+
+
+	> [!ALERT] As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts for the threat detection lab.
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 2. [] Open a new InPrivate tab and navigate to ```https://protection.office.com```.	
