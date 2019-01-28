@@ -448,7 +448,7 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 
 Most Cloud App Security treat detections capabilities rely on auditing being enabled in your environment. By default, auditing is not enabled in Office 365 and must then be turned on using the **Security & Compliance** admin console or PowerShell.
 
-	>:warning: As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts for the threat detection lab.
+	> [!ALERT] As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts for the threat detection lab.
 
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
@@ -506,7 +506,7 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 
     !IMAGE[Settings](\Media\conf-settings.png "Settings")
 
-1. [] Under **Information Protection** section click on **Files** and check the **Enable file monitoring** checkbox and click on the "**Save** button.
+1. [] Under the **Information Protection** section click on **Files** and check the **Enable file monitoring** checkbox and click on the "**Save** button.
 
     !IMAGE[Enable files](\Media\conf-files.png "Enable files")
 
