@@ -92,7 +92,7 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 1. [] Log into @lab.VirtualMachine(Client01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++
 2. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
 
-3. [] In the InPrivate window, paste the **provided Windows E5 Trial Sign up link**.
+3. [] In the in a Private window, paste the **provided Windows E5 Trial Sign up link**.
 
 	> [!Knowledge] If pasting into Box from your client system does not work natively, use the Type Text functionality of the lab environment 
 	> !IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
@@ -448,8 +448,11 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 
 Most Cloud App Security treat detections capabilities rely on auditing being enabled in your environment. By default, auditing is not enabled in Office 365 and must then be turned on using the **Security & Compliance** admin console or PowerShell.
 
+	>:warning: As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts for the threat detection lab.
+
+
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] Open a new InPrivate tab and navigate to ```https://protection.office.com```.	
+2. [] Open a new InPrivate tab and navigate to ```https://protection.office.com```.	
 	
 	> [!KNOWLEDGE] If needed, log in using the credentials below:
 	>
@@ -467,7 +470,7 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 
     ^IMAGE[Auditing enabled](\Media\conf-auditenabled.png "Auditing enabled")
 
-    >:warning: As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts for the threat detection lab.
+    
 
 ### Exchange Auditing Configuration
 [:arrow_up: Top](#mcas-environment-preparation)
@@ -478,32 +481,32 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 
 	> [!KNOWLEDGE] The following commands will be run to connect to Exchange Online and Enable Mailbox Auditing on the Admin account.
     >
-	> $UserCredential = Get-Credential
+	> ```$UserCredential = Get-Credential```
     >
-	> $Session = New-PSSession –ConfigurationName Microsoft.Exchange –ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential –Authentication Basic -AllowRedirection
+	> ```$Session = New-PSSession –ConfigurationName Microsoft.Exchange –ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential –Authentication Basic -AllowRedirection```
 	>
-	>Import-PSSession $Session
+	>```Import-PSSession $Session```
     >
-	> Get-MailBox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailBox"} | Set-MailBox -AuditEnabled $true
+	> ```Get-MailBox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailBox"} | Set-MailBox -AuditEnabled $true```
     >
-	> Get-MailBox admin | fl audit*
+	> ```Get-MailBox admin | fl audit*```
     
     > [!ALERT] When you create new mailBoxes, **auditing is not enabled** by default. You will have to use the same commands again to enable auditing for those newly created mailBoxes.
 
     !IMAGE[MailBox auditing](\Media\MailboxAudit.png "MailBox Auditing")
 
->:memo: **Reference:** [Enabling auditing for Exchange Online mailBoxes](https://docs.microsoft.com/en-us/office365/securitycompliance/enable-mailBox-auditing?redirectSourcePath=%252fen-us%252farticle%252fenable-mailBox-auditing-in-office-365-aaca8987-5b62-458b-9882-c28476a66918)).
+>:memo: **Reference:** [Enabling auditing for Exchange Online mailBoxes](https://docs.microsoft.com/en-us/office365/securitycompliance/enable-mailBox-auditing?redirectSourcePath=%252fen-us%252farticle%252fenable-mailBox-auditing-in-office-365-aaca8987-5b62-458b-9882-c28476a66918).
 
 ---
 
-## Enabling file monitoring
+## Enabling File Monitoring
 [:arrow_up: Top](#mcas-environment-preparation)
 
-1. [] Go to Cloud App Security settings.
+1. [] Go to Cloud App Security portal and click on the **Gear** and then **Settings**.
 
     !IMAGE[Settings](\Media\conf-settings.png "Settings")
 
-1. [] Go down in the settings to the **Files** section and check the **Enable file monitoring** checkbox and click on the "**Save** button.
+1. [] Under **Information Protection** section click on **Files** and check the **Enable file monitoring** checkbox and click on the "**Save** button.
 
     !IMAGE[Enable files](\Media\conf-files.png "Enable files")
 
@@ -557,6 +560,8 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 5. [] Click on **Test now** to validate the configuration.
 
     ^IMAGE[Open Screenshot](\Media\conf-testoffice.png "Test connectivity")
+
+	> [!NOTE] If the connection is taking more than 1 minute - close out of the portal and log back in to check if it's been connected. 
 
 ---
 
