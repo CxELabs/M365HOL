@@ -443,7 +443,7 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 
 ---
 
-## Enabling Office 365 auditing
+## Enabling Office 365 Auditing
 [:arrow_up: Top](#mcas-environment-preparation)
 
 Most Cloud App Security treat detections capabilities rely on auditing being enabled in your environment. By default, auditing is not enabled in Office 365 and must then be turned on using the **Security & Compliance** admin console or PowerShell.
@@ -2292,12 +2292,10 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
 1. [] In a in Private Browsing session navigate to the ```https://portal.cloudappsecurity.com```
 
-1. [] Import the **US employees** group.
+1. [] Click on the **Gear** and under the Data Enrichement section, select **User groups**
     
 	> [!HINT] The import can take **up to one hour**. Cloud App Security has to synchronize the Azure AD groups before importing them.
 	> [!HINT] If the import takes too long, don't hesitate to move to the next section and come back to complete this task.
-
-    1. Click on the **Gear** and under the Data Enrichement section, select **User groups**
 
 	    ^IMAGE[Open Screenshot](\Media\mgmt-import1.png "Import group")
 
@@ -2311,7 +2309,10 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
 	1. The user group will be seen as **Importing**.
 
-        !IMAGE[Import group](\Media\mgmt-import4.png "Import group")
+        !IMAGE[Import group](\Media\mgmt-import4.png "Import group")	
+
+
+		> [!NOTE] **While the import is happening, head over to *Delegate MCAS administration to an external admin* and come back to this portion of the lab once you've completed that section section. The import will be completed and you continue with the steps below.**
 
 1. [] In the Cloud App Security portal```https://portal.cloudappsecurity.com```, add **mcasAdminUS** as **User group admin** for the **US employees** group.
 
@@ -2334,7 +2335,7 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
 	1. Select Role: **User group admin**
 
-        !IMAGE[New admin](\Media\mgmt-admin3.png "New admin")
+        ^IMAGE[Open Screenshot](\Media\mgmt-admin3.png "New admin")
 
 	1. Select groups for this admin**: **US employees**
 
