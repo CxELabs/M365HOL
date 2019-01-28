@@ -2428,7 +2428,7 @@ Once the logs have been analyzed, Cloud App Security provides the visibility on 
 # Cloud App Security Discovery Lab
 [:arrow_left: Discovery lab](#cloud-app-security-discovery)
 
-* [Cloud Discovery Snapshot Report](#cloud-discovery-snapshotreport)
+* [Cloud Discovery Snapshot Report](#cloud-discovery-snapshot-report)
 * [Configure and Test Continuous Reports](#configure-and-test-continuous-reports)
 
 ===
