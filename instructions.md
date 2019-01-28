@@ -3401,7 +3401,7 @@ documentation in the MCAS portal.
 !IMAGE[f847xhzx.jpg](\Media\f847xhzx.jpg)
 
 The module is available in the PowerShell gallery and can be installed
-using the *Install-Module mcas* command.
+using the ```*Install-Module mcas*``` command.
 
 !IMAGE[6j16dgs2.jpg](\Media\6j16dgs2.jpg)
 
