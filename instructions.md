@@ -2696,9 +2696,9 @@ In this lab, we are going to configure a file policy to apply an **Azure Informa
 
 1. [] In the Cloud App Security portal, go to **Control** and then click on **Policies.**
 
-    ^IMAGE[Open Screenshot](\Media\info-policies.png "Policies")
+    !IMAGE[Open Screenshot](\Media\info-policies.png "Policies")
 
-1. [] Create a new **File policy**.
+1. [] Create a Policy click on  **File policy**.
 
     ^IMAGE[Open Screenshot](\Media\info-newpolicy.png "New policy")
 
@@ -2738,9 +2738,9 @@ In this lab, we are going to configure a file policy to apply an **Azure Informa
 
     > [!KNOWLEDGE] In production scenarios, as you will probably have thousands of matches, you will **not** create alerts but use the **policy matches** approach instead.
 
-1. [] In the Governance actions, click on **Box** and select **Apply classification label**. Select the **Highly Confidental Employees Only** label. 
+1. [] In the Governance actions, click on **Box** and select **Apply classification label**. Select the **Highly Confidental - All Employees** label. 
 
-    > [!ALERT] If you are not able to select Azure Information Protection templates, verify that you configured the integration in the prerequisites section or that you waited the 1h for the classifications to sync.
+    > [!ALERT] If you are not able to select Azure Information Protection templates, verify that you configured the integration in the prerequisites section or that you waited the 1h for the classifications to sync. In addition log out of the Cloud App Security Portal and log back in and see and if you're able to apply the label. 
 
   !IMAGE[gov](\Media\Boxgovssn.JPG)
 
@@ -2756,9 +2756,9 @@ In this lab, we are going to configure a file policy to quarantine sensitive PDF
 
 1. [] In the Cloud App Security portal, go to **Control** and then click on **Policies.**
 
-    ^IMAGE[Open Screenshot](\Media\info-policies.png "Policies")
+    !IMAGE[Open Screenshot](\Media\info-policies.png "Policies")
 
-1. [] Create a new **File policy** that will determine which files should be placed in quarantine.
+1. [] Create a Polick and click on **File policy** that will determine which files should be placed in quarantine.
 
     ^IMAGE[Open Screenshot](\Media\info-newpolicy.png "New policy")
 
