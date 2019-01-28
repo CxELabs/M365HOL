@@ -2541,7 +2541,7 @@ In this lab you will perform the configuration of a **Log collector**.
 
     >|||
     >|---------|---------|
-    >|Name| **SquidLogs**|
+    >|Name| ```**SquidLogs**```|
     >|Source| **SQUID (Common)**|
     >|Receiver type| **FTP**|
     >|Anonymize private information |**Check the Box**|
@@ -2550,7 +2550,7 @@ In this lab you will perform the configuration of a **Log collector**.
 
     > [!KNOWLEDGE] In this lab we use FTP as the receiver type but usually companies will use Syslog.
 
-1. [] Close the **Verify your log format** window, then click **Add** in the **Add data source** dialog.
+1. []Click **Add** in the **Add data source** dialog.
 
 	^IMAGE[Open Screenshot](\Media\dis-addsource.png "Add source")
 
@@ -2570,7 +2570,7 @@ In this lab you will perform the configuration of a **Log collector**.
 
     ^IMAGE[Open Screenshot](\Media\dis-createlogcollector.png "Create log collector")
 
-1. [] After clicking on the **Update** button, follow the required steps to create your log collector instance on **LinuxVM**. You'll have to use the provided command line in **Putty** in the following steps to configure your log collector.
+1. [] After clicking on the **Update** button, follow the required steps to create your log collector instance which will be hosted within the **LinuxVM**. You'll have to use the provided command line in **Putty** in the following steps to configure your log collector.
     > [!ALERT] Do not close this window until your log collector is up and running!
 
     !IMAGE[Create log collector command](\Media\dis-addlogcollectortoken.png "Create log collector")
@@ -2585,7 +2585,7 @@ In this lab you will perform the configuration of a **Log collector**.
 
     ^IMAGE[Open Screenshot](\Media\dis-putty.png "Putty")
 
-1. [] In the PuTTY Configuration window, enter **192.168.141.125** and click **Open**.
+1. [] In the PuTTY Configuration window, enter ```**192.168.141.125**``` and click **Open**.
 
     ^IMAGE[Open Screenshot](\Media\dis-puttyconfig.png "Putty config")
 
@@ -2598,17 +2598,17 @@ In this lab you will perform the configuration of a **Log collector**.
 1. [] Log in using the credentials below.
     >|Username|Password|
     >|---|---|
-    >|```user01```|```Passw0rd1```|
+    >|user01|Passw0rd1|
 
     > [!HINT] The password doesn't appear in the command prompt when you type it. You can safely press enter to validate the credentials.
 
-    ^IMAGE[Open Screenshot](\Media\dis-puttylogin.png)
+    !IMAGE[Open Screenshot](\Media\dis-puttylogin.png)
 
 1. [] Type the command below and press **Enter**. Provide the user password when prompted.
 
-     ```sudo -i```
+    ***sudo -i***
 
-    ```Passw0rd1```
+    ***Passw0rd1***
 
      ^IMAGE[Open Screenshot](\Media\dis-sudo.png)
 
@@ -2627,7 +2627,7 @@ In this lab you will perform the configuration of a **Log collector**.
 
     ^IMAGE[Open Screenshot](\Media\dis-winscp.png "WinSCP")
 
-1. [] Use the details below in the WinSCP window to connect to the log collector FTP service.
+1. [] Use the details below in the WinSCP window to connect to the log collector **FTP** service.
 
     |File Protocol|Host name|User name|Password|
     |-----|-----|-----|-----|
@@ -2657,7 +2657,7 @@ In this lab you will perform the configuration of a **Log collector**.
 
     ^IMAGE[Open Screenshot](\Media\dis-loguploaded.png "Log uploaded")
 
-    > [!KNOWLEDGE] The status you see is the parsing status of the logs. Parsing status can be successful, pending or failed.
+    > [!NOTE] The status you see is the parsing status of the logs. Parsing status can be successful, pending or failed.
 
 1. [] You can also verify the **Last data received** date on the **Data sources** tab under **Automatic log upload** in the settings.
 
@@ -2665,9 +2665,9 @@ In this lab you will perform the configuration of a **Log collector**.
 
 1. [] Go to the **Cloud Discovery Dashboard** to verify the discovered apps. As explained at the beginning of the lab, the data you uploaded is probably not already available as the data is analyzed **twice a day**.
 
-    ^IMAGE[Open Screenshot](\Media\dis-discoverydashboard.png "Discovery dashboard")
+    !IMAGE[Open Screenshot](\Media\dis-discoverydashboard.png "Discovery dashboard")
 
-    ^IMAGE[Open Screenshot](\Media\dis-discoverydata.png "Discovery data")
+    !IMAGE[Open Screenshot](\Media\dis-discoverydata.png "Discovery data")
 
 ===
 
