@@ -2888,19 +2888,19 @@ Conditional Access App Control enables user app access and sessions to be **moni
 
     1. Name it ```Office365 App Control```
 
-    1. Assignments: Click on **All users** and then **Done**
+    1. Under assignments: Click on **All users** and then **Done**
 
        ^IMAGE[Open Screenshot](\Media\cond-policy-2.png)
 
-    1. Go to the next section: Cloud Apps: Select Apps and choose Office 365 Exchange Online and Office 365 SharePoint Online and Done**
+    1. Go to the next section: Cloud Apps: Select Apps and choose Office 365 Exchange Online and Office 365 SharePoint Online and **Done**
 
        ^IMAGE[Open Screenshot](\Media\cond-policy-3.png)
 
-    1. Click on **Session** and check off **Use Conditional Access App Control"**
+    1. Under **Acess Controls**, click on **Session** and check off **Use Conditional Access App Control** 
 
        ^IMAGE[Open Screenshot](\Media\cond-policy-4.png)
 
-    1. Enable the policy and click **Create**
+    1. Click on **ON** in *Enable the policy* and click **Create**
 
        ^IMAGE[Open Screenshot](\Media\cond-policy-5.png)
 
@@ -2934,13 +2934,11 @@ Conditional Access App Control enables user app access and sessions to be **moni
 
    !IMAGE[Setup](\Media\appc-office-5.png)
 
-1. [] On the left hand side click on Control and then **Policies**.
+1. [] On the left hand side click on **Control** and then **Policies**.
 
-   ^IMAGE[Open Screenshot](\Media\appc-office-6.png)
+   !IMAGE[Open Screenshot](\Media\appc-office-6.png)
 
-1. [] Create a new session policy with the following settings:
-
-    1. Click on "Create Policy" and pick **Session policy**.
+1. [] Click on **Create Polic** and click on **Session policy**.
 
         ^IMAGE[Open Screenshot](\Media\appc-office-7.png)
 
@@ -2961,11 +2959,11 @@ Conditional Access App Control enables user app access and sessions to be **moni
 
        !IMAGE[Session policy](\Media\appc-office-10.png)
 
-   1. Actions: **Block**
+   1. Under Actions: go to **Block**
 
    1. Click: **Customize block message**: ```This file containes SSN information and cannot be downloaded on non-coporate devices.```
 
-   1. Click: **Create an alert for each matching event with the policy's severity**
+   1. Click: Verify that  **Create an alert for each matching event with the policy's severity** is checked. 
 
    1. Click: **Create**
 
