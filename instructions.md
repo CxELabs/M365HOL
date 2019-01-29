@@ -661,6 +661,9 @@ Now that the template has been deployed, we can continue with the configuration 
 6. [] On the line where it lists **Azure Pass - Sponsorship**, click on **Edit settings**.
 
 	^IMAGE[Open Screenshot](\Media\EditSettings.png)
+
+	> [!NOTE] If you do not see the Azure Pass listed, wait a minute and refresh the browser and it should display.
+
 7. [] Verify that **Auto Provisioning** is set to **On**.
 8. [] Under Workspace configuration, select the option button for **Use another workspace**, and select your workspace **ASC-Workspace-xxxx** (which has been created by the template).
 
@@ -705,7 +708,7 @@ Now that the template has been deployed, we can continue with the configuration 
 1. []	Scroll up and click the **Download Sensor Setup** link. 
 1. []   Click  **Download** to download the Sensor installer package. 
 1. []   Copy the **Access key**, this will be needed during the installation of the Sensor. 
-1. []   Extract the installation files from the Zip file and run **Azure ATP sensor setup.exe**. 
+1. []   **Extract the installation files** from the Zip file and run **Azure ATP sensor setup.exe**. 
 
 	>[!NOTE] Do not run the installer from within the Zip file, you need to extract the files before running the installer.
 
