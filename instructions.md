@@ -478,6 +478,12 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 
 1. [] On the desktop, right-click on **EnableMailboxAudit.ps1** and click **Run with PowerShell**.
 
+1. [] When prompted, use the credentials below:
+
+	+++@lab.CloudCredential(134).Username+++
+
+	+++@lab.CloudCredential(134).Password+++
+
 	> [!KNOWLEDGE] The following commands will be run to connect to Exchange Online and Enable Mailbox Auditing on the Admin account.
     >
 	> ```$UserCredential = Get-Credential```
@@ -501,7 +507,7 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 ## Enabling File Monitoring
 [:arrow_up: Top](#mcas-environment-preparation)
 
-1. [] Go to Cloud App Security portal and click on the **Gear** and then **Settings**.
+1. [] Go to Cloud App Security portal at ```https://portal.cloudappsecurity.com``` and click on the **Gear** and then **Settings**.
 
     !IMAGE[Settings](\Media\conf-settings.png "Settings")
 
