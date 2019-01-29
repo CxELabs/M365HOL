@@ -1990,7 +1990,7 @@ In this exercise, we will go to the AIP Analytics dashboards and observe them af
 
 1. [] On @lab.VirtualMachine(Client01).SelectLink, open the browser that is logged into the Azure Portal.
 
-1. [] Under **Dashboards**, click on **Usage report (Preview)**.
+1. [] In the AIP Portal, under **Dashboards**, click on **Usage report (Preview)**.
 
 	> [!NOTE] Observe that there are now entries from the AIP scanner, File Explorer, Microsoft Outlook, and Microsoft Word based on our activities in this lab. 
 	>
