@@ -950,7 +950,7 @@ The first step in configuring the AIP Scanner is to install the service and conn
 
 ### Creating Azure AD Applications for the AIP Scanner
 
-Now that you have installed the scanner bits, you need to get an Azure AD token for the scanner service account to authenticate so that it can run unattended. This requires registering both a Web app and a Native app in Azure Active Directory.  The commands below will do this in an automated fashion rather than needing to go into the Azure portal directly.
+Now that you have installed the scanner service, you need to get an Azure AD token for the scanner service account to authenticate so that it can run unattended. This requires registering both a Web app and a Native app in Azure Active Directory.  The commands below will do this in an automated fashion rather than needing to go into the Azure portal directly.
 
 1. [] Next, on the desktop, right-click on **GenerateAuthToken.ps1** and click **Run with PowerShell**.
 1. [] When prompted, provide the username and password below. 
@@ -1708,76 +1708,7 @@ In this exercise, you will configure conditions for automatic classification.  A
 
 ---
 
-## Defining Automatic Conditions
-[:arrow_up: Top](#aip-scanner-classification-labeling-and-protection)
 
-The Azure Information Protection Scanner uses Automatic conditions to identify sensitive content to classify, label, and protect.  In this exercise, we will configure some of these conditions.  If you completed the Base Configuration exercise, you have already done some of these, but we will go through the process for those that may have skipped that exercise.
-
-1. [] On @lab.VirtualMachine(Client01).SelectLink, log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-2. [] Open the browser window with the Azure Portal (AIP Blade).
-
-	> [!HINT] If necessary, open an InPrivate browsing session and navigate to ```https://portal.azure.com/#blade/Microsoft_Azure_InformationProtection/DataClassGroupEditBlade/globalBlade``` and login with the credentials below. 
-	>
-	> ```@lab.CloudCredential(134).Username```
-	>
-	> ```@lab.CloudCredential(134).Password```
-
-3. [] Under **Dashboards** on the left, click on **Data discovery (Preview)** to view the results of the discovery scan we performed previously.
-
-	!IMAGE[Dashboard.png](\Media\Dashboard.png)
-
-	> [!KNOWLEDGE] Notice that there are no labeled or protected files shown at this time.  This uses the AIP P1 discovery functionality available with the AIP Scanner. Only the predefined Office 365 Sensitive Information Types are available with AIP P1 as Custom Sensitive Information Types require automatic conditions to be defined, which is an AIP P2 feature.
-
-	> [!NOTE] Now that we know the sensitive information types that are most common in this environment, we can use that information to create **Recommended** conditions that will help guide user behavior when they encounter this type of data.
-
-	> [!ALERT] If no data is shown, it may still be processing. Continue with the lab and come back to see the results later.
-
-1. [] Under **Classifications** on the left, click **Labels** then expand **Confidential**, and click on **All Employees**.
-
-	^IMAGE[Open Screenshot](\Media\jyw5vrit.jpg)
-1. [] In the Label: All Employees blade, scroll down to the **Configure conditions for automatically applying this label** section, and click on **+ Add a new condition**.
-
-	!IMAGE[cws1ptfd.jpg](\Media\cws1ptfd.jpg)
-1. [] In the Condition blade, in the **Select information types** search box, type ```EU``` and check the boxes next to the **items shown below**.
-
-	!IMAGE[xaj5hupc.jpg](\Media\xaj5hupc.jpg)
-
-1. [] Click **Save** in the Condition blade and **OK** to the Save settings prompt.
-
-	^IMAGE[Open Screenshot](\Media\41o5ql2y.jpg)
-1. [] In the Labels: All Employees blade, in the **Configure conditions for automatically applying this label** section, click **Automatic**.
-
-1. [] Click **Save** in the Label: All Employees blade and **OK** to the Save settings prompt.
-
-	^IMAGE[Open Screenshot](\Media\rimezmh1.jpg)
-1. [] Press the **X** in the upper right-hand corner to close the Label: All Employees blade.
-
-	^IMAGE[Open Screenshot](\Media\em124f66.jpg)
-1. [] Next, expand **Highly Confidential** and click on the **All Employees** sub-label.
-
-	^IMAGE[Open Screenshot](\Media\2eh6ifj5.jpg)
-1. [] In the Label: All Employees blade, scroll down to the **Configure conditions for automatically applying this label** section, and click on **+ Add a new condition**.
-
-	^IMAGE[Open Screenshot](\Media\8cdmltcj.jpg)
-1. [] In the Condition blade, in the search bar type ```credit``` and check the box next to **Credit Card Number**.
-
-	^IMAGE[Open Screenshot](\Media\9rozp61b.jpg)
-1. [] Click **Save** in the Condition blade and **OK** to the Save settings prompt.
-
-	^IMAGE[Open Screenshot](\Media\ie6g5kta.jpg)
-15. [] In the Labels: All Employees blade, in the **Configure conditions for automatically applying this label** section, click **Automatic**.
-
-   !IMAGE[245lpjvk.jpg](\Media\245lpjvk.jpg)
-
-1. [] Click **Save** in the Label: All Employees blade and **OK** to the Save settings prompt.
-
-	^IMAGE[Open Screenshot](\Media\gek63ks8.jpg)
-
-1. [] Press the **X** in the upper right-hand corner to close the Label: All Employees blade.
-
-	^IMAGE[Open Screenshot](\Media\wzwfc1l4.jpg)
-
----
 
 ## Enforcing Configured Rules
 [:arrow_up: Top](#aip-scanner-classification-labeling-and-protection)
