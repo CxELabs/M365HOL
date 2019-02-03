@@ -8,7 +8,7 @@ This lab is designed to be used as a supplement to Instructor Led Training and h
 
 ## [Lab Environment Configuration](#lab-environment-configuration)
 
-## [Lab 1: Azure Information Protection](#azure-information-protection)
+## [Lab 1: Azure Information Protection](#azure-information-protection-lab)
 
 ## [Lab 2: Azure Advanced Threat Protection](#azure-atp-immersion-lab)
 
@@ -760,6 +760,7 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 
 ===
 # Lab Environment Setup Complete
+[:arrow_left: Home](#introduction)
 
 The lab environment setup is now complete. The next section will cover Azure Information Protection (Roadmap discussion then Hands On Lab). If you decide to close out of the Lab during the roadmap discussion, please ensure that you **Save** the lab using the menu in the upper right corner of the browser.
 
@@ -1772,8 +1773,19 @@ Now that we have Classified and Protected documents using the scanner, we can re
 
     > [!NOTE] Observe that the document is classified as Highly Confidential \ All Employees. 
     >
-    > !IMAGE[s1okfpwu.jpg](\Media\s1okfpwu.jpg)
+    > !IMAGE[s1okfpwu.jpg](\Media\HCAE.jpg)
 
+4. [] Next, in the same documents folder, open one of the pdf files.
+5. [] When prompted by Adobe, enter ```AdamS@@lab.CloudCredential(17).TenantName``` and press OK.
+6. [] Check the box to save credentials and press OK.
+
+	> [!NOTE] The PDF will now open and display the sensitivity across the top of the document.
+
+	> [!Knowledge] The latest version of Acrobat Reader DC and the MIP Plugin have been installed on this system prior to the lab. Additionally, the sensitivity does not display by default in Adobe Acrobat Reader DC.  You must make the modifications below to the registry to make this bar display.
+	>
+	> In **HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\DC\MicrosoftAIP**, create a new **DWORD** value of **bShowDMB** and set the **Value** to **1**.
+	>
+	> !IMAGE[1547416250228](\Media\1547416250228.png)
 ---
 
 ===
