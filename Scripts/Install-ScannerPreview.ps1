@@ -19,7 +19,7 @@ $DisplayName = "AIPOBO" + $Date
 $CKI = "AIPClient" + $Date
 	
 New-AzureADApplication -DisplayName $DisplayName -ReplyUrls http://localhost
-$WebApp = Get-AzureADApplication -Filter "DisplayName eq $DisplayName"
+$WebApp = Get-AzureADApplication -Filter "DisplayName eq '$DisplayName'"
 New-AzureADServicePrincipal -AppId $WebApp.AppId
 $WebAppKey = New-Guid
 $Date = Get-Date
@@ -33,7 +33,7 @@ $Access.ResourceAppId = $WebApp.AppId
 $Access.ResourceAccess = $Scope
 	
 New-AzureADApplication -DisplayName $CKI -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
-$NativeApp = Get-AzureADApplication -Filter "DisplayName eq $CKI"
+$NativeApp = Get-AzureADApplication -Filter "DisplayName eq '$CKI'"
 New-AzureADServicePrincipal -AppId $NativeApp.AppId
 	
 Set-AIPAuthentication -WebAppID $WebApp.AppId + -WebAppKey $WebAppKey.Guid -NativeAppID $NativeApp.AppId
