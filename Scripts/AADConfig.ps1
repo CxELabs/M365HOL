@@ -8,14 +8,22 @@ $tenant = $tenantfqdn.Split('.')[0]
 $office = $tenant+":ENTERPRISEPREMIUM"
 $ems = $tenant+":EMSPREMIUM"
 
-$cred = Get-Credential
+$cred = Get-Credential -Message "Enter Tenant Global Admin Credentials"
 
 # Connect to MSOLService for licensing Operations
 Connect-MSOLService -Credential $cred
 
 # Remove existing licenses to ensure enough licenses exist for our users
 $LicensedUsers = Get-MsolUser -All  | where {$_.isLicensed -eq $true}
-$LicensedUsers | foreach {Set-MsolUserLicense -UserPrincipalName $_.UserPrincipalName -RemoveLicenses $office, $ems} -ErrorAction SilentlyContinue
+foreach($licenseduser in $LicensedUsers) {
+$userlicenses = Get-MsolUser -UserPrincipalName $licenseduser.UserPrincipalName
+If($userlicenses.licenses.accountskuid -contains $office){
+Set-MsolUserLicense -UserPrincipalName $licenseduser.UserPrincipalName -RemoveLicenses $office -ErrorAction SilentlyContinue
+} 
+If($userlicenses.licenses.accountskuid -contains $ems){
+Set-MsolUserLicense -UserPrincipalName $licenseduser.UserPrincipalName -RemoveLicenses $ems -ErrorAction SilentlyContinue
+} 
+}
 
 
 # Connect to Azure AD using stored credentials to create users
@@ -35,16 +43,10 @@ $PasswordProfile.ForceChangePasswordNextLogin = $false
 $PasswordProfile.Password = $user.password
 
 # Create new Azure AD user
-New-AzureADUser -AccountEnabled $True -DisplayName $user.displayname -PasswordProfile $PasswordProfile -MailNickName $user.username -UserPrincipalName $upn
+$AADUsers = Get-AzureADUser
+if($AADUsers.UserPrincipalName -notcontains $upn){
+New-AzureADUser -AccountEnabled $True -DisplayName $user.displayname -PasswordProfile $PasswordProfile -MailNickName $user.username -UserPrincipalName $upn}
 }
-
-# MCAS user and group creation
-$upn = "mcasAdminUS@"+$tenantfqdn
-New-AzureADUser -AccountEnabled $True -DisplayName "MCAS US admin" -PasswordProfile $PasswordProfile -MailNickName "mcasadminUS" -UserPrincipalName $upn
-New-AzureADGroup -DisplayName "US employees" -MailNickName "USemployees" -SecurityEnabled $true -MailEnabled $false
-$groupId = Get-AzureADGroup -SearchString "usemployees"
-$userId = Get-AzureADUser -SearchString "mcasadminus"
-Add-AzureADGroupMember -RefObjectId $userId.ObjectId -ObjectId $groupId.ObjectId
 
 Start-Sleep -s 10
 foreach ($user in $users){
@@ -59,9 +61,5 @@ Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems -ErrorAct
 
 # Assign Office and EMS licenses to Admin user
 $upn = "admin@"+$tenantfqdn
-Set-MsolUser -UserPrincipalName $upn -UsageLocation US
-Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems -ErrorAction SilentlyContinue
-
-$upn = "mcasadminus@"+$tenantfqdn
 Set-MsolUser -UserPrincipalName $upn -UsageLocation US
 Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems -ErrorAction SilentlyContinue
