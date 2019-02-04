@@ -71,3 +71,11 @@ Replace scripts on VMs
 	Consider moving the section unless necessary to ensure US Employees group imported
 	Open a new private tab and connect to the [Cloud App Security portal] https://portal.cloudappsecurity.com with mcasAdminUS an should be
 	Close Edge and open a new InPrivate window and connect to ```https://portal.cloudappsecurity.com``` with mcasAdminUS@@lab.cloudcredential(134).TenantName an
+
+Username	admin@LODSB593384.onmicrosoft.com
+Password	L1za*9$s&Ddh
+TenantName	LODSB593384.onmicrosoft.com
+
+Add App Initialization and associated values to Scanner01
+
+Start-Process powershell.exe -Credential $dacred -NoNewWindow -ArgumentList "Set-AIPAuthentication...."
