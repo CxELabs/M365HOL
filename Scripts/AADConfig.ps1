@@ -13,8 +13,10 @@ $cred = Get-Credential -Message "Enter Tenant Global Admin Credentials"
 # Connect to MSOLService for licensing Operations
 Connect-MSOLService -Credential $cred
 
+"Removing Existing Licensing. This many take 1-2 minutes."
+
 # Remove existing licenses to ensure enough licenses exist for our users
-$LicensedUsers = Get-MsolUser -All  | where {$_.isLicensed -eq $true}
+$LicensedUsers = Get-MsolUser -All  | Where-Object {$_.isLicensed -eq $true}
 foreach($licenseduser in $LicensedUsers) {
 $userlicenses = Get-MsolUser -UserPrincipalName $licenseduser.UserPrincipalName
 If($userlicenses.licenses.accountskuid -contains $office){
@@ -32,6 +34,8 @@ Connect-AzureAD -Credential $cred
 # Import Users from local csv file
 $users = Import-csv C:\users.csv
 
+"Creating USer Accounts"
+
 foreach ($user in $users){
 
 # Store UPN created from csv and tenant
@@ -48,11 +52,15 @@ if($AADUsers.UserPrincipalName -notcontains $upn){
 New-AzureADUser -AccountEnabled $True -DisplayName $user.displayname -PasswordProfile $PasswordProfile -MailNickName $user.username -UserPrincipalName $upn}
 }
 
-Start-Sleep -s 10
+$users | Format-Table username, displayname
+
+Start-Sleep -s 15
 foreach ($user in $users){
 
 # Store UPN created from csv and tenant
 $upn = $user.username+"@"+$tenantfqdn
+
+"Assigning USer Licenses. This many take 1-2 minutes."
 
 # Assign Office and EMS licenses to users
 Set-MsolUser -UserPrincipalName $upn -UsageLocation US

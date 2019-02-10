@@ -15,8 +15,8 @@ $ScProfile = [Microsoft.VisualBasic.Interaction]::InputBox('Enter the name of yo
 Install-AIPScanner -ServiceUserCredentials $dacred -SqlServerInstance $SQL -Profile $ScProfile
 	
 $Date = Get-Date -UFormat %m%d%H%M
-$DisplayName = "AIPOBO" + $Date
-$CKI = "AIPClient" + $Date
+$DisplayName = "AIPOBO-" + $Date
+$CKI = "AIPClient-" + $Date
 	
 New-AzureADApplication -DisplayName $DisplayName -ReplyUrls http://localhost
 $WebApp = Get-AzureADApplication -Filter "DisplayName eq '$DisplayName'"
@@ -35,7 +35,8 @@ $Access.ResourceAccess = $Scope
 New-AzureADApplication -DisplayName $CKI -ReplyURLs http://localhost -RequiredResourceAccess $Access -PublicClient $true
 $NativeApp = Get-AzureADApplication -Filter "DisplayName eq '$CKI'"
 New-AzureADServicePrincipal -AppId $NativeApp.AppId
-	
+    
+Start-Sleep -Seconds 5
 Set-AIPAuthentication -WebAppID $WebApp.AppId + -WebAppKey $WebAppKey.Guid -NativeAppID $NativeApp.AppId
 
 Restart-Service AIPScanner
