@@ -13,7 +13,7 @@ $cred = Get-Credential -Message "Enter Tenant Global Admin Credentials"
 # Connect to MSOLService for licensing Operations
 Connect-MSOLService -Credential $cred
 
-"Removing Existing Licensing. This many take 1-2 minutes."
+"Removing Existing Licensing. This may take 1-2 minutes."
 
 # Remove existing licenses to ensure enough licenses exist for our users
 $LicensedUsers = Get-MsolUser -All  | Where-Object {$_.isLicensed -eq $true}
@@ -34,7 +34,7 @@ Connect-AzureAD -Credential $cred
 # Import Users from local csv file
 $users = Import-csv C:\users.csv
 
-"Creating USer Accounts"
+"Creating User Accounts"
 
 foreach ($user in $users){
 
@@ -54,17 +54,20 @@ New-AzureADUser -AccountEnabled $True -DisplayName $user.displayname -PasswordPr
 
 $users | Format-Table username, displayname
 
+"Assigning User Licenses. This may take 1-2 minutes."
+
 Start-Sleep -s 15
 foreach ($user in $users){
 
 # Store UPN created from csv and tenant
 $upn = $user.username+"@"+$tenantfqdn
 
-"Assigning USer Licenses. This many take 1-2 minutes."
-
 # Assign Office and EMS licenses to users
+if(Get-MsolUser -UserPrincipalName $upn){
+"Assigning Office and EMS licenses to " + $user.displayname
 Set-MsolUser -UserPrincipalName $upn -UsageLocation US
 Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems -ErrorAction SilentlyContinue
+}else{"User " + $user.displayname + "is not yet created. Please rerun c:\scripts\AADConfig.ps1"}
 }
 
 # Assign Office and EMS licenses to Admin user
