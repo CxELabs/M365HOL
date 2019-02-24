@@ -156,7 +156,7 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
     > Set-MsolUser -UserPrincipalName $upn -UsageLocation US
     > Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
 
-	> [!NOTE] The PowerShell window will automatically close once users have been created and licenses have been assigned.
+	> [!NOTE] The PowerShell window will automatically close once users have been created and licenses have been assigned
 
 ---
 
