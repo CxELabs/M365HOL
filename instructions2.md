@@ -41,6 +41,8 @@ For several of the exercises in this lab series, you will require an active subs
 
 ### Redeeming a Microsoft Azure Pass Promo Code:
 
+1. [] On @lab.VirtualMachine(Client01).SelectLink, log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+
 2. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
 
 3. [] In the InPrivate window, navigate to ```https://www.microsoftazurepass.com```
