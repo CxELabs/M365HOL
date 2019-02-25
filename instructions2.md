@@ -74,6 +74,7 @@ For several of the exercises in this lab series, you will require an active subs
 	> !IMAGE[k2a97g8e.jpg](\Media\k2a97g8e.jpg)
 
 	> [!NOTE] It may take a few minutes to process the request.
+	
 ---
 
 ## Azure AD User Configuration
