@@ -88,17 +88,17 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
 
 	> [!NOTE] If prompted to change the execution policy, type **y** and **Enter**.
 
-1. [] When prompted for the **Tenant name**, **click in the text box** and enter ```@lab.CloudCredential(134).TenantName```.
+1. [] When prompted for the **Tenant name**, **click in the text box** and enter ```@lab.CloudCredential(139).TenantName```.
 1. [] When prompted, provide the credentials below:
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password``` 
+	```@lab.CloudCredential(139).Password``` 
    
 	> [!KNOWLEDGE] We are running the PowerShell code below to create the accounts and groups in AAD and assign licenses for EMS E5 and Office E5. This script is also available at [https://aka.ms/labscripts](https://aka.ms/labscripts) as AADConfig.ps1.
     > 
     > #### Azure AD User and Group Configuration
-    > $tenantfqdn = "@lab.CloudCredential(134).TenantName"
+    > $tenantfqdn = "@lab.CloudCredential(139).TenantName"
     > $tenant = $tenantfqdn.Split('.')[0]
 	> 
     > #### Build Licensing SKUs
@@ -173,7 +173,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 1. [] In the Access Work or School settings menu, click on **+ Connect** and enter the credentials below to workplace join the client.
 
-	```adams@@lab.CloudCredential(134).TenantName```
+	```adams@@lab.CloudCredential(139).TenantName```
 		
 	```pass@word1```
 1. [] Click **Done**.
@@ -186,7 +186,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 1. [] In the Access Work or School settings menu, click on **+ Connect** and enter the credentials below to workplace join the client.
 
-	```alicea@@lab.CloudCredential(134).TenantName```
+	```alicea@@lab.CloudCredential(139).TenantName```
 		
 	```pass@word1```
 1. [] Click **Done**.
@@ -199,7 +199,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 1. [] In the Access Work or School settings menu, click on **+ Connect** and enter the credentials below to workplace join the client.
 
-	```evang@@lab.CloudCredential(134).TenantName```
+	```evang@@lab.CloudCredential(139).TenantName```
 		
 	```pass@word1```
 1. [] Click **Done**.
@@ -231,9 +231,9 @@ Most Cloud App Security treat detections capabilities rely on auditing being ena
 	
 	> [!KNOWLEDGE] If needed, log in using the credentials below:
 	>
-	>```@lab.CloudCredential(134).Username```
+	>```@lab.CloudCredential(139).Username```
 	>
-	>```@lab.CloudCredential(134).Password```
+	>```@lab.CloudCredential(139).Password```
 
 4. [] In the **Security & Compliance Center**, Expand **Search & investigation** and click on **Audit log search**.
    
@@ -256,9 +256,9 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 
 1. [] When prompted, use the credentials below:
 
-	+++@lab.CloudCredential(134).Username+++
+	+++@lab.CloudCredential(139).Username+++
 
-	+++@lab.CloudCredential(134).Password+++
+	+++@lab.CloudCredential(139).Password+++
 
 	> [!KNOWLEDGE] The following commands will be run to connect to Exchange Online and Enable Mailbox Auditing on the Admin account.
     >
@@ -305,7 +305,7 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 	|||
 	|-----|-----|
 	|**Full Name**|```MOD Admin```|
-	|**Email Address**|```@lab.CloudCredential(134).UserName```|
+	|**Email Address**|```@lab.CloudCredential(139).UserName```|
 
 	^IMAGE[Open Screenshot](\Media\box-signup.png)
 
@@ -315,7 +315,7 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 
 	^IMAGE[Open Screenshot](\Media\box-verify.png)
 
-1. [] In the new window that opens, enter ```@lab.CloudCredential(134).password``` in **each of the password boxes** and click the **Update** button. 
+1. [] In the new window that opens, enter ```@lab.CloudCredential(139).password``` in **each of the password boxes** and click the **Update** button. 
 
 ---
 
@@ -363,9 +363,9 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 
 5. [] Log into Box using the credentials below:
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password```
+	```@lab.CloudCredential(139).Password```
 
 6. [] Click on **Grant access to Box**
 
@@ -411,9 +411,9 @@ To prepare the **Information Protection** lab, we have to enable the integration
 
 2. []	Open Internet Explorer and browse to ```https://portal.atp.azure.com``` and login with the following credentials.  
    
-   ```@lab.CloudCredential(134).UserName``` 
+   ```@lab.CloudCredential(139).UserName``` 
 
-   ```@lab.CloudCredential(134).Password``` 
+   ```@lab.CloudCredential(139).Password``` 
    
 6. []	Click **Create**. 
 8. []	Click **Provide a username and password to connect to your Active Directory forest**.  
@@ -1157,7 +1157,7 @@ One of the most common use cases for AIP is the ability to send emails using Use
 
 1. [] On @lab.VirtualMachine(Client03).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++.
 2. [] Launch Microsoft Outlook, and click **Accept and start Outlook**.
-3. [] In the username Box, type ```EvanG@@lab.cloudcredential(134).TenantName``` and click **Connect**.
+3. [] In the username Box, type ```EvanG@@lab.cloudcredential(139).TenantName``` and click **Connect**.
 4. [] When prompted, type ```pass@word1``` and Sign in.
 5. [] On the Use this account everywhere page, click **Yes** then click **Done**.
 6. [] Once configuration completes, **uncheck the Box** to **Set up Outlook Mobile** and click **OK**.
@@ -1184,7 +1184,7 @@ One of the most common use cases for AIP is the ability to send emails using Use
 	> !IMAGE[6v6duzbd.jpg](\Media\6v6duzbd.jpg)
 
 10. [] Switch over to @lab.VirtualMachine(Client01).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++ and open Outlook. 
-11. [] Run through setup, this time using the credentials ```AdamS@@lab.CloudCredential(134).TenantName``` and ```pass@word1```. 
+11. [] Run through setup, this time using the credentials ```AdamS@@lab.CloudCredential(139).TenantName``` and ```pass@word1```. 
 12. [] Review the email in Adam Smith’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
 
    !IMAGE[0xby56qt.jpg](\Media\0xby56qt.jpg)
@@ -1262,7 +1262,7 @@ In this task, we will create a document and send an email from one of the users 
 
 	^IMAGE[Open Screenshot](\Media\ny1lwv0h.jpg)
 1. [] Switch to @lab.VirtualMachine(Client02).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-11. [] Run through setup, this time using the credentials ```AliceA@@lab.CloudCredential(134).TenantName``` and ```pass@word1```. 
+11. [] Run through setup, this time using the credentials ```AliceA@@lab.CloudCredential(139).TenantName``` and ```pass@word1```. 
 12. [] Review the email in Alice Anderson’s Outlook. You should be able to open the message natively in the client as Alice.
 
 	!IMAGE[qeqtd2yr.jpg](\Media\qeqtd2yr.jpg)
@@ -1357,7 +1357,7 @@ In this task, we will perform bulk classification using the built-in functionali
    !IMAGE[CandP.png](\Media\CandP.png)
 4. [] When prompted, click use another account and use the credentials below to authenticate:
 
-	```AIPScanner@@lab.CloudCredential(134).TenantName```
+	```AIPScanner@@lab.CloudCredential(139).TenantName```
 
 	```Somepass1```
 
@@ -1727,9 +1727,9 @@ In this task, we will configure a mail flow rule to detect sensitive information
 1. [] In an **Administrative PowerShell** window, type ```C:\Users\LabUser\Desktop\EncryptSensitiveMFR.ps1``` and press **Enter**. 
 1. [] When prompted, provide the credentials below:
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password```
+	```@lab.CloudCredential(139).Password```
 
 	> [!NOTE] If prompted to remove a transport rule, hit **Enter**.
 
@@ -1775,9 +1775,9 @@ In this task, we will configure a mail flow rule to detect sensitive information
 1. [] In an **Administrative PowerShell** window, type ```C:\Users\LabUser\Desktop\BlockInternal.ps1``` and press **Enter**. 
 1. [] When prompted, provide the credentials below:
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password```
+	```@lab.CloudCredential(139).Password```
 
 	> [!NOTE] If prompted to remove a transport rule, hit **Enter**.
 
@@ -1826,7 +1826,7 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 
 1. [] Log in using the credentials below.
 
-	> ```EvanG@@lab.CloudCredential(134).TenantName```
+	> ```EvanG@@lab.CloudCredential(139).TenantName```
 	>
 	> ```pass@word1```
 
