@@ -59,7 +59,7 @@ For several of the exercises in this lab series, you will require an active subs
 1. [] Click **Confirm** if the correct email address is listed.
 
 	> !IMAGE[teyx280d.jpg](\Media\teyx280d.jpg)
-7. [] Click in the Promo code box and type ```@lab.CloudCredential(215).PromoCode```, then click the **Claim Promo Code** button.
+7. [] Click in the Promo code box and type ```@lab.CloudCredential(224).PromoCode```, then click the **Claim Promo Code** button.
 
 	> !IMAGE[e1l35ko2.jpg](\Media\e1l35ko2.jpg)
 
@@ -235,15 +235,17 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 
 1. [] On @lab.VirtualMachine(Client01).SelectLink log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 
-1. [] Go to Cloud App Security portal at ```https://portal.cloudappsecurity.com```, connect using the credentials below and click on the **Gear** and then **Settings**.
+1. [] In the InPrivate window, open a new tab and browse to ```https://portal.cloudappsecurity.com``` and click on the **Gear** and then **Settings**.
 
-    ```@lab.CloudCredential(139).Username```
-
-    ```@lab.CloudCredential(139).Password```
+	> [!NOTE] If necessary, log in using the credentials below:
+	> 
+	> ```@lab.CloudCredential(139).Username```
+	>
+	> ```@lab.CloudCredential(139).Password```
 
     !IMAGE[Settings](\Media\conf-settings.png "Settings")
 
-1. [] Under the **Information Protection** section click on **Files** and check the **Enable file monitoring** checkbox and click on the "**Save** button.
+1. [] Under the **Information Protection** section click on **Files** and verify that the **Enable file monitoring** checkbox is checked.  If it is not, check the box and click on the "**Save** button.
 
     !IMAGE[Enable files](\Media\conf-files.png "Enable files")
 
@@ -277,33 +279,6 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 
 ---
 
-## Connect Office 365 and Box to Cloud App Security 
-[:arrow_up: Top](#lab-environment-configuration)
-
-To connect Cloud App Security to Office 365, you will have to use the Office 365 app connector. **App connectors** use the APIs of app providers to enable greater visibility and control by Microsoft Cloud App Security over the apps you connect to.  We will also use this method to show integration with the 3rd Party API for Box.
-
-1. [] Open a new tab in your browser and navigate to ```https://portal.cloudappsecurity.com```
-
-2. [] Go to the gear icon and select **App connectors**.
-
-    !IMAGE[App connector](\Media\conf-appconnector.png "App connector")
-
-3. [] Click on the **+** button and select Office 365.
-
-    !IMAGE[Add Office](\Media\conf-addoffice.png "Add Office")
-
-4. [] Click on **Connect Office 365**. Cloud App Security will then have access to Office 365 activities and files.
-
-    ^IMAGE[Open Screenshot](\Media\conf-connectoffice.png "Connect Office")
-
-5. [] Click on **Test now** to validate the configuration.
-
-    ^IMAGE[Open Screenshot](\Media\conf-testoffice.png "Test connectivity")
-
-	> [!NOTE] If the connection is taking more than 1 minute - close out of the portal and log back in to check if it's been connected. 
-
----
-
 ## Connecting Box to Cloud App Security
 [:arrow_up: Top](#lab-environment-configuration)
 
@@ -333,6 +308,8 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 
 1. [] Close the Connect Box dialog and click on **Box API Demo** to expand.
 
+	> [!NOTE] If you do not see Box API Demo listed, refresh the page.
+
 1. [] Click on the **Test now** button.
 
 	^IMAGE[Open Screenshot](\Media\apiBox7.JPG)
@@ -344,6 +321,8 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 1. []  Close the dialog and you should be able to see **Box API Demo** as a **Connected** app in the list. 
 
 	^IMAGE[Open Screenshot](\Media\apiBox9.JPG) 
+
+	> [!NOTE] If testing is taking a long time, open a new tab to ```https://portal.cloudappsecurity.com``` and continue with the next section.
 
 ---
 
