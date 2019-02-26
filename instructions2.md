@@ -65,17 +65,7 @@ For several of the exercises in this lab series, you will require an active subs
 
 	>[!NOTE] It may take up to 5 minutes to process the redemption.
 
-8. [] Scroll to the bottom of the page and click **Next**.
-
-    > !IMAGE[ihrjazqi.jpg](\Media\ihrjazqi.jpg)
-
-	>[!NOTE] You can keep the pre-populated information.
-
-9. [] Check the box to agree to the terms and click **Sign up**.
-
-	> !IMAGE[k2a97g8e.jpg](\Media\k2a97g8e.jpg)
-
-	> [!NOTE] It may take a few minutes to process the request.
+1. [] While waiting for this to process, continue to the next exercise.
 	
 ---
 
@@ -163,6 +153,23 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
 
 ---
 
+## Complete Azure Pass Signup
+
+1. [] Return to @lab.VirtualMachine(Client01).SelectLink and log in using the password +++@lab.VirtualMachine(Client01).Password+++.
+
+8. [] Scroll to the bottom of the page and click **Next**.
+
+    > !IMAGE[ihrjazqi.jpg](\Media\ihrjazqi.jpg)
+
+	>[!NOTE] You can keep the pre-populated information.
+
+9. [] Check the box to agree to the terms and click **Sign up**.
+
+	> !IMAGE[k2a97g8e.jpg](\Media\k2a97g8e.jpg)
+
+	> [!NOTE] It may take a few minutes to process the request. Continue to the next section.
+
+---
 ## Workplace Join Clients
 [:arrow_left: Home](#lab-environment-configuration)
 
