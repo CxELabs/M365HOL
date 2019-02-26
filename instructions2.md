@@ -791,7 +791,9 @@ The first step in configuring the AIP Scanner is to install the service and conn
 
 	> [!NOTE] An AIP scanner Discovery scan will start directly after aquiring the application access token.
 
- > [!ALERT] If you see a **Visual Studio Just-In-Time Debugger** dialog with a .NET exception, press **OK** in the dialog.  This is due to SharePoint startup in the VM environment. This event **must be acknowledged** if present to complete the discovery scan.
+1. [] Wait a minute or so after the script completes until you see a **Visual Studio Just-In-Time Debugger** dialog with a .NET exception.  Press **OK** in the dialog.
+
+	> [!ALERT] This is due to SharePoint startup in the VM environment. This event **must be acknowledged** to complete the discovery scan.
 
 ---
 
