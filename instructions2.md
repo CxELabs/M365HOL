@@ -386,8 +386,10 @@ To prepare the **Information Protection** lab, we have to enable the integration
 ### Configure Domain Synchronizer 
 1. []	In the Azure ATP console **click on the deployed Sensor (ContosoDC)** and **toggle the Domain synchronizer candidate switch** to **On** and click **Save**. 
 
+---
+
 ===
-# Lab Environment Setup Complete
+## Lab Environment Setup Complete
 [:arrow_left: Home](#introduction)
 
 The lab environment setup is now complete. The next section will cover Azure Information Protection (Roadmap discussion then Hands On Lab). If you decide to close out of the Lab during the roadmap discussion, please ensure that you **Save** the lab using the menu in the upper right corner of the browser.
