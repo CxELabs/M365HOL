@@ -450,6 +450,12 @@ In order to collect log data from Azure Information Protection clients and servi
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 1. [] Open a new InPrivate tab and browse to ```https://aka.ms/AIPConsole```.
 
+	> [!NOTE] If necessary, log in using the credentials below:
+	> 
+	> ```@lab.CloudCredential(139).Username```
+	>
+	> ```@lab.CloudCredential(139).Password```
+
 1. [] In the Azure Information Protection blade, under **Manage**, click **Configure analytics (preview)**.
 
 1. [] Next, click on **+ Create new workspace**.
@@ -466,11 +472,12 @@ In order to collect log data from Azure Information Protection clients and servi
 
 	|||
 	|-----|-----|
-	|OMS Workspace|**Type a globally unique Workspace Name** (random characters usually works)|
+	|Log Analytics Workspace|**Type a globally unique Workspace Name** (random characters usually works)|
 	|Resource Group|```AIP-RG```|
 	|Location|**Choose a location near the event**|
+	|Pricing tier|**Per GB**|
 
-	> [!HINT] The OMS **Workspace name** must be **unique across all of Azure**. The name is not relevant for this lab, so feel free to use random characters.
+	> [!HINT] The Log Analytics **Workspace name** must be **unique across all of Azure**. The name is not relevant for this lab, so feel free to use random characters.
 
 1. [] Next, back in the Configure analytics (preview) blade, **check the boxes** next to the **workspace** and next to **Enable Content Matches** and click **OK**.
 
@@ -503,9 +510,9 @@ The [Base Configuration](#base-configuration) exercise, contains information on 
 
 The [Bulk Classification](#bulk-classification) exercise, shows how to manually classify, label, and protect content using the Windows integration features of the AIP client. :clock10: 5 min
 
-The [AIP Scanner Classification, Labeling, and Protection](#aip-scanner-classification-labeling-and-protection) exercise, will show how to use the **AIP scanner in Enforce mode** to take advantage of features like Automatic Conditions to help you **Classify, Label, and Protect** the discovered information easily. This exercise has a dependancy on completion of the AIP Scanner Dicovery exercise. :clock10: 5-10 min
+The [Security and Compliance Center](#security-and-compliance-center) exercise, will help you understand how to **Enable and Publish labels in the Security and Compliance Center** so they can be used with Mac, Mobile, ISVs (like Adobe PDF), and other unified clients.  We will demonstrate this functionality using the Adobe PDF reader during the AIP Scanner CLP exercise. :clock10: 5-10 min
 
-The [Security and Compliance Center](#security-and-compliance-center) exercise, will help you understand how to **Enable and Publish labels in the Security and Compliance Center** so they can be used with Mac, Mobile, ISVs (like Adobe PDF), and other unified clients.  We will demonstrate this functionality using the Adobe PDF reader. :clock10: 5-10 min
+The [AIP Scanner Classification, Labeling, and Protection](#aip-scanner-classification-labeling-and-protection) exercise, will show how to use the **AIP scanner in Enforce mode** to take advantage of features like Automatic Conditions to help you **Classify, Label, and Protect** the discovered information easily. This exercise has a dependancy on completion of the AIP Scanner Dicovery exercise. :clock10: 5-10 min
 
 In the [AIP Analytics Dashboards](#aip-analytics-dashboards) exercise, we will show how to **Monitor AIP Usage, User Activity, and Data Risk** using the new Azure Log Analytics dashboards built into the AIP Azure Portal. :clock10: 5 min
 
@@ -516,8 +523,8 @@ Click on one of the options below to begin. At the end of each section, there wi
 - [AIP Scanner Discovery](#aip-scanner-discovery)
 - [Base Configuration](#base-configuration)
 - [Bulk Classification](#bulk-classification)
-- [AIP Scanner CLP](#aip-scanner-classification-labeling-and-protection)
 - [Security and Compliance Center](#security-and-compliance-center)
+- [AIP Scanner CLP](#aip-scanner-classification-labeling-and-protection)
 - [AIP Analytics Dashboards](#aip-analytics-dashboards)
 - [Exchange IRM](#exchange-online-irm-capabilities)
 
@@ -595,11 +602,13 @@ In this task, we will configure the repository default and add a new profile wit
 	|**Default label**|**Custom**|
 	||**Confidential \ All Employees**|
 	|**Default owner**|**Custom**|
-	||```@lab.CloudCredential(139).UserName```|
+	||```adamj@@lab.CloudCredential(139).TenantName```|
 
 	> !IMAGE[Repo](\Media\Repo.png)
 
-	> [!KNOWLEDGE] These Policy enforcement settings will set a custom default label of **Confidential \ All Employees** for all files that do not match a policy in this repository.  It will also set the default owner for all files protected by the Scanner to ```@lab.CloudCredential(139).UserName```.
+	> [!KNOWLEDGE] These Policy enforcement settings will set a custom default label of **Confidential \ All Employees** for all files that do not match a policy in this repository.  
+	>
+	>It will also set the default owner for all files protected by the Scanner to ```adamj@@lab.CloudCredential(139).TenantName```. This can be used to assign the Rights Management Owner of all protected files for a repository to a specific user rather than the AIP scanner service account.  For instance, if an executive has a shared folder on a server, this can be used to allow that executive to be the rights management owner of all of the files contained in their folder.
 
 1. [] Click **Save**.
 
