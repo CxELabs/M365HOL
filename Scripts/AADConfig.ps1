@@ -56,18 +56,21 @@ $users | Format-Table username, displayname
 
 "Assigning User Licenses. This may take 1-2 minutes."
 
-Start-Sleep -s 15
+# Wait for last new user to be provisioned before starting license assignment
+While(!(Get-MsolUser -UserPrincipalName $upn)){
+Start-Sleep -s 10
+}
+
 foreach ($user in $users){
 
 # Store UPN created from csv and tenant
 $upn = $user.username+"@"+$tenantfqdn
 
 # Assign Office and EMS licenses to users
-if(Get-MsolUser -UserPrincipalName $upn){
+
 "Assigning Office and EMS licenses to " + $user.displayname
 Set-MsolUser -UserPrincipalName $upn -UsageLocation US
 Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems -ErrorAction SilentlyContinue
-}else{"User " + $user.displayname + "is not yet created. Please rerun c:\scripts\AADConfig.ps1"}
 }
 
 # Assign Office and EMS licenses to Admin user

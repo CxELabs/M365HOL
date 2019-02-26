@@ -37,7 +37,7 @@ $NativeApp = Get-AzureADApplication -Filter "DisplayName eq '$CKI'"
 New-AzureADServicePrincipal -AppId $NativeApp.AppId
     
 Start-Sleep -Seconds 5
-Set-AIPAuthentication -WebAppID $WebApp.AppId + -WebAppKey $WebAppKey.Guid -NativeAppID $NativeApp.AppId
+Set-AIPAuthentication -WebAppID $WebApp.AppId -WebAppKey $WebAppKey.Guid -NativeAppID $NativeApp.AppId
 
 Restart-Service AIPScanner
 Start-AIPScan

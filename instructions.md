@@ -182,7 +182,7 @@ For several of the exercises in this lab series, you will require an active subs
 
 In this task, we will create new Azure AD users and assign licenses via PowerShell.  In a procduction evironment this would be done using Azure AD Connect or a similar tool to maintain a single source of authority, but for lab purposes we are doing it via script to reduce setup time.
 
-1. [] Log into @lab.VirtualMachine(Scanner01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++
+1. [] Log into @lab.VirtualMachine(Scanner01).SelectLink using the password +++@lab.VirtualMachine(Scanner01).Password+++
 2. [] On the desktop, **right-click** on **AADConfig.ps1** and click **Run with PowerShell**.
 
 	!IMAGE[AADConfig](\Media\AADConfig.png)
@@ -398,7 +398,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 1. [] In the Access Work or School settings menu, click on **+ Connect** and enter the credentials below to workplace join the client.
 
-	```adams@@lab.CloudCredential(134).TenantName```
+	```adamj@@lab.CloudCredential(134).TenantName```
 		
 	```pass@word1```
 1. [] Click **Done**.
@@ -919,7 +919,7 @@ In this task we will install the AIP scanner binaries and create the Azure AD Ap
 
 The first step in configuring the AIP Scanner is to install the service and connect the database.  This is done with the Install-AIPScanner cmdlet that is provided by the AIP Client software.  The AIPScanner service account has been pre-staged in Active Directory for convenience.
 
-1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in using the password +++@lab.VirtualMachine(Client01).Password+++.
+1. [] Switch to @lab.VirtualMachine(Scanner01).SelectLink and log in using the password +++@lab.VirtualMachine(Scanner01).Password+++.
 
 1. [] Open an **Administrative PowerShell Window** and type ```C:\Users\LabUser\Desktop\InstallScanner.ps1``` and press **Enter**. 
 
@@ -1286,7 +1286,7 @@ Now that you have learned how to work with global labels and policies, we will c
 
 	^IMAGE[Open Screenshot](\Media\2lvwim24.jpg)
 
-1. [] In the AAD Users and Groups blade, **wait for the names to load**, then check the Boxes next to **Adam Smith** and **Alice Anderson**, and click the **Select** button.
+1. [] In the AAD Users and Groups blade, **wait for the names to load**, then check the Boxes next to **Adam Jones** and **Alice Anderson**, and click the **Select** button.
 
 	^IMAGE[Open Screenshot](\Media\uishk9yh.jpg)
 
@@ -1315,7 +1315,7 @@ Now that you have learned how to work with global labels and policies, we will c
 	!IMAGE[1sjw3mc7.jpg](\Media\1sjw3mc7.jpg)
 
 1. [] In the AAD Users and Groups blade, click on **Users/Groups**.  
-1. [] Then in the second AAD Users and Groups blade, **wait for the names to load** and check the Boxes next to **AIPScanner**, **Adam Smith**, and **Alice Anderson**.
+1. [] Then in the second AAD Users and Groups blade, **wait for the names to load** and check the Boxes next to **AIPScanner**, **Adam Jones**, and **Alice Anderson**.
 
 	>[!NOTE] The **AIPScanner** account is added here to prevent all scanned documents from being labeled with a default label.
 1. [] Click the **Select** button.
@@ -1479,7 +1479,7 @@ One of the most common use cases for AIP is the ability to send emails using Use
 	>
 	> !IMAGE[5esnhwkw.jpg](\Media\5esnhwkw.jpg)
 
-8. [] Send an email to **Adam Smith** and **Alice Anderson** (```Adam Smith;Alice Anderson```). You may **optionally add an external email address** (preferably from a major social provider like gmail, yahoo, or outlook.com) to test the external recipient experience. For the **Subject** and **Body** type ```Test Do Not Forward Email```.
+8. [] Send an email to **Adam Jones** and **Alice Anderson** (```Adam Jones;Alice Anderson```). You may **optionally add an external email address** (preferably from a major social provider like gmail, yahoo, or outlook.com) to test the external recipient experience. For the **Subject** and **Body** type ```Test Do Not Forward Email```.
 
   ^IMAGE[Open Screenshot](\Media\h0eh40nk.jpg)
 
@@ -1492,8 +1492,8 @@ One of the most common use cases for AIP is the ability to send emails using Use
 	> !IMAGE[6v6duzbd.jpg](\Media\6v6duzbd.jpg)
 
 10. [] Switch over to @lab.VirtualMachine(Client01).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++ and open Outlook. 
-11. [] Run through setup, this time using the credentials ```AdamS@@lab.CloudCredential(134).TenantName``` and ```pass@word1```. 
-12. [] Review the email in Adam Smith’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
+11. [] Run through setup, this time using the credentials ```adamj@@lab.CloudCredential(134).TenantName``` and ```pass@word1```. 
+12. [] Review the email in Adam Jones’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
 
    !IMAGE[0xby56qt.jpg](\Media\0xby56qt.jpg)
 
@@ -1537,7 +1537,7 @@ In this task, we will create a document and send an email to demonstrate the fun
 
 	^IMAGE[Open Screenshot](\Media\6wan9me1.jpg)
 
-1. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject** and **Body** type ```Test Contoso Internal Email```.
+1. [] Send an email to Adam Jones, Alice Anderson, and yourself (```Adam Jones;Alice Anderson;@lab.User.Email```).  For the **Subject** and **Body** type ```Test Contoso Internal Email```.
 
 	^IMAGE[Open Screenshot](\Media\9gkqc9uy.jpg)
 
@@ -1623,7 +1623,7 @@ In this task, we will test the configured recommended and automatic conditions w
 	
 	^IMAGE[Open Screenshot](\Media\ldjugk24.jpg)
 	
-1. [] Draft an email to Alice Anderson and Adam Smith (```Alice Anderson;Adam Smith```).  For the **Subject** and **Body** type ```Test Highly Confidential All Employees Automation```.
+1. [] Draft an email to Alice Anderson and Adam Jones (```Alice Anderson;Adam Jones```).  For the **Subject** and **Body** type ```Test Highly Confidential All Employees Automation```.
 
 	^IMAGE[Open Screenshot](\Media\4v3wrrop.jpg)
 1. [] Attach the **second document you created** to the email.
@@ -1767,7 +1767,7 @@ Now that we have Classified and Protected documents using the scanner, we can re
 
 	> [!NOTE] If asked to log in, use the credentials below.
 	>
-	> ```AdamS@@lab.CloudCredential(134).TenantName```
+	> ```adamj@@lab.CloudCredential(134).TenantName```
 	>
 	> ```pass@word1```
 
@@ -1776,7 +1776,7 @@ Now that we have Classified and Protected documents using the scanner, we can re
     > !IMAGE[s1okfpwu.jpg](\Media\HCAE.jpg)
 
 4. [] Next, in the same documents folder, open one of the pdf files.
-5. [] When prompted by Adobe, enter ```AdamS@@lab.CloudCredential(17).TenantName``` and press OK.
+5. [] When prompted by Adobe, enter ```adamj@@lab.CloudCredential(17).TenantName``` and press OK.
 6. [] Check the box to save credentials and press OK.
 
 	> [!NOTE] The PDF will now open and display the sensitivity across the top of the document.
@@ -1892,7 +1892,7 @@ The previous step enabled the AIP labels for use in the Security and Compliance 
     >```Pa$$w0rd```
 
 4. [] In the documents folder, open one of the pdf files.
-5. [] When prompted by Adobe, enter ```AdamS@@lab.CloudCredential(134).TenantName``` and press **OK** or **Next**.
+5. [] When prompted by Adobe, enter ```adamj@@lab.CloudCredential(134).TenantName``` and press **OK** or **Next**.
 
 	> [!NOTE] If prompted, provide the password ```pass@word1```.
 
@@ -2096,7 +2096,7 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 	>
 	> ```pass@word1```
 
-3. [] Send an email to Adam Smith, Alice Anderson, and yourself (```Adam Smith;Alice Anderson;@lab.User.Email```).  For the **Subject**, type ```Test Credit Card Email``` and for the **Body**, type ```My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368```, then click **Send**.
+3. [] Send an email to Adam Jones, Alice Anderson, and yourself (```Adam Jones;Alice Anderson;@lab.User.Email```).  For the **Subject**, type ```Test Credit Card Email``` and for the **Body**, type ```My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368```, then click **Send**.
 
 4. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 5. [] Review the received email.
@@ -4782,7 +4782,7 @@ This lab contains additional exercises.
 
 1. []	In a **new InPrivate window**, log in to ```https://portal.office.com``` using the credentials below
 
-	```AdamS@@lab.CloudCredential(134).TenantName```
+	```adamj@@lab.CloudCredential(134).TenantName```
 
 	```pass@word1```
 
@@ -4839,7 +4839,7 @@ Let’s see what happens when users try to sign in from the Tor Browser, which a
 	1. []	Notice how they are not blocked because they are not targeted by the risky sign-ins policies
 3. []	Now, open a new Tor window and log-in to ```https://portal.office.com with the credentials below
 		
-		```AdamS@@lab.CloudCredential(134).TenantName```
+		```adamj@@lab.CloudCredential(134).TenantName```
 
 		```pass@word1```
 
