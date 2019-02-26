@@ -397,7 +397,7 @@ The lab environment setup is now complete. The next section will cover Azure Inf
 !IMAGE[Save](\Media\save.png)
 
 ===
-# Azure Information Protection Lab
+## Azure Information Protection Lab
 
 ## Introduction
 
@@ -442,8 +442,8 @@ Microsoft 365 E5 Tenant credentials will be provided during the event.  If you w
 ---
 
 ===
-# Log Analytics Configuration
-[:arrow_left: Home](#azure-information-protection)
+## Log Analytics Configuration
+[:arrow_left: Home](#azure-information-protection-lab)
 
 In order to collect log data from Azure Information Protection clients and services, you must first configure the log analytics workspace.
 
@@ -530,7 +530,7 @@ Click on one of the options below to begin. At the end of each section, there wi
 ---
 
 ===
-# AIP Scanner Discovery
+## AIP Scanner Discovery
 [:arrow_left: Home](#azure-information-protection)
 
 Even before configuring an AIP classification taxonomy, customers can scan and identify files containing sensitive information based on the built-in sensitive information types included in the Microsoft Classification Engine.  
@@ -737,7 +737,7 @@ The first step in configuring the AIP Scanner is to install the service and conn
 ---
 
 ===
-# AIP Scanner Discovery Exercise Complete
+## AIP Scanner Discovery Exercise Complete
 
 In this exercise, we installed the AIP scanner and performed a discovery scan against an on premises CIFS repository and SharePoint document library.  Although this was a very limited demonstration of the capabilities of the AIP scanner for discovery, it helps to show how quickly you can configure this tool and get actionable information which can be used to make data driven decisions about your security posture.  Choose one of the exercises below or click the Next button to continue sequentially.
 
@@ -751,7 +751,7 @@ In this exercise, we installed the AIP scanner and performed a discovery scan ag
 ---
 
 ===
-# Base Configuration
+## Base Configuration
 [:arrow_left: Home](#azure-information-protection)
 
 This exercise demonstrates using the Azure Information Protection blade in the Azure portal to configure policies and sub-labels.  We will create a new sub-label and configure protection and then modify an existing sub-label.  We will also create a label that will be scoped to a specific group.  
@@ -1273,7 +1273,7 @@ In this task, we will test the configured recommended and automatic conditions w
 ---
 
 ===
-# Base Configuration Exercise Complete
+## Base Configuration Exercise Complete
 
 In this exercise, we walked through the configuration of Global and Scoped policies and labels.  We demonstrated the use of these and showed how recommended and automatic conditions function within the Office applications.  Choose one of the exercises below or click the Next button to continue sequentially.
 
@@ -1287,7 +1287,7 @@ In this exercise, we walked through the configuration of Global and Scoped polic
 ---
 
 ===
-# Bulk Classification
+## Bulk Classification
 [:arrow_left: Home](#azure-information-protection)
 
 In this task, we will perform bulk classification using the built-in functionality of the AIP client.  This can be useful for users that want to classify/protect many documents that exist in a central location or locations identified by scanner discovery.  Because this is done manually, it is an AIP P1 feature.
@@ -1328,7 +1328,7 @@ In this exercise, we performed bulk classification using the built-in functional
 ---
 
 ===
-# Security and Compliance Center 
+## Security and Compliance Center 
 [:arrow_left: Home](#azure-information-protection)
 
 In this exercise, we will migrate your AIP Labels and activate them in the Security and Compliance Center.  This will allow you to see the labels in Microsoft Information Protection based clients such as Office 365 for Mac and Mobile Devices.
@@ -1401,7 +1401,7 @@ The previous step enabled the AIP labels for use in the Security and Compliance 
 ---
 
 ===
-# Security and Compliance Center Exercise Complete
+## Security and Compliance Center Exercise Complete
 
 In this exercise, we enabled and published labels and policies in the Security and Compliance Center for use with clients based on the MIP SDK.  We demonstrated this using Adobe PDF integration.  Choose one of the exercises below or click the Next button to continue sequentially.
 
@@ -1415,7 +1415,7 @@ In this exercise, we enabled and published labels and policies in the Security a
 ---
 
 ===
-# AIP Scanner Classification, Labeling, and Protection
+## AIP Scanner Classification, Labeling, and Protection
 [:arrow_left: Home](#azure-information-protection)
 
 The Azure Information Protection scanner allows you to  classify and protect sensitive information stored in on-premises CIFS file shares and SharePoint sites.  
@@ -1587,7 +1587,7 @@ Now that we have Classified and Protected documents using the scanner, we can re
 ---
 
 ===
-# AIP Scanner CLP Exercise Complete
+## AIP Scanner CLP Exercise Complete
 
 In this exercise, we configured the AIP scanner to use automatic conditions to classify, label, and protect documents in our defined repositories.  Choose one of the exercises below or click the Next button to continue sequentially.
 
@@ -1602,7 +1602,7 @@ In this exercise, we configured the AIP scanner to use automatic conditions to c
 
 
 ===
-# AIP Analytics Dashboards
+## AIP Analytics Dashboards
 [:arrow_left: Home](#azure-information-protection)
 
 In this exercise, we will go to the AIP Analytics dashboards and observe them after completing all of the steps in the various exercises.  These dashboards give actionable data to AIP admins and their management related to how users are classifying and protecting data and where sensitive data is located throughout the environment.  Depending on which exercises you completed these may look different from the screenshots.
@@ -1638,7 +1638,7 @@ In this exercise, we will go to the AIP Analytics dashboards and observe them af
 ---
 
 ===
-# AIP Analytics Dashboard Exercise Complete
+## AIP Analytics Dashboard Exercise Complete
 
 In this exercise, we reviewed the new AIP Azure Log Analytics dashboards.  Choose one of the exercises below or click the Next button to continue sequentially.
 
@@ -1652,7 +1652,7 @@ In this exercise, we reviewed the new AIP Azure Log Analytics dashboards.  Choos
 ---
 
 ===
-# Exchange Online IRM Capabilities
+## Exchange Online IRM Capabilities
 [:arrow_left: Home](#azure-information-protection)
 
 Exchange Online can work in conjunction with Azure Information Protection to provide advanced capabilities for protecting sensitive data being sent over email.  You can also manage the flow of classified content to ensure that it is not sent to unintended recipients. This Exercise will walk you through the items below.
@@ -1809,7 +1809,7 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 ---
 
 ===
-# Exchange IRM Exercise Complete
+## Exchange IRM Exercise Complete
 
 In this exercise, we created several Exchange Online Mail Flow Rules to protect sensitive data or improve user experience.  Choose one of the exercises below or click the Next button to complete the Lab.
 
