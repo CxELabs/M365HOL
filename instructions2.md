@@ -713,7 +713,7 @@ The first step in configuring the AIP Scanner is to install the service and conn
 	>
 	> +++Somepass1+++
 
-1. [] Open an **Administrative PowerShell Window** and type ```C:\Scripts\Install-ScannerPreview.ps1``` and press **Enter**. 
+1. [] Open an **Administrative PowerShell Window** and type ```C:\Scripts\InstallScannerPreview.ps1``` and press **Enter**. 
 
 1. [] When prompted, enter the Global Admin credentials below:
 
