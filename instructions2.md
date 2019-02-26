@@ -10,9 +10,10 @@ This lab is designed to be used as a supplement to Instructor Led Training and h
 
 ## [Lab 1: Azure Information Protection](#azure-information-protection-lab)
 
-## [Lab 2: Azure Advanced Threat Protection](#azure-atp-immersion-lab)
+## [Lab 2: Microsoft Cloud App Security](#microsoft-cloud-app-security)
 
-## [Lab 3: Microsoft Cloud App Security](#microsoft-cloud-app-security)
+## [Lab 3: Azure Advanced Threat Protection](#azure-atp-immersion-lab)
+
 
 > [!ALERT] When stopping each section, please ensure that you SAVE the session in between labs rather than END the lab.  If you end the lab, all VM configuration will be reset to initial state and will hinder the experience during future labs.  We have designed this lab to be a good representation of the interoperability between Microsoft 365 Security Technologies so several of the labs will feed information into future labs.
 
@@ -606,7 +607,7 @@ In this task, we will configure the repository default and add a new profile wit
 
 	> !IMAGE[Repo](\Media\Repo.png)
 
-	> [!KNOWLEDGE] These Policy enforcement settings will set a custom default label of **Confidential \ All Employees** for all files that do not match a policy in this repository.  
+	> [!NOTE] These Policy enforcement settings will set a custom default label of **Confidential \ All Employees** for all files that do not match a policy in this repository.  
 	>
 	>It will also set the default owner for all files protected by the Scanner to ```adamj@@lab.CloudCredential(139).TenantName```. This can be used to assign the Rights Management Owner of all protected files for a repository to a specific user rather than the AIP scanner service account.  For instance, if an executive has a shared folder on a server, this can be used to allow that executive to be the rights management owner of all of the files contained in their folder.
 
@@ -637,7 +638,7 @@ In this task, we will configure the repository default and add a new profile wit
 
 1. [] Leave all policies at Profile default, and click **Save**.
 
-> [!NOTE] We have now configured all three supported AIP Scanner repository types (**CIFS File Share**, **Local Directory**, and on-premises **SharePoint Document Library**).
+> [!NOTE] We have now configured all three supported AIP Scanner repository types (**CIFS File Share**, **Local Directory**, and on-premises **SharePoint Document Library**). Note that scanning local folders on the AIP scanner server is not recommended in a production setting as it could affect performance of the scanner service. This is included to demonstrate the capabilities of the scanner profile.
 
 ---
 ## AIP Scanner Setup
@@ -1831,13 +1832,6 @@ In this exercise, we created several Exchange Online Mail Flow Rules to protect 
 
 Congratulations! You have completed the Azure Information Protection Hands on Lab. 
 
-=== 
-
-## Azure ATP Immersion Lab 
-[:arrow_left: Home](#introduction)
-
-The rest of the lab will be instructor led via PowerPoint. 
-
 ===
 
 # Microsoft Cloud App Security
@@ -2992,4 +2986,11 @@ To go further in your Cloud App Security journey, visit the following links:
 * **Stay up to date and subscribe to our blog!**: aka.ms/mcasblog
 
 * **Visit our Website**: aka.ms/mcas
+
+=== 
+
+## Azure ATP Immersion Lab 
+[:arrow_left: Home](#introduction)
+
+The rest of the lab will be instructor led via PowerPoint. 
 
