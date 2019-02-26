@@ -437,7 +437,7 @@ This lab is designed to be completed on either a native Windows 10 machine or a 
 
 Microsoft 365 E5 Tenant credentials will be provided during the event.  If you want to run through this lab after the event, you may use a tenant created through https://demos.microsoft.com or your own Microsoft 365 Tenant. 
 
-*:memo: Not all exercises can be completed within 60 minutes but time estimates are provided to aid in exercise selection.
+
 
 ---
 
@@ -448,13 +448,7 @@ Microsoft 365 E5 Tenant credentials will be provided during the event.  If you w
 In order to collect log data from Azure Information Protection clients and services, you must first configure the log analytics workspace.
 
 1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-1. [] In the Azure portal, type the word ```info``` into the **search bar** and press **Enter**, then click on **Azure Information Protection**. 
-
-	!IMAGE[2598c48n.jpg](\Media\2598c48n.jpg)
-	
-	> [!HINT] If you do not see the search bar at the top of the portal, click on the **Magnifying Glass** icon to expand it.
-	>
-	> !IMAGE[ny3fd3da.jpg](\Media\ny3fd3da.jpg)
+1. [] Open a new InPrivate tab and browse to ```https://aka.ms/AIPConsole```.
 
 1. [] In the Azure Information Protection blade, under **Manage**, click **Configure analytics (preview)**.
 
