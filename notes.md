@@ -59,6 +59,13 @@ Add App Initialization and associated values to Scanner01
 
 Start-Process powershell.exe -Credential $dacred -NoNewWindow -ArgumentList "Set-AIPAuthentication...."
 
+Scanner01 
+Set-ExecutionPolicy RemoteSigned
+Reboot
+
+DC
+Change setting for Secure Channel password?
 
 Update VMs (scanner, DC)
-Change setting for Secure Channel password?
+
+Test
