@@ -128,56 +128,43 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 ---
 
 ===
-# Redeem Azure Pass
+## Redeem Azure Pass
 [:arrow_left: Home](#lab-environment-configuration)
 
 For several of the exercises in this lab series, you will require an active subscription.  We are providing an Azure Pass for this purpose.  You will be provided with an Azure Pass code to use with the instructions below.
 
-## Redeeming a Microsoft Azure Pass Promo Code:
+### Redeeming a Microsoft Azure Pass Promo Code:
 
-1. [] On @lab.VirtualMachine(Client01).SelectLink, open a **new InPrivate tab**.
+1. [] On @lab.VirtualMachine(Client01).SelectLink, log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 
-3. [] Navigate to ```https://www.microsoftazurepass.com```.
+2. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
+
+3. [] In the InPrivate window, navigate to ```https://www.microsoftazurepass.com```
 
 4. [] Click the **Start** button to get started.
 
-	!IMAGE[wdir7lb3.jpg](\Media\wdir7lb3.jpg)
+	> !IMAGE[wdir7lb3.jpg](\Media\wdir7lb3.jpg)
+1. [] Log in using the credentials below.
 
-	>[!NOTE] If necessary, log in using the credentials below:
-	>
-	>```@lab.CloudCredential(134).Username```
-	>
-	>```@lab.CloudCredential(134).Password```
+	```@lab.CloudCredential(134).Username```
 
-1. [] Click **Confirm Microsoft Account** if the Microsoft email shows **@lab.CloudCredential(134).Username**. If any other email is shown, sign out and sign in using the credentials above.
+	```@lab.CloudCredential(134).Password``` 
 
-	!IMAGE[teyx280d.jpg](\Media\confirm.png)
+1. [] Click **Confirm** if the correct email address is listed.
 
-1. [] Click in the **Promo code text box**, paste the **provided promo code**, and click **Claim Promo Code**.
+	> !IMAGE[teyx280d.jpg](\Media\teyx280d.jpg)
+7. [] Click in the Promo code box and type ```@lab.CloudCredential(244).PromoCode```, then click the **Claim Promo Code** button.
 
-	!IMAGE[e1l35ko2.jpg](\Media\promo.png)
-	
-	> [!Knowledge] If pasting into Box from your client system does not work natively, use the Type Text functionality of the lab environment 
-	>
-	> !IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
+	> !IMAGE[e1l35ko2.jpg](\Media\e1l35ko2.jpg)
 
+	>[!NOTE] It may take up to 5 minutes to process the redemption.
 
-8. [] On the Azure Pass - Sponsorship page, leave the default info and scroll to the bottom of the page and click **Next**.
-
-  	!IMAGE[ihrjazqi.jpg](\Media\ihrjazqi.jpg)
-
-9. [] Check the Box to agree to the terms and click **Sign up**.
-
-  	!IMAGE[k2a97g8e.jpg](\Media\agreement.png)
-
-	> [!NOTE] It may take up to 5 minutes to process the redemption.
-
-1. [] While this is processing, you may continue to the next task.
+1. [] While waiting for this to process, continue to the next exercise.
 
 ---
 
 ===
-# Azure AD User Configuration
+## Azure AD User Configuration
 [:arrow_left: Home](#lab-environment-configuration)
 
 In this task, we will create new Azure AD users and assign licenses via PowerShell.  In a procduction evironment this would be done using Azure AD Connect or a similar tool to maintain a single source of authority, but for lab purposes we are doing it via script to reduce setup time.
@@ -257,7 +244,26 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
     > Set-MsolUser -UserPrincipalName $upn -UsageLocation US
     > Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses $office, $ems
 
-	> [!NOTE] The PowerShell window will automatically close once users have been created and licenses have been assigned.
+	> [!NOTE] The PowerShell window will automatically close once users have been created and licenses have been assigned
+
+---
+
+===
+## Complete Azure Pass Signup
+
+1. [] Return to @lab.VirtualMachine(Client01).SelectLink and log in using the password +++@lab.VirtualMachine(Client01).Password+++.
+
+8. [] Scroll to the bottom of the page and click **Next**.
+
+    > !IMAGE[ihrjazqi.jpg](\Media\ihrjazqi.jpg)
+
+	>[!NOTE] You can keep the pre-populated information.
+
+9. [] Check the box to agree to the terms and click **Sign up**.
+
+	> !IMAGE[k2a97g8e.jpg](\Media\k2a97g8e.jpg)
+
+	> [!NOTE] It may take a few minutes to process the request. Continue to the next section.
 
 ---
 
@@ -385,7 +391,7 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 	3. [] Click **OK** to confirm the attack.
 	4. [] Wait about a minute, then **close the generated command prompt** window.
 ===
-# Workplace Join Clients
+## Workplace Join Clients
 [:arrow_left: Home](#lab-environment-configuration)
 
 In this task, we will join 3 systems to the Azure AD tenant to provide SSO capabilities in Office.
@@ -430,12 +436,13 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 1. [] Click **Done**.
 
 ===
-# MCAS Environment Preparation
+## MCAS Environment Preparation
 [:arrow_left: Home](#lab-environment-configuration)
 
-To be able to complete the different parts of the Cloud App Security labs, the following configuration steps are required.
+There are a few prerequisites that need to be set up to complete all the sections in this lab. This Exercise will walk you through the items below.
 
-* [Enabling Office 365 Auditing](#enabling-office-365-auditing)
+To be able to complete the different parts of the Cloud App Security labs, the following configuration steps are required. 
+
 * [Enabling File Monitoring](#enabling-file-monitoring)
 * [Create a Developer Box Account](#create-a-developer-box-account)
 * [Connect Office 365 and Box to Cloud App Security](#connect-office-365-and-box-to-cloud-app-security)
@@ -443,84 +450,31 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 
 ---
 
-## Enabling Office 365 Auditing
-[:arrow_up: Top](#mcas-environment-preparation)
-
-Most Cloud App Security treat detections capabilities rely on auditing being enabled in your environment. By default, auditing is not enabled in Office 365 and must then be turned on using the **Security & Compliance** admin console or PowerShell.
-
-> [!ALERT] As this operation can take up to 24h, your instructor will provide you access to another environment to review the alerts for the threat detection lab.
-
-1. [] Switch to @lab.VirtualMachine(Client01).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-2. [] Open a new InPrivate tab and navigate to ```https://protection.office.com```.	
-	
-	> [!KNOWLEDGE] If needed, log in using the credentials below:
-	>
-	>```@lab.CloudCredential(134).Username```
-	>
-	>```@lab.CloudCredential(134).Password```
-
-4. [] In the **Security & Compliance Center**, Expand **Search & investigation** and click on **Audit log search**.
-   
-	^IMAGE[Audit log](\Media\conf-auditlog.png "Audit log")
-
-5. [] You can see here that auditing is not enabled. Click on the **Turn on auditing** button to enable it and click **yes** at the prompt.
-
-    ^IMAGE[Turn on auditing](\Media\conf-enableauditing.png "Turn on on auditing")
-
-    ^IMAGE[Auditing enabled](\Media\conf-auditenabled.png "Auditing enabled")
-
-    
-
-### Exchange Auditing Configuration
-[:arrow_up: Top](#mcas-environment-preparation)
-
-In addition to enabling auditing in Office 365, some applications like Exchange Online require extra configuration. After enabling auditing at the Office 365 level, we have to enable auditing at the mailBox level. We will perform this configuration before going to the labs.
-
-1. [] On the desktop, right-click on **EnableMailboxAudit.ps1** and click **Run with PowerShell**.
-
-1. [] When prompted, use the credentials below:
-
-	+++@lab.CloudCredential(134).Username+++
-
-	+++@lab.CloudCredential(134).Password+++
-
-	> [!KNOWLEDGE] The following commands will be run to connect to Exchange Online and Enable Mailbox Auditing on the Admin account.
-    >
-	> ```$UserCredential = Get-Credential```
-    >
-	> ```$Session = New-PSSession –ConfigurationName Microsoft.Exchange –ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential –Authentication Basic -AllowRedirection```
-	>
-	>```Import-PSSession $Session```
-    >
-	> ```Get-MailBox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailBox"} | Set-MailBox -AuditEnabled $true```
-    >
-	> ```Get-MailBox admin | fl audit*```
-    
-    > [!ALERT] When you create new mailBoxes, **auditing is not enabled** by default. You will have to use the same commands again to enable auditing for those newly created mailBoxes.
-
-    !IMAGE[MailBox auditing](\Media\MailboxAudit.png "MailBox Auditing")
-
->:memo: **Reference:** [Enabling auditing for Exchange Online mailBoxes](https://docs.microsoft.com/en-us/office365/securitycompliance/enable-mailBox-auditing?redirectSourcePath=%252fen-us%252farticle%252fenable-mailBox-auditing-in-office-365-aaca8987-5b62-458b-9882-c28476a66918).
-
----
-
 ## Enabling File Monitoring
-[:arrow_up: Top](#mcas-environment-preparation)
+[:arrow_up: Top](#lab-environment-configuration)
 
-1. [] Go to Cloud App Security portal at ```https://portal.cloudappsecurity.com``` and click on the **Gear** and then **Settings**.
+1. [] On @lab.VirtualMachine(Client01).SelectLink log in with the password +++@lab.VirtualMachine(Client01).Password+++.
+
+1. [] In the InPrivate window, open a new tab and browse to ```https://portal.cloudappsecurity.com``` and click on the **Gear** and then **Settings**.
+
+	> [!NOTE] If necessary, log in using the credentials below:
+	> 
+	> ```@lab.CloudCredential(134).Username```
+	>
+	> ```@lab.CloudCredential(134).Password```
 
     !IMAGE[Settings](\Media\conf-settings.png "Settings")
 
-1. [] Under the **Information Protection** section click on **Files** and check the **Enable file monitoring** checkbox and click on the "**Save** button.
+1. [] Under the **Information Protection** section click on **Files** and verify that the **Enable file monitoring** checkbox is checked.  If it is not, check the box and click on the "**Save** button.
 
     !IMAGE[Enable files](\Media\conf-files.png "Enable files")
 
 ---
 
 ## Create a Developer Box Account
-[:arrow_up: Top](#mcas-environment-preparation)
+[:arrow_up: Top](#lab-environment-configuration)
 
-1. [] Next, navigate to ```https://developer.box.com``` and click on **Get Started**. 
+1. [] Next, open a new tab in your browser and navigate to ```https://developer.box.com``` and click on **Get Started**. 
 
 	!IMAGE[Boxdev](\Media\box-getstarted.png)
 
@@ -534,69 +488,49 @@ In addition to enabling auditing in Office 365, some applications like Exchange 
 	^IMAGE[Open Screenshot](\Media\box-signup.png)
 
 3. [] In a new tab, browse to ```https://outlook.office365.com/OWA```. 
-1. [] Choose a time zone and click **Save**.
-1. [] In the MOD Admin inbox, click on **Other** mail, and click the **Verify Email** link in the email from Box.
+1. [] If prompted, choose a time zone and click **Save**.
+1. [] In the MOD Admin inbox, click on **Other** mail, search for the **Box** confirmation email and click the **Verify Email**. link in the email from Box.
 
 	^IMAGE[Open Screenshot](\Media\box-verify.png)
 
-1. [] In the new window that opens, enter ```@lab.CloudCredential(134).password``` in **each of the password boxes** and click the **Update** button. 
+1. [] In the new window that opens, enter the password to use with **Box**. We'll use ```@lab.CloudCredential(134).password``` in **each of the password boxes**. Click the **Update** button to save your password.
 
----
-
-## Connect Office 365 and Box to Cloud App Security 
-[:arrow_up: Top](#mcas-environment-preparation)
-
-To connect Cloud App Security to Office 365, you will have to use the Office 365 app connector. App connectors use the APIs of app providers to enable greater visibility and control by Microsoft Cloud App Security over the apps you connect to.  We will also use this method to show integration with the 3rd Party API for Box.
-
-1. [] Open a new in Private tab in your browser and navigate to ```https://portal.cloudappsecurity.com```
-
-2. [] Go to the gear icon and select **App connectors**.
-
-    !IMAGE[App connector](\Media\conf-appconnector.png "App connector")
-
-3. [] Click on the **+** button and select Office 365.
-
-    !IMAGE[Add Office](\Media\conf-addoffice.png "Add Office")
-
-4. [] Click on **Connect Office 365**. Cloud App Security will then have access to Office 365 activities and files.
-
-    ^IMAGE[Open Screenshot](\Media\conf-connectoffice.png "Connect Office")
-
-5. [] Click on **Test now** to validate the configuration.
-
-    ^IMAGE[Open Screenshot](\Media\conf-testoffice.png "Test connectivity")
-
-	> [!NOTE] If the connection is taking more than 1 minute - close out of the portal and log back in to check if it's been connected. 
+1. [] You can now close the **Box** and **Office 365 mailbox** tabs.
 
 ---
 
 ## Connecting Box to Cloud App Security
-[:arrow_up: Top](#mcas-environment-preparation)
+[:arrow_up: Top](#lab-environment-configuration)
 
 1. []  Click on the **+** button again, and this time click on **Box**.
 
 	!IMAGE[2](\Media\box-connect.png)
 
-3. [] In the Instance name box, type ```Box API Demo```, and click **Connect Box**.
+1. [] In the Instance name box, type ```Box API Demo```, and click **Connect Box**.
 
 	^IMAGE[Open Screenshot](\Media\apiBox3.JPG)
 
-4. [] In the Connect Box dialog, click **follow this link**.
+1. [] In the Connect Box dialog, click **follow this link**.
 
 	!IMAGE[4](\Media\box-follow.png)
 
-5. [] Log into Box using the credentials below:
+1. [] Log into Box using the credentials below:
 
 	```@lab.CloudCredential(134).Username```
 
 	```@lab.CloudCredential(134).Password```
 
-6. [] Click on **Grant access to Box**
+1. [] Click on the **Authorize** button.
+
+1. [] Click on **Grant access to Box**
 
 	^IMAGE[Open Screenshot](\Media\box-grant.png)
 
-7. [] Close the Connect Box dialog and click on **Box API Demo** to expand.
-1. [] Click on the **Test now** link.
+1. [] Close the Connect Box dialog and click on **Box API Demo** to expand.
+
+	> [!NOTE] If you do not see Box API Demo listed, refresh the page.
+
+1. [] Click on the **Test now** button.
 
 	^IMAGE[Open Screenshot](\Media\apiBox7.JPG)
 
@@ -604,25 +538,27 @@ To connect Cloud App Security to Office 365, you will have to use the Office 365
 	>
 	> !IMAGE[8](\Media\apiBox8.JPG)
 
-8. []  Close the dialog and you should be able to see **Box API Demo** as a **Connected** app in the list. 
+1. []  Close the dialog and you should be able to see **Box API Demo** as a **Connected** app in the list. 
 
 	^IMAGE[Open Screenshot](\Media\apiBox9.JPG) 
+
+	> [!NOTE] If testing is taking a long time, open a new tab to ```https://portal.cloudappsecurity.com``` and continue with the next section.
 
 ---
 
 ## Enabling Azure Information Protection integration
-[:arrow_up: Top](#mcas-environment-preparation)
+[:arrow_up: Top](#lab-environment-configuration)
 
 To prepare the **Information Protection** lab, we have to enable the integration between Cloud App Security and Azure Information Protection as explained in the [Cloud App Security documentation](https://docs.microsoft.com/en-us/cloud-app-security/azip-integration). Enabling the integration between the two solutions is as easy as selecting one single checkBox.
 
-1. [] Go to Cloud App Security settings.
+1. [] Click on the **Gear** icon and then **Settings**.
 
     !IMAGE[Settings](\Media\conf-settings.png "Settings")
 
 2. [] Go down in the settings to the **Azure Information Protection** section and check the **Automatically scan new files** checkBox and click on the "**Save** button.
     !IMAGE[Enable AIP](\Media\conf-aip.png "Enable AIP")
 
->:memo: It takes up to **1h** for Cloud App Security to sync the Azure Information classifications.
+>[!NOTE]: It can take up to **1h** for Cloud App Security to sync the Azure Information classifications.
 
 ---
 
