@@ -169,7 +169,16 @@ For several of the exercises in this lab series, you will require an active subs
 
 In this task, we will create new Azure AD users and assign licenses via PowerShell.  In a procduction evironment this would be done using Azure AD Connect or a similar tool to maintain a single source of authority, but for lab purposes we are doing it via script to reduce setup time.
 
-1. [] Log into @lab.VirtualMachine(Scanner01).SelectLink using the password +++@lab.VirtualMachine(Scanner01).Password+++
+1. [] Log into @lab.VirtualMachine(Scanner01).SelectLink using the credentials below.
+
+	> +++@lab.VirtualMachine(Scanner01).Username+++
+	>
+	> +++@lab.VirtualMachine(Scanner01).Password+++
+
+	> [!NOTE] If you receive an error stating no logon servers available, restart the VM using the menu at the top left of the VM window as shown below. After reboot, login should work successfully.
+	>
+	> !IMAGE[Reboot](\Media\Reboot.png)
+
 2. [] On the desktop, **right-click** on **AADConfig.ps1** and click **Run with PowerShell**.
 
 	!IMAGE[AADConfig](\Media\AADConfig.png)
