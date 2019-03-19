@@ -60,3 +60,10 @@ Add App Initialization and associated values to Scanner01
 Start-Process powershell.exe -Credential $dacred -NoNewWindow -ArgumentList "Set-AIPAuthentication...."
 
 
+Start on Client01
+Update VMs (scanner, DC)
+Update AAD User Configuration password
+Change setting for Secure Channel password?
+Workplace join adams to adamj
+Update instructions from new lab
+powerpoint slides tips and tricks             
