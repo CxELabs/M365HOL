@@ -6,12 +6,6 @@
 
 This lab is designed to be used as a supplement to Instructor Led Training and has several sections that you will go through over the next few days. Some initial setup is required before getting into the hands-on labs.
 
-# VM Environment Setup
-
-The labs in this course are designed to run with minimal infrastructure.  The simplest way to set up this environment is to use the Quick Create function of Windows 10 Client Hyper-V. If this is not available, you can accomplish a similar setup using a trial Windows 10 ISO from microsoft.com. To complete all labs in the MCAS section you will also need a linux VM.  We will walk through building an Ubuntu VM using the Quick Create function of Windows 10 Client Hyper-V.
-
-Download zip package and extract to C:\Scripts folder
-
 # Lab Environment Configuration
 [:arrow_left: Home](#introduction)
 
