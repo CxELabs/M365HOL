@@ -92,10 +92,7 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 1. [] Log into @lab.VirtualMachine(Client01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++
 2. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
 
-3. [] In the in a Private window, paste the **provided Windows E5 Trial Sign up link**.
-
-	> [!Knowledge] If pasting into Box from your client system does not work natively, use the Type Text functionality of the lab environment 
-	> !IMAGE[w7cijc7e.jpg](\Media\w7cijc7e.jpg)
+3. [] In the InPrivate window, browse to ```@lab.CloudCredential(251).WDATPTrialHyperlink```.
 	
 1. [] Click **Sign in** and use the credentials below.
    
