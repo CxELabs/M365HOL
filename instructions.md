@@ -94,11 +94,12 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 
 3. [] In the InPrivate window, browse to ```@lab.CloudCredential(251).WDATPTrialHyperlink```.
 	
-1. [] Click **Sign in** and use the credentials below.
+1. [] Click **Sign in** 
+1. [] Use the credentials below.
    
-    ```@lab.CloudCredential(134).Username```
+    ```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password```  
+	```@lab.CloudCredential(139).Password```  
 
 	^IMAGE[Open Screenshot](\Media\signin.png)
 	
@@ -111,9 +112,9 @@ In this task, we will link Windows Defender ATP licenses to your demo tenant.
 
 	>[!NOTE] If necessary, log in using the credentials below:
 	>
-	>```@lab.CloudCredential(134).Username```
+	>```@lab.CloudCredential(139).Username```
 	>
-	>```@lab.CloudCredential(134).Password```
+	>```@lab.CloudCredential(139).Password```
 
 1. [] Click on MOD Administrator, and in the details page, click **Edit** next to Product licenses.
 
@@ -143,9 +144,9 @@ For several of the exercises in this lab series, you will require an active subs
 	> !IMAGE[wdir7lb3.jpg](\Media\wdir7lb3.jpg)
 1. [] Log in using the credentials below.
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password``` 
+	```@lab.CloudCredential(139).Password``` 
 
 1. [] Click **Confirm** if the correct email address is listed.
 
@@ -182,17 +183,17 @@ In this task, we will create new Azure AD users and assign licenses via PowerShe
 
 	> [!NOTE] If prompted to change the execution policy, type **y** and **Enter**.
 
-1. [] When prompted for the **Tenant name**, **click in the text box** and enter ```@lab.CloudCredential(134).TenantName```.
+1. [] When prompted for the **Tenant name**, **click in the text box** and enter ```@lab.CloudCredential(139).TenantName```.
 1. [] When prompted, provide the credentials below:
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password``` 
+	```@lab.CloudCredential(139).Password``` 
    
 	> [!KNOWLEDGE] We are running the PowerShell code below to create the accounts and groups in AAD and assign licenses for EMS E5 and Office E5. This script is also available at [https://aka.ms/labscripts](https://aka.ms/labscripts) as AADConfig.ps1.
     > 
     > #### Azure AD User and Group Configuration
-    > $tenantfqdn = "@lab.CloudCredential(134).TenantName"
+    > $tenantfqdn = "@lab.CloudCredential(139).TenantName"
     > $tenant = $tenantfqdn.Split('.')[0]
 	> 
     > #### Build Licensing SKUs
@@ -299,9 +300,9 @@ Use the link below to deploy the following:
 
 	> [!KNOWLEDGE] If needed, log in using the credentials below:
 	>
-	>```@lab.CloudCredential(134).Username```
+	>```@lab.CloudCredential(139).Username```
 	>
-	>```@lab.CloudCredential(134).Password```
+	>```@lab.CloudCredential(139).Password```
 
 1. [] On the Custom deployment page, below the **Resource group** drop-down, click **Create new**.
 
@@ -331,9 +332,9 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 1. [] Open an Edge InPrivate window and navigate to ```https://securitycenter.windows.com```.
 1. [] Log in using the credentials below:
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password```
+	```@lab.CloudCredential(139).Password```
 
 1. [] On Step 1, click **Next**.
 1. [] On Step 2, choose a data storage location and click **Next**.
@@ -363,9 +364,9 @@ In this task, we will perform initial setup of WD ATP and onboard 2 machines.
 1. [] Open an Edge InPrivate window and navigate to ```https://securitycenter.windows.com/```.
 1. [] Log in using the credentials below:
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password```
+	```@lab.CloudCredential(139).Password```
 1. [] On the left, click the **Settings** icon.
 
 	!IMAGE[settings.png](\Media\settings.png)
@@ -410,7 +411,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 1. [] In the Access Work or School settings menu, click on **+ Connect** and enter the credentials below to workplace join the client.
 
-	```adamj@@lab.CloudCredential(134).TenantName```
+	```adamj@@lab.CloudCredential(139).TenantName```
 		
 	```pass@word1```
 1. [] Click **Done**.
@@ -423,7 +424,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 1. [] In the Access Work or School settings menu, click on **+ Connect** and enter the credentials below to workplace join the client.
 
-	```alicea@@lab.CloudCredential(134).TenantName```
+	```alicea@@lab.CloudCredential(139).TenantName```
 		
 	```pass@word1```
 1. [] Click **Done**.
@@ -436,7 +437,7 @@ In this task, we will join 3 systems to the Azure AD tenant to provide SSO capab
 
 1. [] In the Access Work or School settings menu, click on **+ Connect** and enter the credentials below to workplace join the client.
 
-	```evang@@lab.CloudCredential(134).TenantName```
+	```evang@@lab.CloudCredential(139).TenantName```
 		
 	```pass@word1```
 1. [] Click **Done**.
@@ -465,9 +466,9 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 
 	> [!NOTE] If necessary, log in using the credentials below:
 	> 
-	> ```@lab.CloudCredential(134).Username```
+	> ```@lab.CloudCredential(139).Username```
 	>
-	> ```@lab.CloudCredential(134).Password```
+	> ```@lab.CloudCredential(139).Password```
 
     !IMAGE[Settings](\Media\conf-settings.png "Settings")
 
@@ -489,7 +490,7 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 	|||
 	|-----|-----|
 	|**Full Name**|```MOD Admin```|
-	|**Email Address**|```@lab.CloudCredential(134).UserName```|
+	|**Email Address**|```@lab.CloudCredential(139).UserName```|
 
 	^IMAGE[Open Screenshot](\Media\box-signup.png)
 
@@ -499,7 +500,7 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 
 	^IMAGE[Open Screenshot](\Media\box-verify.png)
 
-1. [] In the new window that opens, enter the password to use with **Box**. We'll use ```@lab.CloudCredential(134).password``` in **each of the password boxes**. Click the **Update** button to save your password.
+1. [] In the new window that opens, enter the password to use with **Box**. We'll use ```@lab.CloudCredential(139).password``` in **each of the password boxes**. Click the **Update** button to save your password.
 
 1. [] You can now close the **Box** and **Office 365 mailbox** tabs.
 
@@ -522,9 +523,9 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 
 1. [] Log into Box using the credentials below:
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password```
+	```@lab.CloudCredential(139).Password```
 
 1. [] Click on the **Authorize** button.
 
@@ -630,9 +631,9 @@ Now that the template has been deployed, we can continue with the configuration 
 
 2. []	Open Internet Explorer and browse to ```https://portal.atp.azure.com``` and login with the following credentials.  
    
-   ```@lab.CloudCredential(134).UserName``` 
+   ```@lab.CloudCredential(139).UserName``` 
 
-   ```@lab.CloudCredential(134).Password``` 
+   ```@lab.CloudCredential(139).Password``` 
    
 6. []	Click **Create**. 
 8. []	Click **Provide a username and password to connect to your Active Directory forest**.  
@@ -680,9 +681,9 @@ To allow users not in the companies Azure Active Directory to access the Azure A
 
 1. [] On ContosoDC, open a new tab in IE and browse to ```https://portal.azure.com```. You should be automatically logged in. If not, login with the following credentials.  
    
-   ```@lab.CloudCredential(134).UserName``` 
+   ```@lab.CloudCredential(139).UserName``` 
 
-   ```@lab.CloudCredential(134).Password``` 
+   ```@lab.CloudCredential(139).Password``` 
 
 2. []	Close any popup windows that might have opened.  
 3. []	Click **Azure Active Directory**. 
@@ -854,9 +855,9 @@ In order to collect log data from Azure Information Protection clients and servi
 
 	> [!NOTE] If necessary, log in using the credentials below:
 	> 
-	> ```@lab.CloudCredential(134).Username```
+	> ```@lab.CloudCredential(139).Username```
 	>
-	> ```@lab.CloudCredential(134).Password```
+	> ```@lab.CloudCredential(139).Password```
 
 1. [] In the Azure Information Protection blade, under **Manage**, click **Configure analytics (preview)**.
 
@@ -973,9 +974,9 @@ In this task, we will configure the repository default and add a new profile wit
 
 	> [!NOTE] If the Azure portal is not already open, navigate to ```https://aka.ms/ScannerProfiles``` and log in with the credentials below.
 	>
-	> ```@lab.CloudCredential(134).Username```
+	> ```@lab.CloudCredential(139).Username```
 	>
-	> ```@lab.CloudCredential(134).Password```
+	> ```@lab.CloudCredential(139).Password```
 
 1. [] In the Scanner Profiles blade, click the **+ Add** button.
 
@@ -1004,13 +1005,13 @@ In this task, we will configure the repository default and add a new profile wit
 	|**Default label**|**Custom**|
 	||**Confidential \ All Employees**|
 	|**Default owner**|**Custom**|
-	||```adamj@@lab.CloudCredential(134).TenantName```|
+	||```adamj@@lab.CloudCredential(139).TenantName```|
 
 	> !IMAGE[Repo](\Media\Repo.png)
 
 	> [!NOTE] These Policy enforcement settings will set a custom default label of **Confidential \ All Employees** for all files that do not match a policy in this repository.  
 	>
-	>It will also set the default owner for all files protected by the Scanner to ```adamj@@lab.CloudCredential(134).TenantName```. This can be used to assign the Rights Management Owner of all protected files for a repository to a specific user rather than the AIP scanner service account.  For instance, if an executive has a shared folder on a server, this can be used to allow that executive to be the rights management owner of all of the files contained in their folder.
+	>It will also set the default owner for all files protected by the Scanner to ```adamj@@lab.CloudCredential(139).TenantName```. This can be used to assign the Rights Management Owner of all protected files for a repository to a specific user rather than the AIP scanner service account.  For instance, if an executive has a shared folder on a server, this can be used to allow that executive to be the rights management owner of all of the files contained in their folder.
 
 1. [] Click **Save**.
 
@@ -1061,9 +1062,9 @@ The first step in configuring the AIP Scanner is to install the service and conn
 
 1. [] When prompted, enter the Global Admin credentials below:
 
-	> ```@lab.CloudCredential(134).Username```
+	> ```@lab.CloudCredential(139).Username```
 	>
-	> ```@lab.CloudCredential(134).Password```
+	> ```@lab.CloudCredential(139).Password```
 
 1. [] In the popup box, click **OK** to accept the default Profile value **East US**.
 
@@ -1118,7 +1119,7 @@ The first step in configuring the AIP Scanner is to install the service and conn
 
 1. [] When prompted, enter the AIP Scanner cloud credentials below:
 
-	> ```AIPScanner@@lab.CloudCredential(134).TenantName```
+	> ```AIPScanner@@lab.CloudCredential(139).TenantName```
 	>
 	> ```Somepass1```
 
@@ -1504,7 +1505,7 @@ One of the most common use cases for AIP is the ability to send emails using Use
 
 1. [] On @lab.VirtualMachine(Client03).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++.
 2. [] Launch Microsoft Outlook, and click **Accept and start Outlook**.
-3. [] In the username Box, type ```EvanG@@lab.cloudcredential(134).TenantName``` and click **Connect**.
+3. [] In the username Box, type ```EvanG@@lab.cloudcredential(139).TenantName``` and click **Connect**.
 4. [] When prompted, type ```pass@word1``` and Sign in.
 5. [] On the Use this account everywhere page, click **Yes** then click **Done**.
 6. [] Once configuration completes, **uncheck the Box** to **Set up Outlook Mobile** and click **OK**.
@@ -1531,7 +1532,7 @@ One of the most common use cases for AIP is the ability to send emails using Use
 	> !IMAGE[6v6duzbd.jpg](\Media\6v6duzbd.jpg)
 
 10. [] Switch over to @lab.VirtualMachine(Client01).SelectLink, log in using the password +++@lab.VirtualMachine(Client01).Password+++ and open Outlook. 
-11. [] Run through setup, this time using the credentials ```adamj@@lab.CloudCredential(134).TenantName``` and ```pass@word1```. 
+11. [] Run through setup, this time using the credentials ```adamj@@lab.CloudCredential(139).TenantName``` and ```pass@word1```. 
 12. [] Review the email in Adam Jones’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
 
    !IMAGE[0xby56qt.jpg](\Media\0xby56qt.jpg)
@@ -1609,7 +1610,7 @@ In this task, we will create a document and send an email from one of the users 
 
 	^IMAGE[Open Screenshot](\Media\ny1lwv0h.jpg)
 1. [] Switch to @lab.VirtualMachine(Client02).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
-11. [] Run through setup, this time using the credentials ```AliceA@@lab.CloudCredential(134).TenantName``` and ```pass@word1```. 
+11. [] Run through setup, this time using the credentials ```AliceA@@lab.CloudCredential(139).TenantName``` and ```pass@word1```. 
 12. [] Review the email in Alice Anderson’s Outlook. You should be able to open the message natively in the client as Alice.
 
 	!IMAGE[qeqtd2yr.jpg](\Media\qeqtd2yr.jpg)
@@ -1704,7 +1705,7 @@ In this task, we will perform bulk classification using the built-in functionali
    !IMAGE[CandP.png](\Media\CandP.png)
 4. [] When prompted, click use another account and use the credentials below to authenticate:
 
-	```AIPScanner@@lab.CloudCredential(134).TenantName```
+	```AIPScanner@@lab.CloudCredential(139).TenantName```
 
 	```Somepass1```
 
@@ -1909,9 +1910,9 @@ In this task, we will modify the AIP scanner Profile to enforce the conditions w
 
 	> [!NOTE] If needed, navigate to ```https://aka.ms/ScannerProfiles``` and log in with the credentials below:
 	>
-	> ```@lab.CloudCredential(134).Username```
+	> ```@lab.CloudCredential(139).Username```
 	>
-	> ```@lab.CloudCredential(134).Password```
+	> ```@lab.CloudCredential(139).Password```
 
 2. [] Click on the **East US** profile.
 
@@ -1964,7 +1965,7 @@ Now that we have Classified and Protected documents using the scanner, we can re
 3. [] Open one of the **Contoso Purchasing Permissions** documents.
 1. [] When prompted, provide the credentials below:
 
-	> ```EvanG@@lab.CloudCredential(134).TenantName```
+	> ```EvanG@@lab.CloudCredential(139).TenantName```
 	>
 	> ```pass@word1```
 
@@ -1975,7 +1976,7 @@ Now that we have Classified and Protected documents using the scanner, we can re
     > !IMAGE[s1okfpwu.jpg](\Media\HCAE.jpg)
 
 4. [] Next, in the same documents folder, open one of the **pdf files**.
-5. [] When prompted by Adobe, enter ```EvanG@@lab.CloudCredential(134).TenantName``` and press **Next**.
+5. [] When prompted by Adobe, enter ```EvanG@@lab.CloudCredential(139).TenantName``` and press **Next**.
 6. [] Check the box to save credentials and press **Yes**.
 1. [] Click **Accept** in the **Permissions requested** dialog.
 
@@ -2074,9 +2075,9 @@ In this task, we will configure a mail flow rule to detect sensitive information
 1. [] In an **Administrative PowerShell** window, type ```C:\Users\LabUser\Desktop\EncryptSensitiveMFR.ps1``` and press **Enter**. 
 1. [] When prompted, provide the credentials below:
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password```
+	```@lab.CloudCredential(139).Password```
 
 	> [!NOTE] If prompted to remove a transport rule, hit **Enter**.
 
@@ -2122,9 +2123,9 @@ In this task, we will configure a mail flow rule to detect sensitive information
 1. [] In an **Administrative PowerShell** window, type ```C:\Users\LabUser\Desktop\BlockInternal.ps1``` and press **Enter**. 
 1. [] When prompted, provide the credentials below:
 
-	```@lab.CloudCredential(134).Username```
+	```@lab.CloudCredential(139).Username```
 
-	```@lab.CloudCredential(134).Password```
+	```@lab.CloudCredential(139).Password```
 
 	> [!NOTE] If prompted to remove a transport rule, hit **Enter**.
 
@@ -2173,7 +2174,7 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 
 1. [] Log in using the credentials below.
 
-	> ```EvanG@@lab.CloudCredential(134).TenantName```
+	> ```EvanG@@lab.CloudCredential(139).TenantName```
 	>
 	> ```pass@word1```
 
@@ -2354,7 +2355,7 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
         ^IMAGE[Open Screenshot](\Media\mgmt-admin2.png "New admin")
 
-    1. Type the admin user name: ```mcasadminus@@lab.CloudCredential(134).TenantName```
+    1. Type the admin user name: ```mcasadminus@@lab.CloudCredential(139).TenantName```
 
     	> [!HINT] The tenant name is the one provided for your lab environment. This information is available in your **Resources** section, at the top of the instructions.
     
@@ -2379,7 +2380,7 @@ In this lab, we are going to delegate the management of US employees to a new ad
 
 
 1. [] Open a new **private** tab and connect to the [Cloud App Security portal]```https://portal.cloudappsecurity.com``` with **mcasAdminUS** and compare the activities, alerts and actions that this scoped admin can perform compared to your regular Global admin account.
-     ```mcasadminus@@lab.CloudCredential(134).TenantName```
+     ```mcasadminus@@lab.CloudCredential(139).TenantName```
     
      ```pass@word1```
 
@@ -2555,9 +2556,9 @@ In this lab you will perform the configuration of a **Log collector**.
 
 1. [] Create a new tab in the in a  Private window and browse to ```https://portal.cloudappsecurity.com```.
 
-       >```@lab.CloudCredential(134).Username```
+       >```@lab.CloudCredential(139).Username```
        >
-       >```@lab.CloudCredential(134).Password```
+       >```@lab.CloudCredential(139).Password```
 
 1. [] In the Cloud App Security dashboard, click on the **Gear** icon and select **Log collectors**.
 
@@ -2940,9 +2941,9 @@ Conditional Access App Control enables user app access and sessions to be **moni
 
 1. [] Connect using :
 
-    >```@lab.CloudCredential(134).Username```
+    >```@lab.CloudCredential(139).Username```
     >
-    >```@lab.CloudCredential(134).Password```
+    >```@lab.CloudCredential(139).Password```
 
     > [!HINT] This is done to force the use of conditional access. Once a session has been redirected to Cloud App Security, you will be able to configure the application for App Control in Cloud App Security.
 
@@ -3008,9 +3009,9 @@ Now is time to test our configuration. We will here simulate the userexperience 
 
 1. [] Sign out, close you browser and open the Exchange Web App ```https://outlook.office.com```. Use the following credentials to connect:
   
-   >```@lab.CloudCredential(134).Username```
+   >```@lab.CloudCredential(139).Username```
    >
-   >```@lab.CloudCredential(134).Password```
+   >```@lab.CloudCredential(139).Password```
 
 1. You should receive the following message, as you are redirected through Cloud App Security before accessing the application.
   
@@ -3026,7 +3027,7 @@ Now is time to test our configuration. We will here simulate the userexperience 
 
 1. [] To test our policy, perform the following:
 
-    1. Create a new mail and attach the Word document named **Personal employees information.docx** and the Excel spreadsheet named **Workplace Innovation.xlsx** stored on **Client01** desktop. Send the mail to your user, ```@lab.CloudCredential(134).Username```
+    1. Create a new mail and attach the Word document named **Personal employees information.docx** and the Excel spreadsheet named **Workplace Innovation.xlsx** stored on **Client01** desktop. Send the mail to your user, ```@lab.CloudCredential(139).Username```
 
        !IMAGE[Test](\Media\appc-office-14.png)
 
@@ -4012,9 +4013,9 @@ The labs are intended to make you familiar with the different Security Center's 
 
 	> [!NOTE] If necessary, log in using the credentials below:
 	> 
-	> ```@lab.CloudCredential(134).Username```
+	> ```@lab.CloudCredential(139).Username```
 	>
-	> ```@lab.CloudCredential(134).Password```
+	> ```@lab.CloudCredential(139).Password```
 
 2. [] In the Overview blade note the **Policy & compliance** section. This provides an overview of your **secure score**, based on your **resources**, **regulatory standards** and your **subscription coverage**: 
 
@@ -4824,9 +4825,9 @@ This lab contains additional exercises.
 
 	> [!NOTE] If necessary, log in using the credentials below:
 	> 
-	> ```@lab.CloudCredential(134).Username```
+	> ```@lab.CloudCredential(139).Username```
 	>
-	> ```@lab.CloudCredential(134).Password```
+	> ```@lab.CloudCredential(139).Password```
 
 2. []	Browse to **Azure Active Directory > Groups > New group**.
 3. []	Create a Security group named **Identity Protection Users** with assigned membership type.
@@ -4863,7 +4864,7 @@ This lab contains additional exercises.
 
 1. []	In a **new InPrivate window**, log in to ```https://portal.office.com``` using the credentials below
 
-	```adamj@@lab.CloudCredential(134).TenantName```
+	```adamj@@lab.CloudCredential(139).TenantName```
 
 	```pass@word1```
 
@@ -4874,7 +4875,7 @@ This lab contains additional exercises.
 
 1. []	In a **new InPrivate window**, log in to ```https://portal.office.com``` using the credentials below
 
-	```AliceA@@lab.CloudCredential(134).TenantName```
+	```AliceA@@lab.CloudCredential(139).TenantName```
 
 	```pass@word1```
 
@@ -4913,19 +4914,19 @@ Let’s see what happens when users try to sign in from the Tor Browser, which a
 1. []	Log in to @lab.VirtualMachine(Client03).SelectLink and log in with the password +++@lab.VirtualMachine(Client01).Password+++.
 2. []	Navigate to ```https://portal.office.com``` and log-in with the credentials below:
 
-	```EvanG@@lab.CloudCredential(134).TenantName```
+	```EvanG@@lab.CloudCredential(139).TenantName```
 
 	```pass@word1```
 
 	1. []	Notice how they are not blocked because they are not targeted by the risky sign-ins policies
 3. []	Now, open a new Tor window and log-in to ```https://portal.office.com with the credentials below
 		
-		```adamj@@lab.CloudCredential(134).TenantName```
+		```adamj@@lab.CloudCredential(139).TenantName```
 
 		```pass@word1```
 
 	1. []	Notice how you are prompted for MFA due to the risky sign-ins policy
-4. []	To generate an additional risky sign-in, open a new Tor window and log-in to ```https://portal.office.com++ with ```AliceA@@lab.CloudCredential(134).TenantName```
+4. []	To generate an additional risky sign-in, open a new Tor window and log-in to ```https://portal.office.com++ with ```AliceA@@lab.CloudCredential(139).TenantName```
 
   1. []	Notice how you are prompted for MFA due to the risky sign-ins policy
 
@@ -4933,7 +4934,7 @@ Let’s see what happens when users try to sign in from the Tor Browser, which a
 
 1. []	Open a new Tor window and log-in to ```https://portal.office.com``` with the credentials below:
 
-	```BobW@@lab.CloudCredential(134).TenantName```
+	```BobW@@lab.CloudCredential(139).TenantName```
 
 	```pass@word1```
 	
@@ -5042,7 +5043,7 @@ First, let’s assess how many risk events we have that are medium or high risk.
 
 	$ClientID       = "ClientID"        # Should be a ~36 hex character string; insert your info here
 	$ClientSecret   = "ClientSecret"    # Should be a ~44 character string; insert your info here
-	$tenantdomain   = "@lab.CloudCredential(134).TenantName"    # For example, contoso.onmicrosoft.com
+	$tenantdomain   = "@lab.CloudCredential(139).TenantName"    # For example, contoso.onmicrosoft.com
 
 	$loginURL       = "https://login.microsoft.com"
 	$resource       = "https://graph.microsoft.com"
@@ -5076,7 +5077,7 @@ Since we know that Adam had some risky-sign ins, let’s query their risk events
 
 	$ClientID       = "ClientID"        # Should be a ~36 hex character string; insert your info here
 	$ClientSecret   = "ClientSecret"    # Should be a ~44 character string; insert your info here
-	$tenantdomain   = "@lab.CloudCredential(134).TenantName"    # For example, contoso.onmicrosoft.com
+	$tenantdomain   = "@lab.CloudCredential(139).TenantName"    # For example, contoso.onmicrosoft.com
 
 	$loginURL       = "https://login.microsoft.com"
 	$resource       = "https://graph.microsoft.com"
