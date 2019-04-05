@@ -90,7 +90,7 @@ There are a few prerequisites that need to be set up to complete all the section
 In this task, we will link Windows Defender ATP licenses to your demo tenant.
 
 1. [] Log into @lab.VirtualMachine(Client01).SelectLink using the password +++@lab.VirtualMachine(Client01).Password+++
-2. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
+2. [] Right-click on **Edge** in the taskbar and click on **New InPrivate window**. 
 
 3. [] In the InPrivate window, browse to ```@lab.CloudCredential(251).WDATPTrialHyperlink```.
 	
