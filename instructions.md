@@ -2330,7 +2330,7 @@ In this lab, we are going to delegate the management of US employees to a new ad
 	> [!HINT] The import can take **up to one hour**. Cloud App Security has to synchronize the Azure AD groups before importing them.
 	> [!HINT] If the import takes too long, don't hesitate to move to the next section and come back to complete this task.
 
-	    ^IMAGE[Open Screenshot](\Media\mgmt-import1.png "Import group")
+    ^IMAGE[Open Screenshot](\Media\mgmt-import1.png "Import group")
 
     1. Click on **Import user group**
 
