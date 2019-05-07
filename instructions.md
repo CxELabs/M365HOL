@@ -2987,8 +2987,7 @@ Conditional Access App Control enables user app access and sessions to be **moni
 
        !IMAGE[Session policy](\Media\appc-office-9.png)
 
-   1. Content inspection check **Enabled**
-   Include files that match a preset expression anc choose US: **PII: Social Security Number**
+   1. In **Inspection method**, select **Data Classification Service**. For **Inspection type**, select **Sensitive information type** and include the types containing the work **SSN**.
 
        !IMAGE[Session policy](\Media\appc-office-10.png)
 
