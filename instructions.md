@@ -3112,6 +3112,7 @@ Those policies are enabled by default and after an initial learning period, Clou
 |----------------- |----------------------------------- |---------------------
 | ```https://portal.cloudappsecurity.com``` | ```viewer@m365x778829.onmicrosoft.com``` | ```EventP@ssword```
 
+
 **URLs**
 
 * Office 365: ```https://portal.office.com```
