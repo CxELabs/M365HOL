@@ -3110,7 +3110,7 @@ Those policies are enabled by default and after an initial learning period, Clou
 
 |Portal               |Username                   |Password
 |----------------- |----------------------------------- |---------------------
-| ```https://portal.cloudappsecurity.com``` | viewer@M365x778829.onmicrosoft.com |EventP@ssword
+| ```https://portal.cloudappsecurity.com``` | ```viewer@M365x778829.onmicrosoft.com``` | ```EventP@ssword```
 
 **URLs**
 
