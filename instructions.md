@@ -509,9 +509,11 @@ To be able to complete the different parts of the Cloud App Security labs, the f
 ## Connecting Box to Cloud App Security
 [:arrow_up: Top](#lab-environment-configuration)
 
-1. []  Click on the **+** button, and click on **Box**.
+1. []  To connect **Box** to Cloud App Security, go **Settings**, **App connectors**. Click on the **+** button, and click on **Box**.
 
-	!IMAGE[2](\Media\box-connect.png)
+    !IMAGE[2](\Media\appconnector.png)
+
+    !IMAGE[2](\Media\box-connect.png)
 
 1. [] In the Instance name box, type ```Box API Demo```, and click **Connect Box**.
 
